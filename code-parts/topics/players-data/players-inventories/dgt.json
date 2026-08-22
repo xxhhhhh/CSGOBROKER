@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/20e9f61c-8072-4f50-b257-b6b4219669d2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-20T03:59:45.673Z",
+  "updatedAt": "2026-08-22T03:55:01.959Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 132,
-  "totalItemsGrouped": 101,
+  "totalItemsRaw": 135,
+  "totalItemsGrouped": 104,
   "items": [
     {
       "assetid": "51825839228",
@@ -57,6 +57,41 @@
       ],
       "float": 0.021526884288,
       "seed": 62,
+      "phase": "Ruby"
+    },
+    {
+      "assetid": "53285009985",
+      "classid": "7993042978",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205E4E9FAAFC9E985F46A55D7EC15D76586E5D6689D4C1B85D1EAA5F36552E561951AE4A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.024386091158,
+      "seed": 244,
       "phase": "Ruby"
     },
     {
@@ -102,6 +137,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53286505847",
+      "classid": "8247053652",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1288,6 +1351,42 @@
       "market_hash_name": "M4A1-S | Player Two (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207E6EEF9AADA4C87F66425ECC7956784E7A46E7DB878E7D3ED37D1C7B767F6EA86C162F0E7638826825",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53285009984",
+      "classid": "7993038229",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Eye of Horus",
+      "market_hash_name": "M4A4 | Eye of Horus (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

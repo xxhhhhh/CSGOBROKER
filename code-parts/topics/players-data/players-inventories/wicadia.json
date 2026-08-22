@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a44d401-6f83-40b2-8cdf-c764813abbd6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-21T03:55:27.959Z",
+  "updatedAt": "2026-08-22T03:46:10.681Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 86,
-  "totalItemsGrouped": 86,
+  "totalItemsRaw": 80,
+  "totalItemsGrouped": 80,
   "items": [
     {
       "assetid": "52133752595",
@@ -54,41 +54,6 @@
       "float": 0.008522197604,
       "seed": 898,
       "phase": "Phase 3"
-    },
-    {
-      "assetid": "53040688291",
-      "classid": "7993043226",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDB681229000ECAD337C8EB72CFE3CDFBC8F301786A2CC88B6DCAA38CBBCFA29AD95C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.028363127261,
-      "seed": 166,
-      "phase": "Phase 1"
     },
     {
       "assetid": "49073170455",
@@ -191,78 +156,6 @@
       "market_hash_name": "Dual Berettas | Melondrama (Field-Tested)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A3B35E30225F2DA2BBA18345AB8BA693A79B494B7450A0E32FA5CBB6D3AB8C9EB9CB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50295451392",
-      "classid": "7993036146",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Shinobu",
-      "market_hash_name": "Glock-18 | Shinobu (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CBDB4B15156570CAD3CFEB73C2E3CEFBCFF336727B3AC88B4DC9A381BBC37E6D18FB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50295432869",
-      "classid": "7993038568",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Shinobu",
-      "market_hash_name": "Glock-18 | Shinobu (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC1971611207BDA4B89C04B594B98CB8846C75074CBFFC22BBD481CCB4496E2A94",
       "tags": [
         {
           "category": "Type",
@@ -399,6 +292,42 @@
       ]
     },
     {
+      "assetid": "53285956370",
+      "classid": "7993036601",
+      "instanceid": "8595869574",
+      "amount": 1,
+      "name": "M4A4 | Howl",
+      "market_hash_name": "M4A4 | Howl (Factory New)",
+      "type": "Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53271140900",
       "classid": "7993043505",
       "instanceid": "7774512947",
@@ -470,50 +399,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53176410844",
-      "classid": "7993036534",
-      "instanceid": "6295255998",
-      "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1550,86 +1435,6 @@
       ]
     },
     {
-      "assetid": "53176410845",
-      "classid": "188530424",
-      "instanceid": "6286518562",
-      "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50294131504",
-      "classid": "8246913235",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Desert Eagle | Firebreathing",
-      "market_hash_name": "Desert Eagle | Firebreathing (Minimal Wear)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5EFED8C0E0F54F564F6ED845664A7E4A76D9B1EFBE4D0EFF4826523E463D0D06EE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49382479349",
       "classid": "7993037662",
       "instanceid": "302028390",
@@ -2321,54 +2126,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53176410846",
-      "classid": "7993035658",
-      "instanceid": "6396424864",
-      "amount": 1,
-      "name": "StatTrak™ Tec-9 | Blue Titanium",
-      "market_hash_name": "StatTrak™ Tec-9 | Blue Titanium (Factory New)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]

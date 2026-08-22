@@ -7,16 +7,18 @@
   "name": "Epitácio Melo",
   "nationality": "Brazil",
   "born": "24.01.1995",
+  "isContentCreator": false,
   "twitch": "tacocs",
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-03T07:16:17.335Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 72,
-  "totalItemsGrouped": 72,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-22T04:35:48.059Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 74,
+  "totalItemsGrouped": 74,
   "items": [
     {
       "assetid": "51006192748",
@@ -97,6 +99,42 @@
       "amount": 1,
       "name": "★ Classic Knife | Fade",
       "market_hash_name": "★ Classic Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51975432667",
+      "classid": "7993042557",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Bright Water",
+      "market_hash_name": "★ Huntsman Knife | Bright Water (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -456,6 +494,37 @@
       ]
     },
     {
+      "assetid": "53394615723",
+      "classid": "1989271528",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Loser (Violent Violet)",
+      "market_hash_name": "Graffiti | Loser (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2051415149945B7151795061553356595141E45C615F395121490F20E30C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53394615723"
+      ]
+    },
+    {
       "assetid": "49625802302",
       "classid": "6195246388",
       "instanceid": "302028390",
@@ -490,6 +559,42 @@
       "name": "Zeus x27 | Olympus",
       "market_hash_name": "Zeus x27 | Olympus (Battle-Scarred)",
       "type": "Classified Equipment",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "49573267039",
+      "classid": "7993037056",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Frontside Misty",
+      "market_hash_name": "AK-47 | Frontside Misty (Minimal Wear)",
+      "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -634,42 +739,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53161691384",
-      "classid": "7993035505",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dual Berettas | BorDeux",
-      "market_hash_name": "Dual Berettas | BorDeux (Field-Tested)",
-      "type": "Consumer Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2015,7 +2084,7 @@
     {
       "assetid": "33296469568",
       "classid": "7993039759",
-      "instanceid": "8736634937",
+      "instanceid": "8783176493",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
@@ -2063,7 +2132,7 @@
     {
       "assetid": "6936704029",
       "classid": "7993037966",
-      "instanceid": "8031458700",
+      "instanceid": "8774504010",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
@@ -2123,7 +2192,7 @@
     {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "8736634938",
+      "instanceid": "8783176494",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -2175,7 +2244,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "8736698043",
+      "instanceid": "8783225268",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -2227,7 +2296,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "8736634934",
+      "instanceid": "8783225267",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",
@@ -2315,7 +2384,7 @@
     {
       "assetid": "7020382089",
       "classid": "7993043248",
-      "instanceid": "8718368067",
+      "instanceid": "8769281115",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",

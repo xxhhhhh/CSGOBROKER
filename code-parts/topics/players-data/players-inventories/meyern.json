@@ -12,14 +12,53 @@
   "faceit": "https://faceitdb.com/profile/faceit/8be7173f-2cc9-445a-892d-c942d66fb938",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-20T03:59:46.197Z",
+  "updatedAt": "2026-08-22T03:55:12.187Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 49,
-  "totalItemsGrouped": 45,
+  "totalItemsRaw": 57,
+  "totalItemsGrouped": 51,
   "items": [
+    {
+      "assetid": "53286069618",
+      "classid": "7993040351",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2089997B436A494F88910A8DA9358DA18FB98AB14E7F296C8AC97C88E1AFF981C167500C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.02053607814,
+      "seed": 245,
+      "phase": "Phase 4"
+    },
     {
       "assetid": "19135026891",
       "classid": "1989274104",
@@ -150,6 +189,54 @@
       "amount": 1,
       "name": "Desert Eagle | Printstream",
       "market_hash_name": "Desert Eagle | Printstream (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53390549913",
+      "classid": "7993037971",
+      "instanceid": "8782015599",
+      "amount": 1,
+      "name": "USP-S | Neo-Noir",
+      "market_hash_name": "USP-S | Neo-Noir (Factory New)",
       "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
@@ -353,6 +440,53 @@
           "category": "ProPlayer",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53283777689",
+      "classid": "8711924613",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | meyern (Holo, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | meyern (Holo, Ranked) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2040504058F9496040684570442245484050EE1A28403042F8000659",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53283777689"
       ]
     },
     {
@@ -1003,6 +1137,55 @@
       ]
     },
     {
+      "assetid": "53283817295",
+      "classid": "8711985564",
+      "instanceid": "143865972",
+      "amount": 3,
+      "name": "Sticker | meyern (Gold, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | meyern (Gold, Ranked) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EFFFEFF756E6CFEFC7E9DFEB8DEAE7EFFF40B587EF9FED61F8A464",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53283817295",
+        "53283816024",
+        "53283816023"
+      ]
+    },
+    {
       "assetid": "52228635738",
       "classid": "8491018715",
       "instanceid": "143865972",
@@ -1236,6 +1419,53 @@
       ]
     },
     {
+      "assetid": "53283777686",
+      "classid": "8711922447",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | meyern (Foil, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | meyern (Foil, Ranked) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838283091210828002C182C4A2D20283885724028582A785AA66B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53283777686"
+      ]
+    },
+    {
       "assetid": "51886060832",
       "classid": "8490923054",
       "instanceid": "143865972",
@@ -1434,6 +1664,62 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53391489372",
+      "classid": "7993036685",
+      "instanceid": "8781711474",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Desolate Space",
+      "market_hash_name": "StatTrak™ M4A4 | Desolate Space (Battle-Scarred)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
