@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c534cae2-d0aa-4c67-a2c0-29ecf0532ad5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-19T03:50:59.783Z",
+  "updatedAt": "2026-08-22T03:46:07.849Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 117,
-  "totalItemsGrouped": 113,
+  "totalItemsRaw": 119,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "53254226705",
@@ -503,6 +503,34 @@
       "amount": 1,
       "name": "Recoil Case",
       "market_hash_name": "Recoil Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53444364482",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1028,6 +1056,33 @@
       ],
       "assetids": [
         "43338588573"
+      ]
+    },
+    {
+      "assetid": "53444364483",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53444364483"
       ]
     },
     {
@@ -3717,7 +3772,7 @@
     {
       "assetid": "53254226703",
       "classid": "8246953982",
-      "instanceid": "188530170",
+      "instanceid": "188531406",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Crane Flight",
       "market_hash_name": "StatTrak™ AK-47 | Crane Flight (Well-Worn)",

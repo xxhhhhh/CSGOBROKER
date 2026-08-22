@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8235d0e7-a5ba-47a0-998e-80f64c5a3bdf",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-21T03:48:52.284Z",
+  "updatedAt": "2026-08-22T03:39:49.974Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 86,
-  "totalItemsGrouped": 84,
+  "totalItemsRaw": 88,
+  "totalItemsGrouped": 86,
   "items": [
     {
       "assetid": "45507596139",
@@ -317,7 +317,7 @@
     {
       "assetid": "53277056097",
       "classid": "7993036958",
-      "instanceid": "8771328963",
+      "instanceid": "6493718955",
       "amount": 1,
       "name": "AK-47 | Redline",
       "market_hash_name": "AK-47 | Redline (Field-Tested)",
@@ -397,7 +397,7 @@
     {
       "assetid": "53277055099",
       "classid": "7993038185",
-      "instanceid": "8771328964",
+      "instanceid": "8684789985",
       "amount": 1,
       "name": "M4A1-S | Blue Phosphor",
       "market_hash_name": "M4A1-S | Blue Phosphor (Factory New)",
@@ -438,6 +438,54 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53285530276",
+      "classid": "7993043696",
+      "instanceid": "6276502724",
+      "amount": 1,
+      "name": "M4A1-S | Knight",
+      "market_hash_name": "M4A1-S | Knight (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -854,6 +902,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53285530275",
+      "classid": "7993045322",
+      "instanceid": "6276338060",
+      "amount": 1,
+      "name": "AK-47 | Gold Arabesque",
+      "market_hash_name": "AK-47 | Gold Arabesque (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
