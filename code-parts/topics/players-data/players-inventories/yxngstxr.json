@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ab2bf7fd-7997-4a7a-9c94-6b7d52ffd200",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-22T03:54:44.154Z",
+  "updatedAt": "2026-08-23T04:04:13.278Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 25,
-  "totalItemsGrouped": 25,
+  "totalItemsRaw": 27,
+  "totalItemsGrouped": 27,
   "items": [
     {
       "assetid": "53281024148",
@@ -28,6 +28,42 @@
       "name": "Glock-18 | AXIA",
       "market_hash_name": "Glock-18 | AXIA (Factory New)",
       "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53309320668",
+      "classid": "7993037056",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Frontside Misty",
+      "market_hash_name": "AK-47 | Frontside Misty (Minimal Wear)",
+      "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -429,6 +465,54 @@
       ],
       "assetids": [
         "33543487596"
+      ]
+    },
+    {
+      "assetid": "53309320669",
+      "classid": "7993042277",
+      "instanceid": "6276688400",
+      "amount": 1,
+      "name": "Souvenir AWP | Pink DDPAT",
+      "market_hash_name": "Souvenir AWP | Pink DDPAT (Field-Tested)",
+      "type": "Souvenir Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
       ]
     },
     {

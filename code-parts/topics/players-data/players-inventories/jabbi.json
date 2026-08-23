@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ae6f1503-1de9-4b9b-9a29-f1b9de916870",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-13T04:58:40.430Z",
+  "updatedAt": "2026-08-23T03:57:16.964Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 92,
-  "totalItemsGrouped": 92,
+  "totalItemsRaw": 94,
+  "totalItemsGrouped": 94,
   "items": [
     {
       "assetid": "53014483240",
@@ -40,6 +40,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53310949893",
+      "classid": "7993049483",
+      "instanceid": "8756669401",
+      "amount": 1,
+      "name": "★ Karambit | Crimson Web",
+      "market_hash_name": "★ Karambit | Crimson Web (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -210,6 +242,53 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53300227681",
+      "classid": "7993048057",
+      "instanceid": "8755197677",
+      "amount": 1,
+      "name": "★ StatTrak™ Butterfly Knife | Doppler",
+      "market_hash_name": "★ StatTrak™ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20796998A5BABEBF7861FA7D59E67A517F497A41A29AEC9A7A39AF7B3179297F1148097168277F85",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.01400419604,
+      "seed": 342,
+      "phase": "Ruby"
     },
     {
       "assetid": "51915192687",
