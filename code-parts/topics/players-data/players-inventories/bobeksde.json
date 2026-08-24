@@ -12,18 +12,18 @@
   "faceit": "https://faceitdb.com/profile/faceit/4d6756dc-387a-499c-89ad-d7bc558c4c95",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-23T04:23:17.825Z",
+  "updatedAt": "2026-08-24T04:27:47.333Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 220,
-  "totalItemsGrouped": 142,
+  "totalItemsRaw": 218,
+  "totalItemsGrouped": 140,
   "items": [
     {
       "assetid": "53313081148",
       "classid": "7993044376",
-      "instanceid": "8756951079",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Fade",
       "market_hash_name": "★ Butterfly Knife | Fade (Minimal Wear)",
@@ -55,41 +55,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "53005526607",
-      "classid": "7993041446",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2095855A59152E50948D6E96B52C91BD93A596AD023A427096D57091FD84E59D5C2C59CD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.022197527811,
-      "seed": 613,
-      "phase": "Phase 1"
     },
     {
       "assetid": "53035589473",
@@ -158,6 +123,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Vice",
       "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53324476240",
+      "classid": "8247145520",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Violet Beadwork",
+      "market_hash_name": "★ Sport Gloves | Violet Beadwork (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -499,54 +492,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53162655688",
-      "classid": "7993039803",
-      "instanceid": "8620127599",
-      "amount": 1,
-      "name": "M4A1-S | Printstream",
-      "market_hash_name": "M4A1-S | Printstream (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -5053,61 +4998,9 @@
       ]
     },
     {
-      "assetid": "53162655687",
-      "classid": "7993058025",
-      "instanceid": "7628444918",
-      "amount": 1,
-      "name": "Souvenir USP-S | Road Rash",
-      "market_hash_name": "Souvenir USP-S | Road Rash (Factory New)",
-      "type": "Souvenir Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52833477051",
       "classid": "7993039256",
-      "instanceid": "6287796226",
+      "instanceid": "6280254241",
       "amount": 1,
       "name": "StatTrak™ USP-S | Jawbreaker",
       "market_hash_name": "StatTrak™ USP-S | Jawbreaker (Field-Tested)",
@@ -5287,7 +5180,7 @@
     {
       "assetid": "27144773092",
       "classid": "7993039579",
-      "instanceid": "480090537",
+      "instanceid": "480087698",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Brother",
       "market_hash_name": "StatTrak™ Tec-9 | Brother (Field-Tested)",
