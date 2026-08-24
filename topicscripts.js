@@ -130,6 +130,7 @@ $(document).ready(function () {
     addMoreCraftsLink();
 
 const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
+const REC_BOX_MODE = 2; // 0 = off, 1 = classic, 2 = classic + gamba, 3 = gamba only
 
 (function () {
   // --- Storage safe wrappers (не даём скрипту падать) ---
@@ -148,6 +149,20 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         if (typeof StorageHelper !== "undefined" && StorageHelper.setWithExpiry) {
           StorageHelper.setWithExpiry(key, value, ttl);
         }
+      } catch {
+        /* ignore */
+      }
+    },
+    getPermanent(key) {
+      try {
+        return window.localStorage ? localStorage.getItem(key) : null;
+      } catch {
+        return null;
+      }
+    },
+    setPermanent(key, value) {
+      try {
+        if (window.localStorage) localStorage.setItem(key, value);
       } catch {
         /* ignore */
       }
@@ -174,16 +189,38 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
       const pathname = window.location.pathname.replace(/\/+$/, "");
 
       if (/\/topic\/sticker-crafts(?:\.html)?$/i.test(pathname)) return;
+      if (REC_BOX_MODE === 0) return;
 
       const lang = typeof languageTag !== "undefined" ? languageTag : "en";
       const recCount = 4;
-      const cacheKey = "rec_boxes";
-      const cacheDuration = 24 * 60 * 60 * 1000;
 
-      const usedIds = new Set();
+      const normalizedMode = [0, 1, 2, 3].includes(REC_BOX_MODE) ? REC_BOX_MODE : 1;
 
-      const applyRecBoxes = (recData) => {
-        if (!Array.isArray(recData) || recData.length === 0) return;
+      const shouldRenderGroup = (groupKey) => {
+        if (normalizedMode === 1) return groupKey === "classic";
+        if (normalizedMode === 2) return groupKey === "classic" || groupKey === "gamba";
+        if (normalizedMode === 3) return groupKey === "gamba";
+        return false;
+      };
+
+      const normalizeRecGroups = (rawData) => {
+        // Backward compatibility: старый topics-recs.json был обычным массивом.
+        if (Array.isArray(rawData)) {
+          return { classic: rawData, gamba: [] };
+        }
+
+        if (!rawData || typeof rawData !== "object") {
+          return { classic: [], gamba: [] };
+        }
+
+        return {
+          classic: Array.isArray(rawData.classic) ? rawData.classic : [],
+          gamba: Array.isArray(rawData.gamba) ? rawData.gamba : []
+        };
+      };
+
+      const applyRecBoxes = (rawData) => {
+        const recGroups = normalizeRecGroups(rawData);
 
         const isMobile = window.innerWidth < 1365;
         const topicPage = document.querySelector(".topicpage");
@@ -194,138 +231,204 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
         if (!insertAfterElement && !topicPage) return;
 
         const labels = lang === "ru"
-          ? { review: "Подробнее", visit: "Перейти", title: "Случайные Бонусы" }
-          : { review: "Read More", visit: "Visit", title: "Random Bonuses" };
+          ? {
+              review: "Подробнее",
+              visit: "Перейти",
+              classicTitle: "Случайные Бонусы",
+              gambaTitle: "Гемблинг Бонусы",
+              hideClassic: "Скрыть блок «Случайные Бонусы»",
+              hideGamba: "Скрыть блок «Гемблинг Бонусы»"
+            }
+          : {
+              review: "Read More",
+              visit: "Visit",
+              classicTitle: "Random Bonuses",
+              gambaTitle: "Gambling Bonuses",
+              hideClassic: "Hide Random Bonuses",
+              hideGamba: "Hide Gambling Bonuses"
+            };
 
-        let available = recData.slice();
+        const initLocalBestAlternatesSlider = (wrapper) => {
+          const boxes = Array.from(wrapper.querySelectorAll(".rec-box"));
+          if (boxes.length < 2) return;
 
-        const wrapper = document.createElement("div");
-        wrapper.className = "best-alternates";
+          let activeIndex = Math.max(0, boxes.findIndex(box => box.classList.contains("active")));
+          let timer = null;
 
-        const title = document.createElement("span");
-        title.className = "cent-title";
-        title.textContent = labels.title;
-        wrapper.appendChild(title);
+          const setActive = (index) => {
+            boxes.forEach(box => box.classList.remove("active"));
+            boxes[index].classList.add("active");
+            activeIndex = index;
+          };
 
-      const initLocalBestAlternatesSlider = () => {
-        const boxes = Array.from(wrapper.querySelectorAll(".rec-box"));
-        if (boxes.length < 2) return;
+          const start = () => {
+            if (timer) return;
+            timer = setInterval(() => {
+              setActive((activeIndex + 1) % boxes.length);
+            }, 10000);
+          };
 
-        let activeIndex = Math.max(0, boxes.findIndex(box => box.classList.contains("active")));
-        let timer = null;
+          const stop = () => {
+            clearInterval(timer);
+            timer = null;
+          };
 
-        const setActive = (index) => {
-          boxes.forEach(box => box.classList.remove("active"));
-          boxes[index].classList.add("active");
-          activeIndex = index;
-        };
+          wrapper.__stopBestAlternatesSlider = stop;
 
-        const start = () => {
-          if (timer) return;
-          timer = setInterval(() => {
-            setActive((activeIndex + 1) % boxes.length);
-          }, 10000);
-        };
-
-        const stop = () => {
-          clearInterval(timer);
-          timer = null;
-        };
-
-        boxes.forEach((box, index) => {
-          box.addEventListener("mouseenter", () => setActive(index));
-        });
-
-        wrapper.addEventListener("mouseenter", stop);
-        wrapper.addEventListener("mouseleave", start);
-
-        setActive(activeIndex);
-        start();
-      };
-
-        const createdBoxes = [];
-
-        for (let i = 0; i < recCount; i++) {
-          available = available.filter((box) => !usedIds.has(box.id));
-          if (available.length === 0) break;
-
-          const randomIndex = Math.floor(Math.random() * available.length);
-          const box = available[randomIndex];
-          usedIds.add(box.id);
-
-          const recBox = document.createElement("div");
-          recBox.className = i === 0 ? "rec-box active" : "rec-box";
-          recBox.setAttribute("data-box-id", String(box.id));
-
-          const description =
-            lang === "ru" && box.description_ru ? box.description_ru : box.description;
-
-          const alt =
-            lang === "ru"
-              ? `Логотип ${box.site}`
-              : `${box.site} logo`;
-
-          let reviewHref = box.reviewHref || "#";
-          if (lang === "ru" && typeof reviewHref === "string" && reviewHref.startsWith("/")) {
-            reviewHref = `/ru${reviewHref}`;
-          }
-
-          recBox.innerHTML = `
-            <div class="logobg">
-              <a href="${reviewHref}">
-                <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
-              </a>
-            </div>
-            <div class="content">
-              <a class="boxtitle" href="${reviewHref}">${box.site}</a>
-              <p>${description ?? ""}</p>
-              <div class="content-buttons">
-                <a href="${reviewHref}" class="review-button"><span>${labels.review}</span></a>
-                <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"><span>${labels.visit}</span></a>
-              </div>
-            </div>
-          `;
-
-          const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
-          const visitBtn = recBox.querySelector(".review-button.visit");
-
-          const reviewLabel = lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
-          const visitLabel = lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
-
-          if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
-          if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
-
-          wrapper.appendChild(recBox);
-          createdBoxes.push(recBox);
-        }
-
-        if (!createdBoxes.length) return;
-
-        if (isMobile && topicPage) {
-          topicPage.appendChild(wrapper);
-        } else if (insertAfterElement && insertAfterElement.parentNode) {
-          insertAfterElement.parentNode.insertBefore(wrapper, insertAfterElement.nextSibling);
-        }
-        initLocalBestAlternatesSlider();
-      };
-
-      const cached = SafeStorage.getWithExpiry(cacheKey);
-      if (cached) {
-        applyRecBoxes(cached);
-      } else {
-        fetch(REC_JSON_PATH, { cache: "force-cache" })
-          .then((res) => {
-            if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
-            return res.json();
-          })
-          .then((json) => {
-            SafeStorage.setWithExpiry(cacheKey, json, cacheDuration);
-            applyRecBoxes(json);
-          })
-          .catch((err) => {
-            console.error("insertRandomRecBox error:", err);
+          boxes.forEach((box, index) => {
+            box.addEventListener("mouseenter", () => setActive(index));
           });
-      }
+
+          wrapper.addEventListener("mouseenter", stop);
+          wrapper.addEventListener("mouseleave", start);
+
+          setActive(activeIndex);
+          start();
+        };
+
+        const createHideBestAlternates = (wrapper, groupKey) => {
+          const hideControl = document.createElement("div");
+          hideControl.className = "hide-best-alternates";
+          hideControl.setAttribute("role", "button");
+          hideControl.setAttribute("tabindex", "0");
+
+          const hideLabel = groupKey === "gamba" ? labels.hideGamba : labels.hideClassic;
+          hideControl.setAttribute("aria-label", hideLabel);
+          hideControl.setAttribute("title", hideLabel);
+          hideControl.innerHTML = '<i class="officon cross"></i>';
+
+          const hideCurrentWrapper = () => {
+            SafeStorage.setPermanent(`best_alternates_hidden_${groupKey}`, "1");
+            if (typeof wrapper.__stopBestAlternatesSlider === "function") {
+              wrapper.__stopBestAlternatesSlider();
+            }
+            wrapper.remove();
+          };
+
+          hideControl.addEventListener("click", hideCurrentWrapper);
+          hideControl.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              hideCurrentWrapper();
+            }
+          });
+
+          return hideControl;
+        };
+
+        const createBestAlternates = (groupKey, recData) => {
+          if (!shouldRenderGroup(groupKey)) return null;
+          if (!Array.isArray(recData) || recData.length === 0) return null;
+          if (SafeStorage.getPermanent(`best_alternates_hidden_${groupKey}`) === "1") return null;
+
+          let available = recData.slice();
+          const usedIds = new Set();
+
+          const wrapper = document.createElement("div");
+          wrapper.className = groupKey === "gamba" ? "best-alternates gamba" : "best-alternates";
+          wrapper.setAttribute("data-rec-type", groupKey);
+
+          const title = document.createElement("span");
+          title.className = "cent-title";
+          title.textContent = groupKey === "gamba" ? labels.gambaTitle : labels.classicTitle;
+          wrapper.appendChild(title);
+
+          const createdBoxes = [];
+
+          for (let i = 0; i < recCount; i++) {
+            available = available.filter((box) => !usedIds.has(String(box.id)));
+            if (available.length === 0) break;
+
+            const randomIndex = Math.floor(Math.random() * available.length);
+            const box = available[randomIndex];
+            usedIds.add(String(box.id));
+
+            const recBox = document.createElement("div");
+            recBox.className = i === 0 ? "rec-box active" : "rec-box";
+            recBox.setAttribute("data-box-id", String(box.id));
+
+            const description =
+              lang === "ru" && box.description_ru ? box.description_ru : box.description;
+
+            const alt =
+              lang === "ru"
+                ? `Логотип ${box.site}`
+                : `${box.site} logo`;
+
+            let reviewHref = box.reviewHref || "#";
+            if (lang === "ru" && typeof reviewHref === "string" && reviewHref.startsWith("/")) {
+              reviewHref = `/ru${reviewHref}`;
+            }
+
+            recBox.innerHTML = `
+              <div class="logobg">
+                <a href="${reviewHref}">
+                  <img src="${box.logoSrc}" loading="lazy" draggable="false" alt="${alt}">
+                </a>
+              </div>
+              <div class="content">
+                <a class="boxtitle" href="${reviewHref}">${box.site}</a>
+                <p>${description ?? ""}</p>
+                <div class="content-buttons">
+                  <a href="${reviewHref}" class="review-button"><span>${labels.review}</span></a>
+                  <a href="${box.visitHref}" target="_blank" rel="noopener" class="review-button visit"><span>${labels.visit}</span></a>
+                </div>
+              </div>
+            `;
+
+            const reviewBtn = recBox.querySelector(".review-button:not(.visit)");
+            const visitBtn = recBox.querySelector(".review-button.visit");
+
+            const reviewLabel = lang === "ru" ? `Читать обзор ${box.site}` : `Read review ${box.site}`;
+            const visitLabel = lang === "ru" ? `Перейти на ${box.site}` : `Visit ${box.site}`;
+
+            if (reviewBtn) reviewBtn.setAttribute("aria-label", reviewLabel);
+            if (visitBtn) visitBtn.setAttribute("aria-label", visitLabel);
+
+            wrapper.appendChild(recBox);
+            createdBoxes.push(recBox);
+          }
+          wrapper.appendChild(createHideBestAlternates(wrapper, groupKey));
+
+          return createdBoxes.length ? wrapper : null;
+        };
+
+        const wrappers = [];
+        const classicWrapper = createBestAlternates("classic", recGroups.classic);
+        const gambaWrapper = createBestAlternates("gamba", recGroups.gamba);
+
+        if (classicWrapper) wrappers.push(classicWrapper);
+        if (gambaWrapper) wrappers.push(gambaWrapper);
+        if (!wrappers.length) return;
+
+        if ((isMobile || !insertAfterElement) && topicPage) {
+          wrappers.forEach((wrapper) => topicPage.appendChild(wrapper));
+        } else if (insertAfterElement && insertAfterElement.parentNode) {
+          let insertAnchor = insertAfterElement;
+
+          wrappers.forEach((wrapper) => {
+            insertAnchor.parentNode.insertBefore(wrapper, insertAnchor.nextSibling);
+            insertAnchor = wrapper;
+          });
+        }
+
+        wrappers.forEach(initLocalBestAlternatesSlider);
+      };
+
+      // topics-recs.json intentionally isn't cached in localStorage.
+      // This file is small and can be updated independently from topicscripts.js,
+      // so we always revalidate it instead of keeping a stale 24h copy.
+      fetch(REC_JSON_PATH, { cache: "no-cache" })
+        .then((res) => {
+          if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+          return res.json();
+        })
+        .then((json) => {
+          applyRecBoxes(json);
+        })
+        .catch((err) => {
+          console.error("insertRandomRecBox error:", err);
+        });
     } catch (err) {
       console.error("insertRandomRecBox fatal error:", err);
     }
@@ -333,7 +436,6 @@ const REC_JSON_PATH = "/code-parts/topics/topics-recs.json";
 
   runAfterDomReady(insertRandomRecBox);
 })();
-
 
 (() => {
   "use strict";

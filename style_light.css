@@ -158,7 +158,8 @@ nav img {
 .lightbulb-on::before,
 .lightbulb-off::before,
 .search-enabler .search::before,
-#btnfaq::before {
+#btnfaq::before,
+.hide-best-alternates .officon.cross::before {
     filter: brightness(.2);
     opacity: .9;
 }

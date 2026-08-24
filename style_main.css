@@ -569,6 +569,35 @@ nav .pages {
     order: 2;
 }
 
+.best-alternates:not(.gamba) .hide-best-alternates {
+    display: none;
+}
+
+.siteblock:has(.best-alternates.gamba) .best-alternates:not(.gamba) .cent-title {
+    display: none;
+}
+
+.hide-best-alternates {
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    border-radius: 12px;
+    background: var(--darkgray);
+    padding: 6px;
+    z-index: 11;
+    transition: all .15s ease-in-out;
+    cursor: pointer;
+}
+
+.hide-best-alternates:hover {
+    transform: scale(1.06);
+}
+
+.hide-best-alternates .officon.cross::before {
+    height: 20px;
+    width: 20px;
+}
+
 .topic-boxes-holder .best-alternates {
     width: 300px;
 }
