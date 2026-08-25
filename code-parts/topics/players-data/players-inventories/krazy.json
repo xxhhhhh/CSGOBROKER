@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-15T04:19:32.748Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-25T04:31:30.328Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 171,
-  "totalItemsGrouped": 155,
+  "totalItemsGrouped": 154,
   "items": [
     {
       "assetid": "52751666727",
@@ -99,34 +101,6 @@
       "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F44E1824195FE5FC4CC3C421AACCE2D4E7DC6E5D3814E7A469E78C9994E001864E0E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52622258003",
-      "classid": "7993042486",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2080,14 +2054,14 @@
       ]
     },
     {
-      "assetid": "30047621860",
+      "assetid": "53342494874",
       "classid": "4839650802",
       "instanceid": "188530139",
-      "amount": 7,
+      "amount": 8,
       "name": "Sticker | Copenhagen Flames | Antwerp 2022",
       "market_hash_name": "Sticker | Copenhagen Flames | Antwerp 2022",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232223A9B2B02220A21122640272A2232B90B4A22522A89E1B7A3",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20918191892898B191B992A195F3949991810AB8F991E199F8E5E707",
       "tags": [
         {
           "category": "Type",
@@ -2119,6 +2093,7 @@
         }
       ],
       "assetids": [
+        "53342494874",
         "30047621860",
         "30047621819",
         "30047621788",
