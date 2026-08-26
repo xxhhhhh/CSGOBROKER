@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/93306681-bce6-4369-8c41-e0bdba2597ed",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-19T03:48:54.222Z",
+  "updatedAt": "2026-08-26T03:56:33.435Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 469,
-  "totalItemsGrouped": 355,
+  "totalItemsRaw": 471,
+  "totalItemsGrouped": 356,
   "items": [
     {
       "assetid": "48153083732",
@@ -802,7 +802,7 @@
       "assetid": "48758095405",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 2,
+      "amount": 3,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -823,6 +823,7 @@
       ],
       "assetids": [
         "48758095405",
+        "53485644728",
         "39988021106"
       ]
     },
@@ -6158,6 +6159,42 @@
       "name": "Desert Eagle | Tilted",
       "market_hash_name": "Desert Eagle | Tilted (Minimal Wear)",
       "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53485644727",
+      "classid": "7993037576",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Galil AR | O-Ranger",
+      "market_hash_name": "Galil AR | O-Ranger (Minimal Wear)",
+      "type": "Industrial Grade Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -12446,7 +12483,7 @@
     {
       "assetid": "48844180256",
       "classid": "7993037895",
-      "instanceid": "8792761585",
+      "instanceid": "8795579371",
       "amount": 1,
       "name": "StatTrak™ USP-S | Stainless",
       "market_hash_name": "StatTrak™ USP-S | Stainless (Minimal Wear)",
