@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/en/players/oskar",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-24T04:50:52.445Z",
+  "updatedAt": "2026-08-27T14:41:11.906Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 291,
-  "totalItemsGrouped": 261,
+  "totalItemsRaw": 295,
+  "totalItemsGrouped": 265,
   "items": [
     {
       "assetid": "53274237805",
@@ -27,6 +27,38 @@
       "amount": 1,
       "name": "★ Flip Knife | Lore",
       "market_hash_name": "★ Flip Knife | Lore (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53363580336",
+      "classid": "7993040778",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Gut Knife | Slaughter",
+      "market_hash_name": "★ Gut Knife | Slaughter (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -127,7 +159,7 @@
     {
       "assetid": "52951859137",
       "classid": "7993047725",
-      "instanceid": "902795745",
+      "instanceid": "902917172",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Black Laminate",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Black Laminate (Battle-Scarred)",
@@ -1670,6 +1702,78 @@
       "market_hash_name": "PP-Bizon | Wood Block Camo (Field-Tested)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BBAB00074B6D10BAA3A19B16B193BA8BBF835200584AB8FB80D307BACBA39C9B141B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53362673269",
+      "classid": "7993041451",
+      "instanceid": "6276300551",
+      "amount": 1,
+      "name": "USP-S | Kill Confirmed",
+      "market_hash_name": "USP-S | Kill Confirmed (Well-Worn)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53362553056",
+      "classid": "7993037085",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -7727,7 +7831,7 @@
     {
       "assetid": "16420046516",
       "classid": "7993046933",
-      "instanceid": "8794723173",
+      "instanceid": "8798440935",
       "amount": 1,
       "name": "StatTrak™ XM1014 | Tranquility",
       "market_hash_name": "StatTrak™ XM1014 | Tranquility (Minimal Wear)",
@@ -7768,6 +7872,50 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53362646055",
+      "classid": "7993042136",
+      "instanceid": "6287931738",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | The Empress",
+      "market_hash_name": "StatTrak™ AK-47 | The Empress (Battle-Scarred)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -8027,7 +8175,7 @@
     {
       "assetid": "16187856286",
       "classid": "7993039701",
-      "instanceid": "480087127",
+      "instanceid": "480122828",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Field-Tested)",
@@ -8551,7 +8699,7 @@
     {
       "assetid": "30314482699",
       "classid": "7993038697",
-      "instanceid": "480113800",
+      "instanceid": "480100982",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",
@@ -8839,7 +8987,7 @@
     {
       "assetid": "19863116941",
       "classid": "7993043597",
-      "instanceid": "8794723172",
+      "instanceid": "6941333396",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Griffin",
       "market_hash_name": "StatTrak™ M4A4 | Griffin (Factory New)",
@@ -8875,7 +9023,7 @@
     {
       "assetid": "17231056693",
       "classid": "7993041462",
-      "instanceid": "188530792",
+      "instanceid": "188536415",
       "amount": 1,
       "name": "StatTrak™ MAG-7 | Heat",
       "market_hash_name": "StatTrak™ MAG-7 | Heat (Minimal Wear)",

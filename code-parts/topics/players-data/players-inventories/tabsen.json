@@ -7,16 +7,18 @@
   "name": "Johannes Wodarz",
   "nationality": "Germany",
   "born": "05.04.1995",
+  "isContentCreator": false,
   "twitch": "tabsen_cs",
   "faceit": "https://faceitdb.com/profile/faceit/3f005401-8032-4112-abc8-f83d920eb258",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-11T06:11:36.811Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 687,
-  "totalItemsGrouped": 273,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-27T14:13:38.565Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 686,
+  "totalItemsGrouped": 272,
   "items": [
     {
       "assetid": "34804242019",
@@ -103,34 +105,6 @@
       "amount": 1,
       "name": "★ Bloodhound Gloves | Charred",
       "market_hash_name": "★ Bloodhound Gloves | Charred (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51184314517",
-      "classid": "7993040145",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Emerald Web",
-      "market_hash_name": "★ Specialist Gloves | Emerald Web (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -10622,7 +10596,7 @@
     {
       "assetid": "25463865122",
       "classid": "7993040809",
-      "instanceid": "8662440557",
+      "instanceid": "8798179819",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Red Laminate",
       "market_hash_name": "StatTrak™ AK-47 | Red Laminate (Field-Tested)",
@@ -11094,7 +11068,7 @@
     {
       "assetid": "52599684365",
       "classid": "7993042418",
-      "instanceid": "8652300521",
+      "instanceid": "8796766922",
       "amount": 1,
       "name": "StatTrak™ P250 | Supernova",
       "market_hash_name": "StatTrak™ P250 | Supernova (Factory New)",

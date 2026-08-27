@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/bee37ed7-b8ef-4364-a9d3-f2fbe42fb564",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-26T04:41:32.982Z",
+  "updatedAt": "2026-08-27T14:34:48.124Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 757,
-  "totalItemsGrouped": 304,
+  "totalItemsRaw": 763,
+  "totalItemsGrouped": 310,
   "items": [
     {
       "assetid": "51898751770",
@@ -40,6 +40,69 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53374681536",
+      "classid": "7993041101",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C71754533C11D6CF2BD4F772D4FFD1E7D4EF1865563FD49740D3BF56D5A7DFAC7A7E49",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.031335171312,
+      "seed": 535,
+      "phase": "Phase 4"
+    },
+    {
+      "assetid": "53374681537",
+      "classid": "7993037605",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -1032,6 +1095,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53375854729",
+      "classid": "7993039468",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Galil AR | Chromatic Aberration",
+      "market_hash_name": "Galil AR | Chromatic Aberration (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -12085,7 +12184,7 @@
     {
       "assetid": "45133635606",
       "classid": "7993041343",
-      "instanceid": "188628551",
+      "instanceid": "188567874",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Melondrama",
       "market_hash_name": "StatTrak™ Dual Berettas | Melondrama (Field-Tested)",
@@ -12155,9 +12254,81 @@
       ]
     },
     {
+      "assetid": "53375853813",
+      "classid": "7993038134",
+      "instanceid": "188530398",
+      "amount": 1,
+      "name": "StatTrak™ P250 | Muertos",
+      "market_hash_name": "StatTrak™ P250 | Muertos (Factory New)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53375855293",
+      "classid": "7993040136",
+      "instanceid": "902752908",
+      "amount": 1,
+      "name": "StatTrak™ Tec-9 | Fuel Injector",
+      "market_hash_name": "StatTrak™ Tec-9 | Fuel Injector (Field-Tested)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53348090906",
       "classid": "7993045902",
-      "instanceid": "188530931",
+      "instanceid": "188531988",
       "amount": 1,
       "name": "StatTrak™ MAG-7 | Justice",
       "market_hash_name": "StatTrak™ MAG-7 | Justice (Minimal Wear)",
@@ -12193,7 +12364,7 @@
     {
       "assetid": "53484581984",
       "classid": "7993041773",
-      "instanceid": "8654380958",
+      "instanceid": "8760478627",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -12419,9 +12590,45 @@
       ]
     },
     {
+      "assetid": "53375856014",
+      "classid": "7993047257",
+      "instanceid": "902685672",
+      "amount": 1,
+      "name": "StatTrak™ FAMAS | Valence",
+      "market_hash_name": "StatTrak™ FAMAS | Valence (Factory New)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52201726955",
       "classid": "7993044759",
-      "instanceid": "188640189",
+      "instanceid": "480087169",
       "amount": 1,
       "name": "StatTrak™ MP9 | Mount Fuji",
       "market_hash_name": "StatTrak™ MP9 | Mount Fuji (Factory New)",

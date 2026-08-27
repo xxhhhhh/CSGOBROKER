@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e258398d-85a9-4c51-9185-385c812d089c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-06-20T08:07:26.838Z",
+  "updatedAt": "2026-08-27T14:45:24.757Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 391,
-  "totalItemsGrouped": 390,
+  "totalItemsRaw": 395,
+  "totalItemsGrouped": 392,
   "items": [
     {
       "assetid": "52205495897",
@@ -6501,6 +6501,34 @@
       ]
     },
     {
+      "assetid": "53519470060",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "16167821077",
       "classid": "1293508920",
       "instanceid": "0",
@@ -9442,6 +9470,37 @@
       ]
     },
     {
+      "assetid": "53518636222",
+      "classid": "1989330209",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Rage Mode (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Rage Mode (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20988898805C92B898B099A89CFA9F9098883695A88AF098E8802A517D3E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53518636222"
+      ]
+    },
+    {
       "assetid": "38470970791",
       "classid": "1989287051",
       "instanceid": "302028390",
@@ -9597,14 +9656,14 @@
       ]
     },
     {
-      "assetid": "46480012744",
+      "assetid": "53518636221",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 2,
+      "amount": 4,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F4E4FC32C2C4E4CCE5D4E08CE494FC29D4E28A",
       "tags": [
         {
           "category": "Type",
@@ -9620,8 +9679,10 @@
         }
       ],
       "assetids": [
+        "53518636221",
         "46480012744",
-        "39971508032"
+        "39971508032",
+        "53519470061"
       ]
     },
     {
@@ -11393,7 +11454,7 @@
     {
       "assetid": "30926014179",
       "classid": "7993047724",
-      "instanceid": "8603738176",
+      "instanceid": "8799393736",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Buzz Kill",
       "market_hash_name": "StatTrak™ M4A4 | Buzz Kill (Minimal Wear)",
