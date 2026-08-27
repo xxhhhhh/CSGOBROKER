@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/898780b2-bf70-4c28-8e0d-b9600be8397e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-23T03:55:01.532Z",
+  "updatedAt": "2026-08-25T03:55:04.044Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 58,
-  "totalItemsGrouped": 58,
+  "totalItemsRaw": 57,
+  "totalItemsGrouped": 57,
   "items": [
     {
       "assetid": "53060980512",
@@ -60,49 +60,14 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "53311714452",
-      "classid": "7993041446",
-      "instanceid": "8756669401",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205343C7BAD39E95524BA85073EA577B5563506BAB9BF7B35013AA523B79235B6A2518CD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.008370511234,
-      "seed": 249,
-      "phase": "Phase 1"
-    },
-    {
-      "assetid": "52850159824",
-      "classid": "7993044870",
+      "assetid": "53336499875",
+      "classid": "7993037832",
       "instanceid": "480085569",
       "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "name": "★ Skeleton Knife | Fade",
+      "market_hash_name": "★ Skeleton Knife | Fade (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D71726323703C6DF3BC4E77FC3EFC1F7C4FF6E413622C4870EC2AFEAB7C331C99518",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -110,6 +75,10 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -124,10 +93,7 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.022981243208,
-      "seed": 713,
-      "phase": "Emerald"
+      ]
     },
     {
       "assetid": "53232151356",
@@ -136,6 +102,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53336499876",
+      "classid": "8247379564",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Cloud Chaser",
+      "market_hash_name": "★ Specialist Gloves | Cloud Chaser (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -192,34 +186,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Amphibious",
       "market_hash_name": "★ Sport Gloves | Amphibious (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53035025070",
-      "classid": "7993038043",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1925,7 +1891,7 @@
     {
       "assetid": "51831459379",
       "classid": "7993035946",
-      "instanceid": "8779361823",
+      "instanceid": "8788560558",
       "amount": 1,
       "name": "StatTrak™ MP7 | Smoking Kills",
       "market_hash_name": "StatTrak™ MP7 | Smoking Kills (Factory New)",

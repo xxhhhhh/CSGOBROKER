@@ -7,16 +7,18 @@
   "name": "Danila Dronov",
   "nationality": "Russia",
   "born": "30.11.2006",
+  "isContentCreator": false,
   "twitch": "kashl1d",
   "faceit": "https://faceitdb.com/profile/faceit/2a82893f-3a7e-4458-9141-0b19673fa049",
-  "isContentCreator": false,
-  "updatedAt": "2026-07-27T07:12:45.953Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 212,
-  "totalItemsGrouped": 205,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-25T04:31:45.912Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 213,
+  "totalItemsGrouped": 206,
   "items": [
     {
       "assetid": "52366958210",
@@ -88,6 +90,34 @@
       "float": 0.046015013009,
       "seed": 299,
       "phase": "Phase 2"
+    },
+    {
+      "assetid": "53064613069",
+      "classid": "7993043130",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Broken Fang Gloves | Jade",
+      "market_hash_name": "★ Broken Fang Gloves | Jade (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "51725229079",
@@ -829,55 +859,7 @@
       ]
     },
     {
-      "assetid": "51840864520",
-      "classid": "191923205",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Name Tag",
-      "market_hash_name": "Name Tag",
-      "type": "Base Grade Tag",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6B6AE06BF96B69EB786B2DEB6C6B445005B18",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51840867772",
-      "classid": "191923205",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Name Tag",
-      "market_hash_name": "Name Tag",
-      "type": "Base Grade Tag",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6B6AE06BF96B69EB786B2DEB6C6B445005B18",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51840883679",
       "classid": "191923205",
       "instanceid": "143865972",
       "amount": 1,
@@ -1781,14 +1763,14 @@
       ]
     },
     {
-      "assetid": "28229727836",
+      "assetid": "53309167613",
       "classid": "7993044453",
       "instanceid": "6276778549",
       "amount": 1,
       "name": "Glock-18 | Gamma Doppler",
       "market_hash_name": "Glock-18 | Gamma Doppler (Well-Worn)",
       "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727EBDBCAA35E2F3317D43F1F3107330FB3CDEEC13477DD3255323F3427F3115F364720B8E04B95",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D7C72A78321C11D6CFD3F734DFFFD1E7D3EF532D0E21D4973DD2B5D2DFD4C713F1BFD6A7C06C0AF26E",
       "tags": [
         {
           "category": "Type",
@@ -1820,7 +1802,7 @@
       "phase": "Phase 4"
     },
     {
-      "assetid": "34872337825",
+      "assetid": "53309120038",
       "classid": "7993036593",
       "instanceid": "188530139",
       "amount": 1,
@@ -2127,6 +2109,30 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53041664511",
+      "classid": "2750358421",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Aces High Pin",
+      "market_hash_name": "Aces High Pin",
+      "type": "Exotic Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6B7B6389545B7B537E4B7F137B0B736FBE08E7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -6251,6 +6257,42 @@
       ]
     },
     {
+      "assetid": "53129881706",
+      "classid": "8637414428",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "AWP | Black Box",
+      "market_hash_name": "AWP | Black Box (Field-Tested)",
+      "type": "Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44422357382",
       "classid": "7993037153",
       "instanceid": "7177695984",
@@ -6393,7 +6435,7 @@
     {
       "assetid": "45514733329",
       "classid": "7993042985",
-      "instanceid": "908024440",
+      "instanceid": "907228863",
       "amount": 1,
       "name": "StatTrak™ P250 | Muertos",
       "market_hash_name": "StatTrak™ P250 | Muertos (Field-Tested)",
@@ -6473,7 +6515,7 @@
     {
       "assetid": "51901486195",
       "classid": "7993041807",
-      "instanceid": "6550876238",
+      "instanceid": "6598861214",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
@@ -6589,7 +6631,7 @@
     {
       "assetid": "39221999768",
       "classid": "7993042712",
-      "instanceid": "6279355885",
+      "instanceid": "6345079037",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Urban Hazard",
       "market_hash_name": "StatTrak™ Five-SeveN | Urban Hazard (Factory New)",
@@ -6781,7 +6823,7 @@
     {
       "assetid": "32525746780",
       "classid": "7993038824",
-      "instanceid": "188777313",
+      "instanceid": "188693243",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",
@@ -6889,7 +6931,7 @@
     {
       "assetid": "45878462212",
       "classid": "7993044423",
-      "instanceid": "918919502",
+      "instanceid": "904628493",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Minimal Wear)",

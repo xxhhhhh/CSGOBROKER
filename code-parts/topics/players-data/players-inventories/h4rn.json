@@ -7,16 +7,18 @@
   "name": "Deyvid Benchev",
   "nationality": "Bulgaria",
   "born": "07.06.2000",
+  "isContentCreator": false,
   "twitch": "h4rncs",
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-22T04:46:26.534Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 220,
-  "totalItemsGrouped": 146,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-25T04:52:55.357Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 219,
+  "totalItemsGrouped": 145,
   "items": [
     {
       "assetid": "53153061600",
@@ -34,6 +36,34 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53345265698",
+      "classid": "7993037136",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | King Snake",
+      "market_hash_name": "★ Driver Gloves | King Snake (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -937,50 +967,6 @@
       "amount": 1,
       "name": "AK-47 | The Oligarch",
       "market_hash_name": "AK-47 | The Oligarch (Well-Worn)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53166084837",
-      "classid": "7993036534",
-      "instanceid": "6276559894",
-      "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -2833,6 +2819,37 @@
       ]
     },
     {
+      "assetid": "53453047223",
+      "classid": "6216349484",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Lil' SAS",
+      "market_hash_name": "Charm | Lil' SAS",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53453047223"
+      ]
+    },
+    {
       "assetid": "33543520648",
       "classid": "5537026493",
       "instanceid": "0",
@@ -4472,37 +4489,6 @@
       ]
     },
     {
-      "assetid": "51038488170",
-      "classid": "7545312803",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Charm | Lil' Moments",
-      "market_hash_name": "Charm | Lil' Moments",
-      "type": "Remarkable Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51038488170"
-      ]
-    },
-    {
       "assetid": "51124155409",
       "classid": "7545312263",
       "instanceid": "0",
@@ -4699,7 +4685,7 @@
     {
       "assetid": "46841752076",
       "classid": "7993041406",
-      "instanceid": "6389753525",
+      "instanceid": "6296728875",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Field-Tested)",
@@ -4741,14 +4727,14 @@
       ]
     },
     {
-      "assetid": "44964068926",
+      "assetid": "53453056014",
       "classid": "7993037037",
-      "instanceid": "8703081660",
+      "instanceid": "8795576078",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Field-Tested)",
       "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDF71330B0F68CED7F3EF41C6E7CAFFC6F71B0E1E3BCC8FDC87CF9F23C3ADDBC7CEDF1CF7E2CFCF5F0EF207D808F28ACFA70173ADCAC7CEDF3AE6ADC0C7CDDF21E2F2CFA8A3748ACF0F47F8ADCAC7CCDF21E2A7DDBFC76DCED8C7CFDFC0F21F79558E8AB2BEB5F1822C22238F9F1623CEBA3DADB5",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4791,7 +4777,7 @@
     {
       "assetid": "52195987913",
       "classid": "7993041854",
-      "instanceid": "8780576740",
+      "instanceid": "8795529017",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Tooth Fairy",
       "market_hash_name": "StatTrak™ M4A4 | Tooth Fairy (Minimal Wear)",
@@ -4828,54 +4814,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49053541762",
-      "classid": "7993037525",
-      "instanceid": "8782881476",
-      "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Printstream",
-      "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7AE8A1ACB4DC6B726B4AA86D426C5A6352AADAFC9F692A3E226A3AAA69086F626B7AC05E086F62687AC05E086F62697AC05E0865626A7AE152571ABB79562F3EB44857087362697AB35777CE1A1755476A6ADEA857537266D42F4A095CD602501A6269FE3307",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -4927,7 +4865,7 @@
     {
       "assetid": "53166083278",
       "classid": "7993040263",
-      "instanceid": "8783096201",
+      "instanceid": "8795576079",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Field-Tested)",
@@ -5023,7 +4961,7 @@
     {
       "assetid": "48009104867",
       "classid": "7993042047",
-      "instanceid": "6586036319",
+      "instanceid": "6588599211",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Jambiya",
       "market_hash_name": "StatTrak™ Tec-9 | Jambiya (Field-Tested)",
@@ -5143,7 +5081,7 @@
     {
       "assetid": "52197129871",
       "classid": "7993039960",
-      "instanceid": "8769009366",
+      "instanceid": "8795529016",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Dezastre",
       "market_hash_name": "StatTrak™ SSG 08 | Dezastre (Factory New)",
@@ -5327,7 +5265,7 @@
     {
       "assetid": "52048946311",
       "classid": "7993041474",
-      "instanceid": "7309464484",
+      "instanceid": "8795439971",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Signal",
       "market_hash_name": "StatTrak™ Galil AR | Signal (Factory New)",
@@ -5459,7 +5397,7 @@
     {
       "assetid": "50835878857",
       "classid": "8246991029",
-      "instanceid": "188530382",
+      "instanceid": "188547437",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Field-Tested)",

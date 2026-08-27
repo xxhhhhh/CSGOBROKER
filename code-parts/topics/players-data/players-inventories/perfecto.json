@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a5ff08b-4b66-4797-998b-d78713979945",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-20T04:38:06.083Z",
+  "updatedAt": "2026-08-26T04:47:49.609Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 216,
-  "totalItemsGrouped": 209,
+  "totalItemsRaw": 218,
+  "totalItemsGrouped": 212,
   "items": [
     {
       "assetid": "53249462200",
@@ -208,6 +208,78 @@
       "market_hash_name": "★ Shadow Daggers | Ultraviolet (Field-Tested)",
       "type": "★ Covert Knife",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFC5314325A5CEDF468E8CC8EC4EADCEFD42E4C5818EFAC1EEE849B9CE8A435F514",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53358345703",
+      "classid": "7993044312",
+      "instanceid": "8765761147",
+      "amount": 1,
+      "name": "★ Survival Knife | Slaughter",
+      "market_hash_name": "★ Survival Knife | Slaughter (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53358276884",
+      "classid": "7993043063",
+      "instanceid": "8765761672",
+      "amount": 1,
+      "name": "★ Ursus Knife | Damascus Steel",
+      "market_hash_name": "★ Ursus Knife | Damascus Steel (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1385,14 +1457,14 @@
       ]
     },
     {
-      "assetid": "29429124979",
+      "assetid": "53470348406",
       "classid": "7993035748",
-      "instanceid": "6276335496",
+      "instanceid": "6850389515",
       "amount": 1,
       "name": "Desert Eagle | Printstream",
       "market_hash_name": "Desert Eagle | Printstream (Factory New)",
       "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242A1CCA1823F4A537290557A5462566AE78CE7BE5112D55530575A5242DC7B3AD8502256C537C59A",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3833,6 +3905,50 @@
       ]
     },
     {
+      "assetid": "53343999228",
+      "classid": "7993042255",
+      "instanceid": "6276326717",
+      "amount": 1,
+      "name": "Glock-18 | Blue Fissure",
+      "market_hash_name": "Glock-18 | Blue Fissure (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "41113343733",
       "classid": "7993036354",
       "instanceid": "188530139",
@@ -5204,7 +5320,7 @@
       "assetid": "53263839775",
       "classid": "6216373013",
       "instanceid": "519977179",
-      "amount": 3,
+      "amount": 2,
       "name": "Charm | Lil' Whiskers",
       "market_hash_name": "Charm | Lil' Whiskers",
       "type": "Remarkable Charm",
@@ -5229,7 +5345,6 @@
       ],
       "assetids": [
         "53263839775",
-        "53263838839",
         "53263837825"
       ]
     },
