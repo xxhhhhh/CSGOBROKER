@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Сайты Rust: как устроены платформы и как их сравнивать",
+        "paragraphs": [
+          "Сайты Rust — это сторонние платформы, где скины и предметы Rust, криптовалюта или деньги используются в игровых режимах и связанных сервисах. В зависимости от площадки доступны <a href=\"/rust/caseopening\">кейсы</a>, <a href=\"/rust/case-battle\">кейс-баттлы</a>, <a href=\"/rust/roulette\">рулетка</a>, <a href=\"/rust/coinflip\">монетка</a>, <a href=\"/rust/jackpot\">джекпот</a>, <a href=\"/rust/crash\">краш</a>, <a href=\"/rust/upgrader\">апгрейдер</a>, <a href=\"/rust/casino\">слоты и казино</a> или <a href=\"/rust/matchbetting\">ставки на матчи</a>.",
+          "CSGOBROKER разделяет Rust-сервисы по назначению: общий рейтинг помогает увидеть рынок целиком, а страницы отдельных режимов позволяют сравнивать площадки с похожей механикой. При выборе стоит учитывать не только бонусы, но и способы пополнения и вывода, комиссии, ограничения по странам и прозрачность правил.",
+          "Поддержка Rust-скинов отличается от сайта к сайту. Одни платформы принимают и выводят предметы Rust, другие используют их только для пополнения, а часть сервисов работает преимущественно с криптовалютой или обычными платёжными методами."
+        ]
+      },
+      "categories": {
+        "title": "Основные типы сайтов Rust",
+        "items": [
+          {
+            "title": "Кейсы и кейс-баттлы",
+            "paragraphs": [
+              "На <a href=\"/rust/caseopening\">сайтах с кейсами Rust</a> пользователь открывает виртуальные кейсы площадки и получает предмет или внутреннюю стоимость по результату. В <a href=\"/rust/case-battle\">кейс-баттлах</a> несколько участников открывают одинаковые наборы. Сравнивайте стоимость кейсов, опубликованные шансы, правила вывода и возможность проверить результат."
+            ]
+          },
+          {
+            "title": "Рулетка, монетка и джекпот",
+            "paragraphs": [
+              "<a href=\"/rust/roulette\">Рулетка</a>, <a href=\"/rust/coinflip\">монетка</a> и <a href=\"/rust/jackpot\">джекпот</a> используют разные форматы случайного исхода. Полезно проверять историю раундов, правила распределения банка, лимиты ставок и наличие Provably Fair или другой системы проверки."
+            ]
+          },
+          {
+            "title": "Краш и казино",
+            "paragraphs": [
+              "В <a href=\"/rust/crash\">Crash</a> множитель растёт до завершения раунда, а пользователь сам выбирает момент выхода. Часть Rust-площадок дополнительно предлагает <a href=\"/rust/casino\">слоты и казино-игры</a>. Здесь особенно важны понятные правила выплат, доступность в вашей стране и условия бонусов."
+            ]
+          },
+          {
+            "title": "Апгрейдеры Rust",
+            "paragraphs": [
+              "<a href=\"/rust/upgrader\">Rust-апгрейдеры</a> позволяют рискнуть предметом или балансом ради возможности получить более дорогой результат с указанной вероятностью. Смотрите на отображаемый шанс, оценку исходного и целевого предмета, ассортимент и способ расчёта цен."
+            ]
+          },
+          {
+            "title": "Ставки на матчи",
+            "paragraphs": [
+              "<a href=\"/rust/matchbetting\">Сайты со ставками на матчи</a> могут совмещать Rust-направление с киберспортом и традиционным спортом. Здесь важнее линия событий, коэффициенты, правила расчёта ставок, лимиты и скорость вывода после завершения события."
+            ]
+          },
+          {
+            "title": "Покупка, продажа и обмен Rust-скинов",
+            "paragraphs": [
+              "Если цель связана не с игровыми режимами, а с предметами, используйте разделы CSGOBROKER: <a href=\"/rust/marketplaces\">торговые площадки Rust</a>, <a href=\"/rust/buy-skins\">покупка скинов</a>, <a href=\"/rust/sell-skins\">продажа</a>, <a href=\"/rust/trade-skins\">обмен</a> и <a href=\"/rust/instant-sell\">быстрая продажа</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед выбором Rust-сайта",
+        "intro": "Площадки с похожими режимами могут заметно отличаться по условиям. Перед использованием лучше проверить несколько практических параметров.",
+        "items": [
+          {
+            "summary": "Пополнение и вывод Rust-скинов",
+            "body": "Проверьте, принимает ли сервис именно предметы Rust и можно ли вывести выигрыш обратно скинами. Некоторые площадки поддерживают предметы только на одной стороне операции или используют ограниченный инвентарь."
+          },
+          {
+            "summary": "Криптовалюта, карты и другие способы оплаты",
+            "body": "Набор методов зависит от сайта и страны. Учитывайте минимальные суммы, комиссии, скорость обработки и региональные ограничения."
+          },
+          {
+            "summary": "Прозрачность игровых правил",
+            "body": "Для режимов со случайным исходом важно понимать, как определяется результат, где доступна история раундов и есть ли инструмент проверки вроде Provably Fair."
+          },
+          {
+            "summary": "Оценка и ликвидность предметов",
+            "body": "Один и тот же Rust-скин может оцениваться площадками по-разному. На цену влияют источник котировок, спрос, доступный инвентарь и внутренняя маржа сервиса."
+          },
+          {
+            "summary": "Бонусы и условия их использования",
+            "body": "Приветственный бонус, бонус к пополнению или промокод оценивайте вместе с условиями отыгрыша, лимитами и правилами вывода. Большой процент сам по себе не гарантирует выгоду."
+          },
+          {
+            "summary": "KYC и региональные ограничения",
+            "body": "Верификация личности, доступность режимов и способы вывода могут зависеть от страны и суммы операции. Проверяйте эти условия до пополнения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты Rust",
+        "intro": "Рейтинг строится не вокруг одного бонуса или количества игр. Мы учитываем сочетание факторов, влияющих на практическое использование сервиса.",
+        "items": [
+          {
+            "summary": "Репутация и стабильность работы",
+            "body": "Учитываются история сервиса, стабильность основных функций, понятность правил и доступность поддержки. Существенные изменения могут повлиять на оценку."
+          },
+          {
+            "summary": "Пополнение, вывод и комиссии",
+            "body": "Мы смотрим на доступные методы, поддержку Rust-скинов, скорость обработки операций, комиссии и минимальные суммы."
+          },
+          {
+            "summary": "Игровые режимы и проверка результатов",
+            "body": "Оцениваются разнообразие режимов, ясность механики, история раундов и инструменты проверки честности, если сайт их предоставляет."
+          },
+          {
+            "summary": "Инвентарь Rust и оценка предметов",
+            "body": "Для сервисов со скинами важны ассортимент, ликвидность и прозрачность ценообразования. Ограниченный или нестабильный инвентарь снижает ценность вывода предметами."
+          },
+          {
+            "summary": "Бонусы и реальные условия",
+            "body": "Мы учитываем не только размер предложения, но и требования для активации, отыгрыша и вывода. Высокий процент не компенсирует неудобные ограничения."
+          },
+          {
+            "summary": "Удобство, мобильная версия и поддержка",
+            "body": "Навигация, скорость интерфейса, работа на мобильных устройствах и доступность поддержки влияют на итоговую оценку."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему условия и рейтинги Rust-сайтов меняются",
+        "paragraphs": [
+          "Rust-площадки регулярно меняют бонусы, способы оплаты, лимиты, игровые режимы и доступность по странам. Поэтому ранее актуальная информация может устаревать, а позиция сайта в рейтинге — меняться.",
+          "Меняется и рынок Rust-предметов: стоимость и ликвидность скинов влияют на инвентарь, оценку депозитов и условия вывода. Сервис может временно ограничить отдельные предметы или изменить внутренний курс.",
+          "Если нужен конкретный режим или операция со скинами, проверяйте не только общий рейтинг Rust, но и специализированную страницу CSGOBROKER — например <a href=\"/rust/caseopening\">кейсы</a>, <a href=\"/rust/upgrader\">апгрейдеры</a> или <a href=\"/rust/marketplaces\">маркетплейсы</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при работе с Rust-сайтами",
+        "intro": "Основные риски сторонних площадок связаны с фишингом, поддельными Steam-обменами, непрочитанными условиями вывода и случайными игровыми режимами.",
+        "items": [
+          {
+            "summary": "Проверяйте домен перед входом через Steam",
+            "body": "Фишинговые страницы могут копировать известные сервисы и имитировать окно авторизации Steam. Перед входом повторно проверьте адрес сайта."
+          },
+          {
+            "summary": "Проверяйте каждый Steam Trade Offer",
+            "body": "Сверяйте аккаунт отправителя и весь состав обмена перед подтверждением. Похожий ник, аватар или имя бота не гарантируют подлинность предложения."
+          },
+          {
+            "summary": "Читайте правила вывода и KYC заранее",
+            "body": "Минимальные суммы, комиссии и требования к верификации отличаются по способам оплаты. Лучше знать их до передачи скинов или пополнения."
+          },
+          {
+            "summary": "Учитывайте правила вашей страны и возрастные ограничения",
+            "body": "Доступность азартных игр зависит от юрисдикции. Используйте сервисы только если достигли установленного законом возраста и их использование разрешено в вашей стране."
+          },
+          {
+            "summary": "Не воспринимайте случайные режимы как способ заработка",
+            "body": "Кейсы, рулетка, краш и другие случайные режимы не гарантируют прибыль. Заранее определяйте лимит расходов, не пытайтесь отыгрывать потери и при необходимости используйте раздел <a href=\"/responsibility\">ответственной игры</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о сайтах Rust",
+        "items": [
+          {
+            "summary": "Что такое Rust-гемблинг сайты?",
+            "body": "Это сторонние сервисы, где предметы Rust, криптовалюта или деньги используются в режимах со случайным или соревновательным результатом."
+          },
+          {
+            "summary": "Можно ли пополнять баланс и выводить Rust-скины?",
+            "body": "На части сайтов — да, но поддержка различается. Одни позволяют и депозит, и вывод предметами, другие поддерживают только одну из операций."
+          },
+          {
+            "summary": "Какие режимы встречаются на Rust-сайтах?",
+            "body": "Часто встречаются <a href=\"/rust/caseopening\">кейсы</a>, <a href=\"/rust/roulette\">рулетка</a>, <a href=\"/rust/coinflip\">монетка</a>, <a href=\"/rust/jackpot\">джекпот</a>, <a href=\"/rust/crash\">краш</a>, <a href=\"/rust/upgrader\">апгрейдер</a> и <a href=\"/rust/case-battle\">кейс-баттлы</a>."
+          },
+          {
+            "summary": "Что такое Provably Fair?",
+            "body": "Provably Fair — криптографический механизм проверки результата раунда. Реализация отличается между сайтами, поэтому важно понимать, как именно работает проверка на конкретной площадке."
+          },
+          {
+            "summary": "Где купить или продать Rust-скины без гемблинга?",
+            "body": "Для обычной торговли используйте <a href=\"/rust/marketplaces\">маркетплейсы Rust</a>. На CSGOBROKER также есть разделы <a href=\"/rust/buy-skins\">покупки</a>, <a href=\"/rust/sell-skins\">продажи</a>, <a href=\"/rust/trade-skins\">обмена</a> и <a href=\"/rust/instant-sell\">быстрой продажи</a>."
+          },
+          {
+            "summary": "Чем Rust-сайт отличается от CS2-сайта?",
+            "body": "Механики могут быть похожи, но различаются поддерживаемые предметы, инвентарь и аудитория. Rust-площадки ориентированы на экономику предметов Rust."
+          },
+          {
+            "summary": "Почему рейтинг Rust-сайтов на CSGOBROKER меняется?",
+            "body": "Сервисы меняют бонусы, комиссии, вывод, режимы, инвентарь и региональные ограничения. Когда это влияет на использование, оценка и позиция могут быть пересмотрены."
+          },
+          {
+            "summary": "Как выбрать между общим рейтингом и рейтингом режима?",
+            "body": "Общий рейтинг подходит для обзора рынка. Если нужен конкретный формат, откройте соответствующую категорию — например <a href=\"/rust/roulette\">рулетку</a>, <a href=\"/rust/crash\">краш</a> или <a href=\"/rust/matchbetting\">ставки на матчи</a>."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Sites: How Platforms Work and How to Compare Them",
+        "paragraphs": [
+          "Rust sites are third-party platforms where Rust skins and items, cryptocurrency, or money can be used in game modes and related services. Depending on the platform, this may include <a href=\"/rust/caseopening\">case opening</a>, <a href=\"/rust/case-battle\">case battles</a>, <a href=\"/rust/roulette\">roulette</a>, <a href=\"/rust/coinflip\">coinflip</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a>, <a href=\"/rust/casino\">slots and casino games</a>, or <a href=\"/rust/matchbetting\">match betting</a>.",
+          "CSGOBROKER separates Rust services by purpose. The main ranking gives a broad market overview, while dedicated pages make it easier to compare sites with similar mechanics. Bonuses are only one factor: deposit and withdrawal options, fees, regional restrictions, and rule transparency also matter.",
+          "Rust skin support varies between services. Some platforms accept and withdraw Rust items, some use them only for deposits, and others mainly work with cryptocurrency or standard payment methods."
+        ]
+      },
+      "categories": {
+        "title": "Main Types of Rust Sites",
+        "items": [
+          {
+            "title": "Case Opening and Case Battles",
+            "paragraphs": [
+              "On <a href=\"/rust/caseopening\">Rust case opening sites</a>, users open virtual cases and receive an item or internal value based on the result. In <a href=\"/rust/case-battle\">case battles</a>, several players open the same sets. Compare case prices, published odds, withdrawal rules, and result verification."
+            ]
+          },
+          {
+            "title": "Roulette, Coinflip and Jackpot",
+            "paragraphs": [
+              "<a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/coinflip\">coinflip</a>, and <a href=\"/rust/jackpot\">jackpot</a> use different random-outcome formats. Check round history, pot-distribution rules, betting limits, and whether Provably Fair or another verification system is available."
+            ]
+          },
+          {
+            "title": "Crash and Casino",
+            "paragraphs": [
+              "In <a href=\"/rust/crash\">Crash</a>, the multiplier rises until the round ends and the player chooses when to cash out. Some Rust platforms also offer <a href=\"/rust/casino\">slots and casino games</a>. Clear payout rules, regional availability, and bonus terms are especially important."
+            ]
+          },
+          {
+            "title": "Rust Upgraders",
+            "paragraphs": [
+              "<a href=\"/rust/upgrader\">Rust upgrader sites</a> let users risk an item or balance for a chance to receive a more valuable result at a displayed probability. Compare the shown chance, source and target item valuation, inventory, and pricing method."
+            ]
+          },
+          {
+            "title": "Match Betting",
+            "paragraphs": [
+              "<a href=\"/rust/matchbetting\">Match betting sites</a> may combine a Rust-focused section with esports and traditional sports markets. Event coverage, odds, settlement rules, limits, and withdrawal speed become more relevant here."
+            ]
+          },
+          {
+            "title": "Buying, Selling and Trading Rust Skins",
+            "paragraphs": [
+              "For item trading rather than game modes, use CSGOBROKER’s dedicated sections for <a href=\"/rust/marketplaces\">Rust marketplaces</a>, <a href=\"/rust/buy-skins\">buying skins</a>, <a href=\"/rust/sell-skins\">selling</a>, <a href=\"/rust/trade-skins\">trading</a>, and <a href=\"/rust/instant-sell\">instant selling</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Choosing a Rust Site",
+        "intro": "Platforms with similar modes can still have very different terms. Check several practical factors before using one.",
+        "items": [
+          {
+            "summary": "Rust skin deposits and withdrawals",
+            "body": "Check whether the service accepts Rust items and whether winnings can be withdrawn back as skins. Some sites support items only on one side of the transaction or use a limited withdrawal inventory."
+          },
+          {
+            "summary": "Crypto, cards and other payment methods",
+            "body": "Available methods depend on the site and country. Consider minimum amounts, fees, processing speed, and regional restrictions."
+          },
+          {
+            "summary": "Transparency of game rules",
+            "body": "For random-outcome modes, it should be clear how results are determined, where round history can be viewed, and whether a tool such as Provably Fair is provided."
+          },
+          {
+            "summary": "Item valuation and liquidity",
+            "body": "The same Rust skin can be valued differently across platforms. Pricing sources, demand, inventory, and the service margin all affect the result."
+          },
+          {
+            "summary": "Bonuses and their conditions",
+            "body": "Review welcome bonuses, deposit bonuses, and promo codes together with wagering rules, limits, and withdrawal restrictions. A large percentage does not automatically mean a better offer."
+          },
+          {
+            "summary": "KYC and regional restrictions",
+            "body": "Identity verification, game availability, and withdrawal methods can depend on country and transaction size. Review these conditions before depositing."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Sites",
+        "intro": "The ranking is not built around a single bonus or number of games. We consider several practical factors that affect the service experience.",
+        "items": [
+          {
+            "summary": "Reputation and operational stability",
+            "body": "We consider operating history, stability of core features, clarity of rules, and support availability. Significant changes can affect the score."
+          },
+          {
+            "summary": "Deposits, withdrawals and fees",
+            "body": "We review payment methods, Rust skin support, processing speed, fees, and minimum amounts."
+          },
+          {
+            "summary": "Game modes and result verification",
+            "body": "We consider the range of modes, clarity of mechanics, round history, and fairness-verification tools when available."
+          },
+          {
+            "summary": "Rust inventory and item pricing",
+            "body": "For skin-based services, inventory, item liquidity, and pricing transparency matter. Limited or unstable inventory reduces the practical value of skin withdrawals."
+          },
+          {
+            "summary": "Bonuses and real conditions",
+            "body": "We look beyond the headline amount to activation, wagering, and withdrawal requirements. A high percentage is less useful when the terms are restrictive."
+          },
+          {
+            "summary": "Usability, mobile experience and support",
+            "body": "Navigation, interface speed, mobile usability, and support availability contribute to the overall score."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Site Terms and Rankings Change",
+        "paragraphs": [
+          "Rust platforms regularly change bonuses, payment methods, limits, game modes, and country availability. Information can therefore become outdated and ranking positions may change.",
+          "The Rust item market changes independently. Skin value and liquidity affect inventory, deposit valuation, and withdrawal conditions. A service may temporarily restrict certain items or adjust internal pricing.",
+          "For a specific mode or skin transaction, check both the overall Rust ranking and the relevant CSGOBROKER category, such as <a href=\"/rust/caseopening\">case opening</a>, <a href=\"/rust/upgrader\">upgraders</a>, or <a href=\"/rust/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Using Rust Sites",
+        "intro": "The main risks on third-party platforms involve phishing, fake Steam trades, overlooked withdrawal terms, and random-outcome gambling modes.",
+        "items": [
+          {
+            "summary": "Check the domain before signing in with Steam",
+            "body": "Phishing pages can copy known services and imitate Steam login windows. Recheck the address before signing in."
+          },
+          {
+            "summary": "Verify every Steam Trade Offer",
+            "body": "Check the sender account and every item before confirming. A similar nickname, avatar, or bot name does not prove the trade is genuine."
+          },
+          {
+            "summary": "Read withdrawal and KYC rules in advance",
+            "body": "Minimum amounts, fees, and identity-verification requirements differ by payment method. Review them before sending skins or depositing funds."
+          },
+          {
+            "summary": "Consider local rules and age restrictions",
+            "body": "Gambling availability depends on jurisdiction. Use these services only if you meet the legal age requirement and their use is permitted where you live."
+          },
+          {
+            "summary": "Do not treat random modes as a way to earn money",
+            "body": "Cases, roulette, crash, and other random modes do not guarantee profit. Set a spending limit, avoid chasing losses, and use the <a href=\"/responsibility\">responsible gambling</a> information if needed."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Sites",
+        "items": [
+          {
+            "summary": "What are Rust gambling sites?",
+            "body": "They are third-party services where Rust items, cryptocurrency, or money can be used in game modes with random or competitive outcomes."
+          },
+          {
+            "summary": "Can I deposit and withdraw Rust skins?",
+            "body": "On some sites, yes, but support varies. Some platforms allow both deposits and withdrawals with items, while others support only one operation."
+          },
+          {
+            "summary": "Which game modes are common on Rust sites?",
+            "body": "Common modes include <a href=\"/rust/caseopening\">case opening</a>, <a href=\"/rust/roulette\">roulette</a>, <a href=\"/rust/coinflip\">coinflip</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a>, and <a href=\"/rust/case-battle\">case battles</a>."
+          },
+          {
+            "summary": "What is Provably Fair?",
+            "body": "Provably Fair is a cryptographic method for verifying a round result. Implementation differs by site, so check how verification works on the platform you use."
+          },
+          {
+            "summary": "Where can I buy or sell Rust skins without gambling?",
+            "body": "For regular trading, use <a href=\"/rust/marketplaces\">Rust marketplaces</a>. CSGOBROKER also has sections for <a href=\"/rust/buy-skins\">buying</a>, <a href=\"/rust/sell-skins\">selling</a>, <a href=\"/rust/trade-skins\">trading</a>, and <a href=\"/rust/instant-sell\">instant selling</a>."
+          },
+          {
+            "summary": "How is a Rust site different from a CS2 site?",
+            "body": "The mechanics can be similar, but supported items, inventories, and audiences differ. Rust platforms focus on the Rust item economy."
+          },
+          {
+            "summary": "Why does the Rust ranking on CSGOBROKER change?",
+            "body": "Platforms change bonuses, fees, withdrawal methods, modes, inventory, and regional restrictions. Scores can be reviewed when these changes affect practical use."
+          },
+          {
+            "summary": "Should I use the main ranking or a mode-specific ranking?",
+            "body": "Use the main ranking for a broad overview. If you know the format you want, compare similar services in <a href=\"/rust/roulette\">roulette</a>, <a href=\"/rust/crash\">crash</a>, or <a href=\"/rust/matchbetting\">match betting</a>."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sitios de Rust: cómo funcionan y cómo compararlos",
+        "paragraphs": [
+          "Los sitios de Rust son plataformas de terceros donde las skins y objetos de Rust, las criptomonedas o el dinero pueden utilizarse en distintos modos. Según la plataforma pueden ofrecer <a href=\"/rust/caseopening\">cajas</a>, <a href=\"/rust/case-battle\">batallas de cajas</a>, <a href=\"/rust/roulette\">ruleta</a>, <a href=\"/rust/coinflip\">cara o cruz</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a>, <a href=\"/rust/casino\">slots y casino</a> o <a href=\"/rust/matchbetting\">apuestas en partidas</a>.",
+          "CSGOBROKER separa los servicios de Rust por finalidad. El ranking general ofrece una visión amplia y las páginas específicas permiten comparar sitios con mecánicas parecidas. Además del bono, conviene revisar depósitos, retiros, comisiones, restricciones regionales y claridad de las reglas.",
+          "La compatibilidad con skins de Rust varía. Algunas plataformas permiten depositar y retirar objetos, otras solo los aceptan para depósito y algunas trabajan principalmente con criptomonedas o métodos de pago tradicionales."
+        ]
+      },
+      "categories": {
+        "title": "Principales tipos de sitios de Rust",
+        "items": [
+          {
+            "title": "Cajas y batallas de cajas",
+            "paragraphs": [
+              "En los <a href=\"/rust/caseopening\">sitios de cajas de Rust</a> se abren cajas virtuales y se recibe un objeto o valor según el resultado. En las <a href=\"/rust/case-battle\">batallas de cajas</a> participan varios jugadores. Compara precios, probabilidades publicadas, reglas de retiro y verificación."
+            ]
+          },
+          {
+            "title": "Ruleta, cara o cruz y jackpot",
+            "paragraphs": [
+              "La <a href=\"/rust/roulette\">ruleta</a>, el <a href=\"/rust/coinflip\">cara o cruz</a> y el <a href=\"/rust/jackpot\">jackpot</a> usan distintos formatos aleatorios. Revisa historial, reglas del bote, límites y sistemas como Provably Fair."
+            ]
+          },
+          {
+            "title": "Crash y casino",
+            "paragraphs": [
+              "En <a href=\"/rust/crash\">Crash</a> el multiplicador sube hasta que termina la ronda. Algunas plataformas también ofrecen <a href=\"/rust/casino\">slots y casino</a>. Son importantes las reglas de pago, la disponibilidad regional y los bonos."
+            ]
+          },
+          {
+            "title": "Upgraders de Rust",
+            "paragraphs": [
+              "Los <a href=\"/rust/upgrader\">upgraders de Rust</a> permiten arriesgar un objeto o saldo para intentar conseguir uno de mayor valor. Compara la probabilidad, la valoración de objetos, el inventario y el sistema de precios."
+            ]
+          },
+          {
+            "title": "Apuestas en partidas",
+            "paragraphs": [
+              "Los <a href=\"/rust/matchbetting\">sitios de apuestas</a> pueden combinar Rust con esports y deportes tradicionales. Compara eventos, cuotas, reglas, límites y velocidad de retiro."
+            ]
+          },
+          {
+            "title": "Comprar, vender e intercambiar skins",
+            "paragraphs": [
+              "Para operar con objetos utiliza las secciones de CSGOBROKER: <a href=\"/rust/marketplaces\">mercados</a>, <a href=\"/rust/buy-skins\">compra</a>, <a href=\"/rust/sell-skins\">venta</a>, <a href=\"/rust/trade-skins\">intercambio</a> y <a href=\"/rust/instant-sell\">venta instantánea</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de elegir un sitio de Rust",
+        "intro": "Dos plataformas con modos parecidos pueden tener condiciones muy diferentes. Revisa varios factores prácticos antes de utilizarlas.",
+        "items": [
+          {
+            "summary": "Depósitos y retiros con skins de Rust",
+            "body": "Comprueba si el servicio acepta objetos de Rust y si permite retirar las ganancias en skins. Algunos sitios solo admiten objetos en una parte de la operación."
+          },
+          {
+            "summary": "Criptomonedas, tarjetas y otros métodos",
+            "body": "Los métodos dependen del sitio y del país. Revisa mínimos, comisiones, velocidad de procesamiento y restricciones."
+          },
+          {
+            "summary": "Transparencia de las reglas",
+            "body": "En modos aleatorios debe quedar claro cómo se determina el resultado, dónde consultar el historial y si existe Provably Fair u otra herramienta de verificación."
+          },
+          {
+            "summary": "Valoración y liquidez",
+            "body": "La misma skin puede recibir valoraciones diferentes. Las fuentes de precios, la demanda, el inventario y el margen del servicio influyen en el valor."
+          },
+          {
+            "summary": "Bonos y condiciones",
+            "body": "Compara los bonos junto con requisitos de apuesta, límites y reglas de retiro. Un porcentaje alto no garantiza una oferta mejor."
+          },
+          {
+            "summary": "KYC y restricciones regionales",
+            "body": "La verificación de identidad, la disponibilidad de juegos y los retiros pueden depender del país y del importe. Compruébalo antes de depositar."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de Rust",
+        "intro": "El ranking combina factores prácticos y no se basa en un solo bono o en la cantidad de juegos.",
+        "items": [
+          {
+            "summary": "Reputación y estabilidad",
+            "body": "Consideramos historial, estabilidad de las funciones, claridad de las reglas y disponibilidad del soporte."
+          },
+          {
+            "summary": "Depósitos, retiros y comisiones",
+            "body": "Revisamos métodos disponibles, soporte para skins de Rust, velocidad, comisiones y mínimos."
+          },
+          {
+            "summary": "Modos y verificación",
+            "body": "Valoramos variedad, claridad de las mecánicas, historial de rondas y herramientas de verificación cuando existen."
+          },
+          {
+            "summary": "Inventario y precios de Rust",
+            "body": "Importan el inventario, la liquidez y la transparencia de precios. Un inventario limitado reduce la utilidad del retiro en skins."
+          },
+          {
+            "summary": "Bonos y condiciones reales",
+            "body": "Analizamos activación, requisitos de apuesta y retiro, no solo el porcentaje anunciado."
+          },
+          {
+            "summary": "Usabilidad, móvil y soporte",
+            "body": "La navegación, velocidad, experiencia móvil y soporte influyen en la evaluación general."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las condiciones y los rankings de Rust",
+        "paragraphs": [
+          "Las plataformas cambian bonos, pagos, límites, modos y disponibilidad por país, por lo que la información y las posiciones pueden cambiar.",
+          "También cambia el mercado de objetos de Rust. Precio y liquidez afectan al inventario, la valoración de depósitos y los retiros.",
+          "Para una función concreta, consulta también la categoría de CSGOBROKER correspondiente, como <a href=\"/rust/caseopening\">cajas</a>, <a href=\"/rust/upgrader\">upgraders</a> o <a href=\"/rust/marketplaces\">mercados</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al utilizar sitios de Rust",
+        "intro": "Los riesgos principales incluyen phishing, intercambios falsos de Steam, condiciones de retiro ignoradas y modos aleatorios.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio antes de iniciar sesión con Steam",
+            "body": "Las páginas de phishing pueden copiar servicios conocidos. Comprueba siempre la dirección antes de iniciar sesión."
+          },
+          {
+            "summary": "Revisa cada Steam Trade Offer",
+            "body": "Comprueba la cuenta remitente y todos los objetos antes de confirmar. Un nombre o avatar parecido no garantiza autenticidad."
+          },
+          {
+            "summary": "Lee las reglas de retiro y KYC",
+            "body": "Los mínimos, comisiones y requisitos de verificación cambian según el método. Revísalos antes de enviar skins o depositar."
+          },
+          {
+            "summary": "Ten en cuenta la legislación local y la edad mínima",
+            "body": "La disponibilidad del gambling depende de la jurisdicción. Utiliza estos servicios solo si cumples la edad legal y están permitidos donde vives."
+          },
+          {
+            "summary": "No trates los modos aleatorios como una forma de ganar dinero",
+            "body": "Cajas, ruleta y crash no garantizan beneficios. Define límites, no persigas pérdidas y consulta <a href=\"/responsibility\">juego responsable</a> si lo necesitas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre sitios de Rust",
+        "items": [
+          {
+            "summary": "¿Qué son los sitios de gambling de Rust?",
+            "body": "Son servicios de terceros donde objetos de Rust, criptomonedas o dinero se utilizan en modos aleatorios o competitivos."
+          },
+          {
+            "summary": "¿Puedo depositar y retirar skins de Rust?",
+            "body": "En algunos sitios sí. La compatibilidad varía y algunos solo permiten una de las dos operaciones."
+          },
+          {
+            "summary": "¿Qué modos son habituales?",
+            "body": "Son comunes <a href=\"/rust/caseopening\">cajas</a>, <a href=\"/rust/roulette\">ruleta</a>, <a href=\"/rust/coinflip\">cara o cruz</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a> y <a href=\"/rust/case-battle\">batallas de cajas</a>."
+          },
+          {
+            "summary": "¿Qué es Provably Fair?",
+            "body": "Es un método criptográfico para verificar el resultado de una ronda. Su implementación varía entre plataformas."
+          },
+          {
+            "summary": "¿Dónde comprar o vender skins sin gambling?",
+            "body": "Usa <a href=\"/rust/marketplaces\">mercados de Rust</a>. CSGOBROKER también tiene secciones para <a href=\"/rust/buy-skins\">comprar</a>, <a href=\"/rust/sell-skins\">vender</a>, <a href=\"/rust/trade-skins\">intercambiar</a> y <a href=\"/rust/instant-sell\">vender al instante</a>."
+          },
+          {
+            "summary": "¿En qué se diferencia un sitio de Rust de uno de CS2?",
+            "body": "Las mecánicas pueden ser similares, pero cambian los objetos, el inventario y la audiencia."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Las plataformas cambian bonos, comisiones, retiros, modos, inventario y restricciones. La puntuación puede revisarse cuando esto afecta al uso."
+          },
+          {
+            "summary": "¿Ranking general o específico?",
+            "body": "Usa el general para una visión amplia. Para un formato concreto compara sitios en <a href=\"/rust/roulette\">ruleta</a>, <a href=\"/rust/crash\">crash</a> o <a href=\"/rust/matchbetting\">apuestas</a>."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sites de Rust: como funcionam e como comparar",
+        "paragraphs": [
+          "Sites de Rust são plataformas de terceiros onde skins e itens de Rust, criptomoedas ou dinheiro podem ser usados em diferentes modos. Dependendo do site, podem existir <a href=\"/rust/caseopening\">caixas</a>, <a href=\"/rust/case-battle\">batalhas de caixas</a>, <a href=\"/rust/roulette\">roleta</a>, <a href=\"/rust/coinflip\">cara ou coroa</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a>, <a href=\"/rust/casino\">slots e cassino</a> ou <a href=\"/rust/matchbetting\">apostas em partidas</a>.",
+          "A CSGOBROKER separa os serviços de Rust por finalidade. O ranking geral mostra o mercado, enquanto páginas específicas facilitam a comparação de sites com mecânicas semelhantes. Além do bônus, vale conferir depósitos, saques, taxas, restrições regionais e clareza das regras.",
+          "O suporte a skins de Rust varia. Algumas plataformas aceitam e permitem sacar itens, outras usam skins apenas em depósitos e algumas trabalham principalmente com criptomoedas ou métodos tradicionais."
+        ]
+      },
+      "categories": {
+        "title": "Principais tipos de sites de Rust",
+        "items": [
+          {
+            "title": "Caixas e batalhas de caixas",
+            "paragraphs": [
+              "Nos <a href=\"/rust/caseopening\">sites de caixas de Rust</a>, o usuário abre caixas virtuais e recebe um item ou valor conforme o resultado. Nas <a href=\"/rust/case-battle\">batalhas de caixas</a>, vários jogadores participam. Compare preços, probabilidades, regras de saque e verificação."
+            ]
+          },
+          {
+            "title": "Roleta, cara ou coroa e jackpot",
+            "paragraphs": [
+              "<a href=\"/rust/roulette\">Roleta</a>, <a href=\"/rust/coinflip\">cara ou coroa</a> e <a href=\"/rust/jackpot\">jackpot</a> usam formatos aleatórios diferentes. Confira histórico, regras do pote, limites e sistemas como Provably Fair."
+            ]
+          },
+          {
+            "title": "Crash e cassino",
+            "paragraphs": [
+              "No <a href=\"/rust/crash\">Crash</a>, o multiplicador cresce até a rodada terminar. Algumas plataformas também oferecem <a href=\"/rust/casino\">slots e cassino</a>. Regras de pagamento, disponibilidade regional e bônus são importantes."
+            ]
+          },
+          {
+            "title": "Upgraders de Rust",
+            "paragraphs": [
+              "Os <a href=\"/rust/upgrader\">upgraders de Rust</a> permitem arriscar um item ou saldo para tentar obter algo mais valioso. Compare chance exibida, avaliação dos itens, inventário e método de preços."
+            ]
+          },
+          {
+            "title": "Apostas em partidas",
+            "paragraphs": [
+              "Os <a href=\"/rust/matchbetting\">sites de apostas</a> podem combinar Rust com esports e esportes tradicionais. Compare eventos, odds, regras, limites e velocidade de saque."
+            ]
+          },
+          {
+            "title": "Comprar, vender e trocar skins",
+            "paragraphs": [
+              "Para negociar itens, use as áreas da CSGOBROKER: <a href=\"/rust/marketplaces\">mercados</a>, <a href=\"/rust/buy-skins\">compra</a>, <a href=\"/rust/sell-skins\">venda</a>, <a href=\"/rust/trade-skins\">troca</a> e <a href=\"/rust/instant-sell\">venda instantânea</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de escolher um site de Rust",
+        "intro": "Plataformas parecidas podem ter condições muito diferentes. Confira vários fatores práticos antes de usar uma delas.",
+        "items": [
+          {
+            "summary": "Depósitos e saques com skins de Rust",
+            "body": "Confira se o serviço aceita itens de Rust e se os ganhos podem ser sacados em skins. Alguns sites suportam itens apenas em um lado da operação."
+          },
+          {
+            "summary": "Cripto, cartões e outros métodos",
+            "body": "Os métodos dependem do site e do país. Considere mínimos, taxas, velocidade e restrições regionais."
+          },
+          {
+            "summary": "Transparência das regras",
+            "body": "Em modos aleatórios deve ficar claro como o resultado é definido, onde ver o histórico e se existe Provably Fair ou outra ferramenta."
+          },
+          {
+            "summary": "Avaliação e liquidez",
+            "body": "A mesma skin pode ter valores diferentes entre plataformas. Fontes de preço, demanda, inventário e margem do serviço influenciam o valor."
+          },
+          {
+            "summary": "Bônus e condições",
+            "body": "Compare bônus junto com requisitos de aposta, limites e regras de saque. Um percentual alto não garante uma oferta melhor."
+          },
+          {
+            "summary": "KYC e restrições regionais",
+            "body": "Verificação, disponibilidade e saques podem depender do país e do valor. Confira antes de depositar."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de Rust",
+        "intro": "O ranking combina fatores práticos e não depende de um único bônus ou do número de jogos.",
+        "items": [
+          {
+            "summary": "Reputação e estabilidade",
+            "body": "Consideramos histórico, estabilidade das funções, clareza das regras e suporte."
+          },
+          {
+            "summary": "Depósitos, saques e taxas",
+            "body": "Analisamos métodos disponíveis, suporte a skins de Rust, velocidade, taxas e mínimos."
+          },
+          {
+            "summary": "Modos e verificação",
+            "body": "Avaliamos variedade, clareza das mecânicas, histórico de rodadas e ferramentas de verificação."
+          },
+          {
+            "summary": "Inventário e preços de Rust",
+            "body": "Inventário, liquidez e transparência de preços são importantes. Inventário limitado reduz a utilidade dos saques em skins."
+          },
+          {
+            "summary": "Bônus e condições reais",
+            "body": "Analisamos ativação, requisitos de aposta e saque, não apenas o percentual anunciado."
+          },
+          {
+            "summary": "Usabilidade, mobile e suporte",
+            "body": "Navegação, velocidade, experiência mobile e suporte influenciam a nota geral."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que condições e rankings de Rust mudam",
+        "paragraphs": [
+          "Plataformas alteram bônus, pagamentos, limites, modos e disponibilidade por país, então informações e posições podem mudar.",
+          "O mercado de itens também muda. Preço e liquidez afetam inventário, avaliação de depósitos e saques.",
+          "Para uma função específica, consulte também a categoria da CSGOBROKER, como <a href=\"/rust/caseopening\">caixas</a>, <a href=\"/rust/upgrader\">upgraders</a> ou <a href=\"/rust/marketplaces\">mercados</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao usar sites de Rust",
+        "intro": "Os principais riscos incluem phishing, trocas falsas da Steam, regras de saque ignoradas e modos aleatórios.",
+        "items": [
+          {
+            "summary": "Confira o domínio antes de entrar com a Steam",
+            "body": "Páginas de phishing podem copiar serviços conhecidos. Confira o endereço antes de entrar."
+          },
+          {
+            "summary": "Revise cada Steam Trade Offer",
+            "body": "Confira a conta remetente e todos os itens antes de confirmar. Nome ou avatar parecido não garante autenticidade."
+          },
+          {
+            "summary": "Leia regras de saque e KYC",
+            "body": "Mínimos, taxas e verificação variam por método. Confira antes de enviar skins ou depositar."
+          },
+          {
+            "summary": "Considere regras locais e idade mínima",
+            "body": "A disponibilidade de gambling depende da jurisdição. Use os serviços apenas se tiver idade legal e eles forem permitidos onde você vive."
+          },
+          {
+            "summary": "Não trate modos aleatórios como forma de ganhar dinheiro",
+            "body": "Caixas, roleta e crash não garantem lucro. Defina limites, não persiga perdas e consulte <a href=\"/responsibility\">jogo responsável</a> se necessário."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre sites de Rust",
+        "items": [
+          {
+            "summary": "O que são sites de gambling de Rust?",
+            "body": "São serviços de terceiros onde itens de Rust, criptomoedas ou dinheiro são usados em modos aleatórios ou competitivos."
+          },
+          {
+            "summary": "Posso depositar e sacar skins de Rust?",
+            "body": "Em alguns sites, sim. O suporte varia e alguns permitem apenas uma das operações."
+          },
+          {
+            "summary": "Quais modos são comuns?",
+            "body": "São comuns <a href=\"/rust/caseopening\">caixas</a>, <a href=\"/rust/roulette\">roleta</a>, <a href=\"/rust/coinflip\">cara ou coroa</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a> e <a href=\"/rust/case-battle\">batalhas de caixas</a>."
+          },
+          {
+            "summary": "O que é Provably Fair?",
+            "body": "É um método criptográfico para verificar o resultado de uma rodada. A implementação varia entre plataformas."
+          },
+          {
+            "summary": "Onde comprar ou vender skins sem gambling?",
+            "body": "Use <a href=\"/rust/marketplaces\">mercados de Rust</a>. A CSGOBROKER também tem áreas para <a href=\"/rust/buy-skins\">comprar</a>, <a href=\"/rust/sell-skins\">vender</a>, <a href=\"/rust/trade-skins\">trocar</a> e <a href=\"/rust/instant-sell\">vender instantaneamente</a>."
+          },
+          {
+            "summary": "Qual a diferença entre Rust e CS2?",
+            "body": "As mecânicas podem ser parecidas, mas itens, inventário e público são diferentes."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Plataformas mudam bônus, taxas, saques, modos, inventário e restrições. A nota pode ser revista quando isso afeta o uso."
+          },
+          {
+            "summary": "Ranking geral ou específico?",
+            "body": "Use o geral para uma visão ampla. Para um formato específico compare sites em <a href=\"/rust/roulette\">roleta</a>, <a href=\"/rust/crash\">crash</a> ou <a href=\"/rust/matchbetting\">apostas</a>."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Siteleri: Nasıl Çalışır ve Nasıl Karşılaştırılır?",
+        "paragraphs": [
+          "Rust siteleri, Rust skinleri ve eşyalarının, kripto paranın veya paranın farklı modlarda kullanılabildiği üçüncü taraf platformlardır. Siteye göre <a href=\"/rust/caseopening\">kasa açma</a>, <a href=\"/rust/case-battle\">kasa savaşları</a>, <a href=\"/rust/roulette\">rulet</a>, <a href=\"/rust/coinflip\">yazı tura</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a>, <a href=\"/rust/casino\">slot ve casino</a> veya <a href=\"/rust/matchbetting\">maç bahisleri</a> sunulabilir.",
+          "CSGOBROKER Rust hizmetlerini amacına göre ayırır. Genel sıralama pazarı gösterirken özel sayfalar benzer mekaniklere sahip siteleri karşılaştırmayı kolaylaştırır. Bonusun yanında yatırma ve çekme seçenekleri, ücretler, bölgesel kısıtlamalar ve kuralların açıklığı da önemlidir.",
+          "Rust skin desteği siteden siteye değişir. Bazı platformlar eşyaları yatırma ve çekmede destekler, bazıları yalnızca yatırmada kullanır, bazıları ise daha çok kripto veya standart ödeme yöntemleriyle çalışır."
+        ]
+      },
+      "categories": {
+        "title": "Başlıca Rust Sitesi Türleri",
+        "items": [
+          {
+            "title": "Kasa Açma ve Kasa Savaşları",
+            "paragraphs": [
+              "<a href=\"/rust/caseopening\">Rust kasa sitelerinde</a> sanal kasalar açılır ve sonuca göre eşya veya bakiye değeri alınır. <a href=\"/rust/case-battle\">Kasa savaşlarında</a> birden fazla oyuncu katılır. Kasa fiyatlarını, oranları, çekim kurallarını ve doğrulamayı karşılaştırın."
+            ]
+          },
+          {
+            "title": "Rulet, Yazı Tura ve Jackpot",
+            "paragraphs": [
+              "<a href=\"/rust/roulette\">Rulet</a>, <a href=\"/rust/coinflip\">yazı tura</a> ve <a href=\"/rust/jackpot\">jackpot</a> farklı rastgele sonuç biçimleri kullanır. Tur geçmişi, havuz kuralları, limitler ve Provably Fair gibi sistemleri kontrol edin."
+            ]
+          },
+          {
+            "title": "Crash ve Casino",
+            "paragraphs": [
+              "<a href=\"/rust/crash\">Crash</a> modunda çarpan tur bitene kadar yükselir. Bazı platformlar <a href=\"/rust/casino\">slot ve casino oyunları</a> da sunar. Ödeme kuralları, bölgesel erişim ve bonus koşulları önemlidir."
+            ]
+          },
+          {
+            "title": "Rust Upgrader Siteleri",
+            "paragraphs": [
+              "<a href=\"/rust/upgrader\">Rust upgrader siteleri</a>, daha değerli bir sonuç için eşya veya bakiyeyi riske atmaya izin verir. Gösterilen olasılığı, eşya değerlerini, envanteri ve fiyatlandırmayı karşılaştırın."
+            ]
+          },
+          {
+            "title": "Maç Bahisleri",
+            "paragraphs": [
+              "<a href=\"/rust/matchbetting\">Maç bahis siteleri</a> Rust bölümünü espor ve geleneksel sporlarla birleştirebilir. Etkinlikler, oranlar, kurallar, limitler ve çekim hızı önemlidir."
+            ]
+          },
+          {
+            "title": "Rust Skin Satın Alma, Satma ve Takas",
+            "paragraphs": [
+              "Eşya işlemleri için CSGOBROKER’ın <a href=\"/rust/marketplaces\">Rust pazarları</a>, <a href=\"/rust/buy-skins\">satın alma</a>, <a href=\"/rust/sell-skins\">satma</a>, <a href=\"/rust/trade-skins\">takas</a> ve <a href=\"/rust/instant-sell\">anlık satış</a> bölümlerini kullanın."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Sitesi Seçmeden Önce Neleri Karşılaştırmalı?",
+        "intro": "Benzer modlara sahip platformların koşulları farklı olabilir. Kullanmadan önce birkaç pratik faktörü kontrol edin.",
+        "items": [
+          {
+            "summary": "Rust skin yatırma ve çekme",
+            "body": "Hizmetin Rust eşyalarını kabul edip etmediğini ve kazançların skin olarak çekilip çekilemediğini kontrol edin."
+          },
+          {
+            "summary": "Kripto, kartlar ve diğer yöntemler",
+            "body": "Mevcut yöntemler siteye ve ülkeye göre değişir. Minimum tutarları, ücretleri, işlem hızını ve kısıtlamaları değerlendirin."
+          },
+          {
+            "summary": "Oyun kurallarının şeffaflığı",
+            "body": "Rastgele modlarda sonucun nasıl belirlendiği, tur geçmişi ve Provably Fair gibi doğrulama araçları açık olmalıdır."
+          },
+          {
+            "summary": "Eşya değerleme ve likidite",
+            "body": "Aynı skin farklı platformlarda farklı değerlendirilebilir. Fiyat kaynakları, talep, envanter ve hizmet marjı değeri etkiler."
+          },
+          {
+            "summary": "Bonuslar ve koşulları",
+            "body": "Bonusları çevrim şartları, limitler ve çekim kurallarıyla birlikte değerlendirin. Yüksek yüzde tek başına daha iyi teklif değildir."
+          },
+          {
+            "summary": "KYC ve bölgesel kısıtlamalar",
+            "body": "Kimlik doğrulama, oyun erişimi ve çekim yöntemleri ülkeye ve tutara bağlı olabilir. Yatırmadan önce kontrol edin."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Sitelerini Nasıl Değerlendirir?",
+        "intro": "Sıralama tek bir bonus veya oyun sayısına değil, pratik kullanım faktörlerinin birleşimine dayanır.",
+        "items": [
+          {
+            "summary": "İtibar ve istikrar",
+            "body": "Hizmet geçmişi, temel özelliklerin istikrarı, kuralların açıklığı ve destek dikkate alınır."
+          },
+          {
+            "summary": "Yatırma, çekme ve ücretler",
+            "body": "Ödeme yöntemleri, Rust skin desteği, hız, ücretler ve minimum tutarlar incelenir."
+          },
+          {
+            "summary": "Modlar ve doğrulama",
+            "body": "Mod çeşitliliği, mekaniklerin açıklığı, tur geçmişi ve doğrulama araçları değerlendirilir."
+          },
+          {
+            "summary": "Rust envanteri ve fiyatlar",
+            "body": "Envanter, likidite ve fiyat şeffaflığı önemlidir. Sınırlı envanter skin çekiminin değerini azaltır."
+          },
+          {
+            "summary": "Bonuslar ve gerçek koşullar",
+            "body": "Yalnızca yüzde değil aktivasyon, çevrim ve çekim koşulları da incelenir."
+          },
+          {
+            "summary": "Kullanılabilirlik, mobil ve destek",
+            "body": "Navigasyon, hız, mobil deneyim ve destek genel puanı etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Sitesi Koşulları ve Sıralamaları Neden Değişir?",
+        "paragraphs": [
+          "Platformlar bonusları, ödemeleri, limitleri, modları ve ülke erişimini değiştirir; bilgiler ve sıralamalar da buna göre değişebilir.",
+          "Rust eşya pazarı da değişir. Fiyat ve likidite envanteri, yatırma değerini ve çekim koşullarını etkiler.",
+          "Belirli bir işlev için CSGOBROKER’ın ilgili kategorisini de kontrol edin: <a href=\"/rust/caseopening\">kasa açma</a>, <a href=\"/rust/upgrader\">upgrader</a> veya <a href=\"/rust/marketplaces\">pazarlar</a>."
+        ]
+      },
+      "safety": {
+        "title": "Rust Sitelerini Kullanırken Güvenlik",
+        "intro": "Başlıca riskler phishing, sahte Steam takasları, gözden kaçan çekim koşulları ve rastgele sonuçlu modlardır.",
+        "items": [
+          {
+            "summary": "Steam ile giriş yapmadan önce alan adını kontrol edin",
+            "body": "Phishing sayfaları bilinen hizmetleri kopyalayabilir. Girişten önce adresi kontrol edin."
+          },
+          {
+            "summary": "Her Steam Trade Offer’ı kontrol edin",
+            "body": "Onaylamadan önce gönderen hesabı ve tüm eşyaları kontrol edin. Benzer isim veya avatar gerçeklik garantisi değildir."
+          },
+          {
+            "summary": "Çekim ve KYC kurallarını önceden okuyun",
+            "body": "Minimumlar, ücretler ve doğrulama şartları yönteme göre değişir. Skin göndermeden veya yatırmadan önce inceleyin."
+          },
+          {
+            "summary": "Yerel kuralları ve yaş sınırını dikkate alın",
+            "body": "Gambling erişimi yargı bölgesine göre değişir. Yalnızca yasal yaş şartını karşılıyorsanız ve bulunduğunuz yerde izin veriliyorsa kullanın."
+          },
+          {
+            "summary": "Rastgele modları para kazanma yöntemi olarak görmeyin",
+            "body": "Kasalar, rulet ve crash kâr garantisi vermez. Harcama limiti belirleyin, kayıpları kovalamayın ve gerekirse <a href=\"/responsibility\">sorumlu oyun</a> bilgilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Siteleri Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust gambling siteleri nedir?",
+            "body": "Rust eşyalarının, kripto paranın veya paranın rastgele ya da rekabetçi sonuçlu modlarda kullanıldığı üçüncü taraf hizmetlerdir."
+          },
+          {
+            "summary": "Rust skin yatırıp çekebilir miyim?",
+            "body": "Bazı sitelerde evet. Destek değişir ve bazı platformlar yalnızca işlemlerden birini sunar."
+          },
+          {
+            "summary": "Hangi modlar yaygındır?",
+            "body": "Yaygın modlar <a href=\"/rust/caseopening\">kasa açma</a>, <a href=\"/rust/roulette\">rulet</a>, <a href=\"/rust/coinflip\">yazı tura</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a> ve <a href=\"/rust/case-battle\">kasa savaşları</a>dır."
+          },
+          {
+            "summary": "Provably Fair nedir?",
+            "body": "Bir tur sonucunu doğrulamak için kullanılan kriptografik bir yöntemdir. Uygulama platforma göre değişir."
+          },
+          {
+            "summary": "Gambling olmadan Rust skinlerini nerede alıp satabilirim?",
+            "body": "<a href=\"/rust/marketplaces\">Rust pazarlarını</a> kullanın. CSGOBROKER ayrıca <a href=\"/rust/buy-skins\">satın alma</a>, <a href=\"/rust/sell-skins\">satma</a>, <a href=\"/rust/trade-skins\">takas</a> ve <a href=\"/rust/instant-sell\">anlık satış</a> bölümlerine sahiptir."
+          },
+          {
+            "summary": "Rust ile CS2 sitesi arasındaki fark nedir?",
+            "body": "Mekanikler benzer olabilir ancak desteklenen eşyalar, envanter ve kullanıcı kitlesi farklıdır."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Platformlar bonusları, ücretleri, çekimleri, modları, envanteri ve kısıtlamaları değiştirir. Puan buna göre yeniden değerlendirilebilir."
+          },
+          {
+            "summary": "Genel mi yoksa moda özel sıralama mı?",
+            "body": "Genel sıralama geniş bakış içindir. Belirli format için <a href=\"/rust/roulette\">rulet</a>, <a href=\"/rust/crash\">crash</a> veya <a href=\"/rust/matchbetting\">maç bahisleri</a> gibi kategorileri kullanın."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust साइट्स: वे कैसे काम करती हैं और तुलना कैसे करें",
+        "paragraphs": [
+          "Rust साइट्स third-party platforms हैं जहाँ Rust skins और items, cryptocurrency या पैसे का उपयोग अलग game modes में किया जा सकता है। Platform के अनुसार <a href=\"/rust/caseopening\">case opening</a>, <a href=\"/rust/case-battle\">case battles</a>, <a href=\"/rust/roulette\">roulette</a>, <a href=\"/rust/coinflip\">coinflip</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a>, <a href=\"/rust/casino\">slots और casino</a> या <a href=\"/rust/matchbetting\">match betting</a> मिल सकते हैं।",
+          "CSGOBROKER Rust services को उनके purpose के अनुसार अलग करता है। Main ranking market का broad overview देता है, जबकि dedicated pages similar mechanics वाले sites की तुलना आसान बनाते हैं। Bonus के साथ deposits, withdrawals, fees, regional restrictions और rules की clarity भी महत्वपूर्ण हैं।",
+          "Rust skin support हर service पर अलग हो सकता है। कुछ platforms items को deposit और withdrawal दोनों के लिए support करते हैं, कुछ केवल deposit के लिए, और कुछ मुख्य रूप से crypto या standard payment methods पर काम करते हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Rust साइट्स के मुख्य प्रकार",
+        "items": [
+          {
+            "title": "Case Opening और Case Battles",
+            "paragraphs": [
+              "<a href=\"/rust/caseopening\">Rust case sites</a> पर virtual cases खोले जाते हैं और result के अनुसार item या value मिलती है। <a href=\"/rust/case-battle\">Case battles</a> में कई players participate करते हैं। Case prices, odds, withdrawal rules और verification compare करें।"
+            ]
+          },
+          {
+            "title": "Roulette, Coinflip और Jackpot",
+            "paragraphs": [
+              "<a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/coinflip\">coinflip</a> और <a href=\"/rust/jackpot\">jackpot</a> अलग random formats का उपयोग करते हैं। Round history, pot rules, limits और Provably Fair जैसी systems देखें।"
+            ]
+          },
+          {
+            "title": "Crash और Casino",
+            "paragraphs": [
+              "<a href=\"/rust/crash\">Crash</a> में multiplier round समाप्त होने तक बढ़ता है। कुछ platforms <a href=\"/rust/casino\">slots और casino games</a> भी देते हैं। Payout rules, regional availability और bonus terms important हैं।"
+            ]
+          },
+          {
+            "title": "Rust Upgraders",
+            "paragraphs": [
+              "<a href=\"/rust/upgrader\">Rust upgrader sites</a> item या balance को risk करके अधिक valuable result पाने का chance देते हैं। Displayed probability, item valuation, inventory और pricing compare करें।"
+            ]
+          },
+          {
+            "title": "Match Betting",
+            "paragraphs": [
+              "<a href=\"/rust/matchbetting\">Match betting sites</a> Rust section को esports और traditional sports के साथ जोड़ सकते हैं। Events, odds, settlement rules, limits और withdrawal speed देखें।"
+            ]
+          },
+          {
+            "title": "Rust Skins खरीदना, बेचना और Trade करना",
+            "paragraphs": [
+              "Item trading के लिए CSGOBROKER के <a href=\"/rust/marketplaces\">Rust marketplaces</a>, <a href=\"/rust/buy-skins\">buying</a>, <a href=\"/rust/sell-skins\">selling</a>, <a href=\"/rust/trade-skins\">trading</a> और <a href=\"/rust/instant-sell\">instant selling</a> sections उपयोग करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust साइट चुनने से पहले क्या Compare करें",
+        "intro": "Similar modes वाले platforms की terms अलग हो सकती हैं। उपयोग से पहले कई practical factors check करें।",
+        "items": [
+          {
+            "summary": "Rust skin deposits और withdrawals",
+            "body": "देखें कि service Rust items स्वीकार करती है या नहीं और winnings को skins में withdraw किया जा सकता है या नहीं।"
+          },
+          {
+            "summary": "Crypto, cards और दूसरे methods",
+            "body": "Available methods site और country पर निर्भर करते हैं। Minimum amounts, fees, speed और restrictions देखें।"
+          },
+          {
+            "summary": "Game rules की transparency",
+            "body": "Random modes में result कैसे तय होता है, history कहाँ मिलती है और Provably Fair जैसे tools हैं या नहीं, यह clear होना चाहिए।"
+          },
+          {
+            "summary": "Item valuation और liquidity",
+            "body": "एक ही Rust skin की value platforms पर अलग हो सकती है। Price sources, demand, inventory और service margin value को प्रभावित करते हैं।"
+          },
+          {
+            "summary": "Bonuses और conditions",
+            "body": "Bonus को wagering requirements, limits और withdrawal rules के साथ compare करें। बड़ा percentage हमेशा बेहतर offer नहीं होता।"
+          },
+          {
+            "summary": "KYC और regional restrictions",
+            "body": "Verification, game availability और withdrawals country और amount पर depend कर सकते हैं। Deposit से पहले check करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust साइट्स को कैसे Rate करता है",
+        "intro": "Ranking किसी एक bonus या games की संख्या पर नहीं, बल्कि practical factors के combination पर आधारित है।",
+        "items": [
+          {
+            "summary": "Reputation और stability",
+            "body": "Service history, core features की stability, rules की clarity और support availability देखी जाती है।"
+          },
+          {
+            "summary": "Deposits, withdrawals और fees",
+            "body": "Payment methods, Rust skin support, speed, fees और minimum amounts review किए जाते हैं।"
+          },
+          {
+            "summary": "Game modes और verification",
+            "body": "Mode variety, mechanics की clarity, round history और verification tools देखे जाते हैं।"
+          },
+          {
+            "summary": "Rust inventory और pricing",
+            "body": "Inventory, item liquidity और pricing transparency महत्वपूर्ण हैं। Limited inventory skin withdrawals की value कम करता है।"
+          },
+          {
+            "summary": "Bonuses और real conditions",
+            "body": "Activation, wagering और withdrawal requirements भी देखे जाते हैं, केवल advertised percentage नहीं।"
+          },
+          {
+            "summary": "Usability, mobile और support",
+            "body": "Navigation, interface speed, mobile experience और support overall score को प्रभावित करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust साइट की Terms और Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms bonuses, payments, limits, modes और country availability बदलते हैं, इसलिए information और ranking positions भी बदल सकती हैं।",
+          "Rust item market भी बदलता है। Price और liquidity inventory, deposit valuation और withdrawal conditions को प्रभावित करते हैं।",
+          "Specific function के लिए CSGOBROKER की related category भी देखें, जैसे <a href=\"/rust/caseopening\">case opening</a>, <a href=\"/rust/upgrader\">upgrader</a> या <a href=\"/rust/marketplaces\">marketplaces</a>।"
+        ]
+      },
+      "safety": {
+        "title": "Rust साइट्स का सुरक्षित उपयोग",
+        "intro": "मुख्य risks phishing, fake Steam trades, अनदेखी withdrawal rules और random-outcome modes से जुड़े हैं।",
+        "items": [
+          {
+            "summary": "Steam login से पहले domain check करें",
+            "body": "Phishing pages known services को copy कर सकती हैं। Sign in से पहले address verify करें।"
+          },
+          {
+            "summary": "हर Steam Trade Offer verify करें",
+            "body": "Confirm करने से पहले sender account और सभी items check करें। Similar name या avatar authenticity की guarantee नहीं है।"
+          },
+          {
+            "summary": "Withdrawal और KYC rules पहले पढ़ें",
+            "body": "Minimums, fees और verification requirements method के अनुसार बदलते हैं। Skins भेजने या deposit करने से पहले review करें।"
+          },
+          {
+            "summary": "Local rules और age restrictions ध्यान में रखें",
+            "body": "Gambling availability jurisdiction पर depend करती है। Services का उपयोग केवल legal age होने और local rules अनुमति देने पर करें।"
+          },
+          {
+            "summary": "Random modes को earning method न मानें",
+            "body": "Cases, roulette और crash profit guarantee नहीं देते। Spending limits तय करें, losses chase न करें और जरूरत पर <a href=\"/responsibility\">responsible gambling</a> information देखें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust साइट्स के बारे में अक्सर पूछे जाने वाले सवाल",
+        "items": [
+          {
+            "summary": "Rust gambling sites क्या हैं?",
+            "body": "ये third-party services हैं जहाँ Rust items, cryptocurrency या पैसे का उपयोग random या competitive game modes में किया जाता है।"
+          },
+          {
+            "summary": "क्या मैं Rust skins deposit और withdraw कर सकता हूँ?",
+            "body": "कुछ sites पर हाँ। Support अलग होता है और कुछ platforms केवल एक operation support करते हैं।"
+          },
+          {
+            "summary": "कौन से modes common हैं?",
+            "body": "Common modes में <a href=\"/rust/caseopening\">case opening</a>, <a href=\"/rust/roulette\">roulette</a>, <a href=\"/rust/coinflip\">coinflip</a>, <a href=\"/rust/jackpot\">jackpot</a>, <a href=\"/rust/crash\">crash</a>, <a href=\"/rust/upgrader\">upgrader</a> और <a href=\"/rust/case-battle\">case battles</a> शामिल हैं।"
+          },
+          {
+            "summary": "Provably Fair क्या है?",
+            "body": "यह round result verify करने की cryptographic method है। Implementation platform के अनुसार अलग होती है।"
+          },
+          {
+            "summary": "Gambling के बिना Rust skins कहाँ खरीद या बेच सकता हूँ?",
+            "body": "<a href=\"/rust/marketplaces\">Rust marketplaces</a> उपयोग करें। CSGOBROKER के पास <a href=\"/rust/buy-skins\">buying</a>, <a href=\"/rust/sell-skins\">selling</a>, <a href=\"/rust/trade-skins\">trading</a> और <a href=\"/rust/instant-sell\">instant selling</a> sections भी हैं।"
+          },
+          {
+            "summary": "Rust और CS2 site में क्या फर्क है?",
+            "body": "Mechanics similar हो सकती हैं, लेकिन supported items, inventory और audience अलग होते हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Platforms bonuses, fees, withdrawals, modes, inventory और restrictions बदलते हैं। Practical use पर असर होने पर score review किया जा सकता है।"
+          },
+          {
+            "summary": "Main ranking या specific ranking?",
+            "body": "Main ranking broad overview के लिए है। Specific format के लिए <a href=\"/rust/roulette\">roulette</a>, <a href=\"/rust/crash\">crash</a> या <a href=\"/rust/matchbetting\">match betting</a> category उपयोग करें।"
+          }
+        ]
+      }
+    }
+  }
+}

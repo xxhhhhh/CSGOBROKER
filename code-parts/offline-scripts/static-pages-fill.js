@@ -282,6 +282,26 @@ function findAllDivByClass(masked, clsName, from=0, to=masked.length){
 function findFirstByClass(masked, clsName, from=0, to=masked.length){
   const arr=findAllDivByClass(masked, clsName, from, to); return arr.length? arr[0] : null;
 }
+
+/** Ищет элемент любого тега по class-токену (например section.main-guide). */
+function findFirstElementByClass(masked, tag, clsName, from=0, to=masked.length){
+  const openRe = new RegExp(`<${tag}\\b`, "gi");
+  let i = from;
+  while (true){
+    const pos = masked.slice(i, to).search(openRe);
+    if (pos === -1) return null;
+    const abs = i + pos;
+    const { end, attrs } = readTag(masked, abs);
+    const cls = parseClassAttr(attrs);
+    if (cls.has(clsName)){
+      const closeStart = findMatchingClose(masked, end, tag);
+      if (closeStart === -1) return null;
+      const closeEnd = readTag(masked, closeStart).end;
+      return { openStart: abs, openEnd: end, closeStart, closeEnd };
+    }
+    i = end;
+  }
+}
 function indentBefore(s, idx, nl){
   const ls = s.lastIndexOf(nl, idx-1);
   const lineStart = ls===-1?0:ls+nl.length;
@@ -3903,15 +3923,36 @@ function buildInfoboxHtml(texts, indent, nl){
   ].join(nl);
 }
 
-function stripAllInfoboxes(html){
-  return removeAllBlocksByClass(html, "main-infobox");
+function removeAllStandaloneBlocksByClass(html, className, nl){
+  let out = html;
+  while (true){
+    const masked = maskSegments(out);
+    const block = findFirstByClass(masked, className);
+    if (!block) break;
+
+    const prevNl = out.lastIndexOf(nl, block.openStart - 1);
+    const lineStart = prevNl === -1 ? 0 : prevNl + nl.length;
+    const beforeTag = out.slice(lineStart, block.openStart);
+    const removeStart = /^[\t ]*$/.test(beforeTag) ? lineStart : block.openStart;
+
+    let removeEnd = block.closeEnd;
+    while (removeEnd < out.length && (out[removeEnd] === " " || out[removeEnd] === "\t")) removeEnd++;
+    if (out.startsWith(nl, removeEnd)) removeEnd += nl.length;
+
+    out = out.slice(0, removeStart) + out.slice(removeEnd);
+  }
+  return out;
+}
+
+function stripAllInfoboxes(html, nl){
+  return removeAllStandaloneBlocksByClass(html, "main-infobox", nl);
 }
 
 /**
  * Вставка/обновление main-infobox.
  * – /reviews/... и /mirrors/... → внутрь .boxreview, в конец, с верными отступами
- * – иначе → сразу после первого .boxes-holder
- * – если .boxreview нет, но есть .criteria-descriptions → после него
+ * – обычная страница с .main-guide → сразу после .main-guide
+ * – иначе → сразу после первого .boxes-holder (старое поведение)
  */
 
 function upsertMainInfobox(html, urlPath, lang, nl, translations){
@@ -3920,38 +3961,49 @@ function upsertMainInfobox(html, urlPath, lang, nl, translations){
   const texts = translations[lang] || translations["en"];
   if (!texts) return html;
 
-  const masked = maskSegments(html);
+  let masked = maskSegments(html);
   const isReviewLike = /\/(reviews|mirrors)\//.test(String(urlPath));
-
-  // если уже есть хоть один инфобокс — вообще ничего не трогаем
-  if (findFirstByClass(masked, "main-infobox")) {
-    return html;
-  }
-
   const blockFor = (indent) => buildInfoboxHtml(texts, indent, nl);
 
   if (isReviewLike) {
+    // Для reviews/mirrors сохраняем прежнее поведение.
+    if (findFirstByClass(masked, "main-infobox")) return html;
+
     const boxreview = findFirstByClass(masked, "boxreview");
     if (!boxreview) return html;
 
     const inner = html.slice(boxreview.openEnd, boxreview.closeStart);
     const innerMasked = maskSegments(inner);
-
-    if (findFirstByClass(innerMasked, "main-infobox")) {
-      return html;
-    }
+    if (findFirstByClass(innerMasked, "main-infobox")) return html;
 
     const indent = indentBefore(html, boxreview.closeStart, nl);
-    const closeIndent = indent;
     const block = buildInfoboxHtml(texts, indent, nl);
-
     const beforeTrimmed = inner.replace(/[ \t]+$/g, "");
     const sepBefore = beforeTrimmed.endsWith(nl) ? "" : nl;
-
-    const newInner = beforeTrimmed + sepBefore + block + nl + closeIndent;
+    const newInner = beforeTrimmed + sepBefore + block + nl + indent;
 
     return html.slice(0, boxreview.openEnd) + newInner + html.slice(boxreview.closeStart);
   }
+
+  // На обычных страницах main-guide становится приоритетным якорем.
+  // Если guide уже есть, инфобокс всегда нормализуем сразу после него —
+  // это заодно переносит старые страницы со схемы boxes-holder -> infobox -> guide.
+  const guide = findFirstElementByClass(masked, "section", "main-guide");
+  if (guide) {
+    let out = stripAllInfoboxes(html, nl);
+    masked = maskSegments(out);
+    const freshGuide = findFirstElementByClass(masked, "section", "main-guide");
+    if (!freshGuide) return out;
+
+    const indent = indentBefore(out, freshGuide.openStart, nl);
+    const block = blockFor(indent);
+    const before = out.slice(0, freshGuide.closeEnd);
+    const after = out.slice(freshGuide.closeEnd).replace(/^[ \t]*(?:\r?\n)?/, "");
+    return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
+  }
+
+  // Без main-guide сохраняем прежнюю логику и идемпотентность.
+  if (findFirstByClass(masked, "main-infobox")) return html;
 
   const holders = findAllDivByClass(masked, "boxes-holder");
   if (holders.length){
@@ -4032,23 +4084,21 @@ function buildSliderBannerHtml(lang, indent, nl) {
   return lines.join(nl);
 }
 
-function stripAllSliderContainers(html) {
-  return removeAllBlocksByClass(html, "slider-container");
+function stripAllSliderContainers(html, nl) {
+  return removeAllStandaloneBlocksByClass(html, "slider-container", nl);
 }
 
 /**
  * Перенос client-side вставки slider-banner в static generation.
  *
- * Порядок максимально повторяет текущую client-side логику:
- * 1. если есть .boxes-holder -> после .main-infobox (fallback: после .boxes-holder)
- * 2. иначе если есть .main-infobox -> перед .main-infobox
- * 3. иначе если /reviews|mirrors/ и есть .boxreview -> внутрь .boxreview в конец
- * 4. иначе если /topic/ и есть .topicpage -> внутрь .topicpage в конец
- * 5. иначе если есть .newest-boxes -> перед .newest-boxes
- * 6. иначе перед <footer>
+ * Новый порядок для листингов:
+ * 1. если есть .main-guide -> после него (или после .main-infobox, если он уже стоит ниже guide)
+ * 2. если guide нет, сохраняем старую привязку к .boxes-holder/.main-infobox
+ * 3. остальные fallback-ветки reviews/topic/newest/footer не меняются по смыслу
  *
  * Идемпотентность:
- * - если .slider-container уже есть, ничего не делаем
+ * - без .main-guide существующий slider не трогаем;
+ * - с .main-guide существующий slider переносим в новую позицию без дублирования.
  */
 function upsertSliderBanner(html, urlPath, lang, nl) {
   const pathStr = String(urlPath || "");
@@ -4066,43 +4116,53 @@ function upsertSliderBanner(html, urlPath, lang, nl) {
 
   if (excluded) return html;
 
-  const masked = maskSegments(html);
-
-  // Уже существует -> ничего не трогаем
-  if (findFirstByClass(masked, "slider-container")) {
-    return html;
-  }
-
+  let masked = maskSegments(html);
   const isReviewLike = /\/(reviews|mirrors)\//.test(pathStr);
   const isTopicLike  = pathStr.includes("/topic/");
+  const guide = findFirstElementByClass(masked, "section", "main-guide");
 
-  // 1) .boxes-holder -> after .main-infobox (fallback: after first .boxes-holder)
+  // Если main-guide есть, нормализуем позицию slider относительно новой цепочки:
+  // boxes-holder -> main-guide -> main-infobox -> slider-container.
+  // Без guide сохраняем прежнюю идемпотентность и ничего не двигаем.
+  if (findFirstByClass(masked, "slider-container")) {
+    if (!guide) return html;
+    html = stripAllSliderContainers(html, nl);
+    masked = maskSegments(html);
+  }
+
+  // 1) Страницы с boxes-holder.
   const holders = findAllDivByClass(masked, "boxes-holder");
   if (holders.length) {
+    const freshGuide = findFirstElementByClass(masked, "section", "main-guide");
     const infobox = findFirstByClass(masked, "main-infobox");
 
-    if (infobox) {
-      const indent = indentBefore(html, infobox.openStart, nl);
-      const block = buildSliderBannerHtml(lang, indent, nl);
+    // При наличии guide всё, что раньше цеплялось к низу boxes-holder,
+    // ставим ниже guide. Инфобокс (если есть) остаётся между guide и slider.
+    const anchor = freshGuide
+      ? ((infobox && infobox.openStart > freshGuide.closeEnd) ? infobox : freshGuide)
+      : (infobox || holders[0]);
 
-      const before = html.slice(0, infobox.closeEnd);
-      const after  = html.slice(infobox.closeEnd);
-
-      return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
-    }
-
-    // fallback, если на странице есть boxes-holder, но нет infobox
-    const h = holders[0];
-    const indent = indentBefore(html, h.openStart, nl);
+    const indent = indentBefore(html, anchor.openStart, nl);
     const block = buildSliderBannerHtml(lang, indent, nl);
-
-    const before = html.slice(0, h.closeEnd);
-    const after  = html.slice(h.closeEnd);
+    const before = html.slice(0, anchor.closeEnd);
+    const after  = html.slice(anchor.closeEnd).replace(/^[ \t]*(?:\r?\n)?/, "");
 
     return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
   }
 
-  // 2) .main-infobox -> before .main-infobox
+  // 2) .main-guide без boxes-holder -> after .main-guide
+  const standaloneGuide = findFirstElementByClass(masked, "section", "main-guide");
+  if (standaloneGuide) {
+    const infobox = findFirstByClass(masked, "main-infobox");
+    const anchor = (infobox && infobox.openStart > standaloneGuide.closeEnd) ? infobox : standaloneGuide;
+    const indent = indentBefore(html, anchor.openStart, nl);
+    const block = buildSliderBannerHtml(lang, indent, nl);
+    const before = html.slice(0, anchor.closeEnd);
+    const after  = html.slice(anchor.closeEnd).replace(/^[ \t]*(?:\r?\n)?/, "");
+    return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
+  }
+
+  // 3) .main-infobox -> before .main-infobox (старый fallback)
   const infobox = findFirstByClass(masked, "main-infobox");
   if (infobox) {
     const lineStart = html.lastIndexOf(nl, infobox.openStart - 1);
@@ -4116,7 +4176,7 @@ function upsertSliderBanner(html, urlPath, lang, nl) {
     return before + block + nl + after;
   }
 
-  // 3) review/mirrors -> append into .boxreview
+  // 4) review/mirrors -> append into .boxreview
   if (isReviewLike) {
     const boxreview = findFirstByClass(masked, "boxreview");
     if (boxreview) {
@@ -4132,7 +4192,7 @@ function upsertSliderBanner(html, urlPath, lang, nl) {
     }
   }
 
-  // 4) topic -> append into .topicpage
+  // 5) topic -> append into .topicpage
   if (isTopicLike) {
     const topicpage = findFirstByClass(masked, "topicpage");
     if (topicpage) {
@@ -4148,7 +4208,7 @@ function upsertSliderBanner(html, urlPath, lang, nl) {
     }
   }
 
-  // 5) before .newest-boxes
+  // 6) before .newest-boxes
   const newest = findFirstByClass(masked, "newest-boxes");
   if (newest) {
     const lineStart = html.lastIndexOf(nl, newest.openStart - 1);
@@ -4162,7 +4222,7 @@ function upsertSliderBanner(html, urlPath, lang, nl) {
     return before + block + nl + after;
   }
 
-  // 6) before <footer>
+  // 7) before <footer>
   const footerIdx = masked.search(/<footer\b/i);
   if (footerIdx !== -1) {
     const lineStart = html.lastIndexOf(nl, footerIdx - 1);

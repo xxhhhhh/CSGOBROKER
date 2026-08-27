@@ -68,6 +68,11 @@ function protoFromLocalized(rel){
   return "/" + segs.join("/");
 }
 function detectNL(s){ return s.includes("\r\n") ? "\r\n" : "\n"; }
+function indentBefore(s, idx, nl){
+  const ls = s.lastIndexOf(nl, idx - 1);
+  const lineStart = ls === -1 ? 0 : ls + nl.length;
+  return (s.slice(lineStart, idx).match(/^[\t ]*/)?.[0]) || "";
+}
 function langFromRel(rel){
   if (isLocalizedHome(rel)) return rel.slice(1,3);
   const seg=(rel.split("/").filter(Boolean)[0]||"").toLowerCase();
@@ -326,18 +331,60 @@ function localizeBestAltUnitLinks(inner, lang){
 }
 
 
-/* ---------- structured main-guide (home) ---------- */
-const HOME_GUIDE_FILE = "/code-parts/page-guides/home.json";
-let homeGuideCache;
-
-async function loadHomeGuideData(root){
-  if (homeGuideCache !== undefined) return homeGuideCache;
-  try {
-    homeGuideCache = JSON.parse(await fs.readFile(abs(root, HOME_GUIDE_FILE), "utf8"));
-  } catch {
-    homeGuideCache = null;
+/* ---------- structured page guides ---------- */
+const PAGE_GUIDES = {
+  home: {
+    route: "home",
+    file: "/code-parts/page-guides/home.json",
+    canonical: { en: "/index.html", ru: "/ru.html" }
+  },
+  cs2: {
+    route: "cs2",
+    file: "/code-parts/page-guides/cs2.json",
+    canonical: { en: "/cs2.html", ru: "/ru/cs2.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  sellSkins: {
+    route: "csgo/sell-skins",
+    file: "/code-parts/page-guides/sell-skins.json",
+    canonical: { en: "/csgo/sell-skins.html", ru: "/ru/csgo/sell-skins.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  rust: {
+    route: "rust",
+    file: "/code-parts/page-guides/rust.json",
+    canonical: { en: "/rust.html", ru: "/ru/rust.html" }
   }
-  return homeGuideCache;
+};
+
+const pageGuideCache = new Map();
+
+function guideRouteFromRel(rel){
+  let clean = String(rel || "").split("?")[0].split("#")[0].replace(/\\/g, "/");
+  if (!clean.startsWith("/")) clean = "/" + clean;
+  clean = clean.replace(/\.html?$/i, "");
+
+  const segs = clean.split("/").filter(Boolean);
+  if (segs.length && KNOWN_LANGS.has(segs[0].toLowerCase())) segs.shift();
+  if (!segs.length || (segs.length === 1 && segs[0].toLowerCase() === "index")) return "home";
+  return segs.join("/").toLowerCase();
+}
+
+function getPageGuideConfig(rel){
+  const route = guideRouteFromRel(rel);
+  return Object.entries(PAGE_GUIDES).find(([, cfg]) => cfg.route === route) || null;
+}
+
+async function loadPageGuideData(root, pageName, config){
+  if (pageGuideCache.has(pageName)) return pageGuideCache.get(pageName);
+  try {
+    const data = JSON.parse(await fs.readFile(abs(root, config.file), "utf8"));
+    pageGuideCache.set(pageName, data);
+    return data;
+  } catch {
+    pageGuideCache.set(pageName, null);
+    return null;
+  }
 }
 
 function localizeGuideHref(href, lang){
@@ -392,7 +439,7 @@ ${indent}  </div>
 ${indent}</details>`).join("\n");
 }
 
-function buildHomeGuide(data, lang){
+function buildPageGuide(data, lang, pageName){
   const L = String(lang || "en").toLowerCase();
   const pack = data?.languages?.[L] || data?.languages?.en;
   if (!pack) return "";
@@ -402,7 +449,7 @@ function buildHomeGuide(data, lang){
 ${guideParagraphs(item.paragraphs, "                ")}
               </article>`).join("\n");
 
-  let html = `        <section class="main-guide" aria-labelledby="main-guide-title" data-guide-page="home" data-guide-lang="${L}">
+  let html = `        <section class="main-guide" aria-labelledby="main-guide-title" data-guide-page="${pageName}" data-guide-lang="${L}">
           <div class="main-guide-intro">
             <h2 id="main-guide-title">${pack.intro?.title || ""}</h2>
 ${guideParagraphs(pack.intro?.paragraphs, "            ")}
@@ -455,40 +502,85 @@ ${guideDetails(pack.faq?.items, "              ")}
   return localizeGuideLinks(html, L);
 }
 
-function upsertMainGuide(html, guideHtml){
-  if (!guideHtml) return html;
+function removeFirstElementByClass(html, tag, className){
   const masked = maskSegments(html);
-  const current = findFirstElementByClass(masked, "section", "main-guide");
-  if (current){
-    // Забираем и старый отступ перед <section>, иначе при каждом запуске
-    // отступ на первой строке main-guide будет накапливаться.
-    const lineStart = html.lastIndexOf("\n", current.openStart - 1) + 1;
-    const beforeTag = html.slice(lineStart, current.openStart);
-    const replaceStart = /^[\t ]*$/.test(beforeTag) ? lineStart : current.openStart;
-    return html.slice(0, replaceStart) + guideHtml + html.slice(current.closeEnd);
-  }
+  const current = findFirstElementByClass(masked, tag, className);
+  if (!current) return html;
 
-  const footerPos = masked.search(/<footer\b/i);
-  if (footerPos === -1) return html;
-  const nl = detectNL(html);
-  return html.slice(0, footerPos) + guideHtml + nl + nl + html.slice(footerPos);
+  const lineStart = html.lastIndexOf("\n", current.openStart - 1) + 1;
+  const beforeTag = html.slice(lineStart, current.openStart);
+  const removeStart = /^[\t ]*$/.test(beforeTag) ? lineStart : current.openStart;
+  let removeEnd = current.closeEnd;
+  if (html.startsWith("\r\n", removeEnd)) removeEnd += 2;
+  else if (html.startsWith("\n", removeEnd)) removeEnd += 1;
+  return html.slice(0, removeStart) + html.slice(removeEnd);
 }
 
-async function syncCanonicalHomeGuide(root, rel, lang, guideData, dry, verbose){
+function reindentMainGuide(guideHtml, indent, nl){
+  const normalized = String(guideHtml || "").replace(/\r?\n/g, nl);
+  const lines = normalized.split(nl);
+  const nonEmpty = lines.filter(line => line.trim());
+  const common = nonEmpty.length
+    ? Math.min(...nonEmpty.map(line => (line.match(/^[\t ]*/)?.[0] || "").length))
+    : 0;
+
+  return lines.map(line => {
+    if (!line.trim()) return "";
+    return indent + line.slice(common);
+  }).join(nl);
+}
+
+function upsertMainGuide(html, guideHtml){
+  if (!guideHtml) return html;
+  const nl = detectNL(html);
+
+  // Сначала удаляем старый main-guide независимо от его прежней позиции.
+  // Это позволяет автоматически мигрировать страницы, где guide раньше стоял перед footer.
+  let out = removeFirstElementByClass(html, "section", "main-guide");
+  let masked = maskSegments(out);
+
+  // Основная позиция: сразу ПОСЛЕ первого .boxes-holder.
+  const holder = findFirstByClass(masked, "boxes-holder");
+  if (holder){
+    const indent = indentBefore(out, holder.openStart, nl);
+    const block = reindentMainGuide(guideHtml, indent, nl);
+    const before = out.slice(0, holder.closeEnd);
+    const after = out.slice(holder.closeEnd).replace(/^[\t ]*(?:\r?\n)?/, "");
+    return before + (before.endsWith(nl) ? "" : nl) + block + nl + after;
+  }
+
+  // Fallback для страниц без boxes-holder оставляем прежним: перед footer.
+  const footerPos = masked.search(/<footer\b/i);
+  if (footerPos === -1) return out;
+  const indent = indentBefore(out, footerPos, nl);
+  const block = reindentMainGuide(guideHtml, indent, nl);
+  const before = out.slice(0, footerPos);
+  const after = out.slice(footerPos);
+  return before + block + nl + nl + after;
+}
+
+function applyPageGuide(html, pageName, config, guideData, lang){
+  let out = html;
+  for (const legacy of (config.removeLegacy || [])) {
+    out = removeFirstElementByClass(out, legacy.tag, legacy.className);
+  }
+  return upsertMainGuide(out, buildPageGuide(guideData, lang, pageName));
+}
+
+async function syncCanonicalGuide(root, rel, lang, pageName, config, guideData, dry, verbose){
   const file = abs(root, rel);
   if (!(await exists(file))) {
-    if (verbose) console.log(`[MISS HOME] ${rel}`);
+    if (verbose) console.log(`[MISS GUIDE PAGE] ${rel}`);
     return false;
   }
   const oldHtml = await readUtf8(file);
-  const guide = buildHomeGuide(guideData, lang);
-  const newHtml = upsertMainGuide(oldHtml, guide);
+  const newHtml = applyPageGuide(oldHtml, pageName, config, guideData, lang);
   if (newHtml === oldHtml) {
     if (verbose) console.log(`[GUIDE UNCHANGED] ${rel}`);
     return false;
   }
   if (!dry) await fs.writeFile(file, newHtml, "utf8");
-  console.log(`[GUIDE OK] ${rel}  ←  ${HOME_GUIDE_FILE} (${lang})`);
+  console.log(`[GUIDE OK] ${rel}  ←  ${config.file} (${lang})`);
   return true;
 }
 
@@ -999,14 +1091,24 @@ function translateReviewButtonsSpans(inner, lang){
 (async function main(){
   const { root, langs, dry, verbose, debugOne, limit } = parseArgs(process.argv.slice(2));
 
-  const homeGuideData = await loadHomeGuideData(root);
-  if (!homeGuideData && verbose) console.log(`[NO HOME GUIDE] ${HOME_GUIDE_FILE}`);
+  const pageGuideData = new Map();
+  for (const [pageName, config] of Object.entries(PAGE_GUIDES)){
+    const data = await loadPageGuideData(root, pageName, config);
+    pageGuideData.set(pageName, data);
+    if (!data && verbose) console.log(`[NO PAGE GUIDE] ${config.file}`);
+  }
 
-  // При обычном запуске держим EN и RU главные в том же структурированном источнике.
-  // --debug-one меняет только запрошенный localized target и не трогает canonical pages.
-  if (!debugOne && homeGuideData){
-    await syncCanonicalHomeGuide(root, "/index.html", "en", homeGuideData, dry, verbose);
-    await syncCanonicalHomeGuide(root, "/ru.html", "ru", homeGuideData, dry, verbose);
+  // При обычном запуске синхронизируем EN и RU канонические страницы
+  // из тех же структурированных JSON, что используются для ES/PT/TR/HI.
+  // --debug-one меняет только запрошенный localized target.
+  if (!debugOne){
+    for (const [pageName, config] of Object.entries(PAGE_GUIDES)){
+      const data = pageGuideData.get(pageName);
+      if (!data) continue;
+      for (const [lang, rel] of Object.entries(config.canonical || {})){
+        await syncCanonicalGuide(root, rel, lang, pageName, config, data, dry, verbose);
+      }
+    }
   }
 
   let targets = debugOne ? [debugOne] : await listLocalizedHtmlFiles(root, langs);
@@ -1062,10 +1164,13 @@ function translateReviewButtonsSpans(inner, lang){
       return out;
     });
 
-    // 2b) Главная: main-guide строится из отдельного структурированного JSON.
-    // Текст уже локализован в JSON, а ссылки получают нужный языковой префикс.
-    if (isLocalizedHome(rel) && homeGuideData){
-      newHtml = upsertMainGuide(newHtml, buildHomeGuide(homeGuideData, lang));
+    // 2b) Структурированный main-guide для поддерживаемых страниц.
+    // Текст уже локализован в JSON; ссылки получают языковой префикс автоматически.
+    const guideMatch = getPageGuideConfig(rel);
+    if (guideMatch){
+      const [pageName, config] = guideMatch;
+      const data = pageGuideData.get(pageName);
+      if (data) newHtml = applyPageGuide(newHtml, pageName, config, data, lang);
     }
 
     // 3) переводы текста (как в клиентском скрипте)

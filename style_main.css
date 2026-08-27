@@ -4169,7 +4169,7 @@ h3 {
 .main-guide {
     position: relative;
     width: var(--centralized);
-    margin: 18px auto 0;
+    margin: 0 auto;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -4179,12 +4179,12 @@ h3 {
 .main-guide-section {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .main-guide-section > h2,
 .main-guide-intro > h2 {
     height: auto;
-    margin-bottom: 8px;
     text-align: start;
     font-size: 20px;
     position: relative;
@@ -4195,6 +4195,7 @@ h3 {
 .main-guide-intro {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .main-guide p {
@@ -4219,7 +4220,9 @@ h3 {
 }
 
 .main-guide-category a,
-.main-guide-details-content p a {
+.main-guide-details-content p a,
+.main-guide-intro a,
+.main-guide-section a {
     text-decoration: unset;
     color: var(--text-lightgray);
     transition: all .15s ease-in-out;
@@ -4279,7 +4282,9 @@ h3 {
 .main-guide-category:hover p a,
 .main-guide-intro:hover p a,
 .main-guide p:hover a,
-.main-guide-details-content p a {
+.main-guide-details-content p a,
+.main-guide-intro:hover a,
+.main-guide-section:hover a {
     color: var(--white);
 }
 
@@ -5105,12 +5110,10 @@ nav img {
     margin: 0 auto;
     margin-top: 18px;
     width: auto;
-    height: 100%;
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    min-height: 550px;
     position: relative;
 }
 
@@ -10437,6 +10440,7 @@ ul .big-category.active .submenu2 {
 }
 
 @media screen and (min-width: 1280px) {
+
     .category:has(.category-box.last) .big-category {
         justify-content: flex-end !important;
     }
@@ -14663,6 +14667,18 @@ header {
 }
 
 @media screen and (max-width: 1280px) {
+
+    .main-guide {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .main-guide-accordion {
+        display: flex;
+        flex-direction: column;
+        grid-auto-flow: unset;
+        grid-template-columns: unset;
+    }
 
     .topic-box.player-box {
         flex: 0 0 calc(50% - 18px);
