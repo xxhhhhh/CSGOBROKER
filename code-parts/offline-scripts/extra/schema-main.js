@@ -395,7 +395,7 @@ function injectSchema(filePath) {
         "@type": "WebSite",
         "@id": "https://csgobroker.cc/#website",
         "url": "https://csgobroker.cc",
-        "name": "CSGOBroker",
+        "name": "CSGOBROKER",
         "description": "We conduct thorough hands-on testing of each site before publishing a review, ensuring accuracy and fairness. Our evaluations are regularly updated to reflect any changes, focusing on reliability and user trust.",
         "publisher": { "@id": "https://csgobroker.cc/#organization" },
         "inLanguage": langFull,
@@ -410,7 +410,7 @@ function injectSchema(filePath) {
       {
         "@type": "Organization",
         "@id": "https://csgobroker.cc/#organization",
-        "name": "CSGOBroker",
+        "name": "CSGOBROKER",
         "url": "https://csgobroker.cc",
         "logo": {
           "@type": "ImageObject",
@@ -420,7 +420,7 @@ function injectSchema(filePath) {
           "contentUrl": "https://csgobroker.cc/img/logo.svg",
           "width": 515,
           "height": 100,
-          "caption": "CSGOBroker"
+          "caption": "CSGOBROKER"
         },
         "image": { "@id": "https://csgobroker.cc/#/schema/logo/image/" }
       }

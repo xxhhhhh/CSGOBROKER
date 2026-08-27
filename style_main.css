@@ -4036,6 +4036,7 @@ h3 {
     width: var(--centralized);
     margin: 0 auto;
     margin-top: 18px;
+    padding: 15px;
     
 }
 
@@ -4163,6 +4164,221 @@ h3 {
 .smallreview p:nth-child(8),
 .smallreview p:nth-child(9) {
     margin-top: 15px;
+}
+
+.main-guide {
+    position: relative;
+    width: var(--centralized);
+    margin: 18px auto 0;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.main-guide-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-guide-section > h2,
+.main-guide-intro > h2 {
+    height: auto;
+    margin-bottom: 8px;
+    text-align: start;
+    font-size: 20px;
+    position: relative;
+    display: flex;
+    color: var(--text-lightgray);
+}
+
+.main-guide-intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-guide p {
+    height: auto;
+    font-weight: 500;
+    font-size: 14px;
+    width: 100%;
+    display: block;
+    position: relative;
+    line-height: 1.4;
+    color: var(--gray);
+    text-align: start;
+    text-wrap-style: pretty;
+    transition: color .15s ease-in-out;
+}
+
+.main-guide-categories {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.main-guide-category a,
+.main-guide-details-content p a {
+    text-decoration: unset;
+    color: var(--text-lightgray);
+    transition: all .15s ease-in-out;
+}
+
+.main-guide-category h3 {
+    width: auto;
+    font-size: 16px;
+    margin-bottom: 15px;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--text-lightgray);
+}
+
+/* .main-guide-section > h2::before,
+.main-guide-intro > h2::before, */
+.main-guide-category h3::before {
+    /* content: ""; */
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    margin-right: 10px;
+
+    mask-image: url(/img/icons/gamemodes/map-marker-question.svg);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+
+    background: linear-gradient(
+        to right,
+        rgb(141, 21, 41),
+        var(--main-color)
+    );
+
+    filter: grayscale(1);
+    transition: all .15s ease-in-out;
+}
+
+/* .main-guide-section:hover > h2::before,
+.main-guide-intro:hover > h2::before, */
+.main-guide-category:hover h3::before {
+    filter: grayscale(0);
+}
+
+.main-guide-category p {
+    color: var(--gray);
+    transition: color .15s ease-in-out;
+}
+
+.main-guide-category:hover p,
+.main-guide-intro:hover p,
+.main-guide p:hover {
+    color: var(--text-lightgray);
+}
+
+.main-guide-category:hover p a,
+.main-guide-intro:hover p a,
+.main-guide p:hover a,
+.main-guide-details-content p a {
+    color: var(--white);
+}
+
+.main-guide-category p a:hover,
+.main-guide-intro p a:hover,
+.main-guide p a:hover,
+.main-guide-details-content p a:hover {
+    color: var(--main-color);
+}
+
+.main-guide-accordion {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+
+    align-items: start;
+}
+
+.main-guide-details {
+    width: 100%;
+    background: var(--darkgray);
+    border-radius: var(--minor-border);
+    overflow: hidden;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
+    align-self: start;
+    height: fit-content;
+}
+
+.main-guide-details summary {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 0 50px 0 20px;
+
+    cursor: pointer;
+    user-select: none;
+
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray);
+    transition: color .15s ease-in-out;
+
+    list-style: none;
+}
+
+.main-guide-details:hover summary {
+    color: var(--text-lightgray);
+}
+
+.main-guide-details:hover summary::after {
+    filter: grayscale(1) brightness(3);
+}
+
+.main-guide-details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* .main-guide-category {
+    background: var(--darkgray);
+    border-radius: var(--main-border);
+    padding: 25px;
+} */
+
+.main-guide-details summary::after {
+    position: absolute;
+    right: 20px;
+    content: '';
+
+    background-image: url(/img/icons/gamemodes/caret-down.svg);
+    background-size: cover;
+    transition: all .4s ease-in-out;
+    filter: grayscale(1) brightness(2);
+    transform: rotate(180deg);
+    opacity: 1;
+    width: 14px;
+    height: 14px;
+
+    transition: all .15s ease-in-out, transform .3s ease-in-out;
+}
+
+.main-guide-details[open] summary::after {
+    filter: grayscale(1) brightness(3);
+    transform: rotate(0deg);
+}
+
+.main-guide-details[open] summary {
+    color: var(--text-lightgray);
+}
+
+.main-guide-details-content {
+    padding: 0 20px 20px;
+}
+
+.main-guide-details-content p {
+    margin: 0;
+    color: var(--text-lightgray);
 }
 
 .ratingsumm {

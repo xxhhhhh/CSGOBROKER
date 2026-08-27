@@ -174,7 +174,7 @@ function keywordsFrom(html) {
   if (!kw) return [];
   return kw.split(',').map(s => s.trim()).filter(Boolean);
 }
-function cleanLabel(s) { return s ? s.replace(/\s*[|—-]\s*CSGOBroker.*$/i, '').trim() : s; }
+function cleanLabel(s) { return s ? s.replace(/\s*[|—-]\s*CSGOBROKER.*$/i, '').trim() : s; }
 function cleanKeywords(list) {
   if (!Array.isArray(list)) return [];
   const out = []; const seen = new Set();

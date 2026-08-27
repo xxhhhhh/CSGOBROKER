@@ -481,7 +481,7 @@ function injectMainSchema(pAbs) {
         "@type": "WebSite",
         "@id": "https://csgobroker.cc/#website",
         "url": "https://csgobroker.cc",
-        "name": "CSGOBroker",
+        "name": "CSGOBROKER",
         "description":
           "We conduct thorough hands-on testing of each site before publishing a review, ensuring accuracy and fairness. Our evaluations are regularly updated to reflect any changes, focusing on reliability and user trust.",
         "publisher": { "@id": "https://csgobroker.cc/#organization" },
@@ -501,7 +501,7 @@ function injectMainSchema(pAbs) {
       {
         "@type": "Organization",
         "@id": "https://csgobroker.cc/#organization",
-        "name": "CSGOBroker",
+        "name": "CSGOBROKER",
         "url": "https://csgobroker.cc",
         "logo": {
           "@type": "ImageObject",
@@ -511,7 +511,7 @@ function injectMainSchema(pAbs) {
           "contentUrl": "https://csgobroker.cc/img/logo.svg",
           "width": 515,
           "height": 100,
-          "caption": "CSGOBroker"
+          "caption": "CSGOBROKER"
         },
         "image": { "@id": "https://csgobroker.cc/#/schema/logo/image/" }
       }
@@ -648,7 +648,7 @@ function injectReviewSchema(pAbs) {
     },
     "author": {
       "@type": "Person",
-      "name": "CSGOBroker",
+      "name": "CSGOBROKER",
       "url": "https://csgobroker.cc"
     },
     "reviewRating": {
@@ -679,7 +679,7 @@ function injectReviewSchema(pAbs) {
     try { obj = JSON.parse(inner); } catch { obj = null; }
     if (!obj) continue;
 
-    if (obj['@type'] === 'Review' && obj?.author?.name === 'CSGOBroker') {
+    if (obj['@type'] === 'Review' && obj?.author?.name === 'CSGOBROKER') {
       blocks.push({ full, stable: stableJson(obj) });
     }
   }
@@ -806,7 +806,7 @@ function injectGuideSchema(pAbs) {
 
   const caption = `${title} - Guide by ${jsonData.author.name}`;
   const breadcrumb = [
-    { "@type": "ListItem", position: 1, name: "CSGOBroker", item: "https://csgobroker.cc" },
+    { "@type": "ListItem", position: 1, name: "CSGOBROKER", item: "https://csgobroker.cc" },
     { "@type": "ListItem", position: 2, name: "Guides", item: "https://csgobroker.cc/topic/guides/" },
     { "@type": "ListItem", position: 3, name: title }
   ];
@@ -868,7 +868,7 @@ function injectGuideSchema(pAbs) {
         "@type": "WebSite",
         "@id": "https://csgobroker.cc/#website",
         "url": "https://csgobroker.cc",
-        "name": "CSGOBroker",
+        "name": "CSGOBROKER",
         "description": websiteDescription,
         "publisher": { "@id": "https://csgobroker.cc/#organization" },
         "inLanguage": langFull
@@ -876,7 +876,7 @@ function injectGuideSchema(pAbs) {
       {
         "@type": "Organization",
         "@id": "https://csgobroker.cc/#organization",
-        "name": "CSGOBroker",
+        "name": "CSGOBROKER",
         "url": "https://csgobroker.cc",
         "logo": {
           "@type": "ImageObject",
@@ -886,7 +886,7 @@ function injectGuideSchema(pAbs) {
           "contentUrl": jsonData.author.avatar,
           "width": 512,
           "height": 512,
-          "caption": "CSGOBroker"
+          "caption": "CSGOBROKER"
         },
         "image": { "@id": "https://csgobroker.cc/#/schema/logo/image/" }
       },

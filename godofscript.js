@@ -3045,3 +3045,96 @@ document.addEventListener("DOMContentLoaded", () => {
     init();
   }
 })();
+
+document.querySelectorAll('.main-guide-details').forEach((details) => {
+    const summary = details.querySelector('summary');
+    const content = details.querySelector('.main-guide-details-content');
+
+    if (!summary || !content) return;
+
+    let animation = null;
+    let isClosing = false;
+    let isExpanding = false;
+
+    summary.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        details.style.overflow = 'hidden';
+
+        if (isClosing || !details.open) {
+            openDetails();
+        } else if (isExpanding || details.open) {
+            closeDetails();
+        }
+    });
+
+    function closeDetails() {
+        isClosing = true;
+
+        const startHeight = `${details.offsetHeight}px`;
+        const endHeight = `${summary.offsetHeight}px`;
+
+        if (animation) {
+            animation.cancel();
+        }
+
+        animation = details.animate(
+            {
+                height: [startHeight, endHeight]
+            },
+            {
+                duration: 150,
+                easing: 'ease'
+            }
+        );
+
+        animation.onfinish = () => {
+            details.open = false;
+            details.style.height = '';
+            details.style.overflow = '';
+            animation = null;
+            isClosing = false;
+        };
+
+        animation.oncancel = () => {
+            isClosing = false;
+        };
+    }
+
+    function openDetails() {
+        details.style.height = `${details.offsetHeight}px`;
+        details.open = true;
+
+        requestAnimationFrame(() => {
+            isExpanding = true;
+
+            const startHeight = `${summary.offsetHeight}px`;
+            const endHeight = `${summary.offsetHeight + content.offsetHeight}px`;
+
+            if (animation) {
+                animation.cancel();
+            }
+
+            animation = details.animate(
+                {
+                    height: [startHeight, endHeight]
+                },
+                {
+                    duration: 150,
+                    easing: 'ease'
+                }
+            );
+
+            animation.onfinish = () => {
+                details.style.height = '';
+                details.style.overflow = '';
+                animation = null;
+                isExpanding = false;
+            };
+
+            animation.oncancel = () => {
+                isExpanding = false;
+            };
+        });
+    }
+});

@@ -1,0 +1,1014 @@
+{
+  "version": 1,
+  "page": "home",
+  "languages": {
+    "en": {
+      "intro": {
+        "title": "CSGOBROKER — Ratings and Reviews of CS2, Rust, Dota 2, Steam and Crypto Sites",
+        "paragraphs": [
+          "CSGOBROKER helps users navigate third-party services related to in-game items and digital platforms. The site brings together rankings of gambling platforms, skin marketplaces and trading sites, instant-sell services, bonus and task sites, as well as Steam services. Instead of placing everything in one general list, we separate platforms by purpose so you can go straight to the relevant category and compare sites using the criteria that matter for that specific task.",
+          "A separate part of CSGOBROKER is dedicated to the Counter-Strike 2 ecosystem: skins, stickers, collections, cases, tournament items, professional player inventories and other data. This means the site can be used not only to compare third-party platforms, but also to navigate CS2 items and related sections."
+        ]
+      },
+      "categories": {
+        "title": "What You Can Find on CSGOBROKER",
+        "items": [
+          {
+            "title": "CS2 Sites",
+            "paragraphs": [
+              "The CS2 section includes platforms with different game modes: case opening, roulette, crash, upgrader, case battles, coinflip, slots and esports betting. The general ranking is available on the <a href=\"/cs2\">CS2 sites</a> page, while individual modes have their own selections: <a href=\"/csgo/caseopening\">CS2 case sites</a>, <a href=\"/csgo/upgrader\">upgrader sites</a>, <a href=\"/csgo/roulette\">roulette</a>, <a href=\"/csgo/crash\">crash</a> and <a href=\"/csgo/matchbetting\">match betting</a>."
+            ]
+          },
+          {
+            "title": "Buying, Selling and Trading Skins",
+            "paragraphs": [
+              "If your goal is not a game mode but the skins themselves, CSGOBROKER has separate rankings for that. You can compare <a href=\"/csgo/marketplaces\">CS2 skin marketplaces</a>, choose a site to <a href=\"/csgo/buy-skins\">buy skins</a>, <a href=\"/csgo/sell-skins\">sell skins</a>, <a href=\"/csgo/trade-skins\">trade items</a> or use an <a href=\"/csgo/instant-sell\">instant-sell service</a>. These types of services solve different tasks, so comparing them only by bonus size or overall rating would be misleading."
+            ]
+          },
+          {
+            "title": "Rust and Dota 2 Sites",
+            "paragraphs": [
+              "Other in-game economies have their own sections. The <a href=\"/rust\">Rust sites ranking</a> contains gambling platforms and skin-related services, while the <a href=\"/dota\">Dota 2</a> section covers item services, gaming platforms and marketplaces. Separate categories make it easier to avoid mixing the conditions, withdrawal methods and available items of different games."
+            ]
+          },
+          {
+            "title": "Crypto Sites",
+            "paragraphs": [
+              "The <a href=\"/crypto\">crypto sites</a> section contains platforms where cryptocurrency is the main or one of the main deposit and withdrawal methods. For these sites, it is especially important to compare supported currencies, fees, limits, processing speed and verification requirements rather than looking only at the selection of games."
+            ]
+          },
+          {
+            "title": "Bonuses and Earning Services",
+            "paragraphs": [
+              "The <a href=\"/freebies\">bonuses section</a> lets you separately view sign-up offers, deposit bonuses, daily rewards, sale bonuses and giveaways. Services where rewards are earned through tasks or activity are grouped in the <a href=\"/earning\">earning section</a>, including <a href=\"/earning/offerwalls\">offerwall tasks</a> and <a href=\"/earning/earn-by-play\">play-to-earn rewards</a>."
+            ]
+          },
+          {
+            "title": "Steam Services and CS2 Wiki",
+            "paragraphs": [
+              "Separate selections cover services for <a href=\"/steam/levelup\">leveling up Steam</a>, <a href=\"/steam/topup\">topping up a Steam balance</a> and <a href=\"/steam/buy-games\">buying games</a>. The <a href=\"/topic\">CS2 Wiki</a> contains item selections and data, including <a href=\"/topic/skins\">skins by color</a>, <a href=\"/topic/items\">skins by weapon type</a>, <a href=\"/topic/items-type/tournament-stickers\">tournament stickers</a>, <a href=\"/topic/sticker-crafts\">sticker crafts</a> and <a href=\"/topic/players/inventories\">player inventories</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "How to Choose the Right Type of Site",
+        "intro": "Before comparing individual platforms, it helps to define what you actually want to do. The same service may support several functions, but buying, selling, trading and game modes can have very different conditions. Here is a quick guide to the main scenarios.",
+        "items": [
+          {
+            "summary": "I Want to Buy a Specific CS2 Skin",
+            "body": "For buying a specific skin, a marketplace is usually the most convenient option because you can search by item name, condition, price and other characteristics. When comparing platforms, consider the final price after fees, deposit methods, delivery speed and the transaction model. Start with the <a href=\"/csgo/marketplaces\">marketplaces</a> and <a href=\"/csgo/buy-skins\">sites for buying skins</a> sections."
+          },
+          {
+            "summary": "I Want to Sell a Skin and Withdraw Money",
+            "body": "It is important to distinguish between a regular marketplace sale and instant selling. On a marketplace, the user usually sets a price and waits for a buyer. An instant-sell service buys the item faster, but the offered price may be lower than the open-market price. Compare the <a href=\"/csgo/sell-skins\">skin selling</a> and <a href=\"/csgo/instant-sell\">instant-sell</a> sections."
+          },
+          {
+            "summary": "I Want to Trade One Item for Another",
+            "body": "Trading services are designed to work with a user inventory and the platform's own stock or offers from other users. Before making a trade, consider not only the interface but also the difference between the value of the item you give and the item you receive, the available inventory and possible fees. These platforms are listed in the <a href=\"/csgo/trade-skins\">CS2 skin trading</a> section."
+          },
+          {
+            "summary": "I Am Interested in Cases, Roulette, Crash or Other Game Modes",
+            "body": "For gaming platforms, it is usually better to use the ranking for the exact mode you want. A site with a strong case-opening section will not necessarily be equally suitable for match betting or roulette. CSGOBROKER separates these platforms into categories such as <a href=\"/csgo/caseopening\">case opening</a>, <a href=\"/csgo/roulette\">roulette</a>, <a href=\"/csgo/crash\">crash</a>, <a href=\"/csgo/case-battle\">case battles</a> and <a href=\"/csgo/upgrader\">upgrader</a>."
+          },
+          {
+            "summary": "I Want to Earn Rewards Without Buying Skins",
+            "body": "Some services offer rewards for completing tasks, using offerwalls or being active in games. The reward format varies: internal coins, gift cards, cryptocurrency or in-game items may be available. Check the minimum withdrawal amount and payout methods in advance. See the <a href=\"/earning/offerwalls\">task sites</a> and <a href=\"/earning/earn-by-play\">play-to-earn</a> sections."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Builds Site Rankings",
+        "intro": "A platform should not be judged by a single metric. A large bonus does not compensate for inconvenient withdrawals, and a wide item selection matters less when transaction terms are unclear. We therefore consider several groups of factors and update information when site conditions, functionality or availability change.",
+        "items": [
+          {
+            "summary": "Reputation and Operational Stability",
+            "body": "We consider how long a platform has been operating, the stability of its main functions, significant changes to the service and the overall predictability of the user experience. For an established site, popularity alone is not enough; it also matters whether the service continues to work reliably after updates."
+          },
+          {
+            "summary": "Deposits, Withdrawals and Fees",
+            "body": "We compare available deposit and withdrawal methods, support for skins, traditional payment methods or cryptocurrency, minimum and maximum amounts, fees and restrictions. For trading services, the difference between the displayed item value and the amount the user actually receives after the transaction also matters."
+          },
+          {
+            "summary": "Inventory, Game Modes and Functionality",
+            "body": "The criterion depends on the page type. A marketplace is evaluated by its inventory and search tools, a trading site by the availability of items to exchange, a gambling platform by its game modes, and a task site by the range of ways users can earn rewards."
+          },
+          {
+            "summary": "Bonuses and Their Conditions",
+            "body": "We do not look only at the headline bonus amount. Activation method, validity period, restrictions, deposit or wagering requirements and the ability to withdraw the reward are also important. Current offers are collected in the <a href=\"/freebies\">bonuses section</a>."
+          },
+          {
+            "summary": "Ease of Use",
+            "body": "We consider interface clarity, the operation of key functions on desktop and mobile devices, the speed of common actions, the availability of clear rules and access to support. These factors become especially important when two services offer similar prices or terms."
+          },
+          {
+            "summary": "Transparency and Verifiability of Terms",
+            "body": "We look at how easy it is to find the service rules, bonus terms, fees, verification requirements and information about individual functions. For game modes, an additional factor may be the availability of result-verification mechanisms where the platform provides them."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Data and Rankings Change",
+        "paragraphs": [
+          "Third-party services regularly change fees, bonuses, payment methods, supported countries, inventory, game modes and withdrawal rules. For this reason, a CSGOBROKER ranking is not a permanent list: a site can move after its terms or functionality change. The same applies to promo codes and bonuses — an offer that was attractive before may become less useful after activation or withdrawal requirements are updated.",
+          "When choosing a platform, we recommend looking not only at its position in the ranking but also at the information in its card, the full review and the parameters that matter for your specific task. If you need a particular mode or a specific way to work with skins, use the specialized category where sites of the same type are compared."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Using Third-Party Services",
+        "intro": "CSGOBROKER is an informational website and does not replace checking the terms of a specific platform before using it. Availability and applicable rules may depend on the user's country. When working with skins, Steam and payments, always verify the site address and read the transaction terms before confirming an action.",
+        "items": [
+          {
+            "summary": "Check the Domain Before Signing in Through Steam",
+            "body": "Phishing copies can visually imitate well-known platforms. Before signing in, verify the page address and avoid Steam authorization pages reached through suspicious domains, random ads or unsolicited messages."
+          },
+          {
+            "summary": "Check Every Steam Trade Offer",
+            "body": "Before confirming a trade, compare the sender and every item in the offer. A bot name, avatar or similar display name alone does not prove that the offer was sent by the intended service."
+          },
+          {
+            "summary": "Read Withdrawal and KYC Rules in Advance",
+            "body": "Some services introduce verification requirements or withdrawal restrictions at certain amounts or for particular payment methods. It is better to check these rules before depositing funds or transferring valuable items."
+          },
+          {
+            "summary": "Do Not Judge an Offer Only by the Bonus",
+            "body": "A large percentage or free reward may come with additional requirements. Before activating it, check the minimum deposit, wagering conditions, validity period and restrictions on withdrawing bonus funds or items."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CSGOBROKER",
+        "items": [
+          {
+            "summary": "What Is CSGOBROKER?",
+            "body": "CSGOBROKER is an informational website with rankings and reviews of third-party services for CS2, Rust, Dota 2, Steam and cryptocurrencies, as well as sections about Counter-Strike 2 skins, stickers and other items."
+          },
+          {
+            "summary": "How Is a Ranking Different From a Regular List of Sites?",
+            "body": "In the rankings, platforms are separated by purpose and compared using criteria relevant to the specific category. For example, prices and trading conditions matter for a marketplace, while game mechanics, withdrawals and transparency matter for a case-opening site."
+          },
+          {
+            "summary": "Do All Sites Accept CS2 Skins?",
+            "body": "No. Some platforms work directly with skins, while others accept only traditional payment methods or cryptocurrency. Supported deposit and withdrawal methods should be checked in the site card, the review and on the platform itself before use."
+          },
+          {
+            "summary": "What Is the Difference Between a Skin Marketplace and a Trading Site?",
+            "body": "On a marketplace, an item is usually listed for sale at a selected price and waits for a buyer. A trading site is primarily designed to exchange one item for another and may use its own inventory or an automated trading system."
+          },
+          {
+            "summary": "What Is the Difference Between Instant Selling and a Regular Sale?",
+            "body": "With a regular sale, the user usually lists the item and waits for a buyer. With instant selling, the service offers to buy the item immediately or almost immediately, so the process is faster, but the offered price may differ from the open-market price."
+          },
+          {
+            "summary": "How Do CSGOBROKER Promo Codes Work?",
+            "body": "If a platform has an available promo code, it is shown in the site card or review. The reward depends on the specific service and may include a deposit bonus, free case, internal currency or another offer. Activation conditions should be checked separately for each platform."
+          },
+          {
+            "summary": "Where Can I Find Information About CS2 Skins and Stickers?",
+            "body": "Use the <a href=\"/topic\">CS2 Wiki</a>. It includes <a href=\"/topic/skins\">skins by color</a>, <a href=\"/topic/items\">items by weapon type</a>, <a href=\"/topic/items-type/tournament-stickers\">tournament stickers</a>, <a href=\"/topic/sticker-crafts\">sticker crafts</a> and <a href=\"/topic/players/inventories\">player inventories</a>."
+          }
+        ]
+      }
+    },
+    "ru": {
+      "intro": {
+        "title": "CSGOBROKER — рейтинги и обзоры сайтов для CS2, Rust, Dota 2, Steam и криптовалют",
+        "paragraphs": [
+          "CSGOBROKER помогает разобраться в сторонних сервисах, связанных с игровыми предметами и цифровыми платформами. На сайте собраны рейтинги гемблинг-площадок, торговых площадок и обменников, сервисов быстрой продажи скинов, сайтов с бонусами и заданиями, а также сервисов для Steam. Вместо одного общего списка мы разделяем площадки по назначению, чтобы можно было сразу перейти к подходящей категории и сравнивать сайты по тем параметрам, которые важны именно для выбранной задачи.",
+          "Отдельная часть CSGOBROKER посвящена экосистеме Counter-Strike 2: скинам, стикерам, коллекциям, кейсам, турнирным предметам, инвентарям профессиональных игроков и другим данным. Поэтому сайт можно использовать не только для сравнения сторонних платформ, но и как навигацию по предметам и связанным разделам CS2."
+        ]
+      },
+      "categories": {
+        "title": "Что можно найти на CSGOBROKER",
+        "items": [
+          {
+            "title": "Сайты CS2",
+            "paragraphs": [
+              "В разделе CS2 собраны площадки с разными игровыми режимами: открытием кейсов, рулеткой, крашем, апгрейдом, кейс-баттлами, монеткой, слотами и ставками на киберспорт. Общий рейтинг находится на странице <a href=\"/cs2\">сайтов CS2</a>, а для отдельных режимов есть собственные подборки: <a href=\"/csgo/caseopening\">кейсы CS2</a>, <a href=\"/csgo/upgrader\">апгрейдеры</a>, <a href=\"/csgo/roulette\">рулетка</a>, <a href=\"/csgo/crash\">краш</a> и <a href=\"/csgo/matchbetting\">ставки на матчи</a>."
+            ]
+          },
+          {
+            "title": "Покупка, продажа и обмен скинов",
+            "paragraphs": [
+              "Если задача связана не с игровыми режимами, а непосредственно со скинами, для этого есть отдельные рейтинги. Можно сравнить <a href=\"/csgo/marketplaces\">торговые площадки CS2</a>, выбрать сайт, чтобы <a href=\"/csgo/buy-skins\">купить скины</a>, <a href=\"/csgo/sell-skins\">продать скины</a>, <a href=\"/csgo/trade-skins\">обменять предметы</a> или воспользоваться <a href=\"/csgo/instant-sell\">быстрой продажей</a>. Эти типы сервисов решают разные задачи, поэтому сравнивать их между собой только по размеру бонуса или общей оценке некорректно."
+            ]
+          },
+          {
+            "title": "Сайты Rust и Dota 2",
+            "paragraphs": [
+              "Для других игровых экономик существуют отдельные разделы. В <a href=\"/rust\">рейтинге сайтов Rust</a> представлены гемблинг-площадки и связанные со скинами сервисы, а в разделе <a href=\"/dota\">Dota 2</a> — сайты для предметов Dota 2, игровые платформы и торговые сервисы. Отдельные категории помогают не смешивать условия, способы вывода и доступные предметы разных игр."
+            ]
+          },
+          {
+            "title": "Крипто-сайты",
+            "paragraphs": [
+              "В разделе <a href=\"/crypto\">крипто-сайтов</a> собраны площадки, где криптовалюта используется как основной или один из основных способов пополнения и вывода. Для таких сайтов особенно важно сравнивать поддерживаемые валюты, комиссии, ограничения, скорость обработки операций и правила верификации, а не только набор игр."
+            ]
+          },
+          {
+            "title": "Бонусы и способы заработка",
+            "paragraphs": [
+              "В <a href=\"/freebies\">разделе бонусов</a> можно отдельно посмотреть предложения за регистрацию, бонусы к пополнению, ежедневные награды, бонусы к продаже и розыгрыши. Для сервисов, где вознаграждение получают за выполнение заданий или активность, есть раздел <a href=\"/earning\">заработка</a>, включая <a href=\"/earning/offerwalls\">задания</a> и <a href=\"/earning/earn-by-play\">награды за игру</a>."
+            ]
+          },
+          {
+            "title": "Сервисы Steam и энциклопедия CS2",
+            "paragraphs": [
+              "Отдельные подборки посвящены сервисам для <a href=\"/steam/levelup\">повышения уровня Steam</a>, <a href=\"/steam/topup\">пополнения баланса</a> и <a href=\"/steam/buy-games\">покупки игр</a>. В разделе <a href=\"/topic\">CS2 Wiki</a> собраны подборки и данные о предметах: <a href=\"/topic/skins\">скины по цветам</a>, <a href=\"/topic/items\">скины по типу оружия</a>, <a href=\"/topic/items-type/tournament-stickers\">турнирные стикеры</a>, <a href=\"/topic/sticker-crafts\">крафты со стикерами</a> и <a href=\"/topic/players/inventories\">инвентари игроков</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Как выбрать подходящий тип сайта",
+        "intro": "Перед сравнением конкретных площадок полезно сначала определить задачу. Один и тот же сервис может поддерживать несколько функций, но условия покупки, продажи, обмена и игровых режимов отличаются. Ниже — краткая навигация по основным сценариям.",
+        "items": [
+          {
+            "summary": "Хочу купить конкретный скин CS2",
+            "body": "Для покупки обычно удобнее торговая площадка, где можно искать конкретный предмет по названию, состоянию, цене и другим характеристикам. При сравнении стоит учитывать итоговую стоимость после комиссии, способы пополнения, скорость получения предмета и модель сделки. Начать можно с разделов <a href=\"/csgo/marketplaces\">торговых площадок</a> и <a href=\"/csgo/buy-skins\">сайтов для покупки скинов</a>."
+          },
+          {
+            "summary": "Хочу продать скин и вывести деньги",
+            "body": "Здесь важно различать обычную продажу на маркетплейсе и мгновенный выкуп. На торговой площадке пользователь обычно сам выставляет цену и ждёт покупателя. Сервис быстрой продажи выкупает предмет быстрее, но цена предложения может быть ниже рыночной. Для сравнения доступны разделы <a href=\"/csgo/sell-skins\">продажи скинов</a> и <a href=\"/csgo/instant-sell\">быстрой продажи</a>."
+          },
+          {
+            "summary": "Хочу обменять один предмет на другой",
+            "body": "Для обмена подходят сервисы, работающие с инвентарём пользователя и собственным запасом предметов или предложениями других пользователей. Перед обменом важно смотреть не только на удобство интерфейса, но и на разницу между ценой отдаваемого и получаемого предмета, доступный ассортимент и возможные комиссии. Такие площадки собраны в разделе <a href=\"/csgo/trade-skins\">обмена скинов CS2</a>."
+          },
+          {
+            "summary": "Интересуют кейсы, рулетка, краш или другие игровые режимы",
+            "body": "Для игровых платформ лучше выбирать рейтинг конкретного режима. Например, сайт с сильным разделом кейсов не обязательно будет столь же удобен для ставок на матчи или рулетки. CSGOBROKER разделяет такие площадки на отдельные категории, включая <a href=\"/csgo/caseopening\">кейсы</a>, <a href=\"/csgo/roulette\">рулетку</a>, <a href=\"/csgo/crash\">краш</a>, <a href=\"/csgo/case-battle\">кейс-баттлы</a> и <a href=\"/csgo/upgrader\">апгрейдеры</a>."
+          },
+          {
+            "summary": "Хочу получить награды без покупки скинов",
+            "body": "Для этого существуют сайты с заданиями, offerwall-механиками и наградами за игровую активность. Условия сильно различаются: где-то начисляются внутренние монеты, где-то доступны подарочные карты, криптовалюта или игровые предметы. Важно заранее проверить минимальную сумму вывода и доступные способы получения награды. Смотрите разделы <a href=\"/earning/offerwalls\">заданий</a> и <a href=\"/earning/earn-by-play\">заработка на игре</a>."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER формирует рейтинг сайтов",
+        "intro": "Оценка площадки не должна зависеть от одного показателя. Большой бонус не компенсирует неудобный вывод, а широкий выбор предметов не имеет большого значения, если условия сделки непрозрачны. Поэтому при сравнении мы рассматриваем несколько групп факторов и обновляем данные, когда на сайтах меняются условия, функциональность или доступность.",
+        "items": [
+          {
+            "summary": "Репутация и стабильность работы",
+            "body": "Мы учитываем историю работы площадки, стабильность основных функций, заметные изменения в сервисе и общую предсказуемость пользовательского опыта. Для давно работающего сайта важна не только известность, но и то, сохраняет ли он нормальную работу после обновлений."
+          },
+          {
+            "summary": "Пополнение, вывод и комиссии",
+            "body": "Сравниваются доступные способы пополнения и вывода, поддержка скинов, банковских методов или криптовалюты, минимальные и максимальные суммы, комиссии и ограничения. Для торговых сервисов также важна разница между отображаемой стоимостью предмета и суммой, которую пользователь получает после сделки."
+          },
+          {
+            "summary": "Ассортимент, режимы и функциональность",
+            "body": "Критерий зависит от типа страницы. Для маркетплейса важны ассортимент и инструменты поиска, для обменника — доступность предметов для обмена, для гемблинг-площадки — набор и качество игровых режимов, а для сайта с заданиями — количество доступных способов заработать награду."
+          },
+          {
+            "summary": "Бонусы и условия их получения",
+            "body": "Мы смотрим не только на размер указанного бонуса. Важны способ активации, срок действия, ограничения, требования к пополнению или обороту и возможность вывести полученную награду. Актуальные предложения вынесены в отдельный <a href=\"/freebies\">раздел бонусов</a>."
+          },
+          {
+            "summary": "Удобство использования",
+            "body": "Учитываются понятность интерфейса, работа основных функций на компьютере и мобильных устройствах, скорость выполнения типичных действий, наличие понятных правил и доступность поддержки. Эти параметры особенно важны, когда два сервиса предлагают сопоставимые цены или условия."
+          },
+          {
+            "summary": "Прозрачность и проверяемость условий",
+            "body": "Мы обращаем внимание на то, насколько легко найти правила сервиса, условия бонусов, комиссии, требования к верификации и информацию о работе отдельных функций. Для игровых режимов дополнительным фактором может быть наличие механизмов проверки результатов, если такая возможность предусмотрена самой площадкой."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему данные и рейтинги меняются",
+        "paragraphs": [
+          "Сторонние сервисы регулярно меняют комиссии, бонусы, способы оплаты, доступные страны, ассортимент, игровые режимы и правила вывода. По этой причине рейтинг CSGOBROKER не является постоянным списком: позиция сайта может измениться после обновления условий или функциональности. То же относится к промокодам и бонусам — предложение, которое было выгодным раньше, может стать менее интересным после изменения требований к активации или выводу.",
+          "При выборе площадки рекомендуем смотреть не только на место в рейтинге, но и на информацию в карточке, полный обзор и параметры, важные для конкретной задачи. Если нужен определённый режим или способ работы со скинами, лучше переходить в специализированную категорию, где сравниваются сайты одного типа."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при работе со сторонними сервисами",
+        "intro": "CSGOBROKER является информационным сайтом и не заменяет проверку условий конкретной площадки перед её использованием. Доступность сервисов и применимые правила могут зависеть от страны пользователя. При работе со скинами, Steam и платежами особенно важно проверять адрес сайта и внимательно читать условия операции до подтверждения.",
+        "items": [
+          {
+            "summary": "Проверяйте домен перед входом через Steam",
+            "body": "Фишинговые копии могут визуально повторять известные сайты. Перед авторизацией проверяйте адрес страницы и не переходите к входу через Steam с подозрительных доменов, рекламных объявлений или случайных сообщений."
+          },
+          {
+            "summary": "Проверяйте каждый Steam Trade Offer",
+            "body": "Перед подтверждением обмена сравните отправителя и все предметы в предложении. Название бота, аватар или похожее имя сами по себе не гарантируют, что предложение отправлено нужным сервисом."
+          },
+          {
+            "summary": "Читайте условия вывода и KYC заранее",
+            "body": "У некоторых сервисов требования к верификации или ограничения на вывод появляются при достижении определённых сумм или использовании отдельных способов оплаты. Лучше проверить эти правила до пополнения баланса или передачи дорогих предметов."
+          },
+          {
+            "summary": "Не оценивайте предложение только по бонусу",
+            "body": "Большой процент или бесплатная награда могут сопровождаться дополнительными требованиями. Перед активацией стоит проверить минимальный депозит, условия оборота, срок действия и ограничения на вывод бонусных средств или предметов."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о CSGOBROKER",
+        "items": [
+          {
+            "summary": "Что такое CSGOBROKER?",
+            "body": "CSGOBROKER — информационный сайт с рейтингами и обзорами сторонних сервисов для CS2, Rust, Dota 2, Steam и криптовалют, а также с разделами о скинах, стикерах и других предметах Counter-Strike 2."
+          },
+          {
+            "summary": "Чем рейтинг отличается от обычного списка сайтов?",
+            "body": "В рейтингах площадки разделены по назначению и сравниваются с учётом характеристик конкретной категории: например, для маркетплейса важны цены и условия торговли, а для сайта с кейсами — игровые механики, вывод и прозрачность условий."
+          },
+          {
+            "summary": "Все ли сайты принимают скины CS2?",
+            "body": "Нет. Часть площадок работает со скинами напрямую, другие принимают только денежные методы или криптовалюту. Поддерживаемые способы пополнения и вывода следует проверять в карточке сайта, обзоре и на самой площадке перед использованием."
+          },
+          {
+            "summary": "Чем маркетплейс отличается от обменника скинов?",
+            "body": "На маркетплейсе предмет обычно выставляется на продажу по выбранной цене и ждёт покупателя. Обменник предназначен прежде всего для замены одного предмета на другой и может использовать собственный инвентарь или автоматизированную систему обмена."
+          },
+          {
+            "summary": "Чем быстрая продажа отличается от обычной продажи?",
+            "body": "При обычной продаже пользователь чаще сам выставляет предмет и ожидает покупателя. При быстрой продаже сервис предлагает выкупить предмет сразу или почти сразу, поэтому скорость выше, но предлагаемая цена может отличаться от цены открытого рынка."
+          },
+          {
+            "summary": "Как работают промокоды на CSGOBROKER?",
+            "body": "Если у площадки есть доступный промокод, он указывается в карточке или обзоре. Тип награды зависит от конкретного сайта: это может быть бонус к пополнению, бесплатный кейс, внутренняя валюта или другое предложение. Условия активации нужно проверять отдельно для каждого сервиса."
+          },
+          {
+            "summary": "Где посмотреть информацию о скинах и стикерах CS2?",
+            "body": "Для этого используется раздел <a href=\"/topic\">CS2 Wiki</a>. В нём доступны подборки <a href=\"/topic/skins\">скинов по цветам</a>, <a href=\"/topic/items\">предметов по типам оружия</a>, <a href=\"/topic/items-type/tournament-stickers\">турнирных стикеров</a>, <a href=\"/topic/sticker-crafts\">стикер-крафтов</a> и <a href=\"/topic/players/inventories\">инвентарей игроков</a>."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "CSGOBROKER — Rankings y Reseñas de Sitios de CS2, Rust, Dota 2, Steam y Criptomonedas",
+        "paragraphs": [
+          "CSGOBROKER ayuda a orientarse entre servicios externos relacionados con objetos de videojuegos y plataformas digitales. El sitio reúne rankings de plataformas de apuestas, mercados y servicios de intercambio de skins, servicios de venta instantánea, sitios con bonos y tareas, además de servicios para Steam. En lugar de agruparlo todo en una única lista, separamos las plataformas según su finalidad para que puedas ir directamente a la categoría adecuada y compararlas por los criterios que realmente importan para esa tarea.",
+          "Una parte independiente de CSGOBROKER está dedicada al ecosistema de Counter-Strike 2: skins, stickers, colecciones, cajas, objetos de torneos, inventarios de jugadores profesionales y otros datos. Por eso, el sitio sirve no solo para comparar plataformas externas, sino también para navegar por objetos y secciones relacionadas con CS2."
+        ]
+      },
+      "categories": {
+        "title": "Qué Puedes Encontrar en CSGOBROKER",
+        "items": [
+          {
+            "title": "Sitios de CS2",
+            "paragraphs": [
+              "La sección de CS2 reúne plataformas con distintos modos de juego: apertura de cajas, ruleta, crash, upgrader, batallas de cajas, coinflip, slots y apuestas de esports. El ranking general está en la página de <a href=\"/cs2\">sitios de CS2</a>, mientras que cada modo tiene su propia selección: <a href=\"/csgo/caseopening\">sitios de cajas de CS2</a>, <a href=\"/csgo/upgrader\">upgraders</a>, <a href=\"/csgo/roulette\">ruleta</a>, <a href=\"/csgo/crash\">crash</a> y <a href=\"/csgo/matchbetting\">apuestas en partidos</a>."
+            ]
+          },
+          {
+            "title": "Comprar, Vender e Intercambiar Skins",
+            "paragraphs": [
+              "Si el objetivo no son los modos de juego sino las propias skins, existen rankings específicos. Puedes comparar <a href=\"/csgo/marketplaces\">mercados de skins de CS2</a>, elegir un sitio para <a href=\"/csgo/buy-skins\">comprar skins</a>, <a href=\"/csgo/sell-skins\">vender skins</a>, <a href=\"/csgo/trade-skins\">intercambiar objetos</a> o utilizar un servicio de <a href=\"/csgo/instant-sell\">venta instantánea</a>. Cada tipo de servicio resuelve una necesidad diferente, por lo que compararlos solo por el tamaño del bono o la puntuación general no sería correcto."
+            ]
+          },
+          {
+            "title": "Sitios de Rust y Dota 2",
+            "paragraphs": [
+              "Otras economías de objetos tienen sus propias secciones. El <a href=\"/rust\">ranking de sitios de Rust</a> incluye plataformas de apuestas y servicios relacionados con skins, mientras que la sección de <a href=\"/dota\">Dota 2</a> reúne servicios para objetos, plataformas de juego y mercados. Separar las categorías evita mezclar condiciones, métodos de retiro y objetos disponibles de juegos diferentes."
+            ]
+          },
+          {
+            "title": "Sitios de Criptomonedas",
+            "paragraphs": [
+              "La sección de <a href=\"/crypto\">sitios de criptomonedas</a> reúne plataformas donde las criptomonedas son el método principal o uno de los principales métodos de depósito y retiro. En estos sitios conviene comparar las monedas compatibles, comisiones, límites, velocidad de procesamiento y requisitos de verificación, y no solo la variedad de juegos."
+            ]
+          },
+          {
+            "title": "Bonos y Formas de Ganar Recompensas",
+            "paragraphs": [
+              "En la <a href=\"/freebies\">sección de bonos</a> puedes consultar por separado ofertas de registro, bonos de depósito, recompensas diarias, bonos de venta y sorteos. Los servicios donde las recompensas se obtienen mediante tareas o actividad se agrupan en la sección de <a href=\"/earning\">ganancias</a>, incluyendo <a href=\"/earning/offerwalls\">tareas</a> y <a href=\"/earning/earn-by-play\">recompensas por jugar</a>."
+            ]
+          },
+          {
+            "title": "Servicios de Steam y Wiki de CS2",
+            "paragraphs": [
+              "Hay selecciones específicas de servicios para <a href=\"/steam/levelup\">subir de nivel en Steam</a>, <a href=\"/steam/topup\">recargar el saldo de Steam</a> y <a href=\"/steam/buy-games\">comprar juegos</a>. En la <a href=\"/topic\">Wiki de CS2</a> encontrarás selecciones y datos de objetos: <a href=\"/topic/skins\">skins por color</a>, <a href=\"/topic/items\">skins por tipo de arma</a>, <a href=\"/topic/items-type/tournament-stickers\">stickers de torneos</a>, <a href=\"/topic/sticker-crafts\">crafts de stickers</a> e <a href=\"/topic/players/inventories\">inventarios de jugadores</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Cómo Elegir el Tipo de Sitio Adecuado",
+        "intro": "Antes de comparar plataformas concretas, conviene definir qué quieres hacer. Un mismo servicio puede ofrecer varias funciones, pero las condiciones para comprar, vender, intercambiar o utilizar modos de juego pueden ser muy diferentes. Esta es una guía rápida para los escenarios principales.",
+        "items": [
+          {
+            "summary": "Quiero Comprar una Skin Concreta de CS2",
+            "body": "Para comprar una skin concreta suele ser más cómodo utilizar un marketplace, donde puedes buscar por nombre, estado, precio y otras características. Al comparar plataformas, ten en cuenta el precio final después de las comisiones, los métodos de depósito, la velocidad de entrega y el modelo de la operación. Puedes empezar por las secciones de <a href=\"/csgo/marketplaces\">mercados</a> y <a href=\"/csgo/buy-skins\">sitios para comprar skins</a>."
+          },
+          {
+            "summary": "Quiero Vender una Skin y Retirar Dinero",
+            "body": "Aquí es importante distinguir entre una venta normal en un marketplace y una venta instantánea. En un mercado, el usuario suele fijar el precio y esperar a un comprador. Un servicio de venta instantánea compra el objeto más rápido, aunque el precio ofrecido puede ser inferior al del mercado abierto. Compara las secciones de <a href=\"/csgo/sell-skins\">venta de skins</a> y <a href=\"/csgo/instant-sell\">venta instantánea</a>."
+          },
+          {
+            "summary": "Quiero Intercambiar un Objeto por Otro",
+            "body": "Los servicios de intercambio trabajan con el inventario del usuario y con el stock propio de la plataforma o las ofertas de otros usuarios. Antes de intercambiar, conviene revisar no solo la interfaz, sino también la diferencia entre el valor del objeto entregado y el recibido, el inventario disponible y las posibles comisiones. Estas plataformas están reunidas en la sección de <a href=\"/csgo/trade-skins\">intercambio de skins de CS2</a>."
+          },
+          {
+            "summary": "Me Interesan las Cajas, la Ruleta, Crash u Otros Modos",
+            "body": "Para plataformas de juego suele ser mejor utilizar el ranking del modo concreto que te interesa. Un sitio con una buena sección de cajas no tiene por qué ser igual de conveniente para apuestas en partidos o ruleta. CSGOBROKER separa estas plataformas en categorías como <a href=\"/csgo/caseopening\">cajas</a>, <a href=\"/csgo/roulette\">ruleta</a>, <a href=\"/csgo/crash\">crash</a>, <a href=\"/csgo/case-battle\">batallas de cajas</a> y <a href=\"/csgo/upgrader\">upgrader</a>."
+          },
+          {
+            "summary": "Quiero Obtener Recompensas sin Comprar Skins",
+            "body": "Existen servicios con tareas, offerwalls y recompensas por actividad dentro de juegos. Las condiciones varían mucho: algunos pagan monedas internas, otros ofrecen tarjetas regalo, criptomonedas u objetos de juego. Comprueba con antelación el mínimo de retiro y los métodos de pago disponibles. Consulta las secciones de <a href=\"/earning/offerwalls\">tareas</a> y <a href=\"/earning/earn-by-play\">recompensas por jugar</a>."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo Forma CSGOBROKER sus Rankings",
+        "intro": "Una plataforma no debería evaluarse por un solo indicador. Un bono grande no compensa un retiro poco práctico, y una gran variedad de objetos importa menos si las condiciones de la operación no son transparentes. Por eso analizamos varios grupos de factores y actualizamos la información cuando cambian las condiciones, funciones o disponibilidad de los sitios.",
+        "items": [
+          {
+            "summary": "Reputación y Estabilidad",
+            "body": "Tenemos en cuenta el historial de la plataforma, la estabilidad de sus funciones principales, los cambios importantes del servicio y la previsibilidad general de la experiencia del usuario. En un sitio veterano no importa solo su popularidad, sino también si sigue funcionando correctamente después de las actualizaciones."
+          },
+          {
+            "summary": "Depósitos, Retiros y Comisiones",
+            "body": "Comparamos los métodos de depósito y retiro disponibles, la compatibilidad con skins, métodos bancarios o criptomonedas, importes mínimos y máximos, comisiones y restricciones. En servicios de trading también importa la diferencia entre el valor mostrado del objeto y la cantidad que recibe el usuario después de la operación."
+          },
+          {
+            "summary": "Inventario, Modos y Funcionalidad",
+            "body": "El criterio depende del tipo de página. En un marketplace importan el inventario y las herramientas de búsqueda; en un sitio de intercambio, la disponibilidad de objetos; en una plataforma de apuestas, los modos de juego; y en un sitio de tareas, la variedad de formas de obtener recompensas."
+          },
+          {
+            "summary": "Bonos y Condiciones",
+            "body": "No miramos únicamente el importe anunciado del bono. También importan el método de activación, el periodo de validez, las restricciones, los requisitos de depósito o wagering y la posibilidad de retirar la recompensa. Las ofertas actuales están reunidas en la <a href=\"/freebies\">sección de bonos</a>."
+          },
+          {
+            "summary": "Facilidad de Uso",
+            "body": "Valoramos la claridad de la interfaz, el funcionamiento de las funciones principales en ordenador y móvil, la rapidez de las acciones habituales, la disponibilidad de reglas comprensibles y el acceso al soporte. Estos factores son especialmente importantes cuando dos servicios ofrecen precios o condiciones similares."
+          },
+          {
+            "summary": "Transparencia y Verificabilidad de las Condiciones",
+            "body": "Nos fijamos en lo fácil que resulta encontrar las reglas del servicio, las condiciones de los bonos, las comisiones, los requisitos de verificación y la información sobre funciones concretas. En los modos de juego, también puede ser relevante la existencia de mecanismos para comprobar resultados cuando la propia plataforma los ofrece."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por Qué Cambian los Datos y los Rankings",
+        "paragraphs": [
+          "Los servicios externos cambian con frecuencia sus comisiones, bonos, métodos de pago, países disponibles, inventario, modos de juego y reglas de retiro. Por eso, el ranking de CSGOBROKER no es una lista permanente: la posición de un sitio puede cambiar cuando cambian sus condiciones o funciones. Lo mismo ocurre con los códigos promocionales y bonos: una oferta que antes era atractiva puede perder valor si se modifican los requisitos de activación o retiro.",
+          "Al elegir una plataforma, recomendamos revisar no solo su posición en el ranking, sino también la información de su tarjeta, la reseña completa y los parámetros importantes para tu objetivo. Si buscas un modo concreto o una forma específica de trabajar con skins, es mejor ir a la categoría especializada donde se comparan sitios del mismo tipo."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al Utilizar Servicios Externos",
+        "intro": "CSGOBROKER es un sitio informativo y no sustituye la revisión de las condiciones de una plataforma concreta antes de utilizarla. La disponibilidad de los servicios y las normas aplicables pueden depender del país del usuario. Al trabajar con skins, Steam y pagos, es especialmente importante comprobar la dirección del sitio y leer las condiciones de la operación antes de confirmarla.",
+        "items": [
+          {
+            "summary": "Comprueba el Dominio Antes de Iniciar Sesión con Steam",
+            "body": "Las copias de phishing pueden imitar visualmente sitios conocidos. Antes de iniciar sesión, comprueba la dirección de la página y evita autorizar Steam desde dominios sospechosos, anuncios aleatorios o mensajes no solicitados."
+          },
+          {
+            "summary": "Comprueba Cada Steam Trade Offer",
+            "body": "Antes de confirmar un intercambio, revisa el remitente y todos los objetos de la oferta. El nombre de un bot, su avatar o un nombre parecido no garantizan por sí solos que la oferta proceda del servicio correcto."
+          },
+          {
+            "summary": "Lee las Reglas de Retiro y KYC con Antelación",
+            "body": "Algunos servicios introducen requisitos de verificación o límites de retiro al alcanzar determinadas cantidades o al utilizar ciertos métodos de pago. Es mejor revisar estas reglas antes de depositar fondos o transferir objetos valiosos."
+          },
+          {
+            "summary": "No Evalúes una Oferta Solo por el Bono",
+            "body": "Un porcentaje alto o una recompensa gratuita pueden incluir requisitos adicionales. Antes de activarlos, comprueba el depósito mínimo, las condiciones de wagering, el periodo de validez y las restricciones para retirar fondos u objetos obtenidos mediante el bono."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas Frecuentes Sobre CSGOBROKER",
+        "items": [
+          {
+            "summary": "¿Qué Es CSGOBROKER?",
+            "body": "CSGOBROKER es un sitio informativo con rankings y reseñas de servicios externos para CS2, Rust, Dota 2, Steam y criptomonedas, además de secciones sobre skins, stickers y otros objetos de Counter-Strike 2."
+          },
+          {
+            "summary": "¿En Qué se Diferencia un Ranking de una Lista Normal de Sitios?",
+            "body": "En los rankings, las plataformas se separan por finalidad y se comparan según las características relevantes de cada categoría. Por ejemplo, en un marketplace importan los precios y las condiciones de trading, mientras que en un sitio de cajas importan las mecánicas de juego, los retiros y la transparencia de las condiciones."
+          },
+          {
+            "summary": "¿Todos los Sitios Aceptan Skins de CS2?",
+            "body": "No. Algunas plataformas trabajan directamente con skins y otras solo aceptan métodos de pago tradicionales o criptomonedas. Comprueba los métodos de depósito y retiro compatibles en la tarjeta del sitio, la reseña y la propia plataforma antes de utilizarla."
+          },
+          {
+            "summary": "¿Cuál Es la Diferencia Entre un Marketplace y un Sitio de Intercambio de Skins?",
+            "body": "En un marketplace, el objeto suele ponerse a la venta por un precio elegido y espera a un comprador. Un sitio de intercambio está pensado principalmente para cambiar un objeto por otro y puede utilizar su propio inventario o un sistema automatizado de trading."
+          },
+          {
+            "summary": "¿Cuál Es la Diferencia Entre Venta Instantánea y Venta Normal?",
+            "body": "En una venta normal, el usuario suele publicar el objeto y esperar a un comprador. En la venta instantánea, el servicio ofrece comprar el objeto de inmediato o casi de inmediato; el proceso es más rápido, pero el precio ofrecido puede diferir del precio del mercado abierto."
+          },
+          {
+            "summary": "¿Cómo Funcionan los Códigos Promocionales de CSGOBROKER?",
+            "body": "Si una plataforma tiene un código promocional disponible, aparece en su tarjeta o reseña. El tipo de recompensa depende del servicio: puede ser un bono de depósito, una caja gratuita, moneda interna u otra oferta. Las condiciones de activación deben comprobarse por separado en cada plataforma."
+          },
+          {
+            "summary": "¿Dónde Puedo Ver Información Sobre Skins y Stickers de CS2?",
+            "body": "Utiliza la <a href=\"/topic\">Wiki de CS2</a>. Allí encontrarás <a href=\"/topic/skins\">skins por color</a>, <a href=\"/topic/items\">objetos por tipo de arma</a>, <a href=\"/topic/items-type/tournament-stickers\">stickers de torneos</a>, <a href=\"/topic/sticker-crafts\">crafts de stickers</a> e <a href=\"/topic/players/inventories\">inventarios de jugadores</a>."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "CSGOBROKER — Rankings e Avaliações de Sites de CS2, Rust, Dota 2, Steam e Criptomoedas",
+        "paragraphs": [
+          "O CSGOBROKER ajuda a navegar por serviços de terceiros relacionados a itens de jogos e plataformas digitais. O site reúne rankings de plataformas de apostas, marketplaces e serviços de troca de skins, serviços de venda instantânea, sites com bônus e tarefas, além de serviços para Steam. Em vez de colocar tudo em uma lista única, separamos as plataformas por finalidade para que você possa acessar diretamente a categoria adequada e comparar os sites pelos critérios realmente importantes para cada objetivo.",
+          "Uma parte separada do CSGOBROKER é dedicada ao ecossistema de Counter-Strike 2: skins, stickers, coleções, caixas, itens de torneios, inventários de jogadores profissionais e outros dados. Assim, o site pode ser usado não apenas para comparar plataformas de terceiros, mas também para navegar por itens e seções relacionadas ao CS2."
+        ]
+      },
+      "categories": {
+        "title": "O Que Você Encontra no CSGOBROKER",
+        "items": [
+          {
+            "title": "Sites de CS2",
+            "paragraphs": [
+              "A seção de CS2 reúne plataformas com diferentes modos de jogo: abertura de caixas, roleta, crash, upgrader, batalhas de caixas, coinflip, slots e apostas em esports. O ranking geral está na página de <a href=\"/cs2\">sites de CS2</a>, enquanto cada modo possui sua própria seleção: <a href=\"/csgo/caseopening\">sites de caixas de CS2</a>, <a href=\"/csgo/upgrader\">upgraders</a>, <a href=\"/csgo/roulette\">roleta</a>, <a href=\"/csgo/crash\">crash</a> e <a href=\"/csgo/matchbetting\">apostas em partidas</a>."
+            ]
+          },
+          {
+            "title": "Comprar, Vender e Trocar Skins",
+            "paragraphs": [
+              "Se o objetivo não são os modos de jogo, mas as próprias skins, há rankings específicos para isso. Você pode comparar <a href=\"/csgo/marketplaces\">marketplaces de skins de CS2</a>, escolher um site para <a href=\"/csgo/buy-skins\">comprar skins</a>, <a href=\"/csgo/sell-skins\">vender skins</a>, <a href=\"/csgo/trade-skins\">trocar itens</a> ou utilizar um serviço de <a href=\"/csgo/instant-sell\">venda instantânea</a>. Esses tipos de serviço resolvem necessidades diferentes, portanto compará-los apenas pelo tamanho do bônus ou pela nota geral não é adequado."
+            ]
+          },
+          {
+            "title": "Sites de Rust e Dota 2",
+            "paragraphs": [
+              "Outras economias de itens têm seções próprias. O <a href=\"/rust\">ranking de sites de Rust</a> inclui plataformas de apostas e serviços relacionados a skins, enquanto a seção de <a href=\"/dota\">Dota 2</a> reúne serviços de itens, plataformas de jogo e marketplaces. Separar as categorias evita misturar condições, métodos de saque e itens disponíveis de jogos diferentes."
+            ]
+          },
+          {
+            "title": "Sites de Criptomoedas",
+            "paragraphs": [
+              "A seção de <a href=\"/crypto\">sites de criptomoedas</a> reúne plataformas em que a criptomoeda é o principal ou um dos principais métodos de depósito e saque. Nesses sites, é especialmente importante comparar moedas suportadas, taxas, limites, velocidade de processamento e regras de verificação, e não apenas a variedade de jogos."
+            ]
+          },
+          {
+            "title": "Bônus e Formas de Ganhar Recompensas",
+            "paragraphs": [
+              "Na <a href=\"/freebies\">seção de bônus</a>, você pode consultar separadamente ofertas de cadastro, bônus de depósito, recompensas diárias, bônus de venda e sorteios. Serviços em que as recompensas são obtidas por tarefas ou atividade ficam na seção de <a href=\"/earning\">ganhos</a>, incluindo <a href=\"/earning/offerwalls\">tarefas</a> e <a href=\"/earning/earn-by-play\">recompensas por jogar</a>."
+            ]
+          },
+          {
+            "title": "Serviços Steam e Wiki de CS2",
+            "paragraphs": [
+              "Há seleções específicas de serviços para <a href=\"/steam/levelup\">aumentar o nível da Steam</a>, <a href=\"/steam/topup\">adicionar saldo à Steam</a> e <a href=\"/steam/buy-games\">comprar jogos</a>. Na <a href=\"/topic\">Wiki de CS2</a>, você encontra seleções e dados de itens: <a href=\"/topic/skins\">skins por cor</a>, <a href=\"/topic/items\">skins por tipo de arma</a>, <a href=\"/topic/items-type/tournament-stickers\">stickers de torneios</a>, <a href=\"/topic/sticker-crafts\">crafts de stickers</a> e <a href=\"/topic/players/inventories\">inventários de jogadores</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Como Escolher o Tipo de Site Adequado",
+        "intro": "Antes de comparar plataformas específicas, vale definir o que você pretende fazer. Um mesmo serviço pode oferecer várias funções, mas as condições de compra, venda, troca e modos de jogo podem ser bem diferentes. Abaixo está um guia rápido para os principais cenários.",
+        "items": [
+          {
+            "summary": "Quero Comprar uma Skin Específica de CS2",
+            "body": "Para comprar uma skin específica, um marketplace costuma ser a opção mais prática, pois permite pesquisar por nome, condição, preço e outras características. Ao comparar plataformas, considere o preço final após as taxas, os métodos de depósito, a velocidade de entrega e o modelo da transação. Comece pelas seções de <a href=\"/csgo/marketplaces\">marketplaces</a> e <a href=\"/csgo/buy-skins\">sites para comprar skins</a>."
+          },
+          {
+            "summary": "Quero Vender uma Skin e Sacar o Dinheiro",
+            "body": "É importante distinguir uma venda normal em marketplace de uma venda instantânea. No marketplace, o usuário normalmente define o preço e espera um comprador. Um serviço de venda instantânea compra o item mais rápido, mas o valor oferecido pode ser menor que o preço de mercado. Compare as seções de <a href=\"/csgo/sell-skins\">venda de skins</a> e <a href=\"/csgo/instant-sell\">venda instantânea</a>."
+          },
+          {
+            "summary": "Quero Trocar um Item por Outro",
+            "body": "Serviços de troca trabalham com o inventário do usuário e com o estoque próprio da plataforma ou ofertas de outros usuários. Antes da troca, observe não apenas a interface, mas também a diferença de valor entre o item entregue e o recebido, o inventário disponível e possíveis taxas. Essas plataformas estão reunidas na seção de <a href=\"/csgo/trade-skins\">troca de skins de CS2</a>."
+          },
+          {
+            "summary": "Tenho Interesse em Caixas, Roleta, Crash ou Outros Modos",
+            "body": "Para plataformas de jogos, normalmente é melhor usar o ranking do modo específico que você procura. Um site com uma ótima seção de caixas não necessariamente será tão conveniente para apostas em partidas ou roleta. O CSGOBROKER separa essas plataformas em categorias como <a href=\"/csgo/caseopening\">caixas</a>, <a href=\"/csgo/roulette\">roleta</a>, <a href=\"/csgo/crash\">crash</a>, <a href=\"/csgo/case-battle\">batalhas de caixas</a> e <a href=\"/csgo/upgrader\">upgrader</a>."
+          },
+          {
+            "summary": "Quero Ganhar Recompensas sem Comprar Skins",
+            "body": "Existem serviços com tarefas, offerwalls e recompensas por atividade em jogos. As condições variam bastante: alguns pagam moedas internas, enquanto outros oferecem cartões-presente, criptomoedas ou itens de jogos. Verifique com antecedência o valor mínimo de saque e os métodos disponíveis. Consulte as seções de <a href=\"/earning/offerwalls\">tarefas</a> e <a href=\"/earning/earn-by-play\">recompensas por jogar</a>."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como o CSGOBROKER Monta os Rankings",
+        "intro": "Uma plataforma não deve ser avaliada por apenas um indicador. Um bônus alto não compensa um saque inconveniente, e uma grande variedade de itens perde importância quando os termos da transação não são transparentes. Por isso, consideramos vários grupos de fatores e atualizamos as informações quando as condições, funções ou disponibilidade dos sites mudam.",
+        "items": [
+          {
+            "summary": "Reputação e Estabilidade",
+            "body": "Consideramos o histórico da plataforma, a estabilidade das funções principais, mudanças relevantes no serviço e a previsibilidade geral da experiência do usuário. Para um site antigo, não basta ser conhecido: também importa se continua funcionando de forma consistente após atualizações."
+          },
+          {
+            "summary": "Depósitos, Saques e Taxas",
+            "body": "Comparamos os métodos de depósito e saque disponíveis, suporte a skins, métodos bancários ou criptomoedas, valores mínimos e máximos, taxas e restrições. Em serviços de trading, também importa a diferença entre o valor exibido do item e o valor que o usuário realmente recebe após a transação."
+          },
+          {
+            "summary": "Inventário, Modos e Funcionalidade",
+            "body": "O critério depende do tipo de página. Em um marketplace, importam o inventário e as ferramentas de busca; em um site de troca, a disponibilidade de itens; em uma plataforma de apostas, os modos de jogo; e em um site de tarefas, a variedade de formas de obter recompensas."
+          },
+          {
+            "summary": "Bônus e Condições",
+            "body": "Não analisamos apenas o valor anunciado do bônus. Também são importantes o método de ativação, prazo de validade, restrições, requisitos de depósito ou wagering e a possibilidade de sacar a recompensa. As ofertas atuais ficam na <a href=\"/freebies\">seção de bônus</a>."
+          },
+          {
+            "summary": "Facilidade de Uso",
+            "body": "Consideramos a clareza da interface, o funcionamento dos recursos principais no computador e no celular, a velocidade das ações comuns, a existência de regras claras e a disponibilidade do suporte. Esses fatores são especialmente importantes quando dois serviços oferecem preços ou condições semelhantes."
+          },
+          {
+            "summary": "Transparência e Verificação das Condições",
+            "body": "Observamos o quanto é fácil encontrar as regras do serviço, condições de bônus, taxas, requisitos de verificação e informações sobre funções específicas. Em modos de jogo, um fator adicional pode ser a existência de mecanismos para verificar resultados quando a própria plataforma oferece esse recurso."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por Que os Dados e Rankings Mudam",
+        "paragraphs": [
+          "Serviços de terceiros alteram regularmente taxas, bônus, métodos de pagamento, países disponíveis, inventário, modos de jogo e regras de saque. Por isso, o ranking do CSGOBROKER não é uma lista permanente: a posição de um site pode mudar após alterações nas condições ou funcionalidades. O mesmo vale para códigos promocionais e bônus — uma oferta antes vantajosa pode se tornar menos interessante quando os requisitos de ativação ou saque mudam.",
+          "Ao escolher uma plataforma, recomendamos observar não apenas a posição no ranking, mas também as informações do cartão, a avaliação completa e os parâmetros relevantes para seu objetivo. Se você precisa de um modo específico ou de uma forma específica de lidar com skins, use a categoria especializada em que sites do mesmo tipo são comparados."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao Usar Serviços de Terceiros",
+        "intro": "O CSGOBROKER é um site informativo e não substitui a verificação das condições de uma plataforma específica antes do uso. A disponibilidade dos serviços e as regras aplicáveis podem variar conforme o país do usuário. Ao lidar com skins, Steam e pagamentos, é especialmente importante verificar o endereço do site e ler os termos da operação antes de confirmar.",
+        "items": [
+          {
+            "summary": "Verifique o Domínio Antes de Entrar pela Steam",
+            "body": "Cópias de phishing podem imitar visualmente sites conhecidos. Antes de fazer login, confira o endereço da página e evite autorizar a Steam em domínios suspeitos, anúncios aleatórios ou mensagens não solicitadas."
+          },
+          {
+            "summary": "Verifique Cada Steam Trade Offer",
+            "body": "Antes de confirmar uma troca, confira o remetente e todos os itens da oferta. O nome do bot, avatar ou um nome parecido, por si só, não garantem que a oferta tenha sido enviada pelo serviço correto."
+          },
+          {
+            "summary": "Leia as Regras de Saque e KYC com Antecedência",
+            "body": "Alguns serviços passam a exigir verificação ou aplicam limites de saque ao atingir certos valores ou usar determinados métodos de pagamento. É melhor conhecer essas regras antes de depositar dinheiro ou transferir itens valiosos."
+          },
+          {
+            "summary": "Não Avalie uma Oferta Apenas pelo Bônus",
+            "body": "Um percentual alto ou uma recompensa gratuita podem vir acompanhados de requisitos adicionais. Antes de ativar a oferta, verifique o depósito mínimo, condições de wagering, prazo de validade e restrições para sacar fundos ou itens de bônus."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas Frequentes Sobre o CSGOBROKER",
+        "items": [
+          {
+            "summary": "O Que É o CSGOBROKER?",
+            "body": "O CSGOBROKER é um site informativo com rankings e avaliações de serviços de terceiros para CS2, Rust, Dota 2, Steam e criptomoedas, além de seções sobre skins, stickers e outros itens de Counter-Strike 2."
+          },
+          {
+            "summary": "Qual É a Diferença Entre um Ranking e uma Lista Comum de Sites?",
+            "body": "Nos rankings, as plataformas são separadas por finalidade e comparadas de acordo com os critérios relevantes de cada categoria. Por exemplo, em um marketplace importam preços e condições de trading, enquanto em um site de caixas importam as mecânicas de jogo, saques e transparência das regras."
+          },
+          {
+            "summary": "Todos os Sites Aceitam Skins de CS2?",
+            "body": "Não. Algumas plataformas trabalham diretamente com skins, enquanto outras aceitam apenas métodos de pagamento tradicionais ou criptomoedas. Verifique os métodos de depósito e saque no cartão do site, na avaliação e na própria plataforma antes de usá-la."
+          },
+          {
+            "summary": "Qual É a Diferença Entre um Marketplace e um Site de Troca de Skins?",
+            "body": "Em um marketplace, o item normalmente é colocado à venda por um preço escolhido e aguarda um comprador. Um site de troca é voltado principalmente à troca de um item por outro e pode utilizar inventário próprio ou um sistema automatizado de trading."
+          },
+          {
+            "summary": "Qual É a Diferença Entre Venda Instantânea e Venda Normal?",
+            "body": "Em uma venda normal, o usuário geralmente anuncia o item e espera um comprador. Na venda instantânea, o serviço oferece comprar o item imediatamente ou quase imediatamente; o processo é mais rápido, mas o preço oferecido pode ser diferente do preço de mercado."
+          },
+          {
+            "summary": "Como Funcionam os Códigos Promocionais do CSGOBROKER?",
+            "body": "Quando uma plataforma possui um código promocional disponível, ele aparece no cartão ou na avaliação. O tipo de recompensa depende do serviço e pode incluir bônus de depósito, caixa grátis, moeda interna ou outra oferta. As condições de ativação devem ser verificadas separadamente em cada plataforma."
+          },
+          {
+            "summary": "Onde Posso Ver Informações Sobre Skins e Stickers de CS2?",
+            "body": "Use a <a href=\"/topic\">Wiki de CS2</a>. Nela estão disponíveis <a href=\"/topic/skins\">skins por cor</a>, <a href=\"/topic/items\">itens por tipo de arma</a>, <a href=\"/topic/items-type/tournament-stickers\">stickers de torneios</a>, <a href=\"/topic/sticker-crafts\">crafts de stickers</a> e <a href=\"/topic/players/inventories\">inventários de jogadores</a>."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CSGOBROKER — CS2, Rust, Dota 2, Steam ve Kripto Siteleri için Sıralamalar ve İncelemeler",
+        "paragraphs": [
+          "CSGOBROKER, oyun içi öğeler ve dijital platformlarla ilgili üçüncü taraf hizmetler arasında doğru seçimi yapmayı kolaylaştırır. Sitede bahis platformları, skin pazarları ve takas siteleri, hızlı satış hizmetleri, bonus ve görev siteleri ile Steam hizmetlerine ait sıralamalar bulunur. Her şeyi tek bir listede toplamak yerine platformları amaçlarına göre ayırıyoruz; böylece doğrudan ihtiyacınıza uygun kategoriye geçebilir ve siteleri o görev için önemli olan ölçütlere göre karşılaştırabilirsiniz.",
+          "CSGOBROKER’ın ayrı bir bölümü Counter-Strike 2 ekosistemine ayrılmıştır: skinler, stickerlar, koleksiyonlar, kasalar, turnuva öğeleri, profesyonel oyuncu envanterleri ve diğer veriler. Bu nedenle site yalnızca üçüncü taraf platformları karşılaştırmak için değil, CS2 öğeleri ve ilgili bölümler arasında gezinmek için de kullanılabilir."
+        ]
+      },
+      "categories": {
+        "title": "CSGOBROKER’da Neler Bulabilirsiniz?",
+        "items": [
+          {
+            "title": "CS2 Siteleri",
+            "paragraphs": [
+              "CS2 bölümünde kasa açma, rulet, crash, upgrader, kasa savaşları, yazı tura, slotlar ve e-spor bahisleri gibi farklı oyun modlarına sahip platformlar bulunur. Genel sıralamaya <a href=\"/cs2\">CS2 siteleri</a> sayfasından ulaşabilir; belirli modlar için <a href=\"/csgo/caseopening\">CS2 kasa siteleri</a>, <a href=\"/csgo/upgrader\">upgrader siteleri</a>, <a href=\"/csgo/roulette\">rulet</a>, <a href=\"/csgo/crash\">crash</a> ve <a href=\"/csgo/matchbetting\">maç bahisleri</a> gibi ayrı listeleri kullanabilirsiniz."
+            ]
+          },
+          {
+            "title": "Skin Satın Alma, Satma ve Takas",
+            "paragraphs": [
+              "Amacınız oyun modları değil doğrudan skinlerle işlem yapmaksa bunun için ayrı sıralamalar bulunur. <a href=\"/csgo/marketplaces\">CS2 skin pazarlarını</a> karşılaştırabilir, <a href=\"/csgo/buy-skins\">skin satın almak</a>, <a href=\"/csgo/sell-skins\">skin satmak</a>, <a href=\"/csgo/trade-skins\">öğe takas etmek</a> veya <a href=\"/csgo/instant-sell\">hızlı satış</a> yapmak için uygun bir site seçebilirsiniz. Bu hizmet türleri farklı ihtiyaçlara yöneliktir; bu nedenle yalnızca bonus miktarı veya genel puan üzerinden karşılaştırılmaları doğru olmaz."
+            ]
+          },
+          {
+            "title": "Rust ve Dota 2 Siteleri",
+            "paragraphs": [
+              "Diğer oyun ekonomileri için ayrı bölümler vardır. <a href=\"/rust\">Rust siteleri sıralamasında</a> bahis platformları ve skinlerle ilgili hizmetler, <a href=\"/dota\">Dota 2</a> bölümünde ise Dota 2 öğeleri için hizmetler, oyun platformları ve pazarlar yer alır. Ayrı kategoriler, farklı oyunların şartlarını, çekim yöntemlerini ve mevcut öğelerini birbirine karıştırmadan karşılaştırmayı kolaylaştırır."
+            ]
+          },
+          {
+            "title": "Kripto Siteleri",
+            "paragraphs": [
+              "<a href=\"/crypto\">Kripto siteleri</a> bölümünde kripto paranın ana veya başlıca para yatırma ve çekme yöntemlerinden biri olduğu platformlar bulunur. Bu sitelerde yalnızca oyun çeşitliliğine değil, desteklenen para birimlerine, ücretlere, limitlere, işlem hızına ve doğrulama kurallarına da dikkat etmek önemlidir."
+            ]
+          },
+          {
+            "title": "Bonuslar ve Kazanç Yöntemleri",
+            "paragraphs": [
+              "<a href=\"/freebies\">Bonuslar bölümünde</a> kayıt tekliflerini, para yatırma bonuslarını, günlük ödülleri, satış bonuslarını ve çekilişleri ayrı ayrı görebilirsiniz. Görev veya etkinlik karşılığında ödül veren hizmetler <a href=\"/earning\">kazanç</a> bölümünde toplanır; buna <a href=\"/earning/offerwalls\">görev siteleri</a> ve <a href=\"/earning/earn-by-play\">oynayarak kazanma</a> seçenekleri dahildir."
+            ]
+          },
+          {
+            "title": "Steam Hizmetleri ve CS2 Wiki",
+            "paragraphs": [
+              "<a href=\"/steam/levelup\">Steam seviyesini yükseltmek</a>, <a href=\"/steam/topup\">Steam bakiyesine para eklemek</a> ve <a href=\"/steam/buy-games\">oyun satın almak</a> için ayrı hizmet listeleri bulunur. <a href=\"/topic\">CS2 Wiki</a> bölümünde ise <a href=\"/topic/skins\">renge göre skinler</a>, <a href=\"/topic/items\">silah türüne göre skinler</a>, <a href=\"/topic/items-type/tournament-stickers\">turnuva stickerları</a>, <a href=\"/topic/sticker-crafts\">sticker craftları</a> ve <a href=\"/topic/players/inventories\">oyuncu envanterleri</a> yer alır."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Doğru Site Türü Nasıl Seçilir?",
+        "intro": "Belirli platformları karşılaştırmadan önce ne yapmak istediğinizi belirlemek faydalıdır. Aynı hizmet birden fazla işlev sunabilir, ancak satın alma, satış, takas ve oyun modlarının koşulları farklı olabilir. Aşağıda temel kullanım senaryoları için kısa bir yönlendirme bulunuyor.",
+        "items": [
+          {
+            "summary": "Belirli bir CS2 Skini Satın Almak İstiyorum",
+            "body": "Belirli bir skini satın almak için genellikle ad, durum, fiyat ve diğer özelliklere göre arama yapabileceğiniz bir pazar yeri daha kullanışlıdır. Platformları karşılaştırırken ücretler sonrası toplam fiyatı, para yatırma yöntemlerini, teslimat hızını ve işlem modelini dikkate alın. <a href=\"/csgo/marketplaces\">Pazar yerleri</a> ve <a href=\"/csgo/buy-skins\">skin satın alma siteleri</a> bölümlerinden başlayabilirsiniz."
+          },
+          {
+            "summary": "Skin Satmak ve Para Çekmek İstiyorum",
+            "body": "Normal pazar satışı ile hızlı satış arasındaki farkı bilmek önemlidir. Pazar yerinde kullanıcı genellikle fiyatı kendisi belirler ve alıcı bekler. Hızlı satış hizmeti öğeyi daha çabuk satın alır, ancak teklif edilen fiyat açık piyasa fiyatından daha düşük olabilir. <a href=\"/csgo/sell-skins\">Skin satma</a> ve <a href=\"/csgo/instant-sell\">hızlı satış</a> bölümlerini karşılaştırabilirsiniz."
+          },
+          {
+            "summary": "Bir Öğeyi Başka Bir Öğe ile Takas Etmek İstiyorum",
+            "body": "Takas hizmetleri kullanıcı envanteri ile platformun kendi stoğu veya diğer kullanıcıların teklifleri üzerinden çalışır. Takas öncesinde yalnızca arayüze değil, verdiğiniz öğe ile aldığınız öğe arasındaki değer farkına, mevcut envantere ve olası ücretlere de bakın. Bu platformlar <a href=\"/csgo/trade-skins\">CS2 skin takas</a> bölümünde toplanır."
+          },
+          {
+            "summary": "Kasalar, Rulet, Crash veya Diğer Oyun Modlarıyla İlgileniyorum",
+            "body": "Oyun platformlarında genellikle ilgilendiğiniz modun özel sıralamasını kullanmak daha doğrudur. Kasa açma konusunda güçlü bir site, maç bahisleri veya rulet için aynı derecede uygun olmayabilir. CSGOBROKER bu platformları <a href=\"/csgo/caseopening\">kasa açma</a>, <a href=\"/csgo/roulette\">rulet</a>, <a href=\"/csgo/crash\">crash</a>, <a href=\"/csgo/case-battle\">kasa savaşları</a> ve <a href=\"/csgo/upgrader\">upgrader</a> gibi ayrı kategorilere ayırır."
+          },
+          {
+            "summary": "Skin Satın Almadan Ödül Kazanmak İstiyorum",
+            "body": "Görevler, offerwall sistemleri veya oyun içi etkinlik karşılığında ödül veren hizmetler bulunur. Koşullar siteye göre değişir: bazıları dahili coin, bazıları hediye kartı, kripto para veya oyun içi öğe sunar. Minimum çekim tutarını ve mevcut ödeme yöntemlerini önceden kontrol edin. <a href=\"/earning/offerwalls\">Görevler</a> ve <a href=\"/earning/earn-by-play\">oynayarak kazanma</a> bölümlerine bakabilirsiniz."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Site Sıralamalarını Nasıl Oluşturur?",
+        "intro": "Bir platform tek bir ölçüte göre değerlendirilmemelidir. Büyük bir bonus, kullanışsız para çekme sürecini telafi etmez; geniş bir ürün seçeneği de işlem koşulları şeffaf değilse daha az anlamlıdır. Bu nedenle birkaç farklı faktör grubunu değerlendiriyor ve sitelerin koşulları, işlevleri veya erişilebilirliği değiştiğinde bilgileri güncelliyoruz.",
+        "items": [
+          {
+            "summary": "İtibar ve Çalışma İstikrarı",
+            "body": "Platformun çalışma geçmişini, temel işlevlerin kararlılığını, hizmetteki önemli değişiklikleri ve kullanıcı deneyiminin genel öngörülebilirliğini dikkate alıyoruz. Uzun süredir çalışan bir sitede yalnızca bilinirlik değil, güncellemeler sonrasında hizmetin istikrarlı şekilde çalışmaya devam etmesi de önemlidir."
+          },
+          {
+            "summary": "Para Yatırma, Çekme ve Ücretler",
+            "body": "Mevcut para yatırma ve çekme yöntemlerini, skin, banka yöntemi veya kripto para desteğini, minimum ve maksimum tutarları, ücretleri ve kısıtlamaları karşılaştırıyoruz. Ticaret hizmetlerinde, gösterilen öğe değeri ile kullanıcının işlem sonrasında gerçekten aldığı tutar arasındaki fark da önemlidir."
+          },
+          {
+            "summary": "Envanter, Oyun Modları ve İşlevler",
+            "body": "Kriter sayfa türüne göre değişir. Pazar yerinde envanter ve arama araçları, takas sitesinde takas edilebilir öğelerin bulunabilirliği, bahis platformunda oyun modları, görev sitesinde ise ödül kazanma yöntemlerinin çeşitliliği önemlidir."
+          },
+          {
+            "summary": "Bonuslar ve Koşulları",
+            "body": "Yalnızca görünen bonus miktarına bakmıyoruz. Aktivasyon yöntemi, geçerlilik süresi, kısıtlamalar, para yatırma veya wagering şartları ve ödülün çekilebilir olup olmaması da önemlidir. Güncel teklifler <a href=\"/freebies\">bonuslar bölümünde</a> yer alır."
+          },
+          {
+            "summary": "Kullanım Kolaylığı",
+            "body": "Arayüzün anlaşılabilirliği, temel işlevlerin masaüstü ve mobil cihazlarda çalışması, sık kullanılan işlemlerin hızı, açık kuralların bulunması ve desteğe erişim dikkate alınır. Bu ölçütler özellikle iki hizmet benzer fiyat veya koşullar sunduğunda önem kazanır."
+          },
+          {
+            "summary": "Koşulların Şeffaflığı ve Doğrulanabilirliği",
+            "body": "Hizmet kurallarının, bonus koşullarının, ücretlerin, doğrulama gereksinimlerinin ve belirli işlevlere ilişkin bilgilerin ne kadar kolay bulunabildiğine bakıyoruz. Oyun modlarında, platformun sunduğu durumlarda sonuç doğrulama mekanizmalarının bulunması da ek bir faktör olabilir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Veriler ve Sıralamalar Neden Değişir?",
+        "paragraphs": [
+          "Üçüncü taraf hizmetler ücretlerini, bonuslarını, ödeme yöntemlerini, desteklenen ülkeleri, envanterlerini, oyun modlarını ve para çekme kurallarını düzenli olarak değiştirir. Bu nedenle CSGOBROKER sıralaması kalıcı bir liste değildir: bir sitenin koşulları veya işlevleri değiştiğinde sıralamadaki yeri de değişebilir. Aynı durum promosyon kodları ve bonuslar için de geçerlidir; daha önce avantajlı olan bir teklif, aktivasyon veya çekim şartları değiştiğinde daha az cazip hale gelebilir.",
+          "Bir platform seçerken yalnızca sıralamadaki yerine değil, kartındaki bilgilere, tam incelemeye ve kendi amacınız için önemli olan parametrelere de bakmanızı öneririz. Belirli bir oyun modu veya skinlerle çalışmanın belirli bir yolunu arıyorsanız, aynı tür sitelerin karşılaştırıldığı özel kategoriye geçmek daha doğru olur."
+        ]
+      },
+      "safety": {
+        "title": "Üçüncü Taraf Hizmetleri Kullanırken Güvenlik",
+        "intro": "CSGOBROKER bilgilendirici bir sitedir ve belirli bir platformu kullanmadan önce koşullarını kontrol etmenin yerine geçmez. Hizmetlerin erişilebilirliği ve geçerli kurallar kullanıcının ülkesine göre değişebilir. Skinler, Steam ve ödemelerle çalışırken site adresini doğrulamak ve işlemi onaylamadan önce koşulları dikkatlice okumak özellikle önemlidir.",
+        "items": [
+          {
+            "summary": "Steam ile Giriş Yapmadan Önce Alan Adını Kontrol Edin",
+            "body": "Phishing kopyaları bilinen siteleri görsel olarak taklit edebilir. Giriş yapmadan önce sayfa adresini kontrol edin ve şüpheli alan adlarından, rastgele reklamlardan veya beklenmedik mesajlardan ulaştığınız Steam giriş sayfalarını kullanmayın."
+          },
+          {
+            "summary": "Her Steam Trade Offer’ı Kontrol Edin",
+            "body": "Takası onaylamadan önce göndereni ve teklifteki tüm öğeleri karşılaştırın. Bot adı, avatarı veya benzer bir görünen ad tek başına teklifin doğru hizmetten geldiğini garanti etmez."
+          },
+          {
+            "summary": "Para Çekme ve KYC Kurallarını Önceden Okuyun",
+            "body": "Bazı hizmetlerde belirli tutarlara ulaşıldığında veya belirli ödeme yöntemleri kullanıldığında kimlik doğrulama ya da para çekme kısıtlamaları uygulanabilir. Bakiye yatırmadan veya değerli öğeleri aktarmadan önce bu kuralları kontrol etmek daha güvenlidir."
+          },
+          {
+            "summary": "Bir Teklifi Yalnızca Bonusa Göre Değerlendirmeyin",
+            "body": "Yüksek bir yüzde veya ücretsiz ödül ek şartlarla birlikte gelebilir. Aktivasyondan önce minimum depozitoyu, wagering koşullarını, geçerlilik süresini ve bonus bakiyesi veya öğelerin çekimine ilişkin kısıtlamaları kontrol edin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CSGOBROKER Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CSGOBROKER Nedir?",
+            "body": "CSGOBROKER; CS2, Rust, Dota 2, Steam ve kripto para ile ilgili üçüncü taraf hizmetlerin sıralamalarını ve incelemelerini sunan, ayrıca Counter-Strike 2 skinleri, stickerları ve diğer öğeleri hakkında bölümler içeren bilgilendirici bir web sitesidir."
+          },
+          {
+            "summary": "Bir Sıralama Normal Site Listesinden Nasıl Farklıdır?",
+            "body": "Sıralamalarda platformlar amaçlarına göre ayrılır ve her kategori için önemli olan özelliklere göre karşılaştırılır. Örneğin pazar yerinde fiyatlar ve ticaret koşulları önemliyken, kasa sitesinde oyun mekanikleri, para çekme ve koşulların şeffaflığı daha önemlidir."
+          },
+          {
+            "summary": "Tüm Siteler CS2 Skinlerini Kabul Ediyor mu?",
+            "body": "Hayır. Bazı platformlar skinlerle doğrudan çalışırken bazıları yalnızca geleneksel ödeme yöntemlerini veya kripto parayı kabul eder. Kullanımdan önce desteklenen para yatırma ve çekme yöntemlerini site kartından, incelemeden ve platformun kendisinden kontrol edin."
+          },
+          {
+            "summary": "Skin Pazarı ile Takas Sitesi Arasındaki Fark Nedir?",
+            "body": "Pazar yerinde bir öğe genellikle seçilen fiyatla satışa çıkarılır ve alıcı bekler. Takas sitesi ise öncelikle bir öğeyi başka bir öğeyle değiştirmek için tasarlanır ve kendi envanterini veya otomatik bir takas sistemini kullanabilir."
+          },
+          {
+            "summary": "Hızlı Satış ile Normal Satış Arasındaki Fark Nedir?",
+            "body": "Normal satışta kullanıcı genellikle öğeyi listeler ve alıcı bekler. Hızlı satışta hizmet öğeyi hemen veya çok kısa sürede satın almayı teklif eder; süreç daha hızlıdır ancak teklif edilen fiyat açık piyasa fiyatından farklı olabilir."
+          },
+          {
+            "summary": "CSGOBROKER Promosyon Kodları Nasıl Çalışır?",
+            "body": "Bir platform için kullanılabilir promosyon kodu varsa site kartında veya incelemede gösterilir. Ödül türü hizmete göre değişir; para yatırma bonusu, ücretsiz kasa, dahili para birimi veya başka bir teklif olabilir. Aktivasyon koşulları her platform için ayrı ayrı kontrol edilmelidir."
+          },
+          {
+            "summary": "CS2 Skinleri ve Stickerları Hakkında Bilgiyi Nerede Bulabilirim?",
+            "body": "<a href=\"/topic\">CS2 Wiki</a> bölümünü kullanabilirsiniz. Burada <a href=\"/topic/skins\">renge göre skinler</a>, <a href=\"/topic/items\">silah türüne göre öğeler</a>, <a href=\"/topic/items-type/tournament-stickers\">turnuva stickerları</a>, <a href=\"/topic/sticker-crafts\">sticker craftları</a> ve <a href=\"/topic/players/inventories\">oyuncu envanterleri</a> bulunur."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CSGOBROKER — CS2, Rust, Dota 2, Steam और Crypto साइटों की रैंकिंग और रिव्यू",
+        "paragraphs": [
+          "CSGOBROKER गेम आइटम और डिजिटल प्लेटफ़ॉर्म से जुड़ी third-party services को समझने और तुलना करने में मदद करता है। साइट पर gambling platforms, skin marketplaces और trading sites, instant-sell services, bonus और task sites, साथ ही Steam services की rankings उपलब्ध हैं। सब कुछ एक ही सूची में रखने के बजाय हम platforms को उनके उपयोग के अनुसार अलग करते हैं, ताकि आप सीधे सही category पर जा सकें और उसी काम के लिए महत्वपूर्ण criteria के आधार पर sites की तुलना कर सकें।",
+          "CSGOBROKER का एक अलग हिस्सा Counter-Strike 2 ecosystem को समर्पित है: skins, stickers, collections, cases, tournament items, professional players के inventories और अन्य data। इसलिए साइट का उपयोग केवल third-party platforms की तुलना के लिए नहीं, बल्कि CS2 items और उनसे जुड़े sections में navigation के लिए भी किया जा सकता है।"
+        ]
+      },
+      "categories": {
+        "title": "CSGOBROKER पर क्या मिल सकता है",
+        "items": [
+          {
+            "title": "CS2 साइटें",
+            "paragraphs": [
+              "CS2 section में अलग-अलग game modes वाले platforms शामिल हैं: case opening, roulette, crash, upgrader, case battles, coinflip, slots और esports betting। सामान्य ranking <a href=\"/cs2\">CS2 sites</a> page पर है, जबकि अलग modes के लिए अपनी selections हैं: <a href=\"/csgo/caseopening\">CS2 case sites</a>, <a href=\"/csgo/upgrader\">upgrader sites</a>, <a href=\"/csgo/roulette\">roulette</a>, <a href=\"/csgo/crash\">crash</a> और <a href=\"/csgo/matchbetting\">match betting</a>।"
+            ]
+          },
+          {
+            "title": "Skins खरीदना, बेचना और Trade करना",
+            "paragraphs": [
+              "अगर आपका उद्देश्य game modes नहीं बल्कि सीधे skins हैं, तो उसके लिए अलग rankings मौजूद हैं। आप <a href=\"/csgo/marketplaces\">CS2 skin marketplaces</a> की तुलना कर सकते हैं, <a href=\"/csgo/buy-skins\">skins खरीदने</a>, <a href=\"/csgo/sell-skins\">skins बेचने</a>, <a href=\"/csgo/trade-skins\">items trade करने</a> या <a href=\"/csgo/instant-sell\">instant sell</a> के लिए site चुन सकते हैं। ये services अलग-अलग जरूरतें पूरी करती हैं, इसलिए केवल bonus size या overall rating के आधार पर इनकी तुलना करना सही नहीं होगा।"
+            ]
+          },
+          {
+            "title": "Rust और Dota 2 साइटें",
+            "paragraphs": [
+              "दूसरे game economies के लिए अलग sections हैं। <a href=\"/rust\">Rust sites ranking</a> में gambling platforms और skins से जुड़ी services शामिल हैं, जबकि <a href=\"/dota\">Dota 2</a> section में Dota 2 items के लिए services, gaming platforms और marketplaces मिलते हैं। अलग categories अलग games की conditions, withdrawal methods और available items को आपस में मिलाए बिना तुलना करने में मदद करती हैं।"
+            ]
+          },
+          {
+            "title": "Crypto साइटें",
+            "paragraphs": [
+              "<a href=\"/crypto\">Crypto sites</a> section में वे platforms शामिल हैं जहाँ cryptocurrency मुख्य या प्रमुख deposit और withdrawal methods में से एक है। ऐसी sites के लिए केवल games की संख्या नहीं, बल्कि supported currencies, fees, limits, processing speed और verification rules की तुलना करना भी जरूरी है।"
+            ]
+          },
+          {
+            "title": "Bonuses और Rewards कमाने के तरीके",
+            "paragraphs": [
+              "<a href=\"/freebies\">Bonuses section</a> में sign-up offers, deposit bonuses, daily rewards, sale bonuses और giveaways को अलग-अलग देखा जा सकता है। Tasks या activity के बदले rewards देने वाली services <a href=\"/earning\">earning section</a> में हैं, जिसमें <a href=\"/earning/offerwalls\">tasks</a> और <a href=\"/earning/earn-by-play\">play-to-earn rewards</a> शामिल हैं।"
+            ]
+          },
+          {
+            "title": "Steam Services और CS2 Wiki",
+            "paragraphs": [
+              "<a href=\"/steam/levelup\">Steam level बढ़ाने</a>, <a href=\"/steam/topup\">Steam balance top up करने</a> और <a href=\"/steam/buy-games\">games खरीदने</a> के लिए अलग selections हैं। <a href=\"/topic\">CS2 Wiki</a> में item selections और data उपलब्ध हैं: <a href=\"/topic/skins\">color के अनुसार skins</a>, <a href=\"/topic/items\">weapon type के अनुसार skins</a>, <a href=\"/topic/items-type/tournament-stickers\">tournament stickers</a>, <a href=\"/topic/sticker-crafts\">sticker crafts</a> और <a href=\"/topic/players/inventories\">player inventories</a>।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "सही प्रकार की साइट कैसे चुनें",
+        "intro": "किसी specific platform की तुलना करने से पहले यह तय करना उपयोगी है कि आपको करना क्या है। एक ही service कई functions दे सकती है, लेकिन buying, selling, trading और game modes की conditions अलग हो सकती हैं। नीचे मुख्य scenarios के लिए एक संक्षिप्त guide है।",
+        "items": [
+          {
+            "summary": "मैं एक Specific CS2 Skin खरीदना चाहता हूँ",
+            "body": "किसी specific skin को खरीदने के लिए marketplace आम तौर पर ज्यादा सुविधाजनक होता है, क्योंकि वहाँ item name, condition, price और अन्य characteristics के आधार पर search किया जा सकता है। Platforms की तुलना करते समय fees के बाद final price, deposit methods, delivery speed और transaction model देखें। शुरुआत <a href=\"/csgo/marketplaces\">marketplaces</a> और <a href=\"/csgo/buy-skins\">skin buying sites</a> sections से की जा सकती है।"
+          },
+          {
+            "summary": "मैं Skin बेचना और पैसे Withdraw करना चाहता हूँ",
+            "body": "यहाँ normal marketplace sale और instant sale के बीच अंतर समझना जरूरी है। Marketplace पर user आम तौर पर खुद price तय करता है और buyer का इंतजार करता है। Instant-sell service item को जल्दी खरीदती है, लेकिन offer price open-market price से कम हो सकती है। <a href=\"/csgo/sell-skins\">skin selling</a> और <a href=\"/csgo/instant-sell\">instant sell</a> sections की तुलना करें।"
+          },
+          {
+            "summary": "मैं एक Item को दूसरे Item से Trade करना चाहता हूँ",
+            "body": "Trading services user inventory और platform के अपने stock या दूसरे users के offers के साथ काम करती हैं। Trade से पहले केवल interface नहीं, बल्कि दिए गए और मिलने वाले item के value difference, available inventory और possible fees को भी देखें। ऐसी platforms <a href=\"/csgo/trade-skins\">CS2 skin trading</a> section में हैं।"
+          },
+          {
+            "summary": "मुझे Cases, Roulette, Crash या दूसरे Game Modes में रुचि है",
+            "body": "Gaming platforms के लिए आम तौर पर उसी specific mode की ranking देखना बेहतर होता है जिसमें आपकी रुचि है। Strong case-opening section वाली site match betting या roulette के लिए उतनी ही सुविधाजनक हो, यह जरूरी नहीं। CSGOBROKER इन्हें <a href=\"/csgo/caseopening\">case opening</a>, <a href=\"/csgo/roulette\">roulette</a>, <a href=\"/csgo/crash\">crash</a>, <a href=\"/csgo/case-battle\">case battles</a> और <a href=\"/csgo/upgrader\">upgrader</a> जैसी categories में अलग करता है।"
+          },
+          {
+            "summary": "मैं Skins खरीदे बिना Rewards कमाना चाहता हूँ",
+            "body": "कुछ services tasks, offerwalls या gaming activity के बदले rewards देती हैं। Conditions अलग हो सकती हैं: कहीं internal coins, कहीं gift cards, cryptocurrency या game items मिलते हैं। Minimum withdrawal amount और payout methods पहले जाँचें। <a href=\"/earning/offerwalls\">tasks</a> और <a href=\"/earning/earn-by-play\">play-to-earn</a> sections देखें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER साइटों की Ranking कैसे बनाता है",
+        "intro": "किसी platform को केवल एक metric से evaluate नहीं करना चाहिए। बड़ा bonus खराब withdrawal experience की भरपाई नहीं करता, और बड़ा item selection भी कम मायने रखता है अगर transaction terms साफ नहीं हैं। इसलिए हम कई groups of factors देखते हैं और sites की conditions, functionality या availability बदलने पर data update करते हैं।",
+        "items": [
+          {
+            "summary": "Reputation और Stability",
+            "body": "हम platform के operating history, core functions की stability, service में महत्वपूर्ण बदलाव और user experience की overall predictability को देखते हैं। पुरानी site के लिए केवल popularity नहीं, बल्कि updates के बाद service का reliable तरीके से काम करते रहना भी महत्वपूर्ण है।"
+          },
+          {
+            "summary": "Deposits, Withdrawals और Fees",
+            "body": "हम available deposit और withdrawal methods, skins, banking methods या cryptocurrency support, minimum और maximum amounts, fees और restrictions की तुलना करते हैं। Trading services में displayed item value और transaction के बाद user को वास्तव में मिलने वाली amount के बीच अंतर भी महत्वपूर्ण है।"
+          },
+          {
+            "summary": "Inventory, Game Modes और Functionality",
+            "body": "Criterion page type पर निर्भर करता है। Marketplace के लिए inventory और search tools, trading site के लिए exchange के लिए available items, gambling platform के लिए game modes और task site के लिए rewards कमाने के available तरीके महत्वपूर्ण हैं।"
+          },
+          {
+            "summary": "Bonuses और उनकी Conditions",
+            "body": "हम केवल दिखाए गए bonus amount को नहीं देखते। Activation method, validity period, restrictions, deposit या wagering requirements और reward withdraw करने की क्षमता भी महत्वपूर्ण है। Current offers <a href=\"/freebies\">bonuses section</a> में हैं।"
+          },
+          {
+            "summary": "Ease of Use",
+            "body": "Interface clarity, desktop और mobile पर core functions का काम करना, common actions की speed, clear rules की उपलब्धता और support access को ध्यान में रखा जाता है। ये factors खास तौर पर तब महत्वपूर्ण होते हैं जब दो services similar prices या conditions देती हैं।"
+          },
+          {
+            "summary": "Terms की Transparency और Verification",
+            "body": "हम देखते हैं कि service rules, bonus terms, fees, verification requirements और individual functions की जानकारी कितनी आसानी से मिलती है। Game modes में, अगर platform ऐसा mechanism देता है, तो result verification की सुविधा भी एक अतिरिक्त factor हो सकती है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Data और Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Third-party services नियमित रूप से fees, bonuses, payment methods, supported countries, inventory, game modes और withdrawal rules बदलती हैं। इसलिए CSGOBROKER ranking कोई permanent list नहीं है: site की conditions या functionality बदलने पर उसकी position बदल सकती है। यही promo codes और bonuses पर भी लागू होता है — पहले अच्छा लगने वाला offer activation या withdrawal requirements बदलने के बाद कम उपयोगी हो सकता है।",
+          "Platform चुनते समय केवल ranking position नहीं, बल्कि site card की जानकारी, full review और आपकी specific जरूरत के लिए महत्वपूर्ण parameters भी देखें। अगर आपको कोई particular mode या skins के साथ काम करने का specific तरीका चाहिए, तो उसी type की sites की तुलना करने वाली specialized category का उपयोग करें।"
+        ]
+      },
+      "safety": {
+        "title": "Third-Party Services का उपयोग करते समय Safety",
+        "intro": "CSGOBROKER एक informational site है और किसी specific platform का उपयोग करने से पहले उसकी conditions जाँचने की जगह नहीं लेती। Services की availability और लागू rules user के country पर निर्भर कर सकती हैं। Skins, Steam और payments के साथ काम करते समय site address verify करना और action confirm करने से पहले transaction terms पढ़ना खास तौर पर जरूरी है।",
+        "items": [
+          {
+            "summary": "Steam से Sign In करने से पहले Domain जाँचें",
+            "body": "Phishing copies प्रसिद्ध sites जैसी दिख सकती हैं। Sign in करने से पहले page address verify करें और suspicious domains, random ads या unsolicited messages से खुली Steam authorization pages से बचें।"
+          },
+          {
+            "summary": "हर Steam Trade Offer जाँचें",
+            "body": "Trade confirm करने से पहले sender और offer में मौजूद सभी items की जाँच करें। Bot name, avatar या मिलता-जुलता display name अपने आप यह साबित नहीं करता कि offer सही service से आया है।"
+          },
+          {
+            "summary": "Withdrawal और KYC Rules पहले पढ़ें",
+            "body": "कुछ services निश्चित amounts पर या specific payment methods के उपयोग पर verification requirements या withdrawal restrictions लागू करती हैं। Funds deposit करने या valuable items transfer करने से पहले इन rules को जाँचना बेहतर है।"
+          },
+          {
+            "summary": "Offer को केवल Bonus के आधार पर न आँकें",
+            "body": "बड़ा percentage या free reward अतिरिक्त requirements के साथ आ सकता है। Activate करने से पहले minimum deposit, wagering conditions, validity period और bonus funds या items के withdrawal restrictions जाँचें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CSGOBROKER के बारे में अक्सर पूछे जाने वाले सवाल",
+        "items": [
+          {
+            "summary": "CSGOBROKER क्या है?",
+            "body": "CSGOBROKER एक informational website है जिसमें CS2, Rust, Dota 2, Steam और cryptocurrencies से जुड़ी third-party services की rankings और reviews हैं, साथ ही Counter-Strike 2 skins, stickers और अन्य items के sections भी हैं।"
+          },
+          {
+            "summary": "Ranking और सामान्य Sites List में क्या अंतर है?",
+            "body": "Rankings में platforms को उनके purpose के अनुसार अलग किया जाता है और हर category के relevant criteria पर compare किया जाता है। उदाहरण के लिए marketplace में prices और trading conditions महत्वपूर्ण हैं, जबकि case-opening site में game mechanics, withdrawals और terms की transparency महत्वपूर्ण होती है।"
+          },
+          {
+            "summary": "क्या सभी Sites CS2 Skins स्वीकार करती हैं?",
+            "body": "नहीं। कुछ platforms सीधे skins के साथ काम करती हैं, जबकि अन्य केवल traditional payment methods या cryptocurrency स्वीकार करती हैं। उपयोग से पहले site card, review और platform पर supported deposit और withdrawal methods जाँचें।"
+          },
+          {
+            "summary": "Skin Marketplace और Trading Site में क्या अंतर है?",
+            "body": "Marketplace पर item आम तौर पर चुनी हुई price पर sale के लिए list किया जाता है और buyer का इंतजार करता है। Trading site मुख्य रूप से एक item को दूसरे item से exchange करने के लिए होती है और अपना inventory या automated trading system इस्तेमाल कर सकती है।"
+          },
+          {
+            "summary": "Instant Sell और Normal Sale में क्या अंतर है?",
+            "body": "Normal sale में user आम तौर पर item list करता है और buyer का इंतजार करता है। Instant sell में service item को तुरंत या लगभग तुरंत खरीदने का offer देती है; process तेज होता है, लेकिन offer price open-market price से अलग हो सकती है।"
+          },
+          {
+            "summary": "CSGOBROKER Promo Codes कैसे काम करते हैं?",
+            "body": "अगर किसी platform के लिए promo code उपलब्ध है, तो वह site card या review में दिखाया जाता है। Reward service पर निर्भर करता है: deposit bonus, free case, internal currency या कोई अन्य offer हो सकता है। Activation conditions हर platform के लिए अलग से जाँचनी चाहिए।"
+          },
+          {
+            "summary": "CS2 Skins और Stickers की जानकारी कहाँ मिलेगी?",
+            "body": "<a href=\"/topic\">CS2 Wiki</a> का उपयोग करें। इसमें <a href=\"/topic/skins\">color के अनुसार skins</a>, <a href=\"/topic/items\">weapon type के अनुसार items</a>, <a href=\"/topic/items-type/tournament-stickers\">tournament stickers</a>, <a href=\"/topic/sticker-crafts\">sticker crafts</a> और <a href=\"/topic/players/inventories\">player inventories</a> उपलब्ध हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

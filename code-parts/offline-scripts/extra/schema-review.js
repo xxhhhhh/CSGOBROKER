@@ -71,7 +71,7 @@ function injectReviewSchema(filePath) {
     },
     "author": {
       "@type": "Person",
-      "name": "CSGOBroker",
+      "name": "CSGOBROKER",
       "url": "https://csgobroker.cc"
     },
     "reviewRating": {
@@ -92,7 +92,7 @@ function injectReviewSchema(filePath) {
   let cleanedHtml = html.replace(scriptRegex, (match, jsonStr) => {
     try {
       const parsed = JSON.parse(jsonStr);
-      if (parsed['@type'] === 'Review' && parsed.author?.name === 'CSGOBroker') {
+      if (parsed['@type'] === 'Review' && parsed.author?.name === 'CSGOBROKER') {
         existingNormalized = normalizeSchemaBlock(match);
         hasChanges = true;
         return '';
