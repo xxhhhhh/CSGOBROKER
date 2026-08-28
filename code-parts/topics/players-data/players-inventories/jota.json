@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/798a2505-8b8f-45c0-a5b3-1d3e0952112a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-24T04:34:01.856Z",
+  "updatedAt": "2026-08-28T15:34:18.460Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 89,
-  "totalItemsGrouped": 57,
+  "totalItemsRaw": 90,
+  "totalItemsGrouped": 59,
   "items": [
     {
       "assetid": "49337653390",
@@ -142,6 +142,34 @@
     },
     {
       "assetid": "51202362755",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53533555385",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -373,6 +401,42 @@
       "market_hash_name": "Tec-9 | Blue Blast (Field-Tested)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20495993C1C6CEE448515769B6406148794D71EAF2CFBC4A09D64A214F395139BB8785",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53533555386",
+      "classid": "7993035988",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AUG | Commando Company",
+      "market_hash_name": "AUG | Commando Company (Field-Tested)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1394,7 +1458,7 @@
       "assetid": "51883376005",
       "classid": "8491026758",
       "instanceid": "143865972",
-      "amount": 9,
+      "amount": 8,
       "name": "Sticker | JOTA | Cologne 2026",
       "market_hash_name": "Sticker | JOTA | Cologne 2026",
       "type": "High Grade Sticker",
@@ -1439,7 +1503,6 @@
         "51883376003",
         "51883376002",
         "51883376001",
-        "51883375999",
         "51883375998",
         "51883375997",
         "51883375996"
@@ -1806,7 +1869,7 @@
     {
       "assetid": "48046362545",
       "classid": "7993039005",
-      "instanceid": "910723396",
+      "instanceid": "919832929",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Field-Tested)",
@@ -1840,14 +1903,14 @@
       ]
     },
     {
-      "assetid": "48888951277",
+      "assetid": "53533854500",
       "classid": "7993039145",
-      "instanceid": "188652198",
+      "instanceid": "8802937928",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Desolate Space",
       "market_hash_name": "StatTrak™ M4A4 | Desolate Space (Field-Tested)",
       "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2ED3DDB6AE883F262E1EF23A163B0E37069FBDE0CC3D7E9A3A763E6ED53456134E36E60A9B1D",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1872,13 +1935,25 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
         }
       ]
     },
     {
       "assetid": "48046131765",
       "classid": "7993039529",
-      "instanceid": "8796332257",
+      "instanceid": "8802937929",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Asiimov",
       "market_hash_name": "StatTrak™ AK-47 | Asiimov (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-27T13:43:58.094Z",
+  "updatedAt": "2026-08-28T14:53:46.270Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 132,
-  "totalItemsGrouped": 130,
+  "totalItemsRaw": 154,
+  "totalItemsGrouped": 152,
   "items": [
     {
       "assetid": "53263908820",
@@ -91,7 +91,7 @@
     {
       "assetid": "53375339398",
       "classid": "7993041986",
-      "instanceid": "8769984298",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
@@ -122,7 +122,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.033839903772,
+      "seed": 852,
+      "phase": "Phase 2"
     },
     {
       "assetid": "41342802236",
@@ -131,6 +134,42 @@
       "amount": 1,
       "name": "★ Butterfly Knife | Marble Fade",
       "market_hash_name": "★ Butterfly Knife | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53376570855",
+      "classid": "7993051367",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Ultraviolet",
+      "market_hash_name": "★ Butterfly Knife | Ultraviolet (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -263,7 +302,7 @@
     {
       "assetid": "53371304957",
       "classid": "7993045582",
-      "instanceid": "8768917237",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
@@ -516,6 +555,42 @@
       "float": 0.033517997712,
       "seed": 258,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "53376571412",
+      "classid": "7993046773",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Skeleton Knife | Tiger Tooth",
+      "market_hash_name": "★ Skeleton Knife | Tiger Tooth (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "51588827220",
@@ -1211,6 +1286,510 @@
       ]
     },
     {
+      "assetid": "47677927758",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927788",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927801",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927812",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927945",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927956",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927960",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927968",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677927974",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677928278",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929000",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929034",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929370",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929395",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929632",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929682",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677929834",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47677930277",
+      "classid": "2066632015",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glove Case",
+      "market_hash_name": "Glove Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "32607318294",
       "classid": "5327976140",
       "instanceid": "143865972",
@@ -1369,6 +1948,42 @@
         "53272932903",
         "53272932902",
         "53272932901"
+      ]
+    },
+    {
+      "assetid": "53376744746",
+      "classid": "7993044037",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Negev | Mjölnir",
+      "market_hash_name": "Negev | Mjölnir (Factory New)",
+      "type": "Classified Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -3717,6 +4332,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53376778691",
+      "classid": "188589703",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a44d401-6f83-40b2-8cdf-c764813abbd6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-27T13:50:15.719Z",
+  "updatedAt": "2026-08-28T15:00:16.900Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 80,
-  "totalItemsGrouped": 80,
+  "totalItemsRaw": 83,
+  "totalItemsGrouped": 83,
   "items": [
     {
       "assetid": "52133752595",
@@ -98,6 +98,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Pillow Punchers",
       "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53384044147",
+      "classid": "7993042207",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -256,6 +284,54 @@
       ]
     },
     {
+      "assetid": "53384044146",
+      "classid": "7993038185",
+      "instanceid": "7961750712",
+      "amount": 1,
+      "name": "M4A1-S | Blue Phosphor",
+      "market_hash_name": "M4A1-S | Blue Phosphor (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46563626763",
       "classid": "241578935",
       "instanceid": "302028390",
@@ -326,6 +402,65 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53384044148",
+      "classid": "7993039096",
+      "instanceid": "8671620946",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3CD89093C3EA2D34280CF324042A1C281486C6B7C02F6CAE2A4E29242C3C840B4E29242D3C840B4E29242E3C840B4E29242F3C840B4E3524283CB769312C2CAC13012C2C6C6D11B54DD79269C89E6091447C5C3B8E2D3B242C3C1911A7AFB46C698B2EC31261BFF5F1137C9F8D2F95BB1078",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ],
+      "float": 0.065897300839,
+      "seed": 770,
+      "phase": "Emerald"
     },
     {
       "assetid": "53369411872",
@@ -2065,7 +2200,7 @@
     {
       "assetid": "48838390845",
       "classid": "7993041222",
-      "instanceid": "188531599",
+      "instanceid": "188530422",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Violent Daimyo",
       "market_hash_name": "StatTrak™ Five-SeveN | Violent Daimyo (Minimal Wear)",
