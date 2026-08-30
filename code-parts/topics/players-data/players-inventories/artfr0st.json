@@ -12,53 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/0ab98e48-776d-4ec4-86be-0d3bc0f4f06d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-22T04:01:33.636Z",
+  "updatedAt": "2026-08-30T09:16:09.632Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 321,
-  "totalItemsGrouped": 143,
+  "totalItemsRaw": 320,
+  "totalItemsGrouped": 142,
   "items": [
-    {
-      "assetid": "51089932896",
-      "classid": "7993041986",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECE3E5A147760DFC65DDAFE34DAF6D8EEDDE65778763EDD9E51D8B65EDCAED689DFDA00",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.008427389897,
-      "seed": 783,
-      "phase": "Phase 2"
-    },
     {
       "assetid": "52394559567",
       "classid": "7993041288",
@@ -97,6 +58,45 @@
       "float": 0.010850580409,
       "seed": 755,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "53415375050",
+      "classid": "7993040007",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4C96BDEBA29A5D44DF587CE458745A6C5F64C2B9C4BB5F1C805834DC5E2C5427DCE9BC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.028100308031,
+      "seed": 604,
+      "phase": "Emerald"
     },
     {
       "assetid": "50829441551",
@@ -259,34 +259,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Hedge Maze",
       "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53054656399",
-      "classid": "7993042486",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -4728,7 +4700,7 @@
     {
       "assetid": "39145674510",
       "classid": "7993040817",
-      "instanceid": "8798051899",
+      "instanceid": "8807700487",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Factory New)",
@@ -4908,7 +4880,7 @@
     {
       "assetid": "25268734052",
       "classid": "7993039708",
-      "instanceid": "8804695969",
+      "instanceid": "8807720900",
       "amount": 1,
       "name": "StatTrak™ AWP | Neo-Noir",
       "market_hash_name": "StatTrak™ AWP | Neo-Noir (Field-Tested)",
@@ -4956,7 +4928,7 @@
     {
       "assetid": "17539298663",
       "classid": "7993041222",
-      "instanceid": "7102858045",
+      "instanceid": "6935460621",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Violent Daimyo",
       "market_hash_name": "StatTrak™ Five-SeveN | Violent Daimyo (Minimal Wear)",

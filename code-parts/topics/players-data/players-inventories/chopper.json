@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/aef79440-d49d-414e-9303-9725b8d448d8",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-26T04:43:39.497Z",
+  "updatedAt": "2026-08-30T09:46:09.535Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 345,
-  "totalItemsGrouped": 131,
+  "totalItemsRaw": 344,
+  "totalItemsGrouped": 130,
   "items": [
     {
       "assetid": "51834650682",
@@ -368,34 +368,6 @@
       ]
     },
     {
-      "assetid": "52893959883",
-      "classid": "6918191812",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Fever Case",
-      "market_hash_name": "Fever Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49495639022",
       "classid": "5189384637",
       "instanceid": "302028390",
@@ -533,6 +505,37 @@
       ],
       "assetids": [
         "7690213089"
+      ]
+    },
+    {
+      "assetid": "53556447348",
+      "classid": "1989325888",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Loser (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Loser (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4C5C4498567C5C745D6C583E5B545C4CE9516C4D345C2C446D13A806",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53556447348"
       ]
     },
     {
@@ -4985,54 +4988,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47289769829",
-      "classid": "7993044759",
-      "instanceid": "8753061220",
-      "amount": 1,
-      "name": "StatTrak™ MP9 | Mount Fuji",
-      "market_hash_name": "StatTrak™ MP9 | Mount Fuji (Factory New)",
-      "type": "StatTrak™ Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
