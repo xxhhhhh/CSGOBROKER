@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f133beae-a158-4fd2-a991-76c1769c0ab5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-30T08:56:55.165Z",
+  "updatedAt": "2026-08-31T09:20:58.513Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 57,
-  "totalItemsGrouped": 57,
+  "totalItemsRaw": 61,
+  "totalItemsGrouped": 61,
   "items": [
     {
       "assetid": "53030417483",
@@ -60,6 +60,42 @@
       "phase": "Emerald"
     },
     {
+      "assetid": "53422971094",
+      "classid": "7993048393",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Lore",
+      "market_hash_name": "★ Huntsman Knife | Lore (Well-Worn)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49222714563",
       "classid": "7993042978",
       "instanceid": "188530139",
@@ -93,6 +129,77 @@
       "float": 0.035553097725,
       "seed": 763,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "53422879559",
+      "classid": "7993043148",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207060B796F1F2B771688C7350D07358764073489EC7C89A73309D731842007817E93B0C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.050319604576,
+      "seed": 493,
+      "phase": "Sapphire"
+    },
+    {
+      "assetid": "53422969934",
+      "classid": "7993045614",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Nomad Knife | Blue Steel",
+      "market_hash_name": "★ Nomad Knife | Blue Steel (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "53003482078",
@@ -946,6 +1053,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53422968701",
+      "classid": "201966840",
+      "instanceid": "6276600957",
+      "amount": 1,
+      "name": "AK-47 | Fire Serpent",
+      "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

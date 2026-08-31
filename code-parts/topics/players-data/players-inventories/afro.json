@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8e3fd235-f41f-427c-b2af-d29db1d6860a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-27T14:03:07.604Z",
+  "updatedAt": "2026-08-31T09:37:54.299Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 191,
-  "totalItemsGrouped": 117,
+  "totalItemsRaw": 187,
+  "totalItemsGrouped": 114,
   "items": [
     {
       "assetid": "49922355261",
@@ -788,33 +788,6 @@
       ]
     },
     {
-      "assetid": "45393327674",
-      "classid": "6195246388",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Charm Detachment Pack",
-      "market_hash_name": "Charm Detachment Pack",
-      "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "45393327674"
-      ]
-    },
-    {
       "assetid": "44494256939",
       "classid": "7993037195",
       "instanceid": "188530139",
@@ -851,9 +824,9 @@
       ]
     },
     {
-      "assetid": "53499039827",
+      "assetid": "53568857147",
       "classid": "7993036345",
-      "instanceid": "188530139",
+      "instanceid": "8525132650",
       "amount": 1,
       "name": "M4A1-S | Black Lotus",
       "market_hash_name": "M4A1-S | Black Lotus (Field-Tested)",
@@ -882,6 +855,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1019,9 +1004,9 @@
       ]
     },
     {
-      "assetid": "51837340159",
+      "assetid": "53568889607",
       "classid": "7993041658",
-      "instanceid": "8523995853",
+      "instanceid": "8810023101",
       "amount": 1,
       "name": "AK-47 | The Oligarch",
       "market_hash_name": "AK-47 | The Oligarch (Well-Worn)",
@@ -1061,15 +1046,23 @@
           "name": ""
         },
         {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
           "category": "ProPlayer",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "51081239188",
+      "assetid": "53568923538",
       "classid": "7993036472",
-      "instanceid": "188530139",
+      "instanceid": "8527085695",
       "amount": 1,
       "name": "M4A4 | Temukau",
       "market_hash_name": "M4A4 | Temukau (Field-Tested)",
@@ -1098,6 +1091,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1156,6 +1161,41 @@
           "category": "ProPlayer",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53568824703",
+      "classid": "7729277196",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | Monte (Holo) | Paris 2023",
+      "market_hash_name": "Sticker Slab | Monte (Holo) | Paris 2023",
+      "type": "Customized Exotic Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20514151499A5B71517954615939512151F350565951417431DF656F965D61",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53568824703"
       ]
     },
     {
@@ -1878,53 +1918,6 @@
       ]
     },
     {
-      "assetid": "51836955279",
-      "classid": "8490839790",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | AZUWU | Cologne 2026",
-      "market_hash_name": "Sticker | AZUWU | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F3E3F3EB4AFAD3F3DBF0C3F791F6FBF3E33DA79BF383F10A0F4156",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51836955279"
-      ]
-    },
-    {
       "assetid": "51836977771",
       "classid": "8490925443",
       "instanceid": "143865972",
@@ -2295,53 +2288,6 @@
       ]
     },
     {
-      "assetid": "51836955280",
-      "classid": "8491399608",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | Gizmy | Cologne 2026",
-      "market_hash_name": "Sticker | Gizmy | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B2A2B2AA0BBB92B29AB182B6D0B7BAB2A278E6DAB2C2B009ED3311",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51836955280"
-      ]
-    },
-    {
       "assetid": "52353512593",
       "classid": "8490806427",
       "instanceid": "143865972",
@@ -2623,14 +2569,14 @@
       ]
     },
     {
-      "assetid": "52639583394",
+      "assetid": "52639583393",
       "classid": "8490799174",
       "instanceid": "143865972",
-      "amount": 4,
+      "amount": 3,
       "name": "Sticker | ryu | Cologne 2026",
       "market_hash_name": "Sticker | ryu | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E3E2687371E3E163D0E3A5C3B363E2EC86D563E4E3C5F544BC4",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201E0E1E06A7173E1E361D2E1A7C1B161E0EE84D761E6E1C9476ABAC",
       "tags": [
         {
           "category": "Type",
@@ -2666,7 +2612,6 @@
         }
       ],
       "assetids": [
-        "52639583394",
         "52639583393",
         "52353512592",
         "52353512591"
@@ -4395,38 +4340,6 @@
         },
         {
           "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "47795151645",
-      "classid": "5835568404",
-      "instanceid": "7775018541",
-      "amount": 1,
-      "name": "C4 Explosive",
-      "market_hash_name": "C4 Explosive",
-      "type": "Stock C4",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {

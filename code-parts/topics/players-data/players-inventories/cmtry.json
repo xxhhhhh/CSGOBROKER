@@ -7,16 +7,18 @@
   "name": "Mykyta Samolotov",
   "nationality": "Ukraine",
   "born": "27.09.2007",
+  "isContentCreator": false,
   "twitch": "cmtrycs",
   "faceit": "https://faceitdb.com/profile/faceit/42afba06-399e-4c2d-aaff-77595526ad70",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-24T04:05:57.362Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 167,
-  "totalItemsGrouped": 135,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-31T09:31:28.139Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 166,
+  "totalItemsGrouped": 134,
   "items": [
     {
       "assetid": "48329632745",
@@ -1316,30 +1318,6 @@
       ],
       "assetids": [
         "52892674418"
-      ]
-    },
-    {
-      "assetid": "43191816548",
-      "classid": "3759395308",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "City 17 Pin",
-      "market_hash_name": "City 17 Pin",
-      "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7D6D75B9494D6D456E5D69056D1D659FDEDCB1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
       ]
     },
     {
@@ -5445,7 +5423,7 @@
     {
       "assetid": "48626166647",
       "classid": "7993048409",
-      "instanceid": "188536489",
+      "instanceid": "188581470",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Well-Worn)",
@@ -5517,7 +5495,7 @@
     {
       "assetid": "47898681661",
       "classid": "7993038258",
-      "instanceid": "188535511",
+      "instanceid": "188531312",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Allure",
       "market_hash_name": "StatTrak™ MAC-10 | Allure (Field-Tested)",

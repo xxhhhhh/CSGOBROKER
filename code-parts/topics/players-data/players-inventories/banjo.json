@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/cdcfe090-8bde-418d-ae04-e3ca204769b8",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-25T04:20:31.502Z",
+  "updatedAt": "2026-08-31T09:52:39.494Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 970,
-  "totalItemsGrouped": 649,
+  "totalItemsRaw": 966,
+  "totalItemsGrouped": 645,
   "items": [
     {
       "assetid": "51033678333",
@@ -809,34 +809,6 @@
       ]
     },
     {
-      "assetid": "52632547372",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53379542713",
       "classid": "4717330486",
       "instanceid": "302028390",
@@ -1138,34 +1110,6 @@
     },
     {
       "assetid": "50991399412",
-      "classid": "5710094579",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52314473156",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2217,91 +2161,7 @@
       ]
     },
     {
-      "assetid": "48684488679",
-      "classid": "7488632023",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Genesis Terminal",
-      "market_hash_name": "Sealed Genesis Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49794874512",
-      "classid": "7488632023",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Genesis Terminal",
-      "market_hash_name": "Sealed Genesis Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50488666443",
-      "classid": "7488632023",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Genesis Terminal",
-      "market_hash_name": "Sealed Genesis Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53479957866",
       "classid": "7488632023",
       "instanceid": "302028390",
       "amount": 1,
@@ -10799,6 +10659,42 @@
       "market_hash_name": "UMP-45 | Facility Dark (Minimal Wear)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206575FCA9C0DFF5647D7D45EF634D6455615D8DBCFB8A6625C7670DE567157D5902700B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53569716424",
+      "classid": "7993036931",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "UMP-45 | Green Swirl",
+      "market_hash_name": "UMP-45 | Green Swirl (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -23968,7 +23864,7 @@
     {
       "assetid": "26372602142",
       "classid": "7993037482",
-      "instanceid": "8803320919",
+      "instanceid": "8810111609",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cyrex",
       "market_hash_name": "StatTrak™ USP-S | Cyrex (Minimal Wear)",
@@ -24024,7 +23920,7 @@
     {
       "assetid": "11850401372",
       "classid": "7993037310",
-      "instanceid": "480096539",
+      "instanceid": "480220837",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Stone Cold",
       "market_hash_name": "StatTrak™ Galil AR | Stone Cold (Field-Tested)",
@@ -24060,7 +23956,7 @@
     {
       "assetid": "17732023658",
       "classid": "7993041152",
-      "instanceid": "940433992",
+      "instanceid": "968001319",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",

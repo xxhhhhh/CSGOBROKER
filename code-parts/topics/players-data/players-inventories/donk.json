@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-26T03:52:15.971Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 345,
-  "totalItemsGrouped": 122,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-08-31T09:18:38.898Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 343,
+  "totalItemsGrouped": 120,
   "items": [
     {
       "assetid": "53060974247",
@@ -492,34 +494,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Slingshot",
       "market_hash_name": "★ Sport Gloves | Slingshot (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51897685211",
-      "classid": "8247168486",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -3270,42 +3244,6 @@
       ]
     },
     {
-      "assetid": "50410317127",
-      "classid": "188530425",
-      "instanceid": "7774746606",
-      "amount": 1,
-      "name": "Glock-18 | Fade",
-      "market_hash_name": "Glock-18 | Fade (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454838E85A1FF455C4064626C4074407CEC8FFFA44704E74526404C44546126404C45546126404C46546126404C4754612CA1453444E645514C44546179804CF1FB0125A07E78098D29760424613E418B54",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46401928683",
       "classid": "7993037520",
       "instanceid": "188530139",
@@ -4176,7 +4114,7 @@
     {
       "assetid": "53012889002",
       "classid": "7993043193",
-      "instanceid": "902933228",
+      "instanceid": "907722029",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Cobalt Disruption",
       "market_hash_name": "StatTrak™ Desert Eagle | Cobalt Disruption (Factory New)",
@@ -4340,7 +4278,7 @@
     {
       "assetid": "53020027539",
       "classid": "7993045027",
-      "instanceid": "7623124517",
+      "instanceid": "8811414243",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
