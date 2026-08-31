@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-buy-skins",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Покупка скинов Rust: как выбрать площадку и сравнить цены",
+        "paragraphs": [
+          "Скины Rust можно покупать на сторонних торговых площадках и в сервисах с собственным инвентарём. В отличие от покупки внутри Steam, такие сайты могут предлагать другие цены, способы оплаты и возможность получить предмет напрямую в инвентарь Steam.",
+          "На CSGOBROKER сайты для покупки скинов Rust рассматриваются отдельно от общих <a href=\"/rust/marketplaces\">торговых площадок</a>, потому что у пользователя здесь конкретная задача — найти нужный предмет, сравнить итоговую цену и безопасно получить его. Важны не только стоимость на карточке товара, но и комиссии, наличие предмета, способ передачи и ограничения платежей.",
+          "Один и тот же скин может стоить по-разному в Steam, на площадке с продавцами и в сервисе, который сам держит предметы в инвентаре. Поэтому сравнивать лучше итоговую сумму покупки с учётом комиссии, конвертации валюты и возможной наценки сервиса."
+        ]
+      },
+      "categories": {
+        "title": "Где можно покупать скины Rust",
+        "items": [
+          {
+            "title": "Торговые площадки между пользователями",
+            "paragraphs": [
+              "На таких сервисах продавцы самостоятельно выставляют предметы и цены, а площадка обеспечивает проведение сделки. Обычно здесь больше выбор и конкуренция по цене, но скорость покупки зависит от модели передачи и активности продавца."
+            ]
+          },
+          {
+            "title": "Площадки с собственным инвентарём",
+            "paragraphs": [
+              "Сервис заранее получает предметы и продаёт их из собственного или бот-инвентаря. Покупка обычно происходит быстрее, но ассортимент и цена зависят от текущего запаса площадки."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Официальный рынок Steam удобен тем, что предмет сразу остаётся внутри экосистемы Steam. При этом средства от продажи других предметов остаются на балансе Steam, а цены могут отличаться от сторонних рынков."
+            ]
+          },
+          {
+            "title": "Покупка за обычные способы оплаты",
+            "paragraphs": [
+              "Некоторые сайты принимают банковские карты, электронные методы оплаты или локальные платёжные системы. Стоит заранее проверить валюту списания, комиссию и доступность метода в вашей стране."
+            ]
+          },
+          {
+            "title": "Покупка за криптовалюту",
+            "paragraphs": [
+              "Часть площадок поддерживает криптовалюты. Итоговая стоимость зависит не только от цены скина, но и от сетевой комиссии, курса конвертации и возможной комиссии платёжного провайдера."
+            ]
+          },
+          {
+            "title": "Обмен вместо покупки",
+            "paragraphs": [
+              "Если в инвентаре уже есть ненужные предметы, иногда удобнее использовать <a href=\"/rust/trade-skins\">обмен скинов Rust</a>, доплатив только разницу в стоимости, вместо отдельной продажи и новой покупки."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед покупкой скина Rust",
+        "intro": "Цена в каталоге — только начало сравнения: итоговая стоимость и способ получения предмета могут заметно отличаться.",
+        "items": [
+          {
+            "summary": "Итоговая цена после комиссий",
+            "body": "Проверьте, включена ли комиссия площадки в отображаемую цену, есть ли отдельная плата за покупку или пополнение и сколько будет списано с учётом конвертации валюты."
+          },
+          {
+            "summary": "Наличие конкретного предмета",
+            "body": "Для редких скинов важна не только заявленная минимальная цена, но и реальное наличие предложения. У площадок с бот-инвентарём ассортимент может меняться быстро."
+          },
+          {
+            "summary": "История цены и сравнение с рынком",
+            "body": "Сопоставьте цену с Steam и другими <a href=\"/rust/marketplaces\">рынками Rust</a>. Слишком низкая стоимость без понятного объяснения — повод дополнительно проверить площадку и условия сделки."
+          },
+          {
+            "summary": "Способ передачи предмета",
+            "body": "На одних сайтах предмет отправляется автоматически через предложение обмена Steam, на других продавец должен подтвердить передачу. От этого зависит скорость получения."
+          },
+          {
+            "summary": "Способы оплаты и возврат средств",
+            "body": "Проверьте поддерживаемые карты, электронные методы и криптовалюты, а также правила возврата при отменённой или не состоявшейся сделке."
+          },
+          {
+            "summary": "Ограничения Steam и площадки",
+            "body": "На передачу могут влиять ограничения аккаунта Steam, защита Steam Guard, временная блокировка обменов или внутренние требования сервиса к аккаунту."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты для покупки скинов Rust",
+        "intro": "Главная задача рейтинга — показать, где покупатель получает понятную цену, достаточный выбор и предсказуемую передачу предмета.",
+        "items": [
+          {
+            "summary": "Цена и прозрачность комиссий",
+            "body": "Мы сравниваем стоимость предметов и проверяем, какие комиссии добавляются на этапе пополнения, покупки или конвертации."
+          },
+          {
+            "summary": "Ассортимент и наличие",
+            "body": "Учитываются количество доступных предметов, частота обновления инвентаря, фильтры и возможность быстро найти конкретный скин."
+          },
+          {
+            "summary": "Скорость и способ получения",
+            "body": "Проверяется, как устроена передача через Steam, сколько обычно занимает получение предмета и что происходит при неудачной сделке."
+          },
+          {
+            "summary": "Способы оплаты",
+            "body": "Оцениваются банковские карты, локальные методы, электронные платежи и криптовалюты, а также комиссии и географическая доступность."
+          },
+          {
+            "summary": "Безопасность сделки",
+            "body": "Важны понятная авторизация, защита платежей, корректные предложения обмена Steam и прозрачный порядок действий при спорной операции."
+          },
+          {
+            "summary": "Интерфейс и поддержка",
+            "body": "Поиск, сортировка, история покупок, статусы сделки и скорость ответа поддержки влияют на удобство использования."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему цены на скины Rust отличаются и меняются",
+        "paragraphs": [
+          "Цена одного предмета может различаться между Steam и сторонними площадками из-за разной ликвидности, комиссии, спроса и модели работы сервиса. На рынке между пользователями цену формируют продавцы, а площадка с собственным инвентарём устанавливает её самостоятельно.",
+          "Редкость предмета, текущий спрос и объём доступных предложений тоже влияют на стоимость. Для малоликвидных скинов разница между самой дешёвой заявкой и ценой реальной быстрой покупки может быть заметной.",
+          "Если задача обратная и нужно получить деньги за предмет, используйте <a href=\"/rust/sell-skins\">продажу скинов Rust</a> или <a href=\"/rust/instant-sell\">быструю продажу</a>. Если нужен обмен одного предмета на другой, сравните <a href=\"/rust/trade-skins\">сервисы обмена</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при покупке скинов Rust",
+        "intro": "Покупка заканчивается не оплатой, а фактическим получением правильного предмета в Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте адрес площадки",
+            "body": "Фишинговые копии могут повторять дизайн известного рынка. Проверяйте домен перед авторизацией через Steam или вводом платёжных данных."
+          },
+          {
+            "summary": "Проверяйте предложение обмена Steam",
+            "body": "Сверяйте отправителя, название и внешний вид предмета, прежде чем подтверждать получение или встречную передачу."
+          },
+          {
+            "summary": "Не передавайте коды Steam Guard",
+            "body": "Нормальная покупка не требует отправлять пароль или код двухфакторной защиты сотруднику поддержки или продавцу."
+          },
+          {
+            "summary": "Сохраняйте данные о сделке",
+            "body": "История заказа, идентификатор операции и переписка с поддержкой помогут, если предмет не был передан или сделка была отменена."
+          },
+          {
+            "summary": "Проверяйте правила возврата заранее",
+            "body": "Узнайте, что происходит при недоступном предмете, ошибке продавца, задержке обмена или отмене платежа, особенно при использовании криптовалюты."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о покупке скинов Rust",
+        "items": [
+          {
+            "summary": "Где можно купить скины Rust?",
+            "body": "Скины продаются в Steam Community Market, на сторонних торговых площадках между пользователями и в сервисах с собственным инвентарём."
+          },
+          {
+            "summary": "Чем сторонняя площадка отличается от Steam?",
+            "body": "Сторонние сайты могут предлагать другие цены и способы оплаты, а также работать с реальными денежными выплатами. Steam использует собственный баланс и правила экосистемы."
+          },
+          {
+            "summary": "Почему один и тот же скин стоит по-разному?",
+            "body": "Цена зависит от комиссии, ликвидности, спроса, количества предложений и модели ценообразования конкретной площадки."
+          },
+          {
+            "summary": "Какие комиссии бывают при покупке?",
+            "body": "Комиссия может быть включена в цену или отдельно взиматься за пополнение, покупку, платёжный метод или конвертацию валюты."
+          },
+          {
+            "summary": "Как скин попадает в мой инвентарь?",
+            "body": "Обычно через предложение обмена Steam. Оно может отправляться ботом площадки или продавцом в зависимости от модели сервиса."
+          },
+          {
+            "summary": "Можно ли купить скин за криптовалюту?",
+            "body": "На некоторых площадках да. Нужно учитывать сетевую комиссию, курс конвертации и правила возврата такой оплаты."
+          },
+          {
+            "summary": "Что делать, если нужного скина нет в наличии?",
+            "body": "Можно проверить другие <a href=\"/rust/marketplaces\">торговые площадки Rust</a>, подождать появления предложения или рассмотреть <a href=\"/rust/trade-skins\">обмен</a>."
+          },
+          {
+            "summary": "Почему рейтинг сайтов для покупки на CSGOBROKER меняется?",
+            "body": "Меняются цены, комиссии, ассортимент, способы оплаты, скорость передачи предметов, ограничения и качество поддержки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Buying Rust Skins: How to Choose a Site and Compare Prices",
+        "paragraphs": [
+          "Rust skins can be purchased on third-party marketplaces and services that hold their own inventory. Unlike buying through Steam, these sites can offer different prices, payment methods, and direct delivery of an item to a Steam inventory.",
+          "CSGOBROKER evaluates Rust skin buying sites separately from general <a href=\"/rust/marketplaces\">marketplaces</a> because the user's goal here is specific: find the required item, compare the final price, and receive it safely. The listed price matters together with fees, item availability, delivery method, and payment restrictions.",
+          "The same Rust skin can have a different price on Steam, a peer-to-peer marketplace, and a service selling from its own inventory. The useful comparison is therefore the final purchase cost after platform fees, currency conversion, and any service markup."
+        ]
+      },
+      "categories": {
+        "title": "Where Rust Skins Can Be Purchased",
+        "items": [
+          {
+            "title": "Peer-to-peer marketplaces",
+            "paragraphs": [
+              "Sellers list their own items and prices while the platform facilitates the transaction. These services often provide broader choice and price competition, although delivery speed depends on the transfer model and seller activity."
+            ]
+          },
+          {
+            "title": "Sites with their own inventory",
+            "paragraphs": [
+              "The service acquires items in advance and sells them from its own or bot-controlled inventory. Delivery is usually faster, but selection and pricing depend on the platform's current stock."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam's official marketplace keeps the transaction inside the Steam ecosystem. Funds received from other Steam sales remain as Steam balance, while item prices can differ from third-party markets."
+            ]
+          },
+          {
+            "title": "Purchasing with traditional payment methods",
+            "paragraphs": [
+              "Some sites accept bank cards, electronic payments, or local payment systems. Check the billing currency, payment fee, and whether the method is available in your country."
+            ]
+          },
+          {
+            "title": "Purchasing with cryptocurrency",
+            "paragraphs": [
+              "Some marketplaces accept crypto. The final purchase cost can include network fees, conversion rates, and payment-provider charges in addition to the skin price."
+            ]
+          },
+          {
+            "title": "Trading instead of buying",
+            "paragraphs": [
+              "If you already own unwanted items, <a href=\"/rust/trade-skins\">Rust skin trading</a> can sometimes be more convenient than selling first and making a separate purchase, with only the value difference added."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Buying a Rust Skin",
+        "intro": "The catalog price is only the starting point; final cost and delivery can differ significantly.",
+        "items": [
+          {
+            "summary": "Final price after fees",
+            "body": "Check whether the platform fee is already included, whether there is a separate purchase or deposit charge, and how much will actually be paid after currency conversion."
+          },
+          {
+            "summary": "Availability of the exact item",
+            "body": "For uncommon skins, the advertised lowest price matters less than a listing that is actually available. Bot-inventory stock can change quickly."
+          },
+          {
+            "summary": "Price history and market comparison",
+            "body": "Compare the offer with Steam and other <a href=\"/rust/marketplaces\">Rust marketplaces</a>. An unusually low price without a clear explanation is a reason to verify the platform and transaction terms more carefully."
+          },
+          {
+            "summary": "Item delivery method",
+            "body": "Some sites send the item automatically through a Steam Trade Offer, while on others the seller must confirm the transfer. This directly affects delivery time."
+          },
+          {
+            "summary": "Payment methods and refunds",
+            "body": "Review supported cards, electronic methods, and cryptocurrencies as well as the refund procedure when an order is cancelled or cannot be completed."
+          },
+          {
+            "summary": "Steam and platform restrictions",
+            "body": "Steam account restrictions, Steam Guard status, temporary trade holds, and the site's own account requirements can all affect delivery."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Skin Buying Sites",
+        "intro": "The ranking focuses on whether buyers receive understandable pricing, useful selection, and predictable item delivery.",
+        "items": [
+          {
+            "summary": "Price and fee transparency",
+            "body": "We compare item prices and check which charges can be added during deposits, checkout, or currency conversion."
+          },
+          {
+            "summary": "Selection and availability",
+            "body": "We consider the number of available items, inventory refresh frequency, filtering tools, and how easily a specific skin can be found."
+          },
+          {
+            "summary": "Delivery speed and method",
+            "body": "We review how Steam delivery works, typical transfer time, and what happens when a transaction cannot be completed."
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Bank cards, local methods, electronic payments, and cryptocurrencies are assessed together with fees and geographic availability."
+          },
+          {
+            "summary": "Transaction security",
+            "body": "Clear authentication, payment protection, correct Steam Trade Offers, and a transparent dispute process are important."
+          },
+          {
+            "summary": "Interface and support",
+            "body": "Search, sorting, purchase history, transaction status, and support response quality affect the overall experience."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Skin Prices Differ and Change",
+        "paragraphs": [
+          "The same item can have different prices on Steam and third-party marketplaces because liquidity, fees, demand, and business models differ. On peer-to-peer markets sellers set prices, while inventory-based services usually set their own selling prices.",
+          "Item rarity, current demand, and the number of active listings also affect the price. For illiquid skins, the gap between the cheapest visible listing and the price of an immediately available purchase can be significant.",
+          "If you want to receive money for an item instead, use <a href=\"/rust/sell-skins\">Rust skin selling sites</a> or <a href=\"/rust/instant-sell\">instant selling</a>. If you want to exchange one item for another, compare <a href=\"/rust/trade-skins\">trading services</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Buying Rust Skins",
+        "intro": "A purchase is complete only when the correct item has actually reached your Steam inventory.",
+        "items": [
+          {
+            "summary": "Verify the marketplace domain",
+            "body": "Phishing copies can imitate a known market. Check the domain before signing in with Steam or entering payment details."
+          },
+          {
+            "summary": "Verify the Steam Trade Offer",
+            "body": "Check the sender and the exact item before confirming a received offer or any requested counter-transfer."
+          },
+          {
+            "summary": "Never share Steam Guard codes",
+            "body": "A normal purchase does not require sending your password or two-factor authentication code to support staff or a seller."
+          },
+          {
+            "summary": "Keep transaction records",
+            "body": "Order history, transaction identifiers, and support correspondence are useful if an item is not delivered or an order is cancelled."
+          },
+          {
+            "summary": "Review refund rules in advance",
+            "body": "Understand what happens when an item becomes unavailable, a seller fails to deliver, a trade is delayed, or a payment is cancelled, especially for cryptocurrency."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Buying Rust Skins",
+        "items": [
+          {
+            "summary": "Where can I buy Rust skins?",
+            "body": "Rust skins are sold through Steam Community Market, third-party peer-to-peer marketplaces, and services that maintain their own inventory."
+          },
+          {
+            "summary": "How is a third-party marketplace different from Steam?",
+            "body": "Third-party sites can provide different prices and payment methods and may handle real-money payments, while Steam uses its own wallet balance and ecosystem rules."
+          },
+          {
+            "summary": "Why does the same skin have different prices?",
+            "body": "Price depends on fees, liquidity, demand, listing volume, and the pricing model used by each marketplace."
+          },
+          {
+            "summary": "What fees can apply when buying?",
+            "body": "A fee can be included in the displayed price or charged separately for deposits, checkout, a payment method, or currency conversion."
+          },
+          {
+            "summary": "How does the skin reach my inventory?",
+            "body": "Usually through a Steam Trade Offer sent by a platform bot or by the seller, depending on the marketplace model."
+          },
+          {
+            "summary": "Can I buy a Rust skin with cryptocurrency?",
+            "body": "Some platforms allow it. Network fees, conversion rates, and the platform's cryptocurrency refund policy should be considered."
+          },
+          {
+            "summary": "What if the skin I want is unavailable?",
+            "body": "Check other <a href=\"/rust/marketplaces\">Rust marketplaces</a>, wait for a new listing, or consider <a href=\"/rust/trade-skins\">trading</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER buying-site ranking change?",
+            "body": "Prices, fees, selection, payment methods, delivery speed, restrictions, and support quality can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Comprar skins de Rust: cómo elegir una plataforma y comparar precios",
+        "paragraphs": [
+          "Las skins de Rust pueden comprarse en mercados de terceros y en servicios que mantienen su propio inventario. A diferencia de Steam, estas plataformas pueden ofrecer otros precios, métodos de pago y entrega directa del objeto al inventario de Steam.",
+          "CSGOBROKER analiza los sitios para comprar skins de Rust por separado de los <a href=\"/rust/marketplaces\">mercados generales</a>, porque el objetivo es concreto: encontrar el objeto deseado, comparar el precio final y recibirlo de forma segura. Importan el precio, las comisiones, la disponibilidad, la entrega y las restricciones de pago.",
+          "La misma skin puede tener un precio distinto en Steam, en un mercado entre usuarios y en un servicio con inventario propio. Por eso conviene comparar el coste final después de comisiones, conversión de moneda y cualquier margen añadido por la plataforma."
+        ]
+      },
+      "categories": {
+        "title": "Dónde se pueden comprar skins de Rust",
+        "items": [
+          {
+            "title": "Mercados entre usuarios",
+            "paragraphs": [
+              "Los vendedores publican sus objetos y precios y la plataforma facilita la operación. Suelen ofrecer más variedad y competencia en precios, aunque la velocidad de entrega depende del modelo de transferencia y de la actividad del vendedor."
+            ]
+          },
+          {
+            "title": "Plataformas con inventario propio",
+            "paragraphs": [
+              "El servicio adquiere objetos previamente y los vende desde inventario propio o mediante bots. La entrega suele ser más rápida, pero el catálogo y el precio dependen del stock disponible."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "El mercado oficial de Steam mantiene la operación dentro de su ecosistema. El dinero procedente de otras ventas permanece como saldo de Steam y los precios pueden diferir de los mercados externos."
+            ]
+          },
+          {
+            "title": "Compra con métodos de pago tradicionales",
+            "paragraphs": [
+              "Algunos sitios aceptan tarjetas, pagos electrónicos o sistemas locales. Comprueba la moneda de cobro, las comisiones y la disponibilidad del método en tu país."
+            ]
+          },
+          {
+            "title": "Compra con criptomonedas",
+            "paragraphs": [
+              "Algunas plataformas aceptan cripto. El coste final puede incluir comisión de red, tipo de cambio y cargos del proveedor de pago además del precio de la skin."
+            ]
+          },
+          {
+            "title": "Intercambio en lugar de compra",
+            "paragraphs": [
+              "Si ya tienes objetos que no necesitas, puede resultar más práctico utilizar <a href=\"/rust/trade-skins\">intercambio de skins de Rust</a> y pagar solo la diferencia de valor."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de comprar una skin de Rust",
+        "intro": "El precio del catálogo es solo el punto de partida: el coste final y la forma de entrega pueden cambiar mucho.",
+        "items": [
+          {
+            "summary": "Precio final después de comisiones",
+            "body": "Comprueba si la comisión ya está incluida, si existe un cargo por compra o depósito y cuánto se pagará realmente después de convertir la moneda."
+          },
+          {
+            "summary": "Disponibilidad del objeto concreto",
+            "body": "En skins poco comunes importa menos el precio mínimo anunciado que la existencia de una oferta realmente disponible. El inventario de bots puede cambiar rápidamente."
+          },
+          {
+            "summary": "Historial de precios y comparación",
+            "body": "Compara la oferta con Steam y otros <a href=\"/rust/marketplaces\">mercados de Rust</a>. Un precio excepcionalmente bajo sin explicación merece una revisión adicional del sitio y de la operación."
+          },
+          {
+            "summary": "Método de entrega",
+            "body": "En algunas plataformas el objeto se envía automáticamente mediante una oferta de intercambio de Steam; en otras el vendedor debe confirmar la transferencia."
+          },
+          {
+            "summary": "Métodos de pago y devoluciones",
+            "body": "Revisa tarjetas, pagos electrónicos y criptomonedas admitidas y qué ocurre si el pedido se cancela o no puede completarse."
+          },
+          {
+            "summary": "Restricciones de Steam y de la plataforma",
+            "body": "Las limitaciones de la cuenta, Steam Guard, bloqueos temporales de intercambio y requisitos internos del servicio pueden afectar a la entrega."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios para comprar skins de Rust",
+        "intro": "El objetivo del ranking es encontrar precios comprensibles, un catálogo útil y una entrega predecible.",
+        "items": [
+          {
+            "summary": "Precio y transparencia de comisiones",
+            "body": "Comparamos precios y comprobamos los cargos que pueden aparecer al depositar, comprar o convertir moneda."
+          },
+          {
+            "summary": "Catálogo y disponibilidad",
+            "body": "Valoramos cantidad de objetos, frecuencia de actualización, filtros y facilidad para encontrar una skin concreta."
+          },
+          {
+            "summary": "Velocidad y método de entrega",
+            "body": "Revisamos cómo funciona la transferencia por Steam, el tiempo habitual y qué ocurre si la operación falla."
+          },
+          {
+            "summary": "Métodos de pago",
+            "body": "Analizamos tarjetas, métodos locales, pagos electrónicos y criptomonedas junto con comisiones y disponibilidad geográfica."
+          },
+          {
+            "summary": "Seguridad de la operación",
+            "body": "Son importantes una autenticación clara, protección del pago, ofertas correctas de Steam y un proceso transparente para resolver incidencias."
+          },
+          {
+            "summary": "Interfaz y soporte",
+            "body": "Búsqueda, ordenación, historial de compras, estado de las operaciones y calidad del soporte influyen en la valoración."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué los precios de skins de Rust son diferentes y cambian",
+        "paragraphs": [
+          "El mismo objeto puede tener precios diferentes en Steam y mercados externos por diferencias de liquidez, comisiones, demanda y modelo de negocio. En mercados entre usuarios el vendedor fija el precio; en servicios con inventario propio lo hace la plataforma.",
+          "La rareza, la demanda actual y el número de ofertas también influyen. En skins con poca liquidez puede existir una diferencia notable entre el anuncio más barato y una compra disponible de inmediato.",
+          "Si quieres obtener dinero por un objeto, utiliza <a href=\"/rust/sell-skins\">sitios para vender skins de Rust</a> o <a href=\"/rust/instant-sell\">venta rápida</a>. Para cambiar un objeto por otro, compara <a href=\"/rust/trade-skins\">servicios de intercambio</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al comprar skins de Rust",
+        "intro": "La compra termina cuando el objeto correcto llega realmente a tu inventario de Steam.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio",
+            "body": "Las copias de phishing pueden imitar mercados conocidos. Verifica la dirección antes de iniciar sesión con Steam o introducir datos de pago."
+          },
+          {
+            "summary": "Verifica la oferta de intercambio de Steam",
+            "body": "Comprueba el remitente y el objeto exacto antes de confirmar una oferta recibida o una transferencia solicitada."
+          },
+          {
+            "summary": "No compartas códigos de Steam Guard",
+            "body": "Una compra normal no requiere enviar contraseña o códigos de autenticación a soporte o al vendedor."
+          },
+          {
+            "summary": "Conserva los datos de la operación",
+            "body": "El historial del pedido, identificadores y conversaciones con soporte ayudan si el objeto no llega o la operación se cancela."
+          },
+          {
+            "summary": "Revisa las devoluciones antes de pagar",
+            "body": "Comprueba qué ocurre si el objeto deja de estar disponible, el vendedor no entrega, el intercambio se retrasa o el pago se cancela, especialmente con criptomonedas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre la compra de skins de Rust",
+        "items": [
+          {
+            "summary": "¿Dónde puedo comprar skins de Rust?",
+            "body": "En Steam Community Market, mercados externos entre usuarios y servicios que mantienen un inventario propio."
+          },
+          {
+            "summary": "¿En qué se diferencia un mercado externo de Steam?",
+            "body": "Los sitios externos pueden ofrecer otros precios y métodos de pago y trabajar con dinero real, mientras Steam utiliza su saldo y sus propias reglas."
+          },
+          {
+            "summary": "¿Por qué la misma skin tiene precios distintos?",
+            "body": "Depende de comisiones, liquidez, demanda, cantidad de ofertas y modelo de precios de cada plataforma."
+          },
+          {
+            "summary": "¿Qué comisiones puede haber?",
+            "body": "Pueden estar incluidas en el precio o cobrarse por depósito, compra, método de pago o conversión de moneda."
+          },
+          {
+            "summary": "¿Cómo llega la skin a mi inventario?",
+            "body": "Normalmente mediante una oferta de intercambio de Steam enviada por un bot de la plataforma o por el vendedor."
+          },
+          {
+            "summary": "¿Puedo comprar con criptomonedas?",
+            "body": "En algunas plataformas sí. Hay que considerar comisión de red, tipo de cambio y política de devolución."
+          },
+          {
+            "summary": "¿Qué hago si la skin no está disponible?",
+            "body": "Consulta otros <a href=\"/rust/marketplaces\">mercados de Rust</a>, espera una nueva oferta o considera el <a href=\"/rust/trade-skins\">intercambio</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Pueden cambiar precios, comisiones, catálogo, métodos de pago, velocidad de entrega, restricciones y soporte."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Comprar skins de Rust: como escolher uma plataforma e comparar preços",
+        "paragraphs": [
+          "Skins de Rust podem ser compradas em mercados de terceiros e em serviços que mantêm inventário próprio. Diferente da Steam, essas plataformas podem oferecer preços, métodos de pagamento e entrega direta ao inventário Steam distintos.",
+          "A CSGOBROKER avalia sites para comprar skins de Rust separadamente dos <a href=\"/rust/marketplaces\">mercados gerais</a>, porque o objetivo é específico: encontrar o item, comparar o preço final e recebê-lo com segurança. Preço, taxas, disponibilidade, método de entrega e restrições de pagamento precisam ser considerados juntos.",
+          "A mesma skin pode ter preço diferente na Steam, em um mercado entre usuários e em um serviço com inventário próprio. Por isso, compare o custo final depois de taxas, conversão de moeda e eventual margem aplicada pelo serviço."
+        ]
+      },
+      "categories": {
+        "title": "Onde comprar skins de Rust",
+        "items": [
+          {
+            "title": "Mercados entre usuários",
+            "paragraphs": [
+              "Vendedores publicam seus próprios itens e preços e a plataforma facilita a negociação. Normalmente há mais variedade e competição de preço, mas a velocidade depende do modelo de transferência e da atividade do vendedor."
+            ]
+          },
+          {
+            "title": "Plataformas com inventário próprio",
+            "paragraphs": [
+              "O serviço adquire itens antecipadamente e vende do próprio estoque ou de bots. A entrega costuma ser rápida, porém seleção e preço dependem do inventário disponível."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "O mercado oficial mantém a operação dentro do ecossistema Steam. Valores recebidos de outras vendas permanecem como saldo Steam e os preços podem divergir de mercados externos."
+            ]
+          },
+          {
+            "title": "Compra com métodos tradicionais",
+            "paragraphs": [
+              "Alguns sites aceitam cartões, pagamentos eletrônicos e métodos locais. Confira moeda de cobrança, taxas e disponibilidade no seu país."
+            ]
+          },
+          {
+            "title": "Compra com criptomoedas",
+            "paragraphs": [
+              "Algumas plataformas aceitam cripto. O custo final pode incluir taxa de rede, conversão e cobrança do provedor além do preço da skin."
+            ]
+          },
+          {
+            "title": "Troca em vez de compra",
+            "paragraphs": [
+              "Se você já possui itens que não quer, <a href=\"/rust/trade-skins\">trocar skins de Rust</a> pode ser mais conveniente do que vender primeiro e fazer uma nova compra, pagando apenas a diferença de valor."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de comprar uma skin de Rust",
+        "intro": "O preço do catálogo é apenas o começo: custo final e forma de entrega podem variar bastante.",
+        "items": [
+          {
+            "summary": "Preço final depois das taxas",
+            "body": "Confira se a taxa da plataforma já está incluída, se existe cobrança de compra ou depósito e qual será o valor real após conversão de moeda."
+          },
+          {
+            "summary": "Disponibilidade do item exato",
+            "body": "Para skins pouco comuns, o menor preço anunciado importa menos do que uma oferta realmente disponível. Estoques de bots podem mudar rapidamente."
+          },
+          {
+            "summary": "Histórico de preço e comparação",
+            "body": "Compare com a Steam e outros <a href=\"/rust/marketplaces\">mercados de Rust</a>. Um preço muito baixo sem explicação exige uma verificação extra da plataforma e dos termos."
+          },
+          {
+            "summary": "Método de entrega",
+            "body": "Alguns sites enviam automaticamente uma oferta de troca Steam; em outros o vendedor precisa confirmar a transferência. Isso afeta diretamente o tempo de entrega."
+          },
+          {
+            "summary": "Pagamentos e reembolsos",
+            "body": "Veja cartões, métodos eletrônicos e criptomoedas aceitos e as regras se o pedido for cancelado ou não puder ser concluído."
+          },
+          {
+            "summary": "Restrições da Steam e da plataforma",
+            "body": "Limitações da conta, Steam Guard, bloqueios temporários de troca e requisitos internos podem afetar a entrega."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites para comprar skins de Rust",
+        "intro": "O ranking procura mostrar onde o comprador encontra preço claro, boa seleção e entrega previsível.",
+        "items": [
+          {
+            "summary": "Preço e transparência das taxas",
+            "body": "Comparamos preços e verificamos cobranças adicionadas em depósito, compra ou conversão de moeda."
+          },
+          {
+            "summary": "Seleção e disponibilidade",
+            "body": "Consideramos quantidade de itens, frequência de atualização, filtros e facilidade para encontrar uma skin específica."
+          },
+          {
+            "summary": "Velocidade e método de entrega",
+            "body": "Analisamos como funciona a transferência pela Steam, tempo típico e o que acontece quando uma operação falha."
+          },
+          {
+            "summary": "Métodos de pagamento",
+            "body": "Cartões, métodos locais, pagamentos eletrônicos e criptomoedas são avaliados junto com taxas e disponibilidade geográfica."
+          },
+          {
+            "summary": "Segurança da transação",
+            "body": "Autenticação clara, proteção do pagamento, ofertas corretas da Steam e processo transparente de disputa são importantes."
+          },
+          {
+            "summary": "Interface e suporte",
+            "body": "Busca, ordenação, histórico de compras, status das operações e qualidade do suporte influenciam a experiência."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que os preços de skins de Rust diferem e mudam",
+        "paragraphs": [
+          "O mesmo item pode ter preços diferentes na Steam e em mercados externos por diferenças de liquidez, taxas, demanda e modelo de negócio. Em mercados entre usuários o vendedor define o preço; em serviços com inventário próprio a plataforma costuma definir a venda.",
+          "Raridade, demanda atual e número de ofertas também influenciam. Em skins pouco líquidas, pode existir grande diferença entre o anúncio mais barato e uma compra realmente disponível naquele momento.",
+          "Se você quer receber dinheiro pelo item, use <a href=\"/rust/sell-skins\">sites para vender skins de Rust</a> ou <a href=\"/rust/instant-sell\">venda rápida</a>. Para trocar um item por outro, compare <a href=\"/rust/trade-skins\">serviços de troca</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao comprar skins de Rust",
+        "intro": "A compra só termina quando o item correto realmente chega ao seu inventário Steam.",
+        "items": [
+          {
+            "summary": "Confira o domínio",
+            "body": "Cópias de phishing podem imitar mercados conhecidos. Verifique o endereço antes de entrar com Steam ou informar dados de pagamento."
+          },
+          {
+            "summary": "Verifique a oferta de troca Steam",
+            "body": "Confira remetente e item exato antes de confirmar uma oferta recebida ou uma transferência solicitada."
+          },
+          {
+            "summary": "Não compartilhe códigos Steam Guard",
+            "body": "Uma compra normal não exige enviar senha ou código de autenticação para suporte ou vendedor."
+          },
+          {
+            "summary": "Guarde os dados da operação",
+            "body": "Histórico do pedido, identificadores e conversas com suporte ajudam se o item não for entregue ou a operação for cancelada."
+          },
+          {
+            "summary": "Leia as regras de reembolso antes",
+            "body": "Entenda o que acontece se o item ficar indisponível, o vendedor não entregar, a troca atrasar ou o pagamento for cancelado, especialmente com criptomoedas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre compra de skins de Rust",
+        "items": [
+          {
+            "summary": "Onde posso comprar skins de Rust?",
+            "body": "Na Steam Community Market, em mercados externos entre usuários e em serviços que mantêm inventário próprio."
+          },
+          {
+            "summary": "Qual a diferença entre mercado externo e Steam?",
+            "body": "Sites externos podem oferecer outros preços e pagamentos e trabalhar com dinheiro real, enquanto a Steam usa seu próprio saldo e regras."
+          },
+          {
+            "summary": "Por que a mesma skin tem preços diferentes?",
+            "body": "O preço depende de taxas, liquidez, demanda, número de ofertas e modelo de preços de cada plataforma."
+          },
+          {
+            "summary": "Quais taxas podem ser cobradas?",
+            "body": "Elas podem estar incluídas no preço ou ser cobradas por depósito, compra, método de pagamento ou conversão."
+          },
+          {
+            "summary": "Como a skin chega ao inventário?",
+            "body": "Normalmente por uma oferta de troca Steam enviada por bot da plataforma ou pelo vendedor."
+          },
+          {
+            "summary": "Posso comprar com criptomoeda?",
+            "body": "Algumas plataformas permitem. Considere taxa de rede, conversão e política de reembolso."
+          },
+          {
+            "summary": "E se a skin estiver indisponível?",
+            "body": "Confira outros <a href=\"/rust/marketplaces\">mercados de Rust</a>, espere uma nova oferta ou considere uma <a href=\"/rust/trade-skins\">troca</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Preços, taxas, seleção, pagamentos, velocidade de entrega, restrições e suporte podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Skin Satın Alma: Platform Seçimi ve Fiyat Karşılaştırması",
+        "paragraphs": [
+          "Rust skinleri üçüncü taraf pazar yerlerinden veya kendi envanterini tutan servislerden satın alınabilir. Steam'den farklı olarak bu platformlar farklı fiyatlar, ödeme yöntemleri ve eşyayı doğrudan Steam envanterine teslim etme seçenekleri sunabilir.",
+          "CSGOBROKER Rust skin satın alma sitelerini genel <a href=\"/rust/marketplaces\">pazar yerlerinden</a> ayrı değerlendirir; çünkü kullanıcının amacı belirli bir eşyayı bulmak, nihai fiyatı karşılaştırmak ve güvenli şekilde teslim almaktır. Fiyatın yanında ücretler, bulunabilirlik, teslimat yöntemi ve ödeme kısıtlamaları önemlidir.",
+          "Aynı Rust skini Steam'de, kullanıcılar arası pazarda ve kendi envanterinden satış yapan serviste farklı fiyata sahip olabilir. Bu nedenle platform ücretleri, döviz dönüşümü ve olası servis marjı dahil nihai satın alma maliyetini karşılaştırmak gerekir."
+        ]
+      },
+      "categories": {
+        "title": "Rust Skinleri Nereden Satın Alınabilir?",
+        "items": [
+          {
+            "title": "Kullanıcılar arası pazar yerleri",
+            "paragraphs": [
+              "Satıcılar kendi eşyalarını ve fiyatlarını listeler, platform işlemi kolaylaştırır. Genellikle daha geniş seçim ve fiyat rekabeti vardır; ancak teslimat hızı transfer modeline ve satıcının aktifliğine bağlıdır."
+            ]
+          },
+          {
+            "title": "Kendi envanteri olan platformlar",
+            "paragraphs": [
+              "Servis eşyaları önceden alır ve kendi veya bot envanterinden satar. Teslimat genellikle daha hızlıdır, ancak seçim ve fiyat mevcut stoğa bağlıdır."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam'in resmi pazarı işlemi Steam ekosisteminde tutar. Diğer satışlardan gelen para Steam bakiyesi olarak kalır ve fiyatlar üçüncü taraf pazarlardan farklı olabilir."
+            ]
+          },
+          {
+            "title": "Geleneksel ödeme yöntemleriyle satın alma",
+            "paragraphs": [
+              "Bazı siteler banka kartı, elektronik ödeme veya yerel sistemleri kabul eder. Tahsilat para birimini, ödeme ücretini ve yöntemin ülkenizde kullanılabilirliğini kontrol edin."
+            ]
+          },
+          {
+            "title": "Kripto para ile satın alma",
+            "paragraphs": [
+              "Bazı platformlar kripto kabul eder. Nihai maliyete skin fiyatının yanında ağ ücreti, dönüşüm kuru ve ödeme sağlayıcısı ücreti eklenebilir."
+            ]
+          },
+          {
+            "title": "Satın almak yerine takas",
+            "paragraphs": [
+              "Envanterinizde istemediğiniz eşyalar varsa önce satıp sonra yeni ürün almak yerine <a href=\"/rust/trade-skins\">Rust skin takası</a> yaparak yalnızca değer farkını ödemek daha uygun olabilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Skin Satın Almadan Önce Neler Karşılaştırılmalı?",
+        "intro": "Katalog fiyatı yalnız başlangıçtır; nihai maliyet ve teslimat yöntemi önemli ölçüde değişebilir.",
+        "items": [
+          {
+            "summary": "Ücretlerden sonraki nihai fiyat",
+            "body": "Platform ücretinin fiyata dahil olup olmadığını, ayrı satın alma veya yatırma ücreti bulunup bulunmadığını ve döviz dönüşümünden sonra gerçekten ne kadar ödeyeceğinizi kontrol edin."
+          },
+          {
+            "summary": "Belirli eşyanın bulunabilirliği",
+            "body": "Nadir skinlerde reklam edilen en düşük fiyattan çok gerçekten mevcut olan teklif önemlidir. Bot envanterleri hızlı değişebilir."
+          },
+          {
+            "summary": "Fiyat geçmişi ve pazar karşılaştırması",
+            "body": "Teklifi Steam ve diğer <a href=\"/rust/marketplaces\">Rust pazarlarıyla</a> karşılaştırın. Açıklaması olmayan olağanüstü düşük fiyat, platformu ve işlem şartlarını daha dikkatli kontrol etmek için bir nedendir."
+          },
+          {
+            "summary": "Eşya teslimat yöntemi",
+            "body": "Bazı siteler Steam takas teklifini otomatik gönderir, bazılarında satıcının transferi onaylaması gerekir. Bu fark teslimat hızını doğrudan etkiler."
+          },
+          {
+            "summary": "Ödeme yöntemleri ve iadeler",
+            "body": "Desteklenen kartları, elektronik ödemeleri ve kripto paraları ve sipariş iptal edilirse veya tamamlanamazsa iade sürecini inceleyin."
+          },
+          {
+            "summary": "Steam ve platform kısıtlamaları",
+            "body": "Steam hesap sınırlamaları, Steam Guard durumu, geçici takas beklemeleri ve platformun kendi hesap gereksinimleri teslimatı etkileyebilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Skin Satın Alma Sitelerini Nasıl Değerlendirir?",
+        "intro": "Sıralamanın amacı anlaşılır fiyat, yeterli seçim ve öngörülebilir teslimat sunan siteleri göstermektir.",
+        "items": [
+          {
+            "summary": "Fiyat ve ücret şeffaflığı",
+            "body": "Eşya fiyatlarını karşılaştırıyor ve yatırma, satın alma veya döviz dönüşümünde eklenen ücretleri kontrol ediyoruz."
+          },
+          {
+            "summary": "Seçim ve bulunabilirlik",
+            "body": "Mevcut eşya sayısı, envanter güncelleme sıklığı, filtreler ve belirli bir skini bulma kolaylığı değerlendirilir."
+          },
+          {
+            "summary": "Teslimat hızı ve yöntemi",
+            "body": "Steam üzerinden transferin nasıl çalıştığını, tipik süreyi ve işlem tamamlanamazsa ne olduğunu inceliyoruz."
+          },
+          {
+            "summary": "Ödeme yöntemleri",
+            "body": "Banka kartları, yerel yöntemler, elektronik ödemeler ve kripto paralar ücretler ve bölgesel erişimle birlikte değerlendirilir."
+          },
+          {
+            "summary": "İşlem güvenliği",
+            "body": "Açık giriş süreci, ödeme güvenliği, doğru Steam takas teklifleri ve anlaşılır anlaşmazlık prosedürü önemlidir."
+          },
+          {
+            "summary": "Arayüz ve destek",
+            "body": "Arama, sıralama, satın alma geçmişi, işlem durumları ve destek yanıt kalitesi genel deneyimi etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Skin Fiyatları Neden Farklıdır ve Değişir?",
+        "paragraphs": [
+          "Aynı eşya Steam ve üçüncü taraf pazarlarda likidite, ücret, talep ve iş modelindeki farklar nedeniyle farklı fiyatlanabilir. Kullanıcılar arası pazarda fiyatı satıcı belirler; envanter tabanlı servis kendi satış fiyatını koyar.",
+          "Eşyanın nadirliği, mevcut talep ve aktif ilan sayısı da fiyatı etkiler. Düşük likiditeli skinlerde görünen en ucuz ilan ile hemen satın alınabilen teklif arasında büyük fark olabilir.",
+          "Eşyadan para elde etmek istiyorsanız <a href=\"/rust/sell-skins\">Rust skin satma sitelerini</a> veya <a href=\"/rust/instant-sell\">hızlı satışı</a> kullanın. Bir eşyayı diğeriyle değiştirmek için <a href=\"/rust/trade-skins\">takas servislerini</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Rust Skin Satın Alırken Güvenlik",
+        "intro": "Satın alma, doğru eşya gerçekten Steam envanterinize geldiğinde tamamlanır.",
+        "items": [
+          {
+            "summary": "Platform domainini kontrol edin",
+            "body": "Phishing kopyaları bilinen pazarları taklit edebilir. Steam ile giriş yapmadan veya ödeme bilgisi girmeden önce adresi kontrol edin."
+          },
+          {
+            "summary": "Steam takas teklifini doğrulayın",
+            "body": "Gelen teklifi veya istenen karşı transferi onaylamadan önce göndereni ve tam olarak hangi eşyanın bulunduğunu kontrol edin."
+          },
+          {
+            "summary": "Steam Guard kodlarını paylaşmayın",
+            "body": "Normal bir satın alma işleminde şifrenizi veya iki aşamalı doğrulama kodunu destek ekibine ya da satıcıya göndermeniz gerekmez."
+          },
+          {
+            "summary": "İşlem kayıtlarını saklayın",
+            "body": "Sipariş geçmişi, işlem kimliği ve destek yazışmaları eşya teslim edilmez veya sipariş iptal edilirse yardımcı olur."
+          },
+          {
+            "summary": "İade kurallarını önceden okuyun",
+            "body": "Eşya kullanılamaz hale gelirse, satıcı teslim etmezse, takas gecikirse veya ödeme iptal edilirse ne olduğunu özellikle kripto ödemelerde öğrenin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skin Satın Alma Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust skinlerini nereden satın alabilirim?",
+            "body": "Steam Community Market, üçüncü taraf kullanıcılar arası pazarlar ve kendi envanterini tutan servislerden satın alınabilir."
+          },
+          {
+            "summary": "Üçüncü taraf pazar Steam'den nasıl farklıdır?",
+            "body": "Dış siteler farklı fiyat ve ödeme yöntemleri sunabilir ve gerçek para ile çalışabilir; Steam ise kendi bakiyesini ve ekosistem kurallarını kullanır."
+          },
+          {
+            "summary": "Aynı skin neden farklı fiyatlara sahip?",
+            "body": "Fiyat ücretlere, likiditeye, talebe, ilan sayısına ve platformun fiyatlama modeline bağlıdır."
+          },
+          {
+            "summary": "Satın alırken hangi ücretler olabilir?",
+            "body": "Ücret fiyata dahil olabilir veya yatırma, satın alma, ödeme yöntemi ya da döviz dönüşümü için ayrıca alınabilir."
+          },
+          {
+            "summary": "Skin envanterime nasıl gelir?",
+            "body": "Genellikle platform botu veya satıcı tarafından gönderilen Steam takas teklifi ile."
+          },
+          {
+            "summary": "Kripto para ile skin satın alabilir miyim?",
+            "body": "Bazı platformlarda evet. Ağ ücreti, dönüşüm kuru ve iade kurallarını hesaba katın."
+          },
+          {
+            "summary": "İstediğim skin yoksa ne yapabilirim?",
+            "body": "Diğer <a href=\"/rust/marketplaces\">Rust pazarlarını</a> kontrol edin, yeni ilan bekleyin veya <a href=\"/rust/trade-skins\">takas</a> seçeneğini değerlendirin."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Fiyatlar, ücretler, seçim, ödeme yöntemleri, teslimat hızı, kısıtlamalar ve destek kalitesi değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Skins खरीदना: Platform कैसे चुनें और Prices कैसे Compare करें",
+        "paragraphs": [
+          "Rust skins third-party marketplaces और अपने inventory वाले services से खरीदी जा सकती हैं। Steam से खरीदने की तुलना में ये platforms अलग prices, payment methods और item को सीधे Steam inventory में deliver करने के तरीके offer कर सकती हैं।",
+          "CSGOBROKER Rust skin buying sites को general <a href=\"/rust/marketplaces\">marketplaces</a> से अलग evaluate करता है, क्योंकि यहाँ user का goal specific item ढूँढना, final price compare करना और safely receive करना है। Listed price के साथ fees, availability, delivery method और payment restrictions भी महत्वपूर्ण हैं।",
+          "Same Rust skin की price Steam, peer-to-peer marketplace और own-inventory service पर अलग हो सकती है। इसलिए platform fees, currency conversion और service markup के बाद actual final purchase cost compare करना बेहतर है।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Skins कहाँ खरीदी जा सकती हैं",
+        "items": [
+          {
+            "title": "Peer-to-peer marketplaces",
+            "paragraphs": [
+              "Sellers अपने items और prices list करते हैं और platform transaction facilitate करती है। यहाँ अक्सर ज्यादा selection और price competition मिलती है, लेकिन delivery speed transfer model और seller activity पर depend करती है।"
+            ]
+          },
+          {
+            "title": "Own-inventory platforms",
+            "paragraphs": [
+              "Service items पहले acquire करती है और अपने या bot inventory से बेचती है। Delivery आम तौर पर fast होती है, लेकिन selection और price current stock पर depend करते हैं।"
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam का official market transaction को Steam ecosystem के अंदर रखता है। दूसरी sales से मिले funds Steam balance में रहते हैं और item prices external markets से अलग हो सकती हैं।"
+            ]
+          },
+          {
+            "title": "Traditional payment methods",
+            "paragraphs": [
+              "कुछ sites bank cards, electronic payments या local methods accept करती हैं। Billing currency, payment fee और अपने country में availability पहले check करें।"
+            ]
+          },
+          {
+            "title": "Cryptocurrency से purchase",
+            "paragraphs": [
+              "कुछ marketplaces crypto accept करती हैं। Final cost में skin price के साथ network fee, conversion rate और payment-provider charges जुड़ सकते हैं।"
+            ]
+          },
+          {
+            "title": "Purchase की जगह trade",
+            "paragraphs": [
+              "अगर inventory में unwanted items हैं, तो पहले बेचकर नया item खरीदने की जगह <a href=\"/rust/trade-skins\">Rust skin trading</a> करके केवल value difference देना ज्यादा convenient हो सकता है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Skin खरीदने से पहले क्या Compare करें",
+        "intro": "Catalog price सिर्फ starting point है; final cost और item delivery काफी अलग हो सकती है।",
+        "items": [
+          {
+            "summary": "Fees के बाद final price",
+            "body": "Check करें कि platform fee displayed price में included है या नहीं, separate purchase/deposit charge है या नहीं और currency conversion के बाद actual payment कितनी होगी।"
+          },
+          {
+            "summary": "Exact item availability",
+            "body": "Rare skins के लिए advertised lowest price से ज्यादा important वास्तव में available listing है। Bot inventory बहुत जल्दी बदल सकती है।"
+          },
+          {
+            "summary": "Price history और market comparison",
+            "body": "Offer को Steam और दूसरे <a href=\"/rust/marketplaces\">Rust marketplaces</a> से compare करें। बिना clear reason के unusually low price हो तो platform और transaction terms extra carefully verify करें।"
+          },
+          {
+            "summary": "Item delivery method",
+            "body": "कुछ sites Steam Trade Offer automatically भेजती हैं, जबकि दूसरी जगह seller को transfer confirm करना पड़ता है। इससे delivery time सीधे प्रभावित होता है।"
+          },
+          {
+            "summary": "Payment methods और refunds",
+            "body": "Supported cards, electronic payments और cryptocurrencies के साथ cancellation या failed transaction पर refund process भी check करें।"
+          },
+          {
+            "summary": "Steam और platform restrictions",
+            "body": "Steam account restrictions, Steam Guard status, temporary trade holds और site के own account requirements delivery को प्रभावित कर सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Skin Buying Sites को कैसे Rate करता है",
+        "intro": "Ranking का main goal clear pricing, useful selection और predictable delivery वाले platforms दिखाना है।",
+        "items": [
+          {
+            "summary": "Price और fee transparency",
+            "body": "हम item prices compare करते हैं और deposit, purchase या currency conversion के दौरान added charges check करते हैं।"
+          },
+          {
+            "summary": "Selection और availability",
+            "body": "Available items की संख्या, inventory refresh frequency, filters और specific skin आसानी से मिलती है या नहीं, यह evaluate किया जाता है।"
+          },
+          {
+            "summary": "Delivery speed और method",
+            "body": "हम Steam transfer process, typical delivery time और failed transaction की स्थिति review करते हैं।"
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Bank cards, local methods, electronic payments और crypto को fees तथा geographic availability के साथ evaluate किया जाता है।"
+          },
+          {
+            "summary": "Transaction security",
+            "body": "Clear authentication, payment protection, correct Steam Trade Offers और transparent dispute process महत्वपूर्ण हैं।"
+          },
+          {
+            "summary": "Interface और support",
+            "body": "Search, sorting, purchase history, transaction status और support quality overall experience को प्रभावित करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Skin Prices अलग क्यों होती हैं और बदलती क्यों हैं",
+        "paragraphs": [
+          "Same item Steam और third-party marketplaces पर liquidity, fees, demand और business model के कारण अलग price रख सकता है। Peer-to-peer market में seller price तय करता है, जबकि inventory-based service अपनी selling price set करती है।",
+          "Item rarity, current demand और active listings की संख्या भी price बदलती है। Low-liquidity skins में cheapest visible listing और immediately available purchase price के बीच बड़ा gap हो सकता है।",
+          "अगर item के बदले money चाहिए, तो <a href=\"/rust/sell-skins\">Rust skin selling sites</a> या <a href=\"/rust/instant-sell\">quick selling</a> देखें। एक item को दूसरे से बदलने के लिए <a href=\"/rust/trade-skins\">trading services</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Rust Skins खरीदते समय Safety",
+        "intro": "Purchase तभी complete है जब सही item वास्तव में आपकी Steam inventory में पहुँच जाए।",
+        "items": [
+          {
+            "summary": "Marketplace domain verify करें",
+            "body": "Phishing copies known markets की नकल कर सकती हैं। Steam sign-in या payment details डालने से पहले domain check करें।"
+          },
+          {
+            "summary": "Steam Trade Offer verify करें",
+            "body": "Received offer या requested counter-transfer confirm करने से पहले sender और exact item check करें।"
+          },
+          {
+            "summary": "Steam Guard codes share न करें",
+            "body": "Normal purchase में password या two-factor authentication code support staff या seller को भेजने की जरूरत नहीं होती।"
+          },
+          {
+            "summary": "Transaction records रखें",
+            "body": "Order history, transaction identifier और support correspondence item delivery fail या cancellation होने पर useful होते हैं।"
+          },
+          {
+            "summary": "Refund rules पहले पढ़ें",
+            "body": "Item unavailable हो जाए, seller deliver न करे, trade delay हो या payment cancel हो तो क्या होगा, खासकर cryptocurrency payment में, पहले समझें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skins खरीदने के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust skins कहाँ खरीद सकते हैं?",
+            "body": "Steam Community Market, third-party peer-to-peer marketplaces और own-inventory services पर।"
+          },
+          {
+            "summary": "Third-party marketplace Steam से कैसे अलग है?",
+            "body": "External sites अलग prices और payment methods दे सकती हैं और real-money payments handle कर सकती हैं, जबकि Steam अपना wallet balance और ecosystem rules use करता है।"
+          },
+          {
+            "summary": "Same skin की price अलग क्यों होती है?",
+            "body": "Fees, liquidity, demand, listing volume और हर marketplace के pricing model पर depend करती है।"
+          },
+          {
+            "summary": "Purchase पर कौन-सी fees हो सकती हैं?",
+            "body": "Fee displayed price में included हो सकती है या deposit, checkout, payment method या currency conversion के लिए separately charge हो सकती है।"
+          },
+          {
+            "summary": "Skin inventory में कैसे आती है?",
+            "body": "आम तौर पर platform bot या seller द्वारा भेजी गई Steam Trade Offer के जरिए।"
+          },
+          {
+            "summary": "क्या cryptocurrency से Rust skin खरीद सकते हैं?",
+            "body": "कुछ platforms पर हाँ। Network fee, conversion rate और crypto refund policy ध्यान में रखें।"
+          },
+          {
+            "summary": "अगर desired skin available न हो तो क्या करें?",
+            "body": "दूसरे <a href=\"/rust/marketplaces\">Rust marketplaces</a> देखें, नई listing का wait करें या <a href=\"/rust/trade-skins\">trade</a> consider करें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Prices, fees, selection, payment methods, delivery speed, restrictions और support quality बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

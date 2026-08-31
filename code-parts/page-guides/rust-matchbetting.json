@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-matchbetting",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Ставки скинами Rust на спорт и киберспорт: как устроены сайты и что сравнивать",
+        "paragraphs": [
+          "Сайты для ставок скинами Rust позволяют использовать игровые предметы как способ пополнения букмекерского баланса. После передачи предмета через Steam его стоимость обычно конвертируется во внутреннюю валюту, которую можно использовать для ставок на киберспорт, спорт и другие события, доступные в линии конкретной площадки.",
+          "CSGOBROKER оценивает такие сервисы отдельно от случайных режимов Rust. Здесь результат зависит от реального спортивного или киберспортивного события, поэтому важны коэффициенты, букмекерская маржа, набор рынков, правила расчёта ставок, ставки по ходу матча и условия пополнения и вывода. Если задача — просто продать предмет, полезнее использовать <a href=\"/rust/marketplaces\">торговые площадки Rust</a> или <a href=\"/rust/instant-sell\">быструю продажу</a>.",
+          "Для площадок, принимающих Rust-скины, отдельно важно сравнивать внутреннюю оценку предметов. Два букмекера могут предлагать похожие коэффициенты, но за один и тот же скин начислять разный баланс, а затем использовать разные комиссии и способы вывода выигрыша."
+        ]
+      },
+      "categories": {
+        "title": "Какие ставки встречаются на сайтах Rust",
+        "items": [
+          {
+            "title": "Победитель матча",
+            "paragraphs": [
+              "Самый базовый рынок — какая команда выиграет встречу. Если серия проводится до двух или трёх побед по картам, ставка относится к итоговому победителю всей серии, поэтому результат одной карты сам по себе не определяет расчёт."
+            ]
+          },
+          {
+            "title": "Победитель карты",
+            "paragraphs": [
+              "Отдельная ставка на конкретную карту. Она особенно актуальна в киберспорте, где заранее известны выбор и исключение карт, но правила расчёта при замене, технической отмене или изменении порядка карт нужно проверять заранее."
+            ]
+          },
+          {
+            "title": "Фора по картам или раундам",
+            "paragraphs": [
+              "Фора добавляет одной стороне условное преимущество или отставание. Например, ставка может учитывать разницу по картам, раундам или очкам, поэтому важно понимать обозначение плюсовой и минусовой форы."
+            ]
+          },
+          {
+            "title": "Тоталы",
+            "paragraphs": [
+              "Тотал «больше» или «меньше» может относиться к числу карт, раундов, убийств игрока, очков или другому статистическому показателю. Единица расчёта должна быть явно указана в названии рынка."
+            ]
+          },
+          {
+            "title": "Точный счёт и специальные рынки",
+            "paragraphs": [
+              "Некоторые сайты предлагают ставки на точный счёт серии, первую карту, пистолетный раунд, индивидуальную статистику игроков и другие исходы. Чем специфичнее рынок, тем важнее проверить источник официальной статистики и правила расчёта."
+            ]
+          },
+          {
+            "title": "Ставки по ходу матча",
+            "paragraphs": [
+              "Во время матча коэффициенты меняются в зависимости от счёта и новой информации. Для ставок по ходу события особенно важны скорость обновления линии, задержка подтверждения и правила временной остановки рынка."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать на сайтах для ставок скинами Rust",
+        "intro": "Широкая линия сама по себе не означает выгодные условия: качество букмекера лучше видно по коэффициентам, правилам и исполнению ставок.",
+        "items": [
+          {
+            "summary": "Коэффициенты и маржа",
+            "body": "Сравнивайте котировки на одинаковый рынок у нескольких площадок. Чем выше встроенная маржа, тем ниже суммарная теоретическая выплата игрокам. Для двух исходов её можно приблизительно оценить по обратным значениям коэффициентов."
+          },
+          {
+            "summary": "Количество турниров и глубина рынков",
+            "body": "Одни сайты покрывают только крупные события, другие добавляют региональные лиги и менее известные турниры. Внутри матча также различается количество доступных рынков: от победителя до карт, тоталов и индивидуальной статистики игроков."
+          },
+          {
+            "summary": "Правила расчёта и возврата ставки",
+            "body": "Проверьте, что происходит при переносе матча, замене команды, техническом поражении, изменении формата серии или отмене карты. У разных операторов одна и та же ситуация может привести к расчёту или возврату ставки."
+          },
+          {
+            "summary": "Ставки по ходу матча и задержка",
+            "body": "Для линии по ходу матча важны фактическая скорость обновления коэффициентов и время принятия ставки. Площадка может изменить коэффициент или отклонить ставку, если ситуация в событии успела измениться."
+          },
+          {
+            "summary": "Пополнение скинами и их оценка",
+            "body": "Если баланс пополняется предметами Rust, сравнивайте внутреннюю цену с внешним рынком. Скидка при оценке фактически становится дополнительной стоимостью входа ещё до размещения ставки."
+          },
+          {
+            "summary": "Вывод, проверка личности и лимиты",
+            "body": "Минимальная сумма, доступные валюты, комиссии, проверка личности, лимиты на ставку и максимальный выигрыш могут зависеть от страны, аккаунта и конкретного рынка."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты для ставок скинами Rust",
+        "intro": "При составлении рейтинга мы разделяем качество букмекерской линии и общие условия самой площадки.",
+        "items": [
+          {
+            "summary": "Конкурентность коэффициентов",
+            "body": "Мы сравниваем коэффициенты и обращаем внимание на маржу, особенно на популярных матчах, где легче сопоставить одинаковые рынки между несколькими сервисами."
+          },
+          {
+            "summary": "Покрытие матчей и рынков",
+            "body": "Учитывается количество турниров, глубина линии до начала события, ставки по ходу матча, карты, форы, тоталы и дополнительные рынки, а не только общее число событий в интерфейсе."
+          },
+          {
+            "summary": "Расчёт ставок и прозрачность правил",
+            "body": "Важны понятные правила расчёта, корректная обработка отмен и переносов, история ставок и возможность увидеть причину возврата или пересчёта."
+          },
+          {
+            "summary": "Скины и платёжные методы",
+            "body": "Для сервисов, принимающих скины, оценивается внутренняя стоимость предметов, корректность предложения обмена Steam и доступность вывода. Для остальных — карты, криптовалюты, комиссии, минимальные суммы и скорость обработки."
+          },
+          {
+            "summary": "Бонусы и реальные ограничения",
+            "body": "Бесплатная ставка, бонус к пополнению или промокод оцениваются вместе с условиями отыгрыша, минимальным коэффициентом, сроком действия и ограничениями на вывод. Актуальные предложения также можно сравнить в разделе <a href=\"/freebies\">бонусов CSGOBROKER</a>."
+          },
+          {
+            "summary": "Стабильность интерфейса и поддержка",
+            "body": "Для ставок важны своевременное обновление линии, отсутствие зависших купонов, понятная история операций, мобильная версия и поддержка при спорном расчёте."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов для ставок скинами Rust меняется",
+        "paragraphs": [
+          "Букмекеры регулярно меняют маржу, лимиты, список турниров, набор рынков по ходу события, бонусы и способы оплаты. Площадка, которая сегодня даёт хорошие коэффициенты на крупный турнир, не обязательно сохраняет те же условия на другом событии или через несколько месяцев.",
+          "Меняются и сами спортивные и киберспортивные события: составы команд, формат турниров, переносы матчей и новая информация влияют на букмекерскую линию. CSGOBROKER оценивает качество сервиса и условия ставок, а не пытается предсказывать победителя.",
+          "Для операций со скинами без ставок используйте <a href=\"/rust/marketplaces\">торговые площадки</a>, <a href=\"/rust/sell-skins\">продажу скинов</a> и <a href=\"/rust/instant-sell\">быструю продажу</a>. Другие игровые режимы Rust собраны в общем разделе <a href=\"/rust\">сайтов Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственное использование сайтов для ставок",
+        "intro": "Ставки на реальные матчи не являются способом гарантированно заработать: даже сильный фаворит может проиграть, а букмекерская маржа снижает ожидаемую доходность на длинной дистанции.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и авторизацию Steam",
+            "body": "Если сайт работает со скинами, используйте только настоящий домен и официальное окно Steam. Не передавайте пароль или коды Steam Guard сотрудникам сервиса."
+          },
+          {
+            "summary": "Читайте правила расчёта до ставки",
+            "body": "Правила переноса, отмены, технического поражения и замены состава особенно важны в киберспорте. Их лучше проверить до спорной ситуации."
+          },
+          {
+            "summary": "Не воспринимайте прогнозы как гарантию",
+            "body": "Статистика, рейтинги команд и прошлые результаты помогают анализировать матч, но не превращают отдельную ставку в гарантированный исход."
+          },
+          {
+            "summary": "Проверяйте условия вывода заранее",
+            "body": "Если выигрыш планируется выводить скинами, криптовалютой или деньгами, заранее изучите требования к проверке личности, комиссии, минимальные суммы и региональные ограничения."
+          },
+          {
+            "summary": "Устанавливайте лимиты",
+            "body": "Не увеличивайте ставку только для возврата предыдущего проигрыша. Заранее определяйте бюджет и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о ставках скинами Rust",
+        "items": [
+          {
+            "summary": "Что такое ставки скинами Rust?",
+            "body": "Это использование предметов Rust для пополнения баланса на букмекерской или киберспортивной площадке. После оценки скин обычно конвертируется во внутреннюю валюту для ставок."
+          },
+          {
+            "summary": "Можно ли напрямую поставить конкретный Rust-скин на матч?",
+            "body": "На современных площадках предмет чаще сначала передаётся через Steam и превращается во внутренний баланс. Конкретная схема зависит от сервиса, поэтому важно проверить правила пополнения."
+          },
+          {
+            "summary": "Какие рынки чаще всего доступны?",
+            "body": "Победитель матча или карты, форы, тоталы, точный счёт и, на некоторых сайтах, статистика игроков и специальные рынки."
+          },
+          {
+            "summary": "Что такое маржа букмекера?",
+            "body": "Это преимущество, встроенное в коэффициенты. Из-за неё сумма подразумеваемых вероятностей исходов обычно превышает 100%."
+          },
+          {
+            "summary": "Чем ставка до матча отличается от ставки по ходу события?",
+            "body": "Первая размещается до начала события, а вторая — уже во время матча, когда коэффициенты меняются вместе со счётом и новой информацией."
+          },
+          {
+            "summary": "Что происходит, если матч отменили или перенесли?",
+            "body": "Это определяется правилами расчёта конкретной площадки. Ставка может быть возвращена, сохранена до новой даты или рассчитана по специальному условию."
+          },
+          {
+            "summary": "Можно ли получить бонус для ставок?",
+            "body": "Да, некоторые сайты предлагают бесплатные ставки, бонусы к пополнению или промокоды. Сравнивайте размер вместе с требованиями по отыгрышу, минимальным коэффициентом и сроком действия; предложения собраны в <a href=\"/freebies\">разделе бонусов</a>."
+          },
+          {
+            "summary": "Почему рейтинг сайтов для ставок на CSGOBROKER меняется?",
+            "body": "Меняются коэффициенты, букмекерская маржа, набор событий, рынки, правила расчёта, оценка Rust-скинов, платежи, бонусы и стабильность площадки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Betting With Rust Skins: How Sports and Esports Sites Work",
+        "paragraphs": [
+          "Rust skin betting sites let users use in-game items as a funding method for a sportsbook balance. After a Steam transfer, the item is normally valued and converted into internal currency that can be used on esports, sports, and other events listed by the operator.",
+          "CSGOBROKER evaluates these services separately from random Rust gambling modes. Bets are settled by real sports or esports events, so odds, bookmaker margin, market depth, settlement rules, live betting, and deposit and withdrawal conditions matter. If the goal is simply to sell an item, <a href=\"/rust/marketplaces\">Rust marketplaces</a> or <a href=\"/rust/instant-sell\">quick-sale services</a> are more relevant.",
+          "For sites accepting Rust skins, internal item valuation also needs to be compared. Two bookmakers can offer similar betting odds but credit different balances for the same skin and then apply different withdrawal methods or fees."
+        ]
+      },
+      "categories": {
+        "title": "Common Rust Betting Markets",
+        "items": [
+          {
+            "title": "Match winner",
+            "paragraphs": [
+              "The basic market is which team wins the series. In best-of-three or best-of-five formats, the wager is settled on the overall series result, not on one individual map."
+            ]
+          },
+          {
+            "title": "Map winner",
+            "paragraphs": [
+              "A separate wager can be placed on a specific map. When map veto information is available, sites may publish a line for each map, but replacement or technical-cancellation rules still need to be checked."
+            ]
+          },
+          {
+            "title": "Map or round handicaps",
+            "paragraphs": [
+              "A handicap gives one side a virtual advantage or deficit. It can be based on maps or total rounds, so users should understand exactly how positive and negative handicaps are applied."
+            ]
+          },
+          {
+            "title": "Totals",
+            "paragraphs": [
+              "Over/under markets can refer to maps, rounds, player kills, or another statistic. The unit used for settlement should be clearly stated in the market name."
+            ]
+          },
+          {
+            "title": "Correct score and special markets",
+            "paragraphs": [
+              "Some sites offer 2:0 or 2:1 scores, first-map outcomes, pistol rounds, player statistics, and other props. More specialized markets make the official data source and settlement rules even more important."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "During a match, odds change with the score and in-game situation. Live betting depends heavily on line-update speed, bet-confirmation delay, and the rules used when a market is suspended."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Choosing a Rust Betting Site",
+        "intro": "A large event list does not automatically mean better value; odds, rules, and execution usually reveal more about the quality of the sportsbook.",
+        "items": [
+          {
+            "summary": "Odds and bookmaker margin",
+            "body": "Compare the same market across several sites. A larger embedded margin means a lower theoretical return to bettors. For two-way markets, margin can be approximated from the inverse of the displayed decimal odds."
+          },
+          {
+            "summary": "Tournament coverage and market depth",
+            "body": "Some sites focus on major events, while others also cover regional leagues and academy teams. Market depth can range from a single match-winner line to maps, totals, handicaps, and player props."
+          },
+          {
+            "summary": "Settlement and void rules",
+            "body": "Check what happens after a postponement, roster substitution, technical forfeit, format change, or cancelled map. The same situation can be settled or voided differently by different operators."
+          },
+          {
+            "summary": "Live betting and delay",
+            "body": "For in-play betting, actual line-update speed and acceptance time matter. A site can reprice or reject a wager if the game state changes before confirmation."
+          },
+          {
+            "summary": "Skin deposits and item valuation",
+            "body": "If Rust items are used to fund the account, compare the internal valuation with external markets. A discounted item valuation is effectively an additional cost before a wager is even placed."
+          },
+          {
+            "summary": "Withdrawals, KYC and limits",
+            "body": "Minimum payouts, currencies, fees, identity checks, stake limits, and maximum wins can depend on country, account status, and the specific betting market."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Match Betting Sites",
+        "intro": "We separate the quality of the betting line from the general operating conditions of the platform.",
+        "items": [
+          {
+            "summary": "Odds competitiveness",
+            "body": "We compare prices and pay attention to margin, especially on popular matches where identical markets are easier to compare across several services."
+          },
+          {
+            "summary": "Match coverage and market depth",
+            "body": "We consider tournament coverage, prematch depth, live betting, map lines, handicaps, totals, and extra props rather than simply counting events."
+          },
+          {
+            "summary": "Settlement and rule transparency",
+            "body": "Clear settlement rules, correct handling of cancellations and postponements, bet history, and visible reasons for voids or resettlements are important."
+          },
+          {
+            "summary": "Skins and payment methods",
+            "body": "For skin-betting sites, we review internal item value, Steam Trade Offers, and withdrawal availability. For other sites, cards, crypto, fees, minimums, and processing speed matter."
+          },
+          {
+            "summary": "Bonuses and real restrictions",
+            "body": "A free bet, deposit bonus, or promo code is evaluated together with wagering, minimum odds, expiry, and withdrawal restrictions. Current offers can also be compared under CSGOBROKER <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Stability, live interface and support",
+            "body": "Timely line updates, reliable bet slips, transparent transaction history, mobile usability, and support during a disputed settlement all affect the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Skin Betting Rankings Change",
+        "paragraphs": [
+          "Sportsbooks regularly change margin, limits, tournament coverage, live markets, bonuses, and payment methods. A site offering strong odds during one major event may not provide the same conditions on another event or several months later.",
+          "Sports and esports themselves also change: rosters, tournament formats, rescheduled matches, and new information move betting lines. CSGOBROKER evaluates service quality and betting conditions rather than attempting to predict winners.",
+          "For skin transactions without betting, compare <a href=\"/rust/marketplaces\">marketplaces</a>, <a href=\"/rust/sell-skins\">skin selling</a>, and <a href=\"/rust/instant-sell\">quick selling</a>. Other Rust gambling modes are available in the overall <a href=\"/rust\">Rust sites</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Use of Rust Betting Sites",
+        "intro": "Betting on real matches is not a guaranteed way to make money: even a strong favorite can lose, while bookmaker margin reduces expected returns over time.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam sign-in",
+            "body": "If a site handles skins, use the genuine domain and the official Steam authentication flow. Never send a password or Steam Guard code to support staff."
+          },
+          {
+            "summary": "Read settlement rules before betting",
+            "body": "Postponement, cancellation, technical-forfeit, and roster-substitution rules are particularly important in esports and should be understood before a dispute occurs."
+          },
+          {
+            "summary": "Do not treat predictions as guarantees",
+            "body": "Team statistics, rankings, and past results can support analysis, but they do not turn an individual wager into a guaranteed outcome."
+          },
+          {
+            "summary": "Check KYC and withdrawals in advance",
+            "body": "If winnings will be withdrawn as skins, cryptocurrency, or cash, review verification, fees, minimums, and regional restrictions before depositing."
+          },
+          {
+            "summary": "Set limits",
+            "body": "Do not increase a wager solely to recover a previous loss. Define a budget in advance and use <a href=\"/responsibility\">responsible gambling</a> information."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Betting With Rust Skins",
+        "items": [
+          {
+            "summary": "What does betting with Rust skins mean?",
+            "body": "Using Rust items to fund a balance on a sportsbook or esports betting site. After valuation, the skin is usually converted into internal betting currency."
+          },
+          {
+            "summary": "Can I stake a specific Rust skin directly on a match?",
+            "body": "On many modern sites, the item is first transferred through Steam and converted into internal balance. The exact funding model depends on the service."
+          },
+          {
+            "summary": "Which betting markets are most common?",
+            "body": "Match or map winner, handicaps, totals, correct score, and on some sites player statistics and other special markets."
+          },
+          {
+            "summary": "What is bookmaker margin?",
+            "body": "The advantage built into the odds. Because of it, the sum of implied probabilities across all outcomes normally exceeds 100%."
+          },
+          {
+            "summary": "How is pre-match betting different from live betting?",
+            "body": "A pre-match wager is placed before the event starts, while a live wager is placed during the event as odds change with the score and new information."
+          },
+          {
+            "summary": "What happens if a match is cancelled or postponed?",
+            "body": "The site's settlement rules decide whether the wager is refunded, kept active for a new date, or settled under a special rule."
+          },
+          {
+            "summary": "Can I get a betting bonus?",
+            "body": "Some sites offer free bets, deposit bonuses, or promo codes. Compare the headline value with wagering requirements, minimum odds, and expiry; current offers are collected under <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER betting ranking change?",
+            "body": "Odds, bookmaker margin, event coverage, markets, settlement rules, Rust skin valuation, payments, bonuses, and platform stability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Apuestas con skins de Rust: cómo funcionan los sitios de deporte y esports",
+        "paragraphs": [
+          "Los sitios de apuestas con skins de Rust permiten utilizar objetos del juego para financiar el saldo de una casa de apuestas. Tras transferir el objeto por Steam, normalmente se valora y se convierte en moneda interna para apostar en esports, deportes y otros eventos disponibles.",
+          "CSGOBROKER analiza estos servicios por separado de los modos aleatorios de Rust. Aquí el resultado depende de un evento deportivo o de esports real, por lo que importan cuotas, margen, mercados, reglas de liquidación, apuestas en directo y condiciones de depósito y retiro. Para vender objetos sin apostar son más útiles los <a href=\"/rust/marketplaces\">mercados Rust</a> o la <a href=\"/rust/instant-sell\">venta rápida</a>.",
+          "En las plataformas que aceptan skins Rust también hay que comparar su valoración interna. Dos operadores pueden ofrecer cuotas parecidas y, sin embargo, acreditar un saldo diferente por el mismo objeto y aplicar métodos o comisiones de retiro distintos."
+        ]
+      },
+      "categories": {
+        "title": "Mercados de apuestas habituales en Rust",
+        "items": [
+          {
+            "title": "Ganador del partido",
+            "paragraphs": [
+              "El mercado básico consiste en elegir qué equipo ganará la serie. En formatos best-of-three o best-of-five, la apuesta se liquida por el resultado total de la serie y no por una sola mapa."
+            ]
+          },
+          {
+            "title": "Ganador de mapa",
+            "paragraphs": [
+              "Se puede apostar por un mapa concreto. Cuando existe información del map veto, algunas casas publican una línea para cada mapa, pero conviene revisar las reglas ante sustituciones o cancelaciones técnicas."
+            ]
+          },
+          {
+            "title": "Hándicap de mapas o rondas",
+            "paragraphs": [
+              "El hándicap añade una ventaja o desventaja virtual a una de las partes. Puede expresarse en mapas o rondas totales, por lo que es importante entender cómo se aplican los valores positivos y negativos."
+            ]
+          },
+          {
+            "title": "Totales",
+            "paragraphs": [
+              "Los mercados over/under pueden referirse a mapas, rondas, kills de un jugador u otra estadística. La unidad usada para liquidar la apuesta debe estar claramente indicada."
+            ]
+          },
+          {
+            "title": "Marcador exacto y mercados especiales",
+            "paragraphs": [
+              "Algunos sitios ofrecen 2:0, 2:1, primer mapa, pistol round, estadísticas de jugadores y otros props. Cuanto más específico sea el mercado, más importantes son la fuente oficial de datos y las reglas de liquidación."
+            ]
+          },
+          {
+            "title": "Apuestas en vivo",
+            "paragraphs": [
+              "Durante el partido, las cuotas cambian con el marcador y la situación. Son importantes la velocidad de actualización, el retraso de confirmación y las reglas cuando un mercado se suspende."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de elegir un sitio de apuestas de Rust",
+        "intro": "Una lista muy amplia no garantiza mejores condiciones: las cuotas, las reglas y la ejecución muestran mejor la calidad del operador.",
+        "items": [
+          {
+            "summary": "Cuotas y margen",
+            "body": "Compara el mismo mercado entre varias plataformas. Un margen mayor reduce el retorno teórico para el apostador. En mercados de dos resultados puede aproximarse mediante los inversos de las cuotas decimales."
+          },
+          {
+            "summary": "Cobertura de torneos y profundidad",
+            "body": "Algunos sitios se centran en eventos grandes y otros incluyen ligas regionales y equipos academy. Dentro de cada partido pueden existir desde ganador simple hasta mapas, totales, hándicaps y player props."
+          },
+          {
+            "summary": "Reglas de liquidación y void",
+            "body": "Comprueba qué sucede con aplazamientos, sustituciones, technical forfeit, cambios de formato o mapas cancelados. Dos operadores pueden tratar la misma situación de forma diferente."
+          },
+          {
+            "summary": "Live betting y retraso",
+            "body": "En apuestas en vivo importan la velocidad real de la línea y el tiempo de aceptación. La casa puede cambiar la cuota o rechazar la apuesta si el estado del partido cambia antes de confirmar."
+          },
+          {
+            "summary": "Depósitos con skins y valoración",
+            "body": "Si se depositan objetos Rust, compara el precio interno con el mercado externo. Una valoración reducida representa un coste adicional antes de realizar la apuesta."
+          },
+          {
+            "summary": "Retiros, KYC y límites",
+            "body": "Mínimos, monedas, comisiones, verificación, límites de stake y premio máximo pueden depender del país, la cuenta y el mercado concreto."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de apuestas de Rust",
+        "intro": "Separamos la calidad de la línea de apuestas de las condiciones generales de la plataforma.",
+        "items": [
+          {
+            "summary": "Competitividad de cuotas",
+            "body": "Comparamos precios y margen, especialmente en partidos populares donde es sencillo comparar el mismo mercado entre varios servicios."
+          },
+          {
+            "summary": "Cobertura y mercados",
+            "body": "Valoramos torneos, profundidad prematch, live betting, mapas, hándicaps, totales y props, no solo la cantidad total de eventos."
+          },
+          {
+            "summary": "Liquidación y transparencia",
+            "body": "Son importantes reglas claras, tratamiento correcto de cancelaciones y aplazamientos, historial y motivos visibles de un void o recálculo."
+          },
+          {
+            "summary": "Skins y pagos",
+            "body": "En skin betting revisamos valoración interna, Steam Trade Offers y retiro. En otros sitios, tarjetas, cripto, comisiones, mínimos y velocidad de procesamiento."
+          },
+          {
+            "summary": "Bonos y restricciones reales",
+            "body": "Free bets, bonos de depósito y códigos se evalúan junto con wagering, cuota mínima, caducidad y restricciones. Las promociones actuales también están en <a href=\"/freebies\">bonos de CSGOBROKER</a>."
+          },
+          {
+            "summary": "Estabilidad, live y soporte",
+            "body": "Actualización de línea, boletos fiables, historial claro, versión móvil y soporte ante disputas influyen en la puntuación."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de apuestas con skins Rust",
+        "paragraphs": [
+          "Las casas cambian margen, límites, torneos, mercados live, bonos y métodos de pago. Un sitio con buenas cuotas en un torneo grande puede ofrecer condiciones distintas en otro evento o meses después.",
+          "Los propios eventos también cambian: plantillas, formatos, partidos aplazados y nueva información mueven las cuotas. CSGOBROKER evalúa el servicio y sus condiciones, no intenta predecir ganadores.",
+          "Para operar con skins sin apostar utiliza <a href=\"/rust/marketplaces\">mercados</a>, <a href=\"/rust/sell-skins\">venta de skins</a> y <a href=\"/rust/instant-sell\">venta rápida</a>. Otros modos están en la sección general de <a href=\"/rust\">sitios Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable en apuestas de Rust",
+        "intro": "Apostar en partidos reales no es una forma garantizada de ganar dinero: incluso un favorito puede perder y el margen reduce el retorno esperado a largo plazo.",
+        "items": [
+          {
+            "summary": "Comprueba dominio y Steam",
+            "body": "Si el sitio usa skins, utiliza el dominio real y la autenticación oficial de Steam. Nunca entregues contraseña o códigos Steam Guard al soporte."
+          },
+          {
+            "summary": "Lee las reglas de liquidación",
+            "body": "Aplazamientos, cancelaciones, technical forfeits y cambios de roster son frecuentes en esports y conviene conocer las reglas antes de una disputa."
+          },
+          {
+            "summary": "No trates los pronósticos como garantías",
+            "body": "Estadísticas, rankings y resultados anteriores ayudan al análisis, pero no garantizan una apuesta individual."
+          },
+          {
+            "summary": "Revisa KYC y retiro antes",
+            "body": "Si retirarás skins, cripto o dinero, revisa verificación, comisiones, mínimos y restricciones regionales antes de depositar."
+          },
+          {
+            "summary": "Define límites",
+            "body": "No aumentes la apuesta solo para recuperar una pérdida anterior. Fija un presupuesto y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre apuestas con skins de Rust",
+        "items": [
+          {
+            "summary": "¿Qué significa apostar con skins de Rust?",
+            "body": "Utilizar objetos Rust para financiar el saldo de una casa de apuestas o plataforma de esports. Tras valorarse, la skin suele convertirse en moneda interna."
+          },
+          {
+            "summary": "¿Puedo apostar directamente una skin concreta en un partido?",
+            "body": "En muchos sitios el objeto primero se transfiere por Steam y se convierte en saldo interno. El modelo exacto depende del servicio."
+          },
+          {
+            "summary": "¿Qué mercados son habituales?",
+            "body": "Ganador de partido o mapa, hándicaps, totales, marcador exacto y, en algunos sitios, estadísticas de jugadores y mercados especiales."
+          },
+          {
+            "summary": "¿Qué es el margen de la casa?",
+            "body": "La ventaja incorporada en las cuotas. Por ella, la suma de probabilidades implícitas suele superar el 100%."
+          },
+          {
+            "summary": "¿Qué diferencia hay entre apostar antes del partido y en directo?",
+            "body": "La primera apuesta se hace antes de comenzar el evento; la segunda durante el evento, cuando las cuotas cambian con el marcador y la información."
+          },
+          {
+            "summary": "¿Qué ocurre si un partido se cancela o aplaza?",
+            "body": "Depende de las reglas de liquidación: la apuesta puede devolverse, mantenerse hasta una nueva fecha o resolverse mediante una regla especial."
+          },
+          {
+            "summary": "¿Hay bonos para apostar?",
+            "body": "Algunos sitios ofrecen apuestas gratis, bonos de depósito o códigos. Compara el importe con requisitos de apuesta, cuota mínima y caducidad; las ofertas están en <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian cuotas, margen, eventos, mercados, reglas, valoración de skins Rust, pagos, bonos y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Apostas com skins de Rust: como funcionam sites de esportes e esports",
+        "paragraphs": [
+          "Sites de apostas com skins de Rust permitem usar itens do jogo para financiar o saldo de uma casa de apostas. Depois da transferência pela Steam, o item normalmente é avaliado e convertido em moeda interna para apostas em esports, esportes e outros eventos disponíveis.",
+          "A CSGOBROKER avalia esses serviços separadamente dos modos aleatórios de Rust. O resultado depende de um evento esportivo ou de esports real, então importam odds, margem, mercados, regras de liquidação, apostas ao vivo e condições de depósito e saque. Para vender itens sem apostar, use <a href=\"/rust/marketplaces\">mercados Rust</a> ou <a href=\"/rust/instant-sell\">venda rápida</a>.",
+          "Em plataformas que aceitam skins Rust, a avaliação interna dos itens também deve ser comparada. Dois operadores podem oferecer odds parecidas, mas creditar saldos diferentes pela mesma skin e aplicar métodos ou taxas de saque distintos. A diferença entre a avaliação do item e seu valor em mercados externos funciona como parte do custo real antes mesmo da primeira aposta."
+        ]
+      },
+      "categories": {
+        "title": "Mercados comuns de apostas em Rust",
+        "items": [
+          {
+            "title": "Vencedor da partida",
+            "paragraphs": [
+              "O mercado básico é escolher qual time vence a série. Em best-of-three ou best-of-five, a aposta é resolvida pelo resultado total da série e não por um único mapa."
+            ]
+          },
+          {
+            "title": "Vencedor do mapa",
+            "paragraphs": [
+              "É possível apostar em um mapa específico. Quando há map veto disponível, algumas casas publicam odds por mapa, mas regras de substituição ou cancelamento técnico devem ser verificadas."
+            ]
+          },
+          {
+            "title": "Handicap de mapas ou rounds",
+            "paragraphs": [
+              "O handicap adiciona uma vantagem ou desvantagem virtual. Pode ser aplicado a mapas ou total de rounds, então é necessário entender como valores positivos e negativos funcionam."
+            ]
+          },
+          {
+            "title": "Totais",
+            "paragraphs": [
+              "Over/under pode se referir a mapas, rounds, kills de um jogador ou outra estatística. A unidade usada para liquidar a aposta deve estar clara."
+            ]
+          },
+          {
+            "title": "Placar correto e mercados especiais",
+            "paragraphs": [
+              "Alguns sites oferecem 2:0, 2:1, primeiro mapa, pistol round, estatísticas de jogadores e outros props. Quanto mais específico o mercado, mais importantes são a fonte oficial e as regras de liquidação."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Durante a partida, odds mudam com o placar e a situação. Velocidade de atualização, atraso na confirmação e regras de suspensão do mercado são fundamentais."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de escolher um site de apostas de Rust",
+        "intro": "Uma lista grande de eventos não garante boas condições; odds, regras e execução mostram melhor a qualidade da casa. Além da quantidade de eventos, vale observar se as regras permanecem claras em mercados específicos, apostas ao vivo e situações de cancelamento.",
+        "items": [
+          {
+            "summary": "Odds e margem",
+            "body": "Compare o mesmo mercado em várias plataformas. Margem maior reduz o retorno teórico. Em mercados de dois resultados, ela pode ser aproximada pelos inversos das odds decimais."
+          },
+          {
+            "summary": "Cobertura de torneios e profundidade",
+            "body": "Alguns sites focam eventos grandes; outros também cobrem ligas regionais e equipes academy. A profundidade pode ir de vencedor simples até mapas, totais, handicaps e player props."
+          },
+          {
+            "summary": "Liquidação e void",
+            "body": "Veja o que acontece em adiamento, substituição, technical forfeit, mudança de formato ou mapa cancelado. Operadores diferentes podem tratar a mesma situação de forma diferente."
+          },
+          {
+            "summary": "Live betting e atraso",
+            "body": "No live importam a velocidade real da linha e o tempo de aceitação. A casa pode atualizar a odd ou rejeitar a aposta se o estado mudar antes da confirmação."
+          },
+          {
+            "summary": "Depósito com skins e avaliação",
+            "body": "Se itens Rust financiam a conta, compare o preço interno com mercados externos. Uma avaliação reduzida funciona como custo adicional antes da aposta."
+          },
+          {
+            "summary": "Saque, KYC e limites",
+            "body": "Mínimos, moedas, taxas, verificação, stake máximo e win máximo podem depender do país, da conta e do mercado."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de apostas de Rust",
+        "intro": "Separamos a qualidade da linha de apostas das condições gerais da plataforma. A nota combina a qualidade da linha de apostas com a forma como skins, pagamentos e saques são tratados.",
+        "items": [
+          {
+            "summary": "Competitividade das odds",
+            "body": "Comparamos preços e margem, especialmente em partidas populares com mercados equivalentes em vários serviços."
+          },
+          {
+            "summary": "Cobertura e mercados",
+            "body": "Consideramos torneios, profundidade prematch, live, mapas, handicaps, totais e props, não apenas a contagem de eventos."
+          },
+          {
+            "summary": "Liquidação e transparência",
+            "body": "Regras claras, tratamento de cancelamentos e adiamentos, histórico e motivos visíveis de void ou recálculo importam."
+          },
+          {
+            "summary": "Skins e pagamentos",
+            "body": "Em skin betting, avaliamos preço interno, Steam Trade Offer e saque. Nos demais sites, cartões, cripto, taxas, mínimos e velocidade."
+          },
+          {
+            "summary": "Bônus e restrições reais",
+            "body": "Free bets, bônus de depósito e códigos são avaliados com wagering, odd mínima, validade e restrições. Promoções atuais estão em <a href=\"/freebies\">bônus da CSGOBROKER</a>."
+          },
+          {
+            "summary": "Estabilidade, live e suporte",
+            "body": "Atualização de linha, bet slip confiável, histórico, mobile e suporte em disputas influenciam a nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de apostas com skins Rust muda",
+        "paragraphs": [
+          "Casas mudam margem, limites, torneios, live markets, bônus e pagamentos. Um site com odds fortes em um grande evento pode não manter a mesma condição em outro torneio ou meses depois.",
+          "Os próprios eventos também mudam: escalações, formatos, partidas adiadas e novas informações movimentam as odds. A CSGOBROKER avalia qualidade do serviço e condições, não tenta prever vencedores.",
+          "Para negociar skins sem apostar, use <a href=\"/rust/marketplaces\">mercados</a>, <a href=\"/rust/sell-skins\">venda de skins</a> e <a href=\"/rust/instant-sell\">venda rápida</a>. Outros modos estão na seção geral de <a href=\"/rust\">sites Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável em apostas de Rust",
+        "intro": "Apostas em partidas reais não garantem lucro: até um favorito pode perder e a margem reduz o retorno esperado no longo prazo. Mesmo uma análise bem fundamentada não elimina a incerteza do evento nem a margem embutida nas odds.",
+        "items": [
+          {
+            "summary": "Confira domínio e Steam",
+            "body": "Em sites com skins, use o domínio real e a autenticação oficial Steam. Nunca envie senha ou código Steam Guard ao suporte."
+          },
+          {
+            "summary": "Leia regras de liquidação",
+            "body": "Adiamentos, cancelamentos, technical forfeits e mudanças de roster são importantes em esports e devem ser conhecidos antes de uma disputa."
+          },
+          {
+            "summary": "Não trate previsões como garantias",
+            "body": "Estatísticas, rankings e resultados passados ajudam na análise, mas não garantem uma aposta individual."
+          },
+          {
+            "summary": "Veja KYC e saque antes",
+            "body": "Para sacar skins, cripto ou dinheiro, revise verificação, taxas, mínimos e restrições regionais antes do depósito."
+          },
+          {
+            "summary": "Defina limites",
+            "body": "Não aumente a aposta apenas para recuperar uma perda anterior. Defina um orçamento e consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre apostas com skins de Rust",
+        "items": [
+          {
+            "summary": "O que significa apostar com skins de Rust?",
+            "body": "Usar itens Rust para financiar saldo em uma casa de apostas ou plataforma de esports. Depois da avaliação, a skin normalmente vira moeda interna."
+          },
+          {
+            "summary": "Posso apostar uma skin específica diretamente em uma partida?",
+            "body": "Em muitos sites o item primeiro é transferido pela Steam e convertido em saldo interno. O modelo exato depende do serviço."
+          },
+          {
+            "summary": "Quais mercados são comuns?",
+            "body": "Vencedor de partida ou mapa, handicaps, totais, placar correto e, em alguns sites, estatísticas de jogadores e mercados especiais."
+          },
+          {
+            "summary": "O que é margem da casa?",
+            "body": "A vantagem incorporada às odds. Por isso, a soma das probabilidades implícitas costuma superar 100%."
+          },
+          {
+            "summary": "Qual a diferença entre aposta pré-jogo e ao vivo?",
+            "body": "A primeira é feita antes do evento; a segunda durante a partida, com odds mudando conforme placar e novas informações."
+          },
+          {
+            "summary": "O que acontece se uma partida for cancelada ou adiada?",
+            "body": "As regras de liquidação definem se a aposta é devolvida, mantida para a nova data ou resolvida por regra especial."
+          },
+          {
+            "summary": "Existem bônus para apostas?",
+            "body": "Alguns sites oferecem apostas grátis, bônus de depósito ou códigos. Compare valor, requisitos, odds mínimas e validade; veja <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Odds, margem, eventos, mercados, regras, avaliação de skins Rust, pagamentos, bônus e estabilidade mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Skinleriyle Bahis: Spor ve Esports Siteleri Nasıl Çalışır?",
+        "paragraphs": [
+          "Rust skin bahis siteleri oyun içi eşyaları bahis bakiyesini finanse etmek için kullanmaya izin verir. Steam transferinden sonra eşya genellikle değerlenir ve esports, spor ve diğer etkinliklerde kullanılabilecek iç para birimine dönüştürülür.",
+          "CSGOBROKER bu servisleri Rust'ın rastgele oyun modlarından ayrı değerlendirir. Sonuç gerçek spor veya esports etkinliğine bağlıdır; oranlar, bookmaker marjı, pazar çeşitliliği, sonuçlandırma kuralları, canlı bahis ve yatırma/çekim şartları önemlidir. Sadece eşya satmak için <a href=\"/rust/marketplaces\">Rust pazarlarını</a> veya <a href=\"/rust/instant-sell\">hızlı satışı</a> kullanın.",
+          "Rust skin kabul eden platformlarda iç eşya değerlemesi ayrıca karşılaştırılmalıdır. İki bahis sitesi benzer oran sunarken aynı skin için farklı bakiye verebilir ve farklı çekim yöntemleri veya ücretleri uygulayabilir. Eşyanın dış pazardaki değeri ile site bakiyesine çevrilen tutar arasındaki fark, ilk bahis yapılmadan önce bile gerçek maliyetin bir parçasıdır."
+        ]
+      },
+      "categories": {
+        "title": "Rust Sitelerinde Yaygın Bahis Marketleri",
+        "items": [
+          {
+            "title": "Maç kazananı",
+            "paragraphs": [
+              "En temel market seriyi hangi takımın kazanacağıdır. Best-of-three veya best-of-five formatlarında bet tek bir map yerine serinin genel sonucuna göre settle edilir."
+            ]
+          },
+          {
+            "title": "Map kazananı",
+            "paragraphs": [
+              "Belirli bir map için ayrı bahis yapılabilir. Map veto biliniyorsa site her map için line açabilir; ancak map değişimi veya teknik iptal kuralları önceden kontrol edilmelidir."
+            ]
+          },
+          {
+            "title": "Map veya round handicap",
+            "paragraphs": [
+              "Handicap bir tarafa sanal avantaj veya dezavantaj ekler. Map ya da toplam round üzerinden uygulanabilir; pozitif ve negatif handicap işaretlerinin nasıl hesaplandığı anlaşılmalıdır."
+            ]
+          },
+          {
+            "title": "Totals",
+            "paragraphs": [
+              "Over/under marketi map, round, oyuncu kill sayısı veya başka istatistik için kullanılabilir. Settlement yapılan birim market adında açıkça belirtilmelidir."
+            ]
+          },
+          {
+            "title": "Doğru skor ve özel marketler",
+            "paragraphs": [
+              "Bazı siteler 2:0, 2:1, first map, pistol round, player stats ve başka props sunar. Market özelleştikçe resmi veri kaynağı ve settlement rules daha önemli hale gelir."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Maç sırasında odds skor ve oyun durumuna göre değişir. Line update hızı, bet confirmation delay ve market suspend kuralları özellikle önemlidir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Bahis Sitesi Seçmeden Önce Neleri Karşılaştırmalı?",
+        "intro": "Geniş event listesi tek başına iyi koşul anlamına gelmez; odds, rules ve bet execution site kalitesini daha iyi gösterir. Sadece etkinlik sayısına değil, özel marketlerde, canlı bahislerde ve iptal durumlarında kuralların ne kadar açık olduğuna da bakmak gerekir.",
+        "items": [
+          {
+            "summary": "Odds ve bookmaker margin",
+            "body": "Aynı marketi birkaç sitede karşılaştırın. Daha yüksek margin, oyunculara dönen teorik değeri azaltır. İki sonuçlu marketlerde decimal odds tersleriyle yaklaşık margin hesaplanabilir."
+          },
+          {
+            "summary": "Turnuva kapsamı ve market derinliği",
+            "body": "Bazı siteler büyük etkinliklere odaklanırken bazıları bölgesel lig ve academy takımlarını da kapsar. Match içinde sadece winner değil map, total, handicap ve player props bulunabilir."
+          },
+          {
+            "summary": "Settlement ve void rules",
+            "body": "Erteleme, oyuncu değişikliği, technical forfeit, seri formatı değişimi veya map iptali durumunda ne olduğunu kontrol edin. Aynı olay farklı operatorlarda farklı settle edilebilir."
+          },
+          {
+            "summary": "Live betting ve gecikme",
+            "body": "Live bet için line update ve kabul süresi önemlidir. Maç durumu confirmation öncesinde değişirse site odds güncelleyebilir veya bahsi reddedebilir."
+          },
+          {
+            "summary": "Skin deposit ve item değerlemesi",
+            "body": "Hesap Rust item ile fonlanıyorsa iç fiyatı dış marketlerle karşılaştırın. Düşük değerleme, daha bet yapılmadan ek bir maliyet oluşturur."
+          },
+          {
+            "summary": "Çekim, KYC ve limitler",
+            "body": "Minimum payout, para birimleri, fees, kimlik doğrulama, stake limit ve max win ülkeye, hesaba ve markete göre değişebilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Maç Bahis Sitelerini Nasıl Değerlendirir?",
+        "intro": "Bahis line kalitesini platformun genel çalışma koşullarından ayrı değerlendiriyoruz. Puanlama, bahis hattının kalitesiyle skin değerleme, ödeme ve çekim koşullarını birlikte ele alır.",
+        "items": [
+          {
+            "summary": "Odds rekabeti",
+            "body": "Özellikle popüler maçlarda aynı market birkaç sitede bulunabildiği için odds ve margin karşılaştırılır."
+          },
+          {
+            "summary": "Maç ve market kapsamı",
+            "body": "Turnuva sayısı, prematch derinliği, live betting, map, handicap, total ve ek props dikkate alınır; yalnız event sayısı yeterli değildir."
+          },
+          {
+            "summary": "Settlement ve rule şeffaflığı",
+            "body": "Açık rules, iptal ve ertelemelerin doğru işlenmesi, bet history ve void/resettlement nedeninin görünmesi önemlidir."
+          },
+          {
+            "summary": "Skin ve ödeme yöntemleri",
+            "body": "Skin betting servislerinde iç item fiyatı, Steam Trade Offer ve withdrawal değerlendirilir. Diğerlerinde kart, kripto, fees, minimum ve hız önemlidir."
+          },
+          {
+            "summary": "Bonus ve gerçek kısıtlamalar",
+            "body": "Free bet, deposit bonus veya promo code; wagering, minimum odds, expiry ve withdrawal restrictions ile birlikte değerlendirilir. Güncel teklifler <a href=\"/freebies\">CSGOBROKER bonusları</a> bölümünde de karşılaştırılabilir."
+          },
+          {
+            "summary": "Stability, live interface ve support",
+            "body": "Line güncellemeleri, çalışan bet slip, açık işlem geçmişi, mobile ve disputed settlement için destek puanı etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Skin Bahis Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Bookmakerlar margin, limit, turnuva kapsamı, live market, bonus ve ödeme yöntemlerini düzenli değiştirir. Bir major sırasında iyi odds veren site başka etkinlikte veya birkaç ay sonra aynı koşulu sunmayabilir.",
+          "Spor ve esports etkinlikleri de değişir: kadrolar, turnuva formatları, ertelenen maçlar ve yeni bilgiler oranları etkiler. CSGOBROKER servis kalitesini ve şartları değerlendirir, kazanan tahmini yapmaz.",
+          "Bahis olmadan skin işlemleri için <a href=\"/rust/marketplaces\">pazarlar</a>, <a href=\"/rust/sell-skins\">skin satışı</a> ve <a href=\"/rust/instant-sell\">hızlı satış</a> kullanın. Diğer modlar genel <a href=\"/rust\">Rust siteleri</a> bölümündedir."
+        ]
+      },
+      "safety": {
+        "title": "Rust Bahis Sitelerinde Güvenlik ve Sorumlu Oyun",
+        "intro": "Gerçek maçlara bahis garantili kazanç yöntemi değildir: güçlü favori bile kaybedebilir ve bookmaker margin uzun vadeli beklenen dönüşü azaltır. Güçlü analiz bile etkinliğin belirsizliğini veya oranlara dahil olan bookmaker marjını ortadan kaldırmaz.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini kontrol edin",
+            "body": "Site skin kullanıyorsa gerçek domain ve resmi Steam authentication akışını kullanın. Şifre veya Steam Guard kodunu support ile paylaşmayın."
+          },
+          {
+            "summary": "Bahisten önce settlement rules okuyun",
+            "body": "Erteleme, iptal, technical forfeit ve roster substitution kuralları esports için özellikle önemlidir ve sorun çıkmadan önce bilinmelidir."
+          },
+          {
+            "summary": "Tahmini garanti saymayın",
+            "body": "Takım istatistiği, ranking ve geçmiş sonuç analiz için kullanılabilir ama tek bir bahsi garantiye dönüştürmez."
+          },
+          {
+            "summary": "KYC ve çekimi önceden kontrol edin",
+            "body": "Kazanç skin, kripto veya para olarak çekilecekse verification, fee, minimum ve bölgesel kısıtlamaları deposit öncesi inceleyin."
+          },
+          {
+            "summary": "Limit belirleyin",
+            "body": "Önceki kaybı geri almak için stake artırmayın. Bütçe belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> bilgilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skinleriyle Bahis Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust skinleriyle bahis ne demek?",
+            "body": "Rust eşyalarını sportsbook veya esports bahis bakiyesine dönüştürmek demektir. Eşya değerlendirildikten sonra genellikle iç bahis para birimine çevrilir."
+          },
+          {
+            "summary": "Belirli bir Rust skinini doğrudan maça yatırabilir miyim?",
+            "body": "Birçok sitede eşya önce Steam üzerinden aktarılır ve iç bakiyeye çevrilir. Kesin yöntem servise bağlıdır."
+          },
+          {
+            "summary": "Hangi marketler yaygındır?",
+            "body": "Maç veya map winner, handicap, total, doğru skor ve bazı sitelerde player stats ile özel marketler."
+          },
+          {
+            "summary": "Bookmaker margin nedir?",
+            "body": "Odds içine eklenen site avantajıdır. Bu nedenle tüm sonuçların implied probability toplamı genellikle %100 üzerinde olur."
+          },
+          {
+            "summary": "Maç öncesi ve canlı bahis arasındaki fark nedir?",
+            "body": "Maç öncesi bahis etkinlik başlamadan, canlı bahis ise devam ederken değişen oranlarla yapılır."
+          },
+          {
+            "summary": "Maç iptal veya ertelenirse ne olur?",
+            "body": "Sonuçlandırma kuralları bahsin iade edilmesini, yeni tarihe taşınmasını veya özel kuralla sonuçlandırılmasını belirler."
+          },
+          {
+            "summary": "Bahis bonusu alabilir miyim?",
+            "body": "Bazı siteler ücretsiz bahis, yatırma bonusu veya promosyon kodu sunar. Tutarı çevrim şartı, minimum oran ve süreyle birlikte değerlendirin; teklifleri <a href=\"/freebies\">bonuslarda</a> karşılaştırın."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Oranlar, marj, etkinlikler, pazarlar, kurallar, Rust skin değerlemesi, ödemeler, bonuslar ve istikrar değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Skins से Betting: Sports और Esports Sites कैसे काम करती हैं",
+        "paragraphs": [
+          "Rust skin betting sites in-game items को sportsbook balance fund करने के लिए use करने देती हैं। Steam transfer के बाद item की value तय होती है और आम तौर पर internal currency में convert होती है, जिसे esports, sports और दूसरे listed events पर bet करने में use किया जा सकता है।",
+          "CSGOBROKER इन services को random Rust gambling modes से अलग evaluate करता है। Result real sports या esports event से तय होता है, इसलिए odds, bookmaker margin, market depth, settlement rules, live betting और deposit/withdrawal conditions important हैं। सिर्फ item sell करना हो तो <a href=\"/rust/marketplaces\">Rust marketplaces</a> या <a href=\"/rust/instant-sell\">quick selling</a> ज्यादा relevant है।",
+          "Rust skins accept करने वाले sites में internal item valuation भी compare करनी चाहिए। दो bookmakers similar odds offer कर सकते हैं लेकिन same skin के लिए अलग balance credit कर सकते हैं और अलग withdrawal methods या fees apply कर सकते हैं। External market value और betting balance में credited amount का gap पहली bet से पहले ही actual cost का हिस्सा बन जाता है।"
+        ]
+      },
+      "categories": {
+        "title": "Rust में Common Betting Markets",
+        "items": [
+          {
+            "title": "Match winner",
+            "paragraphs": [
+              "Basic market यह है कि series कौन सी team जीतेगी। Best-of-three या best-of-five में bet overall series result पर settle होती है, single map पर नहीं।"
+            ]
+          },
+          {
+            "title": "Map winner",
+            "paragraphs": [
+              "Specific map पर अलग wager हो सकती है। Map veto available होने पर sites हर map की line दे सकती हैं, लेकिन replacement और technical cancellation rules check करने चाहिए।"
+            ]
+          },
+          {
+            "title": "Map या round handicap",
+            "paragraphs": [
+              "Handicap एक side को virtual advantage या deficit देता है। यह maps या total rounds पर based हो सकता है, इसलिए plus और minus values का settlement समझना जरूरी है।"
+            ]
+          },
+          {
+            "title": "Totals",
+            "paragraphs": [
+              "Over/under maps, rounds, player kills या किसी और statistic पर हो सकता है। Market name में settlement unit clear होना चाहिए।"
+            ]
+          },
+          {
+            "title": "Correct score और special markets",
+            "paragraphs": [
+              "कुछ sites 2:0, 2:1, first map, pistol round, player stats और दूसरे props देती हैं। Market जितना specific हो, official data source और settlement rules उतने महत्वपूर्ण होते हैं।"
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Match के दौरान odds score और game state के साथ बदलती हैं। Line update speed, confirmation delay और market suspension rules महत्वपूर्ण हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Betting Site चुनने से पहले क्या Compare करें",
+        "intro": "बड़ी event list अपने आप बेहतर value नहीं देती; odds, rules और bet execution site quality को बेहतर दिखाते हैं। सिर्फ listed events की संख्या नहीं, special markets, live betting और cancellations में rules कितने clear हैं यह भी compare करना चाहिए।",
+        "items": [
+          {
+            "summary": "Odds और bookmaker margin",
+            "body": "Same market कई sites पर compare करें। Higher margin bettor का theoretical return कम करती है। Two-way markets में decimal odds के inverse से margin approximate की जा सकती है।"
+          },
+          {
+            "summary": "Tournament coverage और market depth",
+            "body": "कुछ sites major events पर focus करती हैं, अन्य regional leagues और academy teams भी cover करती हैं। Match के अंदर winner से maps, totals, handicaps और player props तक depth अलग हो सकती है।"
+          },
+          {
+            "summary": "Settlement और void rules",
+            "body": "Postponement, roster substitution, technical forfeit, format change या cancelled map की स्थिति check करें। Same event अलग operators पर अलग settle हो सकता है।"
+          },
+          {
+            "summary": "Live betting और delay",
+            "body": "Live में real line-update speed और acceptance time जरूरी हैं। Confirmation से पहले game state बदलने पर site odds बदल या bet reject कर सकती है।"
+          },
+          {
+            "summary": "Skin deposits और valuation",
+            "body": "अगर Rust items से balance fund होता है, internal value को external markets से compare करें। Discounted valuation bet लगाने से पहले ही extra cost बन सकती है।"
+          },
+          {
+            "summary": "Withdrawals, KYC और limits",
+            "body": "Minimum payout, currencies, fees, verification, stake limits और max win country, account और market पर depend कर सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Match Betting Sites को कैसे Rate करता है",
+        "intro": "हम betting line की quality और platform की general operating conditions को अलग-अलग देखते हैं। Rating betting line की quality के साथ skin valuation, payments और withdrawals को भी साथ में evaluate करती है।",
+        "items": [
+          {
+            "summary": "Odds competitiveness",
+            "body": "Popular matches में same markets कई services पर उपलब्ध होते हैं, इसलिए prices और margin compare की जाती हैं।"
+          },
+          {
+            "summary": "Match coverage और market depth",
+            "body": "Tournaments, prematch depth, live betting, maps, handicaps, totals और extra props देखे जाते हैं; सिर्फ event count नहीं।"
+          },
+          {
+            "summary": "Settlement और rule transparency",
+            "body": "Clear rules, cancellation/postponement handling, bet history और void या resettlement का reason visible होना जरूरी है।"
+          },
+          {
+            "summary": "Skins और payment methods",
+            "body": "Skin betting में internal item value, Steam Trade Offer और withdrawal देखा जाता है। अन्य sites में cards, crypto, fees, minimums और processing speed।"
+          },
+          {
+            "summary": "Bonuses और real restrictions",
+            "body": "Free bet, deposit bonus या promo code को wagering, minimum odds, expiry और withdrawal restrictions के साथ evaluate किया जाता है। Current offers <a href=\"/freebies\">CSGOBROKER bonuses</a> में भी compare किए जा सकते हैं।"
+          },
+          {
+            "summary": "Stability, live interface और support",
+            "body": "Timely line updates, reliable bet slips, clear history, mobile usability और disputed settlement support rating को प्रभावित करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Skin Betting Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Sportsbooks margin, limits, tournament coverage, live markets, bonuses और payment methods बदलती रहती हैं। एक major पर strong odds देने वाली site दूसरे event या कुछ महीनों बाद same conditions नहीं दे सकती।",
+          "Sports और esports events भी बदलते हैं: rosters, tournament formats, postponed matches और new information betting lines को move करते हैं। CSGOBROKER service quality और conditions evaluate करता है, winners predict नहीं करता।",
+          "Betting के बिना skin transactions के लिए <a href=\"/rust/marketplaces\">marketplaces</a>, <a href=\"/rust/sell-skins\">skin selling</a> और <a href=\"/rust/instant-sell\">quick selling</a> देखें। दूसरे modes general <a href=\"/rust\">Rust sites</a> section में हैं।"
+        ]
+      },
+      "safety": {
+        "title": "Rust Betting Sites पर Safety और Responsible Use",
+        "intro": "Real matches पर betting guaranteed income नहीं है: strong favorite भी lose कर सकता है और bookmaker margin long-run expected return कम करती है। Strong analysis भी event uncertainty या odds में built-in bookmaker margin को खत्म नहीं करती।",
+        "items": [
+          {
+            "summary": "Domain और Steam sign-in verify करें",
+            "body": "Skin site में genuine domain और official Steam authentication use करें। Password या Steam Guard code support को न दें।"
+          },
+          {
+            "summary": "Bet से पहले settlement rules पढ़ें",
+            "body": "Postponement, cancellation, technical forfeit और roster substitution esports में important हैं और dispute से पहले समझने चाहिए।"
+          },
+          {
+            "summary": "Predictions को guarantee न मानें",
+            "body": "Team statistics, rankings और past results analysis में मदद करते हैं, लेकिन individual wager को guaranteed outcome नहीं बनाते।"
+          },
+          {
+            "summary": "KYC और withdrawal पहले check करें",
+            "body": "Winnings skins, crypto या cash में निकालनी हों तो verification, fees, minimums और regional restrictions deposit से पहले देखें।"
+          },
+          {
+            "summary": "Limits set करें",
+            "body": "Previous loss recover करने के लिए stake न बढ़ाएँ। Budget पहले तय करें और <a href=\"/responsibility\">responsible gambling</a> information use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skins से Betting के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust skins से betting का क्या मतलब है?",
+            "body": "Rust items को sportsbook या esports betting balance fund करने के लिए use करना। Valuation के बाद skin आम तौर पर internal betting currency में convert होती है।"
+          },
+          {
+            "summary": "क्या specific Rust skin को directly match पर stake कर सकते हैं?",
+            "body": "कई sites पर item पहले Steam से transfer होकर internal balance में convert होती है। Exact funding model service पर depend करता है।"
+          },
+          {
+            "summary": "कौन से markets common हैं?",
+            "body": "Match या map winner, handicaps, totals, correct score और कुछ sites पर player stats तथा special markets।"
+          },
+          {
+            "summary": "Bookmaker margin क्या है?",
+            "body": "Odds में built-in platform advantage। इसी वजह से outcomes की implied probabilities का total आम तौर पर 100% से अधिक होता है।"
+          },
+          {
+            "summary": "Pre-match और live betting में क्या फर्क है?",
+            "body": "Pre-match wager event शुरू होने से पहले और live wager event के दौरान changing odds के साथ place होती है।"
+          },
+          {
+            "summary": "Match cancel या postpone हो तो क्या होता है?",
+            "body": "Settlement rules तय करती हैं कि wager refund होगी, new date तक active रहेगी या special rule से settle होगी।"
+          },
+          {
+            "summary": "क्या betting bonus मिल सकता है?",
+            "body": "कुछ sites free bets, deposit bonuses या promo codes देती हैं। Value को wagering, minimum odds और expiry के साथ compare करें; offers <a href=\"/freebies\">bonuses</a> में हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Odds, margin, events, markets, settlement rules, Rust skin valuation, payments, bonuses और stability बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

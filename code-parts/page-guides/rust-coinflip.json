@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-coinflip",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Монетка Rust: как устроен режим и что сравнивать между сайтами",
+        "paragraphs": [
+          "Монетка на сайтах Rust — это случайный раунд с двумя возможными исходами. В классическом варианте два пользователя вносят скины или внутренний баланс сопоставимой стоимости, после чего победитель получает общий приз за вычетом комиссии площадки.",
+          "На разных сайтах режим устроен по-разному: где-то пользователи играют друг против друга, а где-то второй стороной выступает сама платформа. Поэтому важно понять, кто участвует в раунде, как рассчитывается вероятность, какая комиссия удерживается и по какой цене оцениваются скины Rust.",
+          "CSGOBROKER рассматривает монетку отдельно от <a href=\"/rust/roulette\">рулетки</a> и <a href=\"/rust/jackpot\">джекпота</a>, потому что здесь особенно важны правила подбора соперника, сопоставимость ставок, комиссия и прозрачность выбора победителя."
+        ]
+      },
+      "categories": {
+        "title": "Какие варианты игры в монетку встречаются на сайтах Rust",
+        "items": [
+          {
+            "title": "Игра между двумя пользователями",
+            "paragraphs": [
+              "Один игрок создаёт раунд со своей ставкой, а другой принимает его, добавляя скины или баланс сопоставимой стоимости. После закрытия раунда площадка случайным образом определяет победителя и обычно удерживает комиссию из общего призового пула."
+            ]
+          },
+          {
+            "title": "Игра на внутренний баланс",
+            "paragraphs": [
+              "Вместо передачи конкретных предметов ставка может делаться внутренними монетами или балансом сайта. В таком случае важно понимать, как этот баланс пополняется, по какой цене в него конвертируются скины и какими способами его можно вывести."
+            ]
+          },
+          {
+            "title": "Ставки скинами Rust",
+            "paragraphs": [
+              "Если в раунде участвуют предметы, площадка использует собственную оценку каждого скина. Разница с внешним рынком влияет на сопоставимость двух ставок и на фактическую стоимость приза, который получает победитель."
+            ]
+          },
+          {
+            "title": "Выбор стороны",
+            "paragraphs": [
+              "Некоторые сайты позволяют выбрать одну из двух сторон монетки, другие назначают сторону автоматически. При одинаковой заявленной вероятности выбор цвета, изображения или анимации сам по себе не даёт математического преимущества."
+            ]
+          },
+          {
+            "title": "Открытые раунды и подбор соперника",
+            "paragraphs": [
+              "Площадки могут показывать список доступных раундов, их стоимость и допустимый диапазон встречной ставки. Чем выше активность игроков, тем проще быстро найти соперника для нужной суммы."
+            ]
+          },
+          {
+            "title": "Бонусные ставки",
+            "paragraphs": [
+              "Иногда бонусный баланс разрешено использовать в игре в монетку. Перед этим нужно проверить условия бонуса, требования по отыгрышу и возможность вывода полученного выигрыша; общие предложения собраны в разделе <a href=\"/freebies\">бонусов</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед участием в игре в монетку",
+        "intro": "Два раунда с одинаковой заявленной вероятностью могут заметно отличаться по комиссии, внутренней оценке предметов и фактической стоимости приза.",
+        "items": [
+          {
+            "summary": "Комиссия площадки",
+            "body": "Проверьте, какой процент или сумма удерживается из общего банка и когда именно рассчитывается комиссия. Сравнивать лучше стоимость, которую победитель получает после всех удержаний."
+          },
+          {
+            "summary": "Внутренняя оценка скинов",
+            "body": "Если ставка делается предметами Rust, сравните цены площадки со Steam и <a href=\"/rust/marketplaces\">торговыми площадками Rust</a>. Устаревшая или заниженная оценка может менять сопоставимость ставок."
+          },
+          {
+            "summary": "Правила подбора соперника",
+            "body": "Уточните, какую разницу между двумя ставками допускает сервис и кто покрывает разницу, если стоимости не совпадают точно. Это особенно важно для дорогих и малоликвидных предметов."
+          },
+          {
+            "summary": "Проверка Provably Fair",
+            "body": "Площадка должна объяснять, как определяется победитель, и позволять проверить завершённый раунд по опубликованным исходным данным. Одного значка Provably Fair без проверки недостаточно."
+          },
+          {
+            "summary": "Отмена и технические ошибки",
+            "body": "Полезно заранее знать, когда созданная ставка считается принятой, можно ли отменить открытый раунд и что происходит, если соперник или сервис столкнулся с ошибкой во время обмена."
+          },
+          {
+            "summary": "Вывод выигрыша",
+            "body": "Проверьте, выплачивается ли приз предметами, внутренним балансом или другим способом. Для вывода скинов учитывайте наличие предметов, предложения обмена Steam, комиссии, проверку личности и региональные ограничения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты Rust с монеткой",
+        "intro": "Для этого режима важны не анимация броска монетки, а комиссия, корректный подбор ставок и возможность проверить результат.",
+        "items": [
+          {
+            "summary": "Комиссия и фактический приз",
+            "body": "Мы смотрим, какую часть общего банка удерживает площадка и сколько стоимости победитель получает после завершения раунда."
+          },
+          {
+            "summary": "Оценка предметов",
+            "body": "Учитывается прозрачность внутренних цен Rust-скинов, частота их обновления и то, насколько корректно сервис сопоставляет ставки из разных предметов."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверяем, доступны ли данные, необходимые для самостоятельной проверки конкретного завершённого раунда и выбора победителя."
+          },
+          {
+            "summary": "Подбор соперников и активность",
+            "body": "Количество открытых раундов, диапазон ставок, допустимая разница между ними и скорость поиска соперника влияют на практическое удобство режима."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Учитываются скины, обычные платёжные методы, криптовалюты, комиссии, предложения обмена Steam, минимальные суммы и требования к проверке личности."
+          },
+          {
+            "summary": "История раундов и интерфейс",
+            "body": "Понятная история, отображение комиссии, статуса раунда и операций с предметами помогает проверять результат и разбирать спорные ситуации."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов Rust с монеткой меняется",
+        "paragraphs": [
+          "Сервис может изменить комиссию, допустимый диапазон ставок, внутреннюю оценку скинов, правила подбора соперника или способы вывода. Даже небольшое изменение комиссии заметно влияет на реальную стоимость выигрыша.",
+          "Меняется и активность пользователей. Если на площадке становится меньше игроков, поиск соперника для определённой суммы занимает больше времени, а для дорогих ставок подходящих раундов может почти не быть.",
+          "Для других случайных режимов сравните <a href=\"/rust/roulette\">рулетку</a>, <a href=\"/rust/jackpot\">джекпот</a>, <a href=\"/rust/crash\">краш</a> или общий раздел <a href=\"/rust\">сайтов Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании сайтов Rust с монеткой",
+        "intro": "Если в раунде используются скины, к риску случайного результата добавляется безопасность авторизации и операций Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и вход через Steam",
+            "body": "Не вводите данные Steam в поддельные формы и проверяйте адрес площадки перед авторизацией или передачей предметов."
+          },
+          {
+            "summary": "Сверяйте каждое предложение обмена Steam",
+            "body": "Перед подтверждением проверьте отправителя, список предметов и соответствие операции тому раунду, который отображается на сайте."
+          },
+          {
+            "summary": "Проверяйте комиссию до принятия раунда",
+            "body": "Размер удержания должен быть понятен заранее. После передачи предметов менять условия сделки уже поздно."
+          },
+          {
+            "summary": "Не ищите закономерность в серии результатов",
+            "body": "Последовательность нескольких одинаковых сторон не означает, что противоположная сторона стала более вероятной в следующем независимом раунде."
+          },
+          {
+            "summary": "Устанавливайте лимиты",
+            "body": "Раунды проходят быстро, поэтому заранее ограничивайте сумму и время игры и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы об игре в монетку Rust",
+        "items": [
+          {
+            "summary": "Что такое монетка на сайтах Rust?",
+            "body": "Это случайный раунд с двумя возможными исходами, часто организованный между двумя пользователями, которые вносят скины или внутренний баланс сопоставимой стоимости."
+          },
+          {
+            "summary": "Всегда ли шанс равен 50 на 50?",
+            "body": "Не стоит считать это автоматически. Точная механика должна быть описана площадкой, а комиссия отдельно влияет на фактическую ценность выигрыша."
+          },
+          {
+            "summary": "Что представляет собой комиссия?",
+            "body": "Это процент или фиксированная часть общего призового пула, которую площадка удерживает за проведение раунда."
+          },
+          {
+            "summary": "Как сайт сравнивает разные скины Rust?",
+            "body": "Через собственную систему цен. Поэтому важны источник котировок, частота обновления и сравнение с внешним рынком."
+          },
+          {
+            "summary": "Можно ли выбрать сторону монетки?",
+            "body": "На некоторых площадках да, на других сторона назначается автоматически. Сам выбор стороны не меняет заявленную вероятность."
+          },
+          {
+            "summary": "Можно ли проверить результат?",
+            "body": "Если площадка использует полноценный Provably Fair, у пользователя должна быть возможность проверить конкретный завершённый раунд."
+          },
+          {
+            "summary": "Можно ли вывести выигрыш скинами?",
+            "body": "На некоторых сервисах да, но это зависит от наличия предметов, предложений обмена Steam и правил вывода площадки."
+          },
+          {
+            "summary": "Почему рейтинг монетки на CSGOBROKER меняется?",
+            "body": "На оценку влияют комиссия, цены скинов, активность игроков, Provably Fair, платежи, вывод и стабильность работы режима."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Coinflip Sites: How the Mode Works and What to Compare",
+        "paragraphs": [
+          "Rust Coinflip is a two-outcome random game that is often organized between two users. Each side contributes Rust skins or internal balance of comparable value, and the winner receives the combined prize pool after the platform fee is deducted.",
+          "Implementation varies between sites: some use player-versus-player matches, while others make the platform the counterparty and settle everything in internal balance. Compare who the counterparty is, how the probability is calculated, how large the commission is, and how Rust items are valued.",
+          "CSGOBROKER evaluates Coinflip separately from <a href=\"/rust/roulette\">Roulette</a> and <a href=\"/rust/jackpot\">Jackpot</a> because stake matching, item valuation, commission, liquidity, and result verification are central to this mode."
+        ]
+      },
+      "categories": {
+        "title": "Common Rust Coinflip Formats",
+        "items": [
+          {
+            "title": "Player-to-player Coinflip",
+            "paragraphs": [
+              "One user creates a round and another joins with skins or balance of comparable value. The platform runs the round, selects the winner, and normally takes a commission from the combined pool."
+            ]
+          },
+          {
+            "title": "Coinflip with internal balance",
+            "paragraphs": [
+              "Instead of transferring specific items, users may wager coins or internal balance. Check how that balance is funded, how Rust skins are converted into it, and which withdrawal methods are available."
+            ]
+          },
+          {
+            "title": "Rust skin stakes",
+            "paragraphs": [
+              "When items are used directly, the site assigns an internal value to every skin. Differences from the external market affect both stake matching and the real value of the prize received by the winner."
+            ]
+          },
+          {
+            "title": "Side selection",
+            "paragraphs": [
+              "Some sites allow the user to choose one side of the coin, while others assign it automatically. If both outcomes have the same stated probability, the visual side itself creates no mathematical advantage."
+            ]
+          },
+          {
+            "title": "Open lobbies and matching",
+            "paragraphs": [
+              "Platforms can display open rounds, their value, and the permitted range for a matching stake. Higher user activity makes it easier to find a suitable opponent quickly, especially for larger amounts."
+            ]
+          },
+          {
+            "title": "Bonus Coinflip wagers",
+            "paragraphs": [
+              "Some services allow promotional balance to be used in Coinflip. Review wagering requirements and withdrawal restrictions before using it; general promotions can be compared in the <a href=\"/freebies\">bonuses</a> section."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Joining a Rust Coinflip",
+        "intro": "Two rounds with the same headline probability can differ substantially in commission, internal item valuation, and the actual prize value.",
+        "items": [
+          {
+            "summary": "Platform commission",
+            "body": "Check what percentage or amount is removed from the combined pot and when it is calculated. Compare the value the winner actually receives after all deductions."
+          },
+          {
+            "summary": "Rust skin valuation",
+            "body": "If items are used, compare the site's prices with Steam and external <a href=\"/rust/marketplaces\">Rust marketplaces</a>. Stale or discounted internal prices can affect how two stakes are matched."
+          },
+          {
+            "summary": "Opponent matching rules",
+            "body": "Review how much value difference the service allows between two sides and how any unmatched value is handled. This matters most for expensive or illiquid items."
+          },
+          {
+            "summary": "Provably Fair verification",
+            "body": "The site should explain how the winner is selected and provide data that allow a completed round to be checked. A Provably Fair label without a usable verifier is not enough."
+          },
+          {
+            "summary": "Cancellation and technical errors",
+            "body": "Know when a created wager becomes final, whether an unmatched round can be cancelled, and what happens if a trade or site error occurs during matching."
+          },
+          {
+            "summary": "Prize withdrawal",
+            "body": "Check whether the prize is paid in items, internal balance, or another form. For skin withdrawals, consider item availability, Steam Trade Offers, fees, identity checks, and regional restrictions."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Coinflip Sites",
+        "intro": "For Coinflip, commission, fair stake matching, liquidity, and transparent result generation matter more than the coin animation.",
+        "items": [
+          {
+            "summary": "Commission and actual prize",
+            "body": "We review how much of the combined pool the platform keeps and how much value the winner receives after the round."
+          },
+          {
+            "summary": "Item valuation",
+            "body": "We consider the transparency and freshness of Rust skin pricing and whether stakes made from different items are matched consistently."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We check whether enough information is available to verify a specific completed round and its selected winner."
+          },
+          {
+            "summary": "Matching and liquidity",
+            "body": "Open-round volume, stake ranges, permitted value differences, and opponent search speed determine how practical the player-to-player mode is."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "Rust skins, conventional payments, cryptocurrency, fees, Steam Trade Offers, minimums, and identity requirements are included in the evaluation."
+          },
+          {
+            "summary": "Match history and interface",
+            "body": "Clear round history, fee display, item-transfer status, and support tools make results easier to audit and disputes easier to investigate."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Coinflip Rankings Change",
+        "paragraphs": [
+          "A service can change its commission, stake ranges, internal skin pricing, matching rules, or withdrawal methods. Even a small fee change affects the practical value of every round.",
+          "Liquidity changes as well. If fewer users are active, finding an opponent for a particular amount can take longer and high-value matches may become uncommon.",
+          "For other random modes, compare <a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/crash\">Crash</a>, or the broader <a href=\"/rust\">Rust sites</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety on Rust Coinflip Sites",
+        "intro": "When Rust skins are involved, the risk of a random outcome is combined with Steam account and item-transfer security.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam sign-in",
+            "body": "Do not enter Steam credentials into imitation login forms, and verify the platform address before authentication or item transfer."
+          },
+          {
+            "summary": "Check every Steam Trade Offer",
+            "body": "Before confirming, verify the sender, item list, and that the offer corresponds to the round displayed on the site."
+          },
+          {
+            "summary": "Check commission before joining",
+            "body": "The fee should be visible before the round is accepted. Once items are transferred, it is too late to discover different terms."
+          },
+          {
+            "summary": "Do not read patterns into previous outcomes",
+            "body": "A sequence of the same side does not make the opposite side more likely in the next independent round."
+          },
+          {
+            "summary": "Set limits",
+            "body": "Coinflip rounds are fast and easy to repeat. Set spending and time limits in advance and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Coinflip",
+        "items": [
+          {
+            "summary": "What is Rust Coinflip?",
+            "body": "A two-outcome random round, often between two users contributing Rust skins or internal balance of comparable value."
+          },
+          {
+            "summary": "Is Coinflip always exactly 50/50?",
+            "body": "Do not assume it automatically. The exact probability should be published by the platform, while commission separately affects the value of the possible win."
+          },
+          {
+            "summary": "What is the platform commission?",
+            "body": "The percentage or fixed amount the site removes from the combined prize pool for running the round."
+          },
+          {
+            "summary": "How are different Rust skins compared?",
+            "body": "Through the site's internal pricing system, so the source and freshness of those prices matter."
+          },
+          {
+            "summary": "Can I choose a side of the coin?",
+            "body": "Some sites allow it and others assign a side automatically. Choosing the visual side does not change the stated probability."
+          },
+          {
+            "summary": "Can the result be verified?",
+            "body": "On a properly implemented Provably Fair platform, users should be able to verify the specific completed round."
+          },
+          {
+            "summary": "Can winnings be withdrawn as Rust skins?",
+            "body": "Some services allow it, subject to item availability, Steam Trade Offers, and platform withdrawal rules."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Coinflip ranking change?",
+            "body": "Commission, skin pricing, player activity, Provably Fair, payments, withdrawals, and platform stability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Coinflip de Rust: cómo funciona y qué comparar",
+        "paragraphs": [
+          "Coinflip de Rust es un juego aleatorio de dos resultados que suele organizarse entre dos usuarios. Cada lado aporta skins o saldo interno de valor comparable y el ganador recibe el premio conjunto después de descontar la comisión de la plataforma.",
+          "La implementación cambia entre sitios: algunos enfrentan directamente a dos jugadores y otros utilizan a la propia plataforma como contraparte. Conviene revisar quién participa, cómo se calcula la probabilidad, qué comisión se cobra y cómo se valoran las skins de Rust.",
+          "CSGOBROKER analiza Coinflip por separado de <a href=\"/rust/roulette\">Ruleta</a> y <a href=\"/rust/jackpot\">Jackpot</a> porque aquí son especialmente importantes el emparejamiento de apuestas, la liquidez, la comisión y la verificación del resultado."
+        ]
+      },
+      "categories": {
+        "title": "Formatos habituales de Coinflip de Rust",
+        "items": [
+          {
+            "title": "Coinflip entre jugadores",
+            "paragraphs": [
+              "Un usuario crea una ronda y otro entra con skins o saldo de valor parecido. La plataforma organiza el resultado y normalmente descuenta una comisión del premio conjunto."
+            ]
+          },
+          {
+            "title": "Coinflip con saldo interno",
+            "paragraphs": [
+              "En lugar de transferir objetos concretos, la apuesta puede hacerse con monedas o saldo del sitio. Comprueba cómo se obtiene ese saldo, cómo se convierten las skins y qué métodos de retiro existen."
+            ]
+          },
+          {
+            "title": "Apuestas con skins de Rust",
+            "paragraphs": [
+              "Cuando se utilizan objetos, el sitio asigna un precio interno a cada skin. La diferencia frente al mercado externo afecta al emparejamiento y al valor real del premio."
+            ]
+          },
+          {
+            "title": "Elección de lado",
+            "paragraphs": [
+              "Algunos sitios permiten elegir uno de los dos lados y otros lo asignan automáticamente. Si la probabilidad declarada es la misma, elegir color o imagen no genera ventaja matemática."
+            ]
+          },
+          {
+            "title": "Rondas abiertas y emparejamiento",
+            "paragraphs": [
+              "La plataforma puede mostrar partidas abiertas, su valor y el rango permitido para la apuesta contraria. Una mayor actividad facilita encontrar rival, especialmente en importes altos."
+            ]
+          },
+          {
+            "title": "Apuestas con saldo promocional",
+            "paragraphs": [
+              "Algunos servicios permiten utilizar bonos en Coinflip. Antes hay que revisar requisitos de apuesta y retiro; las promociones generales se comparan en <a href=\"/freebies\">bonos</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de participar en Coinflip",
+        "intro": "Dos rondas con la misma probabilidad anunciada pueden diferir mucho en comisión, valoración interna y valor real del premio.",
+        "items": [
+          {
+            "summary": "Comisión de la plataforma",
+            "body": "Comprueba qué porcentaje o cantidad se descuenta del bote y en qué momento. Compara el valor que recibe realmente el ganador después de todas las deducciones."
+          },
+          {
+            "summary": "Valoración de skins de Rust",
+            "body": "Compara los precios internos con Steam y otros <a href=\"/rust/marketplaces\">mercados de Rust</a>. Una valoración desactualizada puede cambiar la equivalencia de las apuestas."
+          },
+          {
+            "summary": "Reglas de emparejamiento",
+            "body": "Revisa cuánta diferencia de valor se permite entre los dos lados y cómo se gestiona cualquier diferencia. Es especialmente relevante con objetos caros o poco líquidos."
+          },
+          {
+            "summary": "Verificación Provably Fair",
+            "body": "El sitio debe explicar cómo se elige al ganador y ofrecer datos para comprobar una ronda terminada. Una etiqueta Provably Fair sin verificador no es suficiente."
+          },
+          {
+            "summary": "Cancelación y errores técnicos",
+            "body": "Conviene saber cuándo la apuesta queda confirmada, si una ronda sin rival puede cancelarse y qué ocurre si aparece un error durante el intercambio."
+          },
+          {
+            "summary": "Retiro del premio",
+            "body": "Comprueba si el premio se paga en objetos, saldo u otra forma. Para skins revisa disponibilidad, ofertas de intercambio de Steam, comisiones, verificación y restricciones regionales."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios Coinflip de Rust",
+        "intro": "En Coinflip importan más la comisión, el emparejamiento y la transparencia del resultado que la animación de la moneda.",
+        "items": [
+          {
+            "summary": "Comisión y premio real",
+            "body": "Analizamos cuánto retiene la plataforma y qué valor recibe finalmente el ganador del premio conjunto."
+          },
+          {
+            "summary": "Valoración de objetos",
+            "body": "Revisamos la transparencia y actualización de los precios de skins y la consistencia al emparejar apuestas formadas por objetos distintos."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Comprobamos si existe información suficiente para verificar una ronda concreta y el ganador seleccionado."
+          },
+          {
+            "summary": "Emparejamiento y liquidez",
+            "body": "Número de rondas abiertas, rangos de apuesta, diferencias permitidas y velocidad para encontrar rival determinan la utilidad práctica del modo."
+          },
+          {
+            "summary": "Depósitos y retiros",
+            "body": "Se consideran skins, pagos tradicionales, criptomonedas, comisiones, intercambios Steam, mínimos y requisitos de verificación."
+          },
+          {
+            "summary": "Historial e interfaz",
+            "body": "Un historial claro, las comisiones visibles, el estado de las transferencias y un buen soporte ayudan a revisar resultados y resolver incidencias."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de Coinflip de Rust",
+        "paragraphs": [
+          "El servicio puede cambiar comisión, rangos de apuesta, precios internos, reglas de emparejamiento o métodos de retiro. Incluso una pequeña variación de la comisión afecta al valor de cada ronda.",
+          "La liquidez también cambia. Con menos usuarios activos puede tardarse más en encontrar rival y las partidas de alto valor pueden ser poco frecuentes.",
+          "Para otros modos compara <a href=\"/rust/roulette\">Ruleta</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/crash\">Crash</a> o la sección general de <a href=\"/rust\">sitios Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en sitios Coinflip de Rust",
+        "intro": "Cuando se utilizan skins, al riesgo del resultado aleatorio se añade la seguridad de Steam y de las transferencias de objetos.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio y el acceso de Steam",
+            "body": "No introduzcas credenciales en formularios falsos y verifica la dirección antes de iniciar sesión o transferir objetos."
+          },
+          {
+            "summary": "Revisa cada oferta de intercambio de Steam",
+            "body": "Antes de confirmar, comprueba remitente, objetos y que la operación corresponda a la ronda mostrada en el sitio."
+          },
+          {
+            "summary": "Comprueba la comisión antes de entrar",
+            "body": "La comisión debe ser visible antes de aceptar la ronda, no después de transferir los objetos."
+          },
+          {
+            "summary": "No busques patrones en resultados anteriores",
+            "body": "Una serie del mismo lado no hace que el contrario sea más probable en la siguiente ronda independiente."
+          },
+          {
+            "summary": "Establece límites",
+            "body": "Las rondas son rápidas y fáciles de repetir. Define límites de tiempo y gasto y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Coinflip de Rust",
+        "items": [
+          {
+            "summary": "¿Qué es Coinflip de Rust?",
+            "body": "Una ronda aleatoria de dos resultados, a menudo entre dos usuarios que aportan skins o saldo interno de valor comparable."
+          },
+          {
+            "summary": "¿Coinflip siempre es exactamente 50/50?",
+            "body": "No debe suponerse automáticamente. La plataforma debe publicar la probabilidad exacta y la comisión afecta por separado al valor del premio."
+          },
+          {
+            "summary": "¿Qué es la comisión?",
+            "body": "El porcentaje o cantidad fija que la plataforma descuenta del premio conjunto por organizar la ronda."
+          },
+          {
+            "summary": "¿Cómo se comparan distintas skins?",
+            "body": "Mediante el sistema de precios interno del sitio, por lo que importan la fuente y la actualización de esos valores."
+          },
+          {
+            "summary": "¿Puedo elegir el lado de la moneda?",
+            "body": "En algunos sitios sí y en otros se asigna automáticamente. La elección visual no cambia la probabilidad indicada."
+          },
+          {
+            "summary": "¿Se puede verificar el resultado?",
+            "body": "Con Provably Fair bien implementado debería poder comprobarse una ronda concreta después de terminar."
+          },
+          {
+            "summary": "¿Puedo retirar el premio como skins?",
+            "body": "En algunos servicios sí, según disponibilidad de objetos, ofertas Steam y reglas de retiro."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Pueden cambiar comisión, precios de skins, actividad de jugadores, Provably Fair, pagos, retiro y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Coinflip de Rust: como funciona e o que comparar",
+        "paragraphs": [
+          "Coinflip de Rust é um jogo aleatório de dois resultados, frequentemente organizado entre dois usuários. Cada lado coloca skins ou saldo interno de valor semelhante e o vencedor recebe o prêmio combinado depois da comissão da plataforma.",
+          "A implementação varia: alguns sites colocam dois jogadores diretamente um contra o outro, enquanto outros usam a própria plataforma como contraparte. Compare quem participa, como a probabilidade é calculada, qual comissão é cobrada e como as skins de Rust são avaliadas.",
+          "A CSGOBROKER avalia Coinflip separadamente de <a href=\"/rust/roulette\">Roleta</a> e <a href=\"/rust/jackpot\">Jackpot</a> porque emparelhamento, liquidez, comissão e verificação do resultado são centrais nesse modo."
+        ]
+      },
+      "categories": {
+        "title": "Formatos comuns de Coinflip de Rust",
+        "items": [
+          {
+            "title": "Coinflip entre jogadores",
+            "paragraphs": [
+              "Um usuário cria a rodada e outro entra com skins ou saldo de valor parecido. A plataforma organiza o resultado e normalmente retém uma comissão do prêmio total."
+            ]
+          },
+          {
+            "title": "Coinflip com saldo interno",
+            "paragraphs": [
+              "Em vez de transferir itens específicos, a aposta pode usar moedas ou saldo do site. Confira como esse saldo é obtido, como skins são convertidas e quais saques estão disponíveis."
+            ]
+          },
+          {
+            "title": "Apostas com skins de Rust",
+            "paragraphs": [
+              "Quando itens são usados, o site atribui um preço interno a cada skin. Diferenças em relação ao mercado externo afetam o emparelhamento e o valor real do prêmio."
+            ]
+          },
+          {
+            "title": "Escolha do lado",
+            "paragraphs": [
+              "Alguns sites deixam o usuário escolher um dos lados; outros fazem a atribuição automaticamente. Com a mesma probabilidade declarada, escolher cor ou imagem não cria vantagem matemática."
+            ]
+          },
+          {
+            "title": "Rodadas abertas e emparelhamento",
+            "paragraphs": [
+              "A plataforma pode mostrar partidas abertas, valores e a faixa permitida para a aposta oposta. Mais usuários ativos facilitam encontrar adversário, principalmente em valores maiores."
+            ]
+          },
+          {
+            "title": "Apostas com bônus",
+            "paragraphs": [
+              "Alguns serviços aceitam saldo promocional em Coinflip. Confira requisitos de aposta e saque; promoções gerais podem ser comparadas em <a href=\"/freebies\">bônus</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de participar do Coinflip",
+        "intro": "Duas rodadas com a mesma probabilidade anunciada podem ser muito diferentes em comissão, avaliação interna e valor real do prêmio.",
+        "items": [
+          {
+            "summary": "Comissão da plataforma",
+            "body": "Confira qual porcentagem ou valor é descontado do prêmio e quando a cobrança ocorre. Compare quanto o vencedor realmente recebe após todas as deduções."
+          },
+          {
+            "summary": "Avaliação das skins de Rust",
+            "body": "Compare os preços internos com a Steam e outros <a href=\"/rust/marketplaces\">mercados de Rust</a>. Valores desatualizados podem alterar a equivalência das apostas."
+          },
+          {
+            "summary": "Regras de emparelhamento",
+            "body": "Veja quanta diferença de valor é permitida entre os lados e como essa diferença é tratada. Isso importa especialmente em itens caros ou pouco líquidos."
+          },
+          {
+            "summary": "Verificação Provably Fair",
+            "body": "O site deve explicar a escolha do vencedor e fornecer dados para conferir uma rodada concluída. Apenas exibir a expressão Provably Fair não basta."
+          },
+          {
+            "summary": "Cancelamento e erros técnicos",
+            "body": "Saiba quando a aposta se torna definitiva, se uma rodada sem adversário pode ser cancelada e o que acontece em caso de erro durante a troca."
+          },
+          {
+            "summary": "Saque do prêmio",
+            "body": "Confira se o prêmio é pago em itens, saldo ou outra forma. Para skins, veja estoque, ofertas de troca Steam, taxas, verificação e restrições regionais."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites Coinflip de Rust",
+        "intro": "Em Coinflip, comissão, emparelhamento correto, liquidez e transparência do resultado são mais importantes do que a animação da moeda.",
+        "items": [
+          {
+            "summary": "Comissão e prêmio real",
+            "body": "Analisamos quanto do prêmio combinado fica com a plataforma e quanto valor o vencedor realmente recebe."
+          },
+          {
+            "summary": "Avaliação dos itens",
+            "body": "Consideramos transparência e atualização dos preços de skins e a consistência ao emparelhar apostas com itens diferentes."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verificamos se existem dados suficientes para conferir uma rodada concluída e o vencedor selecionado."
+          },
+          {
+            "summary": "Emparelhamento e liquidez",
+            "body": "Quantidade de rodadas abertas, faixas de valor, diferenças permitidas e velocidade para encontrar adversário determinam a utilidade do modo."
+          },
+          {
+            "summary": "Depósitos e saques",
+            "body": "Skins, pagamentos tradicionais, criptomoedas, taxas, ofertas Steam, mínimos e exigências de verificação entram na avaliação."
+          },
+          {
+            "summary": "Histórico e interface",
+            "body": "Histórico claro, comissão visível, status das transferências e suporte ajudam a auditar resultados e resolver problemas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de Coinflip de Rust muda",
+        "paragraphs": [
+          "O serviço pode alterar comissão, faixas de aposta, preços internos, regras de emparelhamento ou métodos de saque. Mesmo uma pequena mudança na comissão afeta cada rodada.",
+          "A liquidez também muda. Com menos usuários ativos, encontrar adversário pode demorar mais e partidas de alto valor podem ficar raras.",
+          "Para outros modos, compare <a href=\"/rust/roulette\">Roleta</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/crash\">Crash</a> ou a seção geral de <a href=\"/rust\">sites Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em sites Coinflip de Rust",
+        "intro": "Quando skins são usadas, o risco do resultado aleatório se soma à segurança da conta Steam e das transferências.",
+        "items": [
+          {
+            "summary": "Confira o domínio e o login Steam",
+            "body": "Não informe credenciais em formulários falsos e verifique o endereço antes de entrar ou transferir itens."
+          },
+          {
+            "summary": "Verifique cada oferta de troca Steam",
+            "body": "Antes de confirmar, confira remetente, itens e se a operação corresponde à rodada mostrada no site."
+          },
+          {
+            "summary": "Confira a comissão antes de entrar",
+            "body": "A cobrança deve estar clara antes de aceitar a rodada, e não somente depois da transferência dos itens."
+          },
+          {
+            "summary": "Não procure padrões nos resultados anteriores",
+            "body": "Uma sequência do mesmo lado não torna o lado oposto mais provável na próxima rodada independente."
+          },
+          {
+            "summary": "Defina limites",
+            "body": "As rodadas são rápidas e fáceis de repetir. Defina limites de tempo e gasto e consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Coinflip de Rust",
+        "items": [
+          {
+            "summary": "O que é Coinflip de Rust?",
+            "body": "Uma rodada aleatória de dois resultados, normalmente entre dois usuários com skins ou saldo de valor semelhante."
+          },
+          {
+            "summary": "Coinflip é sempre exatamente 50/50?",
+            "body": "Não presuma isso automaticamente. A plataforma deve publicar a probabilidade e a comissão afeta separadamente o valor do prêmio."
+          },
+          {
+            "summary": "O que é a comissão?",
+            "body": "A porcentagem ou valor fixo que a plataforma retém do prêmio combinado pela operação da rodada."
+          },
+          {
+            "summary": "Como skins diferentes são comparadas?",
+            "body": "Pelo sistema interno de preços do site, por isso fonte e atualização desses valores são importantes."
+          },
+          {
+            "summary": "Posso escolher o lado da moeda?",
+            "body": "Em alguns sites sim; em outros o lado é atribuído automaticamente. A escolha visual não altera a probabilidade declarada."
+          },
+          {
+            "summary": "O resultado pode ser verificado?",
+            "body": "Com Provably Fair bem implementado, uma rodada específica deve poder ser conferida depois de concluída."
+          },
+          {
+            "summary": "Posso sacar o prêmio em skins?",
+            "body": "Alguns serviços permitem, dependendo de estoque, ofertas Steam e regras de saque."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Comissão, preços, atividade dos jogadores, Provably Fair, pagamentos, saques e estabilidade podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Coinflip: Mod Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Rust Coinflip, çoğu zaman iki kullanıcı arasında oynanan iki sonuçlu rastgele bir oyundur. Her taraf benzer değerde Rust skini veya iç bakiye koyar ve kazanan platform komisyonu düşüldükten sonra birleşik ödülü alır.",
+          "Uygulama siteden siteye değişir: bazı servislerde iki oyuncu doğrudan eşleşir, bazılarında karşı taraf platformun kendisidir. Kimin karşı taraf olduğunu, olasılığın nasıl hesaplandığını, komisyonu ve Rust skinlerinin nasıl değerlendiğini kontrol edin.",
+          "CSGOBROKER Coinflip'i <a href=\"/rust/roulette\">Rulet</a> ve <a href=\"/rust/jackpot\">Jackpot</a> modlarından ayrı değerlendirir; çünkü eşleştirme, likidite, komisyon ve sonuç doğrulaması bu modda özellikle önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "Rust Coinflip'te Yaygın Formatlar",
+        "items": [
+          {
+            "title": "Oyuncular arası Coinflip",
+            "paragraphs": [
+              "Bir kullanıcı tur oluşturur, diğeri benzer değerde skin veya bakiye ile katılır. Platform sonucu belirler ve genellikle ortak ödülden komisyon keser."
+            ]
+          },
+          {
+            "title": "İç bakiye ile Coinflip",
+            "paragraphs": [
+              "Belirli eşyaları aktarmak yerine site içi para veya bakiye kullanılabilir. Bu bakiyenin nasıl elde edildiğini, skinlerin hangi değerden çevrildiğini ve nasıl çekildiğini kontrol edin."
+            ]
+          },
+          {
+            "title": "Rust skinleriyle bahis",
+            "paragraphs": [
+              "Eşyalar kullanıldığında site her skin için iç fiyat belirler. Dış pazarla fiyat farkı hem eşleştirmeyi hem de kazananın gerçek ödül değerini etkiler."
+            ]
+          },
+          {
+            "title": "Taraf seçimi",
+            "paragraphs": [
+              "Bazı siteler iki taraftan birini seçmeye izin verir, bazıları otomatik atar. Olasılıklar aynıysa renk veya görsel seçimi matematiksel avantaj sağlamaz."
+            ]
+          },
+          {
+            "title": "Açık turlar ve eşleştirme",
+            "paragraphs": [
+              "Platform açık turları, değerlerini ve karşı bahis için izin verilen aralığı gösterebilir. Daha yüksek kullanıcı aktivitesi özellikle büyük tutarlarda rakip bulmayı kolaylaştırır."
+            ]
+          },
+          {
+            "title": "Bonus bakiye ile oyun",
+            "paragraphs": [
+              "Bazı servisler bonus bakiyenin Coinflip'te kullanılmasına izin verir. Çevrim ve çekim şartlarını kontrol edin; genel kampanyalar <a href=\"/freebies\">bonuslar</a> bölümünde karşılaştırılabilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Coinflip'e Katılmadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Aynı ilan edilen olasılığa sahip iki tur komisyon, iç eşya fiyatı ve gerçek ödül değeri açısından önemli ölçüde farklı olabilir.",
+        "items": [
+          {
+            "summary": "Platform komisyonu",
+            "body": "Ortak ödülden hangi yüzde veya tutarın kesildiğini ve kesintinin ne zaman hesaplandığını kontrol edin. Kazananın tüm kesintilerden sonra aldığı değeri karşılaştırın."
+          },
+          {
+            "summary": "Rust skin değerlemesi",
+            "body": "İç fiyatları Steam ve diğer <a href=\"/rust/marketplaces\">Rust pazarlarıyla</a> karşılaştırın. Eski veya düşük fiyatlar iki tarafın eşleşmesini etkileyebilir."
+          },
+          {
+            "summary": "Rakip eşleştirme kuralları",
+            "body": "İki taraf arasında ne kadar değer farkına izin verildiğini ve kalan farkın nasıl işlendiğini inceleyin. Bu, pahalı ve düşük likiditeli eşyalar için önemlidir."
+          },
+          {
+            "summary": "Provably Fair doğrulaması",
+            "body": "Site kazananın nasıl seçildiğini açıklamalı ve tamamlanan turun kontrolü için veri sunmalıdır. Yalnız Provably Fair etiketi yeterli değildir."
+          },
+          {
+            "summary": "İptal ve teknik hatalar",
+            "body": "Bahsin ne zaman kesinleştiğini, rakip gelmeyen turun iptal edilip edilemediğini ve takas sırasında hata olursa ne olduğunu önceden öğrenin."
+          },
+          {
+            "summary": "Ödül çekimi",
+            "body": "Ödülün eşya, bakiye veya başka biçimde verilip verilmediğini kontrol edin. Skin çekiminde stok, Steam takas teklifleri, ücretler, kimlik doğrulama ve bölgesel kısıtlamaları değerlendirin."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Coinflip Sitelerini Nasıl Değerlendirir?",
+        "intro": "Coinflip'te coin animasyonundan çok komisyon, adil eşleştirme, likidite ve sonuç şeffaflığı önemlidir.",
+        "items": [
+          {
+            "summary": "Komisyon ve gerçek ödül",
+            "body": "Platformun ortak havuzdan ne kadar tuttuğunu ve kazananın gerçekte ne kadar değer aldığını inceliyoruz."
+          },
+          {
+            "summary": "Eşya değerlemesi",
+            "body": "Rust skin fiyatlarının şeffaflığını ve güncelliğini, ayrıca farklı eşyalardan oluşan bahislerin tutarlı eşleşmesini değerlendiriyoruz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Belirli tamamlanmış turu ve seçilen kazananı doğrulamak için yeterli veri bulunup bulunmadığını kontrol ediyoruz."
+          },
+          {
+            "summary": "Eşleştirme ve likidite",
+            "body": "Açık tur sayısı, tutar aralıkları, izin verilen farklar ve rakip bulma hızı modun pratik kullanımını belirler."
+          },
+          {
+            "summary": "Yatırma ve çekim",
+            "body": "Rust skinleri, geleneksel ödemeler, kripto, ücretler, Steam takas teklifleri, minimumlar ve kimlik şartları değerlendirilir."
+          },
+          {
+            "summary": "Tur geçmişi ve arayüz",
+            "body": "Açık geçmiş, görünür komisyon, eşya transfer durumu ve destek sonuçların kontrolünü ve sorun çözmeyi kolaylaştırır."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Coinflip Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Servis komisyonu, bahis aralıklarını, iç skin fiyatlarını, eşleştirme kurallarını veya çekim yöntemlerini değiştirebilir. Küçük komisyon değişikliği bile her turun değerini etkiler.",
+          "Likidite de değişir. Daha az aktif kullanıcı olduğunda belirli tutarda rakip bulmak daha uzun sürebilir ve yüksek değerli turlar seyrekleşebilir.",
+          "Diğer modlar için <a href=\"/rust/roulette\">Rulet</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/crash\">Crash</a> veya genel <a href=\"/rust\">Rust siteleri</a> bölümünü karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Rust Coinflip Sitelerinde Güvenlik",
+        "intro": "Skin kullanıldığında rastgele sonuç riskine Steam hesabı ve eşya transfer güvenliği de eklenir.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini kontrol edin",
+            "body": "Sahte Steam formlarına bilgi girmeyin ve giriş veya eşya transferinden önce site adresini doğrulayın."
+          },
+          {
+            "summary": "Her Steam takas teklifini kontrol edin",
+            "body": "Onaylamadan önce göndereni, eşya listesini ve işlemin sitede gösterilen turla eşleştiğini doğrulayın."
+          },
+          {
+            "summary": "Katılmadan önce komisyonu kontrol edin",
+            "body": "Komisyon tur kabul edilmeden önce açık olmalıdır; eşyaları gönderdikten sonra farklı şartlarla karşılaşmamalısınız."
+          },
+          {
+            "summary": "Geçmiş sonuçlarda örüntü aramayın",
+            "body": "Aynı tarafın birkaç kez gelmesi, bir sonraki bağımsız turda diğer tarafı daha olası yapmaz."
+          },
+          {
+            "summary": "Limit belirleyin",
+            "body": "Turlar hızlıdır ve kolay tekrar edilir. Zaman ve harcama limitlerini önceden belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Coinflip Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust Coinflip nedir?",
+            "body": "Çoğu zaman benzer değerde skin veya bakiye koyan iki kullanıcı arasında oynanan iki sonuçlu rastgele turdur."
+          },
+          {
+            "summary": "Coinflip her zaman tam 50/50 mi?",
+            "body": "Bunu otomatik varsaymayın. Kesin olasılık platform tarafından yayınlanmalı; komisyon ise ödülün değerini ayrıca etkiler."
+          },
+          {
+            "summary": "Komisyon nedir?",
+            "body": "Platformun turu yürütmek için birleşik ödülden aldığı yüzde veya sabit tutardır."
+          },
+          {
+            "summary": "Farklı Rust skinleri nasıl karşılaştırılır?",
+            "body": "Sitenin iç fiyat sistemiyle; bu nedenle fiyat kaynağı ve güncellik önemlidir."
+          },
+          {
+            "summary": "Coin tarafını seçebilir miyim?",
+            "body": "Bazı sitelerde evet, bazılarında otomatik atanır. Görsel taraf seçimi ilan edilen olasılığı değiştirmez."
+          },
+          {
+            "summary": "Sonuç doğrulanabilir mi?",
+            "body": "Provably Fair doğru uygulanmışsa belirli tamamlanmış tur sonradan doğrulanabilmelidir."
+          },
+          {
+            "summary": "Kazancı skin olarak çekebilir miyim?",
+            "body": "Bazı servislerde evet; eşya stoku, Steam takas teklifi ve çekim kurallarına bağlıdır."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Komisyon, skin fiyatları, oyuncu aktivitesi, Provably Fair, ödemeler, çekim ve istikrar değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Coinflip: Mode कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Rust Coinflip एक two-outcome random game है जो अक्सर दो users के बीच होता है। दोनों sides comparable value की Rust skins या internal balance लगाती हैं और winner को platform commission कटने के बाद combined prize मिलता है।",
+          "Implementation site के अनुसार बदलती है: कहीं दो players सीधे एक-दूसरे के against होते हैं और कहीं platform खुद counterparty होती है। देखें कि दूसरी side कौन है, probability कैसे calculate होती है, commission कितना है और Rust skins की valuation कैसे होती है।",
+          "CSGOBROKER Coinflip को <a href=\"/rust/roulette\">Roulette</a> और <a href=\"/rust/jackpot\">Jackpot</a> से अलग evaluate करता है क्योंकि stake matching, liquidity, commission और result verification इस mode में central हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Coinflip के Common Formats",
+        "items": [
+          {
+            "title": "Players के बीच Coinflip",
+            "paragraphs": [
+              "एक user round बनाता है और दूसरा similar-value skins या balance के साथ join करता है। Platform result run करती है और आम तौर पर combined prize से commission काटती है।"
+            ]
+          },
+          {
+            "title": "Internal balance Coinflip",
+            "paragraphs": [
+              "Specific items transfer करने की जगह site coins या internal balance use हो सकता है। Check करें कि balance कैसे fund होता है, skins किस value पर convert होती हैं और withdrawal कैसे होता है।"
+            ]
+          },
+          {
+            "title": "Rust skin stakes",
+            "paragraphs": [
+              "Items use होने पर site हर skin को internal price देती है। External market से difference matching और winner को मिलने वाले actual prize value दोनों को प्रभावित करता है।"
+            ]
+          },
+          {
+            "title": "Side selection",
+            "paragraphs": [
+              "कुछ sites user को coin की side चुनने देती हैं, दूसरी automatically assign करती हैं। Same stated probability में color या image चुनने से mathematical advantage नहीं मिलता।"
+            ]
+          },
+          {
+            "title": "Open rounds और matching",
+            "paragraphs": [
+              "Platform open rounds, उनकी value और opposite stake के allowed range दिखा सकती है। ज्यादा active users होने पर especially high amounts के लिए opponent जल्दी मिलता है।"
+            ]
+          },
+          {
+            "title": "Bonus wagers",
+            "paragraphs": [
+              "कुछ services bonus balance को Coinflip में use करने देती हैं। Wagering और withdrawal conditions पहले check करें; general offers <a href=\"/freebies\">bonuses</a> section में compare किए जा सकते हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Coinflip Join करने से पहले क्या Check करें",
+        "intro": "Same headline probability वाले दो rounds commission, internal valuation और actual prize value में काफी अलग हो सकते हैं।",
+        "items": [
+          {
+            "summary": "Platform commission",
+            "body": "Check करें कि combined pot से कितना percentage या amount कटता है और कब calculate होता है। Winner को deductions के बाद मिलने वाली actual value compare करें।"
+          },
+          {
+            "summary": "Rust skin valuation",
+            "body": "Internal prices को Steam और दूसरे <a href=\"/rust/marketplaces\">Rust marketplaces</a> से compare करें। Stale या low pricing stake matching को बदल सकती है।"
+          },
+          {
+            "summary": "Opponent matching rules",
+            "body": "देखें कि दोनों sides में कितना value difference allowed है और unmatched difference कैसे handle होता है। Expensive या illiquid items में यह खास important है।"
+          },
+          {
+            "summary": "Provably Fair verification",
+            "body": "Site को winner-selection process explain करना और completed round verify करने के लिए data देना चाहिए। सिर्फ Provably Fair label पर्याप्त नहीं है।"
+          },
+          {
+            "summary": "Cancellation और technical errors",
+            "body": "जानें कि wager कब final होता है, unmatched round cancel हो सकता है या नहीं और trade error होने पर क्या process है।"
+          },
+          {
+            "summary": "Prize withdrawal",
+            "body": "Check करें कि prize items, internal balance या दूसरे form में मिलता है। Skin withdrawal के लिए item stock, Steam Trade Offers, fees, verification और regional restrictions देखें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Coinflip Sites को कैसे Rate करता है",
+        "intro": "Coinflip में coin animation से ज्यादा commission, fair matching, liquidity और transparent result generation important हैं।",
+        "items": [
+          {
+            "summary": "Commission और actual prize",
+            "body": "हम देखते हैं कि combined pool का कितना हिस्सा platform रखती है और winner को round के बाद कितनी value मिलती है।"
+          },
+          {
+            "summary": "Item valuation",
+            "body": "Rust skin pricing की transparency और freshness तथा different items वाली stakes का consistent matching evaluate किया जाता है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "हम check करते हैं कि specific completed round और selected winner verify करने के लिए पर्याप्त data available है या नहीं।"
+          },
+          {
+            "summary": "Matching और liquidity",
+            "body": "Open rounds, stake ranges, allowed value differences और opponent search speed player-to-player mode की usability तय करते हैं।"
+          },
+          {
+            "summary": "Deposits और withdrawals",
+            "body": "Rust skins, conventional payments, crypto, fees, Steam Trade Offers, minimums और identity requirements rating में शामिल हैं।"
+          },
+          {
+            "summary": "Round history और interface",
+            "body": "Clear history, visible commission, item-transfer status और support results audit करने और disputes समझने में मदद करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Coinflip Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Service commission, stake ranges, internal skin prices, matching rules या withdrawal methods बदल सकती है। छोटा commission change भी हर round की practical value प्रभावित करता है।",
+          "Liquidity भी बदलती है। Active users कम होने पर specific amount के लिए opponent मिलने में ज्यादा समय लग सकता है और high-value rounds rare हो सकते हैं।",
+          "दूसरे modes के लिए <a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/crash\">Crash</a> या general <a href=\"/rust\">Rust sites</a> section देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Rust Coinflip Sites पर Safety",
+        "intro": "Skins use होने पर random-outcome risk के साथ Steam account और item-transfer security भी important हो जाती है।",
+        "items": [
+          {
+            "summary": "Domain और Steam sign-in verify करें",
+            "body": "Fake login forms में Steam credentials न डालें और authentication या item transfer से पहले site address check करें।"
+          },
+          {
+            "summary": "हर Steam Trade Offer check करें",
+            "body": "Confirm करने से पहले sender, item list और offer का displayed round से connection verify करें।"
+          },
+          {
+            "summary": "Join करने से पहले commission देखें",
+            "body": "Fee round accept करने से पहले clear होनी चाहिए; items transfer करने के बाद अलग terms सामने नहीं आनी चाहिए।"
+          },
+          {
+            "summary": "Previous outcomes में pattern न मानें",
+            "body": "Same side की sequence अगली independent round में opposite side को ज्यादा likely नहीं बनाती।"
+          },
+          {
+            "summary": "Limits set करें",
+            "body": "Rounds fast और repeatable हैं। Time और spending limits पहले तय करें और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Coinflip के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust Coinflip क्या है?",
+            "body": "Two-outcome random round, अक्सर दो users के बीच, जहाँ comparable-value Rust skins या internal balance लगाया जाता है।"
+          },
+          {
+            "summary": "क्या Coinflip हमेशा exactly 50/50 होता है?",
+            "body": "Automatically assume न करें। Exact probability platform publish करे और commission prize value को अलग से प्रभावित करती है।"
+          },
+          {
+            "summary": "Platform commission क्या है?",
+            "body": "Combined prize pool से platform द्वारा round operate करने के लिए लिया गया percentage या fixed amount।"
+          },
+          {
+            "summary": "Different Rust skins कैसे compare होती हैं?",
+            "body": "Site की internal pricing system से, इसलिए source और price freshness important हैं।"
+          },
+          {
+            "summary": "क्या coin side choose कर सकते हैं?",
+            "body": "कुछ sites पर हाँ, दूसरी automatically assign करती हैं। Visual choice stated probability नहीं बदलती।"
+          },
+          {
+            "summary": "क्या result verify हो सकता है?",
+            "body": "Properly implemented Provably Fair पर specific completed round verify किया जा सकना चाहिए।"
+          },
+          {
+            "summary": "क्या winnings skins में withdraw कर सकते हैं?",
+            "body": "कुछ services पर हाँ, item stock, Steam Trade Offers और withdrawal rules पर depend करता है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Commission, skin prices, player activity, Provably Fair, payments, withdrawals और platform stability बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

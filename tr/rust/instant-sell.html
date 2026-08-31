@@ -80,7 +80,7 @@
     <meta name="twitter:title" content="2026 için Anında Satış Özelliğine Sahip En İyi Rust Siteleri">
     <meta name="twitter:description" content="Aşağıda yer alan olağanüstü platformları keşfedin; Rust derileri ve eşyaları için anında satış seçenekleri sunarlar. Bu yüksek önerilen web siteleri, derilerinizi güvenle satabileceğiniz ve gerçek finansal ödeme alabileceğiniz olağanüstü bir itibara sahiptir.">
 
-<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="89219a11cb7c8cf8db06459c0b37a6b3a1fd3494">
+<script type="application/ld+json" class="yoast-schema-graph" data-content-hash="a972ec6f645f9fcfeea196d2423724078e11d537">
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -113,7 +113,7 @@
           ]
         }
       ],
-      "dateModified": "2026-06-06T19:22:36+03:00"
+      "dateModified": "2026-08-27T08:37:50+03:00"
     },
     {
       "@type": "ImageObject",
@@ -835,6 +835,228 @@
         </div>
       </div>
     </div>
+        <section class="main-guide" aria-labelledby="main-guide-title" data-guide-page="rustInstantSell" data-guide-lang="tr">
+          <div class="main-guide-intro">
+            <h2 id="main-guide-title">Rust Skin Anında Satış: Instant Sell Nasıl Çalışır ve Neler Karşılaştırılmalı?</h2>
+            <p>Instant sell, Rust skinini başka bir kullanıcının satın almasını beklemek yerine doğrudan bir servise önceden hesaplanan fiyatla satma yöntemidir. Platform inventory'deki itemları değerlendirir, teklif gösterir, seçilen skinleri Steam Trade Offer ile alır ve ardından para, kripto veya desteklenen başka bir yöntemle ödeme yapar.</p>
+            <p><a href="/tr/rust/marketplaces">Marketplace</a> ile temel fark hız ve alıcı beklememektir. Normal pazarda satıcı fiyat belirleyip işlem bekler; instant-sell servisi itemı hemen satın alır, ancak teklif genellikle açık pazarda elde edilebilecek potansiyel fiyattan düşüktür. Diğer satış yöntemleri <a href="/tr/rust/sell-skins">Rust skin satma</a> sayfasında ele alınır.</p>
+            <p>Bu nedenle yalnızca 'hızlı ödeme' vaadini karşılaştırmak yeterli değildir. Belirli inventory için gerçek buyout fiyatı, fiyat kaynağı, markete göre spread, ücret ve conversion, ödeme yöntemleri, KYC, minimumlar ve Trade Offer onayından dış ödemeye kadar geçen süre önemlidir.</p>
+          </div>
+
+          <div class="main-guide-section">
+            <h2>Rust Skin Instant Sell Nasıl Çalışır?</h2>
+            <div class="main-guide-categories">
+              <article class="main-guide-category">
+                <h3>Otomatik inventory değerlemesi</h3>
+                <p>Steam bağlandıktan veya trade URL verildikten sonra servis uygun itemları görür ve her biri için teklif hesaplar. İç fiyat likiditeye, güncel talebe, platformun kendi stok ihtiyacına ve dış piyasa verilerine bağlı olabilir.</p>
+              </article>
+              <article class="main-guide-category">
+                <h3>Item gönderilmeden önce fiyat gösterilir</h3>
+                <p>Normal instant-sell akışı Steam Trade Offer onayından önce satış değerini göstermelidir. Kullanıcı her itemın ve tüm seçimin tutarını, ayrıca fiyat kısa süre kilitleniyorsa quote'un geçerlilik süresini görebilmelidir.</p>
+              </article>
+              <article class="main-guide-category">
+                <h3>Alıcı beklemeden doğrudan buyout</h3>
+                <p>Servis doğrudan alıcı olur veya hazır likidite kullanır; listing oluşturup başka kullanıcı beklemeye gerek kalmaz. Bu hız karşılığında buyout fiyatı genellikle potansiyel P2P satış fiyatına göre indirimlidir.</p>
+              </article>
+              <article class="main-guide-category">
+                <h3>Para veya kripto ödeme</h3>
+                <p>Itemları aldıktan sonra platform banka yöntemleri, elektronik cüzdan, kripto veya başka seçenekler sunabilir. Kullanılabilirlik ülke, para birimi, minimum tutar ve verification şartlarına bağlıdır.</p>
+              </article>
+              <article class="main-guide-category">
+                <h3>Nadir ve düşük likiditeli eşya değerlemesi</h3>
+                <p>Otomatik fiyatlama, az sayıda güncel satışı bulunan nadir, koleksiyonluk veya düşük likiditeli Rust eşyalarında daha temkinli olabilir. Pazar ne kadar zayıfsa hızlı alım fiyatını normal pazar satışıyla karşılaştırmak o kadar önemlidir.</p>
+              </article>
+              <article class="main-guide-category">
+                <h3>Bir işlemde birden çok item satma</h3>
+                <p>Instant sell tüm inventory'yi veya büyük bir item grubunu hızlı biçimde nakde çevirmek için kullanışlıdır. Sepetin ortalama indirimi tek bir likit skin teklifinden farklı olabilir; her seçilen itemın fiyatını ayrı görmek faydalıdır.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="main-guide-section">
+            <h2>Instant Sell Öncesi Neleri Karşılaştırmalı?</h2>
+            <p>En yüksek reklam bonusu en yüksek final payout anlamına gelmez; tüm kesintilerden sonra kendi itemlarınız için verilen somut teklif karşılaştırılmalıdır.</p>
+            <div class="main-guide-accordion">
+              <details class="main-guide-details">
+                <summary>Gerçek buyout teklifi</summary>
+                <div class="main-guide-details-content">
+                  <p>Aynı item grubunu birkaç serviste açın ve her birinin şu anda ne kadar ödeyeceğini karşılaştırın. 'Market fiyatının %X'ine kadar' gibi oranlar, somut inventory quote'undan daha az faydalıdır.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Market fiyatına göre spread</summary>
+                <div class="main-guide-details-content">
+                  <p>Instant-sell teklifini <a href="/tr/rust/marketplaces">marketplace</a> fiyatları ve diğer satış yöntemleriyle karşılaştırın. Fark, anında likidite ve alıcı beklememek için ne kadar değerden vazgeçildiğini gösterir.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Ücretler ve conversion</summary>
+                <div class="main-guide-details-content">
+                  <p>Bazı platformlar tüm maliyeti buyout fiyatına dahil eder, bazıları çekim veya kur dönüşümünde ayrıca fee alır. Seçilen ödeme yöntemine ulaşan net tutarı karşılaştırın.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Ödeme yöntemleri ve süre</summary>
+                <div class="main-guide-details-content">
+                  <p>Banka, kart, e-wallet, kripto, minimum tutar, belirtilen processing süresi ve ödeme sağlayıcısının yaratabileceği gecikmeleri kontrol edin.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>KYC ve limitler</summary>
+                <div class="main-guide-details-content">
+                  <p>Verification ülke, işlem büyüklüğü veya ödeme yöntemine göre değişebilir. Değerli inventory için günlük limitleri, belge şartlarını ve olası source-of-funds kontrolünü önceden bilin.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Nadir eşya değerlemesi</summary>
+                <div class="main-guide-details-content">
+                  <p>Nadir veya düşük likiditeli Rust skinlerinde otomatik teklif, kıtlığı ya da koleksiyoncu talebini tam yansıtmayabilir. Teklifi kabul etmeden önce normal pazar satışıyla ayrıca karşılaştırın.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="main-guide-section">
+            <h2>CSGOBROKER Instant-Sell Servislerini Nasıl Değerlendirir?</h2>
+            <p>Bu kategoride hız tek başına ana kriter değildir; rekabetçi fiyat, anlaşılır işlem ve güvenilir ödeme birlikte değerlendirilir.</p>
+            <div class="main-guide-accordion methodology">
+              <details class="main-guide-details">
+                <summary>Teklifin rekabetçiliği</summary>
+                <div class="main-guide-details-content">
+                  <p>Tipik likit itemlarda gerçek buyout fiyatlarını ve alternatif marketlere göre oluşan indirimi karşılaştırıyoruz.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Fiyat şeffaflığı</summary>
+                <div class="main-guide-details-content">
+                  <p>Final değerin Trade Offer'dan önce görünmesini, satış bonuslarının ve quote süresinin açık olmasını ve bazı itemların neden daha düşük değerlendiğinin anlaşılmasını dikkate alıyoruz.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>İşlem hızı</summary>
+                <div class="main-guide-details-content">
+                  <p>Item seçiminden trade onayına ve paranın görünmesine kadar süreci; otomatik işlem ve olası manuel incelemeler dahil değerlendiriyoruz.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Ödeme yöntemleri ve ücretler</summary>
+                <div class="main-guide-details-content">
+                  <p>Desteklenen para birimleri, banka ve kripto yöntemleri, minimumlar, servis ücretleri ve ödeme sağlayıcısının ek maliyetleri hesaba katılır.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>KYC ve bölgesel kısıtlamalar</summary>
+                <div class="main-guide-details-content">
+                  <p>Verification'ın ne zaman gerektiğini, doğrulama olmadan hangi limitlerin uygulandığını ve önemli ödeme yöntemlerinin farklı ülkelerde gerçekten kullanılabilirliğini inceliyoruz.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Trade Offer güvenliği ve destek</summary>
+                <div class="main-guide-details-content">
+                  <p>Doğru bot, açık işlem durumu, geçmiş ve destek özellikle önemlidir; çünkü Steam Trade Offer onaylandıktan sonra item artık servise aktarılmıştır.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="main-guide-section">
+            <h2>Instant-Sell Teklifleri Neden Değişir?</h2>
+            <p>Buyout fiyatları markete ve servisin kendi likiditesine bağlıdır. Bir item hızlı satılıyor ve platform stoğa ihtiyaç duyuyorsa spread daralabilir; talep düşerse veya belirli skin fazla stoklanırsa teklif önemli ölçüde azalabilir.</p>
+            <p>Ödeme şartları da değişir. Servisler yöntem ekleyip kaldırır, ücret, minimum, kur ve KYC gerekliliklerini ayarlar. Bu nedenle yüksek görünen quote, belirli çekim seçildikten sonra en iyi seçenek olmayabilir.</p>
+            <p>Hız ana öncelik değilse <a href="/tr/rust/marketplaces">Rust marketplace</a> ve genel <a href="/tr/rust/sell-skins">skin satma</a> sayfasını karşılaştırın. Satış yerine başka itemla değişim istiyorsanız <a href="/tr/rust/trade-skins">skin trade sitelerini</a> kullanın.</p>
+          </div>
+
+          <div class="main-guide-section">
+            <h2>Rust Skin Instant Sell Güvenliği</h2>
+            <p>Instant sell işleminde kullanıcı dış ödemeyi almadan önce itemı gönderir; bu nedenle site adresi, Trade Offer ve final quote özellikle dikkatle kontrol edilmelidir.</p>
+            <div class="main-guide-accordion safety">
+              <details class="main-guide-details">
+                <summary>Steam girişinden önce domain'i kontrol edin</summary>
+                <div class="main-guide-details-content">
+                  <p>Phishing kopyaları sahte authorization gösterebilir veya bot bilgisini değiştirebilir. Doğru servis adresini kullanın ve Steam şifresini üçüncü taraf forma yazmayın.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Steam Trade Offer'ı doğrulayın</summary>
+                <div class="main-guide-details-content">
+                  <p>Onaylamadan önce bot hesabını, gönderilen tüm itemları ve sizin tarafınızda beklenmedik bir skin olmadığını kontrol edin. Yalnız bot adı veya avatarına güvenmeyin.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Güncel quote'u onaylayın</summary>
+                <div class="main-guide-details-content">
+                  <p>İlk hesaplama ile Trade Offer oluşturulması arasında fiyat değişebilir. Son adımda gösterilen tutarın kabul etmeyi planladığınız teklifle aynı olduğundan emin olun.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>KYC ve limitleri önceden kontrol edin</summary>
+                <div class="main-guide-details-content">
+                  <p>Pahalı inventory göndermeden önce tüm tutarı seçilen yöntemle çekebileceğinizi ve hangi belge veya ek kontrollerin gerekeceğini öğrenin.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Nadir ve pahalı eşyaları ayrıca karşılaştırın</summary>
+                <div class="main-guide-details-content">
+                  <p>Hızlı satış zaman kazandırır, ancak otomatik alım nadir veya düşük likiditeli Rust eşyalarını düşük değerleyebilir. Yüksek değerli satıştan önce birkaç teklifi karşılaştırın.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="main-guide-section main-guide-faq">
+            <h2>Rust Instant Sell Hakkında Sık Sorulan Sorular</h2>
+            <div class="main-guide-accordion faq">
+              <details class="main-guide-details">
+                <summary>Rust skin instant sell nedir?</summary>
+                <div class="main-guide-details-content">
+                  <p>Başka alıcı beklemeden itemı otomatik hesaplanan fiyatla doğrudan servise satmaktır. Steam Trade Offer sonrasında platform desteklenen yöntemle ödeme yapar.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Instant-sell fiyatı neden marketten düşük olur?</summary>
+                <div class="main-guide-details-content">
+                  <p>Servis yeniden satış, fiyat hareketi ve inventory riskini üstlenirken anında likidite sağlar. Bu marj buyout fiyatı ile potansiyel marketplace fiyatı arasındaki spread'e yansır.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Instant sell ile marketplace farkı nedir?</summary>
+                <div class="main-guide-details-content">
+                  <p><a href="/tr/rust/marketplaces">Marketplace</a> üzerinde itemı listeler ve alıcı beklersiniz; daha yüksek fiyat mümkün olabilir. Instant sell hemen teklif verir ancak genellikle daha büyük indirimle.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Ödeme ne kadar sürer?</summary>
+                <div class="main-guide-details-content">
+                  <p>Otomatik kısım dakikalar sürebilir, fakat gerçek süre ödeme yöntemi, KYC, manuel inceleme, banka veya blockchain processing'e bağlıdır.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Instant sell için KYC gerekir mi?</summary>
+                <div class="main-guide-details-content">
+                  <p>Servis, ülke, tutar ve çekim yöntemine bağlıdır. Küçük işlemler verification olmadan geçebilir, büyük işlemlerde zorunlu olabilir.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Nadir Rust eşyaları nasıl değerlenir?</summary>
+                <div class="main-guide-details-content">
+                  <p>Otomatik modeller her nadir eşyayı aynı doğrulukta fiyatlamaz. Bir skinin yakın zamanda az satışı veya koleksiyoncu primi varsa teklifi normal pazarlarla karşılaştırın.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>Tüm inventory tek seferde satılabilir mi?</summary>
+                <div class="main-guide-details-content">
+                  <p>Birçok servis birden fazla item seçimine izin verir, ancak bazı skinler buyout için uygun olmayabilir veya ayrı limite sahip olabilir.</p>
+                </div>
+              </details>
+              <details class="main-guide-details">
+                <summary>CSGOBROKER Instant Sell sıralaması neden değişir?</summary>
+                <div class="main-guide-details-content">
+                  <p>Buyout fiyatları, spread, likidite, ücretler, ödeme yöntemleri, KYC, processing hızı ve Steam Trade Offer güvenilirliği değişebilir.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </section>
         <div class="main-infobox">
           <div class="main-infobox-mascotte"></div>
           <div class="main-infobox-content">

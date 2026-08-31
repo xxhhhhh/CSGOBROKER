@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-jackpot",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Джекпот Rust: как устроен общий банк и что сравнивать между сайтами",
+        "paragraphs": [
+          "Джекпот на сайтах Rust — это формат, где несколько участников вносят скины или внутренний баланс в общий банк одного раунда. Шанс каждого игрока обычно зависит от его доли в общей стоимости банка: чем выше стоимость внесённой ставки относительно остальных, тем больше вероятность получить призовой пул.",
+          "В отличие от <a href=\"/rust/coinflip\">игры в монетку</a>, где чаще всего участвуют две стороны, джекпот может объединять много игроков и ставки разного размера. От <a href=\"/rust/roulette\">рулетки Rust</a> он отличается тем, что вероятность часто рассчитывается непосредственно из доли игрока в текущем банке, а не из заранее заданных секторов или коэффициентов.",
+          "При сравнении сайтов с джекпотом важно смотреть не только на размер банка. Реальные условия определяют формула расчёта шанса, комиссия площадки, внутренняя оценка скинов, Provably Fair, правила последних ставок, лимиты раунда и способ получения выигрыша."
+        ]
+      },
+      "categories": {
+        "title": "Как работает джекпот на сайтах Rust",
+        "items": [
+          {
+            "title": "Общий банк раунда",
+            "paragraphs": [
+              "Игроки по очереди добавляют в один раунд скины, монеты или внутренний баланс. Интерфейс обычно показывает общую стоимость банка, список участников и внесённые ими суммы. После окончания таймера или достижения лимита новые ставки прекращаются и определяется победитель."
+            ]
+          },
+          {
+            "title": "Шанс пропорционально доле ставки",
+            "paragraphs": [
+              "Во многих классических механиках джекпота вероятность игрока рассчитывается как стоимость его вклада, делённая на общую стоимость банка. Например, вклад на 20% от банка обычно соответствует примерно 20% шанса, если правила площадки не используют дополнительную корректировку."
+            ]
+          },
+          {
+            "title": "Ставки скинами или внутренним балансом",
+            "paragraphs": [
+              "Если площадка принимает скины, каждый предмет оценивается по внутренней цене, и уже эта стоимость используется для расчёта доли игрока. Другие сервисы работают только с внутренним балансом. Поэтому один и тот же инвентарь может давать разный процент шанса на разных сайтах."
+            ]
+          },
+          {
+            "title": "Комиссия с призового пула",
+            "paragraphs": [
+              "Площадка может удерживать процент от общего банка, забирать часть предметов или применять комиссию другим способом. Сравнивать нужно не только размер банка до завершения раунда, но и стоимость, которую победитель фактически получает после удержаний."
+            ]
+          },
+          {
+            "title": "Provably Fair и выбор победителя",
+            "paragraphs": [
+              "На проверяемой площадке результат раунда должен быть связан с заранее зафиксированными данными. После завершения пользователь должен иметь возможность проверить исходные значения, итоговое случайное число и то, почему оно соответствует конкретному победителю."
+            ]
+          },
+          {
+            "title": "Лимиты банка и предметов",
+            "paragraphs": [
+              "Сайт может ограничивать число депозитов, количество предметов от одного игрока, минимальную стоимость ставки, максимальную стоимость банка или время на последний депозит. Эти параметры влияют на то, как быстро закрывается раунд и какие участники могут в нём участвовать."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед участием в джекпоте",
+        "intro": "Даже если интерфейс показывает процент шанса, полезно понимать, как он рассчитан и какую стоимость победитель действительно получает после завершения раунда.",
+        "items": [
+          {
+            "summary": "Формула расчёта шанса",
+            "body": "Проверьте, действительно ли вероятность пропорциональна стоимости вклада и как сайт округляет проценты или распределяет диапазоны выигрышных чисел. Если используются дополнительные коэффициенты, они должны быть описаны до внесения ставки."
+          },
+          {
+            "summary": "Внутренняя оценка скинов",
+            "body": "Цена предмета влияет и на размер банка, и на шанс игрока. Сравните внутреннюю стоимость с Steam и внешними <a href=\"/rust/marketplaces\">торговыми площадками Rust</a>, особенно для дорогих или малоликвидных предметов."
+          },
+          {
+            "summary": "Комиссия и итоговый приз",
+            "body": "Комиссия может удерживаться с победителя, из отдельных предметов или из банка целиком. Сравнивайте фактическую стоимость выигрыша после всех удержаний, а не только крупную цифру общего банка."
+          },
+          {
+            "summary": "Проверка Provably Fair",
+            "body": "У площадки должен быть понятный способ проверить завершённый раунд: исходные значения, итоговое число и соответствие победителю. Простого упоминания Provably Fair без доступной проверки недостаточно."
+          },
+          {
+            "summary": "Правила таймера и последних ставок",
+            "body": "Уточните, продлевается ли таймер после нового депозита, когда раунд окончательно закрывается и что происходит со ставкой, отправленной в момент завершения. Это особенно важно в крупных банках с частыми последними депозитами."
+          },
+          {
+            "summary": "Вывод выигранных предметов",
+            "body": "Проверьте, выдаётся ли фактический набор скинов, его денежный эквивалент или внутренний баланс. Также учитывайте доступность предложений обмена Steam, комиссии, проверку личности, минимальные суммы и региональные ограничения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с джекпотом Rust",
+        "intro": "Для джекпота мы отдельно проверяем связь между стоимостью ставки, шансом и итоговым призом, потому что именно эта цепочка определяет прозрачность режима.",
+        "items": [
+          {
+            "summary": "Корректность расчёта шанса",
+            "body": "Мы смотрим, насколько понятно площадка показывает вклад каждого участника, общую стоимость банка и вероятность победы, а также совпадает ли эта логика с описанными правилами."
+          },
+          {
+            "summary": "Комиссия и фактический выигрыш",
+            "body": "Учитывается размер комиссии, способ её удержания и стоимость приза, который остаётся победителю. Большой визуальный банк не означает выгодные условия, если заметная часть его стоимости удерживается площадкой."
+          },
+          {
+            "summary": "Оценка скинов",
+            "body": "Проверяется, насколько прозрачны внутренние цены и как часто они обновляются. Для джекпота неправильная или устаревшая оценка одновременно меняет шанс участников и ценность выплаты."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Мы учитываем наличие проверяемого алгоритма, доступ к данным завершённого раунда и возможность самостоятельно связать итоговый результат с победителем."
+          },
+          {
+            "summary": "Ликвидность и работа раундов",
+            "body": "Количество активных участников, частота закрытия банков, диапазон размеров ставок и отсутствие зависших раундов важны для практического использования режима."
+          },
+          {
+            "summary": "Пополнение, вывод и история",
+            "body": "Оцениваются предложения обмена Steam, внутренний баланс, поддерживаемые платежи, проверка личности, комиссии, история раундов и возможность разобраться с отменённой или спорной операцией."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с джекпотом Rust меняется",
+        "paragraphs": [
+          "Площадка может изменить комиссию, внутренние цены предметов, лимиты банка, длительность таймера, правила последних ставок или способ выдачи приза. Даже при неизменном интерфейсе такие изменения напрямую влияют на вероятность и фактическую стоимость выигрыша.",
+          "Меняется и активность игроков. Если участников становится меньше, крупные банки собираются дольше, диапазон ставок сужается, а один большой вклад может занимать значительно большую долю общего банка.",
+          "Если нужен другой формат, сравните <a href=\"/rust/coinflip\">игру в монетку</a>, <a href=\"/rust/roulette\">рулетку</a> и <a href=\"/rust/crash\">краш</a>. Общий список режимов находится в разделе <a href=\"/rust\">сайтов Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра в джекпоте",
+        "intro": "Джекпот объединяет случайный результат с передачей скинов или баланса, поэтому важно контролировать и математический риск, и безопасность операций Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Steam-авторизацию",
+            "body": "Фишинговые копии могут имитировать интерфейс известной площадки и окно входа Steam. Перед депозитом убедитесь, что используете правильный домен и официальный способ авторизации."
+          },
+          {
+            "summary": "Проверяйте каждое предложение обмена Steam",
+            "body": "Если ставка или выигрыш передаются предметами, сверяйте отправителя, список скинов и направление обмена. Не подтверждайте предложение только потому, что имя или аватар бота похожи на ожидаемые."
+          },
+          {
+            "summary": "Большая доля банка не гарантирует победу",
+            "body": "Шанс 70%, 80% или даже выше всё равно оставляет вероятность проигрыша. Размер собственной доли нельзя воспринимать как гарантированный результат."
+          },
+          {
+            "summary": "Проверяйте комиссию до внесения ставки",
+            "body": "Комиссия влияет на ценность каждого раунда и должна быть понятна до депозита, а не только после того, как победитель уже определён."
+          },
+          {
+            "summary": "Заранее определяйте лимит расходов",
+            "body": "Быстро меняющийся размер банка может провоцировать добавлять новые предметы ради увеличения процента. Ограничивайте сумму заранее и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о джекпоте Rust",
+        "items": [
+          {
+            "summary": "Что такое джекпот на сайтах Rust?",
+            "body": "Это раунд с общим банком, куда несколько игроков вносят скины или баланс. Победитель определяется случайным образом по правилам площадки и обычно получает призовой пул за вычетом комиссии."
+          },
+          {
+            "summary": "Как рассчитывается шанс победы в джекпоте?",
+            "body": "Во многих классических системах шанс равен доле стоимости вашей ставки в общем банке. Точную формулу, округление и распределение выигрышных чисел нужно проверять на конкретной площадке."
+          },
+          {
+            "summary": "Чем джекпот отличается от игры в монетку?",
+            "body": "В <a href=\"/rust/coinflip\">игре в монетку</a> обычно участвуют две стороны с сопоставленными ставками, а джекпот может объединять много игроков и рассчитывать шанс по доле каждого в общем банке."
+          },
+          {
+            "summary": "Что представляет собой комиссия в джекпоте?",
+            "body": "Это часть призового пула, которую удерживает платформа. Комиссия может рассчитываться процентом от общей стоимости, отдельными предметами или другим способом, указанным в правилах."
+          },
+          {
+            "summary": "Можно ли проверить, как выбран победитель?",
+            "body": "Если сайт использует полноценный Provably Fair, после раунда должны быть доступны данные, позволяющие проверить генерацию результата и соответствие итогового числа победителю."
+          },
+          {
+            "summary": "Влияет ли цена скина на шанс?",
+            "body": "Если джекпот принимает скины — обычно да, потому что площадка переводит каждый предмет во внутреннюю стоимость и использует её для расчёта доли банка."
+          },
+          {
+            "summary": "Можно ли вывести выигранные скины в Steam?",
+            "body": "Зависит от площадки. Одни сервисы передают фактические предметы через предложение обмена Steam, другие конвертируют выигрыш во внутренний баланс или позволяют выбрать альтернативный вывод."
+          },
+          {
+            "summary": "Почему рейтинг джекпота на CSGOBROKER меняется?",
+            "body": "На оценку влияют комиссия, внутренняя цена скинов, Provably Fair, активность игроков, лимиты, платежи, вывод и стабильность раундов. Если эти условия меняются, рейтинг также может быть пересмотрен."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Jackpot Sites: How the Shared Pot Works and What to Compare",
+        "paragraphs": [
+          "Rust Jackpot is a format where several participants contribute skins or internal balance to one shared pot. A player's chance of winning is usually tied to their share of the pot's total value: the larger the value of the contribution relative to everyone else's, the larger the probability of receiving the prize pool or its main portion.",
+          "Unlike <a href=\"/rust/coinflip\">Coinflip</a>, which commonly matches two sides, Jackpot can include many participants with different stake sizes. It also differs from <a href=\"/rust/roulette\">Rust Roulette</a> because the probability is often generated directly from each player's share of the current pot rather than from fixed sectors or predefined odds.",
+          "When comparing Jackpot sites, the visible pot size is only one part of the picture. The actual terms depend on the chance formula, rake or commission, internal skin valuation, Provably Fair implementation, late-deposit rules, round limits, and the way the winner receives the awarded items."
+        ]
+      },
+      "categories": {
+        "title": "How Rust Jackpot Works",
+        "items": [
+          {
+            "title": "One shared round pot",
+            "paragraphs": [
+              "Players add skins, coins, or internal balance to the same round. The interface normally shows the total pot value, participants, and their contributions. Once the timer ends or a configured limit is reached, new entries close and the winner is selected."
+            ]
+          },
+          {
+            "title": "Chance proportional to stake share",
+            "paragraphs": [
+              "In many classic Jackpot systems, a player's probability is calculated by dividing the value of their contribution by the total pot value. A contribution representing 20% of the pot therefore usually corresponds to roughly a 20% chance unless the platform applies another adjustment."
+            ]
+          },
+          {
+            "title": "Skin stakes or internal balance",
+            "paragraphs": [
+              "Skin-based platforms assign their own value to every item and use that value when calculating each player's share. Other services use only site coins or balance. The same inventory can therefore represent a different percentage of a pot on different sites."
+            ]
+          },
+          {
+            "title": "Rake and pot commission",
+            "paragraphs": [
+              "A platform may deduct a percentage of the pot, retain particular items, or apply its fee in another stated way. The important number is not only the headline pot value but what the winner actually receives after rake."
+            ]
+          },
+          {
+            "title": "Provably Fair winner selection",
+            "paragraphs": [
+              "On a verifiable platform, the result should be tied to data committed before the outcome is known, such as a hash, server seed, client seed, ticket range, or another published algorithm that can be checked once the Jackpot finishes."
+            ]
+          },
+          {
+            "title": "Pot and item limits",
+            "paragraphs": [
+              "Sites can restrict the number of deposits, items per player, minimum entry value, maximum pot value, or timing of the final deposit. These limits affect how quickly a round closes and which stake sizes can participate."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Joining a Jackpot",
+        "intro": "Even when the interface displays a percentage chance, it is useful to understand where that percentage comes from and how much value the winner actually receives.",
+        "items": [
+          {
+            "summary": "Chance calculation formula",
+            "body": "Check whether probability is truly proportional to contribution value and how percentages or ticket ranges are rounded. Any extra weighting or adjustment should be described before a user enters the round."
+          },
+          {
+            "summary": "Internal skin valuation",
+            "body": "On skin Jackpot sites, an item's price affects both the pot size and your probability. Compare internal values with Steam and external <a href=\"/rust/marketplaces\">marketplaces</a>, especially for expensive or unusual items."
+          },
+          {
+            "summary": "Rake and net prize",
+            "body": "Commission can be taken from the winner, particular items, or the whole pot. Compare the net payout after all deductions instead of relying on the large gross Jackpot number."
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "The platform should offer a practical way to verify a completed round: committed seeds or hashes, ticket ranges, the final generated value, and how it maps to the winner. A Provably Fair label without a usable check is not enough."
+          },
+          {
+            "summary": "Timer and late-entry rules",
+            "body": "Find out whether a new deposit extends the timer, when the round becomes irrevocably closed, and what happens to a contribution sent at the cutoff. These details matter most in large pots with frequent late entries."
+          },
+          {
+            "summary": "Withdrawal of won items",
+            "body": "Check whether the winner receives the actual skins, their cash-equivalent value, or internal balance. Steam Trade Offer availability, fees, KYC, minimums, and location restrictions can also apply."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Jackpot Sites",
+        "intro": "For Jackpot, we pay particular attention to the connection between contribution value, winning probability, and the final prize because that chain determines whether the mode is transparent in practice.",
+        "items": [
+          {
+            "summary": "Accuracy of chance calculation",
+            "body": "We look at how clearly the platform displays each participant's contribution, total pot value, and winning probability, and whether that logic matches the published rules."
+          },
+          {
+            "summary": "Rake and real payout",
+            "body": "The commission rate, the way it is deducted, and the value left for the winner are all considered. A large-looking pot is less meaningful if a material share is removed before payout."
+          },
+          {
+            "summary": "Skin valuation",
+            "body": "We consider how transparent internal prices are and how frequently they are updated. In Jackpot, stale or distorted pricing affects both participant probabilities and the value of the eventual prize."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We consider whether the algorithm is genuinely verifiable, whether completed-round data are available, and whether a user can independently connect the generated result with the winning participant."
+          },
+          {
+            "summary": "Liquidity and round operation",
+            "body": "Active-player volume, frequency of completed pots, available stake ranges, and the absence of stuck or frequently cancelled rounds all affect practical usability."
+          },
+          {
+            "summary": "Deposits, withdrawals and history",
+            "body": "Steam Trade Offers, internal balance, supported payment methods, KYC, fees, Jackpot history, and the ability to resolve cancelled or disputed operations are included in the assessment."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Jackpot Rankings Change",
+        "paragraphs": [
+          "A platform can change its rake, internal item prices, pot limits, timer length, late-deposit rules, or prize-delivery method. Even with the same interface, those changes directly alter probabilities, fees, and the real value of a winning round.",
+          "Mode liquidity changes too. With fewer active users, large pots can take longer to fill, available stake ranges become narrower, and one large contribution can represent a much larger share of a Jackpot than it previously did.",
+          "If you prefer another format, compare <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/roulette\">Roulette</a>, and <a href=\"/rust/crash\">Crash</a>. The broader selection is available in the <a href=\"/rust\">Rust sites</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play on Jackpot Sites",
+        "intro": "Jackpot combines a random outcome with transfers of skins or balance, so both mathematical risk and Steam transaction security need attention.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam sign-in",
+            "body": "Phishing copies can imitate a known platform and its Steam login flow. Confirm the correct domain and official authentication process before making a deposit."
+          },
+          {
+            "summary": "Verify every Steam Trade Offer",
+            "body": "When entries or prizes use items, check the sender, skin list, and direction of the trade. A familiar bot name or avatar is not enough on its own."
+          },
+          {
+            "summary": "A large pot share is not a guaranteed win",
+            "body": "A 70%, 80%, or even higher displayed chance still leaves a real probability of losing. A large personal share should never be treated as a certain outcome."
+          },
+          {
+            "summary": "Know the rake before entering",
+            "body": "Commission affects the expected value of every round. It should be understandable before the contribution is made, not only after a winner has been selected."
+          },
+          {
+            "summary": "Set a spending limit in advance",
+            "body": "A changing pot can encourage additional deposits simply to increase the displayed percentage. Set a limit before playing and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Jackpot",
+        "items": [
+          {
+            "summary": "What is a Rust Jackpot?",
+            "body": "It is a shared-pot round where multiple users contribute skins or balance. A winner is selected randomly under the site's rules and normally receives the prize pool minus any applicable commission."
+          },
+          {
+            "summary": "How is the winning chance calculated?",
+            "body": "In many classic systems, the chance equals your contribution value divided by the total pot value. Exact formulas, rounding, and ticket ranges should be checked on the specific platform."
+          },
+          {
+            "summary": "How is Jackpot different from Coinflip?",
+            "body": "<a href=\"/rust/coinflip\">Coinflip</a> usually matches two sides with comparable stakes, while Jackpot can include many players and assign probability according to each participant's share of the common pot."
+          },
+          {
+            "summary": "What is rake in Jackpot?",
+            "body": "Rake is the platform's fee from the prize pool. It can be taken as a percentage of total value, as selected items, or by another method disclosed in the rules."
+          },
+          {
+            "summary": "Can I verify how the winner was chosen?",
+            "body": "With a complete Provably Fair implementation, the platform should expose enough post-round data to verify the generated result and the corresponding winning ticket or ticket range."
+          },
+          {
+            "summary": "Does a skin's price affect my chance?",
+            "body": "Usually yes on skin-based Jackpot sites because each item is converted into an internal value that is used to calculate the player's share of the pot."
+          },
+          {
+            "summary": "Can won skins be withdrawn to Steam?",
+            "body": "It depends on the service. Some platforms transfer actual items through Steam Trade Offers, while others convert winnings to internal balance or provide another withdrawal option."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Jackpot ranking change?",
+            "body": "Rake, skin valuation, Provably Fair, liquidity, limits, payments, withdrawals, and round stability can all change, so a platform's rating may be updated as those conditions change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Jackpot de Rust: cómo funciona el bote común y qué comparar",
+        "paragraphs": [
+          "Jackpot en sitios de Rust es un formato en el que varios participantes aportan skins o saldo interno a un mismo bote. La probabilidad de cada jugador suele depender de su porcentaje del valor total: cuanto mayor sea su aportación respecto al resto, mayor será su posibilidad de recibir el premio o la parte principal del bote.",
+          "A diferencia de <a href=\"/rust/coinflip\">Coinflip</a>, que normalmente enfrenta a dos lados, Jackpot puede reunir muchos participantes con apuestas de distinto tamaño. También se diferencia de la <a href=\"/rust/roulette\">ruleta de Rust</a> porque la probabilidad suele derivarse directamente de la parte que cada jugador posee en el bote actual, y no de sectores o cuotas fijados de antemano.",
+          "Al comparar sitios Jackpot no basta con mirar el tamaño visible del bote. Las condiciones reales dependen de la fórmula de probabilidad, el rake o comisión, la valoración interna de las skins, Provably Fair, las reglas para depósitos de último momento, los límites de la ronda y la forma en que el ganador recibe los objetos."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona Jackpot en sitios de Rust",
+        "items": [
+          {
+            "title": "Un bote común por ronda",
+            "paragraphs": [
+              "Los jugadores añaden skins, monedas o saldo interno a la misma ronda. La interfaz suele mostrar el valor total, los participantes y sus aportaciones. Cuando termina el temporizador o se alcanza un límite configurado, se cierran nuevas entradas y se selecciona al ganador."
+            ]
+          },
+          {
+            "title": "Probabilidad proporcional a la aportación",
+            "paragraphs": [
+              "En muchos sistemas Jackpot clásicos, la probabilidad se calcula dividiendo el valor aportado por el valor total del bote. Una contribución equivalente al 20% del bote suele representar aproximadamente un 20% de probabilidad, salvo que el sitio aplique algún ajuste adicional."
+            ]
+          },
+          {
+            "title": "Apuestas con skins o saldo interno",
+            "paragraphs": [
+              "Los sitios basados en skins asignan su propio precio a cada objeto y usan ese valor para calcular la participación. Otras plataformas trabajan solo con coins o saldo. Por eso, el mismo inventario puede representar un porcentaje distinto según el sitio."
+            ]
+          },
+          {
+            "title": "Rake y comisión del bote",
+            "paragraphs": [
+              "La plataforma puede descontar un porcentaje, retener determinados objetos o aplicar la comisión de otra forma. Hay que comparar no solo el valor bruto del pot, sino lo que el ganador recibe realmente después del rake."
+            ]
+          },
+          {
+            "title": "Provably Fair y selección del ganador",
+            "paragraphs": [
+              "En una plataforma verificable, el resultado debería estar ligado a datos comprometidos antes de conocerse el desenlace, como hash, server seed, client seed, ticket ranges u otro algoritmo publicado que pueda comprobarse al finalizar la ronda."
+            ]
+          },
+          {
+            "title": "Límites del bote y de objetos",
+            "paragraphs": [
+              "El sitio puede limitar el número de depósitos, objetos por jugador, valor mínimo, valor máximo del bote o el momento del último depósito. Estos parámetros influyen en la velocidad de cierre y en qué tamaños de apuesta pueden participar."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de entrar en un Jackpot",
+        "intro": "Aunque la interfaz muestre un porcentaje de probabilidad, conviene entender de dónde sale ese número y cuánto valor conserva realmente el ganador.",
+        "items": [
+          {
+            "summary": "Fórmula de cálculo de la probabilidad",
+            "body": "Comprueba si la probabilidad es realmente proporcional al valor aportado y cómo se redondean los porcentajes o ticket ranges. Cualquier ponderación adicional debería estar explicada antes de entrar."
+          },
+          {
+            "summary": "Valoración interna de las skins",
+            "body": "En un Jackpot con skins, el precio del objeto afecta tanto al tamaño del bote como a tu probabilidad. Compara los valores internos con Steam y otros <a href=\"/rust/marketplaces\">marketplaces</a>, sobre todo para objetos caros o poco comunes."
+          },
+          {
+            "summary": "Rake y premio neto",
+            "body": "La comisión puede descontarse al ganador, de objetos concretos o del bote completo. Compara el payout neto después de todas las deducciones y no solo la cifra grande del Jackpot."
+          },
+          {
+            "summary": "Verifier de Provably Fair",
+            "body": "La plataforma debería permitir comprobar una ronda terminada mediante seeds o hashes, ticket ranges, valor final generado y su correspondencia con el ganador. La etiqueta Provably Fair por sí sola no es suficiente."
+          },
+          {
+            "summary": "Temporizador y últimas entradas",
+            "body": "Revisa si un depósito nuevo amplía el tiempo, cuándo se cierra definitivamente la ronda y qué ocurre con una aportación enviada justo en el límite. Esto es especialmente importante en botes grandes con entradas tardías frecuentes."
+          },
+          {
+            "summary": "Retiro de los objetos ganados",
+            "body": "Comprueba si se entregan las skins reales, su equivalente en dinero o saldo interno. También pueden aplicarse Steam Trade Offer, comisiones, KYC, mínimos y restricciones geográficas."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios Jackpot de Rust",
+        "intro": "En Jackpot prestamos especial atención a la relación entre valor aportado, probabilidad y premio final, porque esa cadena determina la transparencia real del modo.",
+        "items": [
+          {
+            "summary": "Exactitud del cálculo de probabilidad",
+            "body": "Analizamos si el sitio muestra con claridad la aportación de cada participante, el valor total y la probabilidad de ganar, y si esa lógica coincide con las reglas publicadas."
+          },
+          {
+            "summary": "Rake y payout real",
+            "body": "Valoramos el porcentaje de comisión, cómo se descuenta y cuánto valor queda para el ganador. Un bote visualmente grande es menos relevante si una parte importante desaparece antes del pago."
+          },
+          {
+            "summary": "Valoración de skins",
+            "body": "Revisamos la transparencia de los precios internos y la frecuencia de actualización. En Jackpot, una valoración desactualizada afecta simultáneamente a la probabilidad y al valor del premio."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Consideramos si el algoritmo es realmente verificable, si existen datos de la ronda finalizada y si el usuario puede relacionar de forma independiente el resultado generado con el ganador."
+          },
+          {
+            "summary": "Liquidez y funcionamiento de las rondas",
+            "body": "El número de usuarios activos, la frecuencia con que se cierran los botes, los rangos de apuesta y la ausencia de rondas bloqueadas influyen en la utilidad del servicio."
+          },
+          {
+            "summary": "Depósitos, retiros e historial",
+            "body": "Incluimos Steam Trade Offer, saldo interno, métodos de pago, KYC, comisiones, historial de Jackpot y capacidad de resolver operaciones canceladas o disputadas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de sitios Jackpot",
+        "paragraphs": [
+          "Una plataforma puede modificar rake, precios internos, límites del bote, duración del temporizador, reglas de última entrada o forma de entregar el premio. Incluso con la misma interfaz, estos cambios alteran directamente la probabilidad, la comisión y el valor real del premio.",
+          "La liquidez también varía. Con menos jugadores activos, los botes grandes tardan más en llenarse, se reduce la variedad de tamaños de apuesta y una sola entrada grande puede representar una parte mucho mayor del Jackpot que antes.",
+          "Si prefieres otro formato, compara <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/roulette\">Ruleta</a> y <a href=\"/rust/crash\">Crash</a>. La selección general está en la sección de <a href=\"/rust\">sitios Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable en Jackpot",
+        "intro": "Jackpot combina un resultado aleatorio con transferencias de skins o saldo, así que deben controlarse tanto el riesgo matemático como la seguridad de Steam.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio y el acceso a Steam",
+            "body": "Las copias de phishing pueden imitar el sitio y su login de Steam. Confirma el dominio correcto y el proceso oficial de autenticación antes de depositar."
+          },
+          {
+            "summary": "Verifica cada Steam Trade Offer",
+            "body": "Si la entrada o el premio usa objetos, comprueba remitente, lista de skins y dirección del intercambio. Un nombre o avatar familiar del bot no es suficiente."
+          },
+          {
+            "summary": "Una gran parte del bote no garantiza ganar",
+            "body": "Un 70%, 80% o más sigue dejando una probabilidad real de perder. Un porcentaje alto no debe interpretarse como un resultado seguro."
+          },
+          {
+            "summary": "Comprueba el rake antes de entrar",
+            "body": "La comisión afecta al valor esperado de cada ronda y debería entenderse antes de enviar la aportación."
+          },
+          {
+            "summary": "Define un límite de gasto",
+            "body": "Ver crecer el bote puede incentivar depósitos adicionales para subir el porcentaje. Fija un límite antes de jugar y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Jackpot de Rust",
+        "items": [
+          {
+            "summary": "¿Qué es Jackpot en sitios de Rust?",
+            "body": "Es una ronda con bote común donde varios usuarios aportan skins o saldo. El ganador se selecciona aleatoriamente según las reglas del sitio y suele recibir el bote menos la comisión."
+          },
+          {
+            "summary": "¿Cómo se calcula la probabilidad de ganar?",
+            "body": "En muchos sistemas clásicos, equivale al valor de tu aportación dividido por el valor total del bote. Hay que revisar fórmula exacta, redondeo y ticket ranges."
+          },
+          {
+            "summary": "¿En qué se diferencia Jackpot de Coinflip?",
+            "body": "<a href=\"/rust/coinflip\">Coinflip</a> normalmente enfrenta dos lados con apuestas comparables; Jackpot puede incluir muchos jugadores y asignar probabilidad según la parte de cada uno en el bote."
+          },
+          {
+            "summary": "¿Qué es el rake en Jackpot?",
+            "body": "Es la comisión de la plataforma sobre el premio, que puede cobrarse como porcentaje, mediante determinados objetos u otra fórmula publicada."
+          },
+          {
+            "summary": "¿Se puede verificar cómo se eligió al ganador?",
+            "body": "Con un Provably Fair completo deberían existir datos posteriores a la ronda suficientes para comprobar el resultado y el ticket o rango ganador."
+          },
+          {
+            "summary": "¿El precio de una skin afecta a la probabilidad?",
+            "body": "Normalmente sí en Jackpot con skins, porque cada objeto se convierte en un valor interno que se usa para calcular la parte del bote."
+          },
+          {
+            "summary": "¿Se pueden retirar las skins ganadas a Steam?",
+            "body": "Depende del servicio. Algunos envían los objetos por Steam Trade Offer y otros convierten el premio en saldo o ofrecen métodos alternativos."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking Jackpot de CSGOBROKER?",
+            "body": "Pueden cambiar rake, valoración de skins, Provably Fair, liquidez, límites, pagos, retiros y estabilidad de las rondas."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Jackpot de Rust: como funciona o pote compartilhado e o que comparar",
+        "paragraphs": [
+          "Jackpot em sites de Rust é um formato em que vários participantes colocam skins ou saldo interno em um único pote. A chance de cada jogador normalmente depende da sua participação no valor total: quanto maior for a contribuição em relação às demais, maior tende a ser a probabilidade de receber o prêmio ou a maior parte do pote.",
+          "Diferente do <a href=\"/rust/coinflip\">Coinflip</a>, que geralmente compara dois lados, Jackpot pode reunir muitos participantes com valores diferentes. Também difere da <a href=\"/rust/roulette\">roleta Rust</a>, pois a probabilidade costuma ser calculada diretamente pela participação de cada jogador no pote atual, em vez de setores ou odds previamente definidos.",
+          "Ao comparar sites Jackpot, não basta olhar o tamanho visível do pote. As condições reais dependem da fórmula de chance, rake ou comissão, avaliação interna das skins, Provably Fair, regras para depósitos no fim do cronômetro, limites da rodada e forma de entrega dos itens ao vencedor."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona Jackpot em sites de Rust",
+        "items": [
+          {
+            "title": "Um pote compartilhado por rodada",
+            "paragraphs": [
+              "Os jogadores adicionam skins, moedas ou saldo à mesma rodada. A interface normalmente mostra valor total, participantes e contribuições. Quando o tempo termina ou um limite é atingido, novas entradas são encerradas e o vencedor é escolhido."
+            ]
+          },
+          {
+            "title": "Chance proporcional à participação",
+            "paragraphs": [
+              "Em muitos modelos clássicos de Jackpot, a probabilidade é o valor da contribuição dividido pelo valor total do pote. Uma entrada equivalente a 20% do pote costuma representar cerca de 20% de chance, salvo se a plataforma aplicar outro ajuste."
+            ]
+          },
+          {
+            "title": "Apostas com skins ou saldo interno",
+            "paragraphs": [
+              "Sites baseados em skins atribuem seu próprio preço a cada item e usam esse valor no cálculo. Outras plataformas trabalham apenas com coins ou saldo. Assim, o mesmo inventário pode representar percentuais diferentes em sites diferentes."
+            ]
+          },
+          {
+            "title": "Rake e comissão do pote",
+            "paragraphs": [
+              "A plataforma pode retirar uma porcentagem, reter determinados itens ou aplicar a taxa de outra forma. O importante é comparar não só o valor bruto do pot, mas quanto o vencedor realmente recebe depois do rake."
+            ]
+          },
+          {
+            "title": "Provably Fair e escolha do vencedor",
+            "paragraphs": [
+              "Em uma plataforma verificável, o resultado deve estar ligado a dados comprometidos antes do desfecho, como hash, server seed, client seed, ticket range ou outro algoritmo publicado que possa ser conferido após a rodada."
+            ]
+          },
+          {
+            "title": "Limites de pote e itens",
+            "paragraphs": [
+              "O site pode limitar quantidade de depósitos, itens por jogador, valor mínimo, valor máximo do pote ou momento da última entrada. Esses parâmetros afetam a velocidade de fechamento e os tamanhos de stake permitidos."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de entrar em um Jackpot",
+        "intro": "Mesmo quando a interface mostra uma porcentagem de chance, vale entender de onde ela vem e qual valor o vencedor realmente conserva.",
+        "items": [
+          {
+            "summary": "Fórmula de cálculo da chance",
+            "body": "Confira se a probabilidade é de fato proporcional à contribuição e como percentuais ou ticket ranges são arredondados. Qualquer peso adicional deve ser explicado antes da entrada."
+          },
+          {
+            "summary": "Avaliação interna das skins",
+            "body": "No Jackpot com skins, o preço do item afeta o pote e a sua chance. Compare valores internos com Steam e <a href=\"/rust/marketplaces\">marketplaces</a> externos, principalmente para itens caros ou incomuns."
+          },
+          {
+            "summary": "Rake e prêmio líquido",
+            "body": "A comissão pode ser retirada do vencedor, de itens específicos ou de todo o pote. Compare o payout líquido depois das deduções, e não apenas o número grande exibido como Jackpot."
+          },
+          {
+            "summary": "Verifier de Provably Fair",
+            "body": "A plataforma deve permitir conferir uma rodada concluída usando seeds ou hashes, ticket ranges, o valor final gerado e sua relação com o vencedor. Apenas escrever Provably Fair não é suficiente."
+          },
+          {
+            "summary": "Cronômetro e entradas finais",
+            "body": "Veja se novos depósitos estendem o tempo, quando a rodada é definitivamente fechada e o que acontece com uma entrada enviada no limite. Isso importa especialmente em potes grandes com muitas entradas no fim."
+          },
+          {
+            "summary": "Saque dos itens ganhos",
+            "body": "Confira se o prêmio são as skins reais, valor equivalente ou saldo interno. Steam Trade Offer, taxas, KYC, mínimos e restrições regionais também podem valer."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites Jackpot de Rust",
+        "intro": "Em Jackpot, damos atenção especial à relação entre valor da entrada, probabilidade de vitória e prêmio final, pois essa cadeia determina a transparência prática do modo.",
+        "items": [
+          {
+            "summary": "Precisão do cálculo de chance",
+            "body": "Analisamos se a plataforma mostra claramente contribuição de cada jogador, valor total e probabilidade, e se essa lógica corresponde às regras publicadas."
+          },
+          {
+            "summary": "Rake e payout real",
+            "body": "Consideramos taxa, forma de cobrança e valor restante para o vencedor. Um pote visualmente grande importa menos quando uma parcela significativa é retirada antes do pagamento."
+          },
+          {
+            "summary": "Avaliação de skins",
+            "body": "Verificamos transparência dos preços internos e frequência de atualização. No Jackpot, preços desatualizados alteram ao mesmo tempo as chances e o valor do prêmio."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Consideramos se o algoritmo é realmente verificável, se os dados da rodada concluída ficam disponíveis e se o usuário consegue ligar o resultado gerado ao vencedor."
+          },
+          {
+            "summary": "Liquidez e funcionamento das rodadas",
+            "body": "Quantidade de jogadores ativos, frequência de fechamento, faixas de stake e ausência de rodadas travadas influenciam o uso prático."
+          },
+          {
+            "summary": "Depósitos, saques e histórico",
+            "body": "Steam Trade Offer, saldo interno, métodos de pagamento, KYC, taxas, histórico de Jackpot e resolução de operações canceladas ou disputadas entram na análise."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de sites Jackpot muda",
+        "paragraphs": [
+          "A plataforma pode alterar rake, preços internos, limites do pote, duração do cronômetro, regras de última entrada ou forma de entregar o prêmio. Mesmo com a interface igual, isso muda diretamente chance, taxa e valor real do ganho.",
+          "A liquidez também muda. Com menos jogadores ativos, potes grandes demoram mais para encher, as faixas de stake ficam mais restritas e uma única entrada grande pode representar uma parte muito maior do Jackpot.",
+          "Se você prefere outro formato, compare <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/roulette\">Roleta</a> e <a href=\"/rust/crash\">Crash</a>. A seleção geral está na seção de <a href=\"/rust\">sites Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável em Jackpot",
+        "intro": "Jackpot combina resultado aleatório com transferência de skins ou saldo, portanto é necessário controlar risco matemático e segurança das operações Steam.",
+        "items": [
+          {
+            "summary": "Confira o domínio e o login Steam",
+            "body": "Cópias de phishing podem imitar a plataforma e a tela de login. Confirme o domínio correto e o fluxo oficial de autenticação antes de depositar."
+          },
+          {
+            "summary": "Verifique cada Steam Trade Offer",
+            "body": "Quando entrada ou prêmio usa itens, confira remetente, lista de skins e direção da troca. Nome ou avatar parecido do bot não basta."
+          },
+          {
+            "summary": "Uma grande participação não garante vitória",
+            "body": "Chance de 70%, 80% ou mais ainda deixa possibilidade real de perder. Percentual alto nunca deve ser tratado como resultado certo."
+          },
+          {
+            "summary": "Veja o rake antes de entrar",
+            "body": "A comissão altera o valor esperado da rodada e precisa estar clara antes da contribuição."
+          },
+          {
+            "summary": "Defina um limite de gastos",
+            "body": "Um pote crescendo rapidamente pode incentivar depósitos adicionais só para aumentar o percentual. Defina um limite antes e use <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Jackpot de Rust",
+        "items": [
+          {
+            "summary": "O que é Jackpot em sites de Rust?",
+            "body": "É uma rodada com pote compartilhado onde vários usuários colocam skins ou saldo. O vencedor é escolhido aleatoriamente pelas regras da plataforma e normalmente recebe o pote menos a comissão."
+          },
+          {
+            "summary": "Como a chance de vitória é calculada?",
+            "body": "Em muitos sistemas clássicos, é o valor da sua contribuição dividido pelo valor total do pote. Fórmula exata, arredondamento e ticket ranges devem ser conferidos."
+          },
+          {
+            "summary": "Qual a diferença entre Jackpot e Coinflip?",
+            "body": "<a href=\"/rust/coinflip\">Coinflip</a> geralmente compara dois lados com stakes semelhantes; Jackpot pode ter muitos jogadores e atribuir chance de acordo com a participação de cada um no pote."
+          },
+          {
+            "summary": "O que é rake em Jackpot?",
+            "body": "É a comissão da plataforma sobre o prêmio, cobrada como percentual, itens selecionados ou outro método descrito nas regras."
+          },
+          {
+            "summary": "Dá para verificar como o vencedor foi escolhido?",
+            "body": "Com Provably Fair completo, a plataforma deve fornecer dados suficientes após a rodada para conferir o resultado e o ticket ou faixa vencedora."
+          },
+          {
+            "summary": "O preço da skin afeta a chance?",
+            "body": "Normalmente sim em Jackpot com skins, porque cada item é convertido em valor interno utilizado no cálculo da participação."
+          },
+          {
+            "summary": "Posso sacar as skins ganhas para Steam?",
+            "body": "Depende do serviço. Alguns enviam itens via Steam Trade Offer; outros convertem em saldo ou oferecem outra forma de saque."
+          },
+          {
+            "summary": "Por que o ranking Jackpot da CSGOBROKER muda?",
+            "body": "Rake, avaliação de skins, Provably Fair, liquidez, limites, pagamentos, saques e estabilidade das rodadas podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Jackpot Siteleri: Ortak Pot Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Rust Jackpot, birden fazla katılımcının skin veya site bakiyesini aynı pota eklediği bir formattır. Bir oyuncının kazanma ihtimali genellikle toplam pot içindeki değer payına bağlıdır: katkının diğer oyunculara göre değeri arttıkça ödül potunu veya ana kısmını alma olasılığı da artar.",
+          "Genellikle iki tarafı eşleştiren <a href=\"/rust/coinflip\">Coinflip</a> modundan farklı olarak Jackpot, farklı büyüklükte stake'lere sahip çok sayıda oyuncuyu aynı round'da birleştirebilir. <a href=\"/rust/roulette\">Rust Roulette</a> modundan da ayrılır; çünkü olasılık çoğu zaman sabit sektör veya önceden belirlenmiş odds yerine oyuncının mevcut pot içindeki payından hesaplanır.",
+          "Jackpot sitelerini karşılaştırırken yalnızca ekranda görünen pot büyüklüğüne bakmak yeterli değildir. Gerçek şartları chance formülü, rake veya komisyon, iç skin değerlemesi, Provably Fair, son dakika deposit kuralları, round limitleri ve kazananın itemları nasıl aldığı belirler."
+        ]
+      },
+      "categories": {
+        "title": "Rust Jackpot Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Tek bir ortak pot",
+            "paragraphs": [
+              "Oyuncular aynı round'a skin, coin veya iç bakiye ekler. Arayüz genellikle toplam pot değerini, katılımcıları ve katkılarını gösterir. Süre dolduğunda veya belirlenen limite ulaşıldığında yeni girişler kapanır ve kazanan seçilir."
+            ]
+          },
+          {
+            "title": "Stake payına orantılı chance",
+            "paragraphs": [
+              "Birçok klasik Jackpot sisteminde olasılık, oyuncunun katkı değerinin toplam pot değerine bölünmesiyle hesaplanır. Potun %20'sine denk gelen bir katkı, site ek bir düzeltme kullanmıyorsa yaklaşık %20 kazanma şansı anlamına gelir."
+            ]
+          },
+          {
+            "title": "Skin veya iç bakiye ile stake",
+            "paragraphs": [
+              "Skin tabanlı platformlar her itema kendi fiyatını verir ve bu değeri oyuncu payını hesaplamak için kullanır. Diğer siteler sadece coin veya bakiye kullanır. Bu nedenle aynı inventory farklı platformlarda farklı pot yüzdesi oluşturabilir."
+            ]
+          },
+          {
+            "title": "Rake ve pot komisyonu",
+            "paragraphs": [
+              "Platform potun belirli yüzdesini kesebilir, bazı itemları tutabilir veya ücreti başka bir yöntemle uygulayabilir. Önemli olan yalnızca brüt pot değil, kazananın rake sonrası gerçekten aldığı değerdir."
+            ]
+          },
+          {
+            "title": "Provably Fair ve kazanan seçimi",
+            "paragraphs": [
+              "Doğrulanabilir bir platformda sonuç, outcome bilinmeden önce commit edilmiş hash, server seed, client seed, ticket range veya benzeri verilere bağlı olmalı ve Jackpot bittikten sonra kontrol edilebilmelidir."
+            ]
+          },
+          {
+            "title": "Pot ve item limitleri",
+            "paragraphs": [
+              "Site deposit sayısını, oyuncu başına item miktarını, minimum giriş değerini, maksimum potu veya son deposit zamanını sınırlayabilir. Bu parametreler round'un kapanma hızını ve katılabilecek stake büyüklüklerini etkiler."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Jackpot'a Girmeden Önce Neleri Kontrol Etmeli?",
+        "intro": "Arayüz bir chance yüzdesi gösterse bile bu oranın nasıl üretildiğini ve kazananın net olarak ne aldığını anlamak önemlidir.",
+        "items": [
+          {
+            "summary": "Chance hesaplama formülü",
+            "body": "Olasılığın gerçekten katkı değerine orantılı olup olmadığını ve yüzdelerin veya ticket range'lerin nasıl yuvarlandığını kontrol edin. Ek ağırlıklandırma varsa girişten önce açıklanmalıdır."
+          },
+          {
+            "summary": "İç skin değerlemesi",
+            "body": "Skin Jackpot'ta item fiyatı hem pot büyüklüğünü hem chance'i etkiler. Özellikle pahalı veya nadir itemlarda iç fiyatı Steam ve dış <a href=\"/rust/marketplaces\">marketplace</a> fiyatlarıyla karşılaştırın."
+          },
+          {
+            "summary": "Rake ve net ödül",
+            "body": "Komisyon kazananın payından, belirli itemlardan veya tüm pottan kesilebilir. Büyük Jackpot rakamı yerine tüm kesintilerden sonraki net payout'u karşılaştırın."
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "Platform tamamlanmış round'u seeds/hash, ticket range, final sayı ve kazanan eşleşmesiyle doğrulatabilmelidir. Sadece Provably Fair yazması yeterli değildir."
+          },
+          {
+            "summary": "Timer ve son giriş kuralları",
+            "body": "Yeni deposit'in süreyi uzatıp uzatmadığını, round'un tam olarak ne zaman kilitlendiğini ve bitiş anında gönderilen girişe ne olduğunu kontrol edin. Büyük potlarda bu detay özellikle önemlidir."
+          },
+          {
+            "summary": "Kazanılan itemların çekimi",
+            "body": "Gerçek skinlerin mi, nakit karşılığının mı yoksa iç bakiyenin mi verildiğini kontrol edin. Steam Trade Offer, ücret, KYC, minimum ve bölgesel kısıtlamalar ayrıca uygulanabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Jackpot Sitelerini Nasıl Değerlendirir?",
+        "intro": "Jackpot'ta katkı değeri, kazanma ihtimali ve final ödül arasındaki ilişkiye özellikle bakıyoruz; çünkü modun pratik şeffaflığını bu zincir belirler.",
+        "items": [
+          {
+            "summary": "Chance hesabının doğruluğu",
+            "body": "Platformun her katılımcının katkısını, toplam potu ve kazanma olasılığını ne kadar açık gösterdiğini ve bunun yayınlanan kurallarla uyumunu inceliyoruz."
+          },
+          {
+            "summary": "Rake ve gerçek payout",
+            "body": "Komisyon oranı, kesinti yöntemi ve kazananın elinde kalan değer hesaba katılır. Önemli bir kısım kesiliyorsa ekrandaki büyük pot tek başına anlamlı değildir."
+          },
+          {
+            "summary": "Skin değerlemesi",
+            "body": "İç fiyatların şeffaflığı ve güncellenme sıklığı değerlendirilir. Jackpot'ta eski veya hatalı fiyat hem chance'i hem ödül değerini aynı anda bozar."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Algoritmanın gerçekten doğrulanabilir olmasını, tamamlanmış round verilerinin erişilebilirliğini ve kullanıcının sonuç ile kazananı bağımsız olarak eşleştirebilmesini dikkate alıyoruz."
+          },
+          {
+            "summary": "Likidite ve round işleyişi",
+            "body": "Aktif oyuncu sayısı, potların kapanma sıklığı, stake aralığı ve takılı kalan roundların olmaması pratik kullanım açısından önemlidir."
+          },
+          {
+            "summary": "Deposit, çekim ve geçmiş",
+            "body": "Steam Trade Offer, iç bakiye, ödeme yöntemleri, KYC, ücretler, Jackpot geçmişi ve iptal edilen veya tartışmalı işlemlerin çözülebilmesi değerlendirmeye dahildir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Jackpot Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platform rake'i, iç item fiyatlarını, pot limitlerini, timer süresini, son deposit kurallarını veya ödül teslim yöntemini değiştirebilir. Arayüz aynı kalsa bile bu değişiklikler chance, komisyon ve gerçek kazanç değerini doğrudan etkiler.",
+          "Modun likiditesi de değişebilir. Aktif kullanıcı azaldığında büyük potlar daha yavaş dolar, stake aralıkları daralır ve tek bir büyük katkı geçmişe göre potun çok daha büyük bir kısmını oluşturabilir.",
+          "Başka bir format istiyorsanız <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/roulette\">Rulet</a> ve <a href=\"/rust/crash\">Crash</a> bölümlerini karşılaştırın. Genel liste <a href=\"/rust\">Rust siteleri</a> bölümündedir."
+        ]
+      },
+      "safety": {
+        "title": "Jackpot'ta Güvenlik ve Sorumlu Oyun",
+        "intro": "Jackpot rastgele sonucu skin veya bakiye transferiyle birleştirir; bu nedenle hem matematiksel risk hem Steam işlem güvenliği kontrol edilmelidir.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini doğrulayın",
+            "body": "Phishing kopyaları bilinen platformu ve Steam login akışını taklit edebilir. Deposit yapmadan önce doğru domain ve resmi authentication sürecini kontrol edin."
+          },
+          {
+            "summary": "Her Steam Trade Offer'ı kontrol edin",
+            "body": "Giriş veya ödül item kullanıyorsa göndereni, skin listesini ve trade yönünü doğrulayın. Tanıdık bot adı veya avatarı tek başına yeterli değildir."
+          },
+          {
+            "summary": "Yüksek pot payı kazanmayı garanti etmez",
+            "body": "%70, %80 veya daha yüksek chance bile kaybetme ihtimali bırakır. Büyük kişisel pay kesin sonuç olarak görülmemelidir."
+          },
+          {
+            "summary": "Rake'i girişten önce bilin",
+            "body": "Komisyon her round'un beklenen değerini etkiler ve kazanan seçildikten sonra değil, katkı yapılmadan önce anlaşılır olmalıdır."
+          },
+          {
+            "summary": "Önceden harcama limiti belirleyin",
+            "body": "Büyüyen pot, ekrandaki yüzdeliği artırmak için yeni item eklemeyi teşvik edebilir. Önceden limit belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Jackpot Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust Jackpot nedir?",
+            "body": "Birden fazla kullanıcının skin veya bakiye eklediği ortak pot round'udur. Kazanan site kurallarına göre rastgele seçilir ve genellikle komisyon sonrası ödül potunu alır."
+          },
+          {
+            "summary": "Kazanma ihtimali nasıl hesaplanır?",
+            "body": "Birçok klasik sistemde katkı değeri toplam pot değerine bölünür. Kesin formül, yuvarlama ve ticket range yapısı platformdan kontrol edilmelidir."
+          },
+          {
+            "summary": "Jackpot ile Coinflip arasındaki fark nedir?",
+            "body": "<a href=\"/rust/coinflip\">Coinflip</a> genellikle benzer stake'li iki tarafı eşleştirir; Jackpot çok sayıda oyuncuyu birleştirip chance'i her oyuncunun pot payına göre dağıtabilir."
+          },
+          {
+            "summary": "Jackpot'ta rake nedir?",
+            "body": "Platformun ödül potundan aldığı komisyondur. Toplam değerin yüzdesi, belirli itemlar veya kurallarda açıklanan başka bir yöntemle kesilebilir."
+          },
+          {
+            "summary": "Kazananın nasıl seçildiği doğrulanabilir mi?",
+            "body": "Tam Provably Fair sisteminde round sonrası üretilen sonucu ve kazanan ticket veya ticket range'i doğrulamaya yetecek veriler bulunmalıdır."
+          },
+          {
+            "summary": "Skin fiyatı chance'i etkiler mi?",
+            "body": "Skin tabanlı Jackpot'ta genellikle evet; her item iç değere dönüştürülür ve oyuncunun pot payı bu değerle hesaplanır."
+          },
+          {
+            "summary": "Kazanılan skinler Steam'e çekilebilir mi?",
+            "body": "Servise bağlıdır. Bazıları gerçek itemları Steam Trade Offer ile yollar, bazıları kazancı iç bakiyeye çevirir veya alternatif çekim sunar."
+          },
+          {
+            "summary": "CSGOBROKER Jackpot sıralaması neden değişir?",
+            "body": "Rake, skin değerlemesi, Provably Fair, likidite, limitler, ödemeler, çekim ve round istikrarı zamanla değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Jackpot Sites: Shared Pot कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Rust Jackpot ऐसा format है जिसमें कई participants skins या internal balance को एक shared pot में डालते हैं। किसी player की जीतने की chance आम तौर पर total pot में उसकी value share पर depend करती है: बाकी players की तुलना में contribution जितनी बड़ी होगी, prize pool या उसका मुख्य हिस्सा जीतने की probability उतनी अधिक होगी।",
+          "<a href=\"/rust/coinflip\">Coinflip</a> में अक्सर दो sides match होती हैं, जबकि Jackpot में अलग-अलग stake size वाले कई participants एक ही round में हो सकते हैं। यह <a href=\"/rust/roulette\">Rust Roulette</a> से भी अलग है क्योंकि probability कई बार fixed sectors या predefined odds के बजाय current pot में player की share से बनती है।",
+          "Jackpot sites compare करते समय सिर्फ screen पर दिख रहा pot size पर्याप्त नहीं है। Actual conditions chance formula, rake या commission, internal skin valuation, Provably Fair, late-deposit rules, round limits और winner को items किस तरह मिलते हैं—इन सब पर depend करती हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Jackpot कैसे काम करता है",
+        "items": [
+          {
+            "title": "एक shared round pot",
+            "paragraphs": [
+              "Players उसी round में skins, coins या internal balance जोड़ते हैं। Interface आम तौर पर total pot value, participants और उनकी contributions दिखाती है। Timer खत्म होने या configured limit पूरा होने के बाद नई entries बंद होती हैं और winner select किया जाता है।"
+            ]
+          },
+          {
+            "title": "Stake share के अनुसार chance",
+            "paragraphs": [
+              "कई classic Jackpot systems में player की probability उसके contribution value को total pot value से divide करके निकलती है। अगर contribution pot का 20% है, तो site कोई extra adjustment न करे तो लगभग 20% chance बनती है।"
+            ]
+          },
+          {
+            "title": "Skins या internal balance से stake",
+            "paragraphs": [
+              "Skin-based platforms हर item को अपनी internal price देती हैं और इसी value से player share calculate करती हैं। दूसरी sites केवल coins या balance use करती हैं। इसलिए same inventory अलग sites पर अलग pot percentage दे सकती है।"
+            ]
+          },
+          {
+            "title": "Rake और pot commission",
+            "paragraphs": [
+              "Platform pot का percentage काट सकती है, कुछ items retain कर सकती है या fee किसी दूसरे disclosed तरीके से ले सकती है। Headline pot value से ज्यादा important यह है कि rake के बाद winner को वास्तव में कितनी value मिलती है।"
+            ]
+          },
+          {
+            "title": "Provably Fair और winner selection",
+            "paragraphs": [
+              "Verifiable platform में result ऐसे data से linked होना चाहिए जो outcome से पहले commit किया गया हो—जैसे hash, server seed, client seed, ticket range या कोई published algorithm—और round के बाद user उसे check कर सके।"
+            ]
+          },
+          {
+            "title": "Pot और item limits",
+            "paragraphs": [
+              "Site deposits की संख्या, player के items, minimum entry, maximum pot या final deposit timing को limit कर सकती है। ये rules round closing speed और possible stake sizes दोनों को affect करते हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Jackpot Join करने से पहले क्या Check करें",
+        "intro": "Interface chance percentage दिखाए तब भी यह समझना जरूरी है कि वह percentage कैसे निकली और winner के पास net value कितनी रहती है।",
+        "items": [
+          {
+            "summary": "Chance calculation formula",
+            "body": "Check करें कि probability सच में contribution value के proportional है या नहीं और percentages या ticket ranges कैसे round किए जाते हैं। कोई extra weighting हो तो entry से पहले clearly explained होना चाहिए।"
+          },
+          {
+            "summary": "Internal skin valuation",
+            "body": "Skin Jackpot में item price pot size और आपकी chance दोनों को affect करती है। खासकर expensive या unusual items के लिए internal price को Steam और external <a href=\"/rust/marketplaces\">marketplaces</a> से compare करें।"
+          },
+          {
+            "summary": "Rake और net prize",
+            "body": "Commission winner से, selected items से या पूरे pot से ली जा सकती है। Large gross Jackpot number के बजाय deductions के बाद net payout compare करें।"
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "Platform को completed round के seeds/hash, ticket ranges, generated final value और winner mapping verify करने देना चाहिए। सिर्फ Provably Fair label पर्याप्त नहीं है।"
+          },
+          {
+            "summary": "Timer और late-entry rules",
+            "body": "देखें कि नया deposit timer extend करता है या नहीं, round कब permanently lock होता है और cutoff पर भेजी गई entry का क्या होता है। Large pots में यह detail खास तौर पर important है।"
+          },
+          {
+            "summary": "Won items का withdrawal",
+            "body": "Check करें कि actual skins मिलती हैं, cash-equivalent value या internal balance। Steam Trade Offer, fees, KYC, minimums और regional restrictions भी apply हो सकती हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Jackpot Sites को कैसे Rate करता है",
+        "intro": "Jackpot में हम contribution value, winning probability और final prize के बीच relation पर खास ध्यान देते हैं, क्योंकि इसी chain से mode की practical transparency तय होती है।",
+        "items": [
+          {
+            "summary": "Chance calculation की accuracy",
+            "body": "हम देखते हैं कि platform हर participant का contribution, total pot और winning probability कितनी clearly दिखाती है और यह logic published rules से match करती है या नहीं।"
+          },
+          {
+            "summary": "Rake और real payout",
+            "body": "Commission rate, deduction method और winner के पास बची value evaluate की जाती है। अगर significant हिस्सा payout से पहले कटता है तो बड़ा visual pot अकेले meaningful नहीं है।"
+          },
+          {
+            "summary": "Skin valuation",
+            "body": "Internal prices की transparency और update frequency check की जाती है। Jackpot में stale या distorted pricing participant chance और final prize value दोनों बदल देती है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "हम देखते हैं कि algorithm वास्तव में verifiable है, completed-round data available हैं और user generated result को winner से independently link कर सकता है।"
+          },
+          {
+            "summary": "Liquidity और round operation",
+            "body": "Active player volume, pots कितनी जल्दी complete होते हैं, stake ranges और stuck rounds की frequency practical usability को affect करती है।"
+          },
+          {
+            "summary": "Deposits, withdrawals और history",
+            "body": "Steam Trade Offers, internal balance, payment methods, KYC, fees, Jackpot history और cancelled/disputed operations resolve करने की ability rating में शामिल हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Jackpot Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platform rake, internal item prices, pot limits, timer length, late-deposit rules या prize-delivery method बदल सकती है। Interface same रहे तब भी ये changes probability, commission और real winning value को सीधे बदलते हैं।",
+          "Mode liquidity भी बदलती है। Active users कम होने पर large pots fill होने में ज्यादा समय लेते हैं, available stake range narrow हो सकती है और एक बड़ा contribution पहले की तुलना में pot का बहुत बड़ा हिस्सा बन सकता है।",
+          "अगर दूसरा format चाहिए, तो <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/roulette\">Roulette</a> और <a href=\"/rust/crash\">Crash</a> compare करें। General list <a href=\"/rust\">Rust sites</a> section में है।"
+        ]
+      },
+      "safety": {
+        "title": "Jackpot पर Safety और Responsible Play",
+        "intro": "Jackpot random outcome को skins या balance transfers के साथ combine करता है, इसलिए mathematical risk और Steam transaction security दोनों महत्वपूर्ण हैं।",
+        "items": [
+          {
+            "summary": "Domain और Steam sign-in verify करें",
+            "body": "Phishing copies known platform और Steam login flow की नकल कर सकती हैं। Deposit से पहले correct domain और official authentication process check करें।"
+          },
+          {
+            "summary": "हर Steam Trade Offer verify करें",
+            "body": "Entry या prize में items हों तो sender, skin list और trade direction check करें। Familiar bot name या avatar अकेले पर्याप्त verification नहीं है।"
+          },
+          {
+            "summary": "Large pot share जीत की guarantee नहीं है",
+            "body": "70%, 80% या उससे अधिक displayed chance में भी हारने की real probability रहती है। High personal share को certain outcome नहीं मानना चाहिए।"
+          },
+          {
+            "summary": "Entry से पहले rake समझें",
+            "body": "Commission हर round की expected value को affect करती है और contribution भेजने से पहले clear होनी चाहिए।"
+          },
+          {
+            "summary": "Spending limit पहले set करें",
+            "body": "बढ़ता pot percentage बढ़ाने के लिए extra items जोड़ने को encourage कर सकता है। पहले से limit तय करें और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Jackpot के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust Jackpot क्या है?",
+            "body": "Shared-pot round जिसमें कई users skins या balance contribute करते हैं। Site rules के अनुसार random winner select होता है और आम तौर पर commission के बाद prize pool मिलता है।"
+          },
+          {
+            "summary": "Winning chance कैसे calculate होती है?",
+            "body": "कई classic systems में आपकी contribution value को total pot value से divide किया जाता है। Exact formula, rounding और ticket ranges specific platform पर check करें।"
+          },
+          {
+            "summary": "Jackpot और Coinflip में क्या फर्क है?",
+            "body": "<a href=\"/rust/coinflip\">Coinflip</a> आम तौर पर comparable stakes वाली दो sides match करता है, जबकि Jackpot कई players को शामिल करके common pot में उनकी share के अनुसार chance देता है।"
+          },
+          {
+            "summary": "Jackpot में rake क्या है?",
+            "body": "Prize pool से platform की commission। यह total value का percentage, selected items या rules में बताए किसी दूसरे method से ली जा सकती है।"
+          },
+          {
+            "summary": "Winner selection verify कर सकते हैं?",
+            "body": "Complete Provably Fair implementation में round के बाद generated result और winning ticket/range verify करने के लिए पर्याप्त data available होना चाहिए।"
+          },
+          {
+            "summary": "Skin price chance को affect करती है?",
+            "body": "Skin-based Jackpot में आम तौर पर हाँ, क्योंकि हर item internal value में convert होकर player की pot share calculate करता है।"
+          },
+          {
+            "summary": "Won skins Steam में withdraw कर सकते हैं?",
+            "body": "Service पर depend करता है। कुछ actual items Steam Trade Offer से भेजते हैं, जबकि कुछ winnings को internal balance या alternative withdrawal में convert करते हैं।"
+          },
+          {
+            "summary": "CSGOBROKER Jackpot ranking क्यों बदलती है?",
+            "body": "Rake, skin valuation, Provably Fair, liquidity, limits, payments, withdrawals और round stability समय के साथ बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

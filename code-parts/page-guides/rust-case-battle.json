@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-case-battle",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Битвы кейсов Rust: как устроен режим и что сравнивать между сайтами",
+        "paragraphs": [
+          "Битвы кейсов Rust — это многопользовательский формат на сторонних площадках, где два или больше участников открывают одинаковый набор виртуальных кейсов в рамках одного раунда. В классическом варианте победитель определяется по суммарной стоимости выпавших предметов, однако конкретные правила распределения выигрыша зависят от сервиса.",
+          "На CSGOBROKER сайты с битвами кейсов Rust сравниваются отдельно от обычного <a href=\"/rust/caseopening\">открытия кейсов</a>. Для такого режима важны не только состав и вероятность выпадения предметов, но и число участников, правила ничьей, способ оценки скинов, комиссия, возможность проверить результат и условия вывода.",
+          "Одинаковая стоимость входа ещё не означает одинаковые условия. На одной площадке победитель получает все выпавшие предметы, на другой — их стоимость во внутреннем балансе, а дополнительные режимы могут менять сам принцип определения победителя."
+        ]
+      },
+      "categories": {
+        "title": "Какие форматы битв кейсов встречаются на сайтах Rust",
+        "items": [
+          {
+            "title": "Классическая битва",
+            "paragraphs": [
+              "Несколько участников открывают одинаковые кейсы, после чего площадка сравнивает суммарную стоимость выпавших предметов. Перед входом стоит проверить, получает ли победитель весь набор предметов, только их стоимость или другую награду."
+            ]
+          },
+          {
+            "title": "Один на один и битвы на несколько игроков",
+            "paragraphs": [
+              "Самый понятный вариант — два участника, но некоторые сервисы поддерживают три, четыре и больше мест. Чем больше игроков, тем важнее заранее понимать правила распределения общего призового пула."
+            ]
+          },
+          {
+            "title": "Командные битвы",
+            "paragraphs": [
+              "На отдельных площадках участники объединяются в команды, а победитель определяется по совокупной стоимости предметов команды. После этого выигрыш может распределяться между её участниками по правилам сервиса."
+            ]
+          },
+          {
+            "title": "Обратный режим",
+            "paragraphs": [
+              "Иногда встречается вариант, в котором выигрывает участник или команда с меньшей суммарной стоимостью выпавших предметов. Это меняет только правило выбора победителя: сами открытия по-прежнему остаются случайными."
+            ]
+          },
+          {
+            "title": "Публичные и приватные комнаты",
+            "paragraphs": [
+              "Создатель битвы может открыть комнату для всех пользователей или поделиться приватной ссылкой. Обычно заранее выбираются кейсы, количество мест и дополнительные параметры раунда."
+            ]
+          },
+          {
+            "title": "Бесплатные и акционные битвы",
+            "paragraphs": [
+              "Некоторые сервисы проводят промо-раунды, выдают билеты или позволяют использовать бонусный баланс. Такие предложения могут иметь отдельные требования к участию и выводу, поэтому условия акции нужно читать до начала игры."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед участием в битве кейсов",
+        "intro": "В этом режиме нужно оценивать не только отдельные кейсы, но и правила всего раунда.",
+        "items": [
+          {
+            "summary": "Как определяется победитель",
+            "body": "Проверьте, сравнивает ли сайт общую стоимость предметов, результат команды или использует специальный обратный режим. Механика должна быть понятна до подтверждения участия."
+          },
+          {
+            "summary": "Кому достаются выпавшие предметы",
+            "body": "Формат «победитель забирает всё» распространён, но не является универсальным. Иногда площадка переводит стоимость предметов во внутренний баланс или использует собственную схему распределения."
+          },
+          {
+            "summary": "Состав кейсов и вероятность выпадения",
+            "body": "Откройте содержимое каждого кейса в наборе и посмотрите опубликованные шансы. Один дорогой предмет на обложке мало говорит о реальной структуре результатов."
+          },
+          {
+            "summary": "Как оцениваются скины Rust",
+            "body": "Если победитель определяется по стоимости предметов, внутренняя цена напрямую влияет на итог. Она может отличаться от цены в Steam и на сторонних <a href=\"/rust/marketplaces\">торговых площадках Rust</a>."
+          },
+          {
+            "summary": "Проверяемость результата",
+            "body": "Если сервис использует Provably Fair, у пользователя должна быть возможность проверить конкретные открытия и итог раунда по опубликованным данным, а не просто увидеть упоминание технологии."
+          },
+          {
+            "summary": "Вывод, комиссии и проверка личности",
+            "body": "До пополнения проверьте доступность выигранных предметов, минимальную сумму вывода, комиссии, региональные ограничения и требования к проверке личности."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с битвами кейсов Rust",
+        "intro": "Для рейтинга недостаточно большого количества комнат или привлекательной анимации: важны прозрачность правил и практическая ценность выигрыша.",
+        "items": [
+          {
+            "summary": "Прозрачность правил раунда",
+            "body": "До участия должны быть видны набор кейсов, число игроков, стоимость входа, способ определения победителя и правила распределения предметов."
+          },
+          {
+            "summary": "Шансы и проверка результата",
+            "body": "Мы учитываем, публикуются ли вероятности внутри кейсов и позволяет ли площадка проверить завершённые открытия и сам раунд."
+          },
+          {
+            "summary": "Оценка предметов",
+            "body": "Проверяется, насколько понятно формируется внутренняя стоимость скинов и как она используется при определении победителя."
+          },
+          {
+            "summary": "Разнообразие режимов",
+            "body": "Дополнительные варианты имеют ценность только тогда, когда их правила действительно отличаются и заранее объяснены пользователю."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Учитываются поддерживаемые способы оплаты, комиссии, минимальные суммы, наличие предметов для вывода, сроки обработки и требования к проверке личности."
+          },
+          {
+            "summary": "Стабильность и история",
+            "body": "Для многопользовательского режима особенно важны стабильная работа в реальном времени, история завершённых битв и понятный статус операций."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с битвами кейсов Rust меняется",
+        "paragraphs": [
+          "Площадки добавляют новые кейсы и форматы, меняют стоимость входа, бонусы, комиссии и правила вывода. Поэтому один и тот же сервис со временем может предлагать заметно другие условия.",
+          "Меняется и рынок предметов Rust. Если площадка обновляет внутренние цены скинов, меняется суммарная стоимость выпавших предметов и результат тех режимов, где победитель определяется именно по цене.",
+          "Если соревнование с другими игроками не нужно, используйте раздел <a href=\"/rust/caseopening\">открытия кейсов Rust</a>. Для получения конкретного предмета без случайного результата лучше сравнить <a href=\"/rust/buy-skins\">сайты для покупки скинов Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра",
+        "intro": "Битвы кейсов проходят на сторонних площадках и не являются официальным режимом Rust или Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте адрес сайта и вход через Steam",
+            "body": "Фишинговые копии могут имитировать известную площадку и форму авторизации Steam. Перед входом проверяйте домен и не передавайте пароль сотрудникам сервиса."
+          },
+          {
+            "summary": "Проверяйте предложения обмена Steam",
+            "body": "Если выигрыш выводится предметами, сверяйте отправителя, состав предложения и каждый скин до подтверждения обмена."
+          },
+          {
+            "summary": "Читайте правила конкретного режима",
+            "body": "Особенно внимательно проверяйте условия ничьей, командных и обратных режимов, а также порядок распределения предметов."
+          },
+          {
+            "summary": "Проверяйте вывод до пополнения",
+            "body": "Минимальные суммы, комиссии, проверка личности и ограничения по стране могут стать заметны только на этапе вывода."
+          },
+          {
+            "summary": "Не рассматривайте битвы как способ гарантированного заработка",
+            "body": "Выбор кейсов, количества игроков или режима не устраняет случайность выпадения предметов. Заранее определяйте лимит расходов и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о битвах кейсов Rust",
+        "items": [
+          {
+            "summary": "Что такое битва кейсов Rust?",
+            "body": "Это раунд на стороннем сайте, где несколько участников открывают одинаковый набор виртуальных кейсов, а победитель определяется по заранее установленным правилам."
+          },
+          {
+            "summary": "Как обычно определяется победитель?",
+            "body": "Чаще всего сравнивается суммарная стоимость выпавших предметов, но существуют командные и обратные режимы. Точное правило нужно смотреть до начала раунда."
+          },
+          {
+            "summary": "Чем битва отличается от обычного открытия кейса?",
+            "body": "При обычном <a href=\"/rust/caseopening\">открытии кейса</a> ваш результат не сравнивается с другими игроками. В битве итог зависит ещё и от результатов соперников и способа распределения выигрыша."
+          },
+          {
+            "summary": "Можно ли проверить результат битвы?",
+            "body": "На площадках с корректно реализованным Provably Fair обычно можно проверить данные конкретного раунда и отдельных открытий."
+          },
+          {
+            "summary": "Что происходит при одинаковой стоимости предметов?",
+            "body": "Правила ничьей отличаются между сервисами: может использоваться дополнительное условие, повторный выбор или собственный алгоритм. Это нужно проверять заранее."
+          },
+          {
+            "summary": "Можно ли участвовать бесплатно?",
+            "body": "Иногда площадки проводят бесплатные или акционные раунды. Такие предложения могут иметь ограничения на использование и вывод полученной награды."
+          },
+          {
+            "summary": "Можно ли вывести выигранные скины в Steam?",
+            "body": "Зависит от площадки, наличия предметов и правил вывода. Некоторые сервисы отправляют предметы через предложение обмена Steam, другие предлагают внутренний баланс."
+          },
+          {
+            "summary": "Почему рейтинг таких сайтов на CSGOBROKER меняется?",
+            "body": "Меняются кейсы, правила режимов, внутренние цены предметов, комиссии, способы оплаты, вывод и стабильность работы."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Case Battles: How the Mode Works and What to Compare",
+        "paragraphs": [
+          "Rust case battles are multiplayer rounds on third-party platforms where two or more participants open the same set of virtual cases. In the classic format, the winner is usually determined by the combined value of the dropped items, although the exact prize-distribution rules depend on the service.",
+          "CSGOBROKER evaluates Rust case battle sites separately from standard <a href=\"/rust/caseopening\">case opening</a>. The important factors are not only case contents and drop probabilities, but also player count, tie rules, skin valuation, fees, result verification, and withdrawal conditions.",
+          "The same entry price does not necessarily mean the same terms. One platform may award every dropped item to the winner, another may credit their internal value, while optional modes can change the way the winner is selected."
+        ]
+      },
+      "categories": {
+        "title": "Common Rust Case Battle Formats",
+        "items": [
+          {
+            "title": "Classic battles",
+            "paragraphs": [
+              "Several participants open the same cases and the platform compares the total value of their drops. Before joining, check whether the winner receives all items, their balance value, or another type of prize."
+            ]
+          },
+          {
+            "title": "One-on-one and multiplayer battles",
+            "paragraphs": [
+              "The simplest format has two participants, while some services support three, four, or more slots. As player count increases, the rules for distributing the combined prize pool become more important."
+            ]
+          },
+          {
+            "title": "Team battles",
+            "paragraphs": [
+              "Some platforms place users into teams and compare the combined item value of each team. The winning team's items or balance can then be distributed according to the site's rules."
+            ]
+          },
+          {
+            "title": "Reverse modes",
+            "paragraphs": [
+              "Some sites offer a format where the participant or team with the lower total item value wins. This changes the winner rule only; the individual case openings remain random."
+            ]
+          },
+          {
+            "title": "Public and private rooms",
+            "paragraphs": [
+              "A battle creator can open a room to everyone or share a private link. Cases, player slots, and any optional round settings are normally selected before the room starts."
+            ]
+          },
+          {
+            "title": "Free and promotional battles",
+            "paragraphs": [
+              "Some services run promotional rounds, issue tickets, or allow bonus balance to be used. Participation and withdrawal conditions can be different from standard paid battles, so the promotion rules should be checked first."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Joining a Case Battle",
+        "intro": "In this mode, the rules of the complete round matter as much as the cases themselves.",
+        "items": [
+          {
+            "summary": "How the winner is determined",
+            "body": "Check whether the site compares total item value, a team result, or uses a special reverse format. The winner logic should be clear before participation is confirmed."
+          },
+          {
+            "summary": "Who receives the dropped items",
+            "body": "Winner-takes-all is common but not universal. Some platforms convert drops to internal balance or apply another distribution method."
+          },
+          {
+            "summary": "Case contents and drop probabilities",
+            "body": "Open the contents of every case included in the battle and review the published probabilities. A valuable headline item says little about the overall outcome distribution."
+          },
+          {
+            "summary": "How Rust skins are valued",
+            "body": "If the winner is determined by item value, the site's internal pricing directly affects the result. It can differ from Steam and third-party <a href=\"/rust/marketplaces\">Rust marketplaces</a>."
+          },
+          {
+            "summary": "Result verification",
+            "body": "When Provably Fair is used, users should be able to verify the relevant openings and the completed round with published data rather than seeing only a marketing label."
+          },
+          {
+            "summary": "Withdrawals, fees, and identity checks",
+            "body": "Before depositing, review item availability, withdrawal minimums, fees, regional restrictions, and any identity-verification requirements."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Case Battle Sites",
+        "intro": "A large number of rooms or attractive animations are not enough; rule transparency and the practical value of a win matter more.",
+        "items": [
+          {
+            "summary": "Round-rule transparency",
+            "body": "The case set, player count, entry value, winner logic, and item-distribution rules should be visible before a user joins."
+          },
+          {
+            "summary": "Odds and result verification",
+            "body": "We consider whether case probabilities are published and whether completed openings and battle results can be checked."
+          },
+          {
+            "summary": "Item valuation",
+            "body": "We review how clearly internal Rust skin prices are formed and how those values are used when selecting the winner."
+          },
+          {
+            "summary": "Mode variety",
+            "body": "Additional formats add value only when their rules are meaningfully different and explained before the round."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "Supported payment methods, fees, minimums, item availability, processing times, and identity checks are all considered."
+          },
+          {
+            "summary": "Stability and history",
+            "body": "For a real-time multiplayer mode, reliable performance, completed-battle history, and clear transaction statuses are especially important."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Case Battle Rankings Change",
+        "paragraphs": [
+          "Platforms add new cases and battle formats and can change entry prices, bonuses, fees, and withdrawal rules. The same service can therefore offer materially different conditions over time.",
+          "The Rust item market also changes. When a platform updates internal skin prices, the total value of drops changes as well, which can affect modes where the winner is selected by item value.",
+          "If you do not want to compete with other players, use <a href=\"/rust/caseopening\">Rust case opening sites</a>. If you want a specific item without a random result, compare <a href=\"/rust/buy-skins\">Rust skin buying sites</a> instead."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play",
+        "intro": "Case battles take place on third-party platforms and are not an official Rust or Steam game mode.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam sign-in",
+            "body": "Phishing copies can imitate a known platform and Steam authentication page. Check the domain before signing in and never send your password to site staff."
+          },
+          {
+            "summary": "Verify Steam Trade Offers",
+            "body": "When winnings are withdrawn as items, check the sender, the contents of the offer, and every skin before confirming the trade."
+          },
+          {
+            "summary": "Read the rules for the selected mode",
+            "body": "Pay particular attention to ties, team formats, reverse modes, and the way dropped items are distributed."
+          },
+          {
+            "summary": "Check withdrawals before depositing",
+            "body": "Minimum amounts, fees, identity checks, and country restrictions may become relevant only when you try to withdraw."
+          },
+          {
+            "summary": "Do not treat battles as guaranteed income",
+            "body": "Choosing cases, player count, or battle format does not remove randomness from item drops. Set spending limits in advance and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Case Battles",
+        "items": [
+          {
+            "summary": "What is a Rust case battle?",
+            "body": "It is a round on a third-party site where several participants open the same set of virtual cases and a winner is selected under predefined rules."
+          },
+          {
+            "summary": "How is the winner usually determined?",
+            "body": "Most commonly by the combined value of dropped items, although team and reverse formats also exist. The exact rule should be checked before the round."
+          },
+          {
+            "summary": "How is a battle different from normal case opening?",
+            "body": "With regular <a href=\"/rust/caseopening\">case opening</a>, your result is not compared with other users. In a battle, other participants and the prize-distribution rule also affect the outcome."
+          },
+          {
+            "summary": "Can a battle result be verified?",
+            "body": "On sites with a properly implemented Provably Fair system, users can usually verify data for the specific round and individual openings."
+          },
+          {
+            "summary": "What happens when item values are equal?",
+            "body": "Tie handling differs between services and may use an extra condition, another selection step, or a platform-specific rule. It should be reviewed in advance."
+          },
+          {
+            "summary": "Can I join for free?",
+            "body": "Some sites run free or promotional battles, but these offers can have separate conditions for participation and withdrawal."
+          },
+          {
+            "summary": "Can won Rust skins be withdrawn to Steam?",
+            "body": "It depends on the platform, item availability, and withdrawal rules. Some sites use Steam Trade Offers while others credit internal balance."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Cases, battle rules, internal item prices, fees, payment methods, withdrawals, and platform stability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Batallas de cajas de Rust: cómo funciona el modo y qué comparar",
+        "paragraphs": [
+          "Las batallas de cajas de Rust son rondas multijugador en plataformas de terceros donde dos o más participantes abren el mismo conjunto de cajas virtuales. En el formato clásico, el ganador suele determinarse por el valor total de los objetos obtenidos, aunque cada servicio puede aplicar reglas distintas para repartir el premio.",
+          "CSGOBROKER analiza estos sitios por separado de la <a href=\"/rust/caseopening\">apertura normal de cajas</a>. No solo importan el contenido y las probabilidades de las cajas, sino también el número de jugadores, las reglas de empate, la valoración de skins, las comisiones, la verificación del resultado y las condiciones de retiro.",
+          "Un mismo precio de entrada no implica las mismas condiciones. Una plataforma puede entregar todos los objetos al ganador, otra puede acreditar su valor en saldo interno y ciertos modos especiales pueden cambiar por completo el criterio para decidir quién gana."
+        ]
+      },
+      "categories": {
+        "title": "Formatos habituales de batallas de cajas de Rust",
+        "items": [
+          {
+            "title": "Batalla clásica",
+            "paragraphs": [
+              "Varios participantes abren las mismas cajas y la plataforma compara el valor total de los objetos obtenidos. Antes de entrar, comprueba si el ganador recibe todos los objetos, su valor en saldo o una recompensa diferente."
+            ]
+          },
+          {
+            "title": "Uno contra uno y multijugador",
+            "paragraphs": [
+              "El formato más sencillo tiene dos participantes, pero algunos servicios permiten tres, cuatro o más plazas. Cuantos más jugadores haya, más importante es entender cómo se distribuye el premio conjunto."
+            ]
+          },
+          {
+            "title": "Batallas por equipos",
+            "paragraphs": [
+              "Algunas plataformas agrupan a los usuarios en equipos y comparan el valor conjunto de sus objetos. Después, el premio del equipo ganador se distribuye según las reglas del servicio."
+            ]
+          },
+          {
+            "title": "Modos inversos",
+            "paragraphs": [
+              "En ciertos sitios gana el participante o equipo con el menor valor total. Esto modifica únicamente la regla para elegir al ganador; las aperturas individuales siguen siendo aleatorias."
+            ]
+          },
+          {
+            "title": "Salas públicas y privadas",
+            "paragraphs": [
+              "El creador puede abrir la sala a todos o compartir un enlace privado. Normalmente se eligen las cajas, el número de plazas y los parámetros opcionales antes de empezar."
+            ]
+          },
+          {
+            "title": "Batallas gratuitas y promocionales",
+            "paragraphs": [
+              "Algunos servicios organizan rondas promocionales, entregan tickets o permiten usar saldo de bonificación. Las condiciones de participación y retiro pueden diferir de las batallas normales."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de participar en una batalla de cajas",
+        "intro": "En este modo hay que evaluar las reglas de toda la ronda, no solo las cajas individuales.",
+        "items": [
+          {
+            "summary": "Cómo se determina el ganador",
+            "body": "Comprueba si el sitio compara el valor total de los objetos, el resultado de un equipo o utiliza un modo inverso. La mecánica debe estar clara antes de confirmar la participación."
+          },
+          {
+            "summary": "Quién recibe los objetos obtenidos",
+            "body": "El formato en el que el ganador se lleva todo es frecuente, pero no universal. Algunas plataformas convierten los objetos a saldo interno o aplican otro sistema de reparto."
+          },
+          {
+            "summary": "Contenido y probabilidades de las cajas",
+            "body": "Revisa el contenido de cada caja incluida en la ronda y las probabilidades publicadas. Un objeto caro destacado en la portada no describe la distribución real de resultados."
+          },
+          {
+            "summary": "Cómo se valoran las skins de Rust",
+            "body": "Cuando el ganador depende del valor de los objetos, el precio interno de la plataforma afecta directamente al resultado. Puede diferir de Steam y de los <a href=\"/rust/marketplaces\">mercados de Rust</a>."
+          },
+          {
+            "summary": "Verificación del resultado",
+            "body": "Si existe Provably Fair, el usuario debería poder comprobar las aperturas concretas y la ronda terminada con datos publicados, no limitarse a una etiqueta promocional."
+          },
+          {
+            "summary": "Retiros, comisiones y verificación de identidad",
+            "body": "Antes de depositar, revisa disponibilidad de objetos, mínimos de retiro, comisiones, restricciones regionales y posibles requisitos de verificación."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de batallas de cajas de Rust",
+        "intro": "No basta con ofrecer muchas salas o buenas animaciones: la transparencia y el valor práctico del premio son más importantes.",
+        "items": [
+          {
+            "summary": "Transparencia de las reglas",
+            "body": "Antes de participar deben mostrarse las cajas, el número de jugadores, el coste de entrada, la lógica para decidir al ganador y el reparto de objetos."
+          },
+          {
+            "summary": "Probabilidades y verificación",
+            "body": "Valoramos si se publican las probabilidades de las cajas y si es posible comprobar las aperturas y las rondas finalizadas."
+          },
+          {
+            "summary": "Valoración de objetos",
+            "body": "Revisamos cómo se forman los precios internos de las skins de Rust y cómo se utilizan para determinar al ganador."
+          },
+          {
+            "summary": "Variedad de modos",
+            "body": "Los formatos adicionales aportan valor solo cuando sus reglas son realmente distintas y se explican antes de empezar."
+          },
+          {
+            "summary": "Depósitos y retiros",
+            "body": "Se tienen en cuenta métodos de pago, comisiones, mínimos, disponibilidad de objetos, tiempos de procesamiento y verificación de identidad."
+          },
+          {
+            "summary": "Estabilidad e historial",
+            "body": "En un modo multijugador en tiempo real son especialmente importantes la estabilidad, el historial de batallas y los estados claros de las operaciones."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de batallas de cajas de Rust",
+        "paragraphs": [
+          "Las plataformas añaden cajas y formatos y pueden cambiar precios de entrada, bonos, comisiones y reglas de retiro. Por eso un mismo servicio puede ofrecer condiciones diferentes con el tiempo.",
+          "También cambia el mercado de objetos de Rust. Cuando la plataforma actualiza los precios internos, cambia el valor total de los objetos y puede cambiar el resultado de los modos basados en ese valor.",
+          "Si no quieres competir con otros jugadores, utiliza <a href=\"/rust/caseopening\">sitios de apertura de cajas de Rust</a>. Si buscas un objeto concreto sin resultado aleatorio, compara <a href=\"/rust/buy-skins\">sitios para comprar skins de Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "Las batallas de cajas se realizan en plataformas de terceros y no son un modo oficial de Rust ni de Steam.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio y el acceso de Steam",
+            "body": "Las copias de phishing pueden imitar una plataforma conocida y la página de autenticación de Steam. Comprueba el dominio y no envíes tu contraseña al personal del sitio."
+          },
+          {
+            "summary": "Verifica las ofertas de intercambio de Steam",
+            "body": "Si el premio se retira como objetos, comprueba el remitente, el contenido de la oferta y cada skin antes de confirmar."
+          },
+          {
+            "summary": "Lee las reglas del modo elegido",
+            "body": "Presta especial atención a empates, equipos, modos inversos y al sistema utilizado para distribuir los objetos."
+          },
+          {
+            "summary": "Comprueba el retiro antes de depositar",
+            "body": "Los mínimos, las comisiones, la verificación de identidad y las restricciones por país pueden aparecer solo en la fase de retiro."
+          },
+          {
+            "summary": "No consideres las batallas una fuente de ingresos garantizada",
+            "body": "Elegir cajas, número de jugadores o formato no elimina el azar de los objetos. Define límites de gasto y consulta los recursos de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre batallas de cajas de Rust",
+        "items": [
+          {
+            "summary": "¿Qué es una batalla de cajas de Rust?",
+            "body": "Es una ronda en un sitio de terceros donde varios participantes abren el mismo conjunto de cajas virtuales y el ganador se elige según reglas definidas de antemano."
+          },
+          {
+            "summary": "¿Cómo suele determinarse el ganador?",
+            "body": "Normalmente se compara el valor total de los objetos, aunque también existen formatos por equipos e inversos. La regla exacta debe revisarse antes de jugar."
+          },
+          {
+            "summary": "¿En qué se diferencia de abrir una caja normalmente?",
+            "body": "En la <a href=\"/rust/caseopening\">apertura normal</a> tu resultado no se compara con otros usuarios. En una batalla también influyen los resultados de los demás y la regla de reparto."
+          },
+          {
+            "summary": "¿Se puede verificar el resultado?",
+            "body": "En sitios con Provably Fair bien implementado normalmente se pueden comprobar los datos de la ronda y de las aperturas individuales."
+          },
+          {
+            "summary": "¿Qué pasa si el valor de los objetos es igual?",
+            "body": "Cada servicio resuelve el empate de forma distinta: puede usar una condición adicional, una nueva selección o una regla propia. Conviene revisarlo antes."
+          },
+          {
+            "summary": "¿Se puede participar gratis?",
+            "body": "Algunos sitios ofrecen batallas gratuitas o promocionales, pero pueden tener condiciones específicas para participar y retirar el premio."
+          },
+          {
+            "summary": "¿Se pueden retirar las skins ganadas a Steam?",
+            "body": "Depende de la plataforma, el inventario y las reglas de retiro. Algunos servicios utilizan ofertas de intercambio de Steam y otros saldo interno."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Pueden cambiar las cajas, las reglas, los precios internos, las comisiones, los métodos de pago, el retiro y la estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Batalhas de caixas de Rust: como o modo funciona e o que comparar",
+        "paragraphs": [
+          "As batalhas de caixas de Rust são rodadas multijogador em plataformas de terceiros nas quais dois ou mais participantes abrem o mesmo conjunto de caixas virtuais. No formato clássico, o vencedor normalmente é definido pelo valor total dos itens recebidos, embora as regras de distribuição variem entre serviços.",
+          "A CSGOBROKER avalia esses sites separadamente da <a href=\"/rust/caseopening\">abertura comum de caixas</a>. Além do conteúdo e das probabilidades, importam número de jogadores, regras de empate, avaliação das skins, taxas, verificação do resultado e condições de saque.",
+          "O mesmo preço de entrada não significa condições iguais. Uma plataforma pode entregar todos os itens ao vencedor, outra pode creditar o valor em saldo interno, e modos adicionais podem mudar o próprio critério usado para escolher quem ganha."
+        ]
+      },
+      "categories": {
+        "title": "Formatos comuns de batalhas de caixas de Rust",
+        "items": [
+          {
+            "title": "Batalha clássica",
+            "paragraphs": [
+              "Vários participantes abrem as mesmas caixas e a plataforma compara o valor total dos itens. Antes de entrar, veja se o vencedor recebe todos os objetos, o valor em saldo ou outro tipo de prêmio."
+            ]
+          },
+          {
+            "title": "Um contra um e multijogador",
+            "paragraphs": [
+              "O formato mais simples tem dois participantes, mas alguns serviços permitem três, quatro ou mais vagas. Quanto maior o grupo, mais importante é entender como o prêmio total será distribuído."
+            ]
+          },
+          {
+            "title": "Batalhas em equipe",
+            "paragraphs": [
+              "Algumas plataformas agrupam usuários em equipes e comparam o valor combinado dos itens de cada equipe. Depois, o prêmio vencedor é distribuído conforme as regras do serviço."
+            ]
+          },
+          {
+            "title": "Modos inversos",
+            "paragraphs": [
+              "Em alguns sites vence o participante ou a equipe com o menor valor total. Isso altera apenas a regra que define o vencedor; as aberturas continuam aleatórias."
+            ]
+          },
+          {
+            "title": "Salas públicas e privadas",
+            "paragraphs": [
+              "O criador pode abrir a sala para todos ou compartilhar um link privado. Normalmente as caixas, o número de vagas e os parâmetros opcionais são escolhidos antes do início."
+            ]
+          },
+          {
+            "title": "Batalhas gratuitas e promocionais",
+            "paragraphs": [
+              "Alguns serviços fazem rodadas promocionais, entregam tickets ou permitem usar saldo de bônus. As condições de participação e saque podem ser diferentes das batalhas normais."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de participar",
+        "intro": "Nesse modo, é preciso avaliar as regras da rodada completa, não apenas as caixas individuais.",
+        "items": [
+          {
+            "summary": "Como o vencedor é definido",
+            "body": "Confira se o site compara o valor total dos itens, o resultado da equipe ou usa um modo inverso. A mecânica deve estar clara antes da confirmação."
+          },
+          {
+            "summary": "Quem recebe os itens",
+            "body": "O formato em que o vencedor leva tudo é comum, mas não universal. Algumas plataformas convertem os itens em saldo interno ou usam outro método de distribuição."
+          },
+          {
+            "summary": "Conteúdo e probabilidades das caixas",
+            "body": "Abra o conteúdo de cada caixa incluída e veja as probabilidades publicadas. Um item caro destacado na capa não representa toda a distribuição dos resultados."
+          },
+          {
+            "summary": "Como as skins de Rust são avaliadas",
+            "body": "Se o vencedor depende do valor dos itens, o preço interno da plataforma afeta diretamente o resultado. Ele pode diferir da Steam e dos <a href=\"/rust/marketplaces\">mercados de Rust</a>."
+          },
+          {
+            "summary": "Verificação do resultado",
+            "body": "Quando existe Provably Fair, o usuário deve conseguir conferir as aberturas específicas e a rodada concluída usando os dados publicados, e não apenas uma indicação promocional."
+          },
+          {
+            "summary": "Saques, taxas e verificação de identidade",
+            "body": "Antes de depositar, confira disponibilidade dos itens, mínimos de saque, taxas, restrições regionais e possíveis exigências de verificação."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de batalhas de caixas de Rust",
+        "intro": "Muitas salas ou boas animações não bastam: transparência das regras e valor prático do prêmio são mais importantes.",
+        "items": [
+          {
+            "summary": "Transparência das regras",
+            "body": "Antes da entrada devem aparecer as caixas, o número de jogadores, o custo, a forma de definir o vencedor e a distribuição dos itens."
+          },
+          {
+            "summary": "Probabilidades e verificação",
+            "body": "Consideramos se as probabilidades são publicadas e se as aberturas e rodadas concluídas podem ser verificadas."
+          },
+          {
+            "summary": "Avaliação dos itens",
+            "body": "Analisamos como os preços internos das skins de Rust são formados e usados para determinar o vencedor."
+          },
+          {
+            "summary": "Variedade de modos",
+            "body": "Formatos extras só agregam valor quando têm regras realmente diferentes e explicadas antes da rodada."
+          },
+          {
+            "summary": "Depósitos e saques",
+            "body": "Métodos de pagamento, taxas, mínimos, disponibilidade de itens, prazo de processamento e verificação de identidade entram na avaliação."
+          },
+          {
+            "summary": "Estabilidade e histórico",
+            "body": "Em um modo multijogador em tempo real, estabilidade, histórico das batalhas e status claros das operações são especialmente importantes."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de batalhas de caixas de Rust muda",
+        "paragraphs": [
+          "As plataformas adicionam caixas e formatos e podem alterar preço de entrada, bônus, taxas e regras de saque. O mesmo serviço pode, portanto, oferecer condições bem diferentes ao longo do tempo.",
+          "O mercado de itens de Rust também muda. Quando a plataforma atualiza preços internos, muda o valor total dos itens e pode mudar o resultado dos modos baseados nesse valor.",
+          "Se você não quer competir com outros jogadores, use <a href=\"/rust/caseopening\">sites de abertura de caixas de Rust</a>. Para um item específico sem resultado aleatório, compare <a href=\"/rust/buy-skins\">sites para comprar skins de Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "As batalhas de caixas acontecem em plataformas de terceiros e não são um modo oficial de Rust ou Steam.",
+        "items": [
+          {
+            "summary": "Confira o domínio e o login Steam",
+            "body": "Cópias de phishing podem imitar uma plataforma conhecida e a página de autenticação da Steam. Confira o domínio e nunca envie sua senha à equipe do site."
+          },
+          {
+            "summary": "Verifique as ofertas de troca da Steam",
+            "body": "Quando o prêmio é retirado em itens, confira remetente, conteúdo da oferta e cada skin antes de confirmar."
+          },
+          {
+            "summary": "Leia as regras do modo escolhido",
+            "body": "Preste atenção a empates, equipes, modos inversos e ao método de distribuição dos itens."
+          },
+          {
+            "summary": "Confira o saque antes de depositar",
+            "body": "Mínimos, taxas, verificação de identidade e restrições por país podem aparecer apenas na etapa de saque."
+          },
+          {
+            "summary": "Não trate batalhas como renda garantida",
+            "body": "Escolher caixas, número de jogadores ou formato não elimina o acaso. Defina limites de gasto e use recursos de <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre batalhas de caixas de Rust",
+        "items": [
+          {
+            "summary": "O que é uma batalha de caixas de Rust?",
+            "body": "É uma rodada em um site de terceiros em que vários participantes abrem o mesmo conjunto de caixas virtuais e o vencedor é definido por regras estabelecidas antes do início."
+          },
+          {
+            "summary": "Como o vencedor costuma ser definido?",
+            "body": "Normalmente pelo valor total dos itens, embora existam formatos em equipe e inversos. A regra exata deve ser conferida antes da rodada."
+          },
+          {
+            "summary": "Qual é a diferença para a abertura normal?",
+            "body": "Na <a href=\"/rust/caseopening\">abertura comum de caixas</a>, seu resultado não é comparado com outros usuários. Em uma batalha, também importam os resultados dos demais e a regra de distribuição."
+          },
+          {
+            "summary": "É possível verificar o resultado?",
+            "body": "Em sites com Provably Fair bem implementado, normalmente é possível conferir os dados da rodada e das aberturas individuais."
+          },
+          {
+            "summary": "O que acontece em caso de empate?",
+            "body": "Cada serviço pode usar uma condição adicional, uma nova seleção ou outra regra própria. Isso deve ser verificado antes."
+          },
+          {
+            "summary": "É possível participar gratuitamente?",
+            "body": "Alguns sites fazem batalhas gratuitas ou promocionais, que podem ter condições específicas para participação e saque."
+          },
+          {
+            "summary": "Posso sacar as skins ganhas para a Steam?",
+            "body": "Depende da plataforma, do estoque e das regras de saque. Alguns serviços usam ofertas de troca da Steam, enquanto outros creditam saldo interno."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Caixas, regras, preços internos, taxas, pagamentos, saques e estabilidade podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Kasa Savaşları: Mod Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Rust kasa savaşları, iki veya daha fazla katılımcının aynı sanal kasa setini açtığı üçüncü taraf çok oyunculu turlardır. Klasik formatta kazanan genellikle çıkan eşyaların toplam değerine göre belirlenir, ancak ödülün nasıl dağıtıldığı servisten servise değişebilir.",
+          "CSGOBROKER bu siteleri normal <a href=\"/rust/caseopening\">kasa açma</a> sitelerinden ayrı değerlendirir. Kasa içeriği ve düşme olasılıklarının yanında oyuncu sayısı, beraberlik kuralları, skin değerlemesi, ücretler, sonuç doğrulaması ve çekim şartları da önemlidir.",
+          "Aynı giriş fiyatı aynı koşullar anlamına gelmez. Bir platform tüm eşyaları kazanana verebilir, bir diğeri bunların iç bakiye değerini ödeyebilir; ek modlar ise kazananın belirlenme yöntemini tamamen değiştirebilir."
+        ]
+      },
+      "categories": {
+        "title": "Rust Kasa Savaşlarında Yaygın Formatlar",
+        "items": [
+          {
+            "title": "Klasik savaş",
+            "paragraphs": [
+              "Birden fazla katılımcı aynı kasaları açar ve platform çıkan eşyaların toplam değerini karşılaştırır. Katılmadan önce kazananın tüm eşyaları mı, bakiye değerini mi yoksa başka bir ödülü mü aldığını kontrol edin."
+            ]
+          },
+          {
+            "title": "Bire bir ve çok oyunculu savaşlar",
+            "paragraphs": [
+              "En basit formatta iki katılımcı vardır, ancak bazı servisler üç, dört veya daha fazla yer sunar. Oyuncu sayısı arttıkça toplam ödülün nasıl dağıtıldığı daha önemli hale gelir."
+            ]
+          },
+          {
+            "title": "Takım savaşları",
+            "paragraphs": [
+              "Bazı platformlar kullanıcıları takımlara ayırır ve takımların toplam eşya değerini karşılaştırır. Kazanan takımın ödülü daha sonra sitenin kurallarına göre üyeler arasında dağıtılabilir."
+            ]
+          },
+          {
+            "title": "Ters modlar",
+            "paragraphs": [
+              "Bazı sitelerde daha düşük toplam eşya değerine sahip oyuncu veya takım kazanır. Bu yalnızca kazananı belirleme kuralını değiştirir; kasa açılışları yine rastgeledir."
+            ]
+          },
+          {
+            "title": "Herkese açık ve özel odalar",
+            "paragraphs": [
+              "Odayı oluşturan kişi savaşı herkese açabilir veya özel bağlantı paylaşabilir. Kasalar, oyuncu sayısı ve ek ayarlar genellikle başlamadan önce seçilir."
+            ]
+          },
+          {
+            "title": "Ücretsiz ve promosyon savaşları",
+            "paragraphs": [
+              "Bazı servisler promosyon turları düzenler, bilet verir veya bonus bakiye kullanımına izin verir. Katılım ve çekim şartları standart ücretli savaşlardan farklı olabilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Kasa Savaşına Katılmadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Bu modda yalnız kasaları değil, turun tamamına ait kuralları değerlendirmek gerekir.",
+        "items": [
+          {
+            "summary": "Kazanan nasıl belirleniyor?",
+            "body": "Sitenin toplam eşya değerini mi, takım sonucunu mu yoksa ters modu mu kullandığını kontrol edin. Mekanik, katılım onaylanmadan önce açık olmalıdır."
+          },
+          {
+            "summary": "Çıkan eşyaları kim alıyor?",
+            "body": "Kazananın her şeyi aldığı format yaygındır ancak evrensel değildir. Bazı platformlar eşyaları iç bakiyeye çevirir veya farklı dağıtım yöntemi kullanır."
+          },
+          {
+            "summary": "Kasa içerikleri ve düşme olasılıkları",
+            "body": "Savaştaki her kasanın içeriğini açın ve yayınlanan olasılıkları inceleyin. Kapakta gösterilen pahalı bir eşya, tüm sonuç dağılımını anlatmaz."
+          },
+          {
+            "summary": "Rust skinleri nasıl değerleniyor?",
+            "body": "Kazanan eşya değerine göre seçiliyorsa, platformun iç fiyatı sonucu doğrudan etkiler. Bu fiyat Steam ve üçüncü taraf <a href=\"/rust/marketplaces\">Rust pazarlarından</a> farklı olabilir."
+          },
+          {
+            "summary": "Sonuç doğrulanabiliyor mu?",
+            "body": "Provably Fair kullanılıyorsa kullanıcı yalnızca bu terimi görmek yerine belirli açılışları ve tamamlanmış turu yayınlanan verilerle doğrulayabilmelidir."
+          },
+          {
+            "summary": "Çekim, ücretler ve kimlik doğrulama",
+            "body": "Para yatırmadan önce eşya bulunabilirliğini, çekim minimumlarını, ücretleri, bölgesel kısıtlamaları ve kimlik doğrulama gereksinimlerini kontrol edin."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Kasa Savaşı Sitelerini Nasıl Değerlendirir?",
+        "intro": "Çok oda veya etkileyici animasyon yeterli değildir; kuralların şeffaflığı ve ödülün pratik değeri daha önemlidir.",
+        "items": [
+          {
+            "summary": "Tur kurallarının şeffaflığı",
+            "body": "Katılmadan önce kasa seti, oyuncu sayısı, giriş değeri, kazananın belirlenme yöntemi ve eşya dağıtımı görünür olmalıdır."
+          },
+          {
+            "summary": "Olasılıklar ve sonuç doğrulaması",
+            "body": "Kasa olasılıklarının yayınlanıp yayınlanmadığını ve biten açılışlar ile savaşların doğrulanıp doğrulanamadığını dikkate alıyoruz."
+          },
+          {
+            "summary": "Eşya değerlemesi",
+            "body": "Rust skinlerinin iç fiyatlarının ne kadar açık biçimde oluşturulduğunu ve kazanan hesabında nasıl kullanıldığını inceliyoruz."
+          },
+          {
+            "summary": "Mod çeşitliliği",
+            "body": "Ek formatlar ancak kuralları gerçekten farklıysa ve turdan önce net biçimde açıklanıyorsa değer katar."
+          },
+          {
+            "summary": "Yatırma ve çekim",
+            "body": "Ödeme yöntemleri, ücretler, minimumlar, eşya bulunabilirliği, işlem süreleri ve kimlik doğrulama değerlendirmeye dahildir."
+          },
+          {
+            "summary": "İstikrar ve geçmiş",
+            "body": "Gerçek zamanlı çok oyunculu modlarda kesintisiz çalışma, tamamlanmış savaş geçmişi ve açık işlem durumları özellikle önemlidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Kasa Savaşı Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar yeni kasalar ve formatlar ekler; giriş fiyatlarını, bonusları, ücretleri ve çekim kurallarını değiştirebilir. Bu nedenle aynı servis zaman içinde önemli ölçüde farklı koşullar sunabilir.",
+          "Rust eşya pazarı da değişir. Platform iç skin fiyatlarını güncellediğinde toplam drop değeri değişir ve değer üzerinden kazanan seçilen modların sonucu etkilenebilir.",
+          "Diğer oyuncularla rekabet etmek istemiyorsanız <a href=\"/rust/caseopening\">Rust kasa açma sitelerini</a> kullanın. Rastgele sonuç olmadan belirli bir eşya istiyorsanız <a href=\"/rust/buy-skins\">Rust skin satın alma sitelerini</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Kasa savaşları üçüncü taraf platformlarda gerçekleşir ve Rust veya Steam'in resmi bir oyun modu değildir.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini kontrol edin",
+            "body": "Phishing kopyaları bilinen platformları ve Steam giriş sayfasını taklit edebilir. Girişten önce domaini kontrol edin ve şifrenizi site çalışanlarına vermeyin."
+          },
+          {
+            "summary": "Steam takas tekliflerini doğrulayın",
+            "body": "Ödül eşya olarak çekiliyorsa göndereni, teklif içeriğini ve her skini onaylamadan önce kontrol edin."
+          },
+          {
+            "summary": "Seçilen modun kurallarını okuyun",
+            "body": "Beraberliklere, takım ve ters modlara ve eşyaların nasıl dağıtıldığına özellikle dikkat edin."
+          },
+          {
+            "summary": "Para yatırmadan önce çekimi kontrol edin",
+            "body": "Minimumlar, ücretler, kimlik doğrulama ve ülke kısıtlamaları yalnız çekim sırasında ortaya çıkabilir."
+          },
+          {
+            "summary": "Savaşları garantili gelir olarak görmeyin",
+            "body": "Kasa, oyuncu sayısı veya format seçmek eşya düşüşlerindeki rastgeleliği ortadan kaldırmaz. Harcama limitleri belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Kasa Savaşları Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust kasa savaşı nedir?",
+            "body": "Birden fazla katılımcının aynı sanal kasa setini açtığı ve kazananın önceden belirtilen kurallarla seçildiği üçüncü taraf bir turdur."
+          },
+          {
+            "summary": "Kazanan genellikle nasıl belirlenir?",
+            "body": "Çoğunlukla çıkan eşyaların toplam değerine göre, ancak takım ve ters formatlar da vardır. Kesin kural turdan önce kontrol edilmelidir."
+          },
+          {
+            "summary": "Normal kasa açmadan farkı nedir?",
+            "body": "Normal <a href=\"/rust/caseopening\">kasa açmada</a> sonucunuz başka kullanıcılarla karşılaştırılmaz. Savaşta diğer katılımcıların sonuçları ve ödül dağıtım kuralı da önemlidir."
+          },
+          {
+            "summary": "Savaş sonucu doğrulanabilir mi?",
+            "body": "Provably Fair doğru uygulanmışsa genellikle belirli turun ve tek tek açılışların verileri doğrulanabilir."
+          },
+          {
+            "summary": "Eşya değerleri eşitse ne olur?",
+            "body": "Beraberlik kuralları servise göre değişir; ek koşul, yeni seçim veya platforma özgü başka bir yöntem kullanılabilir."
+          },
+          {
+            "summary": "Ücretsiz katılım mümkün mü?",
+            "body": "Bazı siteler ücretsiz veya promosyon savaşları sunar, ancak katılım ve çekim için ayrı şartlar uygulanabilir."
+          },
+          {
+            "summary": "Kazandığım Rust skinlerini Steam'e çekebilir miyim?",
+            "body": "Platforma, eşya stokuna ve çekim kurallarına bağlıdır. Bazı servisler Steam takas teklifi kullanır, bazıları iç bakiye verir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Kasalar, mod kuralları, iç fiyatlar, ücretler, ödeme yöntemleri, çekim ve site istikrarı değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Case Battles: यह Mode कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Rust case battles third-party multiplayer rounds हैं जहाँ दो या अधिक participants एक ही virtual case set खोलते हैं। Classic format में winner आम तौर पर dropped items की combined value से तय होता है, लेकिन prize distribution के exact rules हर service पर अलग हो सकते हैं।",
+          "CSGOBROKER इन sites को normal <a href=\"/rust/caseopening\">case opening</a> से अलग evaluate करता है। सिर्फ case contents और drop probabilities ही नहीं, बल्कि player count, tie rules, skin valuation, fees, result verification और withdrawal conditions भी महत्वपूर्ण हैं।",
+          "Same entry price का मतलब same conditions नहीं होता। एक platform सभी dropped items winner को दे सकती है, दूसरी उनका internal balance value credit कर सकती है, और special modes winner चुनने का पूरा rule बदल सकते हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Case Battles के Common Formats",
+        "items": [
+          {
+            "title": "Classic battle",
+            "paragraphs": [
+              "कई participants same cases खोलते हैं और platform dropped items की total value compare करती है। Join करने से पहले देखें कि winner को सभी items, उनका balance value या कोई दूसरा reward मिलता है।"
+            ]
+          },
+          {
+            "title": "One-on-one और multiplayer battles",
+            "paragraphs": [
+              "सबसे simple format में दो participants होते हैं, लेकिन कुछ services तीन, चार या अधिक slots देती हैं। Players बढ़ने पर combined prize pool के distribution rules समझना ज्यादा महत्वपूर्ण हो जाता है।"
+            ]
+          },
+          {
+            "title": "Team battles",
+            "paragraphs": [
+              "कुछ platforms users को teams में रखती हैं और हर team की combined item value compare करती हैं। Winning team का prize service के rules के अनुसार members में distribute हो सकता है।"
+            ]
+          },
+          {
+            "title": "Reverse modes",
+            "paragraphs": [
+              "कुछ sites में lower total item value वाला participant या team जीतता है। यह केवल winner-selection rule बदलता है; individual case openings फिर भी random रहती हैं।"
+            ]
+          },
+          {
+            "title": "Public और private rooms",
+            "paragraphs": [
+              "Battle creator room को public रख सकता है या private link share कर सकता है। Cases, player slots और optional settings आम तौर पर start से पहले चुनी जाती हैं।"
+            ]
+          },
+          {
+            "title": "Free और promotional battles",
+            "paragraphs": [
+              "कुछ services promotional rounds, tickets या bonus balance देती हैं। Participation और withdrawal conditions normal paid battles से अलग हो सकती हैं, इसलिए promotion rules पहले पढ़ें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Case Battle Join करने से पहले क्या Check करें",
+        "intro": "इस mode में individual cases के साथ पूरे round के rules भी evaluate करने चाहिए।",
+        "items": [
+          {
+            "summary": "Winner कैसे तय होता है",
+            "body": "Check करें कि site total item value, team result या reverse mode use करती है। Participation confirm करने से पहले winner logic स्पष्ट होना चाहिए।"
+          },
+          {
+            "summary": "Dropped items किसे मिलते हैं",
+            "body": "Winner-takes-all format common है लेकिन universal नहीं। कुछ platforms items को internal balance में convert करती हैं या अलग distribution method use करती हैं।"
+          },
+          {
+            "summary": "Case contents और drop probabilities",
+            "body": "Battle में शामिल हर case का content और published probabilities देखें। Cover पर दिखाया गया expensive item पूरे outcome distribution को represent नहीं करता।"
+          },
+          {
+            "summary": "Rust skins की valuation कैसे होती है",
+            "body": "अगर winner item value से तय होता है, तो platform की internal pricing result को सीधे प्रभावित करती है। यह Steam और third-party <a href=\"/rust/marketplaces\">Rust marketplaces</a> से अलग हो सकती है।"
+          },
+          {
+            "summary": "Result verify किया जा सकता है या नहीं",
+            "body": "Provably Fair use होने पर user को published data से specific openings और completed round verify करने में सक्षम होना चाहिए, सिर्फ technology का label दिखना पर्याप्त नहीं है।"
+          },
+          {
+            "summary": "Withdrawal, fees और identity verification",
+            "body": "Deposit से पहले item availability, withdrawal minimums, fees, regional restrictions और identity-verification requirements check करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Case Battle Sites को कैसे Rate करता है",
+        "intro": "बहुत सारी rooms या attractive animations पर्याप्त नहीं हैं; rule transparency और prize की practical value ज्यादा महत्वपूर्ण हैं।",
+        "items": [
+          {
+            "summary": "Round-rule transparency",
+            "body": "Join करने से पहले case set, player count, entry value, winner logic और item-distribution rules दिखाई देने चाहिए।"
+          },
+          {
+            "summary": "Odds और result verification",
+            "body": "हम देखते हैं कि case probabilities publish होती हैं या नहीं और completed openings तथा battles verify की जा सकती हैं या नहीं।"
+          },
+          {
+            "summary": "Item valuation",
+            "body": "हम review करते हैं कि internal Rust skin prices कैसे बनती हैं और winner calculation में उनका उपयोग कितना स्पष्ट है।"
+          },
+          {
+            "summary": "Mode variety",
+            "body": "Extra formats तभी useful हैं जब उनके rules वास्तव में अलग हों और round से पहले स्पष्ट रूप से explain किए गए हों।"
+          },
+          {
+            "summary": "Deposits और withdrawals",
+            "body": "Payment methods, fees, minimums, item availability, processing times और identity checks सभी rating में शामिल हैं।"
+          },
+          {
+            "summary": "Stability और history",
+            "body": "Real-time multiplayer mode में reliable performance, completed battle history और clear transaction status विशेष रूप से important हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Case Battle Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms नए cases और formats जोड़ती हैं और entry prices, bonuses, fees तथा withdrawal rules बदल सकती हैं। इसलिए वही service समय के साथ काफी अलग conditions offer कर सकती है।",
+          "Rust item market भी बदलता है। जब platform internal skin prices update करती है, total dropped-item value बदलती है और value-based winner modes का result प्रभावित हो सकता है।",
+          "अगर दूसरे players से compete नहीं करना है, तो <a href=\"/rust/caseopening\">Rust case opening sites</a> देखें। किसी specific item के लिए बिना random result के <a href=\"/rust/buy-skins\">Rust skin buying sites</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Case battles third-party platforms पर होते हैं और Rust या Steam का official game mode नहीं हैं।",
+        "items": [
+          {
+            "summary": "Domain और Steam sign-in verify करें",
+            "body": "Phishing copies known platforms और Steam authentication page की नकल कर सकती हैं। Login से पहले domain check करें और password site staff को न दें।"
+          },
+          {
+            "summary": "Steam Trade Offers verify करें",
+            "body": "जब winnings items के रूप में withdraw हों, तो sender, offer contents और हर skin को confirmation से पहले check करें।"
+          },
+          {
+            "summary": "Selected mode के rules पढ़ें",
+            "body": "Tie rules, team formats, reverse modes और item distribution पर खास ध्यान दें।"
+          },
+          {
+            "summary": "Deposit से पहले withdrawal check करें",
+            "body": "Minimum amounts, fees, identity checks और country restrictions withdrawal के समय लागू हो सकती हैं।"
+          },
+          {
+            "summary": "Battles को guaranteed income न मानें",
+            "body": "Cases, player count या format चुनने से item drops की randomness खत्म नहीं होती। Spending limits पहले तय करें और <a href=\"/responsibility\">responsible gambling</a> resources देखें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Case Battles के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust case battle क्या है?",
+            "body": "Third-party site पर ऐसा round जहाँ कई participants same virtual cases खोलते हैं और predefined rules के अनुसार winner चुना जाता है।"
+          },
+          {
+            "summary": "Winner आम तौर पर कैसे तय होता है?",
+            "body": "अक्सर dropped items की total value से, लेकिन team और reverse formats भी होते हैं। Exact rule round से पहले check करना चाहिए।"
+          },
+          {
+            "summary": "Normal case opening से क्या फर्क है?",
+            "body": "Normal <a href=\"/rust/caseopening\">case opening</a> में आपका result दूसरे users से compare नहीं होता। Battle में अन्य participants और prize-distribution rule भी outcome को प्रभावित करते हैं।"
+          },
+          {
+            "summary": "क्या battle result verify हो सकता है?",
+            "body": "Properly implemented Provably Fair system में specific round और individual openings के data आम तौर पर verify किए जा सकते हैं।"
+          },
+          {
+            "summary": "अगर item values equal हों तो क्या होता है?",
+            "body": "Tie handling service पर depend करती है और extra condition, another selection या platform-specific rule use हो सकता है। इसे पहले check करें।"
+          },
+          {
+            "summary": "क्या free participation मिल सकती है?",
+            "body": "कुछ sites free या promotional battles offer करती हैं, लेकिन participation और withdrawal के अलग rules हो सकते हैं।"
+          },
+          {
+            "summary": "क्या won Rust skins Steam में withdraw कर सकते हैं?",
+            "body": "यह platform, item availability और withdrawal rules पर depend करता है। कुछ services Steam Trade Offers देती हैं, दूसरी internal balance credit करती हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Cases, battle rules, internal prices, fees, payment methods, withdrawals और platform stability बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

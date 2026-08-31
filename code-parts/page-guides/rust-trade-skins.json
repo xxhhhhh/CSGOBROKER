@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-trade-skins",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Обмен скинов Rust: как работают сервисы и что сравнивать",
+        "paragraphs": [
+          "Сайты обмена скинов Rust позволяют отдать один или несколько предметов и сразу выбрать другие предметы из инвентаря площадки. В отличие от <a href=\"/rust/sell-skins\">продажи скинов</a>, цель операции — получить новый предмет, а не вывести деньги. В отличие от <a href=\"/rust/upgrader\">случайного улучшения</a>, результат обычного обмена известен до подтверждения.",
+          "Большинство таких сервисов используют торговых ботов: пользователь авторизуется через Steam, выбирает свои предметы и скины площадки, после чего получает предложение обмена Steam. Разница между стоимостью передаваемых и получаемых предметов учитывает комиссию или внутреннюю систему цен сервиса.",
+          "Поэтому сравнивать сервисы обмена лучше не по заявленной комиссии в отрыве от цен, а по итоговой сделке: сколько площадка оценивает ваши предметы, сколько просит за выбранные скины, какой ассортимент доступен и что именно приходит в предложении обмена Steam."
+        ]
+      },
+      "categories": {
+        "title": "Как проходит обмен скинов Rust",
+        "items": [
+          {
+            "title": "Выбор своих предметов",
+            "paragraphs": [
+              "После входа через Steam пользователь выбирает скины из доступного инвентаря. Площадка показывает их внутреннюю стоимость."
+            ]
+          },
+          {
+            "title": "Выбор предметов площадки",
+            "paragraphs": [
+              "Затем выбираются скины, которые пользователь хочет получить. Их цена может отличаться от Steam Community Market и других торговых площадок."
+            ]
+          },
+          {
+            "title": "Расчёт разницы",
+            "paragraphs": [
+              "Если стоимость двух сторон не совпадает, сервис предлагает добавить предметы, уменьшить набор или доплатить, если такая возможность поддерживается."
+            ]
+          },
+          {
+            "title": "Подтверждение сделки",
+            "paragraphs": [
+              "До окончательного подтверждения должны быть видны все предметы и итоговая разница стоимости."
+            ]
+          },
+          {
+            "title": "Предложение обмена Steam",
+            "paragraphs": [
+              "После подтверждения бот отправляет официальное предложение обмена. Его необходимо внимательно сверить перед принятием через Steam Guard."
+            ]
+          },
+          {
+            "title": "Получение новых скинов",
+            "paragraphs": [
+              "После принятия корректного предложения предметы переходят между инвентарями. Время зависит от работы бота, доступности предметов и ограничений Steam."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать при выборе сервиса обмена скинов Rust",
+        "intro": "Главная стоимость обмена часто скрыта не в отдельной строке «комиссия», а в разнице внутренних цен приёма и выдачи предметов.",
+        "items": [
+          {
+            "summary": "Оценка ваших скинов",
+            "body": "Сравните, сколько сервис начисляет за передаваемые предметы относительно внешнего рынка и других обменников."
+          },
+          {
+            "summary": "Цена получаемых предметов",
+            "body": "Проверьте, не завышена ли внутренняя цена скинов из инвентаря площадки. Выгодная оценка вашей стороны может компенсироваться дорогой ценой получаемых предметов."
+          },
+          {
+            "summary": "Итоговая разница стоимости",
+            "body": "Лучше сравнивать конкретную сделку целиком: стоимость отданных предметов против стоимости получаемых после всех комиссий и наценок."
+          },
+          {
+            "summary": "Ассортимент и ликвидность",
+            "body": "Большой инвентарь повышает шанс сразу найти нужный Rust-скин. Для редких предметов особенно важны реальное наличие, текущий спрос и внутренняя цена площадки, потому что такие позиции могут появляться в обмене нерегулярно."
+          },
+          {
+            "summary": "Доплата и остаток",
+            "body": "Некоторые сайты позволяют доплатить деньгами или балансом; другие требуют точнее подбирать предметы. Важно знать, что происходит с небольшой разницей стоимости."
+          },
+          {
+            "summary": "Безопасность предложения обмена",
+            "body": "Сервис должен понятно показывать торгового бота и состав операции, чтобы пользователь мог сверить предложение непосредственно в Steam."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сервисы обмена скинов Rust",
+        "intro": "Для обменника итоговая ценность определяется сочетанием внутренних цен, ассортимента и надёжности самой торговой операции.",
+        "items": [
+          {
+            "summary": "Внутренние цены",
+            "body": "Сравниваем оценку принимаемых и выдаваемых предметов и прозрачность расчёта."
+          },
+          {
+            "summary": "Фактическая стоимость сделки",
+            "body": "Учитываем комиссию, наценку, разницу цен и необходимость дополнительной доплаты."
+          },
+          {
+            "summary": "Инвентарь",
+            "body": "Оцениваем количество доступных предметов, фильтры, частоту обновления и наличие популярных и дорогих скинов."
+          },
+          {
+            "summary": "Скорость и работа ботов",
+            "body": "Важны быстрое создание предложения обмена Steam, корректное резервирование предметов и стабильность всей операции."
+          },
+          {
+            "summary": "Способы доплаты и ограничения",
+            "body": "Учитываются баланс, карты, криптовалюты, минимальные суммы, проверка личности и региональные ограничения, если они применяются."
+          },
+          {
+            "summary": "Безопасность и поддержка",
+            "body": "Проверяем понятность Steam-операции, историю сделок и доступность поддержки при зависшем или неверном обмене."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему условия обмена меняются",
+        "paragraphs": [
+          "Рыночная цена скинов постоянно меняется, поэтому обменники обновляют внутренние оценки и состав инвентаря. Одна и та же пара предметов может иметь разную итоговую разницу в разные дни.",
+          "Ликвидность также важна: востребованный предмет может быстро исчезнуть из инвентаря, а редкий или дорогой скин — появляться только периодически.",
+          "Если цель — получить деньги, а не другой предмет, используйте <a href=\"/rust/sell-skins\">продажу скинов</a> или <a href=\"/rust/instant-sell\">быструю продажу</a>. Если хотите выбирать предложения между пользователями, сравните <a href=\"/rust/marketplaces\">торговые площадки</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при обмене скинов",
+        "intro": "Основной риск обмена связан с поддельной авторизацией, подменой торгового бота и невнимательным подтверждением предложения обмена Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте адрес сайта",
+            "body": "Открывайте обменник только по правильному домену и не вводите данные Steam в сторонние формы."
+          },
+          {
+            "summary": "Сверяйте отправителя предложения",
+            "body": "Имя и аватар можно скопировать, поэтому ориентируйтесь на информацию о торговом боте внутри сервиса и детали самого предложения обмена."
+          },
+          {
+            "summary": "Проверяйте каждый предмет",
+            "body": "Перед подтверждением убедитесь, что отдаваемые и получаемые скины полностью совпадают с выбранной сделкой."
+          },
+          {
+            "summary": "Не передавайте Steam Guard-коды",
+            "body": "Поддержке не нужен ваш пароль или код двухфакторной аутентификации для обычного обмена."
+          },
+          {
+            "summary": "Учитывайте ограничения Steam",
+            "body": "Задержка обмена, недавно изменённые настройки безопасности и другие ограничения Steam могут задерживать или блокировать обмен."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы об обмене скинов Rust",
+        "items": [
+          {
+            "summary": "Что такое обмен скинов Rust?",
+            "body": "Это операция, при которой один или несколько ваших предметов меняются на другие скины через инвентарь площадки или её торговых ботов."
+          },
+          {
+            "summary": "Чем обмен отличается от продажи?",
+            "body": "При <a href=\"/rust/sell-skins\">продаже</a> вы получаете деньги или выводимый баланс, а при обмене — другие игровые предметы."
+          },
+          {
+            "summary": "Почему стоимость двух сторон не совпадает?",
+            "body": "Обменник использует собственные цены и зарабатывает на комиссии, наценке или разнице между ценой приёма и выдачи предметов."
+          },
+          {
+            "summary": "Можно ли обменять несколько скинов на один?",
+            "body": "На большинстве сервисов да, если суммарной стоимости хватает и выбранный предмет доступен."
+          },
+          {
+            "summary": "Можно ли доплатить за более дорогой скин?",
+            "body": "Некоторые площадки поддерживают доплату балансом, картой или криптовалютой; конкретные способы зависят от сайта."
+          },
+          {
+            "summary": "Почему цена скина отличается от Steam?",
+            "body": "Сервисы используют собственные источники цен, учитывают ликвидность и закладывают комиссию или наценку."
+          },
+          {
+            "summary": "Как безопасно принять предложение обмена?",
+            "body": "Сверьте отправителя, все предметы и направление обмена перед подтверждением операции через Steam Guard."
+          },
+          {
+            "summary": "Почему рейтинг обменников на CSGOBROKER меняется?",
+            "body": "Меняются внутренние цены, инвентарь, фактическая стоимость обмена, скорость ботов, платежи и поддержка."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Skin Trading Sites: How Exchanges Work and What to Compare",
+        "paragraphs": [
+          "Rust skin trading sites let users give one or more items and immediately choose different items from the platform's inventory. Unlike <a href=\"/rust/sell-skins\">selling skins</a>, the goal is another item rather than a cash withdrawal. Unlike a random <a href=\"/rust/upgrader\">skin upgrader</a>, the result of a normal trade is known before confirmation.",
+          "Most services use trading bots: users sign in through Steam, select their items and the site's items, and then receive a Steam Trade Offer. The difference between the two sides reflects the service's fee or internal pricing model.",
+          "Trading sites should therefore be compared by the complete deal rather than a headline fee alone: how your skins are valued, how much the desired items cost, what inventory is available, and what exactly appears in the Trade Offer."
+        ]
+      },
+      "categories": {
+        "title": "How Rust Skin Trading Works",
+        "items": [
+          {
+            "title": "Selecting your items",
+            "paragraphs": [
+              "After Steam sign-in, users choose eligible skins from their inventory and see the site's internal valuation."
+            ]
+          },
+          {
+            "title": "Selecting platform items",
+            "paragraphs": [
+              "Users then choose the skins they want from the site's inventory. Prices can differ from Steam Community Market and other markets."
+            ]
+          },
+          {
+            "title": "Balancing the values",
+            "paragraphs": [
+              "If the two sides do not match, the service may ask for more items, a smaller selection, or an additional payment when supported."
+            ]
+          },
+          {
+            "title": "Confirming the deal",
+            "paragraphs": [
+              "All items and the final value difference should be visible before confirmation."
+            ]
+          },
+          {
+            "title": "Steam Trade Offer",
+            "paragraphs": [
+              "The site's bot sends an official offer, which should be checked carefully before Steam Guard confirmation."
+            ]
+          },
+          {
+            "title": "Receiving the new skins",
+            "paragraphs": [
+              "After a correct offer is accepted, items move between inventories. Timing depends on bot operation, item availability, and Steam restrictions."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare When Choosing a Skin Trading Site",
+        "intro": "The real cost of a trade is often embedded in the difference between the site's intake and inventory valuations rather than shown as a single fee.",
+        "items": [
+          {
+            "summary": "Valuation of your skins",
+            "body": "Compare how much the service credits your items relative to external markets and competing exchanges."
+          },
+          {
+            "summary": "Price of received items",
+            "body": "Check whether the platform's inventory prices are marked up. A strong input valuation can be offset by expensive target items."
+          },
+          {
+            "summary": "Total value difference",
+            "body": "Compare the complete deal after fees and pricing differences rather than one percentage in isolation."
+          },
+          {
+            "summary": "Inventory and liquidity",
+            "body": "A deeper inventory improves the chance of immediately finding the Rust skin you want. For uncommon items, actual availability, current demand, and the platform's internal valuation matter because such skins may appear only intermittently."
+          },
+          {
+            "summary": "Top-ups and leftover value",
+            "body": "Some sites allow additional payment or balance adjustments, while others require a closer value match. Check what happens to small differences."
+          },
+          {
+            "summary": "Trade Offer safety",
+            "body": "The service should clearly identify the bot and transaction contents so the offer can be verified in Steam."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Skin Trading Sites",
+        "intro": "The value of an exchange depends on internal pricing, inventory depth, and the reliability of the trade itself.",
+        "items": [
+          {
+            "summary": "Internal pricing",
+            "body": "We compare valuations for deposited and received items and how clearly calculations are shown."
+          },
+          {
+            "summary": "Real transaction cost",
+            "body": "Fees, markup, value differences, and additional top-ups are considered together."
+          },
+          {
+            "summary": "Inventory",
+            "body": "We evaluate item count, filters, refresh frequency, and availability of popular and expensive skins."
+          },
+          {
+            "summary": "Bot speed and reliability",
+            "body": "Fast Trade Offer creation, correct item reservation, and transaction stability matter."
+          },
+          {
+            "summary": "Top-up methods and restrictions",
+            "body": "Balance, cards, crypto, minimums, KYC, and location limits are included where relevant."
+          },
+          {
+            "summary": "Security and support",
+            "body": "Clear Steam operations, transaction history, and support for stuck or incorrect trades contribute to the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Skin Trading Conditions Change",
+        "paragraphs": [
+          "Skin market prices move constantly, so trading sites update internal valuations and inventory. The same pair of items can have a different value gap on different days.",
+          "Liquidity matters as well: popular skins can disappear quickly, while rare or expensive items may only be available occasionally.",
+          "If the goal is cash rather than another item, compare <a href=\"/rust/sell-skins\">skin selling sites</a> or <a href=\"/rust/instant-sell\">instant selling</a>. For user-to-user listings, use <a href=\"/rust/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Trading Rust Skins",
+        "intro": "The main risks are fake sign-in pages, bot impersonation, and approving an incorrect Steam Trade Offer.",
+        "items": [
+          {
+            "summary": "Verify the website address",
+            "body": "Use the correct domain and never enter Steam credentials into an unrelated form."
+          },
+          {
+            "summary": "Verify the offer sender",
+            "body": "Names and avatars can be copied, so use the site's bot information and the details of the actual offer."
+          },
+          {
+            "summary": "Check every item",
+            "body": "Before confirmation, make sure all incoming and outgoing skins match the deal you selected."
+          },
+          {
+            "summary": "Never share Steam Guard codes",
+            "body": "Support does not need your password or two-factor code for a normal trade."
+          },
+          {
+            "summary": "Account for Steam restrictions",
+            "body": "Trade holds and recent security changes can delay or block exchanges."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Skin Trading",
+        "items": [
+          {
+            "summary": "What is Rust skin trading?",
+            "body": "Exchanging one or more of your items for different skins through a platform inventory or its trading bots."
+          },
+          {
+            "summary": "How is trading different from selling?",
+            "body": "With <a href=\"/rust/sell-skins\">selling</a>, you receive cash or withdrawable balance; trading gives you other game items."
+          },
+          {
+            "summary": "Why are the two sides not equal in value?",
+            "body": "The site uses its own pricing and earns through fees, markup, or the difference between intake and inventory prices."
+          },
+          {
+            "summary": "Can several skins be traded for one?",
+            "body": "Usually yes when their total credited value is enough and the target item is available."
+          },
+          {
+            "summary": "Can I add money for a more expensive skin?",
+            "body": "Some platforms support balance, card, or crypto top-ups; available methods vary."
+          },
+          {
+            "summary": "Why does a skin price differ from Steam?",
+            "body": "Sites use their own price sources, account for liquidity, and include fees or markup."
+          },
+          {
+            "summary": "How do I safely accept a Trade Offer?",
+            "body": "Verify the sender, every item, and the direction of the trade before Steam Guard confirmation."
+          },
+          {
+            "summary": "Why does the CSGOBROKER trading-site ranking change?",
+            "body": "Internal prices, inventory, transaction cost, bot speed, payments, and support can change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Intercambio de skins de Rust: cómo funcionan los sitios y qué comparar",
+        "paragraphs": [
+          "Los sitios de intercambio de skins de Rust permiten entregar uno o varios objetos y elegir inmediatamente otros del inventario de la plataforma. A diferencia de <a href=\"/rust/sell-skins\">vender skins</a>, el objetivo es recibir otro objeto y no retirar dinero. A diferencia de una <a href=\"/rust/upgrader\">mejora aleatoria</a>, el resultado de un intercambio normal se conoce antes de confirmar.",
+          "La mayoría de servicios usan bots: el usuario entra con Steam, selecciona sus objetos y los de la plataforma y después recibe un Steam Trade Offer. La diferencia entre los valores refleja la comisión o el sistema interno de precios.",
+          "Por eso conviene comparar la operación completa y no solo una comisión anunciada: cuánto valora el sitio tus skins, cuánto cobra por las que quieres recibir, qué inventario existe y qué objetos aparecen exactamente en el Trade Offer."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona el intercambio de skins Rust",
+        "items": [
+          {
+            "title": "Seleccionar tus objetos",
+            "paragraphs": [
+              "Tras iniciar sesión con Steam, eliges skins aptas de tu inventario y ves la valoración interna del sitio."
+            ]
+          },
+          {
+            "title": "Elegir objetos de la plataforma",
+            "paragraphs": [
+              "Después seleccionas las skins que quieres recibir. Sus precios pueden diferir de Steam Community Market y otros mercados."
+            ]
+          },
+          {
+            "title": "Equilibrar los valores",
+            "paragraphs": [
+              "Si ambas partes no coinciden, el servicio puede pedir más objetos, reducir la selección o permitir un pago adicional."
+            ]
+          },
+          {
+            "title": "Confirmar la operación",
+            "paragraphs": [
+              "Antes de confirmar deben mostrarse todos los objetos y la diferencia final de valor."
+            ]
+          },
+          {
+            "title": "Steam Trade Offer",
+            "paragraphs": [
+              "El bot envía una oferta oficial que debe revisarse cuidadosamente antes de confirmar con Steam Guard."
+            ]
+          },
+          {
+            "title": "Recibir las nuevas skins",
+            "paragraphs": [
+              "Tras aceptar una oferta correcta, los objetos cambian de inventario. El tiempo depende de bots, disponibilidad y restricciones de Steam."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar al elegir un sitio de intercambio",
+        "intro": "El coste real suele estar en la diferencia entre la valoración de tus objetos y el precio de los objetos del sitio, no solo en una comisión visible.",
+        "items": [
+          {
+            "summary": "Valoración de tus skins",
+            "body": "Compara cuánto acredita el servicio frente a mercados externos y otros intercambiadores."
+          },
+          {
+            "summary": "Precio de las skins recibidas",
+            "body": "Revisa si el inventario tiene precios elevados. Una buena valoración de entrada puede quedar anulada por objetivos caros."
+          },
+          {
+            "summary": "Diferencia total de valor",
+            "body": "Compara la operación completa después de comisiones y márgenes, no un único porcentaje."
+          },
+          {
+            "summary": "Inventario y liquidez",
+            "body": "Un inventario amplio aumenta la posibilidad de encontrar inmediatamente la skin de Rust deseada. En objetos poco comunes importan especialmente la disponibilidad real, la demanda actual y la valoración interna de la plataforma."
+          },
+          {
+            "summary": "Pago adicional y saldo restante",
+            "body": "Algunos sitios permiten completar con saldo, tarjeta o cripto; otros exigen un ajuste más exacto. Revisa qué ocurre con diferencias pequeñas."
+          },
+          {
+            "summary": "Seguridad del Trade Offer",
+            "body": "El sitio debe identificar claramente el bot y el contenido para poder comprobar la oferta en Steam."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios de intercambio",
+        "intro": "El valor final depende de precios internos, profundidad del inventario y fiabilidad de la operación.",
+        "items": [
+          {
+            "summary": "Precios internos",
+            "body": "Comparamos valoración de objetos entregados y recibidos y la transparencia del cálculo."
+          },
+          {
+            "summary": "Coste real de la operación",
+            "body": "Consideramos comisión, margen, diferencia de precios y pagos adicionales."
+          },
+          {
+            "summary": "Inventario",
+            "body": "Valoramos cantidad, filtros, frecuencia de actualización y disponibilidad de skins populares y caras."
+          },
+          {
+            "summary": "Velocidad y bots",
+            "body": "Importan la creación rápida del Trade Offer, reserva correcta de objetos y estabilidad."
+          },
+          {
+            "summary": "Pagos adicionales y restricciones",
+            "body": "Incluimos saldo, tarjetas, cripto, mínimos, KYC y restricciones regionales cuando proceda."
+          },
+          {
+            "summary": "Seguridad y soporte",
+            "body": "Operaciones Steam claras, historial y soporte para intercambios bloqueados o incorrectos influyen en la nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las condiciones de intercambio",
+        "paragraphs": [
+          "Los precios de skins cambian continuamente, por lo que los sitios actualizan valoraciones e inventario. La misma pareja de objetos puede tener una diferencia distinta otro día.",
+          "La liquidez también importa: una skin popular puede desaparecer rápido y un objeto raro o caro aparecer solo de forma ocasional.",
+          "Si quieres dinero y no otro objeto, compara <a href=\"/rust/sell-skins\">venta de skins</a> o <a href=\"/rust/instant-sell\">venta rápida</a>. Para ofertas entre usuarios, consulta <a href=\"/rust/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al intercambiar skins",
+        "intro": "Los principales riesgos son páginas de acceso falsas, bots suplantados y confirmar un Steam Trade Offer incorrecto.",
+        "items": [
+          {
+            "summary": "Comprueba la dirección",
+            "body": "Usa el dominio correcto y nunca introduzcas credenciales de Steam en formularios ajenos."
+          },
+          {
+            "summary": "Comprueba el remitente",
+            "body": "Nombre y avatar pueden copiarse; utiliza la información del bot del sitio y los detalles de la oferta."
+          },
+          {
+            "summary": "Revisa cada objeto",
+            "body": "Antes de confirmar, comprueba que todas las skins entrantes y salientes coinciden con tu operación."
+          },
+          {
+            "summary": "No compartas códigos Steam Guard",
+            "body": "El soporte no necesita contraseña ni código de dos factores para un intercambio normal."
+          },
+          {
+            "summary": "Ten en cuenta restricciones de Steam",
+            "body": "Trade holds y cambios recientes de seguridad pueden retrasar o bloquear operaciones."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre intercambio de skins Rust",
+        "items": [
+          {
+            "summary": "¿Qué es el intercambio de skins de Rust?",
+            "body": "Cambiar uno o varios objetos propios por otras skins mediante el inventario de una plataforma o sus bots."
+          },
+          {
+            "summary": "¿En qué se diferencia de vender?",
+            "body": "Al <a href=\"/rust/sell-skins\">vender</a> recibes dinero o saldo retirable; al intercambiar recibes otros objetos."
+          },
+          {
+            "summary": "¿Por qué los valores no son iguales?",
+            "body": "El sitio usa precios propios y gana mediante comisión, margen o diferencia entre valoración de entrada y precio del inventario."
+          },
+          {
+            "summary": "¿Puedo cambiar varias skins por una?",
+            "body": "Normalmente sí si el valor acreditado es suficiente y el objeto está disponible."
+          },
+          {
+            "summary": "¿Puedo añadir dinero para una skin más cara?",
+            "body": "Algunas plataformas permiten saldo, tarjeta o cripto; depende del servicio."
+          },
+          {
+            "summary": "¿Por qué el precio difiere de Steam?",
+            "body": "Los sitios usan sus propias fuentes, consideran liquidez e incluyen margen o comisión."
+          },
+          {
+            "summary": "¿Cómo aceptar un Trade Offer con seguridad?",
+            "body": "Comprueba remitente, todos los objetos y dirección del intercambio antes de Steam Guard."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian precios internos, inventario, coste real, velocidad de bots, pagos y soporte."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Troca de skins de Rust: como os sites funcionam e o que comparar",
+        "paragraphs": [
+          "Sites de troca de skins de Rust permitem entregar um ou mais itens e escolher imediatamente outros do inventário da plataforma. Diferente de <a href=\"/rust/sell-skins\">vender skins</a>, o objetivo é receber outro item, não sacar dinheiro. Diferente de uma <a href=\"/rust/upgrader\">melhoria aleatória</a>, o resultado de uma troca normal é conhecido antes da confirmação.",
+          "A maioria usa bots: o usuário entra via Steam, seleciona seus itens e os itens do site e recebe um Steam Trade Offer. A diferença entre os lados reflete comissão ou o sistema interno de preços.",
+          "Por isso é melhor comparar a operação completa, não apenas uma taxa anunciada: quanto suas skins valem, quanto custam as skins desejadas, qual inventário está disponível e o que aparece exatamente no Trade Offer."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona a troca de skins Rust",
+        "items": [
+          {
+            "title": "Selecionar seus itens",
+            "paragraphs": [
+              "Após entrar com Steam, o usuário escolhe skins elegíveis e vê a avaliação interna."
+            ]
+          },
+          {
+            "title": "Escolher itens da plataforma",
+            "paragraphs": [
+              "Depois escolhe as skins que quer receber. Os preços podem diferir da Steam Community Market e de outros mercados."
+            ]
+          },
+          {
+            "title": "Equilibrar os valores",
+            "paragraphs": [
+              "Se os lados não coincidem, o serviço pode pedir mais itens, reduzir a seleção ou aceitar pagamento adicional."
+            ]
+          },
+          {
+            "title": "Confirmar a operação",
+            "paragraphs": [
+              "Todos os itens e a diferença final devem aparecer antes da confirmação."
+            ]
+          },
+          {
+            "title": "Steam Trade Offer",
+            "paragraphs": [
+              "O bot envia uma oferta oficial que deve ser revisada antes de confirmar pelo Steam Guard."
+            ]
+          },
+          {
+            "title": "Receber novas skins",
+            "paragraphs": [
+              "Após aceitar a oferta correta, os itens mudam de inventário. O tempo depende dos bots, disponibilidade e restrições Steam."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar ao escolher um site de troca",
+        "intro": "O custo real costuma estar na diferença entre a avaliação dos seus itens e o preço dos itens do site, não em uma única taxa.",
+        "items": [
+          {
+            "summary": "Avaliação das suas skins",
+            "body": "Compare quanto o serviço credita em relação a mercados externos e outros sites."
+          },
+          {
+            "summary": "Preço das skins recebidas",
+            "body": "Veja se o inventário está com preço elevado. Boa avaliação de entrada pode ser anulada por itens-alvo caros."
+          },
+          {
+            "summary": "Diferença total de valor",
+            "body": "Compare a operação completa depois de taxas e margens."
+          },
+          {
+            "summary": "Inventário e liquidez",
+            "body": "Um inventário amplo aumenta a chance de encontrar imediatamente a skin de Rust desejada. Para itens pouco comuns, disponibilidade real, demanda atual e avaliação interna da plataforma são especialmente importantes."
+          },
+          {
+            "summary": "Pagamento adicional e saldo restante",
+            "body": "Alguns sites aceitam saldo, cartão ou cripto para completar; outros exigem valores mais próximos. Confira pequenas diferenças."
+          },
+          {
+            "summary": "Segurança do Trade Offer",
+            "body": "O serviço deve identificar claramente bot e conteúdo para a oferta ser conferida na Steam."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de troca",
+        "intro": "O valor final depende de preços internos, inventário e confiabilidade da operação.",
+        "items": [
+          {
+            "summary": "Preços internos",
+            "body": "Comparamos avaliação dos itens entregues e recebidos e a transparência do cálculo."
+          },
+          {
+            "summary": "Custo real",
+            "body": "Taxas, margem, diferença de preços e complementos são considerados juntos."
+          },
+          {
+            "summary": "Inventário",
+            "body": "Avaliamos quantidade, filtros, atualização e disponibilidade de skins populares e caras."
+          },
+          {
+            "summary": "Velocidade e bots",
+            "body": "Criação rápida de Trade Offer, reserva correta e estabilidade são importantes."
+          },
+          {
+            "summary": "Complementos e restrições",
+            "body": "Saldo, cartões, cripto, mínimos, KYC e limitações regionais entram quando relevantes."
+          },
+          {
+            "summary": "Segurança e suporte",
+            "body": "Operações Steam claras, histórico e suporte para trocas travadas ou incorretas influenciam a nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que as condições de troca mudam",
+        "paragraphs": [
+          "Preços das skins mudam continuamente, então os sites atualizam avaliações e inventário. A mesma dupla de itens pode ter diferença diferente em outros dias. Isso significa que uma troca que parecia equilibrada anteriormente pode ficar menos vantajosa quando o serviço atualiza seus preços internos.",
+          "Liquidez também importa: skins populares podem desaparecer rapidamente e itens raros ou caros aparecer apenas ocasionalmente.",
+          "Se o objetivo é dinheiro, compare <a href=\"/rust/sell-skins\">venda de skins</a> ou <a href=\"/rust/instant-sell\">venda rápida</a>. Para ofertas entre usuários, veja <a href=\"/rust/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao trocar skins",
+        "intro": "Os principais riscos são páginas falsas de login, bots imitados e confirmação de um Steam Trade Offer incorreto.",
+        "items": [
+          {
+            "summary": "Confira o endereço",
+            "body": "Use o domínio correto e nunca insira credenciais Steam em formulários de terceiros."
+          },
+          {
+            "summary": "Confira o remetente",
+            "body": "Nome e avatar podem ser copiados; use as informações do bot do serviço e os detalhes da oferta. Antes de aceitar, compare também todos os itens da oferta com a operação exibida no próprio site."
+          },
+          {
+            "summary": "Revise cada item",
+            "body": "Antes de confirmar, confira se todas as skins recebidas e enviadas correspondem à operação."
+          },
+          {
+            "summary": "Não compartilhe Steam Guard",
+            "body": "Suporte não precisa de senha nem código de dois fatores para uma troca normal."
+          },
+          {
+            "summary": "Considere restrições Steam",
+            "body": "Trade holds e mudanças recentes de segurança podem atrasar ou bloquear trocas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre troca de skins Rust",
+        "items": [
+          {
+            "summary": "O que é troca de skins Rust?",
+            "body": "Trocar um ou mais itens próprios por outras skins através do inventário da plataforma ou de seus bots."
+          },
+          {
+            "summary": "Qual a diferença para venda?",
+            "body": "Na <a href=\"/rust/sell-skins\">venda</a> você recebe dinheiro ou saldo sacável; na troca recebe outros itens."
+          },
+          {
+            "summary": "Por que os valores não são iguais?",
+            "body": "O site usa preços próprios e ganha com taxa, margem ou diferença entre preço de entrada e inventário."
+          },
+          {
+            "summary": "Posso trocar várias skins por uma?",
+            "body": "Normalmente sim se o valor creditado for suficiente e o item estiver disponível."
+          },
+          {
+            "summary": "Posso adicionar dinheiro para uma skin mais cara?",
+            "body": "Algumas plataformas aceitam saldo, cartão ou cripto; depende do site."
+          },
+          {
+            "summary": "Por que o preço difere da Steam?",
+            "body": "Sites usam fontes próprias, consideram liquidez e incluem margem ou taxa."
+          },
+          {
+            "summary": "Como aceitar um Trade Offer com segurança?",
+            "body": "Confira remetente, todos os itens e direção da troca antes do Steam Guard."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Preços internos, inventário, custo real, velocidade dos bots, pagamentos e suporte mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Skin Takas Siteleri: Nasıl Çalışır ve Neler Karşılaştırılır?",
+        "paragraphs": [
+          "Rust skin takas siteleri bir veya daha fazla itemı verip platform envanterinden başka itemları hemen seçmenizi sağlar. <a href=\"/rust/sell-skins\">Skin satışından</a> farklı olarak amaç para çekmek değil yeni item almaktır. Rastgele <a href=\"/rust/upgrader\">skin yükseltmeden</a> farklı olarak normal takasın sonucu onaydan önce bellidir.",
+          "Çoğu servis bot kullanır: kullanıcı Steam ile giriş yapar, kendi itemlarını ve site itemlarını seçer, ardından Steam Trade Offer alır. İki taraf arasındaki değer farkı komisyonu veya iç fiyatlama modelini yansıtır.",
+          "Bu nedenle yalnızca ilan edilen komisyona değil tüm işleme bakın: sitenin sizin skinlerinize verdiği değer, istediğiniz itemların fiyatı, envanter ve Trade Offer içeriği. Bu nedenle yalnız görünen komisyon oranına değil, verdiğiniz ve aldığınız eşyaların işlem sonundaki toplam değerine bakmak daha sağlıklıdır."
+        ]
+      },
+      "categories": {
+        "title": "Rust Skin Takası Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Kendi itemlarını seçmek",
+            "paragraphs": [
+              "Steam ile girişten sonra uygun skinleri seçer ve sitenin verdiği iç değeri görürsünüz."
+            ]
+          },
+          {
+            "title": "Site itemlarını seçmek",
+            "paragraphs": [
+              "Ardından almak istediğiniz skinleri seçersiniz. Fiyatlar Steam Community Market ve diğer pazarlardan farklı olabilir."
+            ]
+          },
+          {
+            "title": "Değerleri dengelemek",
+            "paragraphs": [
+              "İki taraf eşit değilse site daha fazla item, daha küçük seçim veya destekliyorsa ek ödeme isteyebilir."
+            ]
+          },
+          {
+            "title": "İşlemi onaylamak",
+            "paragraphs": [
+              "Onaydan önce tüm itemlar ve son değer farkı açıkça görünmelidir."
+            ]
+          },
+          {
+            "title": "Steam Trade Offer",
+            "paragraphs": [
+              "Bot resmi teklif gönderir. Steam Guard ile onaylamadan önce dikkatle kontrol edilmelidir."
+            ]
+          },
+          {
+            "title": "Yeni skinleri almak",
+            "paragraphs": [
+              "Doğru teklif kabul edilince itemlar envanterler arasında geçer. Süre bot, item erişimi ve Steam kısıtlamalarına bağlıdır."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Takas Sitesi Seçerken Neler Karşılaştırılmalı?",
+        "intro": "Gerçek maliyet çoğu zaman tek bir komisyon satırında değil, sitenin item alma ve verme fiyatları arasındaki farktadır.",
+        "items": [
+          {
+            "summary": "Kendi skinlerinin değeri",
+            "body": "Servisin verdiği krediyi dış pazarlar ve diğer takas siteleriyle karşılaştırın."
+          },
+          {
+            "summary": "Alacağınız itemların fiyatı",
+            "body": "Site envanterinin yüksek fiyatlanıp fiyatlanmadığını kontrol edin. İyi giriş değeri pahalı hedef itemlarla kaybolabilir."
+          },
+          {
+            "summary": "Toplam değer farkı",
+            "body": "Tek yüzde yerine komisyon ve fiyat farkları sonrasındaki tüm işlemi karşılaştırın."
+          },
+          {
+            "summary": "Envanter ve likidite",
+            "body": "Geniş envanter, istediğiniz Rust skinini hemen bulma ihtimalini artırır. Nadir eşyalarda gerçek bulunabilirlik, güncel talep ve platformun iç değerlemesi özellikle önemlidir."
+          },
+          {
+            "summary": "Ek ödeme ve kalan değer",
+            "body": "Bazı siteler bakiye, kart veya kripto ile tamamlama sunar; diğerleri daha yakın eşleşme ister. Küçük farkların ne olduğunu kontrol edin."
+          },
+          {
+            "summary": "Trade Offer güvenliği",
+            "body": "Servis botu ve işlem içeriğini açık göstermeli, teklif Steam'de doğrulanabilmelidir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Skin Takas Sitelerini Nasıl Değerlendirir?",
+        "intro": "Son değer iç fiyatlar, envanter derinliği ve işlemin güvenilirliğine bağlıdır.",
+        "items": [
+          {
+            "summary": "İç fiyatlama",
+            "body": "Verilen ve alınan itemların değerini ve hesaplamanın şeffaflığını karşılaştırırız."
+          },
+          {
+            "summary": "Gerçek işlem maliyeti",
+            "body": "Komisyon, marj, fiyat farkı ve ek ödemeyi birlikte değerlendiririz."
+          },
+          {
+            "summary": "Envanter",
+            "body": "Item sayısı, filtreler, güncelleme sıklığı, popüler ve pahalı skin erişimi önemlidir."
+          },
+          {
+            "summary": "Bot hızı ve güvenilirliği",
+            "body": "Hızlı Trade Offer, doğru rezervasyon ve işlem kararlılığı değerlendirilir."
+          },
+          {
+            "summary": "Ek ödeme ve kısıtlamalar",
+            "body": "Bakiye, kart, kripto, minimum, KYC ve bölgesel limitler gerektiğinde incelenir."
+          },
+          {
+            "summary": "Güvenlik ve destek",
+            "body": "Açık Steam işlemleri, geçmiş ve takılan veya yanlış takaslarda destek puana katkı sağlar."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Takas Koşulları Neden Değişir?",
+        "paragraphs": [
+          "Skin pazar fiyatları sürekli değişir; takas siteleri iç değerleri ve envanteri günceller. Aynı item çifti farklı günlerde farklı değer farkına sahip olabilir. Site fiyat güncellemesini gecikmeli yaparsa aynı işlem kısa süre içinde daha avantajlı veya daha pahalı hale gelebilir.",
+          "Likidite de önemlidir: popüler skin hızla kaybolabilir, nadir veya pahalı itemlar yalnızca zaman zaman bulunabilir.",
+          "Amacınız başka item değil para ise <a href=\"/rust/sell-skins\">skin satışı</a> veya <a href=\"/rust/instant-sell\">hızlı satış</a> sayfalarını kullanın. Kullanıcılar arası teklifler için <a href=\"/rust/marketplaces\">pazarları</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Skin Takasında Güvenlik",
+        "intro": "Temel riskler sahte giriş sayfası, bot taklidi ve yanlış Steam Trade Offer onaylamaktır.",
+        "items": [
+          {
+            "summary": "Site adresini kontrol edin",
+            "body": "Doğru domain'i kullanın ve Steam bilgilerini başka formlara girmeyin."
+          },
+          {
+            "summary": "Teklif göndereni kontrol edin",
+            "body": "İsim ve avatar kopyalanabilir; site içindeki bot bilgisi ve gerçek teklif detaylarını kullanın. Onaydan önce teklifteki bütün eşyaları sitede seçtiğiniz işlemle tek tek karşılaştırın."
+          },
+          {
+            "summary": "Her itemı kontrol edin",
+            "body": "Onaydan önce gelen ve giden bütün skinlerin seçtiğiniz işlemle aynı olduğundan emin olun."
+          },
+          {
+            "summary": "Steam Guard kodu paylaşmayın",
+            "body": "Normal takas için destek şifre veya iki faktör kodunuza ihtiyaç duymaz."
+          },
+          {
+            "summary": "Steam kısıtlamalarını hesaba katın",
+            "body": "Trade hold ve yeni güvenlik değişiklikleri takası geciktirebilir veya engelleyebilir."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skin Takası Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust skin takası nedir?",
+            "body": "Bir veya daha fazla itemınızı platform envanteri veya botları üzerinden başka skinlerle değiştirmektir."
+          },
+          {
+            "summary": "Satıştan farkı nedir?",
+            "body": "<a href=\"/rust/sell-skins\">Satışta</a> para veya çekilebilir bakiye alırsınız; takasta başka oyun itemları alırsınız."
+          },
+          {
+            "summary": "Neden iki tarafın değeri eşit değil?",
+            "body": "Site kendi fiyatlarını kullanır ve komisyon, marj veya alış-veriş fiyat farkından kazanır."
+          },
+          {
+            "summary": "Birden fazla skin tek skin ile değiştirilebilir mi?",
+            "body": "Toplam değer yeterliyse ve hedef item varsa çoğu serviste evet."
+          },
+          {
+            "summary": "Daha pahalı skin için para eklenebilir mi?",
+            "body": "Bazı platformlar bakiye, kart veya kripto ile tamamlama sunar."
+          },
+          {
+            "summary": "Skin fiyatı neden Steam'den farklı?",
+            "body": "Siteler kendi fiyat kaynaklarını, likiditeyi ve marjı kullanır."
+          },
+          {
+            "summary": "Trade Offer güvenli nasıl kabul edilir?",
+            "body": "Steam Guard onayından önce göndereni, tüm itemları ve işlem yönünü kontrol edin."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "İç fiyatlar, envanter, gerçek maliyet, bot hızı, ödemeler ve destek değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Skin Trading Sites: Skin Exchange कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Rust skin trading sites user को एक या कई items देकर platform inventory से दूसरे items तुरंत चुनने देती हैं। <a href=\"/rust/sell-skins\">Skin selling</a> से अलग, goal cash withdrawal नहीं बल्कि दूसरा item है। Random <a href=\"/rust/upgrader\">skin upgrading</a> से अलग, normal trade का result confirmation से पहले known होता है।",
+          "Most services trading bots use करती हैं: user Steam से sign in करता है, अपने items और site items चुनता है, फिर Steam Trade Offer मिलता है। दोनों sides के value difference में fee या internal pricing model शामिल होती है।",
+          "इसलिए सिर्फ headline fee नहीं, complete deal compare करें: आपकी skins को कितना value मिलता है, desired items कितने महंगे हैं, inventory कैसी है और Trade Offer में exact क्या आता है। इसलिए सिर्फ displayed fee देखने के बजाय दिए जाने वाले और मिलने वाले items की final combined value compare करना ज्यादा useful है।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Skin Trading कैसे काम करता है",
+        "items": [
+          {
+            "title": "अपने items चुनना",
+            "paragraphs": [
+              "Steam sign-in के बाद eligible skins select होती हैं और site की internal valuation दिखाई जाती है।"
+            ]
+          },
+          {
+            "title": "Platform items चुनना",
+            "paragraphs": [
+              "फिर desired skins चुनी जाती हैं। Prices Steam Community Market और दूसरे markets से अलग हो सकती हैं।"
+            ]
+          },
+          {
+            "title": "Values balance करना",
+            "paragraphs": [
+              "अगर दोनों sides equal नहीं हैं तो service more items, smaller selection या supported होने पर extra payment मांग सकती है।"
+            ]
+          },
+          {
+            "title": "Deal confirm करना",
+            "paragraphs": [
+              "Final confirmation से पहले सभी items और final value difference visible होना चाहिए।"
+            ]
+          },
+          {
+            "title": "Steam Trade Offer",
+            "paragraphs": [
+              "Site bot official offer भेजता है जिसे Steam Guard confirmation से पहले carefully verify करना चाहिए।"
+            ]
+          },
+          {
+            "title": "New skins receive करना",
+            "paragraphs": [
+              "Correct offer accept होने पर items inventories के बीच move होते हैं। Timing bots, item availability और Steam restrictions पर depend करती है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skin Trading Site चुनते समय क्या Compare करें",
+        "intro": "Real cost अक्सर single fee में नहीं, बल्कि आपके items की valuation और site inventory prices के difference में होती है।",
+        "items": [
+          {
+            "summary": "आपकी skins की valuation",
+            "body": "External markets और competing exchanges के मुकाबले service कितना credit देती है, compare करें।"
+          },
+          {
+            "summary": "Received items का price",
+            "body": "Platform inventory overpriced है या नहीं देखें। Strong input valuation expensive target items से offset हो सकती है।"
+          },
+          {
+            "summary": "Total value difference",
+            "body": "Fees और pricing differences के बाद complete transaction compare करें।"
+          },
+          {
+            "summary": "Inventory और liquidity",
+            "body": "Deep inventory desired Rust skin तुरंत मिलने की chance बढ़ाती है। Rare items के लिए actual availability, current demand और platform की internal valuation खास तौर पर important हैं।"
+          },
+          {
+            "summary": "Top-up और leftover value",
+            "body": "कुछ sites balance, card या crypto से extra payment allow करती हैं; छोटी value difference का treatment check करें।"
+          },
+          {
+            "summary": "Trade Offer safety",
+            "body": "Service bot identity और transaction contents clear दिखाए ताकि Steam में offer verify हो सके।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Skin Trading Sites को कैसे Rate करता है",
+        "intro": "Final value internal pricing, inventory depth और transaction reliability के combination पर depend करती है।",
+        "items": [
+          {
+            "summary": "Internal pricing",
+            "body": "Deposited और received items की valuation तथा calculation transparency compare करते हैं।"
+          },
+          {
+            "summary": "Real transaction cost",
+            "body": "Fees, markup, value differences और extra top-ups साथ evaluate होते हैं।"
+          },
+          {
+            "summary": "Inventory",
+            "body": "Item count, filters, update frequency और popular/expensive skins availability देखते हैं।"
+          },
+          {
+            "summary": "Bot speed और reliability",
+            "body": "Fast Trade Offer creation, correct reservation और transaction stability महत्वपूर्ण हैं।"
+          },
+          {
+            "summary": "Top-up methods और restrictions",
+            "body": "Balance, cards, crypto, minimums, KYC और regional limits relevant होने पर शामिल हैं।"
+          },
+          {
+            "summary": "Security और support",
+            "body": "Clear Steam operations, transaction history और stuck/incorrect trades के support को evaluate करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Skin Trading Conditions क्यों बदलती हैं",
+        "paragraphs": [
+          "Skin market prices लगातार बदलती हैं, इसलिए trading sites internal valuations और inventory update करती हैं। Same item pair का value gap अलग दिन बदल सकता है। अगर platform internal prices देर से update करती है, तो वही trade थोड़े समय बाद noticeably different value दे सकती है।",
+          "Liquidity भी महत्वपूर्ण है: popular skin जल्दी disappear हो सकती है और rare या expensive item कभी-कभी ही available हो सकती है।",
+          "अगर goal cash है तो <a href=\"/rust/sell-skins\">skin selling</a> या <a href=\"/rust/instant-sell\">quick selling</a> compare करें। User-to-user offers के लिए <a href=\"/rust/marketplaces\">marketplaces</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Skin Trading Safety",
+        "intro": "Main risks fake login pages, bot impersonation और incorrect Steam Trade Offer approve करना हैं।",
+        "items": [
+          {
+            "summary": "Website address verify करें",
+            "body": "Correct domain use करें और Steam credentials unrelated forms में enter न करें।"
+          },
+          {
+            "summary": "Offer sender verify करें",
+            "body": "Names और avatars copy हो सकते हैं; site bot info और actual offer details check करें। Accept करने से पहले offer के सभी items को site पर selected transaction से एक-एक करके match करें।"
+          },
+          {
+            "summary": "हर item check करें",
+            "body": "Confirmation से पहले incoming और outgoing skins selected deal से match होनी चाहिए।"
+          },
+          {
+            "summary": "Steam Guard codes share न करें",
+            "body": "Normal trade के लिए support को password या two-factor code की जरूरत नहीं होती।"
+          },
+          {
+            "summary": "Steam restrictions देखें",
+            "body": "Trade holds और recent security changes exchange delay या block कर सकते हैं।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skin Trading FAQ",
+        "items": [
+          {
+            "summary": "Rust skin trading क्या है?",
+            "body": "Platform inventory या bots के जरिए अपने एक या कई items को दूसरी skins से exchange करना।"
+          },
+          {
+            "summary": "Selling से क्या फर्क है?",
+            "body": "<a href=\"/rust/sell-skins\">Selling</a> में cash या withdrawable balance मिलता है; trading में दूसरे game items मिलते हैं।"
+          },
+          {
+            "summary": "दो sides equal value की क्यों नहीं होतीं?",
+            "body": "Site own pricing use करती है और fees, markup या intake/inventory price difference से earn करती है।"
+          },
+          {
+            "summary": "क्या कई skins एक skin से trade कर सकते हैं?",
+            "body": "आम तौर पर हाँ, अगर total credited value enough है और target item available है।"
+          },
+          {
+            "summary": "क्या more expensive skin के लिए money add कर सकते हैं?",
+            "body": "कुछ platforms balance, card या crypto top-up support करती हैं।"
+          },
+          {
+            "summary": "Skin price Steam से अलग क्यों है?",
+            "body": "Sites own price sources, liquidity और margin use करती हैं।"
+          },
+          {
+            "summary": "Trade Offer safely कैसे accept करें?",
+            "body": "Steam Guard से पहले sender, सभी items और trade direction verify करें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Internal prices, inventory, real transaction cost, bot speed, payments और support बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

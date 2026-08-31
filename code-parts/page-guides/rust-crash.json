@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-crash",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Краш Rust: как работает растущий коэффициент и что сравнивать",
+        "paragraphs": [
+          "Краш — это быстрый азартный режим, где коэффициент начинает расти после старта раунда и в случайный момент останавливается. Игроку нужно забрать ставку до завершения раунда: если выход происходит раньше, выплата рассчитывается по текущему коэффициенту; если раунд заканчивается раньше, ставка теряется.",
+          "На сайтах Rust краш часто находится рядом с <a href=\"/rust/roulette\">рулеткой</a>, <a href=\"/rust/jackpot\">джекпотом</a> и другими быстрыми режимами. Площадки отличаются математическим преимуществом сервиса, формулой завершения раунда, Provably Fair, скоростью интерфейса, автоматическим выходом, лимитами ставок и максимальной выплатой.",
+          "История прошлых коэффициентов полезна для проверки завершённых раундов, но сама по себе не делает следующий результат предсказуемым. Для сравнения важнее возможность проверить генерацию результата и понять фактическую математику выплат."
+        ]
+      },
+      "categories": {
+        "title": "Как устроен краш на сайтах Rust",
+        "items": [
+          {
+            "title": "Рост коэффициента",
+            "paragraphs": [
+              "После старта значение постепенно увеличивается до случайного момента завершения. Чем дольше длится раунд, тем выше потенциальная выплата, но тем больше риск не успеть выйти до его окончания."
+            ]
+          },
+          {
+            "title": "Ручной выход из раунда",
+            "paragraphs": [
+              "Игрок сам нажимает кнопку выхода и фиксирует текущий коэффициент. Если команда была принята до завершения раунда, выплата рассчитывается по зафиксированному значению с учётом правил площадки."
+            ]
+          },
+          {
+            "title": "Автоматический выход",
+            "paragraphs": [
+              "Пользователь заранее задаёт коэффициент, при достижении которого ставка должна быть закрыта автоматически. Это снижает зависимость от реакции и задержки интерфейса, но не увеличивает вероятность того, что раунд достигнет выбранного значения."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Проверяемая система должна позволять подтвердить итоговый коэффициент конкретного раунда по опубликованным исходным данным и алгоритму. Значок Provably Fair без доступной проверки сам по себе мало что означает."
+            ]
+          },
+          {
+            "title": "Несколько ставок в одном раунде",
+            "paragraphs": [
+              "Некоторые площадки позволяют одновременно разместить две или больше ставок с разными суммами и точками автоматического выхода. Это даёт больше вариантов управления, но не уменьшает математическое преимущество площадки."
+            ]
+          },
+          {
+            "title": "Скины, внутренний баланс и криптовалюта",
+            "paragraphs": [
+              "Краш может работать на балансе, пополняемом скинами Rust, обычными платежами или криптовалютой. Если используются предметы, важно отдельно проверить внутреннюю оценку скинов и условия их вывода."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед игрой в краш",
+        "intro": "Одинаковая графика растущего коэффициента не означает одинаковую математику, лимиты и условия выплаты на разных площадках.",
+        "items": [
+          {
+            "summary": "Преимущество площадки и формула результата",
+            "body": "Проверьте, публикует ли сайт информацию о математическом преимуществе сервиса и принципе распределения коэффициентов. Без этой информации трудно оценить реальные условия режима."
+          },
+          {
+            "summary": "Проверка Provably Fair",
+            "body": "Важно иметь возможность проверить уже завершённый раунд по исходным данным, а не просто видеть надпись Provably Fair в интерфейсе."
+          },
+          {
+            "summary": "Автоматический выход",
+            "body": "Уточните минимальный и максимальный доступный коэффициент, момент срабатывания и поведение системы при задержке сети или интерфейса."
+          },
+          {
+            "summary": "Максимальная ставка и выплата",
+            "body": "Площадка может ограничивать не только размер ставки, но и максимальную сумму выигрыша с одного раунда. Эти лимиты особенно важны при высоких коэффициентах."
+          },
+          {
+            "summary": "История раундов",
+            "body": "История полезна для проверки конкретных результатов и работы Provably Fair, но не является прогнозом будущего коэффициента."
+          },
+          {
+            "summary": "Бонусы и вывод",
+            "body": "Бонусный баланс, требования по отыгрышу, минимальная сумма вывода, проверка личности, комиссии и региональные ограничения могут действовать отдельно от правил самого краша."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты Rust с крашем",
+        "intro": "Для краша особенно важны проверяемость результата, понятная математика, стабильность интерфейса и прозрачность фактической выплаты.",
+        "items": [
+          {
+            "summary": "Математическое преимущество площадки",
+            "body": "Мы смотрим, насколько ясно описано распределение коэффициентов и какая доля математического ожидания остаётся сервису на длинной дистанции."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Оцениваем доступность исходных данных и возможность самостоятельно проверить итоговый коэффициент конкретного завершённого раунда."
+          },
+          {
+            "summary": "Автоматический выход и управление ставкой",
+            "body": "Проверяем настройки автоматического выхода, ограничения, возможность нескольких ставок и корректность срабатывания выбранного коэффициента."
+          },
+          {
+            "summary": "Лимиты и фактические выплаты",
+            "body": "Учитываются минимальная и максимальная ставка, максимальный выигрыш, комиссии и ограничения по валютам или типам баланса."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Скины Rust, банковские методы, криптовалюты, минимумы, проверка личности, скорость обработки и доступность вывода входят в оценку."
+          },
+          {
+            "summary": "Стабильность в реальном времени",
+            "body": "Для краша важны задержка интерфейса, корректное отображение выхода, история раундов, работа на мобильных устройствах и качество поддержки."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов Rust с крашем меняется",
+        "paragraphs": [
+          "Площадки меняют математическое преимущество, лимиты, автоматический выход, бонусы, способы оплаты и правила вывода. Любое из этих изменений может заметно повлиять на фактические условия режима.",
+          "Серии низких или высоких коэффициентов не означают, что следующий раунд должен компенсировать предыдущие. Если результаты независимы, история сама по себе не повышает вероятность конкретного будущего значения.",
+          "Для других режимов сравните <a href=\"/rust/roulette\">рулетку</a>, <a href=\"/rust/jackpot\">джекпот</a> или общий раздел <a href=\"/rust/casino\">сайтов Rust со слотами и казино</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра в краш",
+        "intro": "Быстрые раунды и растущий коэффициент могут стимулировать частые повторные ставки, поэтому контроль времени и суммы особенно важен.",
+        "items": [
+          {
+            "summary": "Проверяйте Provably Fair и адрес сайта",
+            "body": "Используйте доступную проверку завершённых раундов и убедитесь, что находитесь на правильном домене перед входом через Steam или пополнением."
+          },
+          {
+            "summary": "Не пытайтесь прогнозировать по истории",
+            "body": "Прошлые коэффициенты могут визуально напоминать закономерность, но это не доказывает предсказуемость следующего независимого раунда."
+          },
+          {
+            "summary": "Используйте автоматический выход только как технический инструмент",
+            "body": "Он закрывает ставку при заранее выбранном коэффициенте, но не меняет вероятность достижения этого значения и не улучшает математику режима."
+          },
+          {
+            "summary": "Проверяйте лимиты и вывод заранее",
+            "body": "Максимальный выигрыш, проверка личности, комиссии и минимальные суммы могут существенно изменить фактическую выплату."
+          },
+          {
+            "summary": "Ограничивайте время и сумму",
+            "body": "Краш позволяет быстро переходить от одного раунда к следующему. Заранее установите пределы и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о краше Rust",
+        "items": [
+          {
+            "summary": "Что такое краш на сайтах Rust?",
+            "body": "Это режим с растущим коэффициентом, где нужно забрать ставку до случайного момента завершения раунда."
+          },
+          {
+            "summary": "Как рассчитывается выигрыш?",
+            "body": "Если выход произошёл до завершения раунда, ставка умножается на зафиксированный коэффициент с учётом правил и лимитов площадки."
+          },
+          {
+            "summary": "Что такое автоматический выход?",
+            "body": "Это настройка, которая автоматически закрывает ставку при заранее заданном коэффициенте, если раунд успел его достичь."
+          },
+          {
+            "summary": "Можно ли предсказать следующий коэффициент?",
+            "body": "История предыдущих раундов сама по себе не даёт надёжного прогноза следующего независимого результата."
+          },
+          {
+            "summary": "Что такое Provably Fair в краше?",
+            "body": "Это проверяемый механизм, позволяющий подтвердить, что итоговый коэффициент конкретного раунда был сформирован по заявленному алгоритму."
+          },
+          {
+            "summary": "Почему высокие коэффициенты встречаются реже?",
+            "body": "Чем выше целевое значение, тем меньше вероятность, что раунд дойдёт до него; точное распределение зависит от формулы конкретной площадки."
+          },
+          {
+            "summary": "Можно ли играть бонусным балансом?",
+            "body": "Иногда да, но могут действовать отдельные требования по отыгрышу, ограничения ставки и правила вывода. Общие предложения можно сравнить в разделе <a href=\"/freebies\">бонусов</a>."
+          },
+          {
+            "summary": "Почему рейтинг краша на CSGOBROKER меняется?",
+            "body": "На оценку влияют математическое преимущество, Provably Fair, лимиты, автоматический выход, платежи, вывод и стабильность интерфейса."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Crash Sites: How the Multiplier Works and What to Compare",
+        "paragraphs": [
+          "Crash is a fast gambling game where a multiplier starts rising after the round begins and stops at a randomly determined point. Users must cash out before the round ends: a successful exit pays according to the current multiplier, while a later exit attempt loses the wager.",
+          "Rust sites often place Crash alongside <a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/jackpot\">Jackpot</a>, and other quick games. Platforms differ in house edge, crash-point formula, Provably Fair implementation, interface speed, automatic cashout, bet limits, and maximum payouts.",
+          "Past multiplier history is useful for reviewing completed rounds but does not make the next result predictable by itself. Result verification and the actual payout mathematics are more useful comparison criteria."
+        ]
+      },
+      "categories": {
+        "title": "How Crash Works on Rust Sites",
+        "items": [
+          {
+            "title": "Rising multiplier",
+            "paragraphs": [
+              "After the round starts, the multiplier increases until the randomly determined crash point. Potential payout rises with it, but the risk of the round ending before cashout also increases."
+            ]
+          },
+          {
+            "title": "Manual cashout",
+            "paragraphs": [
+              "The user chooses when to exit and lock the current multiplier. If the command is accepted before the crash point, the payout is calculated from that value under the site's rules."
+            ]
+          },
+          {
+            "title": "Automatic cashout",
+            "paragraphs": [
+              "Users can set a multiplier at which the wager should close automatically. This reduces reliance on reaction time and interface delay but does not increase the probability of reaching that multiplier."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "A verifiable implementation should let users confirm the crash point of a completed round using published input data and the stated algorithm. A label without a usable verification process is not enough."
+            ]
+          },
+          {
+            "title": "Multiple wagers in one round",
+            "paragraphs": [
+              "Some platforms allow two or more simultaneous wagers with different amounts or automatic exit points. This adds control options but does not reduce the platform's mathematical advantage."
+            ]
+          },
+          {
+            "title": "Rust skins, balance, and cryptocurrency",
+            "paragraphs": [
+              "Crash can use balance funded with Rust skins, conventional payments, or cryptocurrency. When items are accepted, review internal skin valuation and the available withdrawal methods separately."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Playing Rust Crash",
+        "intro": "The same rising-multiplier animation can hide different mathematics, limits, and payout conditions across platforms.",
+        "items": [
+          {
+            "summary": "House edge and result formula",
+            "body": "Check whether the site publishes information about its mathematical advantage and multiplier distribution. Without this, the practical terms are difficult to evaluate."
+          },
+          {
+            "summary": "Provably Fair verification",
+            "body": "Users should be able to verify an already completed round from the relevant data rather than only see a Provably Fair badge."
+          },
+          {
+            "summary": "Automatic cashout",
+            "body": "Review minimum and maximum settings, exactly when the automatic exit is triggered, and how network or interface delays are handled."
+          },
+          {
+            "summary": "Maximum wager and payout",
+            "body": "A platform may restrict both wager size and the maximum win from a single round. These limits matter most when targeting high multipliers."
+          },
+          {
+            "summary": "Round history",
+            "body": "History is useful for auditing specific results and verification data, but it is not a forecast of the next multiplier."
+          },
+          {
+            "summary": "Bonuses and withdrawals",
+            "body": "Bonus balance, wagering requirements, withdrawal minimums, identity verification, fees, and regional restrictions can apply separately from Crash rules."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Crash Sites",
+        "intro": "For Crash, result verification, understandable mathematics, real-time stability, and transparent payouts are especially important.",
+        "items": [
+          {
+            "summary": "House edge and mathematics",
+            "body": "We review how clearly multiplier distribution is described and what mathematical advantage the platform retains over the long run."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We evaluate access to verification inputs and whether a specific completed crash point can be checked independently."
+          },
+          {
+            "summary": "Automatic cashout and wager controls",
+            "body": "Settings, restrictions, multiple wagers, and the reliability of automatic exit at the selected multiplier are assessed."
+          },
+          {
+            "summary": "Limits and actual payouts",
+            "body": "Minimum and maximum wagers, maximum win, fees, and restrictions by currency or balance type are included."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "Rust skins, bank-based payments, cryptocurrency, minimums, identity checks, processing speed, and withdrawal availability are considered."
+          },
+          {
+            "summary": "Real-time stability",
+            "body": "Interface latency, accurate cashout display, round history, mobile performance, and support quality are important for a live fast-moving game."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Crash Rankings Change",
+        "paragraphs": [
+          "Platforms can change house edge, limits, automatic cashout, bonuses, payment methods, and withdrawal rules. Any of these changes can materially alter the mode's practical terms.",
+          "Runs of low or high multipliers do not mean the next round must compensate for earlier results. If rounds are independent, history alone does not increase the probability of a particular future value.",
+          "For other modes, compare <a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/jackpot\">Jackpot</a>, or the broader <a href=\"/rust/casino\">Rust casino and slots</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play on Rust Crash Sites",
+        "intro": "Fast rounds and a rising multiplier can encourage repeated wagers, making time and spending controls especially important.",
+        "items": [
+          {
+            "summary": "Verify Provably Fair and the domain",
+            "body": "Use the available verifier for completed rounds and confirm the correct platform domain before Steam sign-in or depositing."
+          },
+          {
+            "summary": "Do not predict from the history chart",
+            "body": "Past multipliers can look patterned, but that does not demonstrate that the next independent result is predictable."
+          },
+          {
+            "summary": "Treat automatic cashout as a technical tool",
+            "body": "It exits at a preset multiplier when reached, but it does not change the chance of reaching that value or improve the game's mathematics."
+          },
+          {
+            "summary": "Check limits and withdrawals first",
+            "body": "Maximum win, identity verification, fees, and minimums can materially change the amount that can actually be withdrawn."
+          },
+          {
+            "summary": "Set time and spending limits",
+            "body": "Crash moves quickly from one round to the next. Set limits in advance and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Crash",
+        "items": [
+          {
+            "summary": "What is Rust Crash?",
+            "body": "A rising-multiplier game where a wager must be cashed out before a randomly determined end point."
+          },
+          {
+            "summary": "How is a win calculated?",
+            "body": "If cashout succeeds before the crash point, the wager is multiplied by the locked value subject to platform rules and limits."
+          },
+          {
+            "summary": "What is automatic cashout?",
+            "body": "A setting that closes the wager automatically at a predefined multiplier if the round reaches it."
+          },
+          {
+            "summary": "Can the next multiplier be predicted?",
+            "body": "Past round history alone does not provide a reliable prediction of the next independent result."
+          },
+          {
+            "summary": "What is Provably Fair in Crash?",
+            "body": "A verifiable system that allows users to confirm that a specific crash point was generated under the published algorithm."
+          },
+          {
+            "summary": "Why are high multipliers less common?",
+            "body": "The higher the target multiplier, the lower the probability that a round reaches it; the exact distribution depends on the platform formula."
+          },
+          {
+            "summary": "Can bonus balance be used?",
+            "body": "Sometimes, but separate wagering, maximum-bet, and withdrawal rules may apply. General promotions can be compared in <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Crash ranking change?",
+            "body": "House edge, Provably Fair, limits, automatic cashout, payments, withdrawals, and interface stability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Crash de Rust: cómo funciona el multiplicador y qué comparar",
+        "paragraphs": [
+          "Crash es un juego rápido en el que un multiplicador empieza a subir y se detiene en un punto aleatorio. El usuario debe retirar la apuesta antes del final: si sale a tiempo, la cantidad se multiplica por el valor actual; si el final llega primero, la apuesta se pierde.",
+          "Los sitios Rust suelen ofrecer Crash junto con <a href=\"/rust/roulette\">Ruleta</a>, <a href=\"/rust/jackpot\">Jackpot</a> y otros modos rápidos. Las plataformas difieren en ventaja matemática, fórmula del punto final, Provably Fair, velocidad, salida automática, límites y pago máximo.",
+          "El historial de multiplicadores sirve para revisar rondas terminadas, pero no hace predecible el siguiente resultado. Para comparar son más importantes la verificación y la matemática real de los pagos."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona Crash en sitios Rust",
+        "items": [
+          {
+            "title": "Multiplicador creciente",
+            "paragraphs": [
+              "Tras el inicio, el multiplicador aumenta hasta el punto de final aleatorio. El pago potencial sube con él, pero también el riesgo de que la ronda termine antes de retirar."
+            ]
+          },
+          {
+            "title": "Salida manual",
+            "paragraphs": [
+              "El usuario decide cuándo salir y fija el multiplicador actual. Si la orden se acepta antes del final, el pago se calcula con ese valor según las reglas del sitio."
+            ]
+          },
+          {
+            "title": "Salida automática",
+            "paragraphs": [
+              "Se puede establecer un multiplicador para cerrar la apuesta automáticamente. Reduce la dependencia de la reacción o latencia, pero no aumenta la probabilidad de alcanzar ese valor."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Un sistema verificable debe permitir comprobar el punto final de una ronda con los datos publicados y el algoritmo indicado. Una simple etiqueta no es suficiente."
+            ]
+          },
+          {
+            "title": "Varias apuestas por ronda",
+            "paragraphs": [
+              "Algunos sitios permiten colocar varias apuestas con cantidades o puntos de salida distintos. Ofrece más control, pero no reduce la ventaja matemática de la plataforma."
+            ]
+          },
+          {
+            "title": "Skins, saldo y criptomonedas",
+            "paragraphs": [
+              "Crash puede usar saldo financiado con skins Rust, pagos tradicionales o criptomonedas. Si acepta objetos, revisa por separado su valoración y las condiciones de retiro."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de jugar a Crash",
+        "intro": "Una animación similar puede ocultar matemáticas, límites y condiciones de pago diferentes.",
+        "items": [
+          {
+            "summary": "Ventaja de la plataforma y fórmula",
+            "body": "Comprueba si el sitio publica su ventaja matemática y cómo se distribuyen los multiplicadores. Sin esa información es difícil valorar las condiciones reales."
+          },
+          {
+            "summary": "Verificación Provably Fair",
+            "body": "Debe ser posible comprobar una ronda terminada con sus datos, no limitarse a ver un distintivo Provably Fair."
+          },
+          {
+            "summary": "Salida automática",
+            "body": "Revisa valores mínimos y máximos, momento exacto de activación y comportamiento ante retrasos de red o interfaz."
+          },
+          {
+            "summary": "Apuesta y pago máximos",
+            "body": "La plataforma puede limitar tanto la apuesta como el premio máximo de una sola ronda, algo importante en multiplicadores altos."
+          },
+          {
+            "summary": "Historial de rondas",
+            "body": "Es útil para auditar resultados y datos de verificación, pero no constituye una predicción del siguiente multiplicador."
+          },
+          {
+            "summary": "Bonos y retiros",
+            "body": "Saldo bonus, requisitos de apuesta, mínimos, verificación de identidad, comisiones y restricciones regionales pueden aplicarse por separado."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios Crash de Rust",
+        "intro": "En Crash son especialmente importantes la verificación, la matemática comprensible, la estabilidad en tiempo real y los pagos transparentes.",
+        "items": [
+          {
+            "summary": "Ventaja matemática",
+            "body": "Revisamos cómo se describe la distribución de multiplicadores y qué ventaja conserva la plataforma a largo plazo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Valoramos el acceso a los datos y la posibilidad de verificar de forma independiente el punto final de una ronda concreta."
+          },
+          {
+            "summary": "Salida automática y controles",
+            "body": "Analizamos ajustes, restricciones, varias apuestas y fiabilidad de la salida automática al multiplicador seleccionado."
+          },
+          {
+            "summary": "Límites y pagos reales",
+            "body": "Se consideran apuesta mínima y máxima, premio máximo, comisiones y restricciones según moneda o tipo de saldo."
+          },
+          {
+            "summary": "Depósitos y retiros",
+            "body": "Incluimos skins Rust, pagos bancarios, criptomonedas, mínimos, verificación, velocidad y disponibilidad de retiro."
+          },
+          {
+            "summary": "Estabilidad en tiempo real",
+            "body": "Latencia, visualización correcta de la salida, historial, rendimiento móvil y soporte son importantes en un juego rápido."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de Crash de Rust",
+        "paragraphs": [
+          "Las plataformas pueden cambiar ventaja matemática, límites, salida automática, bonos, pagos y reglas de retiro. Cualquiera de estos cambios altera las condiciones reales.",
+          "Una serie de multiplicadores altos o bajos no implica que la siguiente ronda tenga que compensar las anteriores. Si son independientes, el historial no aumenta la probabilidad de un valor concreto.",
+          "Para otros modos compara <a href=\"/rust/roulette\">Ruleta</a>, <a href=\"/rust/jackpot\">Jackpot</a> o la sección de <a href=\"/rust/casino\">casino y slots Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable en Crash",
+        "intro": "Las rondas rápidas y el multiplicador creciente pueden fomentar apuestas repetidas, por lo que los límites de tiempo y gasto son especialmente importantes.",
+        "items": [
+          {
+            "summary": "Comprueba Provably Fair y el dominio",
+            "body": "Utiliza el verificador de rondas terminadas y confirma el dominio correcto antes de iniciar sesión con Steam o depositar."
+          },
+          {
+            "summary": "No predigas por el historial",
+            "body": "Los multiplicadores anteriores pueden parecer formar patrones, pero eso no demuestra que el siguiente resultado independiente sea predecible."
+          },
+          {
+            "summary": "Usa la salida automática como herramienta técnica",
+            "body": "Cierra la apuesta al valor prefijado si se alcanza, pero no cambia la probabilidad ni mejora la matemática del juego."
+          },
+          {
+            "summary": "Comprueba límites y retiro primero",
+            "body": "Premio máximo, verificación, comisiones y mínimos pueden cambiar significativamente la cantidad que realmente se puede retirar."
+          },
+          {
+            "summary": "Establece límites de tiempo y gasto",
+            "body": "Crash pasa rápidamente de una ronda a otra. Define límites y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Crash de Rust",
+        "items": [
+          {
+            "summary": "¿Qué es Crash de Rust?",
+            "body": "Un juego de multiplicador creciente donde la apuesta debe retirarse antes de un punto final aleatorio."
+          },
+          {
+            "summary": "¿Cómo se calcula el premio?",
+            "body": "Si la salida se completa antes del final, la apuesta se multiplica por el valor fijado según las reglas y límites del sitio."
+          },
+          {
+            "summary": "¿Qué es la salida automática?",
+            "body": "Una función que cierra la apuesta automáticamente en un multiplicador establecido si la ronda llega a él."
+          },
+          {
+            "summary": "¿Se puede predecir el siguiente multiplicador?",
+            "body": "El historial de rondas por sí solo no ofrece una predicción fiable del siguiente resultado independiente."
+          },
+          {
+            "summary": "¿Qué es Provably Fair en Crash?",
+            "body": "Un sistema verificable que permite confirmar que el punto final de una ronda se generó según el algoritmo publicado."
+          },
+          {
+            "summary": "¿Por qué los multiplicadores altos son menos frecuentes?",
+            "body": "Cuanto mayor es el objetivo, menor es la probabilidad de alcanzarlo; la distribución exacta depende de la fórmula del sitio."
+          },
+          {
+            "summary": "¿Se puede jugar con saldo bonus?",
+            "body": "A veces sí, pero pueden existir requisitos de apuesta, límites y reglas de retiro. Consulta <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Pueden cambiar ventaja matemática, Provably Fair, límites, salida automática, pagos, retiro y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Crash de Rust: como funciona o multiplicador e o que comparar",
+        "paragraphs": [
+          "Crash é um jogo rápido em que um multiplicador começa a subir e para em um ponto aleatório. O usuário precisa encerrar a aposta antes do fim: se sair a tempo, recebe conforme o multiplicador atual; se a rodada terminar primeiro, perde a aposta.",
+          "Sites Rust costumam oferecer Crash junto com <a href=\"/rust/roulette\">Roleta</a>, <a href=\"/rust/jackpot\">Jackpot</a> e outros modos rápidos. As plataformas diferem em vantagem matemática, fórmula do ponto final, Provably Fair, velocidade, saída automática, limites e pagamento máximo.",
+          "O histórico de multiplicadores ajuda a revisar rodadas concluídas, mas não torna o próximo resultado previsível. Verificação e matemática real dos pagamentos são critérios mais úteis."
+        ]
+      },
+      "categories": {
+        "title": "Como Crash funciona em sites Rust",
+        "items": [
+          {
+            "title": "Multiplicador crescente",
+            "paragraphs": [
+              "Depois do início, o multiplicador aumenta até o ponto final aleatório. O pagamento potencial cresce, mas também aumenta o risco de a rodada terminar antes da saída."
+            ]
+          },
+          {
+            "title": "Saída manual",
+            "paragraphs": [
+              "O usuário escolhe quando encerrar e fixa o multiplicador atual. Se a ordem for aceita antes do final, o pagamento é calculado com esse valor segundo as regras do site."
+            ]
+          },
+          {
+            "title": "Saída automática",
+            "paragraphs": [
+              "É possível definir um multiplicador para encerrar a aposta automaticamente. Isso reduz dependência de reação e atraso, mas não aumenta a chance de atingir o valor escolhido."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Um sistema verificável deve permitir conferir o ponto final de uma rodada com dados publicados e o algoritmo indicado. Apenas a etiqueta não é suficiente."
+            ]
+          },
+          {
+            "title": "Várias apostas na mesma rodada",
+            "paragraphs": [
+              "Alguns sites permitem apostas simultâneas com valores ou pontos de saída diferentes. Isso adiciona controle, mas não reduz a vantagem matemática da plataforma."
+            ]
+          },
+          {
+            "title": "Skins, saldo e criptomoedas",
+            "paragraphs": [
+              "Crash pode usar saldo financiado por skins Rust, pagamentos tradicionais ou cripto. Se itens forem aceitos, confira separadamente a avaliação e as regras de saque."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de jogar Crash",
+        "intro": "Uma animação parecida pode esconder matemática, limites e condições de pagamento diferentes.",
+        "items": [
+          {
+            "summary": "Vantagem da plataforma e fórmula",
+            "body": "Confira se o site publica sua vantagem matemática e como os multiplicadores são distribuídos. Sem isso, é difícil avaliar as condições reais."
+          },
+          {
+            "summary": "Verificação Provably Fair",
+            "body": "Deve ser possível conferir uma rodada concluída usando os dados correspondentes, e não apenas ver um selo Provably Fair."
+          },
+          {
+            "summary": "Saída automática",
+            "body": "Veja valores mínimo e máximo, momento exato do acionamento e comportamento em atrasos de rede ou interface."
+          },
+          {
+            "summary": "Aposta e pagamento máximos",
+            "body": "A plataforma pode limitar tanto o tamanho da aposta quanto o ganho máximo de uma rodada, algo importante em multiplicadores altos."
+          },
+          {
+            "summary": "Histórico das rodadas",
+            "body": "É útil para auditar resultados e dados de verificação, mas não serve como previsão do próximo multiplicador."
+          },
+          {
+            "summary": "Bônus e saques",
+            "body": "Saldo de bônus, requisitos de aposta, mínimos, verificação, taxas e restrições regionais podem ser aplicados separadamente."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites Crash de Rust",
+        "intro": "Em Crash, verificação, matemática compreensível, estabilidade em tempo real e pagamentos transparentes são especialmente importantes.",
+        "items": [
+          {
+            "summary": "Vantagem matemática",
+            "body": "Analisamos como a distribuição dos multiplicadores é descrita e qual vantagem a plataforma mantém no longo prazo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Avaliamos acesso aos dados e a possibilidade de verificar de forma independente o ponto final de uma rodada específica."
+          },
+          {
+            "summary": "Saída automática e controles",
+            "body": "Configurações, restrições, várias apostas e confiabilidade da saída automática no valor selecionado são avaliadas."
+          },
+          {
+            "summary": "Limites e pagamentos reais",
+            "body": "Apostas mínimas e máximas, ganho máximo, taxas e restrições por moeda ou tipo de saldo entram na análise."
+          },
+          {
+            "summary": "Depósitos e saques",
+            "body": "Skins Rust, pagamentos bancários, criptomoedas, mínimos, verificação, velocidade e disponibilidade de saque são considerados."
+          },
+          {
+            "summary": "Estabilidade em tempo real",
+            "body": "Latência, exibição correta da saída, histórico, desempenho mobile e suporte são importantes em um jogo rápido."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de Crash de Rust muda",
+        "paragraphs": [
+          "As plataformas podem mudar vantagem matemática, limites, saída automática, bônus, pagamentos e regras de saque. Qualquer mudança pode alterar as condições reais.",
+          "Sequências de multiplicadores altos ou baixos não significam que a próxima rodada precise compensar as anteriores. Se as rodadas são independentes, o histórico não aumenta a chance de um valor específico.",
+          "Para outros modos, compare <a href=\"/rust/roulette\">Roleta</a>, <a href=\"/rust/jackpot\">Jackpot</a> ou a seção de <a href=\"/rust/casino\">casino e slots Rust</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável em Crash",
+        "intro": "Rodadas rápidas e multiplicador crescente podem incentivar apostas repetidas, então limites de tempo e gastos são especialmente importantes.",
+        "items": [
+          {
+            "summary": "Confira Provably Fair e o domínio",
+            "body": "Use o verificador para rodadas concluídas e confirme o domínio correto antes de entrar com Steam ou depositar."
+          },
+          {
+            "summary": "Não tente prever pelo histórico",
+            "body": "Multiplicadores anteriores podem parecer formar padrões, mas isso não prova que o próximo resultado independente seja previsível."
+          },
+          {
+            "summary": "Use saída automática como ferramenta técnica",
+            "body": "Ela encerra no valor definido se alcançado, mas não muda a probabilidade nem melhora a matemática do jogo."
+          },
+          {
+            "summary": "Confira limites e saque primeiro",
+            "body": "Ganho máximo, verificação, taxas e mínimos podem alterar bastante o valor que realmente pode ser retirado."
+          },
+          {
+            "summary": "Defina limites de tempo e gastos",
+            "body": "Crash passa rapidamente de uma rodada à próxima. Defina limites e consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Crash de Rust",
+        "items": [
+          {
+            "summary": "O que é Crash de Rust?",
+            "body": "Um jogo de multiplicador crescente em que a aposta precisa ser encerrada antes de um ponto final aleatório."
+          },
+          {
+            "summary": "Como o ganho é calculado?",
+            "body": "Se a saída ocorrer antes do final, a aposta é multiplicada pelo valor fixado conforme as regras e limites da plataforma."
+          },
+          {
+            "summary": "O que é saída automática?",
+            "body": "Uma configuração que encerra a aposta automaticamente em um multiplicador definido se a rodada atingir esse valor."
+          },
+          {
+            "summary": "É possível prever o próximo multiplicador?",
+            "body": "O histórico de rodadas sozinho não fornece uma previsão confiável do próximo resultado independente."
+          },
+          {
+            "summary": "O que é Provably Fair em Crash?",
+            "body": "Um sistema verificável que permite confirmar que o ponto final foi gerado conforme o algoritmo publicado."
+          },
+          {
+            "summary": "Por que multiplicadores altos são menos comuns?",
+            "body": "Quanto maior o alvo, menor a chance de a rodada alcançá-lo; a distribuição exata depende da fórmula do site."
+          },
+          {
+            "summary": "Posso jogar com saldo de bônus?",
+            "body": "Às vezes, mas podem existir requisitos, limites e regras de saque separados. Compare <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Vantagem matemática, Provably Fair, limites, saída automática, pagamentos, saques e estabilidade podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Crash: Çarpan Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Crash, tur başladıktan sonra çarpanın yükseldiği ve rastgele bir noktada durduğu hızlı bir şans oyunudur. Kullanıcı tur bitmeden çıkmalıdır; zamanında çıkarsa ödeme mevcut çarpana göre hesaplanır, tur önce biterse bahis kaybedilir.",
+          "Rust siteleri Crash'i sıkça <a href=\"/rust/roulette\">Rulet</a>, <a href=\"/rust/jackpot\">Jackpot</a> ve diğer hızlı modlarla birlikte sunar. Platformlar matematiksel avantaj, bitiş formülü, Provably Fair, arayüz hızı, otomatik çıkış, bahis limitleri ve maksimum ödeme açısından farklıdır.",
+          "Geçmiş çarpanlar tamamlanmış turları incelemek için yararlıdır ancak sonraki sonucu tahmin edilebilir yapmaz. Doğrulama ve gerçek ödeme matematiği daha önemli karşılaştırma ölçütleridir."
+        ]
+      },
+      "categories": {
+        "title": "Rust Sitelerinde Crash Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Yükselen çarpan",
+            "paragraphs": [
+              "Tur başladıktan sonra çarpan rastgele bitiş noktasına kadar yükselir. Potansiyel ödeme artarken tur çıkıştan önce bitebilir ve risk de yükselir."
+            ]
+          },
+          {
+            "title": "Manuel çıkış",
+            "paragraphs": [
+              "Kullanıcı çıkış anını seçer ve mevcut çarpanı sabitler. Komut bitişten önce kabul edilirse ödeme sitenin kurallarına göre bu değer üzerinden hesaplanır."
+            ]
+          },
+          {
+            "title": "Otomatik çıkış",
+            "paragraphs": [
+              "Kullanıcı bahsin otomatik kapanacağı çarpanı önceden belirleyebilir. Bu tepki süresi ve gecikmeye bağımlılığı azaltır ama seçilen değere ulaşma olasılığını artırmaz."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Doğrulanabilir sistem, yayınlanan veriler ve algoritma ile tamamlanmış turun bitiş noktasını kontrol etmeye izin vermelidir. Yalnız etiket yeterli değildir."
+            ]
+          },
+          {
+            "title": "Aynı turda birden fazla bahis",
+            "paragraphs": [
+              "Bazı platformlar farklı tutar ve otomatik çıkış değerleriyle birden fazla eşzamanlı bahse izin verir. Bu daha fazla kontrol sağlar ama platform avantajını azaltmaz."
+            ]
+          },
+          {
+            "title": "Skin, bakiye ve kripto",
+            "paragraphs": [
+              "Crash bakiyesi Rust skinleri, geleneksel ödeme veya kripto ile doldurulabilir. Eşya kabul ediliyorsa iç skin fiyatını ve çekim koşullarını ayrıca inceleyin."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Crash Oynamadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Benzer yükselen çarpan animasyonu farklı matematik, limit ve ödeme koşullarını gizleyebilir.",
+        "items": [
+          {
+            "summary": "Platform avantajı ve formül",
+            "body": "Sitenin matematiksel avantajı ve çarpan dağılımı hakkında bilgi yayınlayıp yayınlamadığını kontrol edin. Bu bilgi olmadan gerçek koşulları değerlendirmek zordur."
+          },
+          {
+            "summary": "Provably Fair doğrulaması",
+            "body": "Yalnız Provably Fair rozeti görmek yerine tamamlanmış bir turu ilgili verilerle doğrulayabilmek gerekir."
+          },
+          {
+            "summary": "Otomatik çıkış",
+            "body": "Minimum ve maksimum ayarları, tam olarak ne zaman tetiklendiğini ve ağ ya da arayüz gecikmesinde nasıl davrandığını inceleyin."
+          },
+          {
+            "summary": "Maksimum bahis ve ödeme",
+            "body": "Platform hem bahis büyüklüğünü hem de tek turdaki maksimum kazancı sınırlayabilir. Bu limitler yüksek çarpanlarda önemlidir."
+          },
+          {
+            "summary": "Tur geçmişi",
+            "body": "Belirli sonuçları ve doğrulama verilerini incelemek için yararlıdır, ancak sonraki çarpanın tahmini değildir."
+          },
+          {
+            "summary": "Bonus ve çekim",
+            "body": "Bonus bakiye, çevrim şartı, çekim minimumu, kimlik doğrulama, ücretler ve bölgesel kısıtlamalar ayrı uygulanabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Crash Sitelerini Nasıl Değerlendirir?",
+        "intro": "Crash için sonuç doğrulaması, anlaşılır matematik, gerçek zamanlı istikrar ve şeffaf ödeme özellikle önemlidir.",
+        "items": [
+          {
+            "summary": "Matematiksel avantaj",
+            "body": "Çarpan dağılımının ne kadar açık anlatıldığını ve platformun uzun vadede hangi matematiksel avantajı tuttuğunu inceliyoruz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Doğrulama verilerine erişimi ve belirli bir tamamlanmış bitiş noktasının bağımsız kontrol edilip edilemediğini değerlendiriyoruz."
+          },
+          {
+            "summary": "Otomatik çıkış ve kontroller",
+            "body": "Ayarlar, kısıtlamalar, çoklu bahis ve seçilen çarpanda otomatik çıkışın güvenilirliği değerlendirilir."
+          },
+          {
+            "summary": "Limitler ve gerçek ödemeler",
+            "body": "Minimum ve maksimum bahis, maksimum kazanç, ücretler ve para birimi veya bakiye türüne göre kısıtlamalar dikkate alınır."
+          },
+          {
+            "summary": "Yatırma ve çekim",
+            "body": "Rust skinleri, banka ödemeleri, kripto, minimumlar, kimlik kontrolü, işlem hızı ve çekim erişimi değerlendirilir."
+          },
+          {
+            "summary": "Gerçek zamanlı istikrar",
+            "body": "Arayüz gecikmesi, çıkışın doğru gösterimi, tur geçmişi, mobil performans ve destek hızlı oyun için önemlidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Crash Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar matematiksel avantajı, limitleri, otomatik çıkışı, bonusları, ödeme yöntemlerini ve çekim kurallarını değiştirebilir. Bunların her biri gerçek koşulları etkiler.",
+          "Düşük veya yüksek çarpan serileri sonraki turun öncekileri telafi etmesi gerektiği anlamına gelmez. Turlar bağımsızsa geçmiş belirli gelecekteki değerin olasılığını artırmaz.",
+          "Diğer modlar için <a href=\"/rust/roulette\">Rulet</a>, <a href=\"/rust/jackpot\">Jackpot</a> veya <a href=\"/rust/casino\">Rust casino ve slot</a> bölümünü karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Rust Crash'te Güvenlik ve Sorumlu Oyun",
+        "intro": "Hızlı turlar ve yükselen çarpan sık tekrar bahislerini teşvik edebilir; bu nedenle zaman ve harcama kontrolü özellikle önemlidir.",
+        "items": [
+          {
+            "summary": "Provably Fair ve domaini kontrol edin",
+            "body": "Tamamlanmış turlar için doğrulama aracını kullanın ve Steam girişi veya deposit öncesi doğru domainde olduğunuzu doğrulayın."
+          },
+          {
+            "summary": "Geçmiş grafikten tahmin yapmayın",
+            "body": "Önceki çarpanlar örüntü gibi görünebilir ancak sonraki bağımsız sonucun tahmin edilebilir olduğunu kanıtlamaz."
+          },
+          {
+            "summary": "Otomatik çıkışı teknik araç olarak kullanın",
+            "body": "Seçilen değere ulaşılırsa bahsi kapatır, ancak o değere ulaşma şansını veya oyunun matematiğini değiştirmez."
+          },
+          {
+            "summary": "Limit ve çekimi önceden kontrol edin",
+            "body": "Maksimum kazanç, kimlik doğrulama, ücretler ve minimumlar gerçekten çekilebilen tutarı önemli ölçüde değiştirebilir."
+          },
+          {
+            "summary": "Zaman ve harcama limiti belirleyin",
+            "body": "Crash bir turdan diğerine hızlı geçer. Limitleri önceden belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Crash Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust Crash nedir?",
+            "body": "Bahsin rastgele bitiş noktasından önce kapatılması gereken yükselen çarpan oyunudur."
+          },
+          {
+            "summary": "Kazanç nasıl hesaplanır?",
+            "body": "Çıkış bitişten önce gerçekleşirse bahis, platform kuralları ve limitleri kapsamında sabitlenen çarpanla çarpılır."
+          },
+          {
+            "summary": "Otomatik çıkış nedir?",
+            "body": "Tur seçilen değere ulaşırsa bahsi önceden belirlenen çarpanda otomatik kapatan ayardır."
+          },
+          {
+            "summary": "Sonraki çarpan tahmin edilebilir mi?",
+            "body": "Geçmiş tur verileri tek başına sonraki bağımsız sonuç için güvenilir tahmin sağlamaz."
+          },
+          {
+            "summary": "Crash'te Provably Fair nedir?",
+            "body": "Belirli bitiş noktasının yayınlanan algoritmayla oluşturulduğunu doğrulamaya yarayan sistemdir."
+          },
+          {
+            "summary": "Yüksek çarpanlar neden daha seyrektir?",
+            "body": "Hedef değer yükseldikçe turun o noktaya ulaşma olasılığı düşer; kesin dağılım platform formülüne bağlıdır."
+          },
+          {
+            "summary": "Bonus bakiye kullanılabilir mi?",
+            "body": "Bazen evet, ancak ayrı çevrim, maksimum bahis ve çekim kuralları olabilir. <a href=\"/freebies\">Bonusları</a> karşılaştırın."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Matematiksel avantaj, Provably Fair, limitler, otomatik çıkış, ödemeler, çekim ve istikrar değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Crash: Multiplier कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Crash एक fast gambling game है जहाँ round start होने के बाद multiplier बढ़ता है और random point पर रुक जाता है। User को round खत्म होने से पहले wager cash out करना होता है; timely exit पर current multiplier के अनुसार payout मिलता है, वरना wager lose होता है।",
+          "Rust sites पर Crash अक्सर <a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/jackpot\">Jackpot</a> और दूसरे quick modes के साथ मिलता है। Platforms house edge, crash-point formula, Provably Fair, interface speed, automatic cashout, bet limits और maximum payout में अलग होती हैं।",
+          "Past multipliers completed rounds review करने में useful हैं, लेकिन next result को predictable नहीं बनाते। Result verification और actual payout mathematics ज्यादा useful comparison criteria हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Sites पर Crash कैसे काम करता है",
+        "items": [
+          {
+            "title": "Rising multiplier",
+            "paragraphs": [
+              "Round start होने के बाद multiplier random crash point तक बढ़ता है। Potential payout बढ़ता है, लेकिन cashout से पहले round खत्म होने का risk भी बढ़ता है।"
+            ]
+          },
+          {
+            "title": "Manual cashout",
+            "paragraphs": [
+              "User exit का moment चुनता है और current multiplier lock करता है। अगर command crash point से पहले accept हो जाए तो site rules के अनुसार उसी value पर payout calculate होता है।"
+            ]
+          },
+          {
+            "title": "Automatic cashout",
+            "paragraphs": [
+              "User पहले multiplier set कर सकता है जहाँ wager automatically close हो। यह reaction time और interface delay पर dependence कम करता है, लेकिन उस value तक पहुँचने की probability नहीं बढ़ाता।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Verifiable system को published inputs और algorithm के जरिए completed round का crash point check करने देना चाहिए। केवल label दिखना पर्याप्त नहीं है।"
+            ]
+          },
+          {
+            "title": "Multiple wagers",
+            "paragraphs": [
+              "कुछ platforms different amounts या automatic exit points के साथ एक round में multiple wagers allow करती हैं। यह control बढ़ाता है लेकिन house edge कम नहीं करता।"
+            ]
+          },
+          {
+            "title": "Rust skins, balance और crypto",
+            "paragraphs": [
+              "Crash balance Rust skins, conventional payments या crypto से fund हो सकता है। Items accepted हों तो internal valuation और withdrawal conditions अलग से check करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Crash खेलने से पहले क्या Check करें",
+        "intro": "Same rising-multiplier animation different mathematics, limits और payout conditions छिपा सकती है।",
+        "items": [
+          {
+            "summary": "House edge और formula",
+            "body": "Check करें कि site mathematical advantage और multiplier distribution के बारे में information publish करती है या नहीं। इसके बिना actual terms evaluate करना मुश्किल है।"
+          },
+          {
+            "summary": "Provably Fair verification",
+            "body": "Completed round को relevant data से verify कर पाना चाहिए, सिर्फ Provably Fair badge देखना पर्याप्त नहीं।"
+          },
+          {
+            "summary": "Automatic cashout",
+            "body": "Minimum/maximum settings, exact trigger point और network या interface delay में behavior check करें।"
+          },
+          {
+            "summary": "Maximum wager और payout",
+            "body": "Platform wager size और single-round maximum win दोनों limit कर सकती है। High multipliers target करने पर यह खास important है।"
+          },
+          {
+            "summary": "Round history",
+            "body": "Specific results और verification data audit करने में useful है, लेकिन next multiplier का forecast नहीं है।"
+          },
+          {
+            "summary": "Bonuses और withdrawals",
+            "body": "Bonus balance, wagering, withdrawal minimums, identity checks, fees और regional restrictions अलग से apply हो सकती हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Crash Sites को कैसे Rate करता है",
+        "intro": "Crash में result verification, understandable mathematics, real-time stability और transparent payouts खास important हैं।",
+        "items": [
+          {
+            "summary": "House edge और mathematics",
+            "body": "हम देखते हैं कि multiplier distribution कितनी clearly explain है और platform long run में कितना mathematical advantage रखती है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verification inputs की availability और specific completed crash point independently check किया जा सकता है या नहीं, यह evaluate होता है।"
+          },
+          {
+            "summary": "Automatic cashout और controls",
+            "body": "Settings, restrictions, multiple wagers और selected multiplier पर automatic exit की reliability check की जाती है।"
+          },
+          {
+            "summary": "Limits और actual payouts",
+            "body": "Minimum/maximum wager, maximum win, fees और currency या balance-type restrictions शामिल हैं।"
+          },
+          {
+            "summary": "Deposits और withdrawals",
+            "body": "Rust skins, bank payments, crypto, minimums, identity checks, processing speed और withdrawal availability rating में शामिल हैं।"
+          },
+          {
+            "summary": "Real-time stability",
+            "body": "Interface latency, correct cashout display, round history, mobile performance और support quality fast game के लिए important हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Crash Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms house edge, limits, automatic cashout, bonuses, payment methods और withdrawal rules बदल सकती हैं। इनमें से कोई भी change practical conditions बदल सकता है।",
+          "Low या high multipliers की series का मतलब next round previous results को compensate करेगा, ऐसा नहीं है। Independent rounds में history specific future value की probability नहीं बढ़ाती।",
+          "दूसरे modes के लिए <a href=\"/rust/roulette\">Roulette</a>, <a href=\"/rust/jackpot\">Jackpot</a> या <a href=\"/rust/casino\">Rust casino and slots</a> section देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Rust Crash पर Safety और Responsible Play",
+        "intro": "Fast rounds और rising multiplier repeated wagers encourage कर सकते हैं, इसलिए time और spending control खास important है।",
+        "items": [
+          {
+            "summary": "Provably Fair और domain verify करें",
+            "body": "Completed rounds के लिए available verifier use करें और Steam sign-in या deposit से पहले correct domain confirm करें।"
+          },
+          {
+            "summary": "History chart से prediction न करें",
+            "body": "Past multipliers pattern जैसे दिख सकते हैं, लेकिन इससे next independent result predictable साबित नहीं होता।"
+          },
+          {
+            "summary": "Automatic cashout को technical tool मानें",
+            "body": "यह preset multiplier reached होने पर wager close करता है, लेकिन उस value तक पहुँचने की chance या game mathematics नहीं बदलता।"
+          },
+          {
+            "summary": "Limits और withdrawal पहले check करें",
+            "body": "Maximum win, identity verification, fees और minimums actual withdrawable amount को काफी बदल सकते हैं।"
+          },
+          {
+            "summary": "Time और spending limits set करें",
+            "body": "Crash rounds जल्दी repeat होती हैं। Limits पहले तय करें और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Crash के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust Crash क्या है?",
+            "body": "Rising-multiplier game जहाँ wager को random crash point से पहले cash out करना होता है।"
+          },
+          {
+            "summary": "Win कैसे calculate होती है?",
+            "body": "अगर cashout crash point से पहले successful हो तो wager locked multiplier से multiply होता है, platform rules और limits के अनुसार।"
+          },
+          {
+            "summary": "Automatic cashout क्या है?",
+            "body": "Preset multiplier reached होने पर wager automatically close करने वाली setting।"
+          },
+          {
+            "summary": "क्या next multiplier predict कर सकते हैं?",
+            "body": "Past round history अकेले next independent result की reliable prediction नहीं देती।"
+          },
+          {
+            "summary": "Crash में Provably Fair क्या है?",
+            "body": "Verifiable system जो confirm करने देता है कि specific crash point published algorithm के अनुसार generate हुआ।"
+          },
+          {
+            "summary": "High multipliers कम क्यों आते हैं?",
+            "body": "Target multiplier जितना high होता है, round के वहाँ तक पहुँचने की probability उतनी कम; exact distribution platform formula पर depend करता है।"
+          },
+          {
+            "summary": "क्या bonus balance use कर सकते हैं?",
+            "body": "कभी-कभी, लेकिन separate wagering, maximum-bet और withdrawal rules हो सकती हैं। <a href=\"/freebies\">Bonuses</a> compare करें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "House edge, Provably Fair, limits, automatic cashout, payments, withdrawals और platform stability बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

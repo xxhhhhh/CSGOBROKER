@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-caseopening",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Сайты с кейсами Rust: как работает открытие и что сравнивать",
+        "paragraphs": [
+          "Сайты с кейсами Rust — это сторонние платформы, где пользователь выбирает виртуальный кейс с заранее заданным набором возможных предметов и получает случайный результат после открытия. Эти кейсы не являются официальными контейнерами Rust или Steam: состав, стоимость открытия, вероятности и правила вывода определяет сама площадка.",
+          "CSGOBROKER сравнивает такие сервисы отдельно от <a href=\"/rust/case-battle\">битв кейсов Rust</a> и других азартных режимов. Для обычного открытия особенно важны опубликованные вероятности, полный набор возможных предметов, математическое ожидание, проверяемость результата, внутренняя оценка скинов и доступность вывода.",
+          "Редкий дорогой предмет на изображении кейса сам по себе почти ничего не говорит о его ценности. Чтобы сравнить два кейса, нужно смотреть на распределение вероятностей всех предметов и понимать, по какой цене площадка считает выигранный скин."
+        ]
+      },
+      "categories": {
+        "title": "Какие механики встречаются на сайтах с кейсами Rust",
+        "items": [
+          {
+            "title": "Классическое открытие кейса",
+            "paragraphs": [
+              "Пользователь оплачивает фиксированную стоимость и получает один предмет из заранее определённого набора. Основные параметры — цена открытия, список предметов и вероятность каждого результата."
+            ]
+          },
+          {
+            "title": "Тематические и ценовые кейсы",
+            "paragraphs": [
+              "Площадки создают собственные наборы по цене, типу предметов, редкости или тематике. Одинаковое или похожее название на двух сайтах не означает одинаковый состав и одинаковые шансы."
+            ]
+          },
+          {
+            "title": "Битвы кейсов",
+            "paragraphs": [
+              "Некоторые сервисы позволяют использовать те же кейсы в многопользовательском режиме. Для сравнения таких площадок есть отдельный раздел <a href=\"/rust/case-battle\">битв кейсов Rust</a>, где важны правила победителя и распределения выигрыша."
+            ]
+          },
+          {
+            "title": "Улучшение выпавшего предмета",
+            "paragraphs": [
+              "Полученный скин иногда можно использовать в режиме <a href=\"/rust/upgrader\">улучшения предметов Rust</a>, чтобы попытаться получить более дорогой предмет с указанной вероятностью. Это отдельная случайная операция и её нужно оценивать отдельно от самого кейса."
+            ]
+          },
+          {
+            "title": "Бесплатные и ежедневные кейсы",
+            "paragraphs": [
+              "Площадка может выдавать бесплатное открытие за регистрацию, ежедневный вход, промокод или активность. Бесплатный кейс не обязательно означает, что выпавший предмет можно сразу вывести без дополнительных условий."
+            ]
+          },
+          {
+            "title": "Продажа или обмен выигрыша внутри сайта",
+            "paragraphs": [
+              "Если предмет не нужен, некоторые сервисы позволяют продать его обратно за внутренний баланс, обменять или использовать в другом режиме. Внутренняя цена такого предмета может отличаться от реальной цены на рынке."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед открытием кейса Rust",
+        "intro": "Два кейса с похожей ценой и одинаково дорогим главным призом могут иметь совершенно разную математику.",
+        "items": [
+          {
+            "summary": "Вероятности всех предметов",
+            "body": "Если площадка публикует шансы, смотрите не только на вероятность самого дорогого предмета, но и на распределение всех возможных результатов. Именно оно определяет структуру риска."
+          },
+          {
+            "summary": "Математическое ожидание",
+            "body": "Если известны вероятность и стоимость каждого предмета, можно приблизительно рассчитать среднюю теоретическую стоимость результата. Она не предсказывает отдельное открытие, но помогает сравнивать кейсы между собой."
+          },
+          {
+            "summary": "Как работает Provably Fair",
+            "body": "Проверьте, объясняет ли сайт механизм формирования результата и предоставляет ли данные, позволяющие проверить конкретное открытие после завершения раунда."
+          },
+          {
+            "summary": "Как оценивается выигранный скин",
+            "body": "Внутренняя стоимость может отличаться от Steam и <a href=\"/rust/marketplaces\">торговых площадок Rust</a>. Это особенно важно, если вы собираетесь продать предмет сайту, обменять или использовать его в улучшении."
+          },
+          {
+            "summary": "Есть ли предмет в наличии для вывода",
+            "body": "Скин может присутствовать в наборе возможных результатов, но временно отсутствовать в инвентаре площадки. Заранее проверьте, что сервис предлагает в такой ситуации."
+          },
+          {
+            "summary": "Бонусы и ограничения",
+            "body": "Бонус к пополнению или промокод может увеличить баланс, но бонусные средства нередко имеют отдельные требования по использованию и выводу."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с кейсами Rust",
+        "intro": "Количество кейсов и размер приветственного бонуса сами по себе недостаточны для оценки площадки.",
+        "items": [
+          {
+            "summary": "Прозрачность состава и вероятностей",
+            "body": "Проверяем, насколько легко до открытия увидеть полный набор предметов, цену кейса и вероятность каждого результата."
+          },
+          {
+            "summary": "Проверяемость случайного результата",
+            "body": "Учитываем наличие понятного механизма Provably Fair и возможность проверить конкретное завершённое открытие."
+          },
+          {
+            "summary": "Цены предметов и вывод",
+            "body": "Сравниваем внутреннюю оценку скинов, наличие предметов, минимальные суммы, комиссии и альтернативы, если выигрыш нельзя вывести сразу."
+          },
+          {
+            "summary": "Ассортимент и связанные режимы",
+            "body": "Учитываем реальное разнообразие кейсов, фильтры и то, насколько корректно реализованы связанные функции вроде битв и улучшения предметов."
+          },
+          {
+            "summary": "Пополнение и бонусы",
+            "body": "Смотрим на способы оплаты, комиссии, минимальные суммы, промокоды, бонусы к пополнению и ограничения бонусного баланса."
+          },
+          {
+            "summary": "Стабильность, интерфейс и поддержка",
+            "body": "Скорость работы, мобильная версия, история операций, статус вывода и качество поддержки влияют на итоговую оценку."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с кейсами Rust меняется",
+        "paragraphs": [
+          "Площадки регулярно добавляют новые кейсы, меняют состав старых наборов, цену открытия, бонусы и способы пополнения. Поэтому сравнение нужно периодически обновлять.",
+          "Рынок предметов Rust также меняется. Когда сервис пересчитывает внутреннюю стоимость скинов, меняется реальная ценность кейса, внутренней продажи, улучшения и вывода даже при тех же вероятностях.",
+          "Если нужен конкретный предмет, а не случайный результат, используйте <a href=\"/rust/buy-skins\">покупку скинов Rust</a>. Для продажи или обмена доступны отдельные разделы <a href=\"/rust/sell-skins\">продажи</a>, <a href=\"/rust/instant-sell\">быстрой продажи</a> и <a href=\"/rust/trade-skins\">обмена</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании сайтов с кейсами Rust",
+        "intro": "Сайты с кейсами являются сторонними сервисами и не относятся к официальной системе предметов Rust или Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте адрес перед входом через Steam",
+            "body": "Фишинговые копии могут повторять дизайн известной площадки и имитировать окно авторизации Steam. Всегда проверяйте домен."
+          },
+          {
+            "summary": "Проверяйте предложения обмена Steam",
+            "body": "Если выигрыш выводится предметом, сверяйте отправителя и сам скин перед подтверждением предложения."
+          },
+          {
+            "summary": "Не передавайте пароль и коды защиты",
+            "body": "Обычный вывод не требует отправлять пароль Steam, код Steam Guard или другие секретные данные сотруднику поддержки."
+          },
+          {
+            "summary": "Читайте правила вывода до пополнения",
+            "body": "Минимальная сумма, комиссии, проверка личности, доступность предметов и ограничения по стране могут стать важными только на этапе вывода."
+          },
+          {
+            "summary": "Не считайте кейсы гарантированным способом купить предмет дешевле",
+            "body": "Результат случаен. Наличие дорогого скина в наборе не означает высокую вероятность его получения и не гарантирует, что серия открытий будет выгоднее прямой <a href=\"/rust/buy-skins\">покупки</a>. Используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о сайтах с кейсами Rust",
+        "items": [
+          {
+            "summary": "Что такое сайты с кейсами Rust?",
+            "body": "Это сторонние платформы, где пользователь платит за открытие виртуального кейса и получает случайный предмет из заданного набора."
+          },
+          {
+            "summary": "Это официальные кейсы Rust?",
+            "body": "Нет. Состав, цена, вероятность и правила вывода на сторонней площадке определяются самим сервисом, а не разработчиком Rust или Steam."
+          },
+          {
+            "summary": "Можно ли узнать шанс выпадения конкретного предмета?",
+            "body": "Если сайт публикует вероятности, они должны быть доступны в интерфейсе кейса. Без точных процентов полноценное сравнение заметно сложнее."
+          },
+          {
+            "summary": "Что такое математическое ожидание кейса?",
+            "body": "Это расчётная средняя стоимость результата при известных ценах и вероятностях всех предметов. Она не гарантирует результат конкретного открытия."
+          },
+          {
+            "summary": "Что такое Provably Fair?",
+            "body": "Это проверяемый криптографический подход, который позволяет подтвердить, что результат конкретного раунда был сформирован по заявленному алгоритму."
+          },
+          {
+            "summary": "Можно ли вывести выигранный скин в Steam?",
+            "body": "Зависит от площадки и наличия предмета. Одни сервисы отправляют предложение обмена Steam, другие предлагают внутреннюю продажу или обмен."
+          },
+          {
+            "summary": "Чем обычное открытие отличается от битвы кейсов?",
+            "body": "При обычном открытии результат относится только к вашему кейсу. В <a href=\"/rust/case-battle\">битве кейсов</a> результаты нескольких участников сравниваются по правилам раунда."
+          },
+          {
+            "summary": "Почему рейтинг сайтов с кейсами на CSGOBROKER меняется?",
+            "body": "Меняются состав и цена кейсов, вероятности, внутренние цены предметов, бонусы, платежи, вывод и стабильность работы."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Case Opening Sites: How Cases Work and What to Compare",
+        "paragraphs": [
+          "Rust case opening sites are third-party platforms where users select a virtual case with a predefined pool of possible items and receive a random result. These cases are not official Rust or Steam containers: the platform sets the contents, opening price, probabilities, and withdrawal rules.",
+          "CSGOBROKER evaluates these services separately from <a href=\"/rust/case-battle\">Rust case battles</a> and other gambling modes. For standard case opening, published probabilities, the complete item pool, expected value, result verification, internal skin valuation, and withdrawal availability are especially important.",
+          "A rare expensive item shown on a case image says very little about the case by itself. To compare two cases, review the probability distribution of every possible item and understand which price source the platform uses for a won skin."
+        ]
+      },
+      "categories": {
+        "title": "Common Mechanics on Rust Case Opening Sites",
+        "items": [
+          {
+            "title": "Classic case opening",
+            "paragraphs": [
+              "The user pays a fixed opening price and receives one item from a predefined pool. The key variables are opening cost, the list of possible items, and the probability of each result."
+            ]
+          },
+          {
+            "title": "Themed and price-based cases",
+            "paragraphs": [
+              "Platforms create their own cases around price, item type, rarity, or theme. The same or similar case name on two sites does not imply identical contents or probabilities."
+            ]
+          },
+          {
+            "title": "Case battles",
+            "paragraphs": [
+              "Some services allow the same cases to be used in a multiplayer format. CSGOBROKER has a separate <a href=\"/rust/case-battle\">Rust case battles</a> section where winner rules and prize distribution become important."
+            ]
+          },
+          {
+            "title": "Upgrading a won item",
+            "paragraphs": [
+              "A dropped skin can sometimes be used in <a href=\"/rust/upgrader\">Rust item upgrading</a> to attempt to receive a more valuable item at a stated probability. This is a separate random operation and should be evaluated independently from the case."
+            ]
+          },
+          {
+            "title": "Free and daily cases",
+            "paragraphs": [
+              "A platform may offer a free opening for registration, daily login, promo code, or activity. A free case does not necessarily mean the resulting item can be withdrawn immediately without further conditions."
+            ]
+          },
+          {
+            "title": "Selling or exchanging the result on the site",
+            "paragraphs": [
+              "If the item is not wanted, some services allow it to be sold back for internal balance, exchanged, or used in another mode. The site's internal price can differ from the item's real market value."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Opening a Rust Case",
+        "intro": "Two cases with similar prices and equally expensive headline prizes can have completely different mathematics.",
+        "items": [
+          {
+            "summary": "Probabilities for all items",
+            "body": "If the platform publishes odds, review the full distribution rather than only the chance of the most expensive item. The complete distribution defines the actual risk structure."
+          },
+          {
+            "summary": "Expected value",
+            "body": "When the probability and value of every item are known, an approximate theoretical average result can be calculated. It does not predict one opening, but it helps compare cases."
+          },
+          {
+            "summary": "How Provably Fair works",
+            "body": "Check whether the site explains the result-generation process and provides data that allow a completed opening to be verified."
+          },
+          {
+            "summary": "How a won skin is valued",
+            "body": "Internal prices can differ from Steam and <a href=\"/rust/marketplaces\">Rust marketplaces</a>. This matters if the item will be sold back, traded, or used for upgrading."
+          },
+          {
+            "summary": "Whether the item is actually withdrawable",
+            "body": "A skin can appear in the potential item pool while temporarily missing from the platform's withdrawal inventory. Check what alternative the service provides."
+          },
+          {
+            "summary": "Bonuses and restrictions",
+            "body": "A deposit bonus or promo code can increase balance, but bonus funds often have separate use and withdrawal requirements."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Case Opening Sites",
+        "intro": "The number of available cases and the size of a welcome bonus are not enough to rate a platform.",
+        "items": [
+          {
+            "summary": "Contents and odds transparency",
+            "body": "We check how easily users can see the complete item pool, case price, and probability of every result before opening."
+          },
+          {
+            "summary": "Verifiability of random results",
+            "body": "We consider whether Provably Fair is clearly implemented and whether a specific completed opening can be checked."
+          },
+          {
+            "summary": "Item prices and withdrawals",
+            "body": "Internal skin valuation, item availability, withdrawal minimums, fees, and alternatives for unavailable items are compared."
+          },
+          {
+            "summary": "Case selection and related modes",
+            "body": "We consider meaningful case variety, filtering, and how well related functions such as battles and item upgrading are implemented."
+          },
+          {
+            "summary": "Deposits and bonuses",
+            "body": "Payment methods, fees, minimums, promo codes, deposit bonuses, and bonus-balance restrictions are included."
+          },
+          {
+            "summary": "Stability, interface, and support",
+            "body": "Performance, mobile usability, transaction history, withdrawal status, and support quality influence the final rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rust Case Opening Rankings Change",
+        "paragraphs": [
+          "Platforms regularly add new cases and change existing item pools, opening prices, bonuses, and deposit methods. Comparisons therefore need to be updated over time.",
+          "The Rust item market changes as well. When a service recalculates internal skin prices, the practical value of a case, internal sale, upgrade, or withdrawal can change even if the probabilities remain the same.",
+          "If you want a specific item rather than a random result, use <a href=\"/rust/buy-skins\">Rust skin buying sites</a>. For other goals, compare <a href=\"/rust/sell-skins\">selling</a>, <a href=\"/rust/instant-sell\">quick selling</a>, or <a href=\"/rust/trade-skins\">trading</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety on Rust Case Opening Sites",
+        "intro": "Case opening sites are third-party services and are separate from the official Rust and Steam item systems.",
+        "items": [
+          {
+            "summary": "Verify the domain before Steam sign-in",
+            "body": "Phishing copies can imitate a known platform and Steam login window. Always check the domain before authenticating."
+          },
+          {
+            "summary": "Verify Steam Trade Offers",
+            "body": "If a win is withdrawn as an item, confirm the sender and the exact skin before accepting the offer."
+          },
+          {
+            "summary": "Do not share passwords or security codes",
+            "body": "A normal withdrawal does not require sending a Steam password, Steam Guard code, or other private data to support staff."
+          },
+          {
+            "summary": "Read withdrawal rules before depositing",
+            "body": "Minimum amounts, fees, identity checks, item availability, and country restrictions can become important only at withdrawal."
+          },
+          {
+            "summary": "Do not treat cases as a guaranteed cheaper purchase method",
+            "body": "Results are random. An expensive skin in the pool does not make it likely and does not guarantee that repeated openings are cheaper than direct <a href=\"/rust/buy-skins\">purchase</a>. Use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Case Opening Sites",
+        "items": [
+          {
+            "summary": "What are Rust case opening sites?",
+            "body": "Third-party platforms where users pay to open a virtual case and receive a random item from a predefined pool."
+          },
+          {
+            "summary": "Are these official Rust cases?",
+            "body": "No. Contents, price, probabilities, and withdrawal rules on a third-party platform are set by the service rather than Rust's developer or Steam."
+          },
+          {
+            "summary": "Can I see the probability of a specific item?",
+            "body": "If the site publishes odds, they should be available in the case interface. Without exact percentages, meaningful comparison is much harder."
+          },
+          {
+            "summary": "What is the expected value of a case?",
+            "body": "The calculated average outcome value when the prices and probabilities of all items are known. It does not guarantee the result of one opening."
+          },
+          {
+            "summary": "What is Provably Fair?",
+            "body": "A verifiable cryptographic approach that can confirm a particular result was generated according to the published process."
+          },
+          {
+            "summary": "Can I withdraw a won skin to Steam?",
+            "body": "It depends on the platform and item availability. Some services use Steam Trade Offers while others offer internal sale or exchange."
+          },
+          {
+            "summary": "How is normal opening different from a case battle?",
+            "body": "With normal opening, the result belongs only to your case. In a <a href=\"/rust/case-battle\">case battle</a>, several participants' results are compared under the round rules."
+          },
+          {
+            "summary": "Why does the CSGOBROKER case-site ranking change?",
+            "body": "Case pools, opening prices, probabilities, internal item values, bonuses, payments, withdrawals, and platform stability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sitios de cajas de Rust: cómo funciona la apertura y qué comparar",
+        "paragraphs": [
+          "Los sitios de cajas de Rust son plataformas de terceros donde el usuario elige una caja virtual con un conjunto previamente definido de objetos posibles y recibe un resultado aleatorio. No son contenedores oficiales de Rust ni de Steam: la plataforma fija contenido, precio, probabilidades y reglas de retiro.",
+          "CSGOBROKER analiza estos servicios por separado de las <a href=\"/rust/case-battle\">batallas de cajas de Rust</a> y otros modos de azar. Para la apertura normal importan especialmente las probabilidades publicadas, el conjunto completo de objetos, el valor esperado, la verificación, la valoración interna y la disponibilidad de retiro.",
+          "Un objeto raro y caro en la imagen de una caja dice poco por sí solo. Para comparar dos cajas hay que revisar la distribución de probabilidades de todos los objetos posibles y entender qué precio utiliza la plataforma para valorar una skin obtenida."
+        ]
+      },
+      "categories": {
+        "title": "Mecánicas habituales en sitios de cajas de Rust",
+        "items": [
+          {
+            "title": "Apertura clásica",
+            "paragraphs": [
+              "El usuario paga un precio fijo y recibe un objeto de un conjunto definido. Las variables principales son coste de apertura, lista de objetos y probabilidad de cada resultado."
+            ]
+          },
+          {
+            "title": "Cajas temáticas y por precio",
+            "paragraphs": [
+              "Las plataformas crean sus propias cajas según precio, tipo de objeto, rareza o tema. Un nombre igual o parecido en dos sitios no implica contenido ni probabilidades iguales."
+            ]
+          },
+          {
+            "title": "Batallas de cajas",
+            "paragraphs": [
+              "Algunos servicios permiten usar las mismas cajas en un formato multijugador. CSGOBROKER tiene una sección específica de <a href=\"/rust/case-battle\">batallas de cajas de Rust</a>, donde importan las reglas del ganador y el reparto."
+            ]
+          },
+          {
+            "title": "Mejora del objeto obtenido",
+            "paragraphs": [
+              "Una skin ganada puede usarse a veces en <a href=\"/rust/upgrader\">mejora de objetos Rust</a> para intentar obtener un objeto más caro con una probabilidad indicada. Es una operación aleatoria independiente."
+            ]
+          },
+          {
+            "title": "Cajas gratuitas y diarias",
+            "paragraphs": [
+              "Una plataforma puede regalar una apertura por registro, acceso diario, código o actividad. Que sea gratuita no significa necesariamente que el objeto pueda retirarse de inmediato sin otras condiciones."
+            ]
+          },
+          {
+            "title": "Venta o intercambio dentro del sitio",
+            "paragraphs": [
+              "Si no quieres el objeto, algunos servicios permiten venderlo por saldo interno, cambiarlo o utilizarlo en otro modo. Su precio interno puede diferir del valor real de mercado."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de abrir una caja de Rust",
+        "intro": "Dos cajas con precio parecido y un premio principal igualmente caro pueden tener una matemática completamente distinta.",
+        "items": [
+          {
+            "summary": "Probabilidades de todos los objetos",
+            "body": "Si la plataforma publica probabilidades, revisa toda la distribución y no solo el objeto más caro. La distribución completa define la estructura real del riesgo."
+          },
+          {
+            "summary": "Valor esperado",
+            "body": "Si se conocen precio y probabilidad de cada objeto, se puede estimar el resultado medio teórico. No predice una apertura concreta, pero ayuda a comparar cajas."
+          },
+          {
+            "summary": "Cómo funciona Provably Fair",
+            "body": "Comprueba si el sitio explica la generación del resultado y proporciona datos para verificar una apertura finalizada."
+          },
+          {
+            "summary": "Cómo se valora la skin obtenida",
+            "body": "El precio interno puede diferir de Steam y de los <a href=\"/rust/marketplaces\">mercados de Rust</a>. Es importante si quieres venderla al sitio, cambiarla o utilizarla para mejorar."
+          },
+          {
+            "summary": "Disponibilidad real para retirar",
+            "body": "Una skin puede formar parte del conjunto posible y no estar temporalmente disponible en el inventario de retiro. Revisa qué alternativa ofrece el servicio."
+          },
+          {
+            "summary": "Bonos y restricciones",
+            "body": "Un bono de depósito o código puede aumentar el saldo, pero los fondos promocionales suelen tener requisitos específicos de uso y retiro."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de cajas de Rust",
+        "intro": "La cantidad de cajas y el tamaño del bono de bienvenida no bastan para valorar una plataforma.",
+        "items": [
+          {
+            "summary": "Transparencia de contenido y probabilidades",
+            "body": "Comprobamos si antes de abrir se puede ver fácilmente el conjunto completo de objetos, el precio y la probabilidad de cada resultado."
+          },
+          {
+            "summary": "Verificación del resultado aleatorio",
+            "body": "Valoramos que Provably Fair esté explicado y que una apertura concreta pueda comprobarse después."
+          },
+          {
+            "summary": "Precio de objetos y retiro",
+            "body": "Comparamos valoración interna, disponibilidad, mínimos, comisiones y alternativas cuando un objeto no puede retirarse inmediatamente."
+          },
+          {
+            "summary": "Catálogo y modos relacionados",
+            "body": "Se consideran variedad real, filtros y calidad de funciones relacionadas como batallas y mejora de objetos."
+          },
+          {
+            "summary": "Depósitos y bonos",
+            "body": "Incluimos métodos de pago, comisiones, mínimos, códigos, bonos de depósito y restricciones del saldo promocional."
+          },
+          {
+            "summary": "Estabilidad, interfaz y soporte",
+            "body": "Rendimiento, móvil, historial de operaciones, estado de retiro y calidad del soporte influyen en la puntuación."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de sitios de cajas de Rust",
+        "paragraphs": [
+          "Las plataformas añaden cajas y cambian conjuntos de objetos, precio de apertura, bonos y métodos de depósito. Por eso las comparaciones necesitan actualizarse periódicamente.",
+          "El mercado de objetos Rust también cambia. Cuando un servicio recalcula sus precios internos, puede cambiar el valor práctico de una caja, una venta interna, una mejora o un retiro incluso con las mismas probabilidades.",
+          "Si quieres un objeto concreto en lugar de un resultado aleatorio, utiliza <a href=\"/rust/buy-skins\">sitios para comprar skins de Rust</a>. Para otros objetivos compara <a href=\"/rust/sell-skins\">venta</a>, <a href=\"/rust/instant-sell\">venta rápida</a> o <a href=\"/rust/trade-skins\">intercambio</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en sitios de cajas de Rust",
+        "intro": "Estos sitios son servicios de terceros y no forman parte del sistema oficial de objetos de Rust o Steam.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio antes de entrar con Steam",
+            "body": "Las copias de phishing pueden imitar una plataforma conocida y la ventana de Steam. Verifica siempre la dirección."
+          },
+          {
+            "summary": "Verifica las ofertas de intercambio de Steam",
+            "body": "Si retiras el premio como objeto, comprueba remitente y skin exacta antes de aceptar."
+          },
+          {
+            "summary": "No compartas contraseñas ni códigos",
+            "body": "Un retiro normal no requiere enviar contraseña de Steam, código Steam Guard u otros datos secretos al soporte."
+          },
+          {
+            "summary": "Lee el retiro antes de depositar",
+            "body": "Mínimos, comisiones, verificación de identidad, disponibilidad y restricciones de país pueden ser relevantes solo al retirar."
+          },
+          {
+            "summary": "No consideres las cajas una forma garantizada de comprar más barato",
+            "body": "El resultado es aleatorio. Un objeto caro en el conjunto no implica una alta probabilidad ni garantiza que abrir repetidamente sea más barato que <a href=\"/rust/buy-skins\">comprarlo directamente</a>. Consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre sitios de cajas de Rust",
+        "items": [
+          {
+            "summary": "¿Qué son los sitios de cajas de Rust?",
+            "body": "Plataformas de terceros donde se paga por abrir una caja virtual y se recibe un objeto aleatorio de un conjunto definido."
+          },
+          {
+            "summary": "¿Son cajas oficiales de Rust?",
+            "body": "No. El contenido, precio, probabilidades y retiro los define la plataforma, no el desarrollador de Rust ni Steam."
+          },
+          {
+            "summary": "¿Puedo ver la probabilidad de un objeto concreto?",
+            "body": "Si el sitio publica probabilidades, deberían aparecer en la interfaz de la caja. Sin porcentajes exactos, comparar es mucho más difícil."
+          },
+          {
+            "summary": "¿Qué es el valor esperado de una caja?",
+            "body": "El valor medio calculado cuando se conocen precios y probabilidades de todos los objetos. No garantiza el resultado de una apertura."
+          },
+          {
+            "summary": "¿Qué es Provably Fair?",
+            "body": "Un enfoque criptográfico verificable que permite comprobar que un resultado se generó según el proceso publicado."
+          },
+          {
+            "summary": "¿Puedo retirar una skin a Steam?",
+            "body": "Depende de la plataforma y de la disponibilidad. Algunos servicios usan ofertas de Steam y otros venta o intercambio interno."
+          },
+          {
+            "summary": "¿Qué diferencia hay con una batalla de cajas?",
+            "body": "En apertura normal el resultado corresponde solo a tu caja. En una <a href=\"/rust/case-battle\">batalla</a> se comparan los resultados de varios participantes."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian contenido, precios, probabilidades, valoración interna, bonos, pagos, retiro y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sites de caixas de Rust: como funciona a abertura e o que comparar",
+        "paragraphs": [
+          "Sites de caixas de Rust são plataformas de terceiros onde o usuário escolhe uma caixa virtual com um conjunto predefinido de itens possíveis e recebe um resultado aleatório. Não são contêineres oficiais de Rust ou Steam: conteúdo, preço, probabilidades e regras de saque são definidos pelo serviço.",
+          "A CSGOBROKER avalia esses sites separadamente das <a href=\"/rust/case-battle\">batalhas de caixas de Rust</a> e de outros modos de aposta. Para abertura comum, importam probabilidades publicadas, conjunto completo de itens, valor esperado, verificação, avaliação interna e disponibilidade de saque.",
+          "Um item raro e caro na imagem da caixa diz pouco sozinho. Para comparar duas caixas, veja a distribuição de probabilidade de todos os resultados e entenda qual preço a plataforma usa para avaliar a skin obtida."
+        ]
+      },
+      "categories": {
+        "title": "Mecânicas comuns em sites de caixas de Rust",
+        "items": [
+          {
+            "title": "Abertura clássica",
+            "paragraphs": [
+              "O usuário paga um valor fixo e recebe um item de um conjunto definido. Os principais parâmetros são custo da abertura, lista de itens e probabilidade de cada resultado."
+            ]
+          },
+          {
+            "title": "Caixas temáticas e por preço",
+            "paragraphs": [
+              "As plataformas criam caixas próprias por preço, tipo de item, raridade ou tema. Nomes iguais ou parecidos em dois sites não significam conteúdos e probabilidades iguais."
+            ]
+          },
+          {
+            "title": "Batalhas de caixas",
+            "paragraphs": [
+              "Alguns serviços permitem usar as mesmas caixas em modo multijogador. A CSGOBROKER tem uma seção específica de <a href=\"/rust/case-battle\">batalhas de caixas de Rust</a>, onde regras do vencedor e distribuição do prêmio são importantes."
+            ]
+          },
+          {
+            "title": "Melhoria do item obtido",
+            "paragraphs": [
+              "Uma skin recebida pode ser usada em <a href=\"/rust/upgrader\">melhoria de itens Rust</a> para tentar obter algo mais caro com uma probabilidade indicada. É uma operação aleatória separada."
+            ]
+          },
+          {
+            "title": "Caixas grátis e diárias",
+            "paragraphs": [
+              "A plataforma pode oferecer abertura por cadastro, login diário, código ou atividade. Ser grátis não significa que o item possa ser sacado imediatamente sem outras condições."
+            ]
+          },
+          {
+            "title": "Venda ou troca dentro do site",
+            "paragraphs": [
+              "Se o item não interessar, alguns serviços permitem vender por saldo interno, trocar ou usar em outro modo. O preço interno pode diferir do valor real do mercado."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de abrir uma caixa de Rust",
+        "intro": "Duas caixas com preços parecidos e prêmios principais igualmente caros podem ter matemática completamente diferente.",
+        "items": [
+          {
+            "summary": "Probabilidades de todos os itens",
+            "body": "Se o site publica chances, analise toda a distribuição e não apenas o item mais caro. É a distribuição completa que define a estrutura real de risco."
+          },
+          {
+            "summary": "Valor esperado",
+            "body": "Quando preço e probabilidade de cada item são conhecidos, é possível estimar o resultado médio teórico. Isso não prevê uma abertura específica, mas ajuda na comparação."
+          },
+          {
+            "summary": "Como funciona Provably Fair",
+            "body": "Confira se o site explica a geração do resultado e fornece dados que permitam verificar uma abertura concluída."
+          },
+          {
+            "summary": "Como a skin recebida é avaliada",
+            "body": "O preço interno pode ser diferente da Steam e dos <a href=\"/rust/marketplaces\">mercados de Rust</a>. Isso importa se você vender ao site, trocar ou usar o item para melhoria."
+          },
+          {
+            "summary": "Disponibilidade real para saque",
+            "body": "A skin pode estar no conjunto possível e temporariamente faltar no inventário de saque. Confira qual alternativa o serviço oferece."
+          },
+          {
+            "summary": "Bônus e restrições",
+            "body": "Bônus de depósito ou código pode aumentar o saldo, mas fundos promocionais frequentemente têm requisitos próprios de uso e saque."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de caixas de Rust",
+        "intro": "Quantidade de caixas e tamanho do bônus de boas-vindas não são suficientes para avaliar a plataforma.",
+        "items": [
+          {
+            "summary": "Transparência de conteúdo e probabilidades",
+            "body": "Verificamos se é fácil ver o conjunto completo, o preço da caixa e a chance de cada resultado antes da abertura."
+          },
+          {
+            "summary": "Verificação do resultado aleatório",
+            "body": "Consideramos se Provably Fair é explicado com clareza e se uma abertura específica pode ser conferida depois."
+          },
+          {
+            "summary": "Preços dos itens e saque",
+            "body": "Comparamos avaliação interna, disponibilidade, mínimos, taxas e alternativas quando um item não pode ser sacado imediatamente."
+          },
+          {
+            "summary": "Seleção e modos relacionados",
+            "body": "Consideramos variedade real, filtros e implementação de funções relacionadas como batalhas e melhoria de itens."
+          },
+          {
+            "summary": "Depósitos e bônus",
+            "body": "Métodos de pagamento, taxas, mínimos, códigos, bônus de depósito e restrições do saldo promocional entram na análise."
+          },
+          {
+            "summary": "Estabilidade, interface e suporte",
+            "body": "Desempenho, mobile, histórico, status de saque e qualidade do suporte influenciam a nota final."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de sites de caixas de Rust muda",
+        "paragraphs": [
+          "As plataformas adicionam caixas e alteram conjuntos de itens, preço de abertura, bônus e métodos de depósito. Por isso a comparação precisa ser atualizada periodicamente.",
+          "O mercado de itens Rust também muda. Quando o serviço recalcula preços internos, o valor prático da caixa, venda interna, melhoria ou saque pode mudar mesmo com as mesmas probabilidades.",
+          "Se você quer um item específico sem resultado aleatório, use <a href=\"/rust/buy-skins\">sites para comprar skins de Rust</a>. Para outros objetivos, compare <a href=\"/rust/sell-skins\">venda</a>, <a href=\"/rust/instant-sell\">venda rápida</a> ou <a href=\"/rust/trade-skins\">troca</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em sites de caixas de Rust",
+        "intro": "Esses sites são serviços de terceiros e não fazem parte do sistema oficial de itens de Rust ou Steam.",
+        "items": [
+          {
+            "summary": "Confira o domínio antes do login Steam",
+            "body": "Cópias de phishing podem imitar uma plataforma conhecida e a janela da Steam. Sempre verifique o endereço."
+          },
+          {
+            "summary": "Verifique ofertas de troca da Steam",
+            "body": "Se o prêmio for sacado como item, confira remetente e skin exata antes de aceitar."
+          },
+          {
+            "summary": "Não compartilhe senhas ou códigos",
+            "body": "Um saque normal não exige enviar senha Steam, código Steam Guard ou outros dados secretos ao suporte."
+          },
+          {
+            "summary": "Leia as regras de saque antes do depósito",
+            "body": "Mínimos, taxas, verificação de identidade, disponibilidade de itens e restrições por país podem se tornar relevantes apenas no saque."
+          },
+          {
+            "summary": "Não trate caixas como forma garantida de comprar mais barato",
+            "body": "O resultado é aleatório. Um item caro no conjunto não significa alta chance nem garante que várias aberturas custem menos do que a <a href=\"/rust/buy-skins\">compra direta</a>. Consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre sites de caixas de Rust",
+        "items": [
+          {
+            "summary": "O que são sites de caixas de Rust?",
+            "body": "Plataformas de terceiros onde o usuário paga para abrir uma caixa virtual e recebe um item aleatório de um conjunto definido."
+          },
+          {
+            "summary": "São caixas oficiais de Rust?",
+            "body": "Não. Conteúdo, preço, probabilidades e saque são definidos pelo serviço, não pelo desenvolvedor de Rust ou pela Steam."
+          },
+          {
+            "summary": "Posso ver a chance de um item específico?",
+            "body": "Se o site publica probabilidades, elas devem aparecer na interface da caixa. Sem porcentagens exatas, a comparação fica muito mais difícil."
+          },
+          {
+            "summary": "O que é o valor esperado de uma caixa?",
+            "body": "O valor médio calculado quando preços e probabilidades de todos os itens são conhecidos. Não garante o resultado de uma abertura."
+          },
+          {
+            "summary": "O que é Provably Fair?",
+            "body": "Uma abordagem criptográfica verificável que permite confirmar que um resultado foi criado conforme o processo publicado."
+          },
+          {
+            "summary": "Posso sacar uma skin para a Steam?",
+            "body": "Depende da plataforma e da disponibilidade. Alguns serviços usam ofertas Steam; outros oferecem venda ou troca interna."
+          },
+          {
+            "summary": "Qual a diferença para uma batalha de caixas?",
+            "body": "Na abertura normal o resultado é apenas da sua caixa. Em uma <a href=\"/rust/case-battle\">batalha de caixas</a>, resultados de vários participantes são comparados."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Conjuntos, preços, probabilidades, valores internos, bônus, pagamentos, saques e estabilidade podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Kasa Açma Siteleri: Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Rust kasa açma siteleri, kullanıcının önceden belirlenmiş olası eşya havuzuna sahip sanal kasa seçip rastgele sonuç aldığı üçüncü taraf platformlardır. Bunlar Rust veya Steam'in resmi kasaları değildir; içerik, açılış fiyatı, olasılıklar ve çekim kuralları platform tarafından belirlenir.",
+          "CSGOBROKER bu servisleri <a href=\"/rust/case-battle\">Rust kasa savaşlarından</a> ve diğer şans modlarından ayrı değerlendirir. Normal kasa açmada yayınlanan olasılıklar, tam eşya havuzu, beklenen değer, sonuç doğrulaması, iç skin fiyatlaması ve çekim bulunabilirliği özellikle önemlidir.",
+          "Kasa görselindeki nadir ve pahalı eşya tek başına kasa hakkında çok az şey söyler. İki kasayı karşılaştırmak için tüm olası eşyaların olasılık dağılımını ve platformun kazanan skini hangi fiyatla değerlendirdiğini anlamak gerekir."
+        ]
+      },
+      "categories": {
+        "title": "Rust Kasa Sitelerinde Yaygın Mekanikler",
+        "items": [
+          {
+            "title": "Klasik kasa açma",
+            "paragraphs": [
+              "Kullanıcı sabit açılış fiyatını öder ve belirlenmiş havuzdan bir eşya alır. Temel değişkenler açılış maliyeti, olası eşyalar ve her sonucun olasılığıdır."
+            ]
+          },
+          {
+            "title": "Tematik ve fiyat bazlı kasalar",
+            "paragraphs": [
+              "Platformlar fiyat, eşya türü, nadirlik veya temaya göre kendi kasalarını oluşturur. İki sitedeki aynı veya benzer isim aynı içerik ve olasılık anlamına gelmez."
+            ]
+          },
+          {
+            "title": "Kasa savaşları",
+            "paragraphs": [
+              "Bazı servisler aynı kasaları çok oyunculu formatta kullanmaya izin verir. CSGOBROKER'ın <a href=\"/rust/case-battle\">Rust kasa savaşları</a> bölümünde kazanan ve ödül dağıtım kuralları ayrıca değerlendirilir."
+            ]
+          },
+          {
+            "title": "Kazanılan eşyayı yükseltme",
+            "paragraphs": [
+              "Çıkan skin bazen <a href=\"/rust/upgrader\">Rust eşya yükseltme</a> modunda belirtilen olasılıkla daha pahalı eşya denemek için kullanılabilir. Bu, kasadan ayrı bir rastgele işlemdir."
+            ]
+          },
+          {
+            "title": "Ücretsiz ve günlük kasalar",
+            "paragraphs": [
+              "Platform kayıt, günlük giriş, promosyon kodu veya aktivite karşılığında ücretsiz açılış verebilir. Ücretsiz olması, çıkan eşyanın ek şart olmadan hemen çekilebileceği anlamına gelmez."
+            ]
+          },
+          {
+            "title": "Site içinde satış veya takas",
+            "paragraphs": [
+              "Eşya istenmiyorsa bazı servisler iç bakiye karşılığında satmaya, takas etmeye veya başka modda kullanmaya izin verir. İç fiyat gerçek pazar değerinden farklı olabilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Kasası Açmadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Benzer fiyatlı ve aynı derecede pahalı ana ödülü olan iki kasanın matematiği tamamen farklı olabilir.",
+        "items": [
+          {
+            "summary": "Tüm eşyaların olasılıkları",
+            "body": "Platform olasılıkları yayınlıyorsa yalnız en pahalı eşyaya değil tüm dağılıma bakın. Gerçek risk yapısını tam sonuç dağılımı belirler."
+          },
+          {
+            "summary": "Beklenen değer",
+            "body": "Her eşyanın fiyatı ve olasılığı biliniyorsa teorik ortalama sonuç yaklaşık hesaplanabilir. Tek açılışı tahmin etmez, ancak kasaları karşılaştırmaya yardımcı olur."
+          },
+          {
+            "summary": "Provably Fair nasıl çalışıyor?",
+            "body": "Sitenin sonuç üretim yöntemini açıklayıp açıklamadığını ve bitmiş bir açılışı doğrulamak için gerekli verileri sağlayıp sağlamadığını kontrol edin."
+          },
+          {
+            "summary": "Kazanılan skin nasıl değerleniyor?",
+            "body": "İç fiyat Steam ve <a href=\"/rust/marketplaces\">Rust pazarlarından</a> farklı olabilir. Eşyayı siteye satacak, takas edecek veya yükseltmede kullanacaksanız bu önemlidir."
+          },
+          {
+            "summary": "Eşya gerçekten çekilebilir mi?",
+            "body": "Skin olası sonuç havuzunda bulunup geçici olarak çekim envanterinde olmayabilir. Böyle durumda servisin hangi alternatifi sunduğunu kontrol edin."
+          },
+          {
+            "summary": "Bonuslar ve kısıtlamalar",
+            "body": "Deposit bonus veya promosyon kodu bakiyeyi artırabilir, ancak bonus fonlarının kullanım ve çekim için ayrı kuralları olabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Kasa Açma Sitelerini Nasıl Değerlendirir?",
+        "intro": "Kasa sayısı ve hoş geldin bonusunun büyüklüğü tek başına platform değerlendirmesi için yeterli değildir.",
+        "items": [
+          {
+            "summary": "İçerik ve olasılık şeffaflığı",
+            "body": "Açılıştan önce tam eşya havuzunun, kasa fiyatının ve her sonucun olasılığının kolayca görülüp görülmediğini kontrol ediyoruz."
+          },
+          {
+            "summary": "Rastgele sonucun doğrulanabilirliği",
+            "body": "Provably Fair sisteminin açık olup olmadığını ve belirli bir tamamlanmış açılışın doğrulanıp doğrulanamadığını değerlendiriyoruz."
+          },
+          {
+            "summary": "Eşya fiyatları ve çekim",
+            "body": "İç skin değerlerini, eşya bulunabilirliğini, minimumları, ücretleri ve hemen çekilemeyen eşyalar için alternatifleri karşılaştırıyoruz."
+          },
+          {
+            "summary": "Kasa seçimi ve ilişkili modlar",
+            "body": "Gerçek çeşitlilik, filtreler ve kasa savaşı veya yükseltme gibi bağlı özelliklerin uygulanma kalitesi değerlendirilir."
+          },
+          {
+            "summary": "Yatırma ve bonuslar",
+            "body": "Ödeme yöntemleri, ücretler, minimumlar, promosyon kodları, deposit bonusları ve bonus bakiye kısıtlamaları dikkate alınır."
+          },
+          {
+            "summary": "İstikrar, arayüz ve destek",
+            "body": "Performans, mobil kullanım, işlem geçmişi, çekim durumu ve destek kalitesi son değerlendirmeyi etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Kasa Açma Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar düzenli olarak yeni kasalar ekler; mevcut havuzları, açılış fiyatını, bonusları ve yatırma yöntemlerini değiştirir. Bu nedenle karşılaştırmalar zaman içinde güncellenmelidir.",
+          "Rust eşya pazarı da değişir. Servis iç skin fiyatlarını yeniden hesapladığında olasılıklar aynı kalsa bile kasanın, iç satışın, yükseltmenin veya çekimin pratik değeri değişebilir.",
+          "Rastgele sonuç yerine belirli eşya istiyorsanız <a href=\"/rust/buy-skins\">Rust skin satın alma sitelerini</a> kullanın. Diğer amaçlar için <a href=\"/rust/sell-skins\">satma</a>, <a href=\"/rust/instant-sell\">hızlı satış</a> veya <a href=\"/rust/trade-skins\">takas</a> bölümlerini karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Rust Kasa Sitelerinde Güvenlik",
+        "intro": "Kasa siteleri üçüncü taraf servislerdir ve Rust veya Steam'in resmi eşya sisteminin parçası değildir.",
+        "items": [
+          {
+            "summary": "Steam girişinden önce domaini kontrol edin",
+            "body": "Phishing kopyaları bilinen platformu ve Steam giriş penceresini taklit edebilir. Her zaman adresi doğrulayın."
+          },
+          {
+            "summary": "Steam takas tekliflerini doğrulayın",
+            "body": "Kazanç eşya olarak çekiliyorsa teklifi kabul etmeden önce göndereni ve tam skini kontrol edin."
+          },
+          {
+            "summary": "Şifre ve güvenlik kodlarını paylaşmayın",
+            "body": "Normal çekim için Steam şifresini, Steam Guard kodunu veya başka gizli bilgileri destek ekibine göndermek gerekmez."
+          },
+          {
+            "summary": "Para yatırmadan önce çekim kurallarını okuyun",
+            "body": "Minimumlar, ücretler, kimlik doğrulama, eşya bulunabilirliği ve ülke kısıtlamaları yalnız çekim aşamasında önemli hale gelebilir."
+          },
+          {
+            "summary": "Kasaları garantili ucuz satın alma yöntemi görmeyin",
+            "body": "Sonuç rastgeledir. Havuzdaki pahalı skin yüksek çıkma olasılığı anlamına gelmez ve tekrar açmanın doğrudan <a href=\"/rust/buy-skins\">satın almaktan</a> ucuz olacağını garanti etmez. <a href=\"/responsibility\">Sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Kasa Siteleri Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust kasa açma siteleri nedir?",
+            "body": "Kullanıcının sanal kasa açmak için ödeme yaptığı ve belirli havuzdan rastgele eşya aldığı üçüncü taraf platformlardır."
+          },
+          {
+            "summary": "Bunlar resmi Rust kasaları mı?",
+            "body": "Hayır. Üçüncü taraf platformdaki içerik, fiyat, olasılık ve çekim kurallarını Rust geliştiricisi veya Steam değil servis belirler."
+          },
+          {
+            "summary": "Belirli eşyanın çıkma şansını görebilir miyim?",
+            "body": "Site olasılıkları yayınlıyorsa kasa arayüzünde görünmelidir. Kesin yüzdeler olmadan anlamlı karşılaştırma çok daha zordur."
+          },
+          {
+            "summary": "Kasanın beklenen değeri nedir?",
+            "body": "Tüm eşyaların fiyat ve olasılıkları bilindiğinde hesaplanan ortalama sonuç değeridir. Tek açılış sonucunu garanti etmez."
+          },
+          {
+            "summary": "Provably Fair nedir?",
+            "body": "Belirli sonucun yayınlanan üretim sürecine göre oluşturulduğunu doğrulamaya yarayan kriptografik yaklaşımdır."
+          },
+          {
+            "summary": "Kazandığım skini Steam'e çekebilir miyim?",
+            "body": "Platforma ve eşya bulunabilirliğine bağlıdır. Bazı servisler Steam takas teklifi kullanır, diğerleri iç satış veya takas sunar."
+          },
+          {
+            "summary": "Normal açılış ile kasa savaşı arasındaki fark nedir?",
+            "body": "Normal açılışta sonuç yalnız sizin kasanıza aittir. <a href=\"/rust/case-battle\">Kasa savaşında</a> birkaç katılımcının sonuçları tur kurallarına göre karşılaştırılır."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Kasa havuzları, fiyatlar, olasılıklar, iç eşya değerleri, bonuslar, ödemeler, çekim ve istikrar değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Case Opening Sites: Cases कैसे काम करते हैं और क्या Compare करें",
+        "paragraphs": [
+          "Rust case opening sites third-party platforms हैं जहाँ user predefined possible-item pool वाला virtual case चुनता है और opening के बाद random result पाता है। ये official Rust या Steam containers नहीं हैं; contents, opening price, probabilities और withdrawal rules platform तय करती है।",
+          "CSGOBROKER इन services को <a href=\"/rust/case-battle\">Rust case battles</a> और दूसरे gambling modes से अलग evaluate करता है। Normal case opening में published probabilities, complete item pool, expected value, result verification, internal skin valuation और withdrawal availability खास तौर पर important हैं।",
+          "Case image पर दिखाया गया rare expensive item अपने आप case की value नहीं बताता। दो cases compare करने के लिए सभी possible items की probability distribution और won skin के लिए platform कौन-सा price use करती है, यह समझना जरूरी है।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Case Opening Sites पर Common Mechanics",
+        "items": [
+          {
+            "title": "Classic case opening",
+            "paragraphs": [
+              "User fixed opening price pay करता है और predefined pool से एक item पाता है। Main variables opening cost, possible items की list और हर result की probability हैं।"
+            ]
+          },
+          {
+            "title": "Themed और price-based cases",
+            "paragraphs": [
+              "Platforms price, item type, rarity या theme के आधार पर अपने cases बनाती हैं। दो sites पर same या similar case name का मतलब same contents और same probabilities नहीं होता।"
+            ]
+          },
+          {
+            "title": "Case battles",
+            "paragraphs": [
+              "कुछ services same cases को multiplayer format में use करने देती हैं। CSGOBROKER का अलग <a href=\"/rust/case-battle\">Rust case battles</a> section winner rules और prize distribution compare करता है।"
+            ]
+          },
+          {
+            "title": "Won item को upgrade करना",
+            "paragraphs": [
+              "Dropped skin को कभी-कभी <a href=\"/rust/upgrader\">Rust item upgrading</a> में stated probability के साथ more valuable item पाने की कोशिश के लिए use किया जा सकता है। यह case opening से अलग random operation है।"
+            ]
+          },
+          {
+            "title": "Free और daily cases",
+            "paragraphs": [
+              "Platform registration, daily login, promo code या activity के बदले free opening दे सकती है। Free case का मतलब item बिना additional conditions के तुरंत withdraw हो सके, यह जरूरी नहीं।"
+            ]
+          },
+          {
+            "title": "Site के अंदर result sell या exchange करना",
+            "paragraphs": [
+              "अगर item नहीं चाहिए, कुछ services उसे internal balance के लिए sell back, exchange या दूसरे mode में use करने देती हैं। Internal price real market value से अलग हो सकती है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Case खोलने से पहले क्या Check करें",
+        "intro": "Similar price और equally expensive headline prize वाले दो cases की mathematics पूरी तरह अलग हो सकती है।",
+        "items": [
+          {
+            "summary": "सभी items की probabilities",
+            "body": "अगर platform odds publish करती है, तो सिर्फ सबसे expensive item की chance नहीं बल्कि पूरा distribution देखें। Actual risk structure complete outcome distribution से तय होती है।"
+          },
+          {
+            "summary": "Expected value",
+            "body": "हर item की probability और value known हो तो theoretical average outcome approximate किया जा सकता है। यह single opening predict नहीं करता, लेकिन cases compare करने में मदद करता है।"
+          },
+          {
+            "summary": "Provably Fair कैसे काम करता है",
+            "body": "Check करें कि site result-generation process explain करती है और completed opening verify करने के लिए data provide करती है या नहीं।"
+          },
+          {
+            "summary": "Won skin की valuation",
+            "body": "Internal price Steam और <a href=\"/rust/marketplaces\">Rust marketplaces</a> से अलग हो सकती है। अगर item site को sell back, trade या upgrade करना है तो यह बहुत important है।"
+          },
+          {
+            "summary": "Item वास्तव में withdrawable है या नहीं",
+            "body": "Skin potential pool में हो सकती है लेकिन platform withdrawal inventory में temporarily unavailable हो सकती है। ऐसी स्थिति में alternative क्या है, पहले देखें।"
+          },
+          {
+            "summary": "Bonuses और restrictions",
+            "body": "Deposit bonus या promo code balance बढ़ा सकता है, लेकिन bonus funds पर अलग use और withdrawal requirements हो सकती हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Case Opening Sites को कैसे Rate करता है",
+        "intro": "Case count और welcome bonus size अकेले platform की quality तय करने के लिए पर्याप्त नहीं हैं।",
+        "items": [
+          {
+            "summary": "Contents और odds transparency",
+            "body": "हम check करते हैं कि opening से पहले complete item pool, case price और हर result की probability आसानी से दिखाई देती है या नहीं।"
+          },
+          {
+            "summary": "Random result verification",
+            "body": "हम देखते हैं कि Provably Fair clearly implemented है या नहीं और specific completed opening verify की जा सकती है या नहीं।"
+          },
+          {
+            "summary": "Item prices और withdrawals",
+            "body": "Internal skin valuation, item availability, withdrawal minimums, fees और unavailable item के alternatives compare किए जाते हैं।"
+          },
+          {
+            "summary": "Case selection और related modes",
+            "body": "Meaningful variety, filters और battles तथा item upgrading जैसी related functions की implementation quality evaluate की जाती है।"
+          },
+          {
+            "summary": "Deposits और bonuses",
+            "body": "Payment methods, fees, minimums, promo codes, deposit bonuses और bonus-balance restrictions शामिल हैं।"
+          },
+          {
+            "summary": "Stability, interface और support",
+            "body": "Performance, mobile usability, transaction history, withdrawal status और support quality final rating को प्रभावित करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rust Case Opening Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms regularly नए cases जोड़ती हैं और existing pools, opening prices, bonuses तथा deposit methods बदलती हैं। इसलिए comparison को समय-समय पर update करना पड़ता है।",
+          "Rust item market भी बदलता है। Service internal skin prices recalculate करे तो probabilities same रहने पर भी case, internal sale, upgrade या withdrawal की practical value बदल सकती है।",
+          "अगर random result की जगह specific item चाहिए, तो <a href=\"/rust/buy-skins\">Rust skin buying sites</a> देखें। दूसरे goals के लिए <a href=\"/rust/sell-skins\">selling</a>, <a href=\"/rust/instant-sell\">quick selling</a> या <a href=\"/rust/trade-skins\">trading</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Rust Case Opening Sites पर Safety",
+        "intro": "Case opening sites third-party services हैं और official Rust या Steam item system का हिस्सा नहीं हैं।",
+        "items": [
+          {
+            "summary": "Steam sign-in से पहले domain verify करें",
+            "body": "Phishing copies known platform और Steam login window की नकल कर सकती हैं। Authentication से पहले हमेशा domain check करें।"
+          },
+          {
+            "summary": "Steam Trade Offers verify करें",
+            "body": "अगर winnings item के रूप में withdraw हों, तो offer accept करने से पहले sender और exact skin check करें।"
+          },
+          {
+            "summary": "Passwords और security codes share न करें",
+            "body": "Normal withdrawal के लिए Steam password, Steam Guard code या दूसरे private data support staff को भेजने की जरूरत नहीं होती।"
+          },
+          {
+            "summary": "Deposit से पहले withdrawal rules पढ़ें",
+            "body": "Minimum amounts, fees, identity checks, item availability और country restrictions withdrawal के समय महत्वपूर्ण हो सकती हैं।"
+          },
+          {
+            "summary": "Cases को guaranteed cheaper purchase method न मानें",
+            "body": "Result random है। Pool में expensive skin होने का मतलब high probability नहीं है और repeated openings direct <a href=\"/rust/buy-skins\">purchase</a> से cheaper होंगी इसकी guarantee नहीं। <a href=\"/responsibility\">Responsible gambling</a> resources देखें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Case Opening Sites के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rust case opening sites क्या हैं?",
+            "body": "Third-party platforms जहाँ user virtual case खोलने के लिए pay करता है और predefined pool से random item पाता है।"
+          },
+          {
+            "summary": "क्या ये official Rust cases हैं?",
+            "body": "नहीं। Third-party platform पर contents, price, probabilities और withdrawal rules service तय करती है, Rust developer या Steam नहीं।"
+          },
+          {
+            "summary": "क्या specific item की probability देख सकते हैं?",
+            "body": "अगर site odds publish करती है तो case interface में available होनी चाहिए। Exact percentages के बिना meaningful comparison मुश्किल है।"
+          },
+          {
+            "summary": "Case का expected value क्या है?",
+            "body": "सभी items की prices और probabilities known होने पर calculated average outcome value। यह single opening result guarantee नहीं करता।"
+          },
+          {
+            "summary": "Provably Fair क्या है?",
+            "body": "Verifiable cryptographic approach जो confirm कर सकता है कि specific result published generation process के अनुसार बना था।"
+          },
+          {
+            "summary": "क्या won skin Steam में withdraw कर सकते हैं?",
+            "body": "Platform और item availability पर depend करता है। कुछ services Steam Trade Offers use करती हैं, दूसरी internal sale या exchange offer करती हैं।"
+          },
+          {
+            "summary": "Normal opening और case battle में क्या फर्क है?",
+            "body": "Normal opening में result केवल आपके case का है। <a href=\"/rust/case-battle\">Case battle</a> में कई participants के results round rules के अनुसार compare किए जाते हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Case pools, prices, probabilities, internal item values, bonuses, payments, withdrawals और platform stability बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

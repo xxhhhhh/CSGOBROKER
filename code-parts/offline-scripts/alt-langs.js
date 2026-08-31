@@ -449,6 +449,76 @@ const PAGE_GUIDES = {
     route: "csgo/plinko",
     file: "/code-parts/page-guides/plinko.json",
     canonical: { en: "/csgo/plinko.html", ru: "/ru/csgo/plinko.html" }
+  },
+  rustCaseBattle: {
+    route: "rust/case-battle",
+    file: "/code-parts/page-guides/rust-case-battle.json",
+    canonical: { en: "/rust/case-battle.html", ru: "/ru/rust/case-battle.html" }
+  },
+  rustBuySkins: {
+    route: "rust/buy-skins",
+    file: "/code-parts/page-guides/rust-buy-skins.json",
+    canonical: { en: "/rust/buy-skins.html", ru: "/ru/rust/buy-skins.html" }
+  },
+  rustCasino: {
+    route: "rust/casino",
+    file: "/code-parts/page-guides/rust-casino.json",
+    canonical: { en: "/rust/casino.html", ru: "/ru/rust/casino.html" }
+  },
+  rustCaseOpening: {
+    route: "rust/caseopening",
+    file: "/code-parts/page-guides/rust-caseopening.json",
+    canonical: { en: "/rust/caseopening.html", ru: "/ru/rust/caseopening.html" }
+  },
+  rustJackpot: {
+    route: "rust/jackpot",
+    file: "/code-parts/page-guides/rust-jackpot.json",
+    canonical: { en: "/rust/jackpot.html", ru: "/ru/rust/jackpot.html" }
+  },
+  rustInstantSell: {
+    route: "rust/instant-sell",
+    file: "/code-parts/page-guides/rust-instant-sell.json",
+    canonical: { en: "/rust/instant-sell.html", ru: "/ru/rust/instant-sell.html" }
+  },
+  rustCrash: {
+    route: "rust/crash",
+    file: "/code-parts/page-guides/rust-crash.json",
+    canonical: { en: "/rust/crash.html", ru: "/ru/rust/crash.html" }
+  },
+  rustCoinflip: {
+    route: "rust/coinflip",
+    file: "/code-parts/page-guides/rust-coinflip.json",
+    canonical: { en: "/rust/coinflip.html", ru: "/ru/rust/coinflip.html" }
+  },
+  rustMarketplaces: {
+    route: "rust/marketplaces",
+    file: "/code-parts/page-guides/rust-marketplaces.json",
+    canonical: { en: "/rust/marketplaces.html", ru: "/ru/rust/marketplaces.html" }
+  },
+  rustMatchBetting: {
+    route: "rust/matchbetting",
+    file: "/code-parts/page-guides/rust-matchbetting.json",
+    canonical: { en: "/rust/matchbetting.html", ru: "/ru/rust/matchbetting.html" }
+  },
+  rustRoulette: {
+    route: "rust/roulette",
+    file: "/code-parts/page-guides/rust-roulette.json",
+    canonical: { en: "/rust/roulette.html", ru: "/ru/rust/roulette.html" }
+  },
+  rustSellSkins: {
+    route: "rust/sell-skins",
+    file: "/code-parts/page-guides/rust-sell-skins.json",
+    canonical: { en: "/rust/sell-skins.html", ru: "/ru/rust/sell-skins.html" }
+  },
+  rustTradeSkins: {
+    route: "rust/trade-skins",
+    file: "/code-parts/page-guides/rust-trade-skins.json",
+    canonical: { en: "/rust/trade-skins.html", ru: "/ru/rust/trade-skins.html" }
+  },
+  rustUpgrader: {
+    route: "rust/upgrader",
+    file: "/code-parts/page-guides/rust-upgrader.json",
+    canonical: { en: "/rust/upgrader.html", ru: "/ru/rust/upgrader.html" }
   }
 };
 

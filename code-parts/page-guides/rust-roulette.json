@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-roulette",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Рулетка Rust: как устроен режим и что сравнивать между сайтами",
+        "paragraphs": [
+          "Рулетка Rust — сторонний игровой режим, вдохновлённый классической рулеткой, но обычно упрощённый и оформленный в тематике Rust. На многих площадках ставка делается на цвет или сектор, после чего система случайным образом определяет результат. Часто используются два основных цвета с более низким коэффициентом и редкий сектор с более высокой выплатой, однако точные правила зависят от сайта.",
+          "На CSGOBROKER рулетка вынесена в отдельную категорию от <a href=\"/rust/coinflip\">монетки</a>, <a href=\"/rust/jackpot\">джекпота</a> и классических <a href=\"/rust/casino\">казино-игр</a>. При сравнении важно учитывать не только внешний вид колеса, но и вероятность каждого исхода, коэффициенты, преимущество площадки, механизм Provably Fair, лимиты ставок и условия пополнения и вывода.",
+          "Если сайт принимает скины Rust, внутренняя оценка предметов также влияет на фактическую стоимость ставки. Поэтому полезно отдельно проверять, по какой цене предмет конвертируется во внутренний баланс и можно ли затем вывести выигрыш обратно скинами."
+        ]
+      },
+      "categories": {
+        "title": "Какие варианты рулетки встречаются на сайтах Rust",
+        "items": [
+          {
+            "title": "Рулетка по цветам",
+            "paragraphs": [
+              "Самый распространённый вариант: пользователь выбирает один из нескольких цветов, а выигрыш зависит от выпавшего сектора. Частые цвета обычно дают меньший коэффициент, а редкий цвет — более высокий. Точные вероятности и выплаты необходимо смотреть на конкретной площадке."
+            ]
+          },
+          {
+            "title": "Рулетка с числами или секторами",
+            "paragraphs": [
+              "Некоторые сайты используют больше отдельных секторов или чисел. Чем уже выбранная группа исходов, тем выше потенциальный коэффициент, но тем ниже вероятность выигрыша."
+            ]
+          },
+          {
+            "title": "Ставки внутренним балансом",
+            "paragraphs": [
+              "Пользователь пополняет счёт деньгами, криптовалютой или скинами, после чего делает ставки внутренними единицами. Здесь важно понимать курс конвертации и правила обратного вывода."
+            ]
+          },
+          {
+            "title": "Повторные и автоматические ставки",
+            "paragraphs": [
+              "Площадка может позволять повторить предыдущую ставку или автоматически ставить одну и ту же сумму. Это ускоряет игру, но не меняет вероятность следующего независимого вращения."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "На площадках с проверяемой честностью результат раунда можно подтвердить с помощью данных Provably Fair, используемых площадкой для конкретного раунда. Важна возможность проверить конкретное вращение."
+            ]
+          },
+          {
+            "title": "Рулетка как часть крупного сайта Rust",
+            "paragraphs": [
+              "Рулетка часто соседствует с кейсами, краш, монеткой и другими режимами. Если интересует весь набор функций, дополнительно сравните общий рейтинг <a href=\"/rust\">сайтов Rust</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед игрой в рулетку Rust",
+        "intro": "У двух сайтов с одинаковыми цветами и похожими коэффициентами могут быть разные вероятности, лимиты и фактические условия.",
+        "items": [
+          {
+            "summary": "Вероятности и коэффициенты",
+            "body": "Сравнивайте вероятность каждого сектора с предлагаемой выплатой. Именно это позволяет понять математические условия, а не яркость интерфейса или размер редкого коэффициента."
+          },
+          {
+            "summary": "Преимущество площадки",
+            "body": "Если суммарная математическая выплата ниже справедливого значения, разница формирует преимущество сайта. Чем оно меньше при прочих равных, тем меньше долгосрочная математическая потеря игрока."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверьте, можно ли получить данные завершённого раунда и подтвердить результат через встроенный или внешний инструмент проверки."
+          },
+          {
+            "summary": "Минимальная и максимальная ставка",
+            "body": "Лимиты могут различаться по цветам, валютам и уровню аккаунта. Также стоит проверить ограничение максимального выигрыша за один раунд."
+          },
+          {
+            "summary": "Оценка скинов и баланс",
+            "body": "При пополнении предметами Rust важно знать, по какой цене они зачисляются и можно ли вывести баланс обратно предметами без дополнительной потери стоимости."
+          },
+          {
+            "summary": "Бонусы и вывод",
+            "body": "Бонусные средства могут иметь требования по отыгрышу, а вывод — минимальную сумму, комиссию, проверка личности и региональные ограничения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с рулеткой Rust",
+        "intro": "Для этой категории мы оцениваем именно условия рулетки и не подменяем их общим количеством игр на платформе.",
+        "items": [
+          {
+            "summary": "Математика и коэффициенты",
+            "body": "Смотрим, насколько ясно опубликованы вероятности, коэффициенты и фактическое преимущество площадки."
+          },
+          {
+            "summary": "Provably Fair и история раундов",
+            "body": "Учитываем возможность проверить конкретный результат и просмотреть историю завершённых вращений."
+          },
+          {
+            "summary": "Лимиты и скорость игры",
+            "body": "Оцениваются диапазон ставок, максимальный выигрыш, длительность раунда и удобство повторной ставки."
+          },
+          {
+            "summary": "Пополнение скинами и платежи",
+            "body": "Учитываются внутренняя оценка предметов, карты, криптовалюты, комиссии и доступность способов оплаты."
+          },
+          {
+            "summary": "Вывод и ограничения",
+            "body": "Проверяем минимумы, комиссии, проверка личности, региональные правила и доступность вывода скинами или другими способами."
+          },
+          {
+            "summary": "Интерфейс и поддержка",
+            "body": "Понятное отображение ставок, результатов, истории и статуса операций вместе со стабильной мобильной версией влияет на итоговую оценку."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с рулеткой меняется",
+        "paragraphs": [
+          "Площадки могут менять коэффициенты, вероятность отдельных секторов, лимиты ставок, бонусы и способы пополнения. Даже если визуально рулетка осталась прежней, математические условия режима могут измениться.",
+          "Если сайт принимает скины, колебания цен на предметы и изменение внутренней системы оценки влияют на реальную стоимость пополнения и вывода.",
+          "Для похожих режимов используйте отдельные страницы CSGOBROKER: <a href=\"/rust/coinflip\">монетка</a>, <a href=\"/rust/jackpot\">джекпот</a>, <a href=\"/rust/dice\">кости</a> или <a href=\"/rust/casino\">казино</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра",
+        "intro": "Рулетка остаётся случайной игрой с преимуществом площадки, поэтому проверяемая честность не означает отсутствие финансового риска.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и авторизацию",
+            "body": "Используйте официальный адрес площадки и не вводите данные Steam в поддельные формы входа."
+          },
+          {
+            "summary": "Проверяйте Provably Fair",
+            "body": "Если сайт заявляет проверяемую честность, убедитесь, что можно проверить именно завершённые вами раунды."
+          },
+          {
+            "summary": "Не ищите закономерность в серии цветов",
+            "body": "Предыдущие независимые результаты не делают противоположный цвет более вероятным в следующем раунде."
+          },
+          {
+            "summary": "Читайте условия вывода заранее",
+            "body": "проверка личности, комиссии, минимальная сумма и региональные ограничения лучше узнать до пополнения."
+          },
+          {
+            "summary": "Заранее задавайте лимит расходов",
+            "body": "Быстрые повторные ставки позволяют быстро увеличить общий объём игры. Используйте ограничения по сумме и времени и рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о рулетке Rust",
+        "items": [
+          {
+            "summary": "Что такое рулетка Rust?",
+            "body": "Это сторонний режим, где пользователь ставит на цвет, сектор или другой вариант исхода, после чего результат определяется случайным образом."
+          },
+          {
+            "summary": "Чем рулетка Rust отличается от классической казино-рулетки?",
+            "body": "На Rust-сайтах обычно используется упрощённая схема с несколькими цветами или секторами и собственными коэффициентами. Классическая рулетка использует стандартное колесо с числами."
+          },
+          {
+            "summary": "Почему редкий цвет даёт более высокий коэффициент?",
+            "body": "Потому что вероятность его выпадения ниже. Точное соотношение вероятности и выплаты зависит от площадки."
+          },
+          {
+            "summary": "Можно ли проверить результат рулетки?",
+            "body": "На сайтах с Provably Fair — обычно да, если доступен инструмент проверки и данные конкретного раунда."
+          },
+          {
+            "summary": "Можно ли пополнять рулетку скинами Rust?",
+            "body": "На части сайтов — да. Проверяйте внутреннюю цену предметов и правила их последующего вывода."
+          },
+          {
+            "summary": "Можно ли предсказать следующий цвет по истории?",
+            "body": "Серия прошлых независимых вращений сама по себе не позволяет надёжно предсказать следующий результат."
+          },
+          {
+            "summary": "Можно ли использовать бонусные средства?",
+            "body": "Иногда да, но могут действовать условия отыгрыша и ограничения ставки. Актуальные предложения смотрите в разделе <a href=\"/freebies\">бонусов</a>."
+          },
+          {
+            "summary": "Почему рейтинг рулетки на CSGOBROKER меняется?",
+            "body": "Меняются вероятности, коэффициенты, лимиты, Provably Fair, платежи, вывод и стабильность работы."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rust Roulette Sites: How the Mode Works and What to Compare",
+        "paragraphs": [
+          "Rust roulette is a third-party gambling mode inspired by traditional roulette but usually simplified and presented with Rust styling. Many sites let users bet on a color or sector before the system randomly selects the result. Two common colors often pay a lower multiplier while a rarer sector pays more, although exact rules differ by platform.",
+          "CSGOBROKER evaluates roulette separately from <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a>, and traditional <a href=\"/rust/casino\">casino games</a>. Important factors include outcome probabilities, multipliers, house edge, Provably Fair verification, bet limits, and deposit and withdrawal terms.",
+          "When Rust skins are accepted, internal item pricing also affects the real value of a wager. Check how a skin is converted into site balance and whether winnings can later be withdrawn as items."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Rust Roulette",
+        "items": [
+          {
+            "title": "Color roulette",
+            "paragraphs": [
+              "The most common format uses several colors or sectors. Frequent colors generally pay lower multipliers and a rarer color pays more. Exact probabilities and payouts should be checked on each site."
+            ]
+          },
+          {
+            "title": "Number or sector roulette",
+            "paragraphs": [
+              "Some platforms use a larger set of numbered or grouped outcomes. Narrower selections can offer higher multipliers at lower win probabilities."
+            ]
+          },
+          {
+            "title": "Internal-balance betting",
+            "paragraphs": [
+              "Users fund a site balance with money, crypto, or skins and place roulette wagers with internal units. Conversion and withdrawal rules matter."
+            ]
+          },
+          {
+            "title": "Repeat and automatic bets",
+            "paragraphs": [
+              "A site may repeat the previous wager or automate the same amount. These tools make betting faster but do not change the probability of an independent spin."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "A verifiable system can expose server seed, client seed, nonce, or another method so a completed spin can be checked."
+            ]
+          },
+          {
+            "title": "Roulette inside a larger Rust platform",
+            "paragraphs": [
+              "Roulette often appears alongside cases, crash, coinflip, and other modes. For the full ecosystem, compare the general <a href=\"/rust\">Rust site ranking</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Playing Rust Roulette",
+        "intro": "Two sites with similar colors and multipliers can still have different probabilities, limits, and effective conditions.",
+        "items": [
+          {
+            "summary": "Probabilities and multipliers",
+            "body": "Compare each outcome probability with its payout. This is more informative than the visual design or the headline rare multiplier."
+          },
+          {
+            "summary": "House edge",
+            "body": "When total mathematical payouts are below fair value, the difference creates the platform edge. A lower edge means a smaller long-run mathematical disadvantage, all else equal."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Check whether completed-round data are available and whether a specific result can be verified."
+          },
+          {
+            "summary": "Minimum and maximum wager",
+            "body": "Limits can vary by sector, currency, or account level. Maximum payout caps should also be reviewed."
+          },
+          {
+            "summary": "Skin valuation and balance",
+            "body": "If skins fund the account, check the credit value and whether the balance can be converted back into items without an additional pricing loss."
+          },
+          {
+            "summary": "Bonuses and withdrawals",
+            "body": "Bonus funds may have wagering requirements, while withdrawals may involve minimums, fees, KYC, and regional restrictions."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Roulette Sites",
+        "intro": "We evaluate the roulette conditions themselves rather than simply counting how many games a platform offers.",
+        "items": [
+          {
+            "summary": "Mathematics and payouts",
+            "body": "We review published probabilities, multipliers, and the effective platform edge."
+          },
+          {
+            "summary": "Provably Fair and round history",
+            "body": "We consider whether individual spins can be checked and whether completed-round history is accessible."
+          },
+          {
+            "summary": "Limits and game speed",
+            "body": "Bet ranges, maximum win, round duration, and repeat-bet usability are included."
+          },
+          {
+            "summary": "Skin deposits and payments",
+            "body": "Internal item pricing, cards, crypto, fees, and payment availability are considered."
+          },
+          {
+            "summary": "Withdrawals and restrictions",
+            "body": "Minimums, fees, KYC, location rules, and item or cash withdrawal options matter."
+          },
+          {
+            "summary": "Interface and support",
+            "body": "Clear bet display, results, history, transaction status, mobile stability, and support contribute to the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Roulette Rankings Change",
+        "paragraphs": [
+          "Platforms can change multipliers, outcome probabilities, bet limits, bonuses, and payment methods even when the roulette interface looks the same.",
+          "If skins are accepted, market-price changes and internal valuation updates can alter the real cost of deposits and withdrawals.",
+          "For related modes compare <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/dice\">Dice</a>, or <a href=\"/rust/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play",
+        "intro": "Roulette remains a random game with a platform edge; verifiable fairness does not remove financial risk.",
+        "items": [
+          {
+            "summary": "Verify the domain and sign-in flow",
+            "body": "Use the official platform address and avoid fake Steam login pages."
+          },
+          {
+            "summary": "Check Provably Fair verification",
+            "body": "If fairness is advertised, make sure your actual completed rounds can be verified."
+          },
+          {
+            "summary": "Do not interpret color streaks as signals",
+            "body": "Previous independent outcomes do not make the opposite color more likely on the next spin."
+          },
+          {
+            "summary": "Read withdrawal terms first",
+            "body": "Review KYC, fees, minimum amounts, and regional restrictions before depositing."
+          },
+          {
+            "summary": "Set spending and time limits",
+            "body": "Fast repeat betting can increase total wagering quickly. Use limits and <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rust Roulette",
+        "items": [
+          {
+            "summary": "What is Rust roulette?",
+            "body": "A third-party mode where users wager on a color, sector, or other outcome and the result is randomly selected."
+          },
+          {
+            "summary": "How is Rust roulette different from traditional roulette?",
+            "body": "Rust sites commonly use simplified color or sector layouts with custom multipliers, while traditional roulette uses a standard numbered wheel."
+          },
+          {
+            "summary": "Why does a rare color pay more?",
+            "body": "Because its probability is lower. The exact relationship between probability and payout depends on the site."
+          },
+          {
+            "summary": "Can a roulette result be verified?",
+            "body": "Usually on properly implemented Provably Fair sites with round data and a verification tool."
+          },
+          {
+            "summary": "Can I deposit Rust skins?",
+            "body": "Some platforms allow it. Check internal item valuation and withdrawal rules."
+          },
+          {
+            "summary": "Can history predict the next color?",
+            "body": "A sequence of previous independent spins does not reliably predict the next result."
+          },
+          {
+            "summary": "Can bonus balance be used?",
+            "body": "Sometimes, but wagering and bet restrictions may apply. Compare current <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER roulette ranking change?",
+            "body": "Probabilities, multipliers, limits, fairness tools, payments, withdrawals, and stability can change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Ruleta de Rust: cómo funciona el modo y qué comparar",
+        "paragraphs": [
+          "La ruleta de Rust es un modo de juego de terceros inspirado en la ruleta tradicional, pero normalmente simplificado y adaptado a la estética de Rust. Muchas plataformas permiten apostar a un color o sector y después seleccionan el resultado de forma aleatoria. Los colores frecuentes suelen pagar multiplicadores menores y un sector raro puede ofrecer una recompensa mayor, aunque las reglas exactas dependen del sitio.",
+          "CSGOBROKER analiza la ruleta por separado de <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a> y los <a href=\"/rust/casino\">juegos de casino</a> tradicionales. Para comparar importan las probabilidades, multiplicadores, ventaja de la plataforma, Provably Fair, límites de apuesta y condiciones de depósito y retiro.",
+          "Si el sitio acepta skins de Rust, la valoración interna de los objetos también modifica el valor real de la apuesta. Conviene revisar a qué precio se convierten las skins en saldo y si las ganancias pueden retirarse otra vez como objetos."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de ruleta de Rust",
+        "items": [
+          {
+            "title": "Ruleta por colores",
+            "paragraphs": [
+              "El formato más común utiliza varios colores o sectores. Los colores frecuentes suelen pagar menos y el color raro ofrece un multiplicador mayor. Hay que comprobar las probabilidades y pagos exactos en cada plataforma."
+            ]
+          },
+          {
+            "title": "Ruleta por números o sectores",
+            "paragraphs": [
+              "Algunos sitios ofrecen más resultados individuales o grupos de números. Una selección más estrecha suele aumentar el multiplicador y reducir la probabilidad de acertar."
+            ]
+          },
+          {
+            "title": "Apuestas con saldo interno",
+            "paragraphs": [
+              "El usuario financia el saldo con dinero, criptomonedas o skins y apuesta con unidades internas. El tipo de conversión y las reglas de retiro son importantes."
+            ]
+          },
+          {
+            "title": "Apuestas repetidas o automáticas",
+            "paragraphs": [
+              "La plataforma puede repetir la apuesta anterior o automatizar la misma cantidad. Esto acelera el juego, pero no cambia la probabilidad de un giro independiente."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Un sistema verificable puede utilizar server seed, client seed, nonce u otros datos para que el usuario compruebe un giro completado."
+            ]
+          },
+          {
+            "title": "Ruleta dentro de una plataforma Rust",
+            "paragraphs": [
+              "La ruleta suele convivir con cajas, crash, coinflip y otros modos. Para valorar todo el servicio, consulta el ranking general de <a href=\"/rust\">sitios de Rust</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de jugar a la ruleta de Rust",
+        "intro": "Dos sitios con colores y multiplicadores parecidos pueden tener probabilidades, límites y condiciones reales diferentes.",
+        "items": [
+          {
+            "summary": "Probabilidades y multiplicadores",
+            "body": "Compara la probabilidad de cada resultado con su pago. Es más útil que fijarse solo en el diseño o en el multiplicador más alto."
+          },
+          {
+            "summary": "Ventaja de la plataforma",
+            "body": "Cuando los pagos matemáticos quedan por debajo del valor justo, la diferencia representa la ventaja del operador. Cuanto menor sea, menor es la desventaja matemática a largo plazo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Comprueba que existan datos del giro terminado y una herramienta para verificar un resultado concreto."
+          },
+          {
+            "summary": "Apuesta mínima y máxima",
+            "body": "Los límites pueden variar por sector, moneda o nivel de cuenta. También hay que revisar el límite máximo de premio."
+          },
+          {
+            "summary": "Valoración de skins y saldo",
+            "body": "Si se deposita con skins, revisa cuánto saldo recibe cada objeto y si puede volver a convertirse en artículos sin una pérdida adicional de valoración."
+          },
+          {
+            "summary": "Bonos y retiros",
+            "body": "Los bonos pueden exigir wagering y los retiros pueden incluir mínimos, comisiones, KYC y restricciones regionales."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de ruleta Rust",
+        "intro": "Evaluamos las condiciones específicas de la ruleta y no solo la cantidad total de juegos disponibles.",
+        "items": [
+          {
+            "summary": "Matemática y pagos",
+            "body": "Revisamos probabilidades publicadas, multiplicadores y la ventaja efectiva de la plataforma."
+          },
+          {
+            "summary": "Provably Fair e historial",
+            "body": "Valoramos si puede verificarse cada giro y consultarse el historial de rondas completadas."
+          },
+          {
+            "summary": "Límites y velocidad",
+            "body": "Consideramos rangos de apuesta, premio máximo, duración de la ronda y facilidad para repetir apuestas."
+          },
+          {
+            "summary": "Skins y métodos de pago",
+            "body": "Incluimos valoración de objetos, tarjetas, criptomonedas, comisiones y disponibilidad regional."
+          },
+          {
+            "summary": "Retiro y restricciones",
+            "body": "Revisamos mínimos, comisiones, KYC, reglas geográficas y opciones de retirar skins o fondos."
+          },
+          {
+            "summary": "Interfaz y soporte",
+            "body": "La claridad de apuestas, resultados, historial, estado de operaciones, versión móvil y soporte influye en la nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de ruleta",
+        "paragraphs": [
+          "Las plataformas pueden cambiar multiplicadores, probabilidades, límites, bonos y métodos de pago aunque la interfaz parezca igual.",
+          "Si se aceptan skins, los cambios del mercado y de la valoración interna alteran el coste real del depósito y del retiro.",
+          "Para modos relacionados compara <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/dice\">Dice</a> o <a href=\"/rust/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "La ruleta sigue siendo un juego aleatorio con ventaja de la plataforma; poder verificar el resultado no elimina el riesgo económico.",
+        "items": [
+          {
+            "summary": "Comprueba dominio y acceso",
+            "body": "Utiliza la dirección oficial y evita formularios falsos de Steam."
+          },
+          {
+            "summary": "Verifica Provably Fair",
+            "body": "Si el sitio anuncia un sistema verificable, asegúrate de que puedas comprobar tus rondas reales."
+          },
+          {
+            "summary": "No interpretes rachas de colores como señales",
+            "body": "Resultados independientes anteriores no hacen más probable el color contrario en el siguiente giro."
+          },
+          {
+            "summary": "Lee el retiro antes del depósito",
+            "body": "Comprueba KYC, comisiones, mínimos y restricciones de país."
+          },
+          {
+            "summary": "Define límites de tiempo y gasto",
+            "body": "Las apuestas repetidas pueden aumentar rápidamente el volumen total. Utiliza límites y recursos de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre la ruleta de Rust",
+        "items": [
+          {
+            "summary": "¿Qué es la ruleta de Rust?",
+            "body": "Un modo de terceros donde se apuesta por un color, sector u otro resultado y el ganador se determina aleatoriamente."
+          },
+          {
+            "summary": "¿En qué se diferencia de la ruleta tradicional?",
+            "body": "Los sitios de Rust suelen utilizar diseños simplificados con colores o sectores y multiplicadores propios; la ruleta clásica emplea una rueda numerada estándar."
+          },
+          {
+            "summary": "¿Por qué un color raro paga más?",
+            "body": "Porque tiene menor probabilidad. La relación exacta entre probabilidad y pago depende del sitio."
+          },
+          {
+            "summary": "¿Se puede verificar un resultado?",
+            "body": "Normalmente sí en plataformas Provably Fair bien implementadas con datos de ronda y herramienta de verificación."
+          },
+          {
+            "summary": "¿Se puede depositar con skins de Rust?",
+            "body": "En algunas plataformas sí. Comprueba la valoración interna y las reglas de retiro."
+          },
+          {
+            "summary": "¿El historial predice el siguiente color?",
+            "body": "Una secuencia de giros independientes anteriores no permite predecir con fiabilidad el siguiente resultado."
+          },
+          {
+            "summary": "¿Se puede usar saldo de bono?",
+            "body": "A veces, pero pueden existir requisitos de wagering y límites de apuesta. Consulta <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Pueden cambiar probabilidades, multiplicadores, límites, Provably Fair, pagos, retiros y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Roleta de Rust: como o modo funciona e o que comparar",
+        "paragraphs": [
+          "A roleta de Rust é um modo de terceiros inspirado na roleta tradicional, normalmente simplificado e adaptado ao universo de Rust. Muitas plataformas permitem apostar em uma cor ou setor e depois selecionam o resultado aleatoriamente. Cores frequentes costumam pagar multiplicadores menores, enquanto um setor raro pode pagar mais; as regras exatas variam por site.",
+          "A CSGOBROKER avalia a roleta separadamente de <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a> e <a href=\"/rust/casino\">jogos de cassino</a>. Para comparar, importam probabilidades, multiplicadores, vantagem da plataforma, Provably Fair, limites de aposta e condições de depósito e saque.",
+          "Quando skins de Rust são aceitas, a avaliação interna dos itens também altera o valor real da aposta. Confira por quanto cada skin é convertida em saldo e se os ganhos podem ser sacados novamente como itens. Para comparar corretamente, também é importante separar a aparência da roleta da probabilidade real de cada setor e do valor pago em caso de acerto."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de roleta de Rust",
+        "items": [
+          {
+            "title": "Roleta por cores",
+            "paragraphs": [
+              "O formato mais comum usa várias cores ou setores. Cores frequentes normalmente pagam menos e a cor rara oferece multiplicador maior. Confira odds e pagamentos exatos em cada plataforma."
+            ]
+          },
+          {
+            "title": "Roleta por números ou setores",
+            "paragraphs": [
+              "Alguns sites usam mais resultados individuais ou grupos. Seleções menores podem oferecer multiplicadores maiores com menor probabilidade."
+            ]
+          },
+          {
+            "title": "Apostas com saldo interno",
+            "paragraphs": [
+              "O usuário financia o saldo com dinheiro, cripto ou skins e aposta com unidades internas. Conversão e regras de saque importam."
+            ]
+          },
+          {
+            "title": "Apostas repetidas ou automáticas",
+            "paragraphs": [
+              "A plataforma pode repetir a aposta anterior ou automatizar o mesmo valor. Isso acelera o jogo, mas não muda a probabilidade de um giro independente."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Um sistema verificável pode usar server seed, client seed, nonce ou outros dados para permitir a conferência de um giro concluído."
+            ]
+          },
+          {
+            "title": "Roleta dentro de uma plataforma Rust",
+            "paragraphs": [
+              "Roleta costuma aparecer junto de caixas, crash, coinflip e outros modos. Para avaliar o serviço completo, consulte o ranking de <a href=\"/rust\">sites de Rust</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de jogar roleta de Rust",
+        "intro": "Dois sites com cores e multiplicadores parecidos podem ter probabilidades, limites e condições efetivas diferentes. Limites, avaliação das skins e regras de saque podem tornar duas roletas visualmente parecidas muito diferentes na prática.",
+        "items": [
+          {
+            "summary": "Probabilidades e multiplicadores",
+            "body": "Compare a chance de cada resultado com o pagamento oferecido. Isso é mais útil que olhar apenas o design ou o maior multiplicador."
+          },
+          {
+            "summary": "Vantagem da plataforma",
+            "body": "Quando os pagamentos matemáticos ficam abaixo do valor justo, a diferença forma a vantagem do operador. Quanto menor, menor a desvantagem matemática no longo prazo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Confira se os dados da rodada concluída e uma ferramenta de verificação estão disponíveis."
+          },
+          {
+            "summary": "Aposta mínima e máxima",
+            "body": "Limites podem variar por setor, moeda ou nível de conta. Veja também o limite de ganho máximo."
+          },
+          {
+            "summary": "Avaliação de skins e saldo",
+            "body": "Se o depósito usa skins, verifique quanto saldo cada item recebe e se pode voltar a ser retirado como item sem perda adicional de avaliação."
+          },
+          {
+            "summary": "Bônus e saques",
+            "body": "Bônus podem ter requisitos de wagering, e saques podem incluir mínimos, taxas, KYC e restrições regionais."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de roleta Rust",
+        "intro": "Avaliamos as condições específicas da roleta, não apenas a quantidade total de jogos da plataforma. A análise considera a matemática do modo e a capacidade de verificar resultados, não apenas a variedade de jogos do site.",
+        "items": [
+          {
+            "summary": "Matemática e pagamentos",
+            "body": "Analisamos probabilidades publicadas, multiplicadores e a vantagem efetiva da plataforma."
+          },
+          {
+            "summary": "Provably Fair e histórico",
+            "body": "Consideramos se cada giro pode ser verificado e se o histórico de rodadas está disponível."
+          },
+          {
+            "summary": "Limites e velocidade",
+            "body": "Faixa de apostas, ganho máximo, duração da rodada e facilidade de repetir apostas entram na análise."
+          },
+          {
+            "summary": "Skins e pagamentos",
+            "body": "Incluímos avaliação de itens, cartões, cripto, taxas e disponibilidade dos métodos."
+          },
+          {
+            "summary": "Saques e restrições",
+            "body": "Verificamos mínimos, taxas, KYC, regras regionais e opções de sacar skins ou outros meios."
+          },
+          {
+            "summary": "Interface e suporte",
+            "body": "Clareza das apostas, resultados, histórico, status das operações, mobile e suporte influenciam a nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de roleta muda",
+        "paragraphs": [
+          "As plataformas podem alterar multiplicadores, probabilidades, limites, bônus e pagamentos mesmo quando a interface parece igual.",
+          "Se skins são aceitas, mudanças no mercado e na avaliação interna alteram o custo real do depósito e do saque.",
+          "Para modos relacionados compare <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/dice\">Dice</a> ou <a href=\"/rust/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "A roleta continua sendo um jogo aleatório com vantagem da plataforma; verificabilidade não elimina risco financeiro. Sequências anteriores de cores não alteram a probabilidade de um novo giro independente.",
+        "items": [
+          {
+            "summary": "Confira domínio e login",
+            "body": "Use o endereço oficial e evite páginas falsas de Steam."
+          },
+          {
+            "summary": "Verifique Provably Fair",
+            "body": "Se o site anuncia verificação, confirme que suas rodadas reais podem ser conferidas."
+          },
+          {
+            "summary": "Não trate sequências de cores como sinais",
+            "body": "Resultados independentes anteriores não tornam a cor oposta mais provável no próximo giro."
+          },
+          {
+            "summary": "Leia saque antes do depósito",
+            "body": "Confira KYC, taxas, mínimos e restrições de país."
+          },
+          {
+            "summary": "Defina limites de tempo e gasto",
+            "body": "Apostas repetidas podem aumentar rapidamente o volume total. Use limites e recursos de <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre roleta de Rust",
+        "items": [
+          {
+            "summary": "O que é roleta de Rust?",
+            "body": "Um modo de terceiros em que o usuário aposta em uma cor, setor ou outro resultado e o vencedor é selecionado aleatoriamente."
+          },
+          {
+            "summary": "Qual a diferença para roleta tradicional?",
+            "body": "Sites de Rust normalmente usam esquemas simplificados com cores ou setores e multiplicadores próprios; a roleta clássica usa uma roda numerada padrão."
+          },
+          {
+            "summary": "Por que uma cor rara paga mais?",
+            "body": "Porque sua probabilidade é menor. A relação exata entre chance e pagamento depende do site."
+          },
+          {
+            "summary": "O resultado pode ser verificado?",
+            "body": "Normalmente sim em plataformas Provably Fair bem implementadas com dados da rodada e verificador."
+          },
+          {
+            "summary": "Posso depositar skins de Rust?",
+            "body": "Em algumas plataformas sim. Confira avaliação interna e regras de saque."
+          },
+          {
+            "summary": "O histórico prevê a próxima cor?",
+            "body": "Uma sequência de giros independentes não prevê com segurança o próximo resultado."
+          },
+          {
+            "summary": "Posso usar saldo de bônus?",
+            "body": "Às vezes, com wagering e limites de aposta. Veja <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Probabilidades, multiplicadores, limites, Provably Fair, pagamentos, saques e estabilidade podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Rulet Siteleri: Mod Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Rust ruleti, klasik ruletten esinlenen ancak genellikle daha basit kurallarla ve Rust temasıyla sunulan üçüncü taraf bir oyun modudur. Birçok platformda kullanıcı bir renk veya sektöre bahis yapar ve sistem sonucu rastgele belirler. Sık çıkan renkler genellikle daha düşük, nadir sektör ise daha yüksek çarpan verir; kesin kurallar siteye göre değişir.",
+          "CSGOBROKER ruleti <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a> ve klasik <a href=\"/rust/casino\">casino oyunlarından</a> ayrı değerlendirir. Karşılaştırmada olasılıklar, çarpanlar, site avantajı, Provably Fair, bahis limitleri, para yatırma ve çekme şartları önemlidir.",
+          "Rust skin kabul eden sitelerde iç eşya fiyatlaması da bahsin gerçek değerini etkiler. Bir skinin bakiyeye hangi değerle çevrildiğini ve kazancın yeniden skin olarak çekilip çekilemediğini kontrol edin. Sağlıklı karşılaştırma için ruletin görünümünden çok her sektörün gerçek olasılığı ve doğru sonuçta ödenen miktar dikkate alınmalıdır."
+        ]
+      },
+      "categories": {
+        "title": "Rust Sitelerinde Yaygın Rulet Türleri",
+        "items": [
+          {
+            "title": "Renk ruleti",
+            "paragraphs": [
+              "En yaygın format birkaç renk veya sektör kullanır. Sık renkler daha düşük, nadir renk daha yüksek çarpan verir. Kesin olasılık ve ödemeleri her sitede kontrol edin."
+            ]
+          },
+          {
+            "title": "Sayı veya sektör ruleti",
+            "paragraphs": [
+              "Bazı siteler daha fazla tekil sonuç veya sayı grubu kullanır. Daha dar seçimler daha yüksek çarpan verirken kazanma olasılığını düşürür."
+            ]
+          },
+          {
+            "title": "İç bakiye ile bahis",
+            "paragraphs": [
+              "Kullanıcı para, kripto veya skin ile bakiye yükler ve site içi birimlerle bahis yapar. Dönüşüm ve çekim kuralları önemlidir."
+            ]
+          },
+          {
+            "title": "Tekrar ve otomatik bahis",
+            "paragraphs": [
+              "Site önceki bahsi tekrarlayabilir veya aynı miktarı otomatik oynatabilir. Bu özellikler hızı artırır, bağımsız bir dönüşün olasılığını değiştirmez."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Doğrulanabilir sistem server seed, client seed, nonce veya başka verilerle tamamlanan bir dönüşün kontrol edilmesini sağlayabilir."
+            ]
+          },
+          {
+            "title": "Büyük Rust platformunda rulet",
+            "paragraphs": [
+              "Rulet çoğu zaman kasa, crash, coinflip ve diğer modlarla birlikte sunulur. Tüm servis için <a href=\"/rust\">Rust site sıralamasına</a> bakın."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Rulet Oynamadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Benzer renk ve çarpanlara sahip iki site farklı olasılık, limit ve gerçek koşullar sunabilir. Limitler, skin değerlemesi ve çekim kuralları görsel olarak benzer iki ruleti pratikte oldukça farklı hale getirebilir.",
+        "items": [
+          {
+            "summary": "Olasılık ve çarpanlar",
+            "body": "Her sonucun olasılığını verilen ödemeyle karşılaştırın. Bu, tasarımdan veya en yüksek çarpandan daha anlamlıdır."
+          },
+          {
+            "summary": "Site avantajı",
+            "body": "Matematiksel toplam ödeme adil değerin altındaysa aradaki fark site avantajıdır. Diğer koşullar eşitken daha düşük avantaj, uzun vadede daha düşük matematiksel dezavantaj demektir."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Tamamlanan tur verilerinin ve belirli sonucu doğrulayacak aracın mevcut olup olmadığını kontrol edin."
+          },
+          {
+            "summary": "Minimum ve maksimum bahis",
+            "body": "Limitler sektör, para birimi veya hesap seviyesine göre değişebilir. Maksimum kazanç sınırını da kontrol edin."
+          },
+          {
+            "summary": "Skin değerlemesi ve bakiye",
+            "body": "Skin ile yatırıyorsanız itemın kaç bakiye verdiğini ve ek değer kaybı olmadan tekrar item çekilip çekilemediğini inceleyin."
+          },
+          {
+            "summary": "Bonus ve çekim",
+            "body": "Bonuslarda çevrim şartı; çekimde minimum, ücret, KYC ve bölgesel kısıtlamalar olabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Rulet Sitelerini Nasıl Değerlendirir?",
+        "intro": "Platformdaki oyun sayısından ziyade ruletin kendi koşullarını değerlendiriyoruz. Değerlendirme, sitenin toplam oyun sayısından çok modun matematiğine ve sonuçların doğrulanabilirliğine odaklanır.",
+        "items": [
+          {
+            "summary": "Matematik ve ödeme",
+            "body": "Yayınlanan olasılıkları, çarpanları ve gerçek site avantajını inceleriz."
+          },
+          {
+            "summary": "Provably Fair ve tur geçmişi",
+            "body": "Belirli dönüşlerin doğrulanabilmesini ve tamamlanan tur geçmişini değerlendiririz."
+          },
+          {
+            "summary": "Limit ve oyun hızı",
+            "body": "Bahis aralığı, maksimum kazanç, tur süresi ve tekrar bahis kullanımı önemlidir."
+          },
+          {
+            "summary": "Skin ve ödeme yöntemleri",
+            "body": "İç skin fiyatı, kartlar, kripto, ücretler ve yöntemlerin bulunabilirliği değerlendirilir."
+          },
+          {
+            "summary": "Çekim ve kısıtlamalar",
+            "body": "Minimumlar, ücretler, KYC, bölgesel kurallar ve skin veya diğer çekim seçenekleri incelenir."
+          },
+          {
+            "summary": "Arayüz ve destek",
+            "body": "Bahis, sonuç, geçmiş, işlem durumu, mobil kararlılık ve destek puana katkı sağlar."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rulet Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar arayüz aynı kalsa bile çarpanları, sektör olasılıklarını, limitleri, bonusları ve ödeme yöntemlerini değiştirebilir.",
+          "Skin kabul eden sitelerde pazar fiyatı ve iç değerleme değişiklikleri yatırma ve çekmenin gerçek değerini etkiler.",
+          "Benzer modlar için <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/dice\">Dice</a> veya <a href=\"/rust/casino\">Casino</a> sayfalarını karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Rulet site avantajı olan rastgele bir oyundur; sonucun doğrulanabilmesi finansal riski ortadan kaldırmaz. Önceki renk serileri bağımsız bir sonraki turun olasılıklarını değiştirmez.",
+        "items": [
+          {
+            "summary": "Domain ve girişi kontrol edin",
+            "body": "Resmi adresi kullanın ve sahte Steam giriş sayfalarından kaçının."
+          },
+          {
+            "summary": "Provably Fair doğrulamasını kullanın",
+            "body": "Site doğrulanabilirlik sunuyorsa oynadığınız gerçek turların kontrol edilebildiğinden emin olun."
+          },
+          {
+            "summary": "Renk serilerini sinyal saymayın",
+            "body": "Önceki bağımsız sonuçlar bir sonraki turda karşı rengin çıkma ihtimalini yükseltmez."
+          },
+          {
+            "summary": "Çekim şartlarını önceden okuyun",
+            "body": "Yatırmadan önce KYC, ücret, minimum ve bölgesel kısıtlamaları kontrol edin."
+          },
+          {
+            "summary": "Zaman ve harcama limiti belirleyin",
+            "body": "Hızlı tekrar bahis toplam hacmi çabuk artırabilir. Limit kullanın ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarına bakın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Rulet Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust ruleti nedir?",
+            "body": "Renk, sektör veya başka bir sonuca bahis yapılan ve sonucun rastgele seçildiği üçüncü taraf bir moddur."
+          },
+          {
+            "summary": "Klasik ruletten farkı nedir?",
+            "body": "Rust sitelerinde genellikle birkaç renk veya sektör ve özel çarpanlar kullanılır; klasik rulet standart numaralı çark kullanır."
+          },
+          {
+            "summary": "Nadir renk neden daha çok öder?",
+            "body": "Çünkü çıkma olasılığı daha düşüktür. Kesin olasılık-ödeme ilişkisi siteye bağlıdır."
+          },
+          {
+            "summary": "Rulet sonucu doğrulanabilir mi?",
+            "body": "Doğru uygulanmış Provably Fair sitelerde tur verileri ve doğrulama aracı varsa genellikle evet."
+          },
+          {
+            "summary": "Rust skin ile yatırılabilir mi?",
+            "body": "Bazı sitelerde evet. İç fiyatı ve çekim kurallarını kontrol edin."
+          },
+          {
+            "summary": "Geçmiş sonraki rengi tahmin eder mi?",
+            "body": "Bağımsız geçmiş dönüşler bir sonraki sonucu güvenilir şekilde tahmin etmez."
+          },
+          {
+            "summary": "Bonus bakiye kullanılabilir mi?",
+            "body": "Bazen; çevrim ve bahis sınırları olabilir. <a href=\"/freebies\">Bonusları</a> karşılaştırın."
+          },
+          {
+            "summary": "CSGOBROKER rulet sıralaması neden değişir?",
+            "body": "Olasılık, çarpan, limit, Provably Fair, ödeme, çekim ve kararlılık değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Roulette Sites: Roulette Mode कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Rust roulette third-party game mode है जो traditional roulette से inspired होता है, लेकिन आम तौर पर simplified rules और Rust theme के साथ चलता है। कई platforms पर user किसी color या sector पर bet करता है और system random result चुनता है। Common colors अक्सर lower multiplier देते हैं, जबकि rare sector higher payout दे सकता है; exact rules site पर depend करते हैं।",
+          "CSGOBROKER roulette को <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a> और traditional <a href=\"/rust/casino\">casino games</a> से अलग evaluate करता है। Compare करते समय outcome probabilities, multipliers, platform edge, Provably Fair, bet limits, deposits और withdrawals महत्वपूर्ण हैं।",
+          "अगर site Rust skins accept करती है तो internal item valuation भी wager की real value बदलती है। Check करें कि skin कितने balance में convert होती है और winnings को बाद में items के रूप में withdraw किया जा सकता है या नहीं। सही comparison के लिए roulette की visual design से ज्यादा हर sector की actual probability और winning result पर मिलने वाली payout देखनी चाहिए।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Roulette के Common Formats",
+        "items": [
+          {
+            "title": "Color roulette",
+            "paragraphs": [
+              "सबसे common format कई colors या sectors use करता है। Frequent colors lower multiplier देते हैं और rare color higher payout दे सकता है। Exact probabilities और payouts हर site पर check करें।"
+            ]
+          },
+          {
+            "title": "Number या sector roulette",
+            "paragraphs": [
+              "कुछ platforms अधिक individual outcomes या number groups use करती हैं। Narrower selection higher multiplier लेकिन lower win probability दे सकती है।"
+            ]
+          },
+          {
+            "title": "Internal balance betting",
+            "paragraphs": [
+              "User cash, crypto या skins से site balance fund करता है और internal units में bet करता है। Conversion और withdrawal rules महत्वपूर्ण हैं।"
+            ]
+          },
+          {
+            "title": "Repeat और automatic bets",
+            "paragraphs": [
+              "Site previous wager repeat या same amount automate कर सकती है। इससे speed बढ़ती है, independent spin की probability नहीं बदलती।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Verifiable system server seed, client seed, nonce या दूसरे data से completed spin check करने देता है।"
+            ]
+          },
+          {
+            "title": "Larger Rust platform के अंदर roulette",
+            "paragraphs": [
+              "Roulette अक्सर cases, crash, coinflip और दूसरे modes के साथ होती है। पूरे service के लिए <a href=\"/rust\">Rust site ranking</a> देखें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rust Roulette खेलने से पहले क्या Check करें",
+        "intro": "Similar colors और multipliers वाली दो sites की probabilities, limits और effective conditions अलग हो सकती हैं। Limits, skin valuation और withdrawal rules visually similar दो roulette modes को practical terms में काफी अलग बना सकते हैं।",
+        "items": [
+          {
+            "summary": "Probabilities और multipliers",
+            "body": "हर outcome की chance को उसके payout से compare करें। यह visual design या headline multiplier से ज्यादा useful है।"
+          },
+          {
+            "summary": "Platform edge",
+            "body": "अगर total mathematical payouts fair value से कम हैं, difference platform edge है। Lower edge long run में smaller mathematical disadvantage देता है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Completed round data और specific result verify करने का tool available है या नहीं, check करें।"
+          },
+          {
+            "summary": "Minimum और maximum bet",
+            "body": "Limits sector, currency या account level पर depend कर सकती हैं। Maximum win cap भी देखें।"
+          },
+          {
+            "summary": "Skin valuation और balance",
+            "body": "Skin deposit पर कितनी credit value मिलती है और balance को बिना extra valuation loss के items में वापस withdraw कर सकते हैं या नहीं, check करें।"
+          },
+          {
+            "summary": "Bonuses और withdrawals",
+            "body": "Bonus funds में wagering rules और withdrawals में minimums, fees, KYC तथा regional restrictions हो सकती हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Roulette Sites को कैसे Rate करता है",
+        "intro": "हम सिर्फ total game count नहीं, roulette की actual conditions evaluate करते हैं। Evaluation site के total game count से ज्यादा mode की mathematics और result verification पर focus करती है।",
+        "items": [
+          {
+            "summary": "Math और payouts",
+            "body": "Published probabilities, multipliers और effective platform edge देखते हैं।"
+          },
+          {
+            "summary": "Provably Fair और round history",
+            "body": "Specific spins verify हो सकती हैं या नहीं और completed history available है या नहीं, देखते हैं।"
+          },
+          {
+            "summary": "Limits और game speed",
+            "body": "Bet range, maximum win, round duration और repeat-bet usability शामिल हैं।"
+          },
+          {
+            "summary": "Skin deposits और payments",
+            "body": "Internal item pricing, cards, crypto, fees और payment availability evaluate होती है।"
+          },
+          {
+            "summary": "Withdrawals और restrictions",
+            "body": "Minimums, fees, KYC, location rules और skin या दूसरे withdrawal methods compare होते हैं।"
+          },
+          {
+            "summary": "Interface और support",
+            "body": "Clear bets, results, history, transaction status, mobile stability और support rating में शामिल हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Roulette Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms interface same रखते हुए multipliers, probabilities, bet limits, bonuses और payment methods बदल सकती हैं।",
+          "Skin-accepting sites में market prices और internal valuation changes deposit और withdrawal की real value बदलते हैं।",
+          "Related modes के लिए <a href=\"/rust/coinflip\">Coinflip</a>, <a href=\"/rust/jackpot\">Jackpot</a>, <a href=\"/rust/dice\">Dice</a> या <a href=\"/rust/casino\">Casino</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Roulette random game है जिसमें platform edge रहता है; verifiable fairness financial risk को खत्म नहीं करती। Previous color streaks independent next spin की probability नहीं बदलतीं।",
+        "items": [
+          {
+            "summary": "Domain और sign-in verify करें",
+            "body": "Official address use करें और fake Steam login pages से बचें।"
+          },
+          {
+            "summary": "Provably Fair check करें",
+            "body": "अगर verification advertised है तो अपने actual completed rounds verify कर पाने चाहिए।"
+          },
+          {
+            "summary": "Color streaks को signal न मानें",
+            "body": "Previous independent outcomes opposite color को next spin में ज्यादा likely नहीं बनाते।"
+          },
+          {
+            "summary": "Withdrawal terms पहले पढ़ें",
+            "body": "Deposit से पहले KYC, fees, minimums और regional restrictions देखें।"
+          },
+          {
+            "summary": "Time और spending limits रखें",
+            "body": "Fast repeat betting total wagering जल्दी बढ़ा सकती है। Limits और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Roulette FAQ",
+        "items": [
+          {
+            "summary": "Rust roulette क्या है?",
+            "body": "Third-party mode जिसमें color, sector या दूसरे outcome पर wager होता है और result randomly चुना जाता है।"
+          },
+          {
+            "summary": "Traditional roulette से क्या फर्क है?",
+            "body": "Rust sites अक्सर simplified colors/sectors और custom multipliers use करती हैं; traditional roulette standard numbered wheel use करती है।"
+          },
+          {
+            "summary": "Rare color higher payout क्यों देता है?",
+            "body": "क्योंकि उसकी probability lower होती है। Exact chance-payout relation site पर depend करता है।"
+          },
+          {
+            "summary": "Roulette result verify हो सकता है?",
+            "body": "Proper Provably Fair implementation में round data और verifier होने पर आम तौर पर हाँ।"
+          },
+          {
+            "summary": "क्या Rust skins deposit कर सकते हैं?",
+            "body": "कुछ platforms पर हाँ। Internal valuation और withdrawal rules check करें।"
+          },
+          {
+            "summary": "क्या history next color predict करती है?",
+            "body": "Independent previous spins next result reliably predict नहीं करतीं।"
+          },
+          {
+            "summary": "क्या bonus balance use कर सकते हैं?",
+            "body": "कभी-कभी, लेकिन wagering और bet limits हो सकती हैं। <a href=\"/freebies\">Bonuses</a> देखें।"
+          },
+          {
+            "summary": "CSGOBROKER roulette ranking क्यों बदलती है?",
+            "body": "Probabilities, multipliers, limits, fairness tools, payments, withdrawals और stability बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

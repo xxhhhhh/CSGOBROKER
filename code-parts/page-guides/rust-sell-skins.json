@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rust-sell-skins",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Продажа скинов Rust: как выбрать площадку и способ вывода",
+        "paragraphs": [
+          "Продать скины Rust за реальные деньги можно несколькими способами: выставить предмет на <a href=\"/rust/marketplaces\">торговой площадке</a>, использовать <a href=\"/rust/instant-sell\">сервис быстрой продажи</a> или воспользоваться платформой, которая совмещает обмен и вывод средств. Эти варианты отличаются скоростью, ценой продажи, комиссиями и доступными методами выплаты.",
+          "На CSGOBROKER собраны сервисы, где продажа предметов является отдельной функцией или частью более широкой торговли скинами. При сравнении мы смотрим не только на указанную цену предмета, но и на то, сколько пользователь фактически получает после комиссии, какие способы вывода доступны и насколько понятен сам процесс сделки.",
+          "Цена скина в Steam, на стороннем маркетплейсе и в сервисе моментального выкупа может заметно отличаться. Поэтому стоимость инвентаря в Steam не стоит воспринимать как гарантированную сумму, которую можно сразу получить наличными или вывести на карту."
+        ]
+      },
+      "categories": {
+        "title": "Основные способы продать скины Rust",
+        "items": [
+          {
+            "title": "Торговые площадки между пользователями",
+            "paragraphs": [
+              "На <a href=\"/rust/marketplaces\">маркетплейсах Rust</a> продавец обычно сам выставляет цену, а предмет покупает другой пользователь. Такой вариант даёт больше контроля над стоимостью, но продажа может занять время. Итог зависит от спроса на конкретный скин, комиссии площадки и условий вывода денег."
+            ]
+          },
+          {
+            "title": "Быстрая продажа",
+            "paragraphs": [
+              "<a href=\"/rust/instant-sell\">Сервисы быстрой продажи</a> выкупают поддерживаемые предметы по заранее рассчитанной цене или быстро находят для них покупателя. Главное преимущество — скорость, а основной компромисс — предложение обычно ниже той суммы, которую потенциально можно получить при самостоятельной продаже на рынке."
+            ]
+          },
+          {
+            "title": "Обменные сервисы с функцией продажи",
+            "paragraphs": [
+              "Часть <a href=\"/rust/trade-skins\">обменников скинов</a> позволяет не только менять предметы, но и продавать их за внутренний баланс с последующим выводом. Здесь особенно важно проверить курс оценки скина, возможную разницу между ценой обмена и продажи и доступные способы получения средств."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market подходит для продажи предметов внутри экосистемы Steam, но полученные средства остаются на балансе Steam. Это удобно, если деньги планируется потратить на игры или другие предметы внутри платформы, но не решает задачу вывода средств во внешнюю платёжную систему."
+            ]
+          },
+          {
+            "title": "Продажа с выводом на карту или криптовалюту",
+            "paragraphs": [
+              "Сторонние сервисы могут поддерживать банковские карты, локальные платёжные методы, электронные кошельки или криптовалюту. Набор способов вывода зависит от площадки и страны пользователя, поэтому доступность конкретного метода лучше проверять до отправки предмета."
+            ]
+          },
+          {
+            "title": "Продажа дорогих и редких предметов",
+            "paragraphs": [
+              "Редкие, старые или малоликвидные Rust-скины могут оцениваться сервисами по-разному. Для таких предметов особенно важно сравнивать несколько предложений и историю реальных продаж: автоматическая оценка не всегда отражает цену, которую готов заплатить конкретный покупатель."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед продажей скинов",
+        "intro": "Самая высокая отображаемая цена ещё не гарантирует самый выгодный результат. Сравнивать площадки лучше по итоговой сумме и условиям всей сделки.",
+        "items": [
+          {
+            "summary": "Итоговая сумма после комиссий",
+            "body": "Смотрите не только на цену, которую сервис показывает за скин, но и на комиссию за продажу, вывод и возможную конвертацию валюты. Сравнивать удобнее именно сумму, которая в итоге поступит выбранным способом оплаты."
+          },
+          {
+            "summary": "Скорость продажи и выплаты",
+            "body": "На торговой площадке предмет может ждать покупателя, тогда как быстрая продажа обычно работает значительно быстрее. Отдельно проверьте, сколько времени занимает сам вывод после завершения сделки."
+          },
+          {
+            "summary": "Доступные способы вывода",
+            "body": "Карта, банковский перевод, электронный кошелёк и криптовалюта могут иметь разные минимальные суммы, комиссии и региональные ограничения. Наличие метода на сайте не всегда означает, что он доступен в каждой стране."
+          },
+          {
+            "summary": "проверка личности и региональные ограничения",
+            "body": "Некоторые площадки запрашивают подтверждение личности до вывода или при достижении определённой суммы. Если верификация для вас принципиальна, проверьте требования заранее, а не после передачи предмета."
+          },
+          {
+            "summary": "Поддерживаемые предметы и минимальная стоимость",
+            "body": "Сервис может не принимать дешёвые, неликвидные или отдельные типы предметов. У некоторых площадок также есть минимальная стоимость одной сделки или минимальная сумма для вывода."
+          },
+          {
+            "summary": "Бонусы к продаже",
+            "body": "Некоторые сервисы предлагают дополнительный процент или промокод к стоимости продажи. Сравнивайте бонус вместе с базовой оценкой предмета и условиями его начисления: высокий бонус не всегда компенсирует менее выгодный курс."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты для продажи скинов",
+        "intro": "Рейтинг учитывает практические параметры, которые влияют на то, сколько пользователь получает за предмет и насколько удобно проходит продажа.",
+        "items": [
+          {
+            "summary": "Цена и конкурентность предложения",
+            "body": "Мы сравниваем, как сервис оценивает предметы относительно других способов продажи. Важна не одна удачная цена, а общая конкурентность предложений для разных категорий скинов."
+          },
+          {
+            "summary": "Комиссии и разница между ценами",
+            "body": "Учитываются комиссии за сделку, вывод и другие удержания, а также разница между отображаемой стоимостью предмета и фактической выплатой. Чем прозрачнее расчёт, тем проще заранее понять результат продажи."
+          },
+          {
+            "summary": "Скорость продажи и вывода",
+            "body": "Для быстрой продажи важны скорость выкупа и выплаты, для торговой площадки — удобство размещения предложения и получение средств после покупки. Задержки и дополнительные этапы снижают удобство сервиса."
+          },
+          {
+            "summary": "Способы выплат и география",
+            "body": "Мы учитываем количество доступных вариантов вывода, минимальные суммы и региональные ограничения. Один и тот же сервис может быть удобным в одной стране и менее практичным в другой."
+          },
+          {
+            "summary": "Репутация и безопасность сделки",
+            "body": "Проверяются история работы площадки, понятность Steam-обменов, доступность поддержки и отсутствие очевидных признаков небезопасной схемы. При этом пользователь всё равно должен самостоятельно проверять домен и каждый предложение обмена Steam."
+          },
+          {
+            "summary": "Ассортимент и дополнительные возможности",
+            "body": "Плюсом является поддержка большого числа предметов, понятная оценка инвентаря, фильтры, история операций и связанные функции. Если площадка также позволяет <a href=\"/rust/buy-skins\">покупать</a> или <a href=\"/rust/trade-skins\">обменивать скины</a>, эти возможности рассматриваются отдельно от самой продажи."
+          }
+        ]
+      },
+      "updates": {
+        "title": "От чего зависит цена скина при продаже",
+        "paragraphs": [
+          "Сервисы используют разные источники цен и собственные модели оценки. На стоимость влияют ликвидность предмета, текущий спрос, доступный запас на площадке и разница, которую сервис закладывает между выкупом и дальнейшей перепродажей. Поэтому два сайта могут одновременно предлагать разные суммы за один и тот же Rust-скин.",
+          "Для редких Rust-предметов одной средней рыночной цены бывает недостаточно. Ограниченность предложения, популярность конкретного скина и небольшое число реальных сделок могут заметно влиять на стоимость, а автоматическая быстрая продажа не всегда учитывает такой дефицит. В этих случаях самостоятельное размещение на торговой площадке иногда позволяет точнее задать цену.",
+          "Сравнивать лучше не только цифру рядом со скином, а конечную выплату. Если один сервис предлагает больше за предмет, но удерживает дополнительную комиссию при выводе или использует менее выгодную конвертацию, итог может оказаться хуже."
+        ]
+      },
+      "safety": {
+        "title": "Как безопаснее продавать скины Rust",
+        "intro": "Большинство рисков при продаже связано не с самим предметом, а с фишингом, поддельными ботами и невнимательным подтверждением Steam-обмена. Перед каждой сделкой полезно повторно проверить ключевые детали.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и окно входа Steam",
+            "body": "Переходите на площадку по проверенному адресу и внимательно смотрите на домен перед авторизацией. Фишинговые сайты часто копируют интерфейс популярных сервисов и могут имитировать окно входа Steam."
+          },
+          {
+            "summary": "Сверяйте каждое предложение обмена Steam",
+            "body": "Перед подтверждением убедитесь, что в предложении находится именно тот предмет, который вы собирались продать, и что получатель соответствует данным, показанным площадкой. Ник и аватар сами по себе не подтверждают подлинность торгового бота."
+          },
+          {
+            "summary": "Не переносите сделку в личный обмен",
+            "body": "Если незнакомый человек предлагает отменить продажу на площадке и отправить предмет напрямую в обмен на перевод денег, защита сервиса перестаёт действовать. Для продажи через маркетплейс придерживайтесь предусмотренного им процесса сделки."
+          },
+          {
+            "summary": "Проверяйте проверка личности и лимиты заранее",
+            "body": "До отправки дорогого предмета посмотрите требования к верификации, минимальную сумму вывода и ограничения выбранного платёжного метода. Это снижает риск ситуации, когда продажа завершена, но подходящий вывод недоступен."
+          },
+          {
+            "summary": "Используйте защиту аккаунта Steam",
+            "body": "Steam Guard и другие доступные средства защиты аккаунта снижают риск несанкционированного доступа. Не передавайте пароль, коды подтверждения или другие данные авторизации третьим лицам."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о продаже скинов Rust",
+        "items": [
+          {
+            "summary": "Где можно продать скины Rust за реальные деньги?",
+            "body": "Для этого используют сторонние <a href=\"/rust/marketplaces\">маркетплейсы</a> и <a href=\"/rust/instant-sell\">сервисы быстрой продажи</a>. Первые обычно дают больше контроля над ценой, вторые делают акцент на скорости. Доступные способы выплаты зависят от конкретной площадки и страны."
+          },
+          {
+            "summary": "Чем маркетплейс отличается от быстрой продажи?",
+            "body": "На маркетплейсе продавец обычно выставляет предмет и ждёт покупателя. При быстрой продаже цена формируется сервисом заранее, поэтому получить деньги можно быстрее, но предложение часто ниже потенциальной рыночной цены."
+          },
+          {
+            "summary": "Можно ли вывести деньги со Steam Community Market?",
+            "body": "Средства после продажи на Steam Community Market зачисляются на баланс Steam и предназначены для использования внутри экосистемы Steam. Для вывода на внешние платёжные методы применяются сторонние сервисы."
+          },
+          {
+            "summary": "Сколько времени занимает продажа скина?",
+            "body": "При быстрой продаже сделка может завершаться вскоре после подтверждения обмена, а на торговой площадке время зависит от спроса и установленной цены. Отдельно учитывается время обработки выбранного способа вывода."
+          },
+          {
+            "summary": "Какие комиссии бывают при продаже?",
+            "body": "Площадка может удерживать комиссию за продажу, вывод средств или конвертацию валюты. Иногда часть затрат уже заложена в предлагаемую цену выкупа. Поэтому сравнивайте итоговую выплату, а не только заявленный процент комиссии."
+          },
+          {
+            "summary": "Что влияет на стоимость Rust-скина?",
+            "body": "На цену влияют редкость, спрос, ликвидность, количество активных предложений, популярность конкретного предмета и текущая ситуация на рынке. Разные площадки учитывают эти факторы по-разному, особенно при автоматической оценке."
+          },
+          {
+            "summary": "Нужен ли проверка личности для продажи скинов?",
+            "body": "Не всегда. Требования зависят от сервиса, суммы, страны и способа вывода. Некоторые площадки позволяют начать торговлю без верификации, но запрашивают её перед выводом или после достижения определённых лимитов."
+          },
+          {
+            "summary": "Можно ли вместо продажи просто обменять скин?",
+            "body": "Да. Если цель — получить другой предмет, а не деньги, используйте <a href=\"/rust/trade-skins\">обменники скинов</a>. Для покупки конкретного предмета отдельно доступен рейтинг <a href=\"/rust/buy-skins\">сайтов для покупки скинов Rust</a>."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Selling Rust Skins: How to Choose a Platform and Cashout Method",
+        "paragraphs": [
+          "You can sell Rust skins for real money in several ways: list an item on a <a href=\"/rust/marketplaces\">skin marketplace</a>, use an <a href=\"/rust/instant-sell\">instant sell service</a>, or choose a platform that combines trading with cashout. These options differ in speed, sale price, fees, and available payout methods.",
+          "CSGOBROKER lists services where selling items is either a dedicated feature or part of a broader skin-trading platform. When comparing them, we look beyond the displayed item price and consider the amount a user can actually receive after fees, the available withdrawal methods, and how clear the selling process is.",
+          "The same skin can have noticeably different prices on Steam, a third-party marketplace, and an instant-buy service. A Steam inventory value should therefore not be treated as a guaranteed amount that can immediately be withdrawn as cash."
+        ]
+      },
+      "categories": {
+        "title": "Main Ways to Sell Rust Skins",
+        "items": [
+          {
+            "title": "Marketplaces and P2P",
+            "paragraphs": [
+              "On <a href=\"/rust/marketplaces\">Rust skin marketplaces</a>, sellers normally set their own price and another user buys the item. This gives you more control over the sale price, but finding a buyer can take time. The final return depends on demand for the skin, marketplace fees, and withdrawal terms."
+            ]
+          },
+          {
+            "title": "Instant Sell",
+            "paragraphs": [
+              "<a href=\"/rust/instant-sell\">Instant sell services</a> buy supported items at a calculated price or quickly match them with liquidity. Their main advantage is speed; the trade-off is that the offer is usually lower than what you might obtain by waiting for a buyer on a marketplace."
+            ]
+          },
+          {
+            "title": "Trading Sites with a Sell Option",
+            "paragraphs": [
+              "Some <a href=\"/rust/trade-skins\">skin trading sites</a> let users sell items for an internal balance and then withdraw the funds. Check how the site values the skin, whether trade and sell prices differ, and which payout methods are available."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market is useful for selling items inside the Steam ecosystem, but proceeds remain in your Steam Wallet. That works well if you plan to spend the balance on games or other Steam items, but it does not provide a direct external cashout method."
+            ]
+          },
+          {
+            "title": "Card and Crypto Cashouts",
+            "paragraphs": [
+              "Third-party services may support bank cards, local payment methods, e-wallets, or cryptocurrency. Available options depend on the platform and the user’s country, so check whether your preferred payout method is actually available before sending an item."
+            ]
+          },
+          {
+            "title": "Selling Expensive or Rare Items",
+            "paragraphs": [
+              "Rare, older, or illiquid Rust skins can receive very different valuations across services. For these items, compare several offers and recent completed sales because automated pricing does not always reflect what an individual buyer is willing to pay."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Selling Skins",
+        "intro": "The highest displayed price does not automatically mean the best deal. Compare platforms by the final payout and the conditions of the full transaction.",
+        "items": [
+          {
+            "summary": "Final payout after all fees",
+            "body": "Look at more than the item price. Include selling fees, withdrawal fees, and any currency-conversion costs. The most useful comparison is the amount that actually reaches your chosen payout method."
+          },
+          {
+            "summary": "Sale and payout speed",
+            "body": "A marketplace listing may need time to find a buyer, while instant sell is normally faster. Also check how long the platform takes to process the withdrawal after the sale itself is complete."
+          },
+          {
+            "summary": "Available withdrawal methods",
+            "body": "Cards, bank transfers, e-wallets, and crypto can have different minimum amounts, fees, and regional restrictions. A method shown on a website may not be available in every country."
+          },
+          {
+            "summary": "KYC and regional restrictions",
+            "body": "Some platforms request identity verification before withdrawal or after a certain threshold. If verification matters to you, review the requirements before transferring the item rather than after the sale."
+          },
+          {
+            "summary": "Supported items and minimum values",
+            "body": "A service may not accept very cheap, illiquid, or certain categories of items. Some platforms also set a minimum transaction value or minimum withdrawal amount."
+          },
+          {
+            "summary": "Sell bonuses",
+            "body": "Some services offer an extra percentage or promo code for selling. Compare the bonus together with the base item valuation and its conditions: a larger bonus does not always compensate for a weaker exchange rate."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rust Skin Selling Sites",
+        "intro": "The ranking focuses on practical factors that affect how much a user receives and how smoothly the sale works.",
+        "items": [
+          {
+            "summary": "Pricing and competitiveness",
+            "body": "We compare how a service values items against other selling methods. One unusually good quote is less important than consistently competitive offers across different skin categories."
+          },
+          {
+            "summary": "Fees and price spread",
+            "body": "We consider selling fees, withdrawal fees, other deductions, and the difference between displayed item value and actual payout. Transparent calculations make it easier to understand the result before selling."
+          },
+          {
+            "summary": "Sale and withdrawal speed",
+            "body": "For instant sell, purchase and payout speed are important. For marketplaces, we consider how easy it is to list an item and receive funds once it sells. Extra delays and unnecessary steps reduce convenience."
+          },
+          {
+            "summary": "Payout methods and regional access",
+            "body": "We consider the range of withdrawal methods, minimum amounts, and regional limitations. The same service may be practical in one country and much less useful in another."
+          },
+          {
+            "summary": "Reputation and trade security",
+            "body": "We look at the platform’s operating history, clarity of Steam trades, support availability, and obvious safety concerns. Users should still independently verify the domain and every Trade Offer."
+          },
+          {
+            "summary": "Item coverage and extra tools",
+            "body": "Broad item support, clear inventory pricing, filters, transaction history, and useful tools are positives. If a platform also lets users <a href=\"/rust/buy-skins\">buy</a> or <a href=\"/rust/trade-skins\">trade skins</a>, those features are evaluated separately from selling."
+          }
+        ]
+      },
+      "updates": {
+        "title": "What Determines a Skin’s Selling Price",
+        "paragraphs": [
+          "Services use different price sources and their own valuation models. Item liquidity, current demand, available inventory, and the margin between buying and reselling can all affect the offer. That is why two sites can quote different prices for the same skin at the same time.",
+          "For uncommon Rust items, one average market price is often not enough. Limited supply, item popularity, and a small number of recent trades can materially affect value, while automated quick-sale pricing may not fully account for scarcity. Listing the item manually can sometimes give the seller more control over the price.",
+          "Compare the final payout rather than only the number shown next to the skin. A service may offer a higher item price but charge an additional withdrawal fee or use a less favorable currency conversion, resulting in a lower net amount."
+        ]
+      },
+      "safety": {
+        "title": "How to Sell Rust Skins More Safely",
+        "intro": "Most selling risks come from phishing, fake bots, and confirming the wrong Steam trade rather than from the item itself. Recheck the key details before every transaction.",
+        "items": [
+          {
+            "summary": "Check the domain and Steam login window",
+            "body": "Open the platform through a verified address and inspect the domain before signing in. Phishing sites often copy popular services and can imitate a Steam login window."
+          },
+          {
+            "summary": "Verify every Steam Trade Offer",
+            "body": "Before confirming, make sure the offer contains the exact item you intended to sell and that the recipient matches the information shown by the platform. A familiar name or avatar alone does not prove that a bot is genuine."
+          },
+          {
+            "summary": "Do not move the deal to a direct trade",
+            "body": "If a stranger asks you to cancel a marketplace sale and send the item directly in exchange for a payment, the platform’s transaction protection no longer applies. Follow the selling process provided by the marketplace."
+          },
+          {
+            "summary": "Review KYC and limits in advance",
+            "body": "Before transferring an expensive item, check identity-verification requirements, minimum withdrawals, and restrictions for your preferred payout method. This helps avoid completing a sale only to discover that a suitable cashout option is unavailable."
+          },
+          {
+            "summary": "Use Steam account security",
+            "body": "Steam Guard and other available account-security tools reduce the risk of unauthorized access. Never share passwords, confirmation codes, or other login credentials with third parties."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Selling Rust Skins",
+        "items": [
+          {
+            "summary": "Where can I sell Rust skins for real money?",
+            "body": "You can use third-party <a href=\"/rust/marketplaces\">marketplaces</a> or <a href=\"/rust/instant-sell\">instant sell services</a>. Marketplaces usually offer more price control, while instant sell focuses on speed. Payout options depend on the platform and country."
+          },
+          {
+            "summary": "What is the difference between a marketplace and instant sell?",
+            "body": "On a marketplace, the seller normally lists an item and waits for a buyer. With instant sell, the service calculates an offer in advance, so the transaction can be faster, but the quote is often below the potential marketplace price."
+          },
+          {
+            "summary": "Can I withdraw money from Steam Community Market?",
+            "body": "Proceeds from Steam Community Market sales are credited to your Steam Wallet and are intended for use within the Steam ecosystem. External cashouts require a third-party service."
+          },
+          {
+            "summary": "How long does it take to sell a skin?",
+            "body": "Instant sell can complete quickly after a trade is confirmed, while a P2P marketplace sale depends on demand and the price you set. Withdrawal processing time is a separate factor."
+          },
+          {
+            "summary": "What fees can apply when selling?",
+            "body": "A platform may charge a selling fee, a withdrawal fee, or a currency-conversion fee. Some costs are already reflected in the instant-buy quote. Compare the net payout instead of only the advertised fee percentage."
+          },
+          {
+            "summary": "What affects a Rust skin's value?",
+            "body": "Rarity, demand, liquidity, active listing volume, item popularity, and current market conditions all affect price. Automated services weigh these factors differently."
+          },
+          {
+            "summary": "Is KYC required to sell skins?",
+            "body": "Not always. Requirements depend on the service, transaction size, country, and payout method. Some platforms allow trading without verification but request it before withdrawal or above certain limits."
+          },
+          {
+            "summary": "Can I trade a skin instead of selling it?",
+            "body": "Yes. If you want another item rather than cash, use <a href=\"/rust/trade-skins\">skin trading sites</a>. If you want to purchase a specific item, CSGOBROKER also has a separate ranking of <a href=\"/rust/buy-skins\">Rust skin buying sites</a>."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Vender skins de Rust: cómo elegir una plataforma y un método de retiro",
+        "paragraphs": [
+          "Puedes vender skins de Rust por dinero real de varias formas: publicar el objeto en un <a href=\"/rust/marketplaces\">mercado de skins</a>, utilizar un <a href=\"/rust/instant-sell\">servicio de venta instantánea</a> o elegir una plataforma que combine intercambio y retiro de fondos. Estas opciones se diferencian por la velocidad, el precio de venta, las comisiones y los métodos de pago disponibles.",
+          "CSGOBROKER reúne servicios donde la venta de objetos es una función específica o forma parte de una plataforma de trading más amplia. Al compararlos, no miramos solo el precio mostrado, sino también cuánto recibe realmente el usuario después de las comisiones, qué métodos de retiro están disponibles y qué tan claro es el proceso de venta.",
+          "El mismo skin puede tener precios bastante distintos en Steam, en un marketplace externo y en un servicio de compra instantánea. Por eso, el valor del inventario en Steam no debe considerarse como una cantidad garantizada que pueda retirarse inmediatamente en efectivo."
+        ]
+      },
+      "categories": {
+        "title": "Principales formas de vender skins de Rust",
+        "items": [
+          {
+            "title": "Marketplaces y P2P",
+            "paragraphs": [
+              "En los <a href=\"/rust/marketplaces\">marketplaces de skins de Rust</a>, el vendedor normalmente fija su propio precio y otro usuario compra el objeto. Esto ofrece más control sobre el precio, pero puede ser necesario esperar a un comprador. El resultado final depende de la demanda, las comisiones y las condiciones de retiro."
+            ]
+          },
+          {
+            "title": "Venta instantánea",
+            "paragraphs": [
+              "Los <a href=\"/rust/instant-sell\">servicios de venta instantánea</a> compran los objetos compatibles a un precio calculado previamente o proporcionan liquidez de forma rápida. Su principal ventaja es la velocidad; a cambio, la oferta suele ser inferior a lo que podría obtenerse esperando a un comprador en un marketplace."
+            ]
+          },
+          {
+            "title": "Sitios de intercambio con opción de venta",
+            "paragraphs": [
+              "Algunos <a href=\"/rust/trade-skins\">sitios de intercambio de skins</a> permiten vender objetos por saldo interno y retirar después los fondos. Conviene comprobar cómo se valora el skin, si hay diferencia entre el precio de intercambio y el de venta, y qué métodos de pago están disponibles."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market sirve para vender objetos dentro del ecosistema de Steam, pero el dinero obtenido permanece en Steam Wallet. Es útil si piensas gastar el saldo en juegos u otros objetos de Steam, pero no proporciona un retiro directo a métodos de pago externos."
+            ]
+          },
+          {
+            "title": "Retiros a tarjeta o criptomonedas",
+            "paragraphs": [
+              "Los servicios externos pueden admitir tarjetas bancarias, métodos de pago locales, monederos electrónicos o criptomonedas. Las opciones dependen de la plataforma y del país del usuario, así que conviene verificar el método deseado antes de enviar el objeto."
+            ]
+          },
+          {
+            "title": "Venta de objetos caros o raros",
+            "paragraphs": [
+              "Las skins de Rust raras, antiguas o con poca liquidez pueden recibir valoraciones muy diferentes. Conviene comparar varias ofertas y ventas recientes porque una valoración automática no siempre refleja lo que pagaría un comprador concreto."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de vender skins",
+        "intro": "El precio más alto que aparece en pantalla no siempre significa la mejor operación. Es mejor comparar el pago final y las condiciones completas de la venta.",
+        "items": [
+          {
+            "summary": "Pago final después de todas las comisiones",
+            "body": "No mires solo el precio del skin. Incluye la comisión de venta, la comisión de retiro y posibles costes de conversión de moneda. La comparación más útil es cuánto llega realmente al método de pago elegido."
+          },
+          {
+            "summary": "Velocidad de venta y retiro",
+            "body": "Una publicación en un marketplace puede necesitar tiempo para encontrar comprador, mientras que la venta instantánea suele ser más rápida. También revisa cuánto tarda el retiro después de completar la venta."
+          },
+          {
+            "summary": "Métodos de retiro disponibles",
+            "body": "Tarjetas, transferencias bancarias, monederos electrónicos y criptomonedas pueden tener mínimos, comisiones y restricciones regionales diferentes. Que un método aparezca en la web no significa que esté disponible en todos los países."
+          },
+          {
+            "summary": "KYC y restricciones regionales",
+            "body": "Algunas plataformas solicitan verificación de identidad antes del retiro o al superar determinados límites. Si este punto es importante para ti, revisa los requisitos antes de transferir el objeto."
+          },
+          {
+            "summary": "Objetos compatibles y valores mínimos",
+            "body": "Un servicio puede no aceptar objetos muy baratos, con poca liquidez o de ciertas categorías. Algunas plataformas también establecen un valor mínimo de operación o una cantidad mínima de retiro."
+          },
+          {
+            "summary": "Bonos por venta",
+            "body": "Algunos servicios ofrecen un porcentaje adicional o un código promocional al vender. Compara el bono junto con la valoración base y sus condiciones: un bono grande no siempre compensa un precio de compra menos favorable."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios para vender skins",
+        "intro": "El ranking se centra en factores prácticos que influyen en cuánto recibe el usuario y en lo sencillo que resulta completar la venta.",
+        "items": [
+          {
+            "summary": "Precio y competitividad de las ofertas",
+            "body": "Comparamos cómo valora el servicio los objetos frente a otros métodos de venta. Una única oferta especialmente alta importa menos que precios competitivos de forma consistente en distintas categorías de skins."
+          },
+          {
+            "summary": "Comisiones y diferencia de precio",
+            "body": "Tenemos en cuenta comisiones de venta, retiro, otros descuentos y la diferencia entre el valor mostrado y el pago real. Un cálculo transparente permite entender mejor el resultado antes de vender."
+          },
+          {
+            "summary": "Velocidad de venta y retiro",
+            "body": "En venta instantánea importan la rapidez de compra y de pago. En marketplaces, valoramos la facilidad para publicar el objeto y recibir los fondos una vez vendido. Retrasos y pasos adicionales reducen la comodidad."
+          },
+          {
+            "summary": "Métodos de pago y disponibilidad regional",
+            "body": "Consideramos la variedad de métodos de retiro, las cantidades mínimas y las restricciones regionales. El mismo servicio puede resultar cómodo en un país y poco práctico en otro."
+          },
+          {
+            "summary": "Reputación y seguridad de la operación",
+            "body": "Revisamos el historial de la plataforma, la claridad de los intercambios de Steam, la disponibilidad del soporte y señales evidentes de riesgo. Aun así, el usuario debe verificar por su cuenta el dominio y cada Trade Offer."
+          },
+          {
+            "summary": "Cobertura de objetos y herramientas adicionales",
+            "body": "La compatibilidad con muchos objetos, una valoración clara del inventario, filtros, historial de operaciones y herramientas útiles son puntos positivos. Si la plataforma también permite <a href=\"/rust/buy-skins\">comprar</a> o <a href=\"/rust/trade-skins\">intercambiar skins</a>, esas funciones se valoran por separado de la venta."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Qué determina el precio de venta de un skin",
+        "paragraphs": [
+          "Los servicios utilizan distintas fuentes de precios y modelos propios de valoración. La liquidez del objeto, la demanda actual, el inventario disponible y el margen entre compra y reventa pueden cambiar la oferta. Por eso dos sitios pueden ofrecer cantidades diferentes por el mismo skin al mismo tiempo.",
+          "En objetos Rust poco comunes, un precio medio no siempre es suficiente. La oferta limitada, la popularidad y el reducido número de operaciones pueden cambiar mucho el valor, mientras la venta rápida automática puede no reflejar toda esa escasez.",
+          "Conviene comparar el pago final y no solo la cifra que aparece junto al skin. Un servicio puede ofrecer más por el objeto, pero aplicar después una comisión de retiro o una conversión de moneda menos favorable, reduciendo el resultado neto."
+        ]
+      },
+      "safety": {
+        "title": "Cómo vender skins de Rust con mayor seguridad",
+        "intro": "La mayoría de los riesgos al vender provienen del phishing, bots falsos y la confirmación de un intercambio incorrecto en Steam. Revisa los datos clave antes de cada operación.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio y la ventana de inicio de sesión de Steam",
+            "body": "Entra a la plataforma mediante una dirección verificada y revisa el dominio antes de iniciar sesión. Las páginas de phishing suelen copiar servicios conocidos e incluso imitar una ventana de acceso de Steam."
+          },
+          {
+            "summary": "Verifica cada Steam Trade Offer",
+            "body": "Antes de confirmar, asegúrate de que la oferta contiene exactamente el objeto que querías vender y de que el destinatario coincide con la información mostrada por la plataforma. Un nombre o avatar conocido no demuestra por sí solo que el bot sea auténtico."
+          },
+          {
+            "summary": "No traslades la operación a un intercambio directo",
+            "body": "Si un desconocido te pide cancelar la venta en el marketplace y enviar el objeto directamente a cambio de un pago, la protección de la plataforma deja de aplicarse. Sigue el proceso de venta previsto por el servicio."
+          },
+          {
+            "summary": "Revisa KYC y límites por adelantado",
+            "body": "Antes de transferir un objeto caro, comprueba los requisitos de verificación, el retiro mínimo y las restricciones del método de pago elegido. Así evitas completar una venta y descubrir después que no tienes una opción de retiro adecuada."
+          },
+          {
+            "summary": "Utiliza la protección de la cuenta de Steam",
+            "body": "Steam Guard y otras herramientas de seguridad disponibles reducen el riesgo de acceso no autorizado. No compartas contraseñas, códigos de confirmación ni otros datos de acceso con terceros."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre la venta de skins de Rust",
+        "items": [
+          {
+            "summary": "¿Dónde puedo vender skins de Rust por dinero real?",
+            "body": "Puedes utilizar <a href=\"/rust/marketplaces\">marketplaces</a> externos o <a href=\"/rust/instant-sell\">servicios de venta instantánea</a>. Los marketplaces suelen dar más control sobre el precio y la venta instantánea prioriza la velocidad. Los métodos de pago dependen de la plataforma y del país."
+          },
+          {
+            "summary": "¿Cuál es la diferencia entre un marketplace y la venta instantánea?",
+            "body": "En un marketplace, el vendedor normalmente publica el objeto y espera a un comprador. En la venta instantánea, el servicio calcula una oferta de antemano, por lo que la operación puede ser más rápida, aunque el precio suele ser inferior al potencial del mercado."
+          },
+          {
+            "summary": "¿Puedo retirar dinero de Steam Community Market?",
+            "body": "El dinero obtenido en Steam Community Market se acredita en Steam Wallet y está destinado al uso dentro del ecosistema de Steam. Para retirar a métodos de pago externos se utilizan servicios de terceros."
+          },
+          {
+            "summary": "¿Cuánto tarda en venderse un skin?",
+            "body": "La venta instantánea puede completarse rápidamente después de confirmar el intercambio, mientras que en un marketplace P2P el tiempo depende de la demanda y del precio fijado. El procesamiento del retiro es un plazo adicional."
+          },
+          {
+            "summary": "¿Qué comisiones pueden aplicarse al vender?",
+            "body": "Una plataforma puede cobrar comisión de venta, de retiro o de conversión de moneda. En algunos servicios parte del coste ya está incluida en el precio de compra instantánea. Compara el pago neto y no solo el porcentaje anunciado."
+          },
+          {
+            "summary": "¿Qué influye en el valor de una skin de Rust?",
+            "body": "Rareza, demanda, liquidez, número de anuncios, popularidad del objeto y situación actual del mercado."
+          },
+          {
+            "summary": "¿Es obligatorio el KYC para vender skins?",
+            "body": "No siempre. Los requisitos dependen del servicio, la cantidad, el país y el método de retiro. Algunas plataformas permiten operar sin verificación, pero la solicitan antes del retiro o al superar ciertos límites."
+          },
+          {
+            "summary": "¿Puedo intercambiar un skin en lugar de venderlo?",
+            "body": "Sí. Si quieres otro objeto en vez de dinero, utiliza <a href=\"/rust/trade-skins\">sitios de intercambio de skins</a>. Para comprar un objeto concreto, CSGOBROKER también tiene un ranking separado de <a href=\"/rust/buy-skins\">sitios para comprar skins de Rust</a>."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Venda de skins de Rust: como escolher uma plataforma e um método de saque",
+        "paragraphs": [
+          "É possível vender skins de Rust por dinheiro real de várias formas: anunciar o item em um <a href=\"/rust/marketplaces\">marketplace de skins</a>, usar um <a href=\"/rust/instant-sell\">serviço de venda instantânea</a> ou escolher uma plataforma que combine troca e saque. Essas opções variam em velocidade, preço de venda, taxas e métodos de pagamento disponíveis.",
+          "O CSGOBROKER reúne serviços em que a venda de itens é uma função específica ou parte de uma plataforma mais ampla de trading de skins. Na comparação, não consideramos apenas o preço exibido do item, mas também quanto o usuário realmente recebe após as taxas, quais métodos de saque estão disponíveis e quão claro é o processo de venda.",
+          "A mesma skin pode ter preços bem diferentes na Steam, em um marketplace externo e em um serviço de compra instantânea. Por isso, o valor do inventário na Steam não deve ser tratado como uma quantia garantida que pode ser sacada imediatamente em dinheiro."
+        ]
+      },
+      "categories": {
+        "title": "Principais formas de vender skins de Rust",
+        "items": [
+          {
+            "title": "Marketplaces e P2P",
+            "paragraphs": [
+              "Nos <a href=\"/rust/marketplaces\">marketplaces de skins de Rust</a>, o vendedor normalmente define o próprio preço e outro usuário compra o item. Isso dá mais controle sobre o valor, mas pode levar algum tempo até aparecer um comprador. O resultado final depende da demanda, das taxas e das condições de saque."
+            ]
+          },
+          {
+            "title": "Venda instantânea",
+            "paragraphs": [
+              "Os <a href=\"/rust/instant-sell\">serviços de venda instantânea</a> compram itens compatíveis por um preço calculado previamente ou oferecem liquidez rápida. A principal vantagem é a velocidade; em troca, a oferta costuma ser menor do que o valor potencial de uma venda com espera em um marketplace."
+            ]
+          },
+          {
+            "title": "Sites de troca com opção de venda",
+            "paragraphs": [
+              "Alguns <a href=\"/rust/trade-skins\">sites de troca de skins</a> permitem vender itens por saldo interno e depois sacar os fundos. Verifique como a skin é avaliada, se existe diferença entre o preço de troca e o de venda e quais métodos de pagamento estão disponíveis."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "A Steam Community Market permite vender itens dentro do ecossistema Steam, mas o valor recebido permanece na Steam Wallet. É útil para quem pretende gastar o saldo em jogos ou outros itens da Steam, porém não oferece saque direto para métodos de pagamento externos."
+            ]
+          },
+          {
+            "title": "Saque para cartão ou criptomoedas",
+            "paragraphs": [
+              "Serviços de terceiros podem aceitar cartões bancários, métodos locais, carteiras digitais ou criptomoedas. As opções dependem da plataforma e do país do usuário, então vale confirmar o método desejado antes de enviar o item."
+            ]
+          },
+          {
+            "title": "Venda de itens caros ou raros",
+            "paragraphs": [
+              "Skins Rust raras, antigas ou pouco líquidas podem receber avaliações muito diferentes. Compare várias ofertas e vendas concluídas recentes, pois a avaliação automática nem sempre reflete o preço que um comprador específico aceitaria pagar."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de vender skins",
+        "intro": "O maior preço exibido não garante o melhor negócio. Compare as plataformas pelo valor líquido recebido e pelas condições completas da transação.",
+        "items": [
+          {
+            "summary": "Valor final depois de todas as taxas",
+            "body": "Não olhe apenas para o preço da skin. Inclua a taxa de venda, a taxa de saque e possíveis custos de conversão de moeda. A comparação mais útil é quanto realmente chega ao método de pagamento escolhido."
+          },
+          {
+            "summary": "Velocidade da venda e do saque",
+            "body": "Um anúncio em marketplace pode precisar de tempo para encontrar comprador, enquanto a venda instantânea costuma ser mais rápida. Confira também quanto tempo o saque leva depois que a venda é concluída."
+          },
+          {
+            "summary": "Métodos de saque disponíveis",
+            "body": "Cartões, transferências bancárias, carteiras digitais e criptomoedas podem ter valores mínimos, taxas e restrições regionais diferentes. Um método exibido no site pode não estar disponível em todos os países."
+          },
+          {
+            "summary": "KYC e restrições regionais",
+            "body": "Algumas plataformas pedem verificação de identidade antes do saque ou ao atingir determinado limite. Se isso for importante para você, confira os requisitos antes de transferir o item."
+          },
+          {
+            "summary": "Itens aceitos e valores mínimos",
+            "body": "Um serviço pode não aceitar itens muito baratos, com pouca liquidez ou de determinadas categorias. Algumas plataformas também exigem um valor mínimo por transação ou um saque mínimo."
+          },
+          {
+            "summary": "Bônus de venda",
+            "body": "Alguns serviços oferecem porcentagem extra ou código promocional para venda. Compare o bônus junto com a avaliação base do item e suas condições: um bônus maior nem sempre compensa uma cotação menos favorável."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como o CSGOBROKER avalia sites para vender skins",
+        "intro": "O ranking considera fatores práticos que afetam quanto o usuário recebe e a facilidade de concluir a venda.",
+        "items": [
+          {
+            "summary": "Preço e competitividade das ofertas",
+            "body": "Comparamos como o serviço avalia os itens em relação a outros métodos de venda. Uma oferta excepcional isolada importa menos do que preços competitivos de forma consistente em diferentes categorias de skins."
+          },
+          {
+            "summary": "Taxas e diferença entre preços",
+            "body": "Consideramos taxas de venda, saque, outros descontos e a diferença entre o valor exibido e o pagamento real. Cálculos transparentes facilitam entender o resultado antes de vender."
+          },
+          {
+            "summary": "Velocidade de venda e saque",
+            "body": "Na venda instantânea, importam a velocidade de compra e pagamento. Em marketplaces, avaliamos a facilidade para anunciar o item e receber os fundos depois da compra. Atrasos e etapas extras reduzem a conveniência."
+          },
+          {
+            "summary": "Métodos de pagamento e disponibilidade regional",
+            "body": "Consideramos a variedade de saques, valores mínimos e limitações regionais. O mesmo serviço pode ser prático em um país e bem menos útil em outro."
+          },
+          {
+            "summary": "Reputação e segurança da transação",
+            "body": "Analisamos o histórico da plataforma, a clareza das trocas na Steam, a disponibilidade do suporte e sinais evidentes de risco. Mesmo assim, o usuário deve verificar o domínio e cada Trade Offer por conta própria."
+          },
+          {
+            "summary": "Cobertura de itens e recursos extras",
+            "body": "Suporte a muitos itens, avaliação clara do inventário, filtros, histórico de operações e ferramentas úteis são pontos positivos. Se a plataforma também permite <a href=\"/rust/buy-skins\">comprar</a> ou <a href=\"/rust/trade-skins\">trocar skins</a>, esses recursos são avaliados separadamente da venda."
+          }
+        ]
+      },
+      "updates": {
+        "title": "O que determina o preço de venda de uma skin",
+        "paragraphs": [
+          "Os serviços usam fontes de preços diferentes e modelos próprios de avaliação. Liquidez do item, demanda atual, estoque disponível e margem entre compra e revenda podem alterar a oferta. Por isso, dois sites podem oferecer valores diferentes pela mesma skin ao mesmo tempo.",
+          "Para itens Rust pouco comuns, uma média de mercado pode não ser suficiente. Oferta limitada, popularidade e poucas negociações recentes podem alterar bastante o valor, enquanto a venda rápida automática pode não considerar toda essa escassez.",
+          "Compare o pagamento final, não apenas o número mostrado ao lado da skin. Um serviço pode oferecer mais pelo item, mas cobrar uma taxa adicional de saque ou aplicar uma conversão de moeda menos favorável, reduzindo o valor líquido."
+        ]
+      },
+      "safety": {
+        "title": "Como vender skins de Rust com mais segurança",
+        "intro": "A maioria dos riscos de venda está ligada a phishing, bots falsos e confirmação do Trade Offer errado. Confira novamente os detalhes principais antes de cada operação.",
+        "items": [
+          {
+            "summary": "Verifique o domínio e a janela de login da Steam",
+            "body": "Acesse a plataforma por um endereço verificado e confira o domínio antes de fazer login. Sites de phishing costumam copiar serviços conhecidos e podem imitar uma janela de autenticação da Steam."
+          },
+          {
+            "summary": "Confira cada Steam Trade Offer",
+            "body": "Antes de confirmar, verifique se a oferta contém exatamente o item que você pretendia vender e se o destinatário corresponde às informações exibidas pela plataforma. Nome ou avatar conhecidos não comprovam sozinhos que o bot é legítimo."
+          },
+          {
+            "summary": "Não leve a negociação para uma troca direta",
+            "body": "Se um desconhecido pedir para cancelar a venda no marketplace e enviar o item diretamente em troca de pagamento, a proteção da plataforma deixa de valer. Siga o processo de venda previsto pelo serviço."
+          },
+          {
+            "summary": "Confira KYC e limites com antecedência",
+            "body": "Antes de transferir um item caro, veja os requisitos de verificação, saque mínimo e restrições do método de pagamento escolhido. Isso evita concluir a venda e descobrir depois que não há uma opção adequada de saque."
+          },
+          {
+            "summary": "Use a proteção da conta Steam",
+            "body": "Steam Guard e outras ferramentas disponíveis reduzem o risco de acesso não autorizado. Nunca compartilhe senha, códigos de confirmação ou outros dados de login com terceiros."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre venda de skins de Rust",
+        "items": [
+          {
+            "summary": "Onde posso vender skins de Rust por dinheiro real?",
+            "body": "Você pode usar <a href=\"/rust/marketplaces\">marketplaces</a> de terceiros ou <a href=\"/rust/instant-sell\">serviços de venda instantânea</a>. Marketplaces geralmente oferecem mais controle sobre o preço, enquanto a venda instantânea prioriza velocidade. Os métodos de pagamento variam conforme a plataforma e o país."
+          },
+          {
+            "summary": "Qual é a diferença entre marketplace e venda instantânea?",
+            "body": "Em um marketplace, o vendedor normalmente anuncia o item e espera por um comprador. Na venda instantânea, o serviço calcula uma oferta antecipadamente, tornando a operação mais rápida, mas geralmente com valor abaixo do potencial de mercado."
+          },
+          {
+            "summary": "Posso sacar dinheiro da Steam Community Market?",
+            "body": "O valor das vendas na Steam Community Market vai para a Steam Wallet e é destinado ao uso dentro do ecossistema Steam. Para saque externo, é necessário usar um serviço de terceiros."
+          },
+          {
+            "summary": "Quanto tempo leva para vender uma skin?",
+            "body": "A venda instantânea pode ser concluída rapidamente após confirmar a troca, enquanto em um marketplace P2P o tempo depende da demanda e do preço definido. O processamento do saque é um prazo separado."
+          },
+          {
+            "summary": "Quais taxas podem existir na venda?",
+            "body": "A plataforma pode cobrar taxa de venda, taxa de saque ou conversão de moeda. Em alguns serviços, parte do custo já está incluída na cotação de compra instantânea. Compare o pagamento líquido em vez de apenas a taxa anunciada."
+          },
+          {
+            "summary": "O que influencia o valor de uma skin Rust?",
+            "body": "Raridade, demanda, liquidez, número de anúncios, popularidade do item e condições atuais do mercado."
+          },
+          {
+            "summary": "É necessário KYC para vender skins?",
+            "body": "Nem sempre. Os requisitos dependem do serviço, valor, país e método de saque. Algumas plataformas permitem negociar sem verificação, mas a solicitam antes do saque ou acima de determinados limites."
+          },
+          {
+            "summary": "Posso trocar uma skin em vez de vender?",
+            "body": "Sim. Se você quer outro item em vez de dinheiro, use <a href=\"/rust/trade-skins\">sites de troca de skins</a>. Para comprar um item específico, o CSGOBROKER também oferece um ranking separado de <a href=\"/rust/buy-skins\">sites para comprar skins de Rust</a>."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rust Skin Satışı: Platform ve Para Çekme Yöntemi Nasıl Seçilir?",
+        "paragraphs": [
+          "Rust skinlerini gerçek para karşılığında birkaç şekilde satabilirsiniz: ürünü bir <a href=\"/rust/marketplaces\">skin pazarında</a> listelemek, <a href=\"/rust/instant-sell\">anında satış hizmeti</a> kullanmak veya takas ile para çekmeyi bir arada sunan bir platform seçmek. Bu seçenekler hız, satış fiyatı, komisyonlar ve ödeme yöntemleri açısından farklılık gösterir.",
+          "CSGOBROKER, ürün satışının ayrı bir özellik olduğu veya daha geniş bir skin ticareti platformunun parçası olarak sunulduğu servisleri bir araya getirir. Karşılaştırma yaparken yalnızca ekranda görünen ürün fiyatına değil, komisyonlardan sonra kullanıcının gerçekte ne kadar aldığına, hangi para çekme yöntemlerinin bulunduğuna ve satış sürecinin ne kadar açık olduğuna bakıyoruz.",
+          "Aynı skin Steam’de, üçüncü taraf bir pazarda ve anında satın alma hizmetinde belirgin şekilde farklı fiyatlara sahip olabilir. Bu nedenle Steam envanter değeri, hemen nakit olarak çekilebilecek garantili bir tutar olarak görülmemelidir."
+        ]
+      },
+      "categories": {
+        "title": "Rust Skin Satmanın Başlıca Yolları",
+        "items": [
+          {
+            "title": "Pazar Yerleri ve P2P",
+            "paragraphs": [
+              "<a href=\"/rust/marketplaces\">Rust skin pazarlarında</a> satıcı genellikle fiyatı kendisi belirler ve ürünü başka bir kullanıcı satın alır. Bu yöntem fiyat üzerinde daha fazla kontrol sağlar ancak alıcı bulmak zaman alabilir. Nihai kazanç ürün talebine, platform komisyonuna ve para çekme şartlarına bağlıdır."
+            ]
+          },
+          {
+            "title": "Anında Satış",
+            "paragraphs": [
+              "<a href=\"/rust/instant-sell\">Anında satış servisleri</a> desteklenen ürünleri önceden hesaplanan bir fiyatla satın alır veya hızlı likidite sağlar. En büyük avantaj hızdır; bunun karşılığında teklif, pazarda alıcı bekleyerek elde edilebilecek potansiyel fiyattan genellikle daha düşüktür."
+            ]
+          },
+          {
+            "title": "Satış Özelliği Olan Takas Siteleri",
+            "paragraphs": [
+              "Bazı <a href=\"/rust/trade-skins\">skin takas siteleri</a> ürünleri site bakiyesi karşılığında satmaya ve ardından bu bakiyeyi çekmeye izin verir. Skinin nasıl fiyatlandığını, takas ve satış fiyatları arasında fark olup olmadığını ve hangi ödeme yöntemlerinin bulunduğunu kontrol edin."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market, Steam ekosistemi içinde ürün satmak için uygundur ancak elde edilen tutar Steam Wallet bakiyesinde kalır. Bakiyeyi oyunlara veya Steam içindeki diğer ürünlere harcamayı planlıyorsanız kullanışlıdır, fakat doğrudan harici para çekme sağlamaz."
+            ]
+          },
+          {
+            "title": "Kart veya Kripto ile Para Çekme",
+            "paragraphs": [
+              "Üçüncü taraf servisler banka kartı, yerel ödeme yöntemleri, e-cüzdanlar veya kripto para destekleyebilir. Seçenekler platforma ve ülkeye göre değiştiği için ürünü göndermeden önce istediğiniz ödeme yönteminin gerçekten kullanılabilir olduğunu kontrol edin."
+            ]
+          },
+          {
+            "title": "Pahalı ve Nadir Ürünlerin Satışı",
+            "paragraphs": [
+              "Nadir, eski veya düşük likiditeli Rust skinleri servisler arasında çok farklı değerlenebilir. Otomatik fiyatlama her zaman gerçek alıcı talebini yansıtmaz; birkaç teklifi ve yakın tarihli tamamlanmış satışları karşılaştırın."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skin Satmadan Önce Neleri Karşılaştırmalı?",
+        "intro": "Ekranda görünen en yüksek fiyat her zaman en iyi sonuç anlamına gelmez. Platformları net ödeme ve işlemin tüm şartları üzerinden karşılaştırmak daha doğru olur.",
+        "items": [
+          {
+            "summary": "Tüm komisyonlardan sonra net ödeme",
+            "body": "Yalnızca skin fiyatına bakmayın. Satış komisyonu, para çekme ücreti ve olası döviz dönüşüm maliyetlerini de hesaba katın. En yararlı karşılaştırma, seçtiğiniz ödeme yöntemine gerçekte ulaşan tutardır."
+          },
+          {
+            "summary": "Satış ve ödeme hızı",
+            "body": "Pazar yerindeki bir ilan alıcı bulana kadar bekleyebilir, anında satış ise genellikle daha hızlıdır. Satış tamamlandıktan sonra para çekme işleminin ne kadar sürdüğünü de ayrıca kontrol edin."
+          },
+          {
+            "summary": "Mevcut para çekme yöntemleri",
+            "body": "Kartlar, banka transferleri, e-cüzdanlar ve kripto para için minimum tutarlar, ücretler ve bölgesel kısıtlamalar farklı olabilir. Sitede görünen bir yöntem her ülkede kullanılamayabilir."
+          },
+          {
+            "summary": "KYC ve bölgesel kısıtlamalar",
+            "body": "Bazı platformlar para çekmeden önce veya belirli bir limite ulaşıldığında kimlik doğrulaması isteyebilir. Bu konu sizin için önemliyse ürünü göndermeden önce şartları kontrol edin."
+          },
+          {
+            "summary": "Desteklenen ürünler ve minimum değerler",
+            "body": "Bir servis çok ucuz, düşük likiditeli veya belirli kategorilerdeki ürünleri kabul etmeyebilir. Bazı platformlarda minimum işlem tutarı veya minimum para çekme limiti de bulunur."
+          },
+          {
+            "summary": "Satış bonusları",
+            "body": "Bazı servisler satış için ek yüzde veya promosyon kodu sunar. Bonusu temel ürün fiyatı ve şartlarıyla birlikte karşılaştırın; yüksek bonus, daha düşük bir başlangıç teklifini her zaman telafi etmez."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Skin Satış Sitelerini Nasıl Değerlendiriyor?",
+        "intro": "Sıralama, kullanıcının eline geçen tutarı ve satış sürecinin ne kadar rahat olduğunu etkileyen pratik faktörlere odaklanır.",
+        "items": [
+          {
+            "summary": "Fiyat ve tekliflerin rekabet gücü",
+            "body": "Servisin ürünleri diğer satış yöntemlerine kıyasla nasıl fiyatlandırdığını karşılaştırıyoruz. Tek bir çok iyi tekliften ziyade farklı skin kategorilerinde sürekli rekabetçi fiyatlar daha önemlidir."
+          },
+          {
+            "summary": "Komisyonlar ve fiyat farkı",
+            "body": "Satış ve para çekme ücretlerini, diğer kesintileri ve ekranda görünen ürün değeri ile gerçek ödeme arasındaki farkı dikkate alıyoruz. Şeffaf hesaplama, sonucu satıştan önce anlamayı kolaylaştırır."
+          },
+          {
+            "summary": "Satış ve para çekme hızı",
+            "body": "Anında satışta satın alma ve ödeme hızı önemlidir. Pazar yerlerinde ise ürünü listeleme ve satıştan sonra parayı alma kolaylığına bakıyoruz. Gereksiz gecikmeler ve ek adımlar kullanım rahatlığını azaltır."
+          },
+          {
+            "summary": "Ödeme yöntemleri ve bölgesel erişim",
+            "body": "Para çekme seçeneklerinin çeşitliliğini, minimum tutarları ve bölgesel sınırlamaları değerlendiriyoruz. Aynı servis bir ülkede çok kullanışlıyken başka bir ülkede daha az pratik olabilir."
+          },
+          {
+            "summary": "İtibar ve işlem güvenliği",
+            "body": "Platformun çalışma geçmişini, Steam takaslarının açıklığını, destek erişimini ve belirgin güvenlik risklerini inceliyoruz. Buna rağmen kullanıcı alan adını ve her Trade Offer’ı kendisi de doğrulamalıdır."
+          },
+          {
+            "summary": "Ürün kapsamı ve ek araçlar",
+            "body": "Geniş ürün desteği, anlaşılır envanter fiyatlandırması, filtreler, işlem geçmişi ve faydalı araçlar olumlu özelliklerdir. Platform aynı zamanda <a href=\"/rust/buy-skins\">skin satın alma</a> veya <a href=\"/rust/trade-skins\">skin takası</a> sunuyorsa bu özellikler satıştan ayrı değerlendirilir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Bir Skinin Satış Fiyatını Ne Belirler?",
+        "paragraphs": [
+          "Servisler farklı fiyat kaynakları ve kendi değerleme modellerini kullanır. Ürünün likiditesi, mevcut talep, platformdaki stok ve alış ile yeniden satış arasındaki marj teklifi etkileyebilir. Bu nedenle iki site aynı anda aynı skin için farklı fiyat verebilir.",
+          "Nadir Rust eşyalarında tek bir ortalama piyasa fiyatı yeterli olmayabilir. Sınırlı arz, popülerlik ve az sayıdaki gerçek işlem değeri ciddi biçimde etkileyebilir; otomatik hızlı satış bu kıtlığı tam olarak hesaba katmayabilir.",
+          "Skinin yanında görünen rakam yerine nihai ödemeyi karşılaştırın. Bir servis ürün için daha yüksek fiyat verebilir ancak sonradan para çekme ücreti kesebilir veya daha kötü bir döviz dönüşümü uygulayabilir."
+        ]
+      },
+      "safety": {
+        "title": "Rust Skinlerini Daha Güvenli Nasıl Satabilirsiniz?",
+        "intro": "Satıştaki risklerin çoğu ürünün kendisinden değil, phishing sayfalarından, sahte botlardan ve yanlış Steam takasının onaylanmasından kaynaklanır. Her işlemden önce temel ayrıntıları tekrar kontrol edin.",
+        "items": [
+          {
+            "summary": "Alan adını ve Steam giriş penceresini kontrol edin",
+            "body": "Platforma doğrulanmış bir adres üzerinden girin ve oturum açmadan önce alan adını kontrol edin. Phishing siteleri popüler servislerin tasarımını kopyalayabilir ve sahte Steam giriş penceresi gösterebilir."
+          },
+          {
+            "summary": "Her Steam Trade Offer’ı doğrulayın",
+            "body": "Onaylamadan önce teklifte gerçekten satmak istediğiniz ürünün bulunduğunu ve alıcının platformda gösterilen bilgilerle eşleştiğini kontrol edin. Tanıdık bir isim veya avatar tek başına botun gerçek olduğunu kanıtlamaz."
+          },
+          {
+            "summary": "İşlemi doğrudan takasa taşımayın",
+            "body": "Tanımadığınız biri pazar yerindeki satışı iptal edip ürünü ödeme karşılığında doğrudan göndermenizi isterse platformun işlem koruması devre dışı kalır. Servisin belirlediği satış sürecini takip edin."
+          },
+          {
+            "summary": "KYC ve limitleri önceden kontrol edin",
+            "body": "Pahalı bir ürün göndermeden önce kimlik doğrulama şartlarını, minimum para çekme tutarını ve seçtiğiniz ödeme yönteminin sınırlamalarını inceleyin. Böylece satış bittikten sonra uygun para çekme seçeneğinin olmadığını fark etme riskini azaltırsınız."
+          },
+          {
+            "summary": "Steam hesap güvenliğini kullanın",
+            "body": "Steam Guard ve diğer hesap güvenliği araçları yetkisiz erişim riskini azaltır. Şifre, doğrulama kodu veya diğer giriş bilgilerini üçüncü kişilerle paylaşmayın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skin Satışı Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rust skinlerini gerçek para karşılığında nerede satabilirim?",
+            "body": "Üçüncü taraf <a href=\"/rust/marketplaces\">pazar yerlerini</a> veya <a href=\"/rust/instant-sell\">anında satış servislerini</a> kullanabilirsiniz. Pazar yerleri genellikle fiyat üzerinde daha fazla kontrol sunar; anında satış ise hıza odaklanır. Ödeme yöntemleri platforma ve ülkeye göre değişir."
+          },
+          {
+            "summary": "Pazar yeri ile anında satış arasındaki fark nedir?",
+            "body": "Pazar yerinde satıcı ürünü listeler ve alıcı bekler. Anında satışta servis önceden bir teklif hesaplar; işlem daha hızlı olabilir ancak teklif çoğu zaman potansiyel pazar fiyatından daha düşüktür."
+          },
+          {
+            "summary": "Steam Community Market’ten para çekebilir miyim?",
+            "body": "Steam Community Market satışlarından elde edilen para Steam Wallet bakiyesine aktarılır ve Steam ekosistemi içinde kullanım içindir. Harici ödeme yöntemlerine para çekmek için üçüncü taraf bir servis gerekir."
+          },
+          {
+            "summary": "Bir skinin satılması ne kadar sürer?",
+            "body": "Anında satış, takas onaylandıktan sonra hızlı biçimde tamamlanabilir. P2P pazar yerinde ise süre talebe ve belirlediğiniz fiyata bağlıdır. Para çekme işleminin süresi ayrıca değerlendirilmelidir."
+          },
+          {
+            "summary": "Satışta hangi komisyonlar olabilir?",
+            "body": "Platform satış ücreti, para çekme ücreti veya döviz dönüşüm ücreti alabilir. Bazı servislerde maliyetin bir bölümü anında satın alma fiyatına zaten yansıtılmıştır. Yalnızca ilan edilen yüzde yerine net ödemeyi karşılaştırın."
+          },
+          {
+            "summary": "Rust skin değerini ne etkiler?",
+            "body": "Nadirlik, talep, likidite, aktif ilan sayısı, eşyanın popülerliği ve güncel piyasa koşulları."
+          },
+          {
+            "summary": "Skin satmak için KYC gerekli mi?",
+            "body": "Her zaman değil. Şartlar servise, tutara, ülkeye ve para çekme yöntemine göre değişir. Bazı platformlar doğrulama olmadan işlem yapmaya izin verir ancak para çekmeden önce veya belirli limitlerin üzerinde KYC isteyebilir."
+          },
+          {
+            "summary": "Satmak yerine skin takası yapabilir miyim?",
+            "body": "Evet. Para yerine başka bir ürün istiyorsanız <a href=\"/rust/trade-skins\">skin takas sitelerini</a> kullanabilirsiniz. Belirli bir ürün satın almak için CSGOBROKER’da ayrıca <a href=\"/rust/buy-skins\">Rust skin satın alma siteleri</a> sıralaması bulunur."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rust Skins बेचना: सही प्लेटफ़ॉर्म और Cashout Method कैसे चुनें",
+        "paragraphs": [
+          "Rust skins को real money में बेचने के कई तरीके हैं: item को <a href=\"/rust/marketplaces\">skin marketplace</a> पर list करना, <a href=\"/rust/instant-sell\">instant sell service</a> इस्तेमाल करना, या ऐसा platform चुनना जो trading और cashout दोनों देता हो। इन विकल्पों में speed, sale price, fees और payout methods अलग-अलग हो सकते हैं।",
+          "CSGOBROKER उन services को एक जगह compare करता है जहाँ item selling एक अलग feature है या broader skin-trading platform का हिस्सा है। तुलना में हम सिर्फ दिखने वाली item price नहीं देखते, बल्कि fees के बाद user को वास्तव में कितना मिलता है, कौन से withdrawal methods उपलब्ध हैं और sale process कितना साफ़ है, यह भी देखते हैं।",
+          "एक ही skin की कीमत Steam, third-party marketplace और instant-buy service पर काफी अलग हो सकती है। इसलिए Steam inventory value को ऐसी guaranteed cash amount नहीं मानना चाहिए जिसे तुरंत बाहर withdraw किया जा सके।"
+        ]
+      },
+      "categories": {
+        "title": "Rust Skins बेचने के मुख्य तरीके",
+        "items": [
+          {
+            "title": "Marketplaces और P2P",
+            "paragraphs": [
+              "<a href=\"/rust/marketplaces\">Rust skin marketplaces</a> पर seller आम तौर पर अपनी price set करता है और दूसरा user item खरीदता है। इससे price पर अधिक control मिलता है, लेकिन buyer मिलने में समय लग सकता है। Final return skin की demand, marketplace fees और withdrawal terms पर निर्भर करता है।"
+            ]
+          },
+          {
+            "title": "Instant Sell",
+            "paragraphs": [
+              "<a href=\"/rust/instant-sell\">Instant sell services</a> supported items को पहले से calculate की गई price पर खरीदते हैं या जल्दी liquidity उपलब्ध कराते हैं। सबसे बड़ा फायदा speed है; इसके बदले offer आम तौर पर उस संभावित marketplace price से कम होता है जो buyer का इंतज़ार करके मिल सकती है।"
+            ]
+          },
+          {
+            "title": "Sell Option वाले Trading Sites",
+            "paragraphs": [
+              "कुछ <a href=\"/rust/trade-skins\">skin trading sites</a> items को internal balance में बेचने और फिर उस balance को withdraw करने देते हैं। देखें कि service skin की value कैसे तय करती है, trade और sell price में अंतर है या नहीं, और कौन से payout methods available हैं।"
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market, Steam ecosystem के अंदर items बेचने के लिए उपयोगी है, लेकिन sale से मिला पैसा Steam Wallet में ही रहता है। यदि balance को games या Steam items पर खर्च करना है तो यह ठीक है, पर यह direct external cashout नहीं देता।"
+            ]
+          },
+          {
+            "title": "Card या Crypto Cashout",
+            "paragraphs": [
+              "Third-party services bank cards, local payment methods, e-wallets या cryptocurrency support कर सकती हैं। Options platform और user के country पर निर्भर करते हैं, इसलिए item भेजने से पहले अपना preferred payout method उपलब्ध है या नहीं, यह जांचें।"
+            ]
+          },
+          {
+            "title": "महंगे या Rare Items बेचना",
+            "paragraphs": [
+              "Rare, older या low-liquidity Rust skins को अलग services काफी अलग value दे सकती हैं। कई offers और recent completed sales compare करें, क्योंकि automated valuation हमेशा actual buyer demand नहीं दिखाती।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skins बेचने से पहले क्या Compare करें",
+        "intro": "Screen पर दिखने वाली सबसे ऊँची price हमेशा सबसे अच्छा deal नहीं होती। Platforms को final payout और पूरी transaction की conditions के आधार पर compare करना बेहतर है।",
+        "items": [
+          {
+            "summary": "सभी fees के बाद final payout",
+            "body": "सिर्फ skin price न देखें। Selling fee, withdrawal fee और currency conversion cost को भी शामिल करें। सबसे उपयोगी comparison वह amount है जो वास्तव में आपके चुने हुए payout method तक पहुँचता है।"
+          },
+          {
+            "summary": "Sale और payout speed",
+            "body": "Marketplace listing को buyer मिलने में समय लग सकता है, जबकि instant sell आम तौर पर तेज होता है। Sale complete होने के बाद withdrawal process में कितना समय लगता है, यह भी अलग से जांचें।"
+          },
+          {
+            "summary": "Available withdrawal methods",
+            "body": "Cards, bank transfers, e-wallets और crypto के minimum amounts, fees और regional restrictions अलग हो सकते हैं। Website पर कोई method दिखना यह guarantee नहीं करता कि वह हर country में available है।"
+          },
+          {
+            "summary": "KYC और regional restrictions",
+            "body": "कुछ platforms withdrawal से पहले या किसी threshold के बाद identity verification मांगते हैं। यदि verification आपके लिए महत्वपूर्ण है, तो item transfer करने से पहले requirements पढ़ें।"
+          },
+          {
+            "summary": "Supported items और minimum values",
+            "body": "Service बहुत सस्ते, low-liquidity या कुछ categories के items accept नहीं कर सकती। कुछ platforms minimum transaction value या minimum withdrawal amount भी रखती हैं।"
+          },
+          {
+            "summary": "Sell bonuses",
+            "body": "कुछ services selling पर extra percentage या promo code देती हैं। Bonus को base item valuation और उसकी conditions के साथ compare करें; बड़ा bonus हमेशा कम base offer की भरपाई नहीं करता।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rust Skin Selling Sites को कैसे Rate करता है",
+        "intro": "Ranking उन practical factors पर focus करती है जो user को मिलने वाली amount और sale process की convenience को प्रभावित करते हैं।",
+        "items": [
+          {
+            "summary": "Pricing और offer competitiveness",
+            "body": "हम देखते हैं कि service दूसरे selling methods की तुलना में items को कैसे value करती है। केवल एक बहुत अच्छा quote से ज्यादा महत्वपूर्ण अलग-अलग skin categories में लगातार competitive offers हैं।"
+          },
+          {
+            "summary": "Fees और price spread",
+            "body": "हम selling fees, withdrawal fees, अन्य deductions और displayed item value तथा actual payout के बीच difference को ध्यान में रखते हैं। Transparent calculation से sale से पहले result समझना आसान होता है।"
+          },
+          {
+            "summary": "Sale और withdrawal speed",
+            "body": "Instant sell में खरीद और payout की speed महत्वपूर्ण है। Marketplaces में item list करने और sale के बाद funds प्राप्त करने की आसानी देखी जाती है। Extra delays और unnecessary steps convenience कम करते हैं।"
+          },
+          {
+            "summary": "Payout methods और regional access",
+            "body": "हम withdrawal options, minimum amounts और regional limitations को देखते हैं। एक ही service एक country में convenient और दूसरे में कम practical हो सकती है।"
+          },
+          {
+            "summary": "Reputation और trade security",
+            "body": "हम platform history, Steam trades की clarity, support availability और obvious safety concerns देखते हैं। फिर भी user को domain और हर Trade Offer खुद verify करना चाहिए।"
+          },
+          {
+            "summary": "Item coverage और extra tools",
+            "body": "Wide item support, clear inventory pricing, filters, transaction history और useful tools positive factors हैं। यदि platform <a href=\"/rust/buy-skins\">skins खरीदने</a> या <a href=\"/rust/trade-skins\">trade करने</a> की सुविधा भी देता है, तो उन features को selling से अलग evaluate किया जाता है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Skin की Selling Price किन चीज़ों पर निर्भर करती है",
+        "paragraphs": [
+          "Services अलग-अलग price sources और अपनी valuation models इस्तेमाल करती हैं। Item liquidity, current demand, available inventory और buying व reselling के बीच margin offer को बदल सकते हैं। इसलिए दो sites एक ही समय में एक ही skin के लिए अलग prices दे सकती हैं।",
+          "Uncommon Rust items के लिए एक average market price पर्याप्त नहीं हो सकती। Limited supply, popularity और कम recent trades value को काफी बदल सकते हैं, जबकि automated quick sale scarcity को पूरी तरह account नहीं करती।",
+          "Skin के पास दिखने वाली number के बजाय final payout compare करें। कोई service item के लिए ज्यादा offer कर सकती है, लेकिन बाद में withdrawal fee काट सकती है या कम favorable currency conversion लागू कर सकती है।"
+        ]
+      },
+      "safety": {
+        "title": "Rust Skins को अधिक सुरक्षित तरीके से कैसे बेचें",
+        "intro": "Selling के ज्यादातर risks item से नहीं, बल्कि phishing, fake bots और गलत Steam trade confirm करने से आते हैं। हर transaction से पहले मुख्य details दोबारा verify करें।",
+        "items": [
+          {
+            "summary": "Domain और Steam login window जांचें",
+            "body": "Platform को verified address से खोलें और sign in करने से पहले domain देखें। Phishing sites लोकप्रिय services की design copy कर सकती हैं और नकली Steam login window दिखा सकती हैं।"
+          },
+          {
+            "summary": "हर Steam Trade Offer verify करें",
+            "body": "Confirm करने से पहले देखें कि offer में वही item है जिसे आप बेचने वाले थे और recipient platform पर दिखाए गए details से match करता है। Similar name या avatar अपने आप bot की authenticity साबित नहीं करता।"
+          },
+          {
+            "summary": "Deal को direct trade में न ले जाएँ",
+            "body": "यदि कोई unknown व्यक्ति marketplace sale cancel करके direct payment के बदले item भेजने को कहता है, तो platform की transaction protection लागू नहीं रहती। Marketplace द्वारा दिए गए sale process को follow करें।"
+          },
+          {
+            "summary": "KYC और limits पहले जांचें",
+            "body": "महंगा item transfer करने से पहले identity verification requirements, minimum withdrawal और अपने payout method की restrictions देखें। इससे sale complete होने के बाद suitable cashout option न मिलने की समस्या से बचा जा सकता है।"
+          },
+          {
+            "summary": "Steam account security इस्तेमाल करें",
+            "body": "Steam Guard और अन्य account-security tools unauthorized access का risk कम करते हैं। Password, confirmation codes या अन्य login credentials किसी third party के साथ share न करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rust Skins बेचने से जुड़े सामान्य सवाल",
+        "items": [
+          {
+            "summary": "Rust skins को real money में कहाँ बेच सकते हैं?",
+            "body": "आप third-party <a href=\"/rust/marketplaces\">marketplaces</a> या <a href=\"/rust/instant-sell\">instant sell services</a> इस्तेमाल कर सकते हैं। Marketplaces आम तौर पर price पर ज्यादा control देते हैं, जबकि instant sell speed को प्राथमिकता देता है। Payout options platform और country पर निर्भर करते हैं।"
+          },
+          {
+            "summary": "Marketplace और instant sell में क्या अंतर है?",
+            "body": "Marketplace पर seller item list करता है और buyer का इंतज़ार करता है। Instant sell में service पहले से offer calculate करती है, इसलिए transaction तेज हो सकती है, लेकिन quote अक्सर potential marketplace price से कम होता है।"
+          },
+          {
+            "summary": "क्या Steam Community Market से money withdraw कर सकते हैं?",
+            "body": "Steam Community Market की sale proceeds Steam Wallet में credit होती हैं और Steam ecosystem के अंदर उपयोग के लिए होती हैं। External cashout के लिए third-party service की जरूरत होती है।"
+          },
+          {
+            "summary": "Skin बेचने में कितना समय लगता है?",
+            "body": "Instant sell trade confirm होने के बाद जल्दी complete हो सकता है, जबकि P2P marketplace पर समय demand और set की गई price पर निर्भर करता है। Withdrawal processing time अलग factor है।"
+          },
+          {
+            "summary": "Selling पर कौन सी fees लग सकती हैं?",
+            "body": "Platform selling fee, withdrawal fee या currency-conversion fee ले सकती है। कुछ services में cost का हिस्सा instant-buy quote में पहले से शामिल होता है। केवल advertised percentage के बजाय net payout compare करें।"
+          },
+          {
+            "summary": "Rust skin की value पर क्या असर पड़ता है?",
+            "body": "Rarity, demand, liquidity, active listings, item popularity और current market conditions price को प्रभावित करते हैं।"
+          },
+          {
+            "summary": "क्या skins बेचने के लिए KYC जरूरी है?",
+            "body": "हमेशा नहीं। Requirements service, amount, country और payout method पर निर्भर करती हैं। कुछ platforms बिना verification trading allow करती हैं, लेकिन withdrawal से पहले या certain limits के बाद KYC मांग सकती हैं।"
+          },
+          {
+            "summary": "क्या बेचने की जगह skin trade कर सकते हैं?",
+            "body": "हाँ। यदि cash की जगह दूसरा item चाहिए, तो <a href=\"/rust/trade-skins\">skin trading sites</a> इस्तेमाल करें। किसी specific item को खरीदने के लिए CSGOBROKER पर <a href=\"/rust/buy-skins\">Rust skin buying sites</a> की अलग ranking भी है।"
+          }
+        ]
+      }
+    }
+  }
+}
