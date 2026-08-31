@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "coinflip",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Coinflip CS2: как работают сайты с монеткой и что сравнивать",
+        "paragraphs": [
+          "Coinflip CS2 — это формат, где результат раунда определяется случайным выбором одной из двух сторон. На классических skin-based площадках два пользователя могут вносить предметы или баланс сопоставимой стоимости, после чего победитель получает призовой пул за вычетом комиссии сервиса.",
+          "На разных сайтах Coinflip реализован по-разному: где-то это P2P-матч между игроками, где-то — игра против платформы на внутренний баланс. Поэтому важно понять, кто является второй стороной, как рассчитывается шанс, какой rake удерживается и как формируется стоимость скинов.",
+          "CSGOBROKER выделяет Coinflip отдельно от <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a> и <a href=\"/csgo/dice\">Dice</a>, потому что здесь особенно важны матчинг игроков, комиссия и прозрачность оценки внесённых предметов."
+        ]
+      },
+      "categories": {
+        "title": "Какие варианты Coinflip встречаются на сайтах CS2",
+        "items": [
+          {
+            "title": "P2P Coinflip",
+            "paragraphs": [
+              "Два пользователя создают или принимают матч с сопоставимой стоимостью ставки. Сервис организует раунд и обычно удерживает комиссию из общего пула."
+            ]
+          },
+          {
+            "title": "Coinflip на внутренний баланс",
+            "paragraphs": [
+              "Вместо передачи конкретных предметов ставка может делаться внутренними монетами или балансом. Важно понимать, как этот баланс пополняется и выводится."
+            ]
+          },
+          {
+            "title": "Ставки скинами",
+            "paragraphs": [
+              "Если участвуют предметы CS2, площадка использует собственную оценку каждого скина. Разница с внешним рынком влияет на эквивалентность ставок и фактическую стоимость выигрыша."
+            ]
+          },
+          {
+            "title": "Выбор стороны",
+            "paragraphs": [
+              "Некоторые сайты позволяют выбрать условную сторону монеты, другие назначают её автоматически. При одинаковой вероятности сам выбор изображения или цвета не создаёт преимущества."
+            ]
+          },
+          {
+            "title": "Публичные лобби и матчинг",
+            "paragraphs": [
+              "Сайты могут показывать открытые coinflip-матчи, их сумму и статус. Ликвидность особенно важна при редких диапазонах ставок."
+            ]
+          },
+          {
+            "title": "Бонусные Coinflip-ставки",
+            "paragraphs": [
+              "Иногда бонусный баланс можно использовать в Coinflip. Такие акции стоит сравнивать в разделе <a href=\"/freebies\">бонусов</a>, отдельно проверяя wagering и вывод."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед участием в Coinflip",
+        "intro": "Два раунда с одинаковой номинальной вероятностью могут заметно отличаться по комиссии и реальной стоимости призового пула.",
+        "items": [
+          {
+            "summary": "Комиссия или rake",
+            "body": "Если сервис удерживает процент из общего банка, это напрямую влияет на математическое ожидание. Сравнивайте фактический приз после комиссии."
+          },
+          {
+            "summary": "Как оцениваются скины",
+            "body": "Проверьте источник внутренних цен и частоту обновления, особенно для редких или низколиквидных предметов."
+          },
+          {
+            "summary": "Как подбирается соперник",
+            "body": "При P2P-модели правила допустимой разницы между ставками определяют, насколько сопоставимы два банка."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверьте, можно ли подтвердить выбор победителя после матча через seeds, hash или другой проверяемый механизм."
+          },
+          {
+            "summary": "Что происходит при отмене",
+            "body": "Полезно знать, когда ставка считается принятой, можно ли отменить открытый матч и что происходит при технической ошибке."
+          },
+          {
+            "summary": "Вывод и Trade Offer",
+            "body": "Если приз выплачивается предметами, проверяйте доступность скинов, Trade Offer, комиссии, KYC и региональные ограничения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает Coinflip-сайты",
+        "intro": "Для Coinflip важны не визуальные эффекты монетки, а комиссия, fair matching и прозрачность результата.",
+        "items": [
+          {
+            "summary": "Комиссия и фактический payout",
+            "body": "Смотрим, какой процент остаётся площадке и сколько победитель реально получает из общего пула."
+          },
+          {
+            "summary": "Оценка предметов",
+            "body": "Учитывается прозрачность цен скинов и корректность сопоставления ставок разного состава."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверяем доступность информации для подтверждения конкретного coinflip-раунда."
+          },
+          {
+            "summary": "Матчинг и ликвидность",
+            "body": "Количество открытых матчей, диапазоны сумм и скорость поиска соперника влияют на удобство P2P-режима."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Учитываются скины, деньги, криптовалюты, комиссии, Trade Offer, KYC и минимальные суммы."
+          },
+          {
+            "summary": "История матчей и интерфейс",
+            "body": "Понятная история, отображение комиссии, статуса раунда и поддержка помогают разбирать спорные операции."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг Coinflip-сайтов меняется",
+        "paragraphs": [
+          "Сервис может изменить rake, диапазон ставок, систему оценки скинов, правила матчинга или способы вывода. Даже небольшое изменение комиссии заметно влияет на ценность режима.",
+          "Ликвидность тоже меняется: если на платформе становится меньше игроков, поиск соперника для определённой суммы может занимать дольше.",
+          "Для других случайных режимов используйте <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, <a href=\"/csgo/dice\">Dice</a> или общий рейтинг <a href=\"/cs2\">сайтов CS2</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании Coinflip-сайтов",
+        "intro": "Если Coinflip использует скины, к обычным рискам гемблинга добавляется безопасность Steam Trade Offer.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Steam-авторизацию",
+            "body": "Не входите через поддельные формы Steam и проверяйте адрес площадки."
+          },
+          {
+            "summary": "Сверяйте каждый Trade Offer",
+            "body": "Перед подтверждением проверьте отправителя, состав предметов и соответствие операции тому, что показано на сайте."
+          },
+          {
+            "summary": "Проверяйте комиссию до матча",
+            "body": "Rake должен быть понятен до принятия ставки, а не только после определения победителя."
+          },
+          {
+            "summary": "Не считайте серии исходов сигналом",
+            "body": "Предыдущие результаты монетки не делают следующую независимую сторону более вероятной."
+          },
+          {
+            "summary": "Устанавливайте лимиты",
+            "body": "Coinflip имеет быстрый цикл раундов. Ограничивайте расходы и используйте <a href=\"/responsibility\">ответственную игру</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о Coinflip CS2",
+        "items": [
+          {
+            "summary": "Что такое Coinflip CS2?",
+            "body": "Случайный раунд с двумя возможными сторонами, часто организованный как матч между двумя пользователями со скинами или балансом."
+          },
+          {
+            "summary": "Coinflip всегда имеет шанс 50/50?",
+            "body": "Не стоит считать это автоматически. Конкретная механика должна быть опубликована площадкой; комиссия отдельно влияет на ожидаемую выплату."
+          },
+          {
+            "summary": "Что такое rake?",
+            "body": "Процент или сумма, которую сайт удерживает из призового пула."
+          },
+          {
+            "summary": "Как сайт сравнивает разные скины?",
+            "body": "Через внутреннюю систему цен, поэтому важны источник и актуальность оценки."
+          },
+          {
+            "summary": "Можно ли выбрать сторону монетки?",
+            "body": "На некоторых сайтах да, на других она назначается автоматически."
+          },
+          {
+            "summary": "Можно ли проверить результат?",
+            "body": "На Provably Fair площадках должен быть механизм проверки конкретного раунда."
+          },
+          {
+            "summary": "Можно ли вывести выигрыш скинами?",
+            "body": "На skin-based сервисах часто да, но действуют доступность предметов, Trade Offer и правила вывода."
+          },
+          {
+            "summary": "Почему рейтинг Coinflip на CSGOBROKER меняется?",
+            "body": "Меняются rake, цены скинов, ликвидность, Provably Fair, платежи и вывод."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Coinflip Sites: How Coinflip Works and What to Compare",
+        "paragraphs": [
+          "CS2 Coinflip is a format where a round is decided by a random selection between two sides. On classic skin-based platforms, two users can contribute items or balance of comparable value, after which the winner receives the prize pool minus the service fee.",
+          "Coinflip is implemented differently across sites: some use a P2P match between players, while others offer a game against the platform using internal balance. It is therefore important to understand who the counterparty is, how the probability is calculated, what rake is charged, and how skins are valued.",
+          "CSGOBROKER evaluates Coinflip separately from <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, and <a href=\"/csgo/dice\">Dice</a> because player matching, commission, and transparency of contributed-item valuation are especially important here."
+        ]
+      },
+      "categories": {
+        "title": "Common CS2 Coinflip Formats",
+        "items": [
+          {
+            "title": "P2P Coinflip",
+            "paragraphs": [
+              "Two users create or accept a match with stakes of comparable value. The service organizes the round and usually takes a fee from the total pot."
+            ]
+          },
+          {
+            "title": "Internal-balance Coinflip",
+            "paragraphs": [
+              "Instead of transferring specific items, a wager can be made using internal coins or balance. It is important to understand how that balance is funded and withdrawn."
+            ]
+          },
+          {
+            "title": "Skin-based stakes",
+            "paragraphs": [
+              "When CS2 items are involved, the platform applies its own valuation to each skin. Differences from external market prices affect how equal the stakes really are and the actual value of the prize."
+            ]
+          },
+          {
+            "title": "Choosing a side",
+            "paragraphs": [
+              "Some sites let users choose a symbolic side of the coin, while others assign it automatically. If the probabilities are equal, choosing an image or color does not create an advantage."
+            ]
+          },
+          {
+            "title": "Public lobbies and matching",
+            "paragraphs": [
+              "Sites may display open Coinflip matches, their stake value, and status. Liquidity is especially important for uncommon stake ranges."
+            ]
+          },
+          {
+            "title": "Bonus Coinflip",
+            "paragraphs": [
+              "Bonus balance can sometimes be used in Coinflip. Compare such offers in the <a href=\"/freebies\">bonuses</a> section and check wagering and withdrawal terms separately."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Joining a Coinflip",
+        "intro": "Two rounds with the same nominal probability can differ substantially because of commission and the real value of the prize pool.",
+        "items": [
+          {
+            "summary": "Commission or rake",
+            "body": "If the service takes a percentage of the total pot, it directly affects expected value. Compare the actual prize after commission."
+          },
+          {
+            "summary": "Skin valuation",
+            "body": "Check the source of internal prices and how often they are updated, especially for rare or illiquid items."
+          },
+          {
+            "summary": "Opponent matching",
+            "body": "In a P2P model, the permitted difference between the two stakes determines how closely matched the pots really are."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Check whether the winner selection can be verified after the match through seeds, a hash, or another verifiable mechanism."
+          },
+          {
+            "summary": "Cancellation rules",
+            "body": "It is useful to know when a wager becomes binding, whether an open match can be cancelled, and what happens if a technical error occurs."
+          },
+          {
+            "summary": "Withdrawal and Trade Offers",
+            "body": "If prizes are paid in items, check skin availability, Steam Trade Offers, fees, KYC, and regional restrictions."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Coinflip Sites",
+        "intro": "For Coinflip, commission, fair matching, and result transparency matter more than the coin animation.",
+        "items": [
+          {
+            "summary": "Rake and real payout",
+            "body": "We look at what percentage the platform keeps and how much of the total pot the winner actually receives."
+          },
+          {
+            "summary": "Item valuation",
+            "body": "We consider how transparent skin pricing is and whether mixed-item stakes are matched correctly."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We check whether enough information is available to verify a specific Coinflip round."
+          },
+          {
+            "summary": "Matching and liquidity",
+            "body": "The number of open matches, available stake ranges, and opponent-finding speed all affect P2P usability."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "Skins, money, cryptocurrencies, fees, Steam Trade Offers, KYC, and minimum amounts are included in the assessment."
+          },
+          {
+            "summary": "History and interface",
+            "body": "Clear match history, fee display, round status, and support help resolve disputed or problematic transactions."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Coinflip Rankings Change",
+        "paragraphs": [
+          "A service can change its rake, stake ranges, skin valuation system, matching rules, or withdrawal methods. Even a small change in commission can noticeably affect the value of the mode.",
+          "Liquidity also changes: if the platform has fewer active users, finding an opponent for a particular stake amount may take longer.",
+          "For other random modes, use <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, <a href=\"/csgo/dice\">Dice</a>, or the overall <a href=\"/cs2\">CS2 site ranking</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety on Coinflip Sites",
+        "intro": "If Coinflip uses skins, Steam Trade Offer security is an additional risk on top of ordinary gambling risk.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam login",
+            "body": "Do not sign in through fake Steam forms, and always check the platform's domain."
+          },
+          {
+            "summary": "Check every Trade Offer",
+            "body": "Before confirming, verify the sender, the items in the offer, and that the transaction matches what is shown on the site."
+          },
+          {
+            "summary": "Know the fee before joining",
+            "body": "Rake should be clear before you accept a wager, not only after the winner is determined."
+          },
+          {
+            "summary": "Do not read streaks as signals",
+            "body": "Previous coin results do not make either side of the next independent round more likely."
+          },
+          {
+            "summary": "Set limits",
+            "body": "Coinflip has a fast round cycle. Limit your spending and use <a href=\"/responsibility\">responsible gambling</a> guidance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Coinflip",
+        "items": [
+          {
+            "summary": "What is CS2 Coinflip?",
+            "body": "A random round with two possible sides, often organized as a match between two users using skins or balance."
+          },
+          {
+            "summary": "Is Coinflip always exactly 50/50?",
+            "body": "Do not assume this automatically. The platform should publish the exact mechanics, and commission separately affects expected return."
+          },
+          {
+            "summary": "What is rake?",
+            "body": "The percentage or fixed amount that the site retains from the prize pool."
+          },
+          {
+            "summary": "How are different skins compared?",
+            "body": "Through an internal pricing system, so the source and freshness of the valuation are important."
+          },
+          {
+            "summary": "Can I choose a coin side?",
+            "body": "On some sites yes; on others the side is assigned automatically."
+          },
+          {
+            "summary": "Can the result be verified?",
+            "body": "Provably Fair platforms should provide a mechanism for verifying a specific round."
+          },
+          {
+            "summary": "Can winnings be withdrawn as skins?",
+            "body": "On skin-based services, often yes, but item availability, Steam Trade Offers, and withdrawal rules still apply."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Coinflip ranking change?",
+            "body": "Rake, skin prices, liquidity, Provably Fair, payment methods, and withdrawal conditions can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Coinflip CS2: cómo funcionan los sitios de cara o cruz",
+        "paragraphs": [
+          "Coinflip CS2 es un formato en el que el resultado de la ronda se decide mediante la elección aleatoria de uno de dos lados. En las plataformas clásicas basadas en skins, dos usuarios pueden aportar objetos o saldo de valor comparable y el ganador recibe el premio total menos la comisión del servicio.",
+          "Coinflip se implementa de forma distinta según el sitio: en algunos es un enfrentamiento P2P entre jugadores y en otros se juega contra la plataforma con saldo interno. Por eso conviene entender quién es la contraparte, cómo se calcula la probabilidad, qué rake se cobra y cómo se valoran las skins.",
+          "CSGOBROKER analiza Coinflip por separado de <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a> y <a href=\"/csgo/dice\">Dice</a>, porque aquí son especialmente importantes el matching de jugadores, la comisión y la transparencia de la valoración de los objetos aportados."
+        ]
+      },
+      "categories": {
+        "title": "Formatos habituales de Coinflip",
+        "items": [
+          {
+            "title": "P2P Coinflip",
+            "paragraphs": [
+              "Dos usuarios crean o aceptan un enfrentamiento con apuestas de valor comparable. El servicio organiza la ronda y normalmente retiene una comisión del bote total."
+            ]
+          },
+          {
+            "title": "Saldo interno",
+            "paragraphs": [
+              "En vez de transferir objetos concretos, la apuesta puede hacerse con monedas o saldo interno. Es importante entender cómo se recarga ese saldo y cómo se retira."
+            ]
+          },
+          {
+            "title": "Apuestas con skins",
+            "paragraphs": [
+              "Si participan objetos de CS2, la plataforma asigna su propia valoración a cada skin. La diferencia respecto al mercado externo afecta a la equivalencia de las apuestas y al valor real del premio."
+            ]
+          },
+          {
+            "title": "Elección de lado",
+            "paragraphs": [
+              "Algunos sitios permiten elegir un lado simbólico de la moneda y otros lo asignan automáticamente. Si la probabilidad es la misma, elegir una imagen o un color no crea ninguna ventaja."
+            ]
+          },
+          {
+            "title": "Lobby y matching",
+            "paragraphs": [
+              "Los sitios pueden mostrar los Coinflip abiertos, el valor de la apuesta y su estado. La liquidez es especialmente importante en rangos de apuesta poco habituales."
+            ]
+          },
+          {
+            "title": "Coinflip con bonus",
+            "paragraphs": [
+              "A veces se puede utilizar saldo de bonus en Coinflip. Conviene comparar estas promociones en la sección de <a href=\"/freebies\">bonus</a> y comprobar por separado el wagering y las condiciones de retiro."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de un Coinflip",
+        "intro": "Dos rondas con la misma probabilidad nominal pueden diferir bastante por la comisión y por el valor real del bote.",
+        "items": [
+          {
+            "summary": "Rake",
+            "body": "Si el servicio retiene un porcentaje del bote total, esto afecta directamente al valor esperado. Compara el premio real después de la comisión."
+          },
+          {
+            "summary": "Valoración de skins",
+            "body": "Comprueba la fuente de los precios internos y con qué frecuencia se actualizan, sobre todo para objetos raros o poco líquidos."
+          },
+          {
+            "summary": "Matching",
+            "body": "En un modelo P2P, las reglas sobre la diferencia permitida entre apuestas determinan hasta qué punto los dos botes son realmente comparables."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Comprueba si la selección del ganador puede verificarse después del enfrentamiento mediante seeds, hash u otro mecanismo verificable."
+          },
+          {
+            "summary": "Cancelación",
+            "body": "Conviene saber cuándo la apuesta pasa a ser vinculante, si se puede cancelar un enfrentamiento abierto y qué ocurre en caso de error técnico."
+          },
+          {
+            "summary": "Retiro",
+            "body": "Si el premio se paga en objetos, comprueba la disponibilidad de las skins, los Steam Trade Offers, las comisiones, KYC y las restricciones regionales."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa Coinflip",
+        "intro": "En Coinflip importan más la comisión, el fair matching y la transparencia del resultado que los efectos visuales de la moneda.",
+        "items": [
+          {
+            "summary": "Rake y payout",
+            "body": "Analizamos qué porcentaje se queda la plataforma y cuánto recibe realmente el ganador del bote total."
+          },
+          {
+            "summary": "Valoración",
+            "body": "Tenemos en cuenta la transparencia de los precios de las skins y si las apuestas formadas por objetos distintos se comparan correctamente."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Comprobamos si hay suficiente información para verificar una ronda concreta de Coinflip."
+          },
+          {
+            "summary": "Liquidez",
+            "body": "El número de enfrentamientos abiertos, los rangos de cantidades y la velocidad para encontrar rival influyen en la comodidad del modo P2P."
+          },
+          {
+            "summary": "Pagos",
+            "body": "Se tienen en cuenta skins, dinero, criptomonedas, comisiones, Steam Trade Offers, KYC y cantidades mínimas."
+          },
+          {
+            "summary": "Historial",
+            "body": "Un historial claro, la visualización de la comisión, el estado de la ronda y el soporte ayudan a resolver operaciones discutidas o problemáticas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking Coinflip",
+        "paragraphs": [
+          "El servicio puede cambiar el rake, los rangos de apuesta, el sistema de valoración de skins, las reglas de matching o los métodos de retiro. Incluso un pequeño cambio de comisión puede afectar de forma notable al valor del modo.",
+          "La liquidez también cambia: si hay menos jugadores activos en la plataforma, encontrar un rival para una cantidad concreta puede tardar más.",
+          "Para otros modos aleatorios, utiliza <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, <a href=\"/csgo/dice\">Dice</a> o el ranking general de <a href=\"/cs2\">sitios CS2</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en Coinflip",
+        "intro": "Si Coinflip utiliza skins, a los riesgos habituales del gambling se añade la seguridad de los Steam Trade Offers.",
+        "items": [
+          {
+            "summary": "Dominio y Steam",
+            "body": "No inicies sesión mediante formularios falsos de Steam y comprueba siempre el dominio de la plataforma."
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Antes de confirmar, comprueba el remitente, los objetos incluidos y que la operación coincida con lo que muestra el sitio."
+          },
+          {
+            "summary": "Comisión",
+            "body": "El rake debe estar claro antes de aceptar la apuesta, no solo después de decidirse el ganador."
+          },
+          {
+            "summary": "Rachas",
+            "body": "Los resultados anteriores de la moneda no hacen más probable ninguno de los lados en la siguiente ronda independiente."
+          },
+          {
+            "summary": "Límites",
+            "body": "Coinflip tiene un ciclo de rondas rápido. Limita tus gastos y utiliza las recomendaciones de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Coinflip CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Coinflip?",
+            "body": "Una ronda aleatoria con dos lados posibles, normalmente organizada como un enfrentamiento entre dos usuarios con skins o saldo."
+          },
+          {
+            "summary": "¿Siempre es 50/50?",
+            "body": "No debe asumirse automáticamente. La plataforma debe publicar la mecánica concreta, y la comisión afecta por separado al retorno esperado."
+          },
+          {
+            "summary": "¿Qué es rake?",
+            "body": "El porcentaje o importe fijo que el sitio retiene del bote."
+          },
+          {
+            "summary": "¿Cómo se valoran skins?",
+            "body": "Mediante un sistema interno de precios, por lo que importan la fuente y la actualidad de la valoración."
+          },
+          {
+            "summary": "¿Puedo elegir lado?",
+            "body": "En algunos sitios sí; en otros el lado se asigna automáticamente."
+          },
+          {
+            "summary": "¿Se puede verificar?",
+            "body": "Las plataformas Provably Fair deberían ofrecer un mecanismo para verificar una ronda concreta."
+          },
+          {
+            "summary": "¿Puedo retirar skins?",
+            "body": "En los servicios basados en skins, a menudo sí, pero siguen aplicándose la disponibilidad de objetos, los Steam Trade Offers y las reglas de retiro."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking?",
+            "body": "El rake, los precios de las skins, la liquidez, Provably Fair, los pagos y las condiciones de retiro pueden cambiar."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Coinflip CS2: como funcionam os sites de cara ou coroa",
+        "paragraphs": [
+          "Coinflip CS2 é um formato em que o resultado da rodada é definido pela escolha aleatória entre dois lados. Em plataformas clássicas baseadas em skins, dois usuários podem colocar itens ou saldo de valor semelhante e o vencedor recebe o prêmio total menos a comissão do serviço.",
+          "O Coinflip é implementado de formas diferentes: em alguns sites é um confronto P2P entre jogadores; em outros, o usuário joga contra a própria plataforma usando saldo interno. Por isso é importante entender quem é a contraparte, como a probabilidade é calculada, qual rake é cobrado e como as skins são avaliadas.",
+          "A CSGOBROKER avalia Coinflip separadamente de <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a> e <a href=\"/csgo/dice\">Dice</a>, porque matching de jogadores, comissão e transparência na avaliação dos itens apostados são especialmente importantes nesse modo."
+        ]
+      },
+      "categories": {
+        "title": "Formatos comuns de Coinflip",
+        "items": [
+          {
+            "title": "P2P Coinflip",
+            "paragraphs": [
+              "Dois usuários criam ou aceitam um confronto com apostas de valor semelhante. O serviço organiza a rodada e normalmente retém uma comissão do pote total."
+            ]
+          },
+          {
+            "title": "Saldo interno",
+            "paragraphs": [
+              "Em vez de transferir itens específicos, a aposta pode ser feita com moedas ou saldo interno. É importante entender como esse saldo é carregado e como pode ser sacado."
+            ]
+          },
+          {
+            "title": "Apostas com skins",
+            "paragraphs": [
+              "Quando itens de CS2 entram na aposta, a plataforma atribui sua própria avaliação a cada skin. Diferenças em relação ao mercado externo afetam a equivalência das apostas e o valor real do prêmio."
+            ]
+          },
+          {
+            "title": "Escolha do lado",
+            "paragraphs": [
+              "Alguns sites permitem escolher um lado simbólico da moeda, enquanto outros o atribuem automaticamente. Com probabilidades iguais, escolher uma imagem ou cor não cria vantagem."
+            ]
+          },
+          {
+            "title": "Lobby e matching",
+            "paragraphs": [
+              "Os sites podem exibir partidas de Coinflip abertas, o valor da aposta e o status. A liquidez é especialmente importante em faixas de aposta menos comuns."
+            ]
+          },
+          {
+            "title": "Bonus Coinflip",
+            "paragraphs": [
+              "Às vezes o saldo de bônus pode ser usado no Coinflip. Compare essas promoções na seção de <a href=\"/freebies\">bônus</a> e verifique separadamente wagering e regras de saque."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes do Coinflip",
+        "intro": "Duas rodadas com a mesma probabilidade nominal podem diferir bastante por causa da comissão e do valor real do pote.",
+        "items": [
+          {
+            "summary": "Rake",
+            "body": "Se o serviço retém uma porcentagem do pote total, isso afeta diretamente o valor esperado. Compare o prêmio real depois da comissão."
+          },
+          {
+            "summary": "Avaliação de skins",
+            "body": "Confira a fonte dos preços internos e a frequência de atualização, principalmente para itens raros ou com baixa liquidez."
+          },
+          {
+            "summary": "Matching",
+            "body": "Em um modelo P2P, as regras sobre a diferença permitida entre as apostas determinam o quanto os dois potes realmente são comparáveis."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Confira se a escolha do vencedor pode ser verificada depois da partida por seeds, hash ou outro mecanismo verificável."
+          },
+          {
+            "summary": "Cancelamento",
+            "body": "É útil saber quando a aposta passa a ser definitiva, se uma partida aberta pode ser cancelada e o que acontece em caso de erro técnico."
+          },
+          {
+            "summary": "Saque",
+            "body": "Se o prêmio for pago em itens, confira disponibilidade das skins, Steam Trade Offers, taxas, KYC e restrições regionais."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia Coinflip",
+        "intro": "No Coinflip, comissão, fair matching e transparência do resultado importam mais do que os efeitos visuais da moeda.",
+        "items": [
+          {
+            "summary": "Rake e payout",
+            "body": "Analisamos qual porcentagem fica com a plataforma e quanto do pote total o vencedor realmente recebe."
+          },
+          {
+            "summary": "Avaliação",
+            "body": "Consideramos a transparência dos preços das skins e a correção do matching entre apostas compostas por itens diferentes."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verificamos se existem informações suficientes para confirmar uma rodada específica de Coinflip."
+          },
+          {
+            "summary": "Liquidez",
+            "body": "O número de partidas abertas, as faixas de valores e a velocidade para encontrar um adversário influenciam a usabilidade do modo P2P."
+          },
+          {
+            "summary": "Pagamentos",
+            "body": "Skins, dinheiro, criptomoedas, taxas, Steam Trade Offers, KYC e valores mínimos entram na avaliação."
+          },
+          {
+            "summary": "Histórico",
+            "body": "Um histórico claro, a exibição da comissão, o status da rodada e o suporte ajudam a resolver operações contestadas ou problemáticas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking Coinflip muda",
+        "paragraphs": [
+          "O serviço pode mudar o rake, as faixas de aposta, o sistema de avaliação das skins, as regras de matching ou os métodos de saque. Até uma pequena mudança na comissão pode afetar de forma perceptível o valor do modo.",
+          "A liquidez também muda: se houver menos jogadores ativos na plataforma, encontrar um adversário para um valor específico pode demorar mais.",
+          "Para outros modos aleatórios, use <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, <a href=\"/csgo/dice\">Dice</a> ou o ranking geral de <a href=\"/cs2\">sites de CS2</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em Coinflip",
+        "intro": "Se o Coinflip utiliza skins, a segurança dos Steam Trade Offers se soma aos riscos normais de gambling.",
+        "items": [
+          {
+            "summary": "Domínio e Steam",
+            "body": "Não faça login por formulários falsos da Steam e confira sempre o domínio da plataforma."
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Antes de confirmar, verifique o remetente, os itens incluídos e se a operação corresponde ao que é mostrado no site."
+          },
+          {
+            "summary": "Comissão",
+            "body": "O rake deve estar claro antes de aceitar a aposta, e não apenas depois de o vencedor ser definido."
+          },
+          {
+            "summary": "Sequências",
+            "body": "Resultados anteriores da moeda não tornam nenhum dos lados mais provável na próxima rodada independente."
+          },
+          {
+            "summary": "Limites",
+            "body": "Coinflip tem um ciclo rápido de rodadas. Limite seus gastos e siga as orientações de <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Coinflip CS2",
+        "items": [
+          {
+            "summary": "O que é Coinflip?",
+            "body": "Uma rodada aleatória com dois lados possíveis, normalmente organizada como uma partida entre dois usuários usando skins ou saldo."
+          },
+          {
+            "summary": "É sempre 50/50?",
+            "body": "Não presuma automaticamente que sim. A plataforma deve publicar a mecânica exata, e a comissão afeta separadamente o retorno esperado."
+          },
+          {
+            "summary": "O que é rake?",
+            "body": "A porcentagem ou valor fixo que o site retém do pote."
+          },
+          {
+            "summary": "Como skins são avaliadas?",
+            "body": "Por meio de um sistema interno de preços; por isso, a fonte e a atualização da avaliação são importantes."
+          },
+          {
+            "summary": "Posso escolher lado?",
+            "body": "Em alguns sites, sim; em outros, o lado é atribuído automaticamente."
+          },
+          {
+            "summary": "Dá para verificar?",
+            "body": "Plataformas Provably Fair devem oferecer um mecanismo para verificar uma rodada específica."
+          },
+          {
+            "summary": "Posso sacar skins?",
+            "body": "Em serviços baseados em skins, muitas vezes sim, mas disponibilidade de itens, Steam Trade Offers e regras de saque continuam valendo."
+          },
+          {
+            "summary": "Por que o ranking muda?",
+            "body": "Rake, preços das skins, liquidez, Provably Fair, pagamentos e condições de saque podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Coinflip Siteleri: Yazı Tura Nasıl Çalışır?",
+        "paragraphs": [
+          "Coinflip CS2, round sonucunun iki taraftan birinin rastgele seçilmesiyle belirlendiği bir formattır. Klasik skin tabanlı platformlarda iki kullanıcı benzer değerde item veya bakiye koyabilir; kazanan, servis komisyonu düşüldükten sonra ödül havuzunu alır.",
+          "Coinflip farklı sitelerde farklı şekilde uygulanır: bazı yerlerde oyuncular arasında P2P maçtır, bazılarında ise platforma karşı iç bakiye ile oynanır. Bu nedenle karşı tarafın kim olduğunu, olasılığın nasıl hesaplandığını, ne kadar rake kesildiğini ve skin değerlerinin nasıl belirlendiğini anlamak önemlidir.",
+          "CSGOBROKER Coinflip'i <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a> ve <a href=\"/csgo/dice\">Dice</a>'dan ayrı değerlendirir; çünkü burada oyuncu eşleştirmesi, komisyon ve yatırılan item'ların değerlemesindeki şeffaflık özellikle önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Coinflip Formatları",
+        "items": [
+          {
+            "title": "P2P Coinflip",
+            "paragraphs": [
+              "İki kullanıcı benzer değerde bahislerle bir maç oluşturur veya mevcut maçı kabul eder. Servis round'u düzenler ve genellikle toplam havuzdan komisyon keser."
+            ]
+          },
+          {
+            "title": "İç bakiye",
+            "paragraphs": [
+              "Belirli item'ları aktarmak yerine bahis iç coin veya bakiye ile yapılabilir. Bu bakiyenin nasıl yüklendiğini ve nasıl çekildiğini anlamak önemlidir."
+            ]
+          },
+          {
+            "title": "Skin bahisleri",
+            "paragraphs": [
+              "CS2 item'ları kullanılıyorsa platform her skin için kendi değerlemesini uygular. Dış piyasa ile fark, bahislerin ne kadar denk olduğunu ve ödülün gerçek değerini etkiler."
+            ]
+          },
+          {
+            "title": "Taraf seçimi",
+            "paragraphs": [
+              "Bazı siteler sembolik olarak madalyonun bir tarafını seçmeye izin verir, bazıları ise tarafı otomatik atar. Olasılıklar eşitse resim veya renk seçmek avantaj yaratmaz."
+            ]
+          },
+          {
+            "title": "Lobby ve matching",
+            "paragraphs": [
+              "Siteler açık Coinflip maçlarını, bahis tutarlarını ve durumlarını gösterebilir. Likidite özellikle alışılmadık bahis aralıklarında önemlidir."
+            ]
+          },
+          {
+            "title": "Bonus Coinflip",
+            "paragraphs": [
+              "Bazen bonus bakiyesi Coinflip'te kullanılabilir. Bu kampanyaları <a href=\"/freebies\">bonuslar</a> bölümünde karşılaştırın ve wagering ile çekim koşullarını ayrıca kontrol edin."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Coinflip Öncesi Neleri Kontrol Etmeli?",
+        "intro": "Aynı nominal olasılığa sahip iki round, komisyon ve ödül havuzunun gerçek değeri nedeniyle önemli ölçüde farklı olabilir.",
+        "items": [
+          {
+            "summary": "Rake",
+            "body": "Servis toplam havuzdan yüzde kesiyorsa bu doğrudan beklenen değeri etkiler. Komisyon sonrası gerçek ödülü karşılaştırın."
+          },
+          {
+            "summary": "Skin değerlemesi",
+            "body": "Özellikle nadir veya düşük likiditeli item'lar için iç fiyatların kaynağını ve ne sıklıkla güncellendiğini kontrol edin."
+          },
+          {
+            "summary": "Matching",
+            "body": "P2P modelinde iki bahis arasındaki izin verilen değer farkı kuralları, iki havuzun gerçekte ne kadar denk olduğunu belirler."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Maçtan sonra kazanan seçiminin seed, hash veya başka doğrulanabilir bir mekanizma üzerinden doğrulanıp doğrulanamadığını kontrol edin."
+          },
+          {
+            "summary": "İptal",
+            "body": "Bahsin ne zaman kesinleştiğini, açık bir maçın iptal edilip edilemeyeceğini ve teknik hata durumunda ne olduğunu bilmek faydalıdır."
+          },
+          {
+            "summary": "Çekim",
+            "body": "Ödül item olarak ödeniyorsa skin kullanılabilirliğini, Steam Trade Offer'ları, ücretleri, KYC'yi ve bölgesel kısıtlamaları kontrol edin."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Coinflip Sitelerini Nasıl Değerlendirir?",
+        "intro": "Coinflip'te madeni para animasyonundan çok komisyon, fair matching ve sonucun şeffaflığı önemlidir.",
+        "items": [
+          {
+            "summary": "Rake ve payout",
+            "body": "Platformun yüzde kaç tuttuğuna ve kazananın toplam havuzdan gerçekte ne kadar aldığına bakıyoruz."
+          },
+          {
+            "summary": "Değerleme",
+            "body": "Skin fiyatlandırmasının şeffaflığını ve farklı item bileşimlerine sahip bahislerin doğru eşleştirilip eşleştirilmediğini değerlendiriyoruz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Belirli bir Coinflip round'unu doğrulamak için yeterli bilginin bulunup bulunmadığını kontrol ediyoruz."
+          },
+          {
+            "summary": "Likidite",
+            "body": "Açık maç sayısı, tutar aralıkları ve rakip bulma hızı P2P modunun kullanım rahatlığını etkiler."
+          },
+          {
+            "summary": "Ödemeler",
+            "body": "Skin'ler, para, kripto paralar, ücretler, Steam Trade Offer, KYC ve minimum tutarlar değerlendirmeye dahil edilir."
+          },
+          {
+            "summary": "Geçmiş",
+            "body": "Açık bir maç geçmişi, komisyon göstergesi, round durumu ve destek; tartışmalı veya sorunlu işlemleri çözmeye yardımcı olur."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Coinflip Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Servis rake'i, bahis aralıklarını, skin değerleme sistemini, eşleştirme kurallarını veya çekim yöntemlerini değiştirebilir. Komisyondaki küçük bir değişiklik bile modun değerini belirgin biçimde etkileyebilir.",
+          "Likidite de değişir: platformda daha az aktif oyuncu varsa belirli bir tutar için rakip bulmak daha uzun sürebilir.",
+          "Diğer rastgele modlar için <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, <a href=\"/csgo/dice\">Dice</a> veya genel <a href=\"/cs2\">CS2 site sıralamasını</a> kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Coinflip Güvenliği",
+        "intro": "Coinflip skin kullanıyorsa normal gambling risklerine Steam Trade Offer güvenliği riski de eklenir.",
+        "items": [
+          {
+            "summary": "Domain ve Steam",
+            "body": "Sahte Steam giriş formlarını kullanmayın ve platformun alan adını her zaman kontrol edin."
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Onaylamadan önce göndereni, item'ları ve işlemin sitede gösterilen işlemle eşleştiğini kontrol edin."
+          },
+          {
+            "summary": "Komisyon",
+            "body": "Rake, bahis kabul edilmeden önce açıkça görülmelidir; yalnızca kazanan belirlendikten sonra değil."
+          },
+          {
+            "summary": "Seriler",
+            "body": "Önceki madeni para sonuçları, sonraki bağımsız round'da herhangi bir tarafı daha olası hâle getirmez."
+          },
+          {
+            "summary": "Limit",
+            "body": "Coinflip'in round döngüsü hızlıdır. Harcamaları sınırlayın ve <a href=\"/responsibility\">sorumlu oyun</a> önerilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Coinflip Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Coinflip nedir?",
+            "body": "İki olası tarafı olan, çoğu zaman skin veya bakiye kullanan iki kullanıcı arasındaki maç olarak düzenlenen rastgele bir round."
+          },
+          {
+            "summary": "Her zaman 50/50 mi?",
+            "body": "Bunu otomatik olarak varsaymayın. Platform kesin mekaniği yayınlamalıdır; komisyon da beklenen ödemeyi ayrıca etkiler."
+          },
+          {
+            "summary": "Rake nedir?",
+            "body": "Sitenin ödül havuzundan tuttuğu yüzde veya sabit tutar."
+          },
+          {
+            "summary": "Skinler nasıl değerlenir?",
+            "body": "İç fiyat sistemi üzerinden; bu nedenle değerleme kaynağı ve güncelliği önemlidir."
+          },
+          {
+            "summary": "Taraf seçilebilir mi?",
+            "body": "Bazı sitelerde evet; diğerlerinde taraf otomatik atanır."
+          },
+          {
+            "summary": "Sonuç doğrulanabilir mi?",
+            "body": "Provably Fair platformlarda belirli bir round'u doğrulamak için mekanizma bulunmalıdır."
+          },
+          {
+            "summary": "Skin çekilebilir mi?",
+            "body": "Skin tabanlı servislerde çoğu zaman evet; ancak item kullanılabilirliği, Steam Trade Offer ve çekim kuralları yine geçerlidir."
+          },
+          {
+            "summary": "Sıralama neden değişir?",
+            "body": "Rake, skin fiyatları, likidite, Provably Fair, ödemeler ve çekim koşulları değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Coinflip Sites: Coinflip कैसे काम करता है",
+        "paragraphs": [
+          "Coinflip CS2 एक format है जिसमें round का result दो sides में से एक के random selection से तय होता है। Classic skin-based platforms पर दो users comparable value के items या balance डाल सकते हैं, और winner को service fee काटने के बाद prize pool मिलता है।",
+          "अलग sites पर Coinflip अलग तरह से implement होता है: कहीं players के बीच P2P match होता है, कहीं internal balance पर platform के खिलाफ game होता है। इसलिए यह समझना जरूरी है कि दूसरी party कौन है, probability कैसे calculate होती है, कितना rake लिया जाता है और skins की value कैसे तय होती है।",
+          "CSGOBROKER Coinflip को <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a> और <a href=\"/csgo/dice\">Dice</a> से अलग रखता है, क्योंकि यहाँ player matching, commission और deposited items की valuation transparency खास तौर पर important हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Common Coinflip Formats",
+        "items": [
+          {
+            "title": "P2P Coinflip",
+            "paragraphs": [
+              "दो users comparable value की stakes के साथ match create या accept करते हैं। Service round organize करती है और आम तौर पर total pot से commission रखती है।"
+            ]
+          },
+          {
+            "title": "Internal balance",
+            "paragraphs": [
+              "Specific items transfer करने के बजाय bet internal coins या balance से की जा सकती है। यह समझना जरूरी है कि यह balance कैसे fund और withdraw होता है।"
+            ]
+          },
+          {
+            "title": "Skin stakes",
+            "paragraphs": [
+              "अगर CS2 items शामिल हैं, तो platform हर skin की अपनी internal valuation इस्तेमाल करता है। External market से फर्क stakes की equivalence और prize की actual value को प्रभावित करता है।"
+            ]
+          },
+          {
+            "title": "Side choice",
+            "paragraphs": [
+              "कुछ sites coin का symbolic side चुनने देती हैं, जबकि कुछ उसे automatically assign करती हैं। अगर probabilities बराबर हैं, तो image या color चुनना कोई advantage नहीं देता।"
+            ]
+          },
+          {
+            "title": "Lobby और matching",
+            "paragraphs": [
+              "Sites open Coinflip matches, उनकी stake value और status दिखा सकती हैं। Uncommon stake ranges में liquidity खास तौर पर important होती है।"
+            ]
+          },
+          {
+            "title": "Bonus Coinflip",
+            "paragraphs": [
+              "कभी-कभी bonus balance Coinflip में इस्तेमाल किया जा सकता है। ऐसे offers को <a href=\"/freebies\">bonuses</a> section में compare करें और wagering व withdrawal conditions अलग से check करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Coinflip से पहले क्या Check करें",
+        "intro": "एक ही nominal probability वाली दो rounds commission और prize pool की real value के कारण काफी अलग हो सकती हैं।",
+        "items": [
+          {
+            "summary": "Rake",
+            "body": "अगर service total pot का percentage रखती है, तो यह expected value को सीधे प्रभावित करता है। Commission के बाद मिलने वाले actual prize को compare करें।"
+          },
+          {
+            "summary": "Skin valuation",
+            "body": "Internal prices का source और update frequency check करें, खासकर rare या low-liquidity items के लिए।"
+          },
+          {
+            "summary": "Matching",
+            "body": "P2P model में stakes के बीच allowed value difference के rules तय करते हैं कि दोनों pots वास्तव में कितने comparable हैं।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "देखें कि match के बाद winner selection को seeds, hash या किसी दूसरे verifiable mechanism से verify किया जा सकता है या नहीं।"
+          },
+          {
+            "summary": "Cancellation",
+            "body": "यह जानना useful है कि bet कब binding मानी जाती है, open match cancel किया जा सकता है या नहीं, और technical error में क्या होता है।"
+          },
+          {
+            "summary": "Withdrawal",
+            "body": "अगर prize items में मिलता है, तो skin availability, Steam Trade Offers, fees, KYC और regional restrictions check करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Coinflip Sites को कैसे Rate करता है",
+        "intro": "Coinflip में coin animation से ज्यादा commission, fair matching और result transparency important हैं।",
+        "items": [
+          {
+            "summary": "Rake और payout",
+            "body": "हम देखते हैं कि platform कितना percentage रखता है और winner को total pot में से वास्तव में कितना मिलता है।"
+          },
+          {
+            "summary": "Valuation",
+            "body": "हम skin prices की transparency और अलग item composition वाली stakes की सही matching को evaluate करते हैं।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "हम check करते हैं कि किसी specific Coinflip round को verify करने के लिए पर्याप्त information उपलब्ध है या नहीं।"
+          },
+          {
+            "summary": "Liquidity",
+            "body": "Open matches की संख्या, amount ranges और opponent मिलने की speed P2P mode की usability को प्रभावित करती है।"
+          },
+          {
+            "summary": "Payments",
+            "body": "Skins, money, cryptocurrencies, fees, Steam Trade Offers, KYC और minimum amounts evaluation में शामिल हैं।"
+          },
+          {
+            "summary": "History",
+            "body": "Clear match history, fee display, round status और support disputed या problematic transactions समझने में मदद करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Coinflip Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Service rake, stake ranges, skin valuation system, matching rules या withdrawal methods बदल सकती है। Commission में छोटा बदलाव भी mode की value पर noticeable असर डाल सकता है।",
+          "Liquidity भी बदलती है: platform पर active players कम होने पर किसी specific amount के लिए opponent मिलने में ज्यादा समय लग सकता है।",
+          "दूसरे random modes के लिए <a href=\"/csgo/roulette\">Roulette</a>, <a href=\"/csgo/jackpot\">Jackpot</a>, <a href=\"/csgo/dice\">Dice</a> या overall <a href=\"/cs2\">CS2 site ranking</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Coinflip Safety",
+        "intro": "अगर Coinflip skins इस्तेमाल करता है, तो normal gambling risk के साथ Steam Trade Offer security risk भी जुड़ जाता है।",
+        "items": [
+          {
+            "summary": "Domain और Steam",
+            "body": "Fake Steam login forms से sign in न करें और platform का domain हमेशा verify करें।"
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Confirm करने से पहले sender, offer में मौजूद items और site पर दिखाई गई operation से उसका match check करें।"
+          },
+          {
+            "summary": "Fee",
+            "body": "Rake bet accept करने से पहले साफ दिखना चाहिए, केवल winner तय होने के बाद नहीं।"
+          },
+          {
+            "summary": "Streaks",
+            "body": "पिछले coin results अगले independent round में किसी side को ज्यादा likely नहीं बनाते।"
+          },
+          {
+            "summary": "Limits",
+            "body": "Coinflip का round cycle तेज होता है। Spending limit करें और <a href=\"/responsibility\">responsible gambling</a> guidance इस्तेमाल करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Coinflip FAQ",
+        "items": [
+          {
+            "summary": "Coinflip क्या है?",
+            "body": "दो possible sides वाली random round, जो अक्सर skins या balance के साथ दो users के match के रूप में organize होती है।"
+          },
+          {
+            "summary": "क्या हमेशा 50/50 है?",
+            "body": "इसे automatically 50/50 न मानें। Exact mechanics platform को publish करनी चाहिए; commission expected return को अलग से प्रभावित करती है।"
+          },
+          {
+            "summary": "Rake क्या है?",
+            "body": "Prize pool से site द्वारा रखा गया percentage या fixed amount।"
+          },
+          {
+            "summary": "Skins कैसे valued होती हैं?",
+            "body": "Internal pricing system के जरिए, इसलिए valuation का source और freshness important हैं।"
+          },
+          {
+            "summary": "Side choose कर सकते हैं?",
+            "body": "कुछ sites पर हाँ; दूसरी sites पर side automatically assign होती है।"
+          },
+          {
+            "summary": "Result verify हो सकता है?",
+            "body": "Provably Fair platforms पर किसी specific round को verify करने का mechanism होना चाहिए।"
+          },
+          {
+            "summary": "Skins withdraw कर सकते हैं?",
+            "body": "Skin-based services पर अक्सर हाँ, लेकिन item availability, Steam Trade Offers और withdrawal rules लागू रहते हैं।"
+          },
+          {
+            "summary": "Ranking क्यों बदलती है?",
+            "body": "Rake, skin prices, liquidity, Provably Fair, payments और withdrawal conditions बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

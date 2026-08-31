@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "dice",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Dice CS2: как работают сайты с игрой в кости и что сравнивать",
+        "paragraphs": [
+          "Dice на сайтах CS2 — это игра со случайным числом, где пользователь выбирает условие результата, например roll over или roll under, задаёт размер ставки и получает коэффициент, связанный с выбранной вероятностью. Конкретный диапазон чисел и интерфейс различаются между площадками, но базовая логика строится вокруг вероятности, выплаты и house edge.",
+          "CSGOBROKER рассматривает Dice отдельно от <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a> и других instant games, потому что здесь особенно легко увидеть математическую связь между шансом и коэффициентом. Чем выше вероятность выигрыша, тем ниже потенциальная выплата — с поправкой на преимущество площадки.",
+          "Перед выбором Dice-сайта важнее смотреть не на серии прошлых бросков, а на Provably Fair, house edge, диапазон вероятностей, лимиты ставок, правила auto-bet и условия пополнения и вывода."
+        ]
+      },
+      "categories": {
+        "title": "Как устроена игра Dice на сайтах CS2",
+        "items": [
+          {
+            "title": "Roll over и roll under",
+            "paragraphs": [
+              "В одном варианте выигрыш засчитывается, если случайное число выше выбранной границы, в другом — если ниже. Само направление не создаёт математического преимущества: важны вероятность, коэффициент и house edge."
+            ]
+          },
+          {
+            "title": "Вероятность и коэффициент",
+            "paragraphs": [
+              "Площадки связывают chance и payout: более высокая вероятность означает меньший множитель, более низкая — больший. Разница между математически справедливой выплатой и фактическим payout формирует преимущество сайта."
+            ]
+          },
+          {
+            "title": "Ручные и автоматические ставки",
+            "paragraphs": [
+              "Auto-bet автоматически повторяет ставки и может менять размер по заданным правилам. Это удобство интерфейса, а не способ изменить вероятность отдельного броска."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "На поддерживающих его площадках результат можно проверить через server seed, client seed, nonce и verifier. Полезно, когда проверяется конкретный сыгранный раунд."
+            ]
+          },
+          {
+            "title": "Скины, баланс или криптовалюта",
+            "paragraphs": [
+              "Dice может работать на внутреннем балансе, который пополняется деньгами, криптовалютой или предметами CS2. Для скинов важно проверить внутреннюю оценку и вывод."
+            ]
+          },
+          {
+            "title": "Dice внутри casino-раздела",
+            "paragraphs": [
+              "Иногда Dice является одной из original games большого казино. Тогда полезно дополнительно сравнить сервис в разделе <a href=\"/csgo/casino\">сайтов со слотами и казино CS2</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед игрой в Dice",
+        "intro": "У Dice простая механика, поэтому ключевые различия чаще находятся в математике, прозрачности и ограничениях.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Сравнивайте фактическую формулу payout с выбранной вероятностью, а не только заявленный chance."
+          },
+          {
+            "summary": "Диапазон вероятностей",
+            "body": "Сайты различаются по минимальной и максимальной chance, что определяет доступные коэффициенты."
+          },
+          {
+            "summary": "Минимальная ставка и max win",
+            "body": "Лимиты могут зависеть от валюты, выбранного коэффициента или максимальной выплаты."
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "Проверьте, можно ли раскрыть seeds и воспроизвести расчёт конкретного результата."
+          },
+          {
+            "summary": "Auto-bet и стоп-условия",
+            "body": "Stop-loss, stop-win и лимит количества ставок помогают контролировать сессию, но не меняют odds."
+          },
+          {
+            "summary": "Вывод, KYC и бонусы",
+            "body": "Бонусный баланс может иметь wagering, а вывод — комиссии, минимумы, KYC и региональные ограничения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты Dice CS2",
+        "intro": "Для Dice математическая прозрачность важнее количества визуальных эффектов.",
+        "items": [
+          {
+            "summary": "Формула выплат и house edge",
+            "body": "Смотрим, насколько понятно связаны chance и payout и можно ли определить фактическое преимущество площадки."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Учитываем verifier, доступность seeds и возможность проверить конкретный roll."
+          },
+          {
+            "summary": "Лимиты и настройки",
+            "body": "Диапазон вероятностей, min/max bet, max win и корректное отображение коэффициента влияют на оценку."
+          },
+          {
+            "summary": "Автоматический режим",
+            "body": "Полезны прозрачные настройки auto-bet и защитные stop-условия."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Учитываются скины, деньги, криптовалюты, комиссии, минимумы, KYC и скорость вывода."
+          },
+          {
+            "summary": "Интерфейс и история",
+            "body": "История rolls, seeds, мобильная версия, стабильность и поддержка помогают проверять операции."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг Dice-сайтов меняется",
+        "paragraphs": [
+          "Площадки могут менять house edge, лимиты, формулу payout, бонусы, способы оплаты и интерфейс Provably Fair.",
+          "История предыдущих бросков не делает будущий результат более предсказуемым, если каждый roll генерируется независимо.",
+          "Для других instant games используйте <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/coinflip\">Coinflip</a> или <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра в Dice",
+        "intro": "Простая механика Dice не уменьшает финансовый риск: это случайная игра с преимуществом площадки.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Provably Fair",
+            "body": "Используйте правильный домен и проверяйте verifier для своих раундов."
+          },
+          {
+            "summary": "Не используйте системы ставок как гарантию",
+            "body": "Martingale и подобные схемы меняют размер ставки, но не вероятность следующего независимого roll."
+          },
+          {
+            "summary": "Проверяйте max win",
+            "body": "Высокий коэффициент может упираться в ограничение максимальной выплаты."
+          },
+          {
+            "summary": "Читайте правила вывода заранее",
+            "body": "KYC, комиссии, минимумы и региональные ограничения лучше проверить до депозита."
+          },
+          {
+            "summary": "Устанавливайте лимиты",
+            "body": "Auto-bet позволяет быстро совершать много ставок. Используйте ограничения по сумме и времени и <a href=\"/responsibility\">ответственную игру</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о Dice CS2",
+        "items": [
+          {
+            "summary": "Что такое Dice на сайтах CS2?",
+            "body": "Случайная игра, где результатом является число, а ставка делается на условие вроде roll over или roll under."
+          },
+          {
+            "summary": "Что означают roll over и roll under?",
+            "body": "Roll over выигрывает выше выбранной границы, roll under — ниже."
+          },
+          {
+            "summary": "Как связаны шанс и коэффициент?",
+            "body": "Чем ниже вероятность выбранного исхода, тем выше потенциальный коэффициент, с поправкой на house edge."
+          },
+          {
+            "summary": "Что такое house edge?",
+            "body": "Математическое преимущество площадки, встроенное в выплату."
+          },
+          {
+            "summary": "Можно ли проверить бросок?",
+            "body": "На Provably Fair сайтах — обычно да, через seeds, nonce и verifier."
+          },
+          {
+            "summary": "Работает ли Martingale?",
+            "body": "Она не меняет вероятность следующего независимого результата и может быстро увеличить размер ставки."
+          },
+          {
+            "summary": "Можно ли играть бонусными средствами?",
+            "body": "Иногда да, но действуют wagering и max bet. Сравните <a href=\"/freebies\">бонусы</a>."
+          },
+          {
+            "summary": "Почему рейтинг Dice на CSGOBROKER меняется?",
+            "body": "Меняются house edge, лимиты, Provably Fair, платежи, вывод и бонусы."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Dice: How Dice Sites Work and What to Compare",
+        "paragraphs": [
+          "Dice on CS2 sites is a random-number game where the user chooses a result condition, such as roll over or roll under, sets the wager size, and receives a multiplier linked to the selected probability. The exact number range and interface vary between platforms, but the core logic is built around probability, payout, and house edge.",
+          "CSGOBROKER evaluates Dice separately from <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, and other instant games because the mathematical relationship between chance and multiplier is especially easy to see here. The higher the probability of winning, the lower the potential payout, adjusted for the platform's edge.",
+          "Before choosing a Dice site, past roll streaks matter less than Provably Fair, house edge, probability range, bet limits, auto-bet rules, and deposit and withdrawal terms."
+        ]
+      },
+      "categories": {
+        "title": "How CS2 Dice Works",
+        "items": [
+          {
+            "title": "Roll over and roll under",
+            "paragraphs": [
+              "In one version, a bet wins if the random number is above the selected threshold; in the other, if it is below. The direction itself creates no mathematical advantage: probability, payout, and house edge are what matter."
+            ]
+          },
+          {
+            "title": "Probability and payout",
+            "paragraphs": [
+              "Platforms link chance and payout: a higher probability means a lower multiplier, while a lower probability means a higher one. The difference between a mathematically fair payout and the actual payout creates the site's edge."
+            ]
+          },
+          {
+            "title": "Manual and automatic betting",
+            "paragraphs": [
+              "Auto-bet automatically repeats wagers and can change their size according to predefined rules. This is an interface convenience, not a way to change the probability of an individual roll."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "On platforms that support it, a result can be verified using server seed, client seed, nonce, and a verifier. It is most useful when a specific completed round can actually be checked."
+            ]
+          },
+          {
+            "title": "Skins, balance or crypto",
+            "paragraphs": [
+              "Dice can run on an internal balance funded with money, cryptocurrency, or CS2 items. For skins, check both the platform's internal valuation and the withdrawal rules."
+            ]
+          },
+          {
+            "title": "Dice inside a casino",
+            "paragraphs": [
+              "Sometimes Dice is one of the original games inside a larger casino. In that case, it is also useful to compare the service in the <a href=\"/csgo/casino\">CS2 slots and casino sites</a> section."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Playing Dice",
+        "intro": "Dice has simple mechanics, so the main differences are usually in the mathematics, transparency, and limits.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Compare the actual payout formula with the selected probability, not only the advertised chance."
+          },
+          {
+            "summary": "Probability range",
+            "body": "Sites differ in their minimum and maximum chance, which determines the range of available multipliers."
+          },
+          {
+            "summary": "Bet and win limits",
+            "body": "Limits may depend on the currency, selected multiplier, or maximum payout."
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "Check whether the seeds can be revealed and the calculation of a specific result can be reproduced."
+          },
+          {
+            "summary": "Auto-bet controls",
+            "body": "Stop-loss, stop-win, and wager-count limits can help control a session, but they do not change the odds."
+          },
+          {
+            "summary": "Withdrawals, KYC and bonuses",
+            "body": "Bonus balance may have wagering requirements, while withdrawals can involve fees, minimums, KYC, and regional restrictions."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Dice Sites",
+        "intro": "For Dice, mathematical clarity matters more than visual effects.",
+        "items": [
+          {
+            "summary": "Payout formula and house edge",
+            "body": "We check how clearly chance and payout are connected and whether the platform's effective edge can be determined."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verifier quality, seed access, and verification of a specific roll are considered."
+          },
+          {
+            "summary": "Limits and wager controls",
+            "body": "Probability range, min/max bet, max win, and accurate multiplier display all affect the rating."
+          },
+          {
+            "summary": "Auto-bet implementation",
+            "body": "Useful controls include wager count and stop conditions without misleading claims."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "We consider skins, fiat money, cryptocurrencies, fees, minimums, KYC, and withdrawal speed."
+          },
+          {
+            "summary": "Interface and history",
+            "body": "Roll history, seeds, mobile usability, stability, and support help users review and verify operations."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Dice Rankings Change",
+        "paragraphs": [
+          "Platforms can change house edge, limits, payout formulas, bonuses, payment methods, and the Provably Fair interface.",
+          "A history of previous rolls does not make a future result more predictable if each roll is generated independently.",
+          "For other instant games, use <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/coinflip\">Coinflip</a>, or <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Dice Safety and Responsible Play",
+        "intro": "Dice's simple mechanics do not reduce financial risk: it is a random game with a platform edge.",
+        "items": [
+          {
+            "summary": "Verify the domain and fairness tool",
+            "body": "Make sure the verifier applies to the actual rounds you played."
+          },
+          {
+            "summary": "Do not treat betting systems as guarantees",
+            "body": "Martingale and similar systems change the wager size, but not the probability of the next independent roll."
+          },
+          {
+            "summary": "Check maximum-win limits",
+            "body": "Very high multipliers can be capped by a maximum payout."
+          },
+          {
+            "summary": "Read withdrawal rules first",
+            "body": "It is better to check KYC, fees, minimums, and regional restrictions before depositing."
+          },
+          {
+            "summary": "Set limits",
+            "body": "Auto-bet can place many wagers quickly. Use spending and time limits and follow <a href=\"/responsibility\">responsible gambling</a> guidance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Dice",
+        "items": [
+          {
+            "summary": "What is CS2 Dice?",
+            "body": "A random game where the result is a number and the wager is placed on a condition such as roll over or roll under."
+          },
+          {
+            "summary": "What do roll over and roll under mean?",
+            "body": "They refer to winning above or below a selected threshold."
+          },
+          {
+            "summary": "How are chance and payout connected?",
+            "body": "The lower the probability of the selected outcome, the higher the potential multiplier, adjusted for house edge."
+          },
+          {
+            "summary": "What is house edge in Dice?",
+            "body": "The mathematical platform advantage built into the payout formula."
+          },
+          {
+            "summary": "Can Dice rolls be verified?",
+            "body": "On Provably Fair sites, usually yes, through seeds, nonce, and a verifier."
+          },
+          {
+            "summary": "Does Martingale work in Dice?",
+            "body": "It does not change the probability of the next independent result and can increase the wager size very quickly."
+          },
+          {
+            "summary": "Can bonus balance be used for Dice?",
+            "body": "Sometimes, but wagering and max-bet rules may apply. Compare <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Dice ranking change?",
+            "body": "House edge, limits, Provably Fair, payments, withdrawals, and bonuses can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Dice de CS2: cómo funcionan los sitios de dados y qué comparar",
+        "paragraphs": [
+          "Dice en los sitios de CS2 es un juego de número aleatorio en el que el usuario elige una condición del resultado, por ejemplo roll over o roll under, fija el importe de la apuesta y recibe un multiplicador relacionado con la probabilidad elegida. El rango exacto de números y la interfaz varían entre plataformas, pero la lógica básica gira en torno a la probabilidad, el payout y el house edge.",
+          "CSGOBROKER analiza Dice por separado de <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a> y otros instant games porque aquí es especialmente fácil ver la relación matemática entre la probabilidad y el multiplicador. Cuanto mayor es la probabilidad de ganar, menor es el pago potencial, con el ajuste correspondiente a la ventaja de la plataforma.",
+          "Antes de elegir un sitio de Dice, es más importante revisar Provably Fair, house edge, rango de probabilidades, límites de apuesta, reglas de auto-bet y condiciones de depósito y retiro que fijarse en las rachas de tiradas anteriores."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona Dice en CS2",
+        "items": [
+          {
+            "title": "Roll over y roll under",
+            "paragraphs": [
+              "En una modalidad se gana si el número aleatorio queda por encima del límite elegido y, en la otra, si queda por debajo. La dirección por sí sola no crea ninguna ventaja matemática: importan la probabilidad, el multiplicador y el house edge."
+            ]
+          },
+          {
+            "title": "Probabilidad y multiplicador",
+            "paragraphs": [
+              "Las plataformas relacionan chance y payout: una probabilidad más alta implica un multiplicador menor y una probabilidad más baja, uno mayor. La diferencia entre el pago matemáticamente justo y el payout real forma la ventaja de la plataforma."
+            ]
+          },
+          {
+            "title": "Auto-bet",
+            "paragraphs": [
+              "Auto-bet repite automáticamente las apuestas y puede cambiar su importe según reglas definidas. Es una comodidad de la interfaz, no una forma de modificar la probabilidad de una tirada individual."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "En las plataformas que lo admiten, el resultado puede comprobarse mediante server seed, client seed, nonce y verifier. Es especialmente útil cuando se puede verificar una ronda concreta ya jugada."
+            ]
+          },
+          {
+            "title": "Skins, saldo o cripto",
+            "paragraphs": [
+              "Dice puede funcionar con un saldo interno financiado con dinero, criptomonedas o artículos de CS2. Si se utilizan skins, conviene comprobar tanto su valoración interna como las reglas de retiro."
+            ]
+          },
+          {
+            "title": "Dice dentro de casino",
+            "paragraphs": [
+              "A veces Dice es uno de los original games de un casino más amplio. En ese caso también conviene comparar el servicio en la sección de <a href=\"/csgo/casino\">sitios de slots y casino de CS2</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de jugar",
+        "intro": "Dice tiene una mecánica sencilla, por lo que las principales diferencias suelen estar en la matemática, la transparencia y las limitaciones.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Compara la fórmula real de payout con la probabilidad elegida, no solo el chance anunciado."
+          },
+          {
+            "summary": "Rango de probabilidad",
+            "body": "Los sitios difieren en el chance mínimo y máximo, lo que determina los multiplicadores disponibles."
+          },
+          {
+            "summary": "Límites",
+            "body": "Los límites pueden depender de la moneda, el multiplicador elegido o el pago máximo."
+          },
+          {
+            "summary": "Verifier",
+            "body": "Comprueba si los seeds pueden revelarse y si es posible reproducir el cálculo de un resultado concreto."
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Stop-loss, stop-win y el límite de número de apuestas ayudan a controlar una sesión, pero no cambian las odds."
+          },
+          {
+            "summary": "Retiro y KYC",
+            "body": "El saldo de bonificación puede tener wagering y los retiros pueden estar sujetos a comisiones, mínimos, KYC y restricciones regionales."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios Dice",
+        "intro": "La transparencia matemática es el criterio principal.",
+        "items": [
+          {
+            "summary": "Fórmula y house edge",
+            "body": "Analizamos hasta qué punto la relación entre chance y payout es clara y si puede determinarse la ventaja efectiva de la plataforma."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Valoramos la verificación real."
+          },
+          {
+            "summary": "Límites",
+            "body": "El rango de probabilidades, min/max bet, max win y la visualización correcta del multiplicador influyen en la valoración."
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Debe tener controles claros."
+          },
+          {
+            "summary": "Pagos",
+            "body": "Se tienen en cuenta skins, dinero, criptomonedas, comisiones, mínimos, KYC y velocidad de retiro."
+          },
+          {
+            "summary": "Historial",
+            "body": "El historial de rolls, los seeds, la versión móvil, la estabilidad y el soporte ayudan a revisar las operaciones."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking",
+        "paragraphs": [
+          "Las plataformas pueden cambiar el house edge, los límites, la fórmula de payout, los bonos, los métodos de pago y la interfaz de Provably Fair.",
+          "El historial de tiradas anteriores no hace más predecible el siguiente resultado si cada roll se genera de forma independiente.",
+          "Para otros instant games utiliza <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/coinflip\">Coinflip</a> o <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "La mecánica sencilla de Dice no reduce el riesgo financiero: sigue siendo un juego aleatorio con ventaja para la plataforma.",
+        "items": [
+          {
+            "summary": "Comprueba dominio y verifier",
+            "body": "Verifica tus rounds."
+          },
+          {
+            "summary": "No confíes en sistemas de apuesta",
+            "body": "Martingale y sistemas similares cambian el tamaño de la apuesta, pero no la probabilidad del siguiente roll independiente."
+          },
+          {
+            "summary": "Revisa max win",
+            "body": "Los multiplicadores altos pueden tener cap."
+          },
+          {
+            "summary": "Lee el retiro",
+            "body": "Conviene revisar KYC, comisiones, mínimos y restricciones regionales antes de depositar."
+          },
+          {
+            "summary": "Define límites",
+            "body": "Auto-bet permite realizar muchas apuestas rápidamente. Usa límites de gasto y tiempo y sigue las recomendaciones de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Dice CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Dice CS2?",
+            "body": "Un juego aleatorio en el que el resultado es un número y la apuesta se realiza sobre una condición como roll over o roll under."
+          },
+          {
+            "summary": "¿Qué significa roll over/under?",
+            "body": "Resultado por encima o debajo del límite."
+          },
+          {
+            "summary": "¿Cómo se relacionan chance y payout?",
+            "body": "Cuanto menor es la probabilidad del resultado elegido, mayor es el multiplicador potencial, con el ajuste del house edge."
+          },
+          {
+            "summary": "¿Qué es house edge?",
+            "body": "Ventaja matemática del sitio."
+          },
+          {
+            "summary": "¿Se puede verificar un roll?",
+            "body": "En sitios Provably Fair, normalmente sí, mediante seeds, nonce y verifier."
+          },
+          {
+            "summary": "¿Funciona Martingale?",
+            "body": "No cambia la probabilidad del siguiente resultado independiente y puede aumentar muy rápido el tamaño de la apuesta."
+          },
+          {
+            "summary": "¿Se puede usar bonus?",
+            "body": "A veces sí, pero pueden aplicarse wagering y max bet. Compara los <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking?",
+            "body": "Pueden cambiar el house edge, los límites, Provably Fair, los pagos, los retiros y los bonos."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Dice de CS2: como funcionam os sites de dados e o que comparar",
+        "paragraphs": [
+          "Dice em sites de CS2 é um jogo de número aleatório no qual o usuário escolhe uma condição de resultado, como roll over ou roll under, define o valor da aposta e recebe um multiplicador ligado à probabilidade escolhida. O intervalo exato de números e a interface variam entre as plataformas, mas a lógica básica gira em torno de probabilidade, payout e house edge.",
+          "A CSGOBROKER avalia Dice separadamente de <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a> e outros instant games porque aqui é especialmente fácil visualizar a relação matemática entre chance e multiplicador. Quanto maior a probabilidade de vitória, menor o pagamento potencial, com o ajuste da vantagem da plataforma.",
+          "Antes de escolher um site de Dice, é mais importante analisar Provably Fair, house edge, faixa de probabilidades, limites de aposta, regras de auto-bet e condições de depósito e saque do que sequências de rolls anteriores."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona Dice em CS2",
+        "items": [
+          {
+            "title": "Roll over e roll under",
+            "paragraphs": [
+              "Em uma opção, a aposta vence se o número aleatório ficar acima do limite escolhido; na outra, se ficar abaixo. A direção por si só não cria vantagem matemática: o que importa é a probabilidade, o multiplicador e o house edge."
+            ]
+          },
+          {
+            "title": "Probabilidade e multiplicador",
+            "paragraphs": [
+              "As plataformas relacionam chance e payout: uma probabilidade maior significa multiplicador menor, e uma probabilidade menor, multiplicador maior. A diferença entre o pagamento matematicamente justo e o payout real forma a vantagem do site."
+            ]
+          },
+          {
+            "title": "Auto-bet",
+            "paragraphs": [
+              "Auto-bet repete apostas automaticamente e pode alterar o valor segundo regras definidas. Isso é uma conveniência de interface, não uma forma de mudar a probabilidade de um roll individual."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Nas plataformas que oferecem o recurso, o resultado pode ser verificado por server seed, client seed, nonce e verifier. Ele é mais útil quando permite conferir uma rodada específica já jogada."
+            ]
+          },
+          {
+            "title": "Skins, saldo ou cripto",
+            "paragraphs": [
+              "Dice pode usar um saldo interno abastecido com dinheiro, criptomoedas ou itens de CS2. Para skins, é importante verificar a avaliação interna e as regras de saque."
+            ]
+          },
+          {
+            "title": "Dice dentro de casino",
+            "paragraphs": [
+              "Às vezes Dice é um dos original games de um cassino maior. Nesse caso, também vale comparar o serviço na seção de <a href=\"/csgo/casino\">sites de slots e cassino de CS2</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de jogar",
+        "intro": "Dice tem uma mecânica simples, por isso as principais diferenças costumam estar na matemática, transparência e limitações.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Compare a fórmula real de payout com a probabilidade escolhida, e não apenas o chance anunciado."
+          },
+          {
+            "summary": "Faixa de chance",
+            "body": "Os sites diferem no chance mínimo e máximo, o que determina os multiplicadores disponíveis."
+          },
+          {
+            "summary": "Limites",
+            "body": "Os limites podem depender da moeda, do multiplicador escolhido ou do pagamento máximo."
+          },
+          {
+            "summary": "Verifier",
+            "body": "Verifique se os seeds podem ser revelados e se o cálculo de um resultado específico pode ser reproduzido."
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Stop-loss, stop-win e limite de número de apostas ajudam a controlar a sessão, mas não alteram as odds."
+          },
+          {
+            "summary": "Saque e KYC",
+            "body": "O saldo de bônus pode ter wagering, enquanto saques podem envolver taxas, valores mínimos, KYC e restrições regionais."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites Dice",
+        "intro": "A transparência matemática é o principal critério.",
+        "items": [
+          {
+            "summary": "Fórmula e house edge",
+            "body": "Avaliamos quão clara é a relação entre chance e payout e se é possível determinar a vantagem efetiva da plataforma."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verificação real conta."
+          },
+          {
+            "summary": "Limites",
+            "body": "A faixa de probabilidades, min/max bet, max win e a exibição correta do multiplicador influenciam a avaliação."
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Controles claros são úteis."
+          },
+          {
+            "summary": "Pagamentos",
+            "body": "Consideramos skins, dinheiro, criptomoedas, taxas, valores mínimos, KYC e velocidade de saque."
+          },
+          {
+            "summary": "Histórico",
+            "body": "Histórico de rolls, seeds, versão móvel, estabilidade e suporte ajudam a conferir as operações."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking muda",
+        "paragraphs": [
+          "As plataformas podem alterar house edge, limites, fórmula de payout, bônus, métodos de pagamento e a interface de Provably Fair.",
+          "O histórico de rolls anteriores não torna o próximo resultado mais previsível quando cada roll é gerado de forma independente.",
+          "Para outros instant games, use <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/coinflip\">Coinflip</a> ou <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "A mecânica simples do Dice não reduz o risco financeiro: continua sendo um jogo aleatório com vantagem da plataforma.",
+        "items": [
+          {
+            "summary": "Confira domínio e verifier",
+            "body": "Verifique seus rounds."
+          },
+          {
+            "summary": "Não confie em sistemas de aposta",
+            "body": "Martingale e sistemas semelhantes alteram o tamanho da aposta, mas não a probabilidade do próximo roll independente."
+          },
+          {
+            "summary": "Veja max win",
+            "body": "Multiplicadores altos podem ter limite."
+          },
+          {
+            "summary": "Leia saque",
+            "body": "É melhor verificar KYC, taxas, mínimos e restrições regionais antes de depositar."
+          },
+          {
+            "summary": "Defina limites",
+            "body": "Auto-bet permite fazer muitas apostas rapidamente. Use limites de gasto e tempo e siga as orientações de <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Dice CS2",
+        "items": [
+          {
+            "summary": "O que é Dice CS2?",
+            "body": "Um jogo aleatório em que o resultado é um número e a aposta é feita sobre uma condição como roll over ou roll under."
+          },
+          {
+            "summary": "O que significa roll over/under?",
+            "body": "Resultado acima ou abaixo do limite."
+          },
+          {
+            "summary": "Como chance e payout se relacionam?",
+            "body": "Quanto menor a probabilidade do resultado escolhido, maior o multiplicador potencial, com o ajuste do house edge."
+          },
+          {
+            "summary": "O que é house edge?",
+            "body": "Vantagem matemática do site."
+          },
+          {
+            "summary": "Dá para verificar o roll?",
+            "body": "Em sites Provably Fair, normalmente sim, por meio de seeds, nonce e verifier."
+          },
+          {
+            "summary": "Martingale funciona?",
+            "body": "Ela não altera a probabilidade do próximo resultado independente e pode aumentar muito rapidamente o tamanho da aposta."
+          },
+          {
+            "summary": "Posso usar bônus?",
+            "body": "Às vezes sim, mas podem existir wagering e max bet. Compare os <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking muda?",
+            "body": "House edge, limites, Provably Fair, pagamentos, saques e bônus podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Dice: zar siteleri nasıl çalışır ve neler karşılaştırılmalı",
+        "paragraphs": [
+          "CS2 sitelerindeki Dice, kullanıcının roll over veya roll under gibi bir sonuç koşulu seçtiği, bahis tutarını belirlediği ve seçilen olasılığa bağlı bir çarpan aldığı rastgele sayı oyunudur. Sayı aralığı ve arayüz platformdan platforma değişebilir, ancak temel mantık olasılık, payout ve house edge üzerine kuruludur.",
+          "CSGOBROKER, Dice'ı <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a> ve diğer instant games türlerinden ayrı değerlendirir; çünkü burada şans ile çarpan arasındaki matematiksel ilişki özellikle açıktır. Kazanma olasılığı yükseldikçe, platform avantajı hesaba katıldığında potansiyel ödeme düşer.",
+          "Bir Dice sitesi seçerken geçmiş roll serilerinden çok Provably Fair, house edge, olasılık aralığı, bahis limitleri, auto-bet kuralları ile para yatırma ve çekme koşullarına bakmak daha önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Dice Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Roll over / roll under",
+            "paragraphs": [
+              "Bir seçenekte rastgele sayı seçilen sınırın üzerindeyse, diğerinde altındaysa bahis kazanır. Yönün kendisi matematiksel avantaj sağlamaz; önemli olan olasılık, çarpan ve house edge'dir."
+            ]
+          },
+          {
+            "title": "Chance ve payout",
+            "paragraphs": [
+              "Platformlar chance ile payout'u birbirine bağlar: daha yüksek olasılık daha düşük çarpan, daha düşük olasılık ise daha yüksek çarpan anlamına gelir. Matematiksel olarak adil ödeme ile gerçek payout arasındaki fark sitenin avantajını oluşturur."
+            ]
+          },
+          {
+            "title": "Auto-bet",
+            "paragraphs": [
+              "Auto-bet bahisleri otomatik olarak tekrarlar ve tanımlanan kurallara göre tutarı değiştirebilir. Bu bir arayüz kolaylığıdır; tek bir roll'un olasılığını değiştirme yöntemi değildir."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Bu özelliği destekleyen platformlarda sonuç server seed, client seed, nonce ve verifier ile kontrol edilebilir. Özellikle oynanmış belirli bir turun gerçekten doğrulanabilmesi önemlidir."
+            ]
+          },
+          {
+            "title": "Skin, bakiye veya kripto",
+            "paragraphs": [
+              "Dice; para, kripto para veya CS2 eşyalarıyla doldurulan dahili bakiye üzerinden çalışabilir. Skin kullanılıyorsa platformun dahili fiyatlandırmasını ve çekim kurallarını kontrol etmek gerekir."
+            ]
+          },
+          {
+            "title": "Casino içinde Dice",
+            "paragraphs": [
+              "Bazen Dice, daha büyük bir casinonun original games seçeneklerinden biridir. Bu durumda hizmeti ayrıca <a href=\"/csgo/casino\">CS2 slot ve casino siteleri</a> bölümünde karşılaştırmak faydalıdır."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Oynamadan Önce Neleri Karşılaştırmalı?",
+        "intro": "Dice'ın mekaniği basittir; bu nedenle temel farklar genellikle matematik, şeffaflık ve limitlerde ortaya çıkar.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Yalnızca belirtilen chance'e değil, seçilen olasılıkla gerçek payout formülünü karşılaştırın."
+          },
+          {
+            "summary": "Chance aralığı",
+            "body": "Siteler minimum ve maksimum chance bakımından farklıdır; bu da kullanılabilir çarpanları belirler."
+          },
+          {
+            "summary": "Limitler",
+            "body": "Limitler para birimine, seçilen çarpana veya maksimum ödemeye bağlı olabilir."
+          },
+          {
+            "summary": "Verifier",
+            "body": "Seeds verilerinin açığa çıkarılıp çıkarılamadığını ve belirli bir sonucun hesabının yeniden üretilebildiğini kontrol edin."
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Stop-loss, stop-win ve bahis sayısı limiti oturumu kontrol etmeye yardımcı olur, ancak odds değerlerini değiştirmez."
+          },
+          {
+            "summary": "Çekim ve KYC",
+            "body": "Bonus bakiyesinde wagering şartları olabilir; çekimlerde ise ücretler, minimumlar, KYC ve bölgesel kısıtlamalar uygulanabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Dice Sitelerini Nasıl Değerlendirir?",
+        "intro": "Matematiksel şeffaflık ana kriterdir.",
+        "items": [
+          {
+            "summary": "Formül ve house edge",
+            "body": "Chance ile payout arasındaki ilişkinin ne kadar açık olduğunu ve platformun gerçek avantajının hesaplanıp hesaplanamadığını değerlendiriyoruz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Gerçek verification önemlidir."
+          },
+          {
+            "summary": "Limitler",
+            "body": "Olasılık aralığı, min/max bet, max win ve çarpanın doğru gösterilmesi puanlamayı etkiler."
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Kontroller açık olmalı."
+          },
+          {
+            "summary": "Ödemeler",
+            "body": "Skinler, para, kripto paralar, ücretler, minimumlar, KYC ve çekim hızı değerlendirmeye alınır."
+          },
+          {
+            "summary": "Geçmiş",
+            "body": "Roll geçmişi, seeds, mobil sürüm, istikrar ve destek işlemlerin kontrol edilmesine yardımcı olur."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Dice Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar house edge, limitler, payout formülü, bonuslar, ödeme yöntemleri ve Provably Fair arayüzünü değiştirebilir.",
+          "Her roll bağımsız üretiliyorsa önceki atışların geçmişi gelecekteki sonucu daha tahmin edilebilir hale getirmez.",
+          "Diğer instant games için <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/coinflip\">Coinflip</a> veya <a href=\"/csgo/casino\">Casino</a> sayfalarını kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Dice'ın basit mekaniği finansal riski azaltmaz: bu, platform avantajı olan rastgele bir oyundur.",
+        "items": [
+          {
+            "summary": "Domain ve verifier",
+            "body": "Kendi round'unuzu doğrulayın."
+          },
+          {
+            "summary": "Bahis sistemlerine garanti gözüyle bakmayın",
+            "body": "Martingale ve benzeri sistemler bahis tutarını değiştirir, ancak sonraki bağımsız roll'un olasılığını değiştirmez."
+          },
+          {
+            "summary": "Max win kontrolü",
+            "body": "Yüksek multiplier cap'e takılabilir."
+          },
+          {
+            "summary": "Çekimi önceden okuyun",
+            "body": "KYC, ücretler, minimumlar ve bölgesel kısıtlamaları para yatırmadan önce kontrol etmek daha iyidir."
+          },
+          {
+            "summary": "Limit belirleyin",
+            "body": "Auto-bet kısa sürede çok sayıda bahis yapabilir. Harcama ve zaman limitleri kullanın ve <a href=\"/responsibility\">sorumlu oyun</a> önerilerine uyun."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Dice Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 Dice nedir?",
+            "body": "Sonucun bir sayı olduğu ve bahsin roll over veya roll under gibi bir koşula yapıldığı rastgele bir oyun."
+          },
+          {
+            "summary": "Roll over/under ne demek?",
+            "body": "Sonucun sınırın üstü veya altı olması."
+          },
+          {
+            "summary": "Chance ve payout ilişkisi?",
+            "body": "Seçilen sonucun olasılığı düştükçe potansiyel çarpan yükselir; house edge bu değeri aşağı çeker."
+          },
+          {
+            "summary": "House edge nedir?",
+            "body": "Sitenin matematiksel avantajıdır."
+          },
+          {
+            "summary": "Roll doğrulanabilir mi?",
+            "body": "Provably Fair sitelerde genellikle evet; seeds, nonce ve verifier üzerinden kontrol edilebilir."
+          },
+          {
+            "summary": "Martingale çalışır mı?",
+            "body": "Bir sonraki bağımsız sonucun olasılığını değiştirmez ve bahis tutarını çok hızlı büyütebilir."
+          },
+          {
+            "summary": "Bonus kullanılabilir mi?",
+            "body": "Bazen evet, ancak wagering ve max bet kuralları uygulanabilir. <a href=\"/freebies\">Bonusları</a> karşılaştırın."
+          },
+          {
+            "summary": "Sıralama neden değişir?",
+            "body": "House edge, limitler, Provably Fair, ödemeler, çekimler ve bonuslar değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Dice: डाइस साइटें कैसे काम करती हैं और क्या तुलना करनी चाहिए",
+        "paragraphs": [
+          "CS2 साइटों पर Dice एक रैंडम-नंबर गेम है, जिसमें उपयोगकर्ता roll over या roll under जैसी परिणाम-शर्त चुनता है, दांव की राशि तय करता है और चुनी हुई संभावना से जुड़ा multiplier प्राप्त करता है। अलग-अलग प्लेटफ़ॉर्म पर नंबर रेंज और इंटरफ़ेस अलग हो सकते हैं, लेकिन मूल गणित probability, payout और house edge पर आधारित रहता है।",
+          "CSGOBROKER Dice को <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a> और अन्य instant games से अलग देखता है, क्योंकि यहाँ chance और multiplier के बीच गणितीय संबंध विशेष रूप से स्पष्ट होता है। जीतने की संभावना जितनी अधिक होती है, प्लेटफ़ॉर्म की बढ़त को ध्यान में रखने पर संभावित payout उतना कम होता है।",
+          "Dice साइट चुनते समय पिछली rolls की streak से अधिक Provably Fair, house edge, probability range, bet limits, auto-bet के नियम और deposit तथा withdrawal की शर्तें महत्वपूर्ण हैं।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Dice कैसे काम करता है",
+        "items": [
+          {
+            "title": "Roll over / roll under",
+            "paragraphs": [
+              "एक विकल्प में रैंडम नंबर चुनी हुई सीमा से ऊपर होने पर जीत मिलती है, और दूसरे में नीचे होने पर। दिशा अपने आप कोई गणितीय बढ़त नहीं देती; probability, multiplier और house edge महत्वपूर्ण हैं।"
+            ]
+          },
+          {
+            "title": "Chance और payout",
+            "paragraphs": [
+              "प्लेटफ़ॉर्म chance और payout को जोड़ते हैं: अधिक probability का मतलब कम multiplier और कम probability का मतलब बड़ा multiplier होता है। गणितीय रूप से fair payout और वास्तविक payout के बीच का अंतर साइट की बढ़त बनाता है।"
+            ]
+          },
+          {
+            "title": "Auto-bet",
+            "paragraphs": [
+              "Auto-bet दांवों को अपने आप दोहराता है और तय नियमों के अनुसार उनकी राशि बदल सकता है। यह इंटरफ़ेस की सुविधा है, किसी एक roll की probability बदलने का तरीका नहीं।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "जहाँ यह सुविधा उपलब्ध है, वहाँ server seed, client seed, nonce और verifier के जरिए परिणाम की जाँच की जा सकती है। इसका वास्तविक लाभ तब है जब किसी खेले गए खास round को सत्यापित किया जा सके।"
+            ]
+          },
+          {
+            "title": "Skins, balance या crypto",
+            "paragraphs": [
+              "Dice आंतरिक balance पर चल सकता है जिसे पैसे, cryptocurrency या CS2 items से भरा जाता है। Skins के लिए प्लेटफ़ॉर्म की आंतरिक valuation और withdrawal नियम दोनों जाँचने चाहिए।"
+            ]
+          },
+          {
+            "title": "Casino के अंदर Dice",
+            "paragraphs": [
+              "कभी-कभी Dice किसी बड़े casino के original games में से एक होता है। तब उस सेवा की तुलना <a href=\"/csgo/casino\">CS2 slots और casino sites</a> सेक्शन में भी करना उपयोगी है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Play करने से पहले क्या Compare करें",
+        "intro": "Dice की mechanics सरल है, इसलिए मुख्य अंतर आम तौर पर गणित, पारदर्शिता और सीमाओं में होते हैं।",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "सिर्फ बताए गए chance को न देखें; चुनी हुई probability के साथ वास्तविक payout formula की तुलना करें।"
+          },
+          {
+            "summary": "Chance range",
+            "body": "साइटों में minimum और maximum chance अलग हो सकता है, जो उपलब्ध multipliers को निर्धारित करता है।"
+          },
+          {
+            "summary": "Limits",
+            "body": "Limits currency, चुने हुए multiplier या maximum payout पर निर्भर कर सकते हैं।"
+          },
+          {
+            "summary": "Verifier",
+            "body": "जाँचें कि seeds reveal किए जा सकते हैं या नहीं और किसी खास परिणाम की calculation दोबारा की जा सकती है या नहीं।"
+          },
+          {
+            "summary": "Auto-bet controls",
+            "body": "Stop-loss, stop-win और bet-count limit session को नियंत्रित करने में मदद करते हैं, लेकिन odds नहीं बदलते।"
+          },
+          {
+            "summary": "Withdrawal और KYC",
+            "body": "Bonus balance पर wagering लागू हो सकता है, जबकि withdrawal पर fees, minimums, KYC और regional restrictions हो सकती हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Dice Sites को कैसे Rate करता है",
+        "intro": "Mathematical transparency मुख्य criterion है।",
+        "items": [
+          {
+            "summary": "Formula और house edge",
+            "body": "हम देखते हैं कि chance और payout का संबंध कितना स्पष्ट है और क्या प्लेटफ़ॉर्म की वास्तविक edge निर्धारित की जा सकती है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Real verification महत्वपूर्ण है।"
+          },
+          {
+            "summary": "Limits",
+            "body": "Probability range, min/max bet, max win और multiplier का सही display rating को प्रभावित करते हैं।"
+          },
+          {
+            "summary": "Auto-bet",
+            "body": "Clear controls."
+          },
+          {
+            "summary": "Payments",
+            "body": "Skins, पैसा, cryptocurrencies, fees, minimums, KYC और withdrawal speed को ध्यान में रखा जाता है।"
+          },
+          {
+            "summary": "History",
+            "body": "Roll history, seeds, mobile version, stability और support transactions की जाँच में मदद करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Dice Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "प्लेटफ़ॉर्म house edge, limits, payout formula, bonuses, payment methods और Provably Fair interface बदल सकते हैं।",
+          "यदि हर roll स्वतंत्र रूप से generate होता है, तो पिछली rolls का इतिहास भविष्य के परिणाम को अधिक predictable नहीं बनाता।",
+          "अन्य instant games के लिए <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/coinflip\">Coinflip</a> या <a href=\"/csgo/casino\">Casino</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Dice की सरल mechanics वित्तीय जोखिम कम नहीं करती: यह प्लेटफ़ॉर्म की बढ़त वाला रैंडम गेम है।",
+        "items": [
+          {
+            "summary": "Domain और verifier check करें",
+            "body": "अपने rounds verify करें।"
+          },
+          {
+            "summary": "Betting systems को guarantee न मानें",
+            "body": "Martingale और इसी तरह की प्रणालियाँ bet size बदलती हैं, लेकिन अगले स्वतंत्र roll की probability नहीं बदलतीं।"
+          },
+          {
+            "summary": "Max win देखें",
+            "body": "High multiplier capped हो सकता है।"
+          },
+          {
+            "summary": "Withdrawal पहले पढ़ें",
+            "body": "KYC, fees, minimums और regional restrictions को deposit से पहले जाँचना बेहतर है।"
+          },
+          {
+            "summary": "Limits set करें",
+            "body": "Auto-bet बहुत जल्दी कई दांव लगा सकता है। खर्च और समय की limits तय करें और <a href=\"/responsibility\">responsible gambling</a> दिशानिर्देशों का उपयोग करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Dice FAQ",
+        "items": [
+          {
+            "summary": "CS2 Dice क्या है?",
+            "body": "एक रैंडम गेम जिसमें परिणाम एक संख्या होता है और दांव roll over या roll under जैसी शर्त पर लगाया जाता है।"
+          },
+          {
+            "summary": "Roll over/under क्या है?",
+            "body": "Threshold के ऊपर या नीचे result."
+          },
+          {
+            "summary": "Chance और payout कैसे जुड़े हैं?",
+            "body": "चुने हुए परिणाम की probability जितनी कम होती है, संभावित multiplier उतना अधिक होता है, house edge के समायोजन के साथ।"
+          },
+          {
+            "summary": "House edge क्या है?",
+            "body": "Site का mathematical advantage."
+          },
+          {
+            "summary": "Roll verify हो सकता है?",
+            "body": "Provably Fair साइटों पर आम तौर पर हाँ, seeds, nonce और verifier के जरिए।"
+          },
+          {
+            "summary": "Martingale काम करता है?",
+            "body": "यह अगले स्वतंत्र परिणाम की probability नहीं बदलती और bet size को बहुत तेजी से बढ़ा सकती है।"
+          },
+          {
+            "summary": "Bonus use कर सकते हैं?",
+            "body": "कभी-कभी हाँ, लेकिन wagering और max bet लागू हो सकते हैं। <a href=\"/freebies\">bonuses</a> की तुलना करें।"
+          },
+          {
+            "summary": "Ranking क्यों बदलती है?",
+            "body": "House edge, limits, Provably Fair, payments, withdrawals और bonuses बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

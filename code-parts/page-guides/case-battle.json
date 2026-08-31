@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "case-battle",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Кейс-баттлы CS2: как устроены битвы кейсов и чем отличаются режимы",
+        "paragraphs": [
+          "Кейс-баттл — это формат на сторонних сайтах CS2, где несколько участников открывают одинаковый набор виртуальных кейсов в рамках одного раунда. В классическом варианте результат определяется суммарной стоимостью выпавших предметов, но конкретные правила зависят от площадки и выбранного режима.",
+          "На CSGOBROKER сайты с кейс-баттлами рассматриваются отдельно от обычного <a href=\"/csgo/caseopening\">открытия кейсов</a>. Это важно, потому что на итог влияют не только состав и шансы самих кейсов, но и количество участников, формат распределения выигрыша, правила ничьей и дополнительные режимы.",
+          "Перед участием полезно проверить не только стоимость набора. Важны опубликованные odds каждого кейса, механизм Provably Fair, способ определения победителя, внутренняя оценка выпавших скинов и то, можно ли вывести полученные предметы через Steam."
+        ]
+      },
+      "categories": {
+        "title": "Какие форматы кейс-баттлов встречаются на сайтах CS2",
+        "items": [
+          {
+            "title": "Классический battle",
+            "paragraphs": [
+              "Несколько игроков открывают одинаковые кейсы, а победитель определяется по правилам площадки — чаще всего по общей стоимости выпавших предметов. До начала раунда стоит проверить, получает ли победитель все предметы, их стоимость во внутреннем балансе или другой тип награды."
+            ]
+          },
+          {
+            "title": "1v1 и битвы на несколько игроков",
+            "paragraphs": [
+              "Самый простой формат — один игрок против другого, но некоторые сайты поддерживают раунды на три, четыре и больше участников. Чем больше игроков, тем важнее заранее понимать, как распределяется призовой пул и что происходит при одинаковом результате."
+            ]
+          },
+          {
+            "title": "Командные кейс-баттлы",
+            "paragraphs": [
+              "На части площадок участники объединяются в команды, а сравнивается общий результат команды. Правила могут отличаться: например, предметы распределяются между участниками или конвертируются во внутренний баланс."
+            ]
+          },
+          {
+            "title": "Crazy Mode и обратные режимы",
+            "paragraphs": [
+              "Некоторые сайты предлагают режимы, где выигрывает не самая высокая, а самая низкая суммарная стоимость дропа. Такие форматы меняют только правило определения победителя, но не делают результат менее случайным."
+            ]
+          },
+          {
+            "title": "Приватные и публичные битвы",
+            "paragraphs": [
+              "Battle может создаваться для всех пользователей или по приватной ссылке. При создании обычно выбираются кейсы, количество мест и дополнительные параметры, если площадка их поддерживает."
+            ]
+          },
+          {
+            "title": "Бесплатные и бонусные битвы",
+            "paragraphs": [
+              "На отдельных сервисах встречаются бесплатные билеты, промо-баттлы или бонусы, которые можно использовать в кейс-режимах. Актуальные предложения CSGOBROKER собирает в разделе <a href=\"/freebies\">бонусов</a>; условия вывода таких наград стоит проверять отдельно."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед участием в кейс-баттле",
+        "intro": "В кейс-баттле важно оценивать не только отдельные кейсы, но и правила всего раунда.",
+        "items": [
+          {
+            "summary": "Как именно определяется победитель",
+            "body": "Проверьте, сравнивается ли общая стоимость предметов, отдельные раунды, командный результат или используется специальный режим. Название battle само по себе не объясняет механику."
+          },
+          {
+            "summary": "Кому достаются выпавшие предметы",
+            "body": "В классическом формате победитель может получить весь пул, но это не универсальное правило. Некоторые сайты используют внутренний баланс, командное распределение или собственную систему наград."
+          },
+          {
+            "summary": "Стоимость и состав набора кейсов",
+            "body": "Battle из нескольких дешёвых кейсов и battle с одним дорогим кейсом могут иметь совершенно разный разброс результатов. Перед входом стоит открыть содержимое каждого кейса и посмотреть опубликованные вероятности."
+          },
+          {
+            "summary": "Provably Fair и история раунда",
+            "body": "Проверьте, позволяет ли площадка подтвердить результаты открытия и посмотреть историю завершённых битв. Для Provably Fair важна не сама надпись, а возможность воспроизвести или проверить конкретный раунд."
+          },
+          {
+            "summary": "Оценка выпавших скинов",
+            "body": "Победитель часто определяется по стоимости предметов внутри платформы, а она может отличаться от Steam или сторонних маркетплейсов. Поэтому важно понимать, какую цену сайт использует при подсчёте."
+          },
+          {
+            "summary": "Вывод, KYC и ограничения",
+            "body": "Даже выигранный battle не отменяет общие правила площадки: минимальный вывод, комиссии, KYC, региональные ограничения и доступность конкретных скинов могут применяться отдельно."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с кейс-баттлами",
+        "intro": "При сравнении таких площадок мы смотрим не только на количество battle-режимов, но и на прозрачность их правил и практическую ценность результата.",
+        "items": [
+          {
+            "summary": "Прозрачность правил битвы",
+            "body": "Пользователь должен до входа в раунд понимать количество участников, набор кейсов, способ определения победителя и распределение выигрыша."
+          },
+          {
+            "summary": "Шансы кейсов и Provably Fair",
+            "body": "Мы учитываем, опубликованы ли odds самих кейсов и можно ли проверить конкретные открытия и battle-раунды через механизм Provably Fair."
+          },
+          {
+            "summary": "Оценка предметов и призового пула",
+            "body": "Важны внутренняя цена скинов, способ расчёта итогового результата и то, насколько понятно отображается общая стоимость дропа."
+          },
+          {
+            "summary": "Разнообразие battle-форматов",
+            "body": "Дополнительные режимы полезны, если их правила понятны и они действительно отличаются друг от друга, а не являются только визуальными вариациями одного сценария."
+          },
+          {
+            "summary": "Вывод и платёжные условия",
+            "body": "Учитываются способы пополнения, комиссии, доступность предметов, минимальные суммы, KYC и то, что происходит, если конкретный выигранный скин нельзя вывести сразу."
+          },
+          {
+            "summary": "Интерфейс, история и поддержка",
+            "body": "Для battle-сайта особенно важны понятная история раундов, статус операций, стабильная работа в реальном времени и возможность быстро разобраться со спорной или зависшей операцией."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с кейс-баттлами меняется",
+        "paragraphs": [
+          "Площадки регулярно добавляют новые форматы battle, меняют наборы кейсов, правила бонусов, способы оплаты и условия вывода. Поэтому функциональность одного и того же сервиса со временем может заметно меняться.",
+          "На итоговые значения влияет и рынок скинов CS2. Если сайт пересчитывает внутренние цены предметов, меняется стоимость дропа и, следовательно, расчёт победителя в режимах, где сравнивается суммарная ценность предметов.",
+          "Если интересует обычное открытие без соревнования, используйте раздел <a href=\"/csgo/caseopening\">сайтов с кейсами</a>. Для конкретного предмета без случайного результата есть отдельная страница <a href=\"/csgo/buy-skins\">покупки скинов CS2</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании сайтов с кейс-баттлами",
+        "intro": "Кейс-баттлы проходят на сторонних платформах и не являются официальным режимом Valve. Безопасность Steam-аккаунта и условия вывода нужно проверять отдельно.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Steam-авторизацию",
+            "body": "Фишинговый сайт может копировать интерфейс известной площадки и показывать поддельную форму входа. Перед авторизацией проверьте адрес страницы."
+          },
+          {
+            "summary": "Проверяйте Steam Trade Offer",
+            "body": "Если выигрыш выводится предметами, сверяйте отправителя и каждый скин перед подтверждением обмена."
+          },
+          {
+            "summary": "Читайте правила battle до участия",
+            "body": "Особенно внимательно проверяйте условия ничьей, Crazy Mode, командного режима и распределения предметов. Эти детали напрямую влияют на результат."
+          },
+          {
+            "summary": "Проверяйте вывод до депозита",
+            "body": "KYC, минимальная сумма, комиссии и региональные ограничения лучше узнать до пополнения, а не после выигрыша."
+          },
+          {
+            "summary": "Не воспринимайте battle как стратегию гарантированного заработка",
+            "body": "Даже если можно выбирать кейсы или формат, результат открытия остаётся случайным. Заранее определяйте лимит расходов и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о кейс-баттлах CS2",
+        "items": [
+          {
+            "summary": "Что такое кейс-баттл в CS2?",
+            "body": "Это сторонний формат, где несколько участников открывают одинаковый набор виртуальных кейсов, а победитель и распределение награды определяются правилами площадки."
+          },
+          {
+            "summary": "Как определяется победитель в case battle?",
+            "body": "Часто сравнивается суммарная стоимость выпавших предметов, но существуют командные, Crazy Mode и другие варианты. Правило нужно проверять для конкретного раунда."
+          },
+          {
+            "summary": "Чем case battle отличается от обычного открытия кейса?",
+            "body": "При обычном <a href=\"/csgo/caseopening\">открытии кейса</a> ваш результат не сравнивается с другими игроками. В battle итог зависит ещё и от результатов остальных участников и правил распределения."
+          },
+          {
+            "summary": "Есть ли стратегия для кейс-баттлов?",
+            "body": "Выбор стоимости кейсов, числа участников и режима меняет структуру раунда, но не устраняет случайность выпадения предметов."
+          },
+          {
+            "summary": "Что такое Crazy Mode?",
+            "body": "На площадках, где такой режим поддерживается, победителем обычно становится участник или команда с более низкой суммарной стоимостью дропа. Точные правила нужно смотреть на конкретном сайте."
+          },
+          {
+            "summary": "Можно ли играть в case battle бесплатно?",
+            "body": "Иногда сайты проводят промо-битвы, дают бесплатные кейсы или бонусный баланс. Такие предложения могут иметь отдельные условия использования и вывода; актуальные варианты собраны в <a href=\"/freebies\">бонусах</a>."
+          },
+          {
+            "summary": "Можно ли вывести выигранные скины в Steam?",
+            "body": "Зависит от сайта, доступности предметов и его правил вывода. Возможны Steam Trade Offer, внутренняя продажа за баланс или другие варианты."
+          },
+          {
+            "summary": "Почему рейтинг case battle сайтов на CSGOBROKER меняется?",
+            "body": "Меняются правила режимов, наборы кейсов, внутренние цены скинов, бонусы, платежи, вывод и стабильность работы, поэтому оценка площадки может пересматриваться."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Case Battles: How Case Battles Work and How the Modes Differ",
+        "paragraphs": [
+          "A case battle is a third-party CS2 format in which several participants open the same set of virtual cases within one round. In the classic format, the result is usually determined by the total value of the dropped items, but the exact rules depend on the platform and selected mode.",
+          "CSGOBROKER evaluates case battle sites separately from standard <a href=\"/csgo/caseopening\">case opening</a>. This matters because the outcome depends not only on the contents and odds of the cases themselves, but also on the number of participants, the prize-distribution format, tie rules, and additional modes.",
+          "Before joining, it is useful to check more than the cost of the case set. Published odds for each case, Provably Fair, the winner-selection rule, the platform's internal valuation of dropped skins, and whether awarded items can be withdrawn through Steam all matter."
+        ]
+      },
+      "categories": {
+        "title": "Common CS2 Case Battle Formats",
+        "items": [
+          {
+            "title": "Classic battles",
+            "paragraphs": [
+              "Several players open the same cases, and the winner is determined by the platform's rules, most often by the total value of the dropped items. Before the round starts, check whether the winner receives all items, their value as internal balance, or another type of reward."
+            ]
+          },
+          {
+            "title": "1v1 and multiplayer battles",
+            "paragraphs": [
+              "The simplest format is one player against another, but some sites support rounds for three, four, or more participants. The more players there are, the more important it is to understand in advance how the prize pool is distributed and what happens in the event of a tie."
+            ]
+          },
+          {
+            "title": "Team battles",
+            "paragraphs": [
+              "On some platforms, participants are grouped into teams and the team's combined result is compared. Rules can vary: for example, items may be distributed among team members or converted into internal balance."
+            ]
+          },
+          {
+            "title": "Crazy Mode and reverse formats",
+            "paragraphs": [
+              "Some sites offer modes where the lowest, rather than the highest, total drop value wins. These formats change only the rule used to determine the winner and do not make the underlying case results any less random."
+            ]
+          },
+          {
+            "title": "Private and public battles",
+            "paragraphs": [
+              "A battle can be created for all users or shared through a private link. When creating one, users usually select the cases, number of slots, and any additional parameters supported by the platform."
+            ]
+          },
+          {
+            "title": "Free and promotional battles",
+            "paragraphs": [
+              "Some services offer free tickets, promotional battles, or bonuses that can be used in case modes. CSGOBROKER collects current offers in the <a href=\"/freebies\">bonuses</a> section; withdrawal conditions for such rewards should be checked separately."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Joining a Case Battle",
+        "intro": "In a case battle, it is important to evaluate not only the individual cases but also the rules of the entire round.",
+        "items": [
+          {
+            "summary": "How the winner is determined",
+            "body": "Check whether the platform compares total item value, individual rounds, a team result, or uses a special mode. The battle name alone does not explain the mechanics."
+          },
+          {
+            "summary": "Who receives the dropped items",
+            "body": "In the classic format, the winner may receive the entire pool, but that is not a universal rule. Some sites use internal balance, team-based distribution, or their own reward system."
+          },
+          {
+            "summary": "The cases included in the battle",
+            "body": "A battle made up of several cheap cases and a battle with one expensive case can have very different result distributions. Before entering, open the contents of every case and review the published probabilities."
+          },
+          {
+            "summary": "Provably Fair and battle history",
+            "body": "Check whether the platform lets you verify opening results and view the history of completed battles. With Provably Fair, the label itself matters less than the ability to reproduce or verify a specific round."
+          },
+          {
+            "summary": "Internal item valuation",
+            "body": "The winner is often determined using the platform's internal item prices, which may differ from Steam or third-party marketplaces. It is therefore important to understand which prices the site uses in its calculation."
+          },
+          {
+            "summary": "Withdrawals, KYC and restrictions",
+            "body": "Winning a battle does not override the platform's general rules: minimum withdrawal, fees, KYC, regional restrictions, and the availability of specific skins can still apply separately."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Case Battle Sites",
+        "intro": "When comparing these platforms, we look not only at the number of battle modes but also at the transparency of their rules and the practical value of the result.",
+        "items": [
+          {
+            "summary": "Battle-rule transparency",
+            "body": "Before joining a round, users should be able to understand the participant count, case set, winner-selection method, and prize distribution."
+          },
+          {
+            "summary": "Case odds and Provably Fair",
+            "body": "We consider whether the odds of the cases themselves are published and whether specific openings and battle rounds can be checked through Provably Fair."
+          },
+          {
+            "summary": "Item valuation and prize calculation",
+            "body": "Internal skin prices, the method used to calculate the final result, and how clearly the total drop value is displayed are all important."
+          },
+          {
+            "summary": "Range of battle formats",
+            "body": "Additional modes are useful only when their rules are clear and they differ meaningfully from one another rather than being visual variations of the same scenario."
+          },
+          {
+            "summary": "Withdrawals and payment terms",
+            "body": "We consider deposit methods, fees, item availability, minimum amounts, KYC, and what happens if a specific won skin cannot be withdrawn immediately."
+          },
+          {
+            "summary": "Interface, history and support",
+            "body": "For a battle site, clear round history, operation status, stable real-time performance, and the ability to resolve disputed or stuck operations quickly are especially important."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Case Battle Rankings Change",
+        "paragraphs": [
+          "Platforms regularly add new battle formats and change case sets, bonus rules, payment methods, and withdrawal conditions. The functionality of the same service can therefore change significantly over time.",
+          "The CS2 skin market also affects the final values. If a site recalculates internal item prices, the value of drops changes and so can the winner calculation in modes based on total item value.",
+          "If you are interested in regular opening without competition, use the <a href=\"/csgo/caseopening\">case opening sites</a> section. For a specific item without a random result, use the separate <a href=\"/csgo/buy-skins\">CS2 skin buying</a> page."
+        ]
+      },
+      "safety": {
+        "title": "Safety on CS2 Case Battle Sites",
+        "intro": "Case battles take place on third-party platforms and are not an official Valve mode. Steam account security and withdrawal terms should be checked separately.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam login",
+            "body": "A phishing site can copy the interface of a known platform and show a fake sign-in form. Check the page address before authorizing."
+          },
+          {
+            "summary": "Verify Steam Trade Offers",
+            "body": "If winnings are withdrawn as items, verify the sender and every skin before confirming the trade."
+          },
+          {
+            "summary": "Read battle rules before joining",
+            "body": "Pay particular attention to tie rules, Crazy Mode, team-mode rules, and item distribution. These details directly affect the outcome."
+          },
+          {
+            "summary": "Check withdrawal rules before depositing",
+            "body": "It is better to know KYC, minimum withdrawal, fees, and regional restrictions before depositing rather than after winning."
+          },
+          {
+            "summary": "Do not treat battles as guaranteed income",
+            "body": "Even if you can choose the cases or battle format, the opening result remains random. Set a spending limit in advance and use <a href=\"/responsibility\">responsible gambling</a> guidance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Case Battles",
+        "items": [
+          {
+            "summary": "What is a CS2 case battle?",
+            "body": "It is a third-party format in which several participants open the same set of virtual cases and the platform's rules determine the winner and prize distribution."
+          },
+          {
+            "summary": "How is the winner of a case battle determined?",
+            "body": "Often the total value of dropped items is compared, but team, Crazy Mode, and other variants also exist. The rule must be checked for the specific round."
+          },
+          {
+            "summary": "How is a case battle different from normal case opening?",
+            "body": "In standard <a href=\"/csgo/caseopening\">case opening</a>, your result is not compared with other players. In a battle, the outcome also depends on the other participants' results and the distribution rules."
+          },
+          {
+            "summary": "Is there a strategy for case battles?",
+            "body": "Choosing case value, number of participants, and mode changes the structure of the round but does not remove the randomness of item drops."
+          },
+          {
+            "summary": "What is Crazy Mode?",
+            "body": "On platforms that support it, the participant or team with the lower total drop value usually wins. Exact rules should be checked on the specific site."
+          },
+          {
+            "summary": "Can I play a case battle for free?",
+            "body": "Sometimes sites run promotional battles or provide free cases or bonus balance. Such offers may have separate usage and withdrawal conditions; current options are collected under <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Can I withdraw won skins to Steam?",
+            "body": "It depends on the site, item availability, and its withdrawal rules. Steam Trade Offers, internal sale for balance, or other options may be available."
+          },
+          {
+            "summary": "Why does the CSGOBROKER case battle ranking change?",
+            "body": "Mode rules, case sets, internal skin prices, bonuses, payments, withdrawals, and service stability can change, so the platform's rating may be reviewed."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Case Battles de CS2: cómo funcionan las batallas de cajas y en qué se diferencian los modos",
+        "paragraphs": [
+          "Una case battle es un formato de terceros en sitios de CS2 donde varios participantes abren el mismo conjunto de cajas virtuales dentro de una ronda. En el formato clásico, el resultado suele determinarse por el valor total de los objetos obtenidos, pero las reglas exactas dependen de la plataforma y del modo elegido.",
+          "CSGOBROKER analiza los sitios de case battles por separado de la <a href=\"/csgo/caseopening\">apertura de cajas</a> normal. Esto es importante porque el resultado depende no solo del contenido y las odds de las cajas, sino también del número de participantes, el formato de reparto del premio, las reglas de empate y los modos adicionales.",
+          "Antes de participar conviene revisar algo más que el precio del conjunto. Importan las odds publicadas de cada caja, Provably Fair, la forma de determinar al ganador, la valoración interna de las skins obtenidas y si los objetos ganados pueden retirarse mediante Steam."
+        ]
+      },
+      "categories": {
+        "title": "Formatos habituales de case battle",
+        "items": [
+          {
+            "title": "Battle clásico",
+            "paragraphs": [
+              "Varios jugadores abren las mismas cajas y el ganador se determina según las reglas de la plataforma, normalmente por el valor total de los objetos obtenidos. Antes de empezar, comprueba si el ganador recibe todos los objetos, su valor como saldo interno u otro tipo de premio."
+            ]
+          },
+          {
+            "title": "1v1 y multijugador",
+            "paragraphs": [
+              "El formato más simple enfrenta a un jugador contra otro, pero algunos sitios admiten rondas con tres, cuatro o más participantes. Cuantos más jugadores haya, más importante es entender de antemano cómo se reparte el premio y qué ocurre en caso de empate."
+            ]
+          },
+          {
+            "title": "Batallas por equipos",
+            "paragraphs": [
+              "En algunas plataformas los participantes se agrupan en equipos y se compara el resultado total del equipo. Las reglas pueden variar: por ejemplo, los objetos pueden repartirse entre los miembros o convertirse en saldo interno."
+            ]
+          },
+          {
+            "title": "Crazy Mode",
+            "paragraphs": [
+              "Algunos sitios ofrecen modos en los que gana el valor total de drop más bajo, no el más alto. Estos formatos solo cambian la regla de selección del ganador y no hacen que los resultados de las cajas sean menos aleatorios."
+            ]
+          },
+          {
+            "title": "Batallas privadas y públicas",
+            "paragraphs": [
+              "Una battle puede ser pública para todos los usuarios o crearse mediante un enlace privado. Al crearla normalmente se eligen las cajas, el número de plazas y otros parámetros si la plataforma los admite."
+            ]
+          },
+          {
+            "title": "Battles y tickets promocionales",
+            "paragraphs": [
+              "Algunos servicios ofrecen tickets gratuitos, promo-battles o bonos que pueden utilizarse en modos de cajas. CSGOBROKER reúne ofertas actuales en la sección de <a href=\"/freebies\">bonos</a>; conviene revisar por separado las condiciones de retiro de estas recompensas."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de entrar en una case battle",
+        "intro": "En una case battle hay que valorar no solo las cajas individuales, sino también las reglas de toda la ronda.",
+        "items": [
+          {
+            "summary": "Cómo se determina el ganador",
+            "body": "Comprueba si se compara el valor total de los objetos, rondas individuales, el resultado de un equipo o si se usa un modo especial. El nombre de la battle por sí solo no explica la mecánica."
+          },
+          {
+            "summary": "Quién recibe los objetos",
+            "body": "En el formato clásico, el ganador puede recibir todo el pool, pero no es una regla universal. Algunos sitios usan saldo interno, reparto por equipos o su propio sistema de recompensas."
+          },
+          {
+            "summary": "Qué cajas forman la ronda",
+            "body": "Una battle con varias cajas baratas y otra con una sola caja cara pueden tener distribuciones de resultados muy distintas. Antes de entrar, abre el contenido de cada caja y revisa las probabilidades publicadas."
+          },
+          {
+            "summary": "Provably Fair e historial",
+            "body": "Comprueba si la plataforma permite verificar los resultados de las aperturas y consultar el historial de battles finalizadas. En Provably Fair, la etiqueta importa menos que poder reproducir o verificar una ronda concreta."
+          },
+          {
+            "summary": "Valoración interna",
+            "body": "El ganador suele determinarse usando los precios internos de la plataforma, que pueden diferir de Steam o de marketplaces externos. Por eso es importante entender qué valoración utiliza el sitio para el cálculo."
+          },
+          {
+            "summary": "Retiro y KYC",
+            "body": "Ganar una battle no elimina las reglas generales de la plataforma: pueden seguir aplicándose retiro mínimo, comisiones, KYC, restricciones regionales y disponibilidad de skins concretas."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios de case battle",
+        "intro": "Al comparar estas plataformas no miramos solo la cantidad de modos battle, sino también la transparencia de sus reglas y el valor práctico del resultado.",
+        "items": [
+          {
+            "summary": "Transparencia de reglas",
+            "body": "Antes de entrar en una ronda, el usuario debería poder entender el número de participantes, el conjunto de cajas, cómo se determina al ganador y cómo se reparte el premio."
+          },
+          {
+            "summary": "Odds y Provably Fair",
+            "body": "Analizamos si se publican las odds de las cajas y si las aperturas concretas y las rondas battle pueden verificarse mediante Provably Fair."
+          },
+          {
+            "summary": "Valoración y cálculo del premio",
+            "body": "Importan los precios internos de las skins, el método de cálculo del resultado final y la claridad con la que se muestra el valor total del drop."
+          },
+          {
+            "summary": "Variedad de formatos",
+            "body": "Los modos adicionales son útiles cuando sus reglas son claras y realmente se diferencian entre sí, no cuando son solo variantes visuales del mismo escenario."
+          },
+          {
+            "summary": "Retiro y pagos",
+            "body": "Se tienen en cuenta métodos de depósito, comisiones, disponibilidad de objetos, mínimos, KYC y qué ocurre si una skin ganada concreta no puede retirarse inmediatamente."
+          },
+          {
+            "summary": "Interfaz, historial y soporte",
+            "body": "En un sitio de battles son especialmente importantes un historial claro de rondas, el estado de las operaciones, la estabilidad en tiempo real y la posibilidad de resolver rápidamente una operación disputada o bloqueada."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de case battle",
+        "paragraphs": [
+          "Las plataformas añaden nuevos formatos battle y cambian conjuntos de cajas, reglas de bonos, métodos de pago y condiciones de retiro. Por eso la funcionalidad de un mismo servicio puede cambiar notablemente con el tiempo.",
+          "El mercado de skins de CS2 también afecta a los valores finales. Si un sitio recalcula los precios internos de los objetos, cambia el valor del drop y también puede cambiar el cálculo del ganador en modos basados en el valor total.",
+          "Si te interesa la apertura normal sin competición, utiliza la sección de <a href=\"/csgo/caseopening\">sitios de cajas</a>. Para obtener un objeto concreto sin resultado aleatorio, consulta la página independiente de <a href=\"/csgo/buy-skins\">compra de skins CS2</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en sitios de case battle",
+        "intro": "Las case battles se juegan en plataformas de terceros y no son un modo oficial de Valve. La seguridad de la cuenta de Steam y las condiciones de retiro deben comprobarse por separado.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio y Steam",
+            "body": "Un sitio de phishing puede copiar la interfaz de una plataforma conocida y mostrar un formulario de inicio de sesión falso. Comprueba la dirección de la página antes de autorizar."
+          },
+          {
+            "summary": "Verifica cada Trade Offer",
+            "body": "Si el premio se retira como objetos, comprueba el remitente y cada skin antes de confirmar el intercambio."
+          },
+          {
+            "summary": "Lee las reglas antes de jugar",
+            "body": "Revisa con especial atención las reglas de empate, Crazy Mode, el modo por equipos y el reparto de objetos. Estos detalles afectan directamente al resultado."
+          },
+          {
+            "summary": "Comprueba el retiro antes de depositar",
+            "body": "Es mejor conocer KYC, retiro mínimo, comisiones y restricciones regionales antes de depositar, no después de ganar."
+          },
+          {
+            "summary": "No lo trates como ingreso garantizado",
+            "body": "Aunque puedas elegir las cajas o el formato, el resultado de la apertura sigue siendo aleatorio. Define un límite de gasto de antemano y sigue las recomendaciones de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre case battles de CS2",
+        "items": [
+          {
+            "summary": "¿Qué es una case battle de CS2?",
+            "body": "Es un formato de terceros donde varios participantes abren el mismo conjunto de cajas virtuales y las reglas de la plataforma determinan al ganador y el reparto del premio."
+          },
+          {
+            "summary": "¿Cómo se determina el ganador?",
+            "body": "A menudo se compara el valor total de los objetos obtenidos, pero también existen modos por equipos, Crazy Mode y otras variantes. Hay que comprobar la regla de cada ronda."
+          },
+          {
+            "summary": "¿Qué diferencia hay con abrir una caja normal?",
+            "body": "En la <a href=\"/csgo/caseopening\">apertura de cajas</a> normal tu resultado no se compara con el de otros jugadores. En una battle también influyen los resultados de los demás participantes y las reglas de reparto."
+          },
+          {
+            "summary": "¿Existe una estrategia?",
+            "body": "Elegir el precio de las cajas, el número de participantes y el modo cambia la estructura de la ronda, pero no elimina la aleatoriedad de los drops."
+          },
+          {
+            "summary": "¿Qué es Crazy Mode?",
+            "body": "En los sitios que lo admiten, suele ganar el participante o equipo con menor valor total de drop. Las reglas exactas deben consultarse en cada plataforma."
+          },
+          {
+            "summary": "¿Se puede jugar gratis?",
+            "body": "A veces los sitios organizan promo-battles o entregan cajas gratis o saldo de bonificación. Estas ofertas pueden tener condiciones de uso y retiro separadas; las opciones actuales están en <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Se pueden retirar las skins a Steam?",
+            "body": "Depende del sitio, de la disponibilidad de los objetos y de sus reglas de retiro. Puede haber Steam Trade Offer, venta interna por saldo u otras opciones."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Pueden cambiar las reglas de los modos, los conjuntos de cajas, los precios internos de las skins, los bonos, los pagos, los retiros y la estabilidad, por lo que la valoración de la plataforma puede revisarse."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Case Battles de CS2: como funcionam as batalhas de caixas e como os modos diferem",
+        "paragraphs": [
+          "Uma case battle é um formato de terceiros em sites de CS2 no qual vários participantes abrem o mesmo conjunto de caixas virtuais dentro de uma rodada. No formato clássico, o resultado costuma ser definido pelo valor total dos itens obtidos, mas as regras exatas dependem da plataforma e do modo escolhido.",
+          "A CSGOBROKER avalia sites de case battle separadamente da <a href=\"/csgo/caseopening\">abertura de caixas</a> comum. Isso importa porque o resultado depende não apenas do conteúdo e das odds das caixas, mas também do número de participantes, do formato de distribuição do prêmio, das regras de empate e dos modos adicionais.",
+          "Antes de participar, vale verificar mais do que o preço do conjunto. As odds publicadas de cada caixa, Provably Fair, a forma de definir o vencedor, a avaliação interna das skins obtidas e a possibilidade de sacar os itens pelo Steam são fatores importantes."
+        ]
+      },
+      "categories": {
+        "title": "Formatos comuns de case battle",
+        "items": [
+          {
+            "title": "Battle clássico",
+            "paragraphs": [
+              "Vários jogadores abrem as mesmas caixas e o vencedor é definido pelas regras da plataforma, normalmente pelo valor total dos itens obtidos. Antes de começar, confira se o vencedor recebe todos os itens, seu valor em saldo interno ou outro tipo de prêmio."
+            ]
+          },
+          {
+            "title": "1v1 e multiplayer",
+            "paragraphs": [
+              "O formato mais simples é um jogador contra outro, mas alguns sites aceitam rodadas com três, quatro ou mais participantes. Quanto mais jogadores houver, mais importante é entender antes como o prêmio é distribuído e o que acontece em caso de empate."
+            ]
+          },
+          {
+            "title": "Batalhas em equipe",
+            "paragraphs": [
+              "Em algumas plataformas, os participantes são reunidos em equipes e o resultado total da equipe é comparado. As regras podem variar: os itens podem ser divididos entre os membros ou convertidos em saldo interno."
+            ]
+          },
+          {
+            "title": "Crazy Mode",
+            "paragraphs": [
+              "Alguns sites oferecem modos em que vence o menor, e não o maior, valor total do drop. Esses formatos apenas mudam a regra para definir o vencedor e não tornam os resultados das caixas menos aleatórios."
+            ]
+          },
+          {
+            "title": "Batalhas privadas e públicas",
+            "paragraphs": [
+              "Uma battle pode ser pública para todos os usuários ou criada por link privado. Na criação, normalmente são escolhidas as caixas, o número de vagas e outros parâmetros caso a plataforma os ofereça."
+            ]
+          },
+          {
+            "title": "Battles e tickets promocionais",
+            "paragraphs": [
+              "Alguns serviços oferecem tickets grátis, promo-battles ou bônus que podem ser usados em modos de caixas. A CSGOBROKER reúne ofertas atuais na seção de <a href=\"/freebies\">bônus</a>; as regras de saque dessas recompensas devem ser verificadas separadamente."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de entrar em uma case battle",
+        "intro": "Em uma case battle, é importante avaliar não apenas cada caixa, mas também as regras da rodada inteira.",
+        "items": [
+          {
+            "summary": "Como o vencedor é definido",
+            "body": "Confira se a plataforma compara o valor total dos itens, rodadas individuais, o resultado de uma equipe ou usa um modo especial. O nome da battle sozinho não explica a mecânica."
+          },
+          {
+            "summary": "Quem recebe os itens",
+            "body": "No formato clássico, o vencedor pode receber todo o pool, mas isso não é uma regra universal. Alguns sites usam saldo interno, distribuição por equipe ou sistemas próprios de recompensa."
+          },
+          {
+            "summary": "Quais caixas entram na rodada",
+            "body": "Uma battle com várias caixas baratas e outra com uma única caixa cara podem ter distribuições de resultados muito diferentes. Antes de entrar, abra o conteúdo de cada caixa e confira as probabilidades publicadas."
+          },
+          {
+            "summary": "Provably Fair e histórico",
+            "body": "Verifique se a plataforma permite confirmar os resultados das aberturas e consultar o histórico de battles concluídas. Em Provably Fair, a etiqueta importa menos do que poder reproduzir ou verificar uma rodada específica."
+          },
+          {
+            "summary": "Avaliação interna",
+            "body": "O vencedor costuma ser definido usando os preços internos da plataforma, que podem ser diferentes da Steam ou de marketplaces externos. Por isso é importante entender qual avaliação o site usa no cálculo."
+          },
+          {
+            "summary": "Saque e KYC",
+            "body": "Ganhar uma battle não elimina as regras gerais da plataforma: saque mínimo, taxas, KYC, restrições regionais e disponibilidade de skins específicas ainda podem ser aplicados separadamente."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de case battle",
+        "intro": "Ao comparar essas plataformas, não olhamos apenas para a quantidade de modos battle, mas também para a transparência das regras e o valor prático do resultado.",
+        "items": [
+          {
+            "summary": "Transparência das regras",
+            "body": "Antes de entrar na rodada, o usuário deve conseguir entender o número de participantes, o conjunto de caixas, como o vencedor é definido e como o prêmio é distribuído."
+          },
+          {
+            "summary": "Odds e Provably Fair",
+            "body": "Analisamos se as odds das próprias caixas são publicadas e se aberturas específicas e rodadas battle podem ser verificadas por Provably Fair."
+          },
+          {
+            "summary": "Avaliação e cálculo do prêmio",
+            "body": "São importantes os preços internos das skins, a forma de calcular o resultado final e a clareza com que o valor total do drop é exibido."
+          },
+          {
+            "summary": "Variedade de formatos",
+            "body": "Modos adicionais são úteis quando suas regras são claras e eles realmente diferem uns dos outros, não quando são apenas variações visuais do mesmo cenário."
+          },
+          {
+            "summary": "Saque e pagamentos",
+            "body": "Consideramos métodos de depósito, taxas, disponibilidade de itens, mínimos, KYC e o que acontece se uma skin específica ganha não puder ser sacada imediatamente."
+          },
+          {
+            "summary": "Interface, histórico e suporte",
+            "body": "Em um site de battles, são especialmente importantes um histórico claro das rodadas, status das operações, estabilidade em tempo real e possibilidade de resolver rapidamente uma operação contestada ou travada."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de case battle muda",
+        "paragraphs": [
+          "As plataformas adicionam novos formatos battle e alteram conjuntos de caixas, regras de bônus, métodos de pagamento e condições de saque. Por isso, a funcionalidade do mesmo serviço pode mudar bastante com o tempo.",
+          "O mercado de skins de CS2 também afeta os valores finais. Se o site recalcular os preços internos dos itens, o valor do drop muda e também pode mudar o cálculo do vencedor em modos baseados no valor total.",
+          "Se o interesse for abertura comum sem competição, use a seção de <a href=\"/csgo/caseopening\">sites de caixas</a>. Para um item específico sem resultado aleatório, há uma página separada de <a href=\"/csgo/buy-skins\">compra de skins CS2</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em sites de case battle",
+        "intro": "Case battles acontecem em plataformas de terceiros e não são um modo oficial da Valve. A segurança da conta Steam e as condições de saque devem ser verificadas separadamente.",
+        "items": [
+          {
+            "summary": "Confira o domínio e Steam",
+            "body": "Um site de phishing pode copiar a interface de uma plataforma conhecida e mostrar um formulário falso de login. Confira o endereço da página antes de autorizar."
+          },
+          {
+            "summary": "Verifique cada Trade Offer",
+            "body": "Se o prêmio for sacado em itens, verifique o remetente e cada skin antes de confirmar a troca."
+          },
+          {
+            "summary": "Leia as regras antes de jogar",
+            "body": "Preste atenção especial às regras de empate, Crazy Mode, modo em equipe e distribuição dos itens. Esses detalhes afetam diretamente o resultado."
+          },
+          {
+            "summary": "Confira saque antes do depósito",
+            "body": "É melhor conhecer KYC, saque mínimo, taxas e restrições regionais antes de depositar, e não depois de ganhar."
+          },
+          {
+            "summary": "Não trate como renda garantida",
+            "body": "Mesmo que seja possível escolher as caixas ou o formato, o resultado da abertura continua aleatório. Defina um limite de gastos antecipadamente e siga as recomendações de <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre case battles de CS2",
+        "items": [
+          {
+            "summary": "O que é uma case battle de CS2?",
+            "body": "É um formato de terceiros no qual vários participantes abrem o mesmo conjunto de caixas virtuais e as regras da plataforma definem o vencedor e a distribuição do prêmio."
+          },
+          {
+            "summary": "Como o vencedor é definido?",
+            "body": "Muitas vezes é comparado o valor total dos itens obtidos, mas também existem modos em equipe, Crazy Mode e outras variações. A regra deve ser conferida para cada rodada."
+          },
+          {
+            "summary": "Qual a diferença para abertura normal?",
+            "body": "Na <a href=\"/csgo/caseopening\">abertura de caixas</a> comum, seu resultado não é comparado ao de outros jogadores. Em uma battle, também contam os resultados dos demais participantes e as regras de distribuição."
+          },
+          {
+            "summary": "Existe estratégia?",
+            "body": "Escolher o preço das caixas, o número de participantes e o modo muda a estrutura da rodada, mas não elimina a aleatoriedade dos drops."
+          },
+          {
+            "summary": "O que é Crazy Mode?",
+            "body": "Nos sites que oferecem o recurso, normalmente vence o participante ou equipe com menor valor total de drop. As regras exatas devem ser verificadas na plataforma específica."
+          },
+          {
+            "summary": "Dá para jogar grátis?",
+            "body": "Às vezes os sites realizam promo-battles ou oferecem caixas grátis ou saldo de bônus. Essas ofertas podem ter regras separadas de uso e saque; as opções atuais estão em <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Posso sacar skins para Steam?",
+            "body": "Depende do site, da disponibilidade dos itens e das regras de saque. Pode haver Steam Trade Offer, venda interna por saldo ou outras opções."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Regras dos modos, conjuntos de caixas, preços internos das skins, bônus, pagamentos, saques e estabilidade podem mudar, por isso a avaliação da plataforma pode ser revista."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Case Battles: kasa savaşları nasıl çalışır ve modlar nasıl farklılaşır",
+        "paragraphs": [
+          "Case battle, üçüncü taraf CS2 sitelerinde birkaç katılımcının tek bir tur içinde aynı sanal kasa setini açtığı bir formattır. Klasik formatta sonuç genellikle çıkan eşyaların toplam değerine göre belirlenir, ancak kesin kurallar platforma ve seçilen moda bağlıdır.",
+          "CSGOBROKER case battle sitelerini standart <a href=\"/csgo/caseopening\">case opening</a> sitelerinden ayrı değerlendirir. Bunun nedeni sonucun yalnızca kasaların içeriği ve odds değerlerine değil; katılımcı sayısına, ödül dağıtım biçimine, beraberlik kurallarına ve ek modlara da bağlı olmasıdır.",
+          "Katılmadan önce yalnızca kasa setinin fiyatına bakmak yeterli değildir. Her kasanın yayınlanan odds değerleri, Provably Fair, kazananın nasıl belirlendiği, çıkan skinlerin dahili fiyatlandırması ve ödüllerin Steam üzerinden çekilip çekilemeyeceği önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın CS2 Case Battle Formatları",
+        "items": [
+          {
+            "title": "Klasik battle",
+            "paragraphs": [
+              "Birkaç oyuncu aynı kasaları açar ve kazanan platformun kurallarına göre, çoğunlukla çıkan eşyaların toplam değerine göre belirlenir. Tur başlamadan önce kazananın tüm eşyaları mı, bunların dahili bakiye karşılığını mı yoksa başka bir ödül türünü mü aldığını kontrol edin."
+            ]
+          },
+          {
+            "title": "1v1 ve çok oyunculu",
+            "paragraphs": [
+              "En basit format bir oyuncunun başka bir oyuncuya karşı oynamasıdır; ancak bazı siteler üç, dört veya daha fazla katılımcılı turları destekler. Oyuncu sayısı arttıkça ödül havuzunun nasıl dağıtıldığını ve beraberlikte ne olduğunu önceden anlamak daha önemli hale gelir."
+            ]
+          },
+          {
+            "title": "Takım savaşları",
+            "paragraphs": [
+              "Bazı platformlarda katılımcılar takımlara ayrılır ve takımın toplam sonucu karşılaştırılır. Kurallar değişebilir; örneğin eşyalar takım üyeleri arasında dağıtılabilir veya dahili bakiyeye çevrilebilir."
+            ]
+          },
+          {
+            "title": "Crazy Mode",
+            "paragraphs": [
+              "Bazı sitelerde en yüksek değil, en düşük toplam drop değerinin kazandığı modlar vardır. Bu formatlar yalnızca kazananı belirleme kuralını değiştirir ve kasa sonuçlarını daha az rastgele hale getirmez."
+            ]
+          },
+          {
+            "title": "Özel ve herkese açık battle",
+            "paragraphs": [
+              "Bir battle tüm kullanıcılara açık olabilir veya özel bir bağlantı üzerinden oluşturulabilir. Oluştururken genellikle kasalar, katılımcı sayısı ve platformun desteklediği ek parametreler seçilir."
+            ]
+          },
+          {
+            "title": "Ücretsiz ve promosyon battle",
+            "paragraphs": [
+              "Bazı hizmetler case modlarında kullanılabilen ücretsiz biletler, promo-battles veya bonuslar sunar. CSGOBROKER güncel teklifleri <a href=\"/freebies\">bonuslar</a> bölümünde toplar; bu ödüllerin çekim koşulları ayrıca kontrol edilmelidir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Case Battle'a Girmeden Önce Neleri Kontrol Etmeli?",
+        "intro": "Case battle değerlendirirken yalnızca tek tek kasalara değil, tüm turun kurallarına da bakmak gerekir.",
+        "items": [
+          {
+            "summary": "Kazanan nasıl belirleniyor",
+            "body": "Platformun toplam eşya değerini mi, ayrı turları mı, takım sonucunu mu karşılaştırdığını veya özel bir mod kullanıp kullanmadığını kontrol edin. Battle adı tek başına mekaniği açıklamaz."
+          },
+          {
+            "summary": "Eşyaları kim alıyor",
+            "body": "Klasik formatta kazanan tüm havuzu alabilir, ancak bu evrensel bir kural değildir. Bazı siteler dahili bakiye, takım bazlı dağıtım veya kendi ödül sistemlerini kullanır."
+          },
+          {
+            "summary": "Turda hangi kasalar var",
+            "body": "Birkaç ucuz kasadan oluşan battle ile tek pahalı kasalı battle çok farklı sonuç dağılımlarına sahip olabilir. Katılmadan önce her kasanın içeriğini açıp yayınlanan olasılıkları inceleyin."
+          },
+          {
+            "summary": "Provably Fair ve geçmiş",
+            "body": "Platformun açılış sonuçlarını doğrulamaya ve tamamlanan battles geçmişini görmeye izin verip vermediğini kontrol edin. Provably Fair için etiketin kendisinden çok belirli bir turun yeniden üretilebilmesi veya doğrulanabilmesi önemlidir."
+          },
+          {
+            "summary": "İç değerleme",
+            "body": "Kazanan çoğu zaman platformun dahili eşya fiyatlarına göre belirlenir ve bu fiyatlar Steam veya üçüncü taraf marketplace'lerden farklı olabilir. Bu nedenle sitenin hesaplamada hangi değerleri kullandığını anlamak gerekir."
+          },
+          {
+            "summary": "Çekim ve KYC",
+            "body": "Bir battle kazanmak platformun genel kurallarını ortadan kaldırmaz: minimum çekim, ücretler, KYC, bölgesel kısıtlamalar ve belirli skinlerin erişilebilirliği ayrıca uygulanabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Case Battle Sitelerini Nasıl Değerlendirir?",
+        "intro": "Bu platformları karşılaştırırken yalnızca battle modlarının sayısına değil, kuralların şeffaflığına ve sonucun pratik değerine de bakıyoruz.",
+        "items": [
+          {
+            "summary": "Kural şeffaflığı",
+            "body": "Kullanıcı tura girmeden önce katılımcı sayısını, kasa setini, kazananın nasıl belirlendiğini ve ödülün nasıl dağıtıldığını anlayabilmelidir."
+          },
+          {
+            "summary": "Odds ve Provably Fair",
+            "body": "Kasaların odds değerlerinin yayınlanıp yayınlanmadığını ve belirli açılışlarla battle turlarının Provably Fair üzerinden kontrol edilip edilemediğini değerlendiriyoruz."
+          },
+          {
+            "summary": "Değerleme ve ödül hesabı",
+            "body": "Skinlerin dahili fiyatları, nihai sonucun hesaplanma yöntemi ve toplam drop değerinin ne kadar açık gösterildiği önemlidir."
+          },
+          {
+            "summary": "Format çeşitliliği",
+            "body": "Ek modlar ancak kuralları açık ve gerçekten birbirinden farklıysa faydalıdır; aynı senaryonun yalnızca görsel varyasyonları olması yeterli değildir."
+          },
+          {
+            "summary": "Çekim ve ödeme",
+            "body": "Para yatırma yöntemleri, ücretler, eşya erişimi, minimumlar, KYC ve kazanılan belirli bir skin hemen çekilemiyorsa ne olduğu değerlendirmeye alınır."
+          },
+          {
+            "summary": "Arayüz, geçmiş ve destek",
+            "body": "Bir battle sitesi için açık tur geçmişi, işlem durumları, gerçek zamanlı istikrarlı çalışma ve tartışmalı veya takılı işlemlerin hızlı çözülebilmesi özellikle önemlidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Case Battle Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar düzenli olarak yeni battle formatları ekler ve kasa setlerini, bonus kurallarını, ödeme yöntemlerini ve çekim koşullarını değiştirir. Bu nedenle aynı hizmetin işlevleri zaman içinde belirgin biçimde değişebilir.",
+          "CS2 skin pazarı da nihai değerleri etkiler. Site dahili eşya fiyatlarını yeniden hesapladığında drop değeri ve toplam eşya değerine göre kazananın belirlendiği modlardaki sonuç hesabı değişebilir.",
+          "Rekabetsiz normal açılışla ilgileniyorsanız <a href=\"/csgo/caseopening\">case opening siteleri</a> bölümünü kullanın. Rastgele sonuç olmadan belirli bir eşya için ayrı <a href=\"/csgo/buy-skins\">CS2 skin satın alma</a> sayfası vardır."
+        ]
+      },
+      "safety": {
+        "title": "CS2 Case Battle Sitelerinde Güvenlik",
+        "intro": "Case battles üçüncü taraf platformlarda gerçekleşir ve Valve'ın resmi bir modu değildir. Steam hesap güvenliği ve çekim koşulları ayrıca kontrol edilmelidir.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini kontrol edin",
+            "body": "Bir phishing sitesi bilinen bir platformun arayüzünü kopyalayıp sahte bir giriş formu gösterebilir. Yetkilendirmeden önce sayfa adresini kontrol edin."
+          },
+          {
+            "summary": "Trade Offer'ı doğrulayın",
+            "body": "Ödül eşyalarla çekiliyorsa takası onaylamadan önce göndereni ve her skin'i kontrol edin."
+          },
+          {
+            "summary": "Battle kurallarını okuyun",
+            "body": "Beraberlik, Crazy Mode, takım modu ve eşya dağıtımı kurallarını özellikle dikkatle inceleyin. Bu ayrıntılar sonucu doğrudan etkiler."
+          },
+          {
+            "summary": "Yatırmadan önce çekimi kontrol edin",
+            "body": "KYC, minimum çekim, ücretler ve bölgesel kısıtlamaları kazandıktan sonra değil, para yatırmadan önce öğrenmek daha iyidir."
+          },
+          {
+            "summary": "Garantili gelir olarak görmeyin",
+            "body": "Kasaları veya formatı seçebilseniz bile açılış sonucu rastgele kalır. Önceden harcama limiti belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> önerilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Case Battle Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 case battle nedir?",
+            "body": "Birkaç katılımcının aynı sanal kasa setini açtığı ve kazananla ödül dağıtımının platform kurallarına göre belirlendiği üçüncü taraf bir formattır."
+          },
+          {
+            "summary": "Kazanan nasıl belirlenir?",
+            "body": "Çoğu zaman çıkan eşyaların toplam değeri karşılaştırılır, ancak takım, Crazy Mode ve başka varyasyonlar da vardır. Kural her tur için ayrıca kontrol edilmelidir."
+          },
+          {
+            "summary": "Normal kasa açmadan farkı nedir?",
+            "body": "Standart <a href=\"/csgo/caseopening\">case opening</a> işleminde sonucunuz diğer oyuncularla karşılaştırılmaz. Battle'da ise diğer katılımcıların sonuçları ve dağıtım kuralları da etkili olur."
+          },
+          {
+            "summary": "Bir strateji var mı?",
+            "body": "Kasa değerini, katılımcı sayısını ve modu seçmek turun yapısını değiştirir, ancak eşya düşüşlerindeki rastgeleliği ortadan kaldırmaz."
+          },
+          {
+            "summary": "Crazy Mode nedir?",
+            "body": "Bu modu destekleyen sitelerde genellikle daha düşük toplam drop değerine sahip oyuncu veya takım kazanır. Kesin kurallar ilgili platformda kontrol edilmelidir."
+          },
+          {
+            "summary": "Ücretsiz oynanabilir mi?",
+            "body": "Bazen siteler promo-battles düzenler veya ücretsiz kasalar ya da bonus bakiyesi verir. Bu tekliflerde ayrı kullanım ve çekim koşulları olabilir; güncel seçenekler <a href=\"/freebies\">bonuslar</a> bölümündedir."
+          },
+          {
+            "summary": "Skinler Steam'e çekilebilir mi?",
+            "body": "Siteye, eşya erişimine ve çekim kurallarına bağlıdır. Steam Trade Offer, dahili bakiye karşılığı satış veya başka seçenekler bulunabilir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Mod kuralları, kasa setleri, dahili skin fiyatları, bonuslar, ödemeler, çekimler ve hizmet istikrarı değişebilir; bu nedenle platformun puanı yeniden değerlendirilebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Case Battles: case battles कैसे काम करती हैं और modes में क्या अंतर है",
+        "paragraphs": [
+          "Case battle तीसरे पक्ष की CS2 साइटों पर एक format है जिसमें कई प्रतिभागी एक round के भीतर virtual cases का एक ही set खोलते हैं। Classic format में परिणाम आम तौर पर मिले items के कुल मूल्य से तय होता है, लेकिन सटीक rules platform और चुने गए mode पर निर्भर करते हैं।",
+          "CSGOBROKER case battle sites को सामान्य <a href=\"/csgo/caseopening\">case opening</a> से अलग evaluate करता है। ऐसा इसलिए क्योंकि परिणाम सिर्फ cases की contents और odds पर नहीं, बल्कि participants की संख्या, prize distribution format, tie rules और additional modes पर भी निर्भर करता है।",
+          "भाग लेने से पहले सिर्फ case set की कीमत देखना पर्याप्त नहीं है। हर case की published odds, Provably Fair, winner तय करने का तरीका, मिली skins की internal valuation और items को Steam के जरिए withdraw किया जा सकता है या नहीं—ये सभी महत्वपूर्ण हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Common CS2 Case Battle Formats",
+        "items": [
+          {
+            "title": "Classic battle",
+            "paragraphs": [
+              "कई players वही cases खोलते हैं और winner platform के rules के अनुसार तय होता है, आम तौर पर मिले items के total value से। Round शुरू होने से पहले जाँचें कि winner को सभी items मिलते हैं, उनका value internal balance में मिलता है या कोई दूसरा reward मिलता है।"
+            ]
+          },
+          {
+            "title": "1v1 और multiplayer",
+            "paragraphs": [
+              "सबसे सरल format एक player बनाम दूसरे player का है, लेकिन कुछ sites तीन, चार या उससे अधिक participants वाले rounds भी support करती हैं। Participants जितने अधिक हों, prize pool का distribution और tie की स्थिति को पहले से समझना उतना जरूरी है।"
+            ]
+          },
+          {
+            "title": "Team battles",
+            "paragraphs": [
+              "कुछ platforms पर participants teams में बाँटे जाते हैं और team का combined result compare किया जाता है। Rules अलग हो सकते हैं: items team members में बाँटे जा सकते हैं या internal balance में convert हो सकते हैं।"
+            ]
+          },
+          {
+            "title": "Crazy Mode",
+            "paragraphs": [
+              "कुछ sites ऐसे modes देती हैं जहाँ highest नहीं बल्कि lowest total drop value जीतता है। ये formats केवल winner तय करने का rule बदलते हैं और underlying case outcomes को कम random नहीं बनाते।"
+            ]
+          },
+          {
+            "title": "Private और public battles",
+            "paragraphs": [
+              "Battle सभी users के लिए public हो सकती है या private link के जरिए बनाई जा सकती है। बनाते समय आम तौर पर cases, slots की संख्या और platform द्वारा supported अतिरिक्त parameters चुने जाते हैं।"
+            ]
+          },
+          {
+            "title": "Free और promotional battles",
+            "paragraphs": [
+              "कुछ services free tickets, promo-battles या ऐसे bonuses देती हैं जिन्हें case modes में इस्तेमाल किया जा सकता है। CSGOBROKER current offers को <a href=\"/freebies\">bonuses</a> section में इकट्ठा करता है; ऐसे rewards की withdrawal conditions अलग से जाँचनी चाहिए।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Case Battle Join करने से पहले क्या Check करें",
+        "intro": "Case battle में सिर्फ individual cases नहीं, बल्कि पूरे round के rules का भी मूल्यांकन करना जरूरी है।",
+        "items": [
+          {
+            "summary": "Winner कैसे तय होता है",
+            "body": "जाँचें कि platform total item value, individual rounds, team result की तुलना करता है या कोई special mode इस्तेमाल करता है। Battle का नाम अपने आप mechanics नहीं समझाता।"
+          },
+          {
+            "summary": "Dropped items किसे मिलते हैं",
+            "body": "Classic format में winner पूरा pool पा सकता है, लेकिन यह universal rule नहीं है। कुछ sites internal balance, team distribution या अपना reward system इस्तेमाल करती हैं।"
+          },
+          {
+            "summary": "कौन से cases शामिल हैं",
+            "body": "कई cheap cases वाली battle और एक expensive case वाली battle के results का spread बहुत अलग हो सकता है। Enter करने से पहले हर case की contents खोलें और published probabilities देखें।"
+          },
+          {
+            "summary": "Provably Fair और history",
+            "body": "जाँचें कि platform opening results verify करने और completed battles की history देखने देता है या नहीं। Provably Fair में label से अधिक महत्वपूर्ण किसी specific round को reproduce या verify करने की क्षमता है।"
+          },
+          {
+            "summary": "Internal valuation",
+            "body": "Winner अक्सर platform के internal item prices के आधार पर तय होता है, जो Steam या third-party marketplaces से अलग हो सकते हैं। इसलिए यह समझना जरूरी है कि calculation में site कौन सा price इस्तेमाल करती है।"
+          },
+          {
+            "summary": "Withdrawal और KYC",
+            "body": "Battle जीतने के बाद भी platform के general rules लागू रह सकते हैं: minimum withdrawal, fees, KYC, regional restrictions और specific skins की availability अलग से लागू हो सकती है।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Case Battle Sites को कैसे Rate करता है",
+        "intro": "इन platforms की तुलना करते समय हम सिर्फ battle modes की संख्या नहीं, बल्कि rules की transparency और result की practical value भी देखते हैं।",
+        "items": [
+          {
+            "summary": "Rule transparency",
+            "body": "Round में जाने से पहले user को participants की संख्या, case set, winner तय करने का तरीका और prize distribution समझ में आना चाहिए।"
+          },
+          {
+            "summary": "Odds और Provably Fair",
+            "body": "हम देखते हैं कि cases की odds publish होती हैं या नहीं और specific openings तथा battle rounds को Provably Fair के जरिए verify किया जा सकता है या नहीं।"
+          },
+          {
+            "summary": "Valuation और prize calculation",
+            "body": "Internal skin prices, final result की calculation method और total drop value कितनी स्पष्टता से दिखाई जाती है—ये महत्वपूर्ण हैं।"
+          },
+          {
+            "summary": "Format variety",
+            "body": "Additional modes तभी उपयोगी हैं जब उनके rules स्पष्ट हों और वे वास्तव में अलग हों, सिर्फ एक ही scenario के visual variations न हों।"
+          },
+          {
+            "summary": "Withdrawal और payments",
+            "body": "Deposit methods, fees, item availability, minimums, KYC और specific won skin तुरंत withdraw न हो सके तो क्या होता है—इन सबको ध्यान में रखा जाता है।"
+          },
+          {
+            "summary": "Interface, history और support",
+            "body": "Battle site के लिए clear round history, operation status, stable real-time performance और disputed या stuck operation को जल्दी resolve करने की क्षमता विशेष रूप से महत्वपूर्ण है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Case Battle Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms नियमित रूप से नए battle formats जोड़ते हैं और case sets, bonus rules, payment methods और withdrawal conditions बदलते हैं। इसलिए उसी service की functionality समय के साथ काफी बदल सकती है।",
+          "CS2 skin market भी final values को प्रभावित करता है। यदि site internal item prices दोबारा calculate करती है, तो drop value और total item value पर आधारित modes में winner calculation भी बदल सकती है।",
+          "यदि आपको competition के बिना सामान्य opening चाहिए, तो <a href=\"/csgo/caseopening\">case opening sites</a> section इस्तेमाल करें। Random result के बिना किसी specific item के लिए अलग <a href=\"/csgo/buy-skins\">CS2 skin buying</a> page है।"
+        ]
+      },
+      "safety": {
+        "title": "CS2 Case Battle Sites पर Safety",
+        "intro": "Case battles third-party platforms पर होती हैं और Valve का official mode नहीं हैं। Steam account security और withdrawal terms को अलग से जाँचना चाहिए।",
+        "items": [
+          {
+            "summary": "Domain और Steam login check करें",
+            "body": "Phishing site किसी known platform का interface copy कर सकती है और fake sign-in form दिखा सकती है। Authorize करने से पहले page address जाँचें।"
+          },
+          {
+            "summary": "Trade Offer verify करें",
+            "body": "यदि winnings items में withdraw होती हैं, तो trade confirm करने से पहले sender और हर skin को verify करें।"
+          },
+          {
+            "summary": "Battle rules पढ़ें",
+            "body": "Tie rules, Crazy Mode, team-mode rules और item distribution को विशेष ध्यान से जाँचें। ये details सीधे result को प्रभावित करती हैं।"
+          },
+          {
+            "summary": "Deposit से पहले withdrawal check करें",
+            "body": "KYC, minimum withdrawal, fees और regional restrictions को जीतने के बाद नहीं, deposit से पहले जानना बेहतर है।"
+          },
+          {
+            "summary": "Guaranteed earning न मानें",
+            "body": "Cases या format चुनने की सुविधा होने पर भी opening result random रहता है। पहले से spending limit तय करें और <a href=\"/responsibility\">responsible gambling</a> guidance का उपयोग करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Case Battles के बारे में FAQ",
+        "items": [
+          {
+            "summary": "CS2 case battle क्या है?",
+            "body": "यह third-party format है जिसमें कई participants वही virtual cases का set खोलते हैं और platform के rules winner तथा prize distribution तय करते हैं।"
+          },
+          {
+            "summary": "Winner कैसे तय होता है?",
+            "body": "अक्सर dropped items का total value compare किया जाता है, लेकिन team, Crazy Mode और अन्य variants भी होते हैं। Specific round का rule जाँचना जरूरी है।"
+          },
+          {
+            "summary": "Normal case opening से क्या फर्क है?",
+            "body": "सामान्य <a href=\"/csgo/caseopening\">case opening</a> में आपका result दूसरे players से compare नहीं होता। Battle में दूसरे participants के results और distribution rules भी outcome को प्रभावित करते हैं।"
+          },
+          {
+            "summary": "क्या strategy होती है?",
+            "body": "Case value, participants की संख्या और mode चुनने से round की structure बदलती है, लेकिन item drops की randomness खत्म नहीं होती।"
+          },
+          {
+            "summary": "Crazy Mode क्या है?",
+            "body": "जहाँ यह mode supported है, वहाँ आम तौर पर lower total drop value वाला participant या team जीतता है। Exact rules specific site पर जाँचने चाहिए।"
+          },
+          {
+            "summary": "क्या free battle मिलती है?",
+            "body": "कभी-कभी sites promo-battles चलाती हैं या free cases या bonus balance देती हैं। इन offers पर अलग usage और withdrawal conditions हो सकती हैं; current options <a href=\"/freebies\">bonuses</a> में हैं।"
+          },
+          {
+            "summary": "क्या won skins Steam में withdraw कर सकते हैं?",
+            "body": "यह site, item availability और withdrawal rules पर निर्भर करता है। Steam Trade Offer, internal sale for balance या अन्य options उपलब्ध हो सकते हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Mode rules, case sets, internal skin prices, bonuses, payments, withdrawals और service stability बदल सकती हैं, इसलिए platform की rating दोबारा review की जा सकती है।"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "matchbetting",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Ставки на матчи CS2: как устроены сайты и что сравнивать",
+        "paragraphs": [
+          "Сайты со ставками на матчи CS2 позволяют делать прогнозы на профессиональные и полупрофессиональные встречи Counter-Strike 2: от крупных международных турниров до региональных лиг. На одних площадках ставка делается обычными деньгами или криптовалютой, на других баланс можно пополнять скинами через Steam, после чего стоимость предметов конвертируется во внутреннюю валюту.",
+          "На CSGOBROKER такие сервисы оцениваются отдельно от случайных игровых режимов. Здесь результат ставки зависит от реального матча, а ключевыми параметрами становятся коэффициенты, маржа букмекера, глубина рынков, правила расчёта, live betting, стабильность линии и условия пополнения и вывода. Если задача — не делать ставки, а продать или купить предмет, полезнее использовать <a href=\"/csgo/marketplaces\">маркетплейсы CS2</a> или <a href=\"/csgo/instant-sell\">быструю продажу скинов</a>.",
+          "Перед выбором сайта важно смотреть не только на количество матчей в линии. Два букмекера могут принимать ставки на один и тот же турнир, но предлагать разные коэффициенты, лимиты, набор рынков и правила отмены. Для skin-betting площадок дополнительно имеет значение внутренняя оценка предметов и то, каким способом можно вывести выигрыш."
+        ]
+      },
+      "categories": {
+        "title": "Какие ставки встречаются на сайтах CS2",
+        "items": [
+          {
+            "title": "Победитель матча",
+            "paragraphs": [
+              "Самый базовый рынок — какая команда выиграет встречу. Для форматов best-of-three и best-of-five ставка относится к итоговому победителю серии, поэтому результат отдельной карты сам по себе не определяет расчёт."
+            ]
+          },
+          {
+            "title": "Победитель карты",
+            "paragraphs": [
+              "Отдельная ставка на конкретную карту. Она полезна, когда площадка публикует map veto и линию на каждую карту, но правила расчёта при замене или технической отмене карты нужно проверять заранее."
+            ]
+          },
+          {
+            "title": "Фора по картам или раундам",
+            "paragraphs": [
+              "Handicap добавляет одной стороне условное преимущество или отставание. Например, ставка может учитывать разницу по картам или суммарным раундам, поэтому важно понимать обозначение плюсовой и минусовой форы."
+            ]
+          },
+          {
+            "title": "Тоталы",
+            "paragraphs": [
+              "Over/under может относиться к числу карт, раундов, убийств игрока или другому статистическому показателю. Единица расчёта должна быть явно указана в названии рынка."
+            ]
+          },
+          {
+            "title": "Точный счёт и специальные рынки",
+            "paragraphs": [
+              "Некоторые сайты предлагают ставки на 2:0, 2:1, первую карту, pistol round, статистику игроков и другие исходы. Чем специфичнее рынок, тем важнее проверить источник официальной статистики и правила расчёта."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Во время матча коэффициенты меняются в зависимости от счёта и ситуации на карте. Для live-ставок особенно важны скорость обновления линии, задержка подтверждения ставки и правила приостановки рынка."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед выбором сайта для ставок на CS2",
+        "intro": "Широкая линия сама по себе не означает выгодные условия: качество букмекера лучше видно по коэффициентам, правилам и исполнению ставок.",
+        "items": [
+          {
+            "summary": "Коэффициенты и маржа",
+            "body": "Сравнивайте котировки на одинаковый рынок у нескольких площадок. Чем выше встроенная маржа, тем ниже суммарная теоретическая выплата игрокам. Для двух исходов её можно приблизительно оценить по обратным значениям коэффициентов."
+          },
+          {
+            "summary": "Количество турниров и глубина рынков",
+            "body": "Одни сайты покрывают только крупные события, другие добавляют региональные лиги и академические составы. Внутри матча также различается количество доступных рынков: от победителя до карт, тоталов и player props."
+          },
+          {
+            "summary": "Правила расчёта и void",
+            "body": "Проверьте, что происходит при переносе матча, замене команды, technical forfeit, изменении формата серии или отмене карты. У разных операторов одна и та же ситуация может привести к расчёту или возврату ставки."
+          },
+          {
+            "summary": "Live betting и задержка",
+            "body": "Для live-линии важны фактическая скорость обновления коэффициентов и время принятия ставки. Площадка может изменить коэффициент или отклонить ставку, если ситуация в матче успела измениться."
+          },
+          {
+            "summary": "Пополнение скинами и их оценка",
+            "body": "Если баланс пополняется предметами CS2, сравнивайте внутреннюю цену с внешним рынком. Скидка при оценке фактически становится дополнительной стоимостью входа ещё до размещения ставки."
+          },
+          {
+            "summary": "Вывод, KYC и лимиты",
+            "body": "Минимальная сумма, доступные валюты, комиссии, проверка личности, лимиты на ставку и максимальный выигрыш могут зависеть от страны, аккаунта и конкретного рынка."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты со ставками на матчи CS2",
+        "intro": "При составлении рейтинга мы разделяем качество букмекерской линии и общие условия самой площадки.",
+        "items": [
+          {
+            "summary": "Конкурентность коэффициентов",
+            "body": "Мы сравниваем коэффициенты и обращаем внимание на маржу, особенно на популярных матчах, где легче сопоставить одинаковые рынки между несколькими сервисами."
+          },
+          {
+            "summary": "Покрытие матчей и рынков",
+            "body": "Учитывается количество турниров, глубина prematch-линии, live betting, карты, форы, тоталы и дополнительные рынки, а не только общее число событий в интерфейсе."
+          },
+          {
+            "summary": "Расчёт ставок и прозрачность правил",
+            "body": "Важны понятные settlement rules, корректная обработка отмен и переносов, история ставок и возможность увидеть причину возврата или пересчёта."
+          },
+          {
+            "summary": "Скины и платёжные методы",
+            "body": "Для skin-betting сервисов оценивается внутренняя стоимость предметов, Steam Trade Offer и доступность вывода. Для остальных — карты, криптовалюты, комиссии, минимумы и скорость обработки."
+          },
+          {
+            "summary": "Бонусы и реальные ограничения",
+            "body": "Free bet, депозитный бонус или промокод оценивается вместе с wagering, минимальным коэффициентом, сроком действия и ограничениями на вывод. Актуальные предложения также можно сравнить в разделе <a href=\"/freebies\">бонусов CSGOBROKER</a>."
+          },
+          {
+            "summary": "Стабильность, live-интерфейс и поддержка",
+            "body": "Для ставок важны своевременное обновление линии, отсутствие зависших купонов, понятная история операций, мобильная версия и поддержка при спорном расчёте."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов для ставок на CS2 меняется",
+        "paragraphs": [
+          "Букмекеры регулярно меняют маржу, лимиты, список турниров, набор live-рынков, бонусы и способы оплаты. Площадка, которая сегодня даёт хорошие коэффициенты на крупный турнир, не обязательно сохраняет те же условия на другом событии или через несколько месяцев.",
+          "Меняется и сама сцена CS2: команды обновляют составы, турниры переходят между форматами, матчи переносятся, а линия корректируется после новой информации. CSGOBROKER оценивает качество сервиса и его условий, а не пытается предсказывать спортивный результат.",
+          "Если вас интересуют другие режимы CS2, используйте общий рейтинг <a href=\"/cs2\">сайтов CS2</a>. Для операций со скинами без ставок есть <a href=\"/csgo/marketplaces\">маркетплейсы</a>, <a href=\"/csgo/sell-skins\">продажа скинов</a> и <a href=\"/csgo/instant-sell\">instant sell</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственное использование сайтов для ставок",
+        "intro": "Ставки на реальные матчи не являются способом гарантированно заработать: даже сильный фаворит может проиграть, а букмекерская маржа снижает ожидаемую доходность на длинной дистанции.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Steam-авторизацию",
+            "body": "Если сайт работает со скинами, используйте только настоящий домен и официальное окно Steam. Не передавайте пароль или Steam Guard-коды сотрудникам сервиса."
+          },
+          {
+            "summary": "Читайте settlement rules до ставки",
+            "body": "Правила переноса, отмены, технического поражения и замены состава особенно важны в киберспорте. Их лучше проверить до спорной ситуации."
+          },
+          {
+            "summary": "Не воспринимайте прогнозы как гарантию",
+            "body": "Статистика, рейтинги команд и прошлые результаты помогают анализировать матч, но не превращают отдельную ставку в гарантированный исход."
+          },
+          {
+            "summary": "Проверяйте KYC и вывод заранее",
+            "body": "Если выигрыш планируется выводить скинами, криптовалютой или деньгами, заранее изучите проверку личности, комиссии, минимумы и региональные ограничения."
+          },
+          {
+            "summary": "Устанавливайте лимиты",
+            "body": "Не увеличивайте ставку только для возврата предыдущего проигрыша. Заранее определяйте бюджет и используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о ставках на матчи CS2",
+        "items": [
+          {
+            "summary": "Что такое сайты для ставок на матчи CS2?",
+            "body": "Это букмекерские или skin-betting платформы, где можно ставить на исход профессиональных и других матчей Counter-Strike 2."
+          },
+          {
+            "summary": "Можно ли делать ставки скинами CS2?",
+            "body": "На некоторых площадках да: скин отправляется через Steam и конвертируется во внутренний баланс. Важно проверить курс оценки предмета и правила обратного вывода."
+          },
+          {
+            "summary": "Какие рынки чаще всего доступны?",
+            "body": "Победитель матча или карты, форы, тоталы, точный счёт и, на некоторых сайтах, статистика игроков и специальные рынки."
+          },
+          {
+            "summary": "Что такое маржа букмекера?",
+            "body": "Это преимущество, встроенное в коэффициенты. Из-за неё сумма подразумеваемых вероятностей исходов обычно превышает 100%."
+          },
+          {
+            "summary": "Чем live betting отличается от prematch?",
+            "body": "Prematch-ставка размещается до начала события, а live — во время матча, когда коэффициенты постоянно меняются вместе со счётом и ситуацией."
+          },
+          {
+            "summary": "Что происходит, если матч отменили или перенесли?",
+            "body": "Зависит от settlement rules площадки. Ставка может быть возвращена, оставлена активной до новой даты или рассчитана по специальному правилу."
+          },
+          {
+            "summary": "Можно ли получить бонус для ставок на CS2?",
+            "body": "Да, некоторые сайты предлагают free bet, депозитные бонусы или промокоды. Сравнивайте не только сумму, но и wagering, минимальный коэффициент и срок действия; предложения собраны в <a href=\"/freebies\">бонусах</a>."
+          },
+          {
+            "summary": "Почему рейтинг match betting на CSGOBROKER меняется?",
+            "body": "Меняются коэффициенты, маржа, турниры, рынки, правила расчёта, платежи, бонусы и стабильность работы площадок."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Match Betting Sites: How Esports Betting Works and What to Compare",
+        "paragraphs": [
+          "CS2 match betting sites let users wager on professional and semi-professional Counter-Strike 2 matches, from major international tournaments to regional leagues. Some platforms use cash or cryptocurrency, while skin-betting services can accept CS2 items through Steam and convert their value into an internal betting balance.",
+          "CSGOBROKER evaluates these services separately from random casino-style modes. Here, the bet is settled by the real match result, so important factors include odds, bookmaker margin, market depth, settlement rules, live betting, line stability, and deposit and withdrawal conditions. If the goal is simply to buy or sell items, <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> or <a href=\"/csgo/instant-sell\">instant-sell services</a> are more relevant.",
+          "The number of listed matches is not enough to judge a site. Two operators can cover the same tournament but offer different prices, limits, markets, and cancellation rules. Skin-betting sites also need to be compared by internal item valuation and the way winnings can be withdrawn."
+        ]
+      },
+      "categories": {
+        "title": "Common CS2 Betting Markets",
+        "items": [
+          {
+            "title": "Match winner",
+            "paragraphs": [
+              "The basic market is which team wins the series. In best-of-three or best-of-five formats, the wager is settled on the overall series result, not on one individual map."
+            ]
+          },
+          {
+            "title": "Map winner",
+            "paragraphs": [
+              "A separate wager can be placed on a specific map. When map veto information is available, sites may publish a line for each map, but replacement or technical-cancellation rules still need to be checked."
+            ]
+          },
+          {
+            "title": "Map or round handicaps",
+            "paragraphs": [
+              "A handicap gives one side a virtual advantage or deficit. It can be based on maps or total rounds, so users should understand exactly how positive and negative handicaps are applied."
+            ]
+          },
+          {
+            "title": "Totals",
+            "paragraphs": [
+              "Over/under markets can refer to maps, rounds, player kills, or another statistic. The unit used for settlement should be clearly stated in the market name."
+            ]
+          },
+          {
+            "title": "Correct score and special markets",
+            "paragraphs": [
+              "Some sites offer 2:0 or 2:1 scores, first-map outcomes, pistol rounds, player statistics, and other props. More specialized markets make the official data source and settlement rules even more important."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "During a match, odds change with the score and in-game situation. Live betting depends heavily on line-update speed, bet-confirmation delay, and the rules used when a market is suspended."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Choosing a CS2 Betting Site",
+        "intro": "A large event list does not automatically mean better value; odds, rules, and execution usually reveal more about the quality of the sportsbook.",
+        "items": [
+          {
+            "summary": "Odds and bookmaker margin",
+            "body": "Compare the same market across several sites. A larger embedded margin means a lower theoretical return to bettors. For two-way markets, margin can be approximated from the inverse of the displayed decimal odds."
+          },
+          {
+            "summary": "Tournament coverage and market depth",
+            "body": "Some sites focus on major events, while others also cover regional leagues and academy teams. Market depth can range from a single match-winner line to maps, totals, handicaps, and player props."
+          },
+          {
+            "summary": "Settlement and void rules",
+            "body": "Check what happens after a postponement, roster substitution, technical forfeit, format change, or cancelled map. The same situation can be settled or voided differently by different operators."
+          },
+          {
+            "summary": "Live betting and delay",
+            "body": "For in-play betting, actual line-update speed and acceptance time matter. A site can reprice or reject a wager if the game state changes before confirmation."
+          },
+          {
+            "summary": "Skin deposits and item valuation",
+            "body": "If CS2 items are used to fund the account, compare the internal valuation with external markets. A discounted item valuation is effectively an additional cost before a wager is even placed."
+          },
+          {
+            "summary": "Withdrawals, KYC and limits",
+            "body": "Minimum payouts, currencies, fees, identity checks, stake limits, and maximum wins can depend on country, account status, and the specific betting market."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Match Betting Sites",
+        "intro": "We separate the quality of the betting line from the general operating conditions of the platform.",
+        "items": [
+          {
+            "summary": "Odds competitiveness",
+            "body": "We compare prices and pay attention to margin, especially on popular matches where identical markets are easier to compare across several services."
+          },
+          {
+            "summary": "Match coverage and market depth",
+            "body": "We consider tournament coverage, prematch depth, live betting, map lines, handicaps, totals, and extra props rather than simply counting events."
+          },
+          {
+            "summary": "Settlement and rule transparency",
+            "body": "Clear settlement rules, correct handling of cancellations and postponements, bet history, and visible reasons for voids or resettlements are important."
+          },
+          {
+            "summary": "Skins and payment methods",
+            "body": "For skin-betting sites, we review internal item value, Steam Trade Offers, and withdrawal availability. For other sites, cards, crypto, fees, minimums, and processing speed matter."
+          },
+          {
+            "summary": "Bonuses and real restrictions",
+            "body": "A free bet, deposit bonus, or promo code is evaluated together with wagering, minimum odds, expiry, and withdrawal restrictions. Current offers can also be compared under CSGOBROKER <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Stability, live interface and support",
+            "body": "Timely line updates, reliable bet slips, transparent transaction history, mobile usability, and support during a disputed settlement all affect the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why CS2 Match Betting Rankings Change",
+        "paragraphs": [
+          "Sportsbooks regularly change margin, limits, tournament coverage, live markets, bonuses, and payment methods. A site offering strong odds during one major event may not provide the same conditions on another event or several months later.",
+          "The CS2 competitive scene also changes: teams replace players, tournament formats change, matches are rescheduled, and prices move when new information appears. CSGOBROKER evaluates service quality and betting conditions rather than trying to predict match winners.",
+          "For other CS2 modes, use the overall <a href=\"/cs2\">CS2 site ranking</a>. For item transactions without betting, compare <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/sell-skins\">skin-selling sites</a>, and <a href=\"/csgo/instant-sell\">instant sell</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Use of CS2 Betting Sites",
+        "intro": "Betting on real matches is not a guaranteed way to make money: even a strong favorite can lose, while bookmaker margin reduces expected returns over time.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam sign-in",
+            "body": "If a site handles skins, use the genuine domain and the official Steam authentication flow. Never send a password or Steam Guard code to support staff."
+          },
+          {
+            "summary": "Read settlement rules before betting",
+            "body": "Postponement, cancellation, technical-forfeit, and roster-substitution rules are particularly important in esports and should be understood before a dispute occurs."
+          },
+          {
+            "summary": "Do not treat predictions as guarantees",
+            "body": "Team statistics, rankings, and past results can support analysis, but they do not turn an individual wager into a guaranteed outcome."
+          },
+          {
+            "summary": "Check KYC and withdrawals in advance",
+            "body": "If winnings will be withdrawn as skins, cryptocurrency, or cash, review verification, fees, minimums, and regional restrictions before depositing."
+          },
+          {
+            "summary": "Set limits",
+            "body": "Do not increase a wager solely to recover a previous loss. Define a budget in advance and use <a href=\"/responsibility\">responsible gambling</a> information."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Match Betting",
+        "items": [
+          {
+            "summary": "What are CS2 match betting sites?",
+            "body": "Sportsbook or skin-betting platforms that accept wagers on professional and other Counter-Strike 2 matches."
+          },
+          {
+            "summary": "Can I bet with CS2 skins?",
+            "body": "On some platforms, yes. A skin is transferred through Steam and converted into an internal balance. Check the item valuation and the rules for withdrawing value again."
+          },
+          {
+            "summary": "Which betting markets are most common?",
+            "body": "Match or map winner, handicaps, totals, correct score, and on some sites player statistics and other special markets."
+          },
+          {
+            "summary": "What is bookmaker margin?",
+            "body": "The advantage built into the odds. Because of it, the sum of implied probabilities across all outcomes normally exceeds 100%."
+          },
+          {
+            "summary": "How is live betting different from prematch?",
+            "body": "Prematch wagers are placed before the event starts; live wagers are placed during the match while odds continually move with the game state."
+          },
+          {
+            "summary": "What happens if a match is cancelled or postponed?",
+            "body": "It depends on the operator settlement rules. The wager may be refunded, remain open for a rescheduled date, or be settled under a specific rule."
+          },
+          {
+            "summary": "Are there bonuses for CS2 betting?",
+            "body": "Some sites offer free bets, deposit bonuses, or promo codes. Compare the amount together with wagering, minimum odds, and expiry; current promotions are listed under <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER match betting ranking change?",
+            "body": "Odds, margin, tournaments, markets, settlement rules, payments, bonuses, and platform stability all change over time."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sitios de apuestas en partidos de CS2: cómo funcionan y qué comparar",
+        "paragraphs": [
+          "Los sitios de apuestas en partidos de CS2 permiten apostar en encuentros profesionales y semiprofesionales de Counter-Strike 2, desde grandes torneos internacionales hasta ligas regionales. Algunas plataformas trabajan con dinero o criptomonedas, mientras que los servicios de skin betting aceptan objetos de CS2 mediante Steam y convierten su valor en saldo interno.",
+          "CSGOBROKER evalúa estos servicios por separado de los modos de casino aleatorios. Aquí la apuesta se resuelve según el resultado real del partido, por lo que importan las cuotas, el margen de la casa, la profundidad de mercados, las reglas de liquidación, las apuestas en vivo, la estabilidad de la línea y las condiciones de depósito y retiro. Si el objetivo es comprar o vender objetos sin apostar, son más adecuados los <a href=\"/csgo/marketplaces\">marketplaces de CS2</a> o los servicios de <a href=\"/csgo/instant-sell\">venta instantánea</a>.",
+          "No basta con mirar cuántos partidos aparecen en la lista. Dos operadores pueden cubrir el mismo torneo y ofrecer cuotas, límites, mercados y reglas de cancelación diferentes. En skin betting también hay que comparar la valoración interna de los objetos y la forma en que se pueden retirar las ganancias."
+        ]
+      },
+      "categories": {
+        "title": "Mercados de apuestas habituales en CS2",
+        "items": [
+          {
+            "title": "Ganador del partido",
+            "paragraphs": [
+              "El mercado básico consiste en elegir qué equipo ganará la serie. En formatos best-of-three o best-of-five, la apuesta se liquida por el resultado total de la serie y no por una sola mapa."
+            ]
+          },
+          {
+            "title": "Ganador de mapa",
+            "paragraphs": [
+              "Se puede apostar por un mapa concreto. Cuando existe información del map veto, algunas casas publican una línea para cada mapa, pero conviene revisar las reglas ante sustituciones o cancelaciones técnicas."
+            ]
+          },
+          {
+            "title": "Hándicap de mapas o rondas",
+            "paragraphs": [
+              "El hándicap añade una ventaja o desventaja virtual a una de las partes. Puede expresarse en mapas o rondas totales, por lo que es importante entender cómo se aplican los valores positivos y negativos."
+            ]
+          },
+          {
+            "title": "Totales",
+            "paragraphs": [
+              "Los mercados over/under pueden referirse a mapas, rondas, kills de un jugador u otra estadística. La unidad usada para liquidar la apuesta debe estar claramente indicada."
+            ]
+          },
+          {
+            "title": "Marcador exacto y mercados especiales",
+            "paragraphs": [
+              "Algunos sitios ofrecen 2:0, 2:1, primer mapa, pistol round, estadísticas de jugadores y otros props. Cuanto más específico sea el mercado, más importantes son la fuente oficial de datos y las reglas de liquidación."
+            ]
+          },
+          {
+            "title": "Apuestas en vivo",
+            "paragraphs": [
+              "Durante el partido, las cuotas cambian con el marcador y la situación. Son importantes la velocidad de actualización, el retraso de confirmación y las reglas cuando un mercado se suspende."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de elegir un sitio de apuestas de CS2",
+        "intro": "Una lista muy amplia no garantiza mejores condiciones: las cuotas, las reglas y la ejecución muestran mejor la calidad del operador.",
+        "items": [
+          {
+            "summary": "Cuotas y margen",
+            "body": "Compara el mismo mercado entre varias plataformas. Un margen mayor reduce el retorno teórico para el apostador. En mercados de dos resultados puede aproximarse mediante los inversos de las cuotas decimales."
+          },
+          {
+            "summary": "Cobertura de torneos y profundidad",
+            "body": "Algunos sitios se centran en eventos grandes y otros incluyen ligas regionales y equipos academy. Dentro de cada partido pueden existir desde ganador simple hasta mapas, totales, hándicaps y player props."
+          },
+          {
+            "summary": "Reglas de liquidación y void",
+            "body": "Comprueba qué sucede con aplazamientos, sustituciones, technical forfeit, cambios de formato o mapas cancelados. Dos operadores pueden tratar la misma situación de forma diferente."
+          },
+          {
+            "summary": "Live betting y retraso",
+            "body": "En apuestas en vivo importan la velocidad real de la línea y el tiempo de aceptación. La casa puede cambiar la cuota o rechazar la apuesta si el estado del partido cambia antes de confirmar."
+          },
+          {
+            "summary": "Depósitos con skins y valoración",
+            "body": "Si se depositan objetos CS2, compara el precio interno con el mercado externo. Una valoración reducida representa un coste adicional antes de realizar la apuesta."
+          },
+          {
+            "summary": "Retiros, KYC y límites",
+            "body": "Mínimos, monedas, comisiones, verificación, límites de stake y premio máximo pueden depender del país, la cuenta y el mercado concreto."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de apuestas de CS2",
+        "intro": "Separamos la calidad de la línea de apuestas de las condiciones generales de la plataforma.",
+        "items": [
+          {
+            "summary": "Competitividad de cuotas",
+            "body": "Comparamos precios y margen, especialmente en partidos populares donde es sencillo comparar el mismo mercado entre varios servicios."
+          },
+          {
+            "summary": "Cobertura y mercados",
+            "body": "Valoramos torneos, profundidad prematch, live betting, mapas, hándicaps, totales y props, no solo la cantidad total de eventos."
+          },
+          {
+            "summary": "Liquidación y transparencia",
+            "body": "Son importantes reglas claras, tratamiento correcto de cancelaciones y aplazamientos, historial y motivos visibles de un void o recálculo."
+          },
+          {
+            "summary": "Skins y pagos",
+            "body": "En skin betting revisamos valoración interna, Steam Trade Offers y retiro. En otros sitios, tarjetas, cripto, comisiones, mínimos y velocidad de procesamiento."
+          },
+          {
+            "summary": "Bonos y restricciones reales",
+            "body": "Free bets, bonos de depósito y códigos se evalúan junto con wagering, cuota mínima, caducidad y restricciones. Las promociones actuales también están en <a href=\"/freebies\">bonos de CSGOBROKER</a>."
+          },
+          {
+            "summary": "Estabilidad, live y soporte",
+            "body": "Actualización de línea, boletos fiables, historial claro, versión móvil y soporte ante disputas influyen en la puntuación."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de apuestas en CS2",
+        "paragraphs": [
+          "Las casas cambian margen, límites, torneos, mercados live, bonos y métodos de pago. Un sitio con buenas cuotas en un torneo grande puede ofrecer condiciones distintas en otro evento o meses después.",
+          "La escena competitiva de CS2 también cambia: equipos modifican rosters, los torneos cambian formato, los partidos se aplazan y las cuotas reaccionan a nueva información. CSGOBROKER evalúa la calidad del servicio y no intenta predecir ganadores.",
+          "Para otros modos usa el ranking general de <a href=\"/cs2\">sitios CS2</a>. Para operar con objetos sin apostar, compara <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/sell-skins\">venta de skins</a> y <a href=\"/csgo/instant-sell\">instant sell</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable en apuestas de CS2",
+        "intro": "Apostar en partidos reales no es una forma garantizada de ganar dinero: incluso un favorito puede perder y el margen reduce el retorno esperado a largo plazo.",
+        "items": [
+          {
+            "summary": "Comprueba dominio y Steam",
+            "body": "Si el sitio usa skins, utiliza el dominio real y la autenticación oficial de Steam. Nunca entregues contraseña o códigos Steam Guard al soporte."
+          },
+          {
+            "summary": "Lee las reglas de liquidación",
+            "body": "Aplazamientos, cancelaciones, technical forfeits y cambios de roster son frecuentes en esports y conviene conocer las reglas antes de una disputa."
+          },
+          {
+            "summary": "No trates los pronósticos como garantías",
+            "body": "Estadísticas, rankings y resultados anteriores ayudan al análisis, pero no garantizan una apuesta individual."
+          },
+          {
+            "summary": "Revisa KYC y retiro antes",
+            "body": "Si retirarás skins, cripto o dinero, revisa verificación, comisiones, mínimos y restricciones regionales antes de depositar."
+          },
+          {
+            "summary": "Define límites",
+            "body": "No aumentes la apuesta solo para recuperar una pérdida anterior. Fija un presupuesto y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre apuestas en partidos de CS2",
+        "items": [
+          {
+            "summary": "¿Qué son los sitios de apuestas de CS2?",
+            "body": "Sportsbooks o plataformas de skin betting que aceptan apuestas sobre partidos de Counter-Strike 2."
+          },
+          {
+            "summary": "¿Se puede apostar con skins CS2?",
+            "body": "En algunas plataformas sí: la skin se transfiere por Steam y se convierte en saldo interno. Comprueba la valoración y las reglas para retirar de nuevo."
+          },
+          {
+            "summary": "¿Qué mercados son habituales?",
+            "body": "Ganador de partido o mapa, hándicaps, totales, marcador exacto y, en algunos sitios, estadísticas de jugadores y mercados especiales."
+          },
+          {
+            "summary": "¿Qué es el margen de la casa?",
+            "body": "La ventaja incorporada en las cuotas. Por ella, la suma de probabilidades implícitas suele superar el 100%."
+          },
+          {
+            "summary": "¿Qué diferencia hay entre live y prematch?",
+            "body": "Prematch se apuesta antes del inicio; live durante el partido, con cuotas que cambian junto al estado del juego."
+          },
+          {
+            "summary": "¿Qué ocurre si un partido se cancela o aplaza?",
+            "body": "Depende de las reglas. La apuesta puede devolverse, mantenerse para la nueva fecha o resolverse según una regla específica."
+          },
+          {
+            "summary": "¿Hay bonos para apuestas de CS2?",
+            "body": "Algunos sitios ofrecen free bets, bonos de depósito o códigos. Compara wagering, cuota mínima y caducidad; consulta <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian cuotas, margen, torneos, mercados, reglas, pagos, bonos y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sites de apostas em partidas de CS2: como funcionam e o que comparar",
+        "paragraphs": [
+          "Sites de apostas em partidas de CS2 permitem apostar em confrontos profissionais e semiprofissionais de Counter-Strike 2, desde grandes torneios internacionais até ligas regionais. Algumas plataformas usam dinheiro ou criptomoedas, enquanto serviços de skin betting aceitam itens CS2 via Steam e convertem seu valor em saldo interno.",
+          "A CSGOBROKER avalia esses serviços separadamente de modos aleatórios de cassino. Aqui a aposta é liquidada pelo resultado real da partida, então importam odds, margem da casa, profundidade de mercados, regras de liquidação, live betting, estabilidade da linha e condições de depósito e saque. Para simplesmente comprar ou vender itens, <a href=\"/csgo/marketplaces\">marketplaces de CS2</a> ou <a href=\"/csgo/instant-sell\">instant sell</a> são mais adequados.",
+          "Quantidade de partidas listadas não é suficiente. Duas casas podem cobrir o mesmo torneio e oferecer odds, limites, mercados e regras de cancelamento diferentes. Em skin betting também é importante comparar a avaliação interna dos itens e como os ganhos podem ser sacados."
+        ]
+      },
+      "categories": {
+        "title": "Mercados comuns de apostas em CS2",
+        "items": [
+          {
+            "title": "Vencedor da partida",
+            "paragraphs": [
+              "O mercado básico é escolher qual time vence a série. Em best-of-three ou best-of-five, a aposta é resolvida pelo resultado total da série e não por um único mapa."
+            ]
+          },
+          {
+            "title": "Vencedor do mapa",
+            "paragraphs": [
+              "É possível apostar em um mapa específico. Quando há map veto disponível, algumas casas publicam odds por mapa, mas regras de substituição ou cancelamento técnico devem ser verificadas."
+            ]
+          },
+          {
+            "title": "Handicap de mapas ou rounds",
+            "paragraphs": [
+              "O handicap adiciona uma vantagem ou desvantagem virtual. Pode ser aplicado a mapas ou total de rounds, então é necessário entender como valores positivos e negativos funcionam."
+            ]
+          },
+          {
+            "title": "Totais",
+            "paragraphs": [
+              "Over/under pode se referir a mapas, rounds, kills de um jogador ou outra estatística. A unidade usada para liquidar a aposta deve estar clara."
+            ]
+          },
+          {
+            "title": "Placar correto e mercados especiais",
+            "paragraphs": [
+              "Alguns sites oferecem 2:0, 2:1, primeiro mapa, pistol round, estatísticas de jogadores e outros props. Quanto mais específico o mercado, mais importantes são a fonte oficial e as regras de liquidação."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Durante a partida, odds mudam com o placar e a situação. Velocidade de atualização, atraso na confirmação e regras de suspensão do mercado são fundamentais."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de escolher um site de apostas de CS2",
+        "intro": "Uma lista grande de eventos não garante boas condições; odds, regras e execução mostram melhor a qualidade da casa.",
+        "items": [
+          {
+            "summary": "Odds e margem",
+            "body": "Compare o mesmo mercado em várias plataformas. Margem maior reduz o retorno teórico. Em mercados de dois resultados, ela pode ser aproximada pelos inversos das odds decimais."
+          },
+          {
+            "summary": "Cobertura de torneios e profundidade",
+            "body": "Alguns sites focam eventos grandes; outros também cobrem ligas regionais e equipes academy. A profundidade pode ir de vencedor simples até mapas, totais, handicaps e player props."
+          },
+          {
+            "summary": "Liquidação e void",
+            "body": "Veja o que acontece em adiamento, substituição, technical forfeit, mudança de formato ou mapa cancelado. Operadores diferentes podem tratar a mesma situação de forma diferente."
+          },
+          {
+            "summary": "Live betting e atraso",
+            "body": "No live importam a velocidade real da linha e o tempo de aceitação. A casa pode atualizar a odd ou rejeitar a aposta se o estado mudar antes da confirmação."
+          },
+          {
+            "summary": "Depósito com skins e avaliação",
+            "body": "Se itens CS2 financiam a conta, compare o preço interno com mercados externos. Uma avaliação reduzida funciona como custo adicional antes da aposta."
+          },
+          {
+            "summary": "Saque, KYC e limites",
+            "body": "Mínimos, moedas, taxas, verificação, stake máximo e win máximo podem depender do país, da conta e do mercado."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de apostas de CS2",
+        "intro": "Separamos a qualidade da linha de apostas das condições gerais da plataforma.",
+        "items": [
+          {
+            "summary": "Competitividade das odds",
+            "body": "Comparamos preços e margem, especialmente em partidas populares com mercados equivalentes em vários serviços."
+          },
+          {
+            "summary": "Cobertura e mercados",
+            "body": "Consideramos torneios, profundidade prematch, live, mapas, handicaps, totais e props, não apenas a contagem de eventos."
+          },
+          {
+            "summary": "Liquidação e transparência",
+            "body": "Regras claras, tratamento de cancelamentos e adiamentos, histórico e motivos visíveis de void ou recálculo importam."
+          },
+          {
+            "summary": "Skins e pagamentos",
+            "body": "Em skin betting, avaliamos preço interno, Steam Trade Offer e saque. Nos demais sites, cartões, cripto, taxas, mínimos e velocidade."
+          },
+          {
+            "summary": "Bônus e restrições reais",
+            "body": "Free bets, bônus de depósito e códigos são avaliados com wagering, odd mínima, validade e restrições. Promoções atuais estão em <a href=\"/freebies\">bônus da CSGOBROKER</a>."
+          },
+          {
+            "summary": "Estabilidade, live e suporte",
+            "body": "Atualização de linha, bet slip confiável, histórico, mobile e suporte em disputas influenciam a nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de apostas em CS2 muda",
+        "paragraphs": [
+          "Casas mudam margem, limites, torneios, live markets, bônus e pagamentos. Um site com odds fortes em um grande evento pode não manter a mesma condição em outro torneio ou meses depois.",
+          "A cena competitiva de CS2 também muda: rosters são alterados, formatos de torneio mudam, partidas são adiadas e odds reagem a novas informações. A CSGOBROKER avalia o serviço e não tenta prever o vencedor.",
+          "Para outros modos use o ranking geral de <a href=\"/cs2\">sites CS2</a>. Para negociar itens sem apostar, veja <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/sell-skins\">venda de skins</a> e <a href=\"/csgo/instant-sell\">instant sell</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável em apostas de CS2",
+        "intro": "Apostas em partidas reais não garantem lucro: até um favorito pode perder e a margem reduz o retorno esperado no longo prazo.",
+        "items": [
+          {
+            "summary": "Confira domínio e Steam",
+            "body": "Em sites com skins, use o domínio real e a autenticação oficial Steam. Nunca envie senha ou código Steam Guard ao suporte."
+          },
+          {
+            "summary": "Leia regras de liquidação",
+            "body": "Adiamentos, cancelamentos, technical forfeits e mudanças de roster são importantes em esports e devem ser conhecidos antes de uma disputa."
+          },
+          {
+            "summary": "Não trate previsões como garantias",
+            "body": "Estatísticas, rankings e resultados passados ajudam na análise, mas não garantem uma aposta individual."
+          },
+          {
+            "summary": "Veja KYC e saque antes",
+            "body": "Para sacar skins, cripto ou dinheiro, revise verificação, taxas, mínimos e restrições regionais antes do depósito."
+          },
+          {
+            "summary": "Defina limites",
+            "body": "Não aumente a aposta apenas para recuperar uma perda anterior. Defina um orçamento e consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre apostas em partidas de CS2",
+        "items": [
+          {
+            "summary": "O que são sites de apostas em CS2?",
+            "body": "Sportsbooks ou plataformas de skin betting que aceitam apostas em partidas de Counter-Strike 2."
+          },
+          {
+            "summary": "Posso apostar com skins CS2?",
+            "body": "Em algumas plataformas sim: a skin é transferida via Steam e vira saldo interno. Confira avaliação e regras de saque."
+          },
+          {
+            "summary": "Quais mercados são comuns?",
+            "body": "Vencedor de partida ou mapa, handicaps, totais, placar correto e, em alguns sites, estatísticas de jogadores e mercados especiais."
+          },
+          {
+            "summary": "O que é margem da casa?",
+            "body": "A vantagem incorporada às odds. Por isso, a soma das probabilidades implícitas costuma superar 100%."
+          },
+          {
+            "summary": "Qual a diferença entre live e prematch?",
+            "body": "Prematch é antes do evento; live acontece durante a partida, com odds mudando junto com o jogo."
+          },
+          {
+            "summary": "O que acontece se a partida for cancelada ou adiada?",
+            "body": "Depende das regras. A aposta pode ser devolvida, mantida para nova data ou liquidada por regra específica."
+          },
+          {
+            "summary": "Existem bônus para apostas em CS2?",
+            "body": "Alguns sites oferecem free bets, bônus de depósito e códigos. Compare wagering, odd mínima e validade; veja <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Odds, margem, torneios, mercados, regras, pagamentos, bônus e estabilidade mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Maç Bahis Siteleri: Nasıl Çalışır ve Neleri Karşılaştırmalı?",
+        "paragraphs": [
+          "CS2 maç bahis siteleri, büyük uluslararası turnuvalardan bölgesel liglere kadar profesyonel ve yarı profesyonel Counter-Strike 2 karşılaşmalarına bahis yapılmasını sağlar. Bazı platformlar para veya kripto kullanırken skin-betting servisleri Steam üzerinden CS2 item kabul edip değerini iç bahis bakiyesine dönüştürebilir.",
+          "CSGOBROKER bu servisleri rastgele casino modlarından ayrı değerlendirir. Burada bahis gerçek maç sonucuna göre settle edilir; bu nedenle odds, bookmaker margin, market derinliği, settlement rules, live betting, line istikrarı ve deposit/withdrawal şartları önemlidir. Amaç yalnızca item alıp satmaksa <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> veya <a href=\"/csgo/instant-sell\">instant sell</a> daha uygundur.",
+          "Sadece listelenen maç sayısına bakmak yeterli değildir. İki site aynı turnuvayı sunup farklı odds, limit, market ve iptal kuralları verebilir. Skin betting platformlarında ayrıca itemların iç değerlemesi ve kazancın hangi yöntemle çekilebildiği karşılaştırılmalıdır."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Sitelerinde Yaygın Bahis Marketleri",
+        "items": [
+          {
+            "title": "Maç kazananı",
+            "paragraphs": [
+              "En temel market seriyi hangi takımın kazanacağıdır. Best-of-three veya best-of-five formatlarında bet tek bir map yerine serinin genel sonucuna göre settle edilir."
+            ]
+          },
+          {
+            "title": "Map kazananı",
+            "paragraphs": [
+              "Belirli bir map için ayrı bahis yapılabilir. Map veto biliniyorsa site her map için line açabilir; ancak map değişimi veya teknik iptal kuralları önceden kontrol edilmelidir."
+            ]
+          },
+          {
+            "title": "Map veya round handicap",
+            "paragraphs": [
+              "Handicap bir tarafa sanal avantaj veya dezavantaj ekler. Map ya da toplam round üzerinden uygulanabilir; pozitif ve negatif handicap işaretlerinin nasıl hesaplandığı anlaşılmalıdır."
+            ]
+          },
+          {
+            "title": "Totals",
+            "paragraphs": [
+              "Over/under marketi map, round, oyuncu kill sayısı veya başka istatistik için kullanılabilir. Settlement yapılan birim market adında açıkça belirtilmelidir."
+            ]
+          },
+          {
+            "title": "Doğru skor ve özel marketler",
+            "paragraphs": [
+              "Bazı siteler 2:0, 2:1, first map, pistol round, player stats ve başka props sunar. Market özelleştikçe resmi veri kaynağı ve settlement rules daha önemli hale gelir."
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Maç sırasında odds skor ve oyun durumuna göre değişir. Line update hızı, bet confirmation delay ve market suspend kuralları özellikle önemlidir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "CS2 Bahis Sitesi Seçmeden Önce Neleri Karşılaştırmalı?",
+        "intro": "Geniş event listesi tek başına iyi koşul anlamına gelmez; odds, rules ve bet execution site kalitesini daha iyi gösterir.",
+        "items": [
+          {
+            "summary": "Odds ve bookmaker margin",
+            "body": "Aynı marketi birkaç sitede karşılaştırın. Daha yüksek margin, oyunculara dönen teorik değeri azaltır. İki sonuçlu marketlerde decimal odds tersleriyle yaklaşık margin hesaplanabilir."
+          },
+          {
+            "summary": "Turnuva kapsamı ve market derinliği",
+            "body": "Bazı siteler büyük etkinliklere odaklanırken bazıları bölgesel lig ve academy takımlarını da kapsar. Match içinde sadece winner değil map, total, handicap ve player props bulunabilir."
+          },
+          {
+            "summary": "Settlement ve void rules",
+            "body": "Erteleme, oyuncu değişikliği, technical forfeit, seri formatı değişimi veya map iptali durumunda ne olduğunu kontrol edin. Aynı olay farklı operatorlarda farklı settle edilebilir."
+          },
+          {
+            "summary": "Live betting ve gecikme",
+            "body": "Live bet için line update ve kabul süresi önemlidir. Maç durumu confirmation öncesinde değişirse site odds güncelleyebilir veya bahsi reddedebilir."
+          },
+          {
+            "summary": "Skin deposit ve item değerlemesi",
+            "body": "Hesap CS2 item ile fonlanıyorsa iç fiyatı dış marketlerle karşılaştırın. Düşük değerleme, daha bet yapılmadan ek bir maliyet oluşturur."
+          },
+          {
+            "summary": "Çekim, KYC ve limitler",
+            "body": "Minimum payout, para birimleri, fees, kimlik doğrulama, stake limit ve max win ülkeye, hesaba ve markete göre değişebilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Maç Bahis Sitelerini Nasıl Değerlendirir?",
+        "intro": "Bahis line kalitesini platformun genel çalışma koşullarından ayrı değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Odds rekabeti",
+            "body": "Özellikle popüler maçlarda aynı market birkaç sitede bulunabildiği için odds ve margin karşılaştırılır."
+          },
+          {
+            "summary": "Maç ve market kapsamı",
+            "body": "Turnuva sayısı, prematch derinliği, live betting, map, handicap, total ve ek props dikkate alınır; yalnız event sayısı yeterli değildir."
+          },
+          {
+            "summary": "Settlement ve rule şeffaflığı",
+            "body": "Açık rules, iptal ve ertelemelerin doğru işlenmesi, bet history ve void/resettlement nedeninin görünmesi önemlidir."
+          },
+          {
+            "summary": "Skin ve ödeme yöntemleri",
+            "body": "Skin betting servislerinde iç item fiyatı, Steam Trade Offer ve withdrawal değerlendirilir. Diğerlerinde kart, kripto, fees, minimum ve hız önemlidir."
+          },
+          {
+            "summary": "Bonus ve gerçek kısıtlamalar",
+            "body": "Free bet, deposit bonus veya promo code; wagering, minimum odds, expiry ve withdrawal restrictions ile birlikte değerlendirilir. Güncel teklifler <a href=\"/freebies\">CSGOBROKER bonusları</a> bölümünde de karşılaştırılabilir."
+          },
+          {
+            "summary": "Stability, live interface ve support",
+            "body": "Line güncellemeleri, çalışan bet slip, açık işlem geçmişi, mobile ve disputed settlement için destek puanı etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "CS2 Maç Bahis Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Bookmakerlar margin, limit, turnuva kapsamı, live market, bonus ve ödeme yöntemlerini düzenli değiştirir. Bir major sırasında iyi odds veren site başka etkinlikte veya birkaç ay sonra aynı koşulu sunmayabilir.",
+          "CS2 rekabet sahnesi de değişir: rosterlar güncellenir, turnuva formatları değişir, maçlar ertelenir ve yeni bilgi geldikçe odds hareket eder. CSGOBROKER servis kalitesini değerlendirir; maç sonucunu tahmin etmeye çalışmaz.",
+          "Diğer CS2 modları için genel <a href=\"/cs2\">CS2 site sıralamasını</a> kullanın. Bahis olmadan item işlemleri için <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/sell-skins\">skin satışı</a> ve <a href=\"/csgo/instant-sell\">instant sell</a> bölümlerine bakın."
+        ]
+      },
+      "safety": {
+        "title": "CS2 Bahis Sitelerinde Güvenlik ve Sorumlu Oyun",
+        "intro": "Gerçek maçlara bahis garantili kazanç yöntemi değildir: güçlü favori bile kaybedebilir ve bookmaker margin uzun vadeli beklenen dönüşü azaltır.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini kontrol edin",
+            "body": "Site skin kullanıyorsa gerçek domain ve resmi Steam authentication akışını kullanın. Şifre veya Steam Guard kodunu support ile paylaşmayın."
+          },
+          {
+            "summary": "Bahisten önce settlement rules okuyun",
+            "body": "Erteleme, iptal, technical forfeit ve roster substitution kuralları esports için özellikle önemlidir ve sorun çıkmadan önce bilinmelidir."
+          },
+          {
+            "summary": "Tahmini garanti saymayın",
+            "body": "Takım istatistiği, ranking ve geçmiş sonuç analiz için kullanılabilir ama tek bir bahsi garantiye dönüştürmez."
+          },
+          {
+            "summary": "KYC ve çekimi önceden kontrol edin",
+            "body": "Kazanç skin, kripto veya para olarak çekilecekse verification, fee, minimum ve bölgesel kısıtlamaları deposit öncesi inceleyin."
+          },
+          {
+            "summary": "Limit belirleyin",
+            "body": "Önceki kaybı geri almak için stake artırmayın. Bütçe belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> bilgilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Maç Bahisleri Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 maç bahis siteleri nedir?",
+            "body": "Counter-Strike 2 maçlarına bahis kabul eden sportsbook veya skin-betting platformlarıdır."
+          },
+          {
+            "summary": "CS2 skin ile bahis yapılabilir mi?",
+            "body": "Bazı sitelerde evet. Skin Steam üzerinden gönderilir ve iç balance olur. Item değerlemesini ve tekrar çekim kurallarını kontrol edin."
+          },
+          {
+            "summary": "Hangi marketler yaygındır?",
+            "body": "Maç veya map winner, handicap, total, doğru skor ve bazı sitelerde player stats ile özel marketler."
+          },
+          {
+            "summary": "Bookmaker margin nedir?",
+            "body": "Odds içine eklenen site avantajıdır. Bu nedenle tüm sonuçların implied probability toplamı genellikle %100 üzerinde olur."
+          },
+          {
+            "summary": "Live betting ile prematch farkı nedir?",
+            "body": "Prematch etkinlik başlamadan, live ise maç oynanırken değişen odds ile yapılır."
+          },
+          {
+            "summary": "Maç iptal veya ertelenirse ne olur?",
+            "body": "Operator rules belirler. Bet iade edilebilir, yeni tarihe kadar açık kalabilir veya özel kurala göre settle edilebilir."
+          },
+          {
+            "summary": "CS2 bahis bonusu var mı?",
+            "body": "Bazı siteler free bet, deposit bonus veya promo code sunar. Wagering, minimum odds ve expiry ile birlikte değerlendirin; <a href=\"/freebies\">bonuslar</a> bölümüne bakın."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Odds, margin, turnuvalar, marketler, settlement rules, ödemeler, bonuslar ve stability değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Match Betting Sites: Esports Betting कैसे काम करती है और क्या Compare करें",
+        "paragraphs": [
+          "CS2 match betting sites professional और semi-professional Counter-Strike 2 matches पर wager करने देती हैं, बड़े international tournaments से regional leagues तक। कुछ platforms cash या crypto use करती हैं, जबकि skin-betting services Steam के जरिए CS2 items लेकर उनकी value को internal betting balance में convert कर सकती हैं।",
+          "CSGOBROKER इन services को random casino-style modes से अलग evaluate करता है। यहाँ bet का settlement real match result पर होता है, इसलिए odds, bookmaker margin, market depth, settlement rules, live betting, line stability और deposit/withdrawal conditions मुख्य factors हैं। अगर goal सिर्फ items buy/sell करना है, तो <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> या <a href=\"/csgo/instant-sell\">instant sell</a> अधिक relevant हैं।",
+          "केवल listed matches की संख्या पर्याप्त नहीं है। दो operators same tournament cover करके अलग odds, limits, markets और cancellation rules दे सकते हैं। Skin betting में internal item valuation और winnings withdraw करने का तरीका भी compare करना चाहिए।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 में Common Betting Markets",
+        "items": [
+          {
+            "title": "Match winner",
+            "paragraphs": [
+              "Basic market यह है कि series कौन सी team जीतेगी। Best-of-three या best-of-five में bet overall series result पर settle होती है, single map पर नहीं।"
+            ]
+          },
+          {
+            "title": "Map winner",
+            "paragraphs": [
+              "Specific map पर अलग wager हो सकती है। Map veto available होने पर sites हर map की line दे सकती हैं, लेकिन replacement और technical cancellation rules check करने चाहिए।"
+            ]
+          },
+          {
+            "title": "Map या round handicap",
+            "paragraphs": [
+              "Handicap एक side को virtual advantage या deficit देता है। यह maps या total rounds पर based हो सकता है, इसलिए plus और minus values का settlement समझना जरूरी है।"
+            ]
+          },
+          {
+            "title": "Totals",
+            "paragraphs": [
+              "Over/under maps, rounds, player kills या किसी और statistic पर हो सकता है। Market name में settlement unit clear होना चाहिए।"
+            ]
+          },
+          {
+            "title": "Correct score और special markets",
+            "paragraphs": [
+              "कुछ sites 2:0, 2:1, first map, pistol round, player stats और दूसरे props देती हैं। Market जितना specific हो, official data source और settlement rules उतने महत्वपूर्ण होते हैं।"
+            ]
+          },
+          {
+            "title": "Live betting",
+            "paragraphs": [
+              "Match के दौरान odds score और game state के साथ बदलती हैं। Line update speed, confirmation delay और market suspension rules महत्वपूर्ण हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "CS2 Betting Site चुनने से पहले क्या Compare करें",
+        "intro": "बड़ी event list अपने आप बेहतर value नहीं देती; odds, rules और bet execution site quality को बेहतर दिखाते हैं।",
+        "items": [
+          {
+            "summary": "Odds और bookmaker margin",
+            "body": "Same market कई sites पर compare करें। Higher margin bettor का theoretical return कम करती है। Two-way markets में decimal odds के inverse से margin approximate की जा सकती है।"
+          },
+          {
+            "summary": "Tournament coverage और market depth",
+            "body": "कुछ sites major events पर focus करती हैं, अन्य regional leagues और academy teams भी cover करती हैं। Match के अंदर winner से maps, totals, handicaps और player props तक depth अलग हो सकती है।"
+          },
+          {
+            "summary": "Settlement और void rules",
+            "body": "Postponement, roster substitution, technical forfeit, format change या cancelled map की स्थिति check करें। Same event अलग operators पर अलग settle हो सकता है।"
+          },
+          {
+            "summary": "Live betting और delay",
+            "body": "Live में real line-update speed और acceptance time जरूरी हैं। Confirmation से पहले game state बदलने पर site odds बदल या bet reject कर सकती है।"
+          },
+          {
+            "summary": "Skin deposits और valuation",
+            "body": "अगर CS2 items से balance fund होता है, internal value को external markets से compare करें। Discounted valuation bet लगाने से पहले ही extra cost बन सकती है।"
+          },
+          {
+            "summary": "Withdrawals, KYC और limits",
+            "body": "Minimum payout, currencies, fees, verification, stake limits और max win country, account और market पर depend कर सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Match Betting Sites को कैसे Rate करता है",
+        "intro": "हम betting line की quality और platform की general operating conditions को अलग-अलग देखते हैं।",
+        "items": [
+          {
+            "summary": "Odds competitiveness",
+            "body": "Popular matches में same markets कई services पर उपलब्ध होते हैं, इसलिए prices और margin compare की जाती हैं।"
+          },
+          {
+            "summary": "Match coverage और market depth",
+            "body": "Tournaments, prematch depth, live betting, maps, handicaps, totals और extra props देखे जाते हैं; सिर्फ event count नहीं।"
+          },
+          {
+            "summary": "Settlement और rule transparency",
+            "body": "Clear rules, cancellation/postponement handling, bet history और void या resettlement का reason visible होना जरूरी है।"
+          },
+          {
+            "summary": "Skins और payment methods",
+            "body": "Skin betting में internal item value, Steam Trade Offer और withdrawal देखा जाता है। अन्य sites में cards, crypto, fees, minimums और processing speed।"
+          },
+          {
+            "summary": "Bonuses और real restrictions",
+            "body": "Free bet, deposit bonus या promo code को wagering, minimum odds, expiry और withdrawal restrictions के साथ evaluate किया जाता है। Current offers <a href=\"/freebies\">CSGOBROKER bonuses</a> में भी compare किए जा सकते हैं।"
+          },
+          {
+            "summary": "Stability, live interface और support",
+            "body": "Timely line updates, reliable bet slips, clear history, mobile usability और disputed settlement support rating को प्रभावित करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "CS2 Match Betting Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Sportsbooks margin, limits, tournament coverage, live markets, bonuses और payment methods बदलती रहती हैं। एक major पर strong odds देने वाली site दूसरे event या कुछ महीनों बाद same conditions नहीं दे सकती।",
+          "CS2 competitive scene भी बदलती है: teams rosters update करती हैं, tournament formats बदलते हैं, matches reschedule होते हैं और नई information पर odds move करती हैं। CSGOBROKER service quality evaluate करता है, match winner predict नहीं करता।",
+          "दूसरे CS2 modes के लिए overall <a href=\"/cs2\">CS2 site ranking</a> देखें। Betting के बिना item transactions के लिए <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/sell-skins\">sell skins</a> और <a href=\"/csgo/instant-sell\">instant sell</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "CS2 Betting Sites पर Safety और Responsible Use",
+        "intro": "Real matches पर betting guaranteed income नहीं है: strong favorite भी lose कर सकता है और bookmaker margin long-run expected return कम करती है।",
+        "items": [
+          {
+            "summary": "Domain और Steam sign-in verify करें",
+            "body": "Skin site में genuine domain और official Steam authentication use करें। Password या Steam Guard code support को न दें।"
+          },
+          {
+            "summary": "Bet से पहले settlement rules पढ़ें",
+            "body": "Postponement, cancellation, technical forfeit और roster substitution esports में important हैं और dispute से पहले समझने चाहिए।"
+          },
+          {
+            "summary": "Predictions को guarantee न मानें",
+            "body": "Team statistics, rankings और past results analysis में मदद करते हैं, लेकिन individual wager को guaranteed outcome नहीं बनाते।"
+          },
+          {
+            "summary": "KYC और withdrawal पहले check करें",
+            "body": "Winnings skins, crypto या cash में निकालनी हों तो verification, fees, minimums और regional restrictions deposit से पहले देखें।"
+          },
+          {
+            "summary": "Limits set करें",
+            "body": "Previous loss recover करने के लिए stake न बढ़ाएँ। Budget पहले तय करें और <a href=\"/responsibility\">responsible gambling</a> information use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Match Betting के बारे में FAQ",
+        "items": [
+          {
+            "summary": "CS2 match betting sites क्या हैं?",
+            "body": "Sportsbook या skin-betting platforms जो Counter-Strike 2 matches पर wagers accept करती हैं।"
+          },
+          {
+            "summary": "क्या CS2 skins से bet कर सकते हैं?",
+            "body": "कुछ platforms पर हाँ। Skin Steam से transfer होकर internal balance बनती है। Item valuation और withdrawal rules check करें।"
+          },
+          {
+            "summary": "कौन से markets common हैं?",
+            "body": "Match या map winner, handicaps, totals, correct score और कुछ sites पर player stats तथा special markets।"
+          },
+          {
+            "summary": "Bookmaker margin क्या है?",
+            "body": "Odds में built-in platform advantage। इसी वजह से outcomes की implied probabilities का total आम तौर पर 100% से अधिक होता है।"
+          },
+          {
+            "summary": "Live betting और prematch में फर्क क्या है?",
+            "body": "Prematch event शुरू होने से पहले होती है; live match के दौरान बदलती odds के साथ।"
+          },
+          {
+            "summary": "Match cancel या postpone हो जाए तो क्या होता है?",
+            "body": "Operator rules पर depend करता है। Bet refund हो सकती है, नई date तक open रह सकती है या special rule से settle हो सकती है।"
+          },
+          {
+            "summary": "क्या CS2 betting bonuses मिलते हैं?",
+            "body": "कुछ sites free bets, deposit bonuses या promo codes देती हैं। Wagering, minimum odds और expiry compare करें; <a href=\"/freebies\">bonuses</a> देखें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Odds, margin, tournaments, markets, settlement rules, payments, bonuses और stability बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "plinko",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Плинко CS2: как работает режим и что сравнивать между сайтами",
+        "paragraphs": [
+          "Плинко — случайная игра, где виртуальный шар проходит через поле с препятствиями и попадает в одну из ячеек с коэффициентом. Пользователь обычно выбирает сумму ставки, число рядов и уровень риска, после чего система определяет итоговую позицию шара.",
+          "Количество рядов и выбранный уровень риска меняют распределение коэффициентов: более осторожная конфигурация чаще даёт значения около центра, а высокий риск обычно добавляет редкие крупные коэффициенты по краям и более низкие выплаты в остальных ячейках.",
+          "CSGOBROKER сравнивает Плинко отдельно от <a href=\"/csgo/dice\">костей</a>, <a href=\"/csgo/mines\">«Мин»</a> и <a href=\"/csgo/crash\">краш</a>. Важны не визуальная анимация движения шара, а таблица коэффициентов, вероятность ячеек, преимущество площадки, Provably Fair и лимиты выплаты."
+        ]
+      },
+      "categories": {
+        "title": "Как устроен Плинко на сайтах CS2",
+        "items": [
+          {
+            "title": "Количество рядов",
+            "paragraphs": [
+              "Чем больше рядов проходит шар, тем больше возможных конечных позиций и тем сложнее распределение коэффициентов. Доступные значения зависят от площадки."
+            ]
+          },
+          {
+            "title": "Уровень риска",
+            "paragraphs": [
+              "Обычно можно выбрать несколько профилей риска. При высоком риске крайние ячейки могут давать крупные коэффициенты, но большая часть распределения остаётся менее выгодной."
+            ]
+          },
+          {
+            "title": "Распределение коэффициентов",
+            "paragraphs": [
+              "Каждая конечная ячейка имеет свой множитель. Для оценки режима важно знать не только максимальный коэффициент, но и вероятность попасть в разные части поля."
+            ]
+          },
+          {
+            "title": "Несколько шаров",
+            "paragraphs": [
+              "Некоторые сайты позволяют быстро запускать серию шаров. Это ускоряет игру, но не меняет математическое ожидание отдельной ставки."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Проверяемая система должна позволять подтвердить исход конкретного запуска и данные, использованные для его генерации."
+            ]
+          },
+          {
+            "title": "Плинко внутри казино-раздела",
+            "paragraphs": [
+              "Режим часто является одной из оригинальных игр большого сайта. В этом случае дополнительно полезно сравнить <a href=\"/csgo/casino\">казино-платформы CS2</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед игрой в Плинко",
+        "intro": "Максимальный коэффициент сам по себе почти ничего не говорит без распределения вероятностей по остальным ячейкам.",
+        "items": [
+          {
+            "summary": "Таблица коэффициентов",
+            "body": "Посмотрите все значения для каждого числа рядов и уровня риска, а не только самый большой множитель."
+          },
+          {
+            "summary": "Распределение вероятностей",
+            "body": "Если сайт публикует математику режима, сравните вероятность попадания в разные ячейки и соответствующие выплаты."
+          },
+          {
+            "summary": "Преимущество площадки",
+            "body": "Фактическое математическое ожидание зависит от сочетания вероятностей и коэффициентов. Два сайта с одинаковым максимальным множителем могут иметь разную маржу."
+          },
+          {
+            "summary": "Число рядов и уровни риска",
+            "body": "Проверьте, насколько гибко можно менять конфигурацию и ясно ли интерфейс показывает, как при этом меняются коэффициенты."
+          },
+          {
+            "summary": "Максимальный выигрыш",
+            "body": "Крупный крайний коэффициент может ограничиваться максимальной выплатой или лимитом ставки."
+          },
+          {
+            "summary": "Provably Fair и вывод",
+            "body": "Проверяемость результата, KYC, комиссии и минимальный вывод важны независимо от красивой анимации поля."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с Плинко",
+        "intro": "Для Плинко мы рассматриваем полное распределение выплат и прозрачность механики, а не только максимальный коэффициент.",
+        "items": [
+          {
+            "summary": "Таблицы выплат",
+            "body": "Сравниваем коэффициенты для разных рядов и уровней риска."
+          },
+          {
+            "summary": "Математические условия",
+            "body": "Оцениваем доступность информации о вероятностях и фактическом преимуществе площадки."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверяем возможность подтвердить конкретный запуск шара."
+          },
+          {
+            "summary": "Настройки режима",
+            "body": "Учитываем число рядов, уровни риска, скорость запуска и удобство серии ставок."
+          },
+          {
+            "summary": "Лимиты и платежи",
+            "body": "Минимальная и максимальная ставка, максимальный выигрыш, скины, криптовалюты, комиссии и KYC входят в оценку."
+          },
+          {
+            "summary": "Интерфейс и история",
+            "body": "Полезны понятные настройки, история результатов, мобильная версия и стабильная поддержка."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с Плинко меняется",
+        "paragraphs": [
+          "Площадка может изменить таблицу коэффициентов, уровни риска, количество рядов, максимальную выплату или преимущество сервиса. Визуально игра при этом может выглядеть точно так же.",
+          "Бонусы и платежные условия также меняются: использование бонусного баланса в Плинко может иметь отдельные ограничения по максимальной ставке и отыгрышу.",
+          "Для других быстрых игр сравните <a href=\"/csgo/dice\">кости</a>, <a href=\"/csgo/mines\">«Мины»</a>, <a href=\"/csgo/crash\">краш</a> или общий раздел <a href=\"/csgo/casino\">казино</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра",
+        "intro": "Наблюдаемая траектория шара создаёт ощущение физического процесса, но на онлайн-площадке результат определяется программной механикой.",
+        "items": [
+          {
+            "summary": "Проверяйте Provably Fair",
+            "body": "Если сайт заявляет проверяемость, убедитесь, что можно подтвердить конкретный завершённый запуск."
+          },
+          {
+            "summary": "Не пытайтесь выбирать «удачное» место запуска по прошлым шарам",
+            "body": "Предыдущие независимые траектории не делают определённую ячейку более вероятной в следующей ставке."
+          },
+          {
+            "summary": "Смотрите на всю таблицу, а не на максимум",
+            "body": "Редкий крупный коэффициент привлекает внимание, но реальную математику определяет всё распределение."
+          },
+          {
+            "summary": "Проверяйте лимит выплаты",
+            "body": "Перед ставкой с высоким риском уточните максимальный выигрыш, максимальную ставку и условия вывода."
+          },
+          {
+            "summary": "Ограничивайте число быстрых ставок",
+            "body": "Серия шаров позволяет очень быстро увеличить общий объём игры. Используйте лимиты и рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о Плинко CS2",
+        "items": [
+          {
+            "summary": "Что такое Плинко на сайтах CS2?",
+            "body": "Это случайная игра, где виртуальный шар проходит через поле и заканчивает движение в ячейке с определённым коэффициентом."
+          },
+          {
+            "summary": "От чего зависит коэффициент?",
+            "body": "От конечной ячейки, выбранного числа рядов, уровня риска и таблицы выплат площадки."
+          },
+          {
+            "summary": "Что меняет уровень риска?",
+            "body": "Он изменяет распределение коэффициентов: высокий риск обычно увеличивает крайние выплаты и одновременно делает большинство других исходов менее привлекательными."
+          },
+          {
+            "summary": "Чем больше рядов, тем выше выигрыш?",
+            "body": "Не обязательно. Большее число рядов меняет распределение возможных ячеек, а не гарантирует более высокую выплату."
+          },
+          {
+            "summary": "Можно ли предсказать, куда упадёт шар?",
+            "body": "На корректно реализованной случайной игре прошлые результаты не позволяют надёжно предсказать следующую конечную ячейку."
+          },
+          {
+            "summary": "Что такое Provably Fair в Плинко?",
+            "body": "Механизм, позволяющий проверить, что конкретный результат был сформирован по заявленным данным и алгоритму."
+          },
+          {
+            "summary": "Можно ли играть бонусными средствами?",
+            "body": "Иногда да, но могут действовать ограничения ставки и требования по отыгрышу. Смотрите <a href=\"/freebies\">бонусы</a>."
+          },
+          {
+            "summary": "Почему рейтинг Плинко на CSGOBROKER меняется?",
+            "body": "Меняются таблицы выплат, уровни риска, Provably Fair, лимиты, платежи и вывод."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Plinko Sites: How Plinko Works and What to Compare",
+        "paragraphs": [
+          "Plinko is a random game where a virtual ball moves through a field of pegs and lands in a slot with a multiplier. Users typically choose a wager, row count, and risk level before the platform determines the final position.",
+          "Rows and risk profile change the multiplier distribution: a lower-risk setup commonly concentrates outcomes near the center, while high-risk settings can add rare large edge multipliers alongside less favorable common outcomes.",
+          "CSGOBROKER evaluates Plinko separately from <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, and <a href=\"/csgo/crash\">Crash</a>. The important factors are the full payout table, outcome probabilities, house edge, Provably Fair, and payout limits rather than the ball animation."
+        ]
+      },
+      "categories": {
+        "title": "How CS2 Plinko Works",
+        "items": [
+          {
+            "title": "Number of rows",
+            "paragraphs": [
+              "More rows create more possible ending positions and a more detailed multiplier distribution. Supported row counts vary by site."
+            ]
+          },
+          {
+            "title": "Risk level",
+            "paragraphs": [
+              "Platforms commonly offer several risk profiles. High risk can produce larger edge multipliers but also less favorable payouts across much of the board."
+            ]
+          },
+          {
+            "title": "Multiplier distribution",
+            "paragraphs": [
+              "Every final slot has a multiplier. Evaluating the mode requires more than looking at the single maximum value."
+            ]
+          },
+          {
+            "title": "Multiple balls",
+            "paragraphs": [
+              "Some sites allow rapid sequences of balls. This changes game speed but not the expected value of an individual wager."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "A verification system should let users check the result and generation data for a specific completed drop."
+            ]
+          },
+          {
+            "title": "Plinko inside a casino",
+            "paragraphs": [
+              "Plinko is often one proprietary game inside a larger platform. In that case, also compare <a href=\"/csgo/casino\">CS2 casino sites</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Playing Plinko",
+        "intro": "A headline maximum multiplier is not meaningful without the probability distribution across the rest of the board.",
+        "items": [
+          {
+            "summary": "Payout table",
+            "body": "Review all multipliers for each row count and risk setting rather than only the largest value."
+          },
+          {
+            "summary": "Outcome probabilities",
+            "body": "Where mathematical details are published, compare the chance of landing in different slots with their payouts."
+          },
+          {
+            "summary": "House edge",
+            "body": "Expected return depends on the complete combination of probabilities and multipliers. Two sites with the same maximum multiplier can have different margins."
+          },
+          {
+            "summary": "Rows and risk settings",
+            "body": "Check how flexible the configuration is and whether the interface clearly shows payout changes."
+          },
+          {
+            "summary": "Maximum win",
+            "body": "A large edge multiplier can still be subject to a payout cap or wager limit."
+          },
+          {
+            "summary": "Provably Fair and withdrawals",
+            "body": "Verification, KYC, fees, and withdrawal minimums matter independently of the visual animation."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Plinko Sites",
+        "intro": "We compare the complete payout distribution and transparency rather than focusing on the maximum multiplier.",
+        "items": [
+          {
+            "summary": "Payout tables",
+            "body": "We compare multipliers across row counts and risk levels."
+          },
+          {
+            "summary": "Mathematical terms",
+            "body": "We consider whether probability information and effective house edge can be understood."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We review whether a particular ball result can be verified."
+          },
+          {
+            "summary": "Game settings",
+            "body": "Rows, risk profiles, speed, and multi-bet usability are included."
+          },
+          {
+            "summary": "Limits and payments",
+            "body": "Minimum and maximum wagers, maximum win, skins, crypto, fees, and KYC are considered."
+          },
+          {
+            "summary": "Interface and history",
+            "body": "Clear controls, result history, mobile usability, and support contribute to the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Plinko Rankings Change",
+        "paragraphs": [
+          "A platform can change multiplier tables, risk profiles, row counts, maximum payout, or its mathematical edge while leaving the visual game almost unchanged.",
+          "Bonus and payment terms also change; bonus balance can carry specific wagering and maximum-bet restrictions in Plinko.",
+          "For other instant games compare <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/crash\">Crash</a>, or <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play",
+        "intro": "The visible ball path can feel physical, but online Plinko outcomes are generated by software.",
+        "items": [
+          {
+            "summary": "Verify Provably Fair",
+            "body": "If verification is advertised, make sure a completed ball result can actually be checked."
+          },
+          {
+            "summary": "Do not infer a lucky drop position from history",
+            "body": "Previous independent paths do not make a particular slot more likely on the next wager."
+          },
+          {
+            "summary": "Review the whole table, not just the maximum",
+            "body": "A rare high multiplier attracts attention, but the full distribution determines the mathematics."
+          },
+          {
+            "summary": "Check payout caps",
+            "body": "Before high-risk wagers, review maximum win, bet limits, and withdrawal conditions."
+          },
+          {
+            "summary": "Limit rapid sequences",
+            "body": "Multiple-ball play can increase total wagering quickly. Use limits and <a href=\"/responsibility\">responsible gambling</a> guidance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Plinko",
+        "items": [
+          {
+            "summary": "What is CS2 Plinko?",
+            "body": "A random game where a virtual ball travels through a peg field and lands in a slot with a multiplier."
+          },
+          {
+            "summary": "What determines the multiplier?",
+            "body": "The final slot, row count, risk level, and the platform's payout table."
+          },
+          {
+            "summary": "What does the risk level change?",
+            "body": "It changes the payout distribution; high-risk settings usually create larger extreme multipliers and less favorable common outcomes."
+          },
+          {
+            "summary": "Do more rows guarantee a bigger win?",
+            "body": "No. More rows change the distribution of possible ending slots rather than guaranteeing a larger payout."
+          },
+          {
+            "summary": "Can the landing slot be predicted?",
+            "body": "Past results do not reliably predict the next independent software-generated outcome."
+          },
+          {
+            "summary": "What does Provably Fair mean in Plinko?",
+            "body": "A method for checking that a particular result was produced using the published generation data and algorithm."
+          },
+          {
+            "summary": "Can bonus balance be used?",
+            "body": "Sometimes, with wagering and maximum-bet restrictions. See <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Plinko ranking change?",
+            "body": "Payout tables, risk levels, fairness tools, limits, payments, and withdrawals can change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Plinko de CS2: cómo funciona el modo y qué comparar",
+        "paragraphs": [
+          "Plinko es un juego aleatorio en el que una bola virtual atraviesa un campo de obstáculos y termina en una casilla con un multiplicador. El usuario suele elegir apuesta, número de filas y nivel de riesgo antes de que la plataforma determine la posición final.",
+          "El número de filas y el perfil de riesgo cambian la distribución de multiplicadores: una configuración conservadora suele concentrar resultados cerca del centro, mientras que el riesgo alto añade multiplicadores extremos poco frecuentes y pagos menos favorables en muchas otras casillas.",
+          "CSGOBROKER evalúa Plinko por separado de <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Minas</a> y <a href=\"/csgo/crash\">Crash</a>. Importan la tabla completa de pagos, las probabilidades, la ventaja de la plataforma, Provably Fair y los límites, no la animación de la bola."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona Plinko en sitios de CS2",
+        "items": [
+          {
+            "title": "Número de filas",
+            "paragraphs": [
+              "Más filas crean más posiciones finales y una distribución de multiplicadores más detallada. Los valores disponibles dependen del sitio."
+            ]
+          },
+          {
+            "title": "Nivel de riesgo",
+            "paragraphs": [
+              "Las plataformas suelen ofrecer varios perfiles. El riesgo alto puede incluir grandes multiplicadores en los extremos, pero pagos menos favorables en buena parte del tablero."
+            ]
+          },
+          {
+            "title": "Distribución de multiplicadores",
+            "paragraphs": [
+              "Cada casilla final tiene un multiplicador. Para evaluar el modo no basta con mirar solo el valor máximo."
+            ]
+          },
+          {
+            "title": "Varias bolas",
+            "paragraphs": [
+              "Algunos sitios permiten lanzar una secuencia rápida de bolas. Cambia la velocidad, no el valor esperado de una apuesta individual."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "El sistema debería permitir verificar el resultado y los datos de generación de un lanzamiento concreto."
+            ]
+          },
+          {
+            "title": "Plinko dentro de un casino",
+            "paragraphs": [
+              "Suele ser uno de los juegos propios de una plataforma mayor. En ese caso, compara también <a href=\"/csgo/casino\">casinos de CS2</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de jugar a Plinko",
+        "intro": "El multiplicador máximo no dice mucho si no se conoce la distribución de probabilidades del resto del tablero.",
+        "items": [
+          {
+            "summary": "Tabla de pagos",
+            "body": "Revisa todos los multiplicadores para cada número de filas y nivel de riesgo, no solo el mayor."
+          },
+          {
+            "summary": "Probabilidades",
+            "body": "Si el sitio publica detalles matemáticos, compara la posibilidad de caer en cada zona con sus pagos."
+          },
+          {
+            "summary": "Ventaja de la plataforma",
+            "body": "El retorno depende de todas las probabilidades y multiplicadores. Dos sitios con el mismo máximo pueden tener margen diferente."
+          },
+          {
+            "summary": "Filas y perfiles de riesgo",
+            "body": "Comprueba la flexibilidad de la configuración y si la interfaz muestra claramente cómo cambian los pagos."
+          },
+          {
+            "summary": "Premio máximo",
+            "body": "Un multiplicador extremo puede estar limitado por un máximo de pago o de apuesta."
+          },
+          {
+            "summary": "Provably Fair y retiro",
+            "body": "Verificación, KYC, comisiones y mínimos de retiro importan independientemente de la animación."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios de Plinko",
+        "intro": "Comparamos la distribución completa y la transparencia, no solo el multiplicador máximo.",
+        "items": [
+          {
+            "summary": "Tablas de pago",
+            "body": "Comparamos multiplicadores entre filas y niveles de riesgo."
+          },
+          {
+            "summary": "Condiciones matemáticas",
+            "body": "Valoramos si se entienden las probabilidades y la ventaja efectiva."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Revisamos si puede verificarse un lanzamiento concreto."
+          },
+          {
+            "summary": "Configuración",
+            "body": "Filas, riesgo, velocidad y facilidad para lanzar varias apuestas."
+          },
+          {
+            "summary": "Límites y pagos",
+            "body": "Apuesta mínima y máxima, premio máximo, skins, cripto, comisiones y KYC."
+          },
+          {
+            "summary": "Interfaz e historial",
+            "body": "Controles claros, historial, móvil y soporte influyen en la nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de Plinko",
+        "paragraphs": [
+          "La plataforma puede modificar multiplicadores, riesgos, filas, premio máximo o margen manteniendo casi idéntico el aspecto visual.",
+          "También cambian bonos y pagos; el saldo promocional puede tener wagering y límites máximos de apuesta específicos para Plinko.",
+          "Para otros juegos rápidos compara <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Minas</a>, <a href=\"/csgo/crash\">Crash</a> o <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "La trayectoria visible parece física, pero el resultado de Plinko online se genera mediante software.",
+        "items": [
+          {
+            "summary": "Verifica Provably Fair",
+            "body": "Si se anuncia verificación, comprueba que un lanzamiento terminado pueda revisarse realmente."
+          },
+          {
+            "summary": "No deduzcas una posición afortunada del historial",
+            "body": "Trayectorias independientes anteriores no hacen más probable una casilla en la siguiente apuesta."
+          },
+          {
+            "summary": "Mira toda la tabla",
+            "body": "Un multiplicador alto y raro llama la atención, pero la matemática depende de toda la distribución."
+          },
+          {
+            "summary": "Comprueba el límite de pago",
+            "body": "Antes de apostar con riesgo alto, revisa premio máximo, límite de apuesta y retiro."
+          },
+          {
+            "summary": "Limita secuencias rápidas",
+            "body": "Varias bolas pueden aumentar rápidamente el volumen total. Usa límites y <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Plinko de CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Plinko de CS2?",
+            "body": "Un juego aleatorio donde una bola virtual atraviesa un campo y termina en una casilla con multiplicador."
+          },
+          {
+            "summary": "¿De qué depende el multiplicador?",
+            "body": "De la casilla final, filas, nivel de riesgo y tabla de pagos."
+          },
+          {
+            "summary": "¿Qué cambia el nivel de riesgo?",
+            "body": "Cambia la distribución; el riesgo alto suele añadir multiplicadores extremos mayores y resultados comunes menos favorables."
+          },
+          {
+            "summary": "¿Más filas garantizan mayor premio?",
+            "body": "No. Cambian la distribución de posibles casillas, no garantizan una recompensa mayor."
+          },
+          {
+            "summary": "¿Se puede predecir dónde caerá la bola?",
+            "body": "Los resultados anteriores no permiten predecir de forma fiable el siguiente resultado independiente."
+          },
+          {
+            "summary": "¿Qué significa Provably Fair en Plinko?",
+            "body": "Un método para comprobar que un resultado se generó con los datos y algoritmo publicados."
+          },
+          {
+            "summary": "¿Se puede usar saldo de bono?",
+            "body": "A veces, con wagering y límites máximos de apuesta. Consulta <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian tablas de pago, riesgo, Provably Fair, límites, pagos y retiros."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Plinko de CS2: como o modo funciona e o que comparar",
+        "paragraphs": [
+          "Plinko é um jogo aleatório em que uma bola virtual atravessa um campo de obstáculos e termina em uma posição com multiplicador. O usuário normalmente escolhe aposta, número de linhas e nível de risco antes de a plataforma determinar o resultado.",
+          "Número de linhas e perfil de risco mudam a distribuição: uma configuração conservadora costuma concentrar resultados perto do centro, enquanto risco alto adiciona multiplicadores extremos raros e pagamentos menos favoráveis em muitas outras posições.",
+          "A CSGOBROKER avalia Plinko separadamente de <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Minas</a> e <a href=\"/csgo/crash\">Crash</a>. Importam a tabela completa, probabilidades, vantagem da plataforma, Provably Fair e limites, não a animação da bola."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona Plinko em sites de CS2",
+        "items": [
+          {
+            "title": "Número de linhas",
+            "paragraphs": [
+              "Mais linhas criam mais posições finais e distribuição de multiplicadores mais detalhada. As opções variam por site."
+            ]
+          },
+          {
+            "title": "Nível de risco",
+            "paragraphs": [
+              "Plataformas costumam oferecer vários perfis. Risco alto pode criar grandes multiplicadores nas pontas e pagamentos menos favoráveis no restante."
+            ]
+          },
+          {
+            "title": "Distribuição de multiplicadores",
+            "paragraphs": [
+              "Cada posição final tem um multiplicador. Avaliar o modo exige olhar mais do que apenas o valor máximo."
+            ]
+          },
+          {
+            "title": "Várias bolas",
+            "paragraphs": [
+              "Alguns sites permitem lançar sequências rápidas. Isso muda a velocidade, não o valor esperado da aposta individual."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "O sistema deve permitir verificar resultado e dados de geração de uma queda específica."
+            ]
+          },
+          {
+            "title": "Plinko dentro de casino",
+            "paragraphs": [
+              "Frequentemente é um jogo próprio dentro de uma plataforma maior. Nesse caso, compare também <a href=\"/csgo/casino\">casinos de CS2</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de jogar Plinko",
+        "intro": "O multiplicador máximo pouco significa sem a distribuição de probabilidades do restante da tabela.",
+        "items": [
+          {
+            "summary": "Tabela de pagamentos",
+            "body": "Veja todos os multiplicadores para cada número de linhas e nível de risco."
+          },
+          {
+            "summary": "Probabilidades",
+            "body": "Quando os detalhes matemáticos são publicados, compare a chance de cada posição com o pagamento."
+          },
+          {
+            "summary": "Vantagem da plataforma",
+            "body": "O retorno depende da combinação completa de probabilidades e multiplicadores. O mesmo máximo pode esconder margens diferentes."
+          },
+          {
+            "summary": "Linhas e risco",
+            "body": "Confira flexibilidade e se a interface mostra claramente como os pagamentos mudam."
+          },
+          {
+            "summary": "Ganho máximo",
+            "body": "Um multiplicador extremo pode estar sujeito a limite máximo de pagamento ou aposta."
+          },
+          {
+            "summary": "Provably Fair e saque",
+            "body": "Verificação, KYC, taxas e mínimos de saque importam independentemente da animação."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de Plinko",
+        "intro": "Comparamos a distribuição completa e a transparência, não apenas o multiplicador máximo.",
+        "items": [
+          {
+            "summary": "Tabelas de pagamento",
+            "body": "Comparamos multiplicadores entre linhas e níveis de risco."
+          },
+          {
+            "summary": "Condições matemáticas",
+            "body": "Avaliamos se probabilidades e vantagem efetiva podem ser entendidas."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Revisamos se uma queda específica pode ser verificada."
+          },
+          {
+            "summary": "Configurações",
+            "body": "Linhas, risco, velocidade e facilidade para sequências de apostas."
+          },
+          {
+            "summary": "Limites e pagamentos",
+            "body": "Aposta mínima/máxima, ganho máximo, skins, cripto, taxas e KYC."
+          },
+          {
+            "summary": "Interface e histórico",
+            "body": "Controles claros, histórico, mobile e suporte influenciam a nota."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de Plinko muda",
+        "paragraphs": [
+          "A plataforma pode alterar multiplicadores, perfis de risco, linhas, pagamento máximo ou margem sem mudar muito o visual do jogo.",
+          "Bônus e condições de pagamento também mudam; saldo promocional pode ter wagering e limite de aposta específicos para Plinko.",
+          "Para outros jogos rápidos compare <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Minas</a>, <a href=\"/csgo/crash\">Crash</a> ou <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "A trajetória visível parece física, mas o resultado do Plinko online é gerado por software.",
+        "items": [
+          {
+            "summary": "Verifique Provably Fair",
+            "body": "Se houver verificação, confirme que uma queda concluída pode realmente ser checada."
+          },
+          {
+            "summary": "Não deduza posição favorável pelo histórico",
+            "body": "Trajetórias independentes anteriores não tornam uma posição mais provável na próxima aposta."
+          },
+          {
+            "summary": "Veja a tabela inteira",
+            "body": "Multiplicador alto e raro chama atenção, mas toda a distribuição define a matemática."
+          },
+          {
+            "summary": "Confira limite de pagamento",
+            "body": "Antes de risco alto, veja ganho máximo, limite de aposta e condições de saque."
+          },
+          {
+            "summary": "Limite sequências rápidas",
+            "body": "Várias bolas podem aumentar rapidamente o volume de apostas. Use limites e <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Plinko de CS2",
+        "items": [
+          {
+            "summary": "O que é Plinko de CS2?",
+            "body": "Jogo aleatório em que uma bola virtual atravessa um campo e termina em uma posição com multiplicador."
+          },
+          {
+            "summary": "Do que depende o multiplicador?",
+            "body": "Da posição final, número de linhas, risco e tabela de pagamentos."
+          },
+          {
+            "summary": "O que o nível de risco muda?",
+            "body": "Muda a distribuição; risco alto costuma criar extremos maiores e resultados comuns menos favoráveis."
+          },
+          {
+            "summary": "Mais linhas garantem prêmio maior?",
+            "body": "Não. Mudam a distribuição de posições possíveis, não garantem pagamento maior."
+          },
+          {
+            "summary": "Dá para prever onde a bola vai cair?",
+            "body": "Resultados anteriores não preveem de forma confiável o próximo resultado independente."
+          },
+          {
+            "summary": "O que é Provably Fair em Plinko?",
+            "body": "Método para verificar que o resultado foi gerado com dados e algoritmo publicados."
+          },
+          {
+            "summary": "Posso usar saldo de bônus?",
+            "body": "Às vezes, com wagering e limite máximo de aposta. Veja <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Tabelas, risco, Provably Fair, limites, pagamentos e saques mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Plinko Siteleri: Mod Nasıl Çalışır ve Neler Karşılaştırılır?",
+        "paragraphs": [
+          "Plinko, sanal bir topun engellerden geçip çarpan bulunan bir bölmeye düştüğü rastgele oyundur. Kullanıcı genellikle bahis miktarı, sıra sayısı ve risk seviyesini seçer; ardından platform son pozisyonu belirler.",
+          "Sıra sayısı ve risk profili çarpan dağılımını değiştirir. Düşük risk sonuçları çoğunlukla merkeze yaklaştırırken yüksek risk kenarlarda nadir büyük çarpanlar ve diğer bölmelerde daha düşük ödemeler oluşturabilir.",
+          "CSGOBROKER Plinko'yu <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mayın</a> ve <a href=\"/csgo/crash\">Crash</a> modlarından ayrı değerlendirir. Top animasyonundan çok tam ödeme tablosu, olasılıklar, site avantajı, Provably Fair ve ödeme limitleri önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Plinko Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Sıra sayısı",
+            "paragraphs": [
+              "Daha fazla sıra daha fazla son pozisyon ve daha ayrıntılı çarpan dağılımı yaratır. Desteklenen değerler siteye göre değişir."
+            ]
+          },
+          {
+            "title": "Risk seviyesi",
+            "paragraphs": [
+              "Platformlar genellikle birkaç risk profili sunar. Yüksek risk kenarlarda büyük çarpanlar yaratabilir, ancak dağılımın çoğunda daha düşük ödeme bulunabilir."
+            ]
+          },
+          {
+            "title": "Çarpan dağılımı",
+            "paragraphs": [
+              "Her son bölmenin kendi çarpanı vardır. Modu değerlendirmek için yalnızca maksimum değere bakmak yeterli değildir."
+            ]
+          },
+          {
+            "title": "Birden fazla top",
+            "paragraphs": [
+              "Bazı siteler hızlı top serileri sunar. Bu oyun hızını artırır, tek bahsin matematiksel beklentisini değiştirmez."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Doğrulanabilir sistem belirli tamamlanmış düşüşün sonucunu ve üretim verilerini kontrol etmeyi sağlamalıdır."
+            ]
+          },
+          {
+            "title": "Casino içinde Plinko",
+            "paragraphs": [
+              "Plinko çoğu zaman büyük platformun kendi oyunlarından biridir. Bu durumda <a href=\"/csgo/casino\">CS2 Casino sitelerini</a> de karşılaştırın."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Plinko Oynamadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Maksimum çarpan, diğer bölmelerin olasılık dağılımı bilinmeden tek başına çok az şey anlatır.",
+        "items": [
+          {
+            "summary": "Ödeme tablosu",
+            "body": "Her sıra ve risk seviyesi için tüm çarpanları inceleyin, yalnızca en büyüğünü değil."
+          },
+          {
+            "summary": "Olasılık dağılımı",
+            "body": "Site matematiği yayınlıyorsa farklı bölmelere düşme şansını ödemelerle karşılaştırın."
+          },
+          {
+            "summary": "Site avantajı",
+            "body": "Gerçek beklenen değer tüm olasılık ve çarpanların birleşimine bağlıdır. Aynı maksimum çarpan farklı marjları gizleyebilir."
+          },
+          {
+            "summary": "Sıra ve risk ayarları",
+            "body": "Yapılandırmanın esnekliğini ve arayüzün ödeme değişimini açık gösterip göstermediğini kontrol edin."
+          },
+          {
+            "summary": "Maksimum kazanç",
+            "body": "Büyük kenar çarpanı maksimum ödeme veya bahis limitiyle sınırlanabilir."
+          },
+          {
+            "summary": "Provably Fair ve çekim",
+            "body": "Doğrulama, KYC, ücret ve minimum çekim animasyondan bağımsız olarak önemlidir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Plinko Sitelerini Nasıl Değerlendirir?",
+        "intro": "Maksimum çarpandan çok tam ödeme dağılımı ve şeffaflığa bakıyoruz.",
+        "items": [
+          {
+            "summary": "Ödeme tabloları",
+            "body": "Sıra sayıları ve risk seviyeleri arasındaki çarpanları karşılaştırırız."
+          },
+          {
+            "summary": "Matematiksel koşullar",
+            "body": "Olasılık bilgisinin ve gerçek site avantajının anlaşılabilirliğini değerlendiririz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Belirli top sonucunun doğrulanabilirliğini inceleriz."
+          },
+          {
+            "summary": "Mod ayarları",
+            "body": "Sıralar, risk profilleri, hız ve seri bahis kullanımı değerlendirilir."
+          },
+          {
+            "summary": "Limit ve ödemeler",
+            "body": "Min/max bahis, maksimum kazanç, skin, kripto, ücret ve KYC dahildir."
+          },
+          {
+            "summary": "Arayüz ve geçmiş",
+            "body": "Açık kontroller, sonuç geçmişi, mobil kullanım ve destek puana katkı sağlar."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Plinko Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platform görsel oyunu neredeyse aynı tutarken çarpan tablosunu, risk seviyelerini, sıra sayısını, maksimum ödemeyi veya site avantajını değiştirebilir.",
+          "Bonus ve ödeme şartları da değişir; bonus bakiye Plinko için özel çevrim ve maksimum bahis sınırlarına sahip olabilir.",
+          "Diğer hızlı oyunlar için <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mayın</a>, <a href=\"/csgo/crash\">Crash</a> veya <a href=\"/csgo/casino\">Casino</a> sayfalarını karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Görünür top hareketi fiziksel süreç hissi verse de online Plinko sonucu yazılım tarafından üretilir.",
+        "items": [
+          {
+            "summary": "Provably Fair kontrolü",
+            "body": "Doğrulama sunuluyorsa tamamlanan belirli top sonucunun gerçekten kontrol edilebildiğinden emin olun."
+          },
+          {
+            "summary": "Geçmişten şanslı konum çıkarmayın",
+            "body": "Önceki bağımsız yollar belirli bölmeyi sonraki bahiste daha olası yapmaz."
+          },
+          {
+            "summary": "Sadece maksimuma değil tüm tabloya bakın",
+            "body": "Nadir büyük çarpan dikkat çeker, ancak matematiği tüm dağılım belirler."
+          },
+          {
+            "summary": "Ödeme limitini kontrol edin",
+            "body": "Yüksek riskten önce maksimum kazanç, bahis limiti ve çekim koşullarını inceleyin."
+          },
+          {
+            "summary": "Hızlı serileri sınırlayın",
+            "body": "Çoklu top toplam bahis hacmini hızlı artırabilir. Limit kullanın ve <a href=\"/responsibility\">sorumlu oyun</a> bilgilerine bakın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Plinko Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 Plinko nedir?",
+            "body": "Sanal topun engelli alandan geçip çarpanlı bir bölmeye düştüğü rastgele oyundur."
+          },
+          {
+            "summary": "Çarpanı ne belirler?",
+            "body": "Son bölme, sıra sayısı, risk seviyesi ve sitenin ödeme tablosu."
+          },
+          {
+            "summary": "Risk seviyesi neyi değiştirir?",
+            "body": "Ödeme dağılımını değiştirir; yüksek risk daha büyük uç çarpanlar ve daha zayıf yaygın sonuçlar oluşturabilir."
+          },
+          {
+            "summary": "Daha fazla sıra daha büyük kazanç garanti eder mi?",
+            "body": "Hayır. Olası son pozisyonların dağılımını değiştirir, daha büyük ödeme garanti etmez."
+          },
+          {
+            "summary": "Topun nereye düşeceği tahmin edilebilir mi?",
+            "body": "Geçmiş sonuçlar sonraki bağımsız yazılım sonucunu güvenilir şekilde tahmin etmez."
+          },
+          {
+            "summary": "Plinko'da Provably Fair nedir?",
+            "body": "Belirli sonucun yayınlanan veri ve algoritmayla üretildiğini kontrol etmeye yarayan yöntemdir."
+          },
+          {
+            "summary": "Bonus bakiye kullanılabilir mi?",
+            "body": "Bazen; çevrim ve maksimum bahis kısıtları olabilir. <a href=\"/freebies\">Bonuslara</a> bakın."
+          },
+          {
+            "summary": "CSGOBROKER Plinko sıralaması neden değişir?",
+            "body": "Ödeme tabloları, risk, Provably Fair, limitler, ödemeler ve çekim değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Plinko Sites: Plinko कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Plinko random game है जिसमें virtual ball pegs के field से गुजरकर multiplier वाली slot में land करती है। User आम तौर पर wager, row count और risk level चुनता है, फिर platform final position determine करता है।",
+          "Rows और risk profile multiplier distribution बदलते हैं: low-risk setup outcomes को center के आसपास concentrate कर सकती है, जबकि high-risk settings rare large edge multipliers के साथ बाकी कई positions पर lower payouts देती हैं।",
+          "CSGOBROKER Plinko को <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a> और <a href=\"/csgo/crash\">Crash</a> से अलग evaluate करता है। Ball animation से ज्यादा full payout table, outcome probabilities, platform edge, Provably Fair और payout limits महत्वपूर्ण हैं।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Plinko कैसे काम करता है",
+        "items": [
+          {
+            "title": "Rows की संख्या",
+            "paragraphs": [
+              "More rows ज्यादा ending positions और अधिक detailed multiplier distribution बनाती हैं। Supported counts site पर depend करती हैं।"
+            ]
+          },
+          {
+            "title": "Risk level",
+            "paragraphs": [
+              "Platforms आम तौर पर कई risk profiles देती हैं। High risk बड़े edge multipliers दे सकता है, लेकिन board के बड़े हिस्से पर lower payouts भी हो सकती हैं।"
+            ]
+          },
+          {
+            "title": "Multiplier distribution",
+            "paragraphs": [
+              "हर final slot का multiplier होता है। Mode evaluate करने के लिए सिर्फ maximum value देखना पर्याप्त नहीं है।"
+            ]
+          },
+          {
+            "title": "Multiple balls",
+            "paragraphs": [
+              "कुछ sites rapid ball sequences देती हैं। इससे game speed बदलती है, individual wager का expected value नहीं।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Verification system specific completed drop का result और generation data check करने देना चाहिए।"
+            ]
+          },
+          {
+            "title": "Casino के अंदर Plinko",
+            "paragraphs": [
+              "Plinko अक्सर larger platform का proprietary game होता है। ऐसे में <a href=\"/csgo/casino\">CS2 casino sites</a> भी compare करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Plinko खेलने से पहले क्या Check करें",
+        "intro": "Maximum multiplier की value rest of board की probability distribution जाने बिना बहुत limited information देती है।",
+        "items": [
+          {
+            "summary": "Payout table",
+            "body": "हर row count और risk setting के सभी multipliers देखें, सिर्फ सबसे बड़ा नहीं।"
+          },
+          {
+            "summary": "Outcome probabilities",
+            "body": "अगर site math publish करती है तो अलग slots की chance और payouts compare करें।"
+          },
+          {
+            "summary": "Platform edge",
+            "body": "Expected return probabilities और multipliers के पूरे combination पर depend करती है। Same maximum multiplier अलग margins के साथ हो सकता है।"
+          },
+          {
+            "summary": "Rows और risk settings",
+            "body": "Configuration कितनी flexible है और interface payout changes clearly दिखाता है या नहीं, check करें।"
+          },
+          {
+            "summary": "Maximum win",
+            "body": "Large edge multiplier payout cap या wager limit के अधीन हो सकता है।"
+          },
+          {
+            "summary": "Provably Fair और withdrawals",
+            "body": "Verification, KYC, fees और withdrawal minimums visual animation से independent important हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Plinko Sites को कैसे Rate करता है",
+        "intro": "हम maximum multiplier से ज्यादा complete payout distribution और transparency compare करते हैं।",
+        "items": [
+          {
+            "summary": "Payout tables",
+            "body": "Different row counts और risk levels के multipliers compare करते हैं।"
+          },
+          {
+            "summary": "Mathematical terms",
+            "body": "Probability information और effective platform edge कितना understandable है, evaluate करते हैं।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Specific ball result verify हो सकता है या नहीं, देखते हैं।"
+          },
+          {
+            "summary": "Game settings",
+            "body": "Rows, risk profiles, speed और multiple-bet usability शामिल हैं।"
+          },
+          {
+            "summary": "Limits और payments",
+            "body": "Minimum/maximum wagers, maximum win, skins, crypto, fees और KYC consider होते हैं।"
+          },
+          {
+            "summary": "Interface और history",
+            "body": "Clear controls, result history, mobile usability और support rating में शामिल हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Plinko Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platform visual game लगभग same रखते हुए multiplier tables, risk profiles, row counts, maximum payout या mathematical edge बदल सकती है।",
+          "Bonus और payment terms भी बदलती हैं; Plinko में bonus balance पर specific wagering और maximum-bet restrictions हो सकती हैं।",
+          "दूसरे instant games के लिए <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, <a href=\"/csgo/crash\">Crash</a> या <a href=\"/csgo/casino\">Casino</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Visible ball path physical process जैसा लग सकता है, लेकिन online Plinko outcome software-generated होता है।",
+        "items": [
+          {
+            "summary": "Provably Fair verify करें",
+            "body": "अगर verification advertised है तो completed ball result वास्तव में check होना चाहिए।"
+          },
+          {
+            "summary": "History से lucky drop position infer न करें",
+            "body": "Previous independent paths next wager में किसी slot को more likely नहीं बनातीं।"
+          },
+          {
+            "summary": "Full table देखें, सिर्फ maximum नहीं",
+            "body": "Rare high multiplier attention खींचता है, लेकिन math पूरी distribution तय करती है।"
+          },
+          {
+            "summary": "Payout caps check करें",
+            "body": "High-risk wager से पहले maximum win, bet limits और withdrawal conditions देखें।"
+          },
+          {
+            "summary": "Rapid sequences limit करें",
+            "body": "Multiple-ball play total wagering जल्दी बढ़ा सकती है। Limits और <a href=\"/responsibility\">responsible gambling</a> guidance use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Plinko FAQ",
+        "items": [
+          {
+            "summary": "CS2 Plinko क्या है?",
+            "body": "Random game जिसमें virtual ball peg field से गुजरकर multiplier वाली slot में land करती है।"
+          },
+          {
+            "summary": "Multiplier किस पर depend करता है?",
+            "body": "Final slot, row count, risk level और platform payout table पर।"
+          },
+          {
+            "summary": "Risk level क्या बदलता है?",
+            "body": "Payout distribution बदलता है; high risk larger extreme multipliers और less favorable common outcomes दे सकता है।"
+          },
+          {
+            "summary": "क्या more rows bigger win guarantee करती हैं?",
+            "body": "नहीं। Rows possible ending slots की distribution बदलती हैं, larger payout guarantee नहीं करतीं।"
+          },
+          {
+            "summary": "क्या landing slot predict हो सकती है?",
+            "body": "Past results next independent software-generated outcome reliably predict नहीं करते।"
+          },
+          {
+            "summary": "Plinko में Provably Fair क्या है?",
+            "body": "Method जिससे check किया जाता है कि result published generation data और algorithm से बना था।"
+          },
+          {
+            "summary": "क्या bonus balance use कर सकते हैं?",
+            "body": "कभी-कभी, wagering और maximum-bet restrictions के साथ। <a href=\"/freebies\">Bonuses</a> देखें।"
+          },
+          {
+            "summary": "CSGOBROKER Plinko ranking क्यों बदलती है?",
+            "body": "Payout tables, risk levels, fairness tools, limits, payments और withdrawals बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

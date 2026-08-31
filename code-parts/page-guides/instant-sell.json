@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "instant-sell",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Мгновенная продажа скинов CS2: как работает instant sell и что сравнивать",
+        "paragraphs": [
+          "Instant sell — это способ продать скин CS2 не другому пользователю, а непосредственно сервису по заранее рассчитанной цене. Площадка оценивает предметы из инвентаря, показывает предложение, принимает их через Steam Trade Offer и после завершения операции позволяет получить деньги, криптовалюту или другой поддерживаемый способ выплаты.",
+          "Главное отличие от <a href=\"/csgo/marketplaces\">маркетплейса</a> — скорость и отсутствие ожидания покупателя. На обычной торговой площадке продавец выставляет цену и ждёт сделки, а instant-sell сервис выкупает предмет сразу, но его предложение обычно ниже потенциальной рыночной цены. Более широкий разбор способов продажи находится на странице <a href=\"/csgo/sell-skins\">продажи скинов CS2</a>.",
+          "Поэтому сравнивать instant-sell сайты только по обещанию «быстрой выплаты» недостаточно. Важны фактическая цена выкупа конкретного инвентаря, источник цен, spread относительно рынка, комиссии и конвертация, поддерживаемые способы вывода, KYC, минимальные суммы и время от отправки Trade Offer до получения денег."
+        ]
+      },
+      "categories": {
+        "title": "Как работает мгновенная продажа скинов CS2",
+        "items": [
+          {
+            "title": "Автоматическая оценка инвентаря",
+            "paragraphs": [
+              "После подключения Steam или ввода trade URL сервис получает список доступных предметов и рассчитывает предложение для каждого из них. Внутренняя цена может зависеть от ликвидности, текущего спроса, собственного запаса площадки и внешних рыночных котировок."
+            ]
+          },
+          {
+            "title": "Цена известна до отправки предмета",
+            "paragraphs": [
+              "Нормальный instant-sell процесс показывает стоимость продажи до подтверждения Trade Offer. Пользователь должен видеть, сколько он получит за отдельные предметы и за весь выбранный набор, а также срок действия котировки, если цена фиксируется ненадолго."
+            ]
+          },
+          {
+            "title": "Выкуп без ожидания покупателя",
+            "paragraphs": [
+              "Сервис выступает непосредственным покупателем или использует заранее подготовленную ликвидность, поэтому не нужно создавать листинг и ждать другого пользователя. За эту скорость обычно приходится принимать скидку относительно цены, по которой предмет потенциально мог бы продаться на P2P-маркетплейсе."
+            ]
+          },
+          {
+            "title": "Выплата деньгами или криптовалютой",
+            "paragraphs": [
+              "После принятия предметов площадка может предлагать банковские методы, электронные кошельки, криптовалюты или другие варианты. Доступность конкретного способа зависит от страны, валюты, минимальной суммы и требований к верификации."
+            ]
+          },
+          {
+            "title": "Оценка float, pattern и стикеров",
+            "paragraphs": [
+              "Базовая автоматическая модель не всегда учитывает редкий float, pattern, phase, дорогие stickers или необычное сочетание наклеек. Для дорогих предметов важно проверить, учитывает ли сервис эти характеристики или оценивает только базовое название скина."
+            ]
+          },
+          {
+            "title": "Продажа нескольких предметов за одну операцию",
+            "paragraphs": [
+              "Instant sell удобен для быстрого вывода стоимости всего инвентаря или большой группы предметов. При этом итоговая средняя скидка может отличаться от предложения по одному высоколиквидному скину, поэтому полезно смотреть цену каждого выбранного item отдельно."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед мгновенной продажей",
+        "intro": "Самая высокая рекламная надбавка не обязательно означает самый высокий итоговый payout: сравнивать нужно конкретное предложение для ваших предметов после всех удержаний.",
+        "items": [
+          {
+            "summary": "Фактическая цена выкупа",
+            "body": "Откройте одинаковый набор предметов на нескольких сервисах и сравните сумму, которую каждый готов заплатить прямо сейчас. Процент «до рыночной цены» менее полезен, чем конкретная котировка по вашему инвентарю."
+          },
+          {
+            "summary": "Разница с рыночной ценой",
+            "body": "Сравните предложение instant sell с ценами на <a href=\"/csgo/marketplaces\">маркетплейсах</a> и другими способами продажи. Разница показывает, сколько стоимости вы отдаёте в обмен на немедленную ликвидность и отсутствие ожидания покупателя."
+          },
+          {
+            "summary": "Комиссии и конвертация",
+            "body": "Часть площадок включает все расходы в цену выкупа, другие могут отдельно удерживать комиссию при выводе или конвертации валюты. Считать стоит net payout, который приходит на выбранный способ выплаты."
+          },
+          {
+            "summary": "Способы и сроки выплаты",
+            "body": "Проверьте доступные банки, карты, электронные кошельки и криптовалюты, минимальную сумму, заявленное время обработки и возможные задержки на стороне платёжного провайдера."
+          },
+          {
+            "summary": "KYC и лимиты",
+            "body": "Верификация может зависеть от страны, суммы или способа вывода. Если вы продаёте дорогой инвентарь, полезно заранее знать дневные лимиты, требования к документам и возможную проверку источника средств."
+          },
+          {
+            "summary": "Оценка редких свойств предмета",
+            "body": "Для ножей, перчаток, редких паттернов, low/high float и скинов с дорогими стикерами автоматическое предложение может не отражать коллекционную премию. Такие предметы стоит отдельно сравнить с обычной продажей."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает instant-sell сервисы",
+        "intro": "В этой категории основным критерием является не скорость сама по себе, а сочетание конкурентной цены, понятной сделки и надёжного получения выплаты.",
+        "items": [
+          {
+            "summary": "Конкурентность предложения",
+            "body": "Мы сравниваем фактические цены выкупа на типичные ликвидные предметы и смотрим, насколько большая скидка возникает относительно альтернативных рынков."
+          },
+          {
+            "summary": "Прозрачность ценообразования",
+            "body": "Учитывается, видит ли пользователь окончательную цену до Trade Offer, понятны ли бонусы к продаже, срок котировки и причины, по которым отдельные предметы оцениваются ниже."
+          },
+          {
+            "summary": "Скорость операции",
+            "body": "Проверяется путь от выбора предметов и подтверждения обмена до появления средств, включая автоматическую обработку и возможные ручные проверки."
+          },
+          {
+            "summary": "Способы выплаты и комиссии",
+            "body": "Оцениваются доступные валюты, банковские и криптовалютные методы, минимальные суммы, комиссии сервиса и дополнительные расходы платёжных систем."
+          },
+          {
+            "summary": "KYC и региональные ограничения",
+            "body": "Мы учитываем, когда требуется верификация, какие лимиты действуют без неё и доступны ли основные способы вывода пользователям из разных стран."
+          },
+          {
+            "summary": "Trade Offer, безопасность и поддержка",
+            "body": "Корректный бот, понятный статус сделки, история операций и работа поддержки особенно важны, потому что после подтверждения Steam Trade Offer предмет уже передан сервису."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему предложения instant sell меняются",
+        "paragraphs": [
+          "Цена выкупа зависит от рынка и собственной ликвидности сервиса. Если предмет быстро продаётся и площадке нужен дополнительный запас, spread может быть меньше; при падении спроса или избытке конкретного скина предложение может заметно снизиться.",
+          "Меняются и условия выплаты: сервисы добавляют или убирают платёжные методы, корректируют комиссии, минимумы, валютные курсы и требования KYC. Поэтому высокая котировка не всегда остаётся лучшей после выбора конкретного способа вывода.",
+          "Если скорость не является главным приоритетом, сравните <a href=\"/csgo/marketplaces\">маркетплейсы CS2</a> и общий раздел <a href=\"/csgo/sell-skins\">продажи скинов</a>. Если вместо продажи нужен обмен на другой предмет, используйте <a href=\"/csgo/trade-skins\">сайты обмена</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при мгновенной продаже скинов",
+        "intro": "В instant sell пользователь передаёт предмет до получения внешней выплаты, поэтому особенно важно проверить адрес сервиса, Trade Offer и окончательную котировку.",
+        "items": [
+          {
+            "summary": "Проверяйте домен перед входом через Steam",
+            "body": "Фишинговые копии instant-sell сайтов могут показывать поддельную авторизацию или заменять данные торгового бота. Открывайте сервис по правильному адресу и не вводите Steam-пароль в стороннюю форму."
+          },
+          {
+            "summary": "Сверяйте Steam Trade Offer",
+            "body": "Перед подтверждением проверьте аккаунт бота, список передаваемых предметов и отсутствие неожиданных вещей на вашей стороне сделки. Не ориентируйтесь только на имя или аватар."
+          },
+          {
+            "summary": "Подтверждайте актуальную котировку",
+            "body": "Цена может измениться между первым расчётом и созданием Trade Offer. Убедитесь, что сумма на финальном этапе соответствует предложению, которое вы согласились принять."
+          },
+          {
+            "summary": "Проверяйте KYC и лимиты заранее",
+            "body": "Перед передачей дорогого инвентаря выясните, сможете ли вывести всю сумму выбранным способом и потребуются ли документы или дополнительные проверки."
+          },
+          {
+            "summary": "Редкие дорогие предметы сравнивайте отдельно",
+            "body": "Быстрая продажа полезна для ликвидности, но автоматический выкуп может недооценить коллекционную премию. Для дорогого pattern, float или sticker craft сравните несколько предложений перед подтверждением."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о мгновенной продаже скинов CS2",
+        "items": [
+          {
+            "summary": "Что такое быстрая продажа скинов CS2?",
+            "body": "Это продажа предмета непосредственно сервису по автоматически рассчитанной цене без ожидания другого покупателя. После Steam Trade Offer площадка выплачивает стоимость поддерживаемым способом."
+          },
+          {
+            "summary": "Почему цена быстрой продажи обычно ниже рыночной?",
+            "body": "Сервис берёт на себя риск дальнейшей перепродажи, ценового движения и хранения инвентаря и предоставляет немедленную ликвидность. Эта маржа обычно отражается в spread между ценой выкупа и потенциальной рыночной ценой."
+          },
+          {
+            "summary": "Чем быстрая продажа отличается от маркетплейса?",
+            "body": "На <a href=\"/csgo/marketplaces\">маркетплейсе</a> вы обычно выставляете предмет и ждёте покупателя, потенциально получая более высокую цену. Instant sell даёт готовое предложение сразу, но чаще с большей скидкой."
+          },
+          {
+            "summary": "Сколько времени занимает выплата?",
+            "body": "Автоматическая часть может занимать минуты, но реальный срок зависит от способа выплаты, KYC, ручной проверки, банковской или блокчейн-обработки."
+          },
+          {
+            "summary": "Нужен ли KYC для быстрой продажи?",
+            "body": "Зависит от сервиса, страны, суммы и способа вывода. На небольших операциях верификация может не требоваться, а на крупных — стать обязательной."
+          },
+          {
+            "summary": "Учитываются ли float, pattern и стикеры?",
+            "body": "Не всегда. Некоторые сервисы добавляют премию за отдельные характеристики, другие оценивают предмет по базовой модели. Дорогие редкие свойства стоит проверять до сделки."
+          },
+          {
+            "summary": "Можно ли продать весь инвентарь сразу?",
+            "body": "Многие instant-sell площадки позволяют выбрать несколько предметов одной операцией, но конкретные скины могут быть недоступны для выкупа или иметь отдельные лимиты."
+          },
+          {
+            "summary": "Почему рейтинг проектов на CSGOBROKER меняется?",
+            "body": "Изменяются цены выкупа, spread, ликвидность, комиссии, способы выплаты, KYC, скорость обработки и стабильность Steam Trade Offer, поэтому оценка сервиса может меняться."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Instantly Selling CS2 Skins: How Instant Sell Works and What to Compare",
+        "paragraphs": [
+          "Instant sell is a way to sell a CS2 skin directly to a service rather than waiting for another user to buy it. The platform evaluates items in the inventory, shows a pre-calculated offer, receives the selected skins through a Steam Trade Offer, and then pays out through cash, cryptocurrency, or another supported method.",
+          "The main difference from a <a href=\"/csgo/marketplaces\">marketplace</a> is speed and the absence of buyer waiting time. On a normal marketplace, a seller lists an item and waits for a transaction; an instant-sell service buys it immediately, but the offer is usually below the price that might be achieved on the open market. The broader set of selling methods is covered under <a href=\"/csgo/sell-skins\">selling CS2 skins</a>.",
+          "That means a promise of a fast payout is not enough to compare services. The important factors are the actual quote for a specific inventory, pricing source, spread to the market, fees and currency conversion, supported payout methods, KYC, minimum amounts, and the time between confirming the Trade Offer and receiving external funds."
+        ]
+      },
+      "categories": {
+        "title": "How Instant CS2 Skin Selling Works",
+        "items": [
+          {
+            "title": "Automatic inventory valuation",
+            "paragraphs": [
+              "After Steam is connected or a trade URL is supplied, the service reads eligible items and calculates a quote for each one. Internal prices can depend on liquidity, current demand, the platform's own inventory needs, and external market data."
+            ]
+          },
+          {
+            "title": "The offer is shown before item transfer",
+            "paragraphs": [
+              "A normal instant-sell flow displays the sale value before the Steam Trade Offer is confirmed. Users should be able to see the amount for individual items and the complete selection, as well as how long a quote remains valid when prices are locked only briefly."
+            ]
+          },
+          {
+            "title": "Immediate buyout instead of waiting for a buyer",
+            "paragraphs": [
+              "The service acts as the direct buyer or uses pre-arranged liquidity, so the seller does not need to create a listing and wait. In exchange for that speed, the buyout price is commonly discounted relative to a possible P2P marketplace sale."
+            ]
+          },
+          {
+            "title": "Cash or cryptocurrency payouts",
+            "paragraphs": [
+              "After receiving the items, a platform can support bank methods, electronic wallets, cryptocurrency, or other options. Availability depends on country, currency, minimum amount, and verification requirements."
+            ]
+          },
+          {
+            "title": "Float, pattern, and sticker valuation",
+            "paragraphs": [
+              "A basic automated pricing model does not always account for rare float, pattern, phase, expensive stickers, or a valuable sticker combination. High-value items should be checked to see whether those characteristics receive a premium or only the base skin name is priced."
+            ]
+          },
+          {
+            "title": "Selling multiple items in one transaction",
+            "paragraphs": [
+              "Instant sell is useful for liquidating a whole inventory or a large group of items quickly. The average discount across a basket can differ from the quote on one highly liquid skin, so checking each selected item's price is still useful."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before an Instant Sale",
+        "intro": "The largest advertised sale bonus does not necessarily produce the highest final payout; the relevant comparison is the concrete offer for your items after every deduction.",
+        "items": [
+          {
+            "summary": "Actual buyout quote",
+            "body": "Load the same set of items on several services and compare what each is prepared to pay now. A marketing percentage such as 'up to market price' is less useful than a concrete inventory quote."
+          },
+          {
+            "summary": "Spread to market value",
+            "body": "Compare the instant-sell offer with prices on <a href=\"/csgo/marketplaces\">marketplaces</a> and other selling methods. The difference shows how much value is being exchanged for immediate liquidity and no buyer waiting time."
+          },
+          {
+            "summary": "Fees and conversion",
+            "body": "Some platforms include all costs in the buyout price, while others charge a payout or currency-conversion fee separately. Compare the net amount that reaches the selected payout method."
+          },
+          {
+            "summary": "Payout methods and timing",
+            "body": "Check available banks, cards, e-wallets, cryptocurrencies, minimum amounts, stated processing time, and delays that can occur at the payment-provider level."
+          },
+          {
+            "summary": "KYC and limits",
+            "body": "Verification requirements can depend on country, transaction size, or payout method. For a valuable inventory, know daily limits, document requirements, and possible source-of-funds checks before transferring items."
+          },
+          {
+            "summary": "Valuation of rare item properties",
+            "body": "Knives, gloves, rare patterns, unusual float, and valuable sticker crafts can carry premiums that an automated buyout does not fully recognize. Compare those items separately with regular marketplace selling."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Instant-Sell Services",
+        "intro": "For this category, speed by itself is not the main metric; we look for a combination of competitive pricing, a clear transaction flow, and reliable receipt of the payout.",
+        "items": [
+          {
+            "summary": "Competitiveness of the offer",
+            "body": "We compare actual buyout prices on typical liquid items and look at the discount relative to alternative markets."
+          },
+          {
+            "summary": "Pricing transparency",
+            "body": "We consider whether the final value is visible before the Trade Offer, whether sale bonuses and quote validity are clear, and whether lower valuations on particular items are understandable."
+          },
+          {
+            "summary": "Transaction speed",
+            "body": "We review the path from selecting items and confirming the trade to the appearance of funds, including automatic processing and any manual review."
+          },
+          {
+            "summary": "Payout methods and fees",
+            "body": "Supported currencies, bank and crypto methods, minimum amounts, service fees, and additional payment-provider costs are included."
+          },
+          {
+            "summary": "KYC and regional restrictions",
+            "body": "We consider when verification is required, which limits apply without it, and whether major payout methods are actually available across different countries."
+          },
+          {
+            "summary": "Trade Offer security and support",
+            "body": "Correct bot details, clear transaction status, operation history, and responsive support are particularly important because once the Steam Trade Offer is confirmed, the item has already been transferred to the service."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Instant-Sell Offers Change",
+        "paragraphs": [
+          "Buyout prices depend on the market and on the service's own liquidity. If an item sells quickly and the platform needs inventory, the spread can narrow; when demand falls or the service already holds too much of a particular skin, the offer can drop significantly.",
+          "Payout conditions also change. Services add or remove payment methods and adjust fees, minimums, currency conversion, and KYC requirements. A high headline quote therefore may not remain the best option after a specific withdrawal method is selected.",
+          "If speed is not the main priority, compare <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> and the broader <a href=\"/csgo/sell-skins\">skin-selling</a> category. If the goal is to exchange one item for another rather than sell it, use <a href=\"/csgo/trade-skins\">skin trading sites</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Instantly Selling CS2 Skins",
+        "intro": "With instant sell, the user transfers the item before receiving the external payout, so the service address, Trade Offer, and final quote deserve particular attention.",
+        "items": [
+          {
+            "summary": "Verify the domain before Steam sign-in",
+            "body": "Phishing copies of instant-sell sites can show fake authorization or substitute bot information. Open the correct service address and never enter a Steam password into an unrelated form."
+          },
+          {
+            "summary": "Check the Steam Trade Offer",
+            "body": "Before confirming, verify the bot account, every item being transferred, and that no unexpected items are included on your side. Do not rely only on a familiar bot name or avatar."
+          },
+          {
+            "summary": "Confirm the current quote",
+            "body": "Prices can move between the first calculation and creation of the Trade Offer. Make sure the amount at the final step matches the offer you intended to accept."
+          },
+          {
+            "summary": "Review KYC and limits in advance",
+            "body": "Before sending an expensive inventory, make sure the full amount can be withdrawn through the chosen method and whether documents or additional checks will be required."
+          },
+          {
+            "summary": "Compare rare expensive items separately",
+            "body": "Instant liquidity can be useful, but automated buyout models can undervalue collectible premiums. Compare several alternatives before confirming a rare pattern, float, or sticker craft."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Instant CS2 Skin Selling",
+        "items": [
+          {
+            "summary": "What is instant sell for CS2 skins?",
+            "body": "It is the direct sale of an item to a service at an automatically calculated price without waiting for another buyer. After the Steam Trade Offer, the platform pays the value through a supported payout method."
+          },
+          {
+            "summary": "Why is an instant-sell price usually below market price?",
+            "body": "The service assumes resale, price-movement, and inventory risk while providing immediate liquidity. That margin is normally reflected in the spread between the buyout quote and a potential marketplace price."
+          },
+          {
+            "summary": "How is instant sell different from a marketplace?",
+            "body": "On a <a href=\"/csgo/marketplaces\">marketplace</a>, you usually list an item and wait for a buyer, potentially receiving a higher price. Instant sell provides an immediate quote but commonly at a larger discount."
+          },
+          {
+            "summary": "How long does the payout take?",
+            "body": "Automated processing can take minutes, but the real timeline depends on the payout method, KYC, manual review, banking, or blockchain processing."
+          },
+          {
+            "summary": "Is KYC required for instant selling?",
+            "body": "It depends on the platform, country, amount, and payout method. Small transactions may be processed without verification while larger ones can trigger mandatory checks."
+          },
+          {
+            "summary": "Are float, patterns, and stickers included in the price?",
+            "body": "Not always. Some services add premiums for selected properties, while others price the base item only. Valuable rare properties should be checked before the transaction."
+          },
+          {
+            "summary": "Can I sell my whole inventory at once?",
+            "body": "Many instant-sell services allow multiple items in one transaction, but some skins can be unavailable for buyout or subject to separate limits."
+          },
+          {
+            "summary": "Why does the CSGOBROKER instant-sell ranking change?",
+            "body": "Buyout prices, spread, liquidity, fees, payout methods, KYC, processing speed, and Steam Trade Offer reliability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Venta instantánea de skins CS2: cómo funciona Instant Sell y qué comparar",
+        "paragraphs": [
+          "Instant sell es una forma de vender una skin de CS2 directamente a un servicio en lugar de esperar a que otro usuario la compre. La plataforma evalúa los objetos del inventario, muestra una oferta calculada previamente, recibe las skins elegidas mediante Steam Trade Offer y después paga por dinero, criptomonedas u otro método compatible.",
+          "La principal diferencia frente a un <a href=\"/csgo/marketplaces\">marketplace</a> es la velocidad y la ausencia de espera por un comprador. En un mercado normal el vendedor crea un anuncio y espera la operación; un servicio instant sell compra de inmediato, pero normalmente ofrece menos que el precio potencial del mercado abierto. Las alternativas se explican con más amplitud en <a href=\"/csgo/sell-skins\">venta de skins CS2</a>.",
+          "Por eso no basta con comparar la promesa de un pago rápido. Importan la oferta real para un inventario concreto, la fuente de precios, el spread respecto al mercado, las comisiones y conversión, métodos de retiro, KYC, mínimos y el tiempo entre confirmar el Trade Offer y recibir el dinero."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona la venta instantánea de skins CS2",
+        "items": [
+          {
+            "title": "Valoración automática del inventario",
+            "paragraphs": [
+              "Tras conectar Steam o proporcionar el trade URL, el servicio identifica los objetos disponibles y calcula una oferta para cada uno. El precio interno puede depender de liquidez, demanda, inventario propio de la plataforma y referencias de mercados externos."
+            ]
+          },
+          {
+            "title": "La oferta aparece antes de enviar el objeto",
+            "paragraphs": [
+              "Un proceso adecuado muestra el valor antes de confirmar el Steam Trade Offer. El usuario debería ver el importe de cada skin y del conjunto completo, además del tiempo durante el que la cotización permanece válida si el precio se bloquea solo por unos minutos."
+            ]
+          },
+          {
+            "title": "Compra inmediata sin esperar comprador",
+            "paragraphs": [
+              "El servicio actúa como comprador directo o dispone de liquidez preparada, de modo que no hace falta publicar un listing. A cambio de esa velocidad, el precio de compra suele tener un descuento frente a una posible venta P2P."
+            ]
+          },
+          {
+            "title": "Pago en dinero o criptomonedas",
+            "paragraphs": [
+              "Después de recibir las skins, la plataforma puede ofrecer métodos bancarios, e-wallets, criptomonedas u otras opciones. La disponibilidad depende del país, moneda, importe mínimo y requisitos de verificación."
+            ]
+          },
+          {
+            "title": "Valoración de float, pattern y stickers",
+            "paragraphs": [
+              "Un modelo automático básico no siempre reconoce float raro, pattern, phase, stickers caros o combinaciones valiosas. En objetos costosos conviene verificar si estas propiedades reciben una prima o solo se valora el nombre base."
+            ]
+          },
+          {
+            "title": "Venta de varios objetos en una operación",
+            "paragraphs": [
+              "Instant sell es útil para liquidar rápido un inventario completo o un grupo grande de skins. El descuento medio del conjunto puede diferir de la oferta sobre una skin muy líquida, así que sigue siendo útil revisar cada precio."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de una venta instantánea",
+        "intro": "El mayor bonus publicitado no garantiza el mayor payout final; hay que comparar la oferta concreta por tus objetos después de todos los costes.",
+        "items": [
+          {
+            "summary": "Oferta real de compra",
+            "body": "Carga el mismo conjunto de skins en varios servicios y compara cuánto paga cada uno ahora. Un porcentaje promocional es menos informativo que una cotización concreta del inventario."
+          },
+          {
+            "summary": "Spread respecto al mercado",
+            "body": "Compara instant sell con precios de <a href=\"/csgo/marketplaces\">marketplaces</a> y otros métodos. La diferencia muestra cuánto valor se entrega a cambio de liquidez inmediata y no esperar a un comprador."
+          },
+          {
+            "summary": "Comisiones y conversión",
+            "body": "Algunas plataformas incluyen todos los costes en la oferta y otras cobran aparte al retirar o convertir divisa. Compara el importe neto que llega al método elegido."
+          },
+          {
+            "summary": "Métodos y tiempo de pago",
+            "body": "Revisa bancos, tarjetas, monederos, criptomonedas, mínimos, tiempo de procesamiento anunciado y posibles retrasos del proveedor de pagos."
+          },
+          {
+            "summary": "KYC y límites",
+            "body": "La verificación puede depender de país, importe o método. Para un inventario caro, conviene conocer límites diarios, documentos y posibles comprobaciones del origen de fondos."
+          },
+          {
+            "summary": "Valoración de propiedades raras",
+            "body": "Cuchillos, guantes, patterns raros, float inusual y crafts con stickers valiosos pueden tener una prima que la compra automática no reconozca por completo. Compáralos también con una venta normal."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa servicios Instant Sell",
+        "intro": "En esta categoría no valoramos la velocidad de forma aislada, sino su combinación con un precio competitivo, una operación clara y un pago fiable.",
+        "items": [
+          {
+            "summary": "Competitividad de la oferta",
+            "body": "Comparamos precios de compra reales en objetos líquidos habituales y el descuento frente a mercados alternativos."
+          },
+          {
+            "summary": "Transparencia del precio",
+            "body": "Valoramos si el importe final se conoce antes del Trade Offer, si los bonus de venta y la validez de la cotización son claros y si se entienden las valoraciones inferiores de ciertos objetos."
+          },
+          {
+            "summary": "Velocidad de la operación",
+            "body": "Revisamos desde la selección y confirmación del intercambio hasta la llegada de fondos, incluyendo procesamiento automático y revisiones manuales."
+          },
+          {
+            "summary": "Métodos de pago y comisiones",
+            "body": "Se incluyen divisas, métodos bancarios y cripto, mínimos, comisiones del servicio y costes adicionales del proveedor."
+          },
+          {
+            "summary": "KYC y restricciones regionales",
+            "body": "Analizamos cuándo se exige verificación, qué límites existen sin ella y si los métodos principales están disponibles realmente en distintos países."
+          },
+          {
+            "summary": "Trade Offer, seguridad y soporte",
+            "body": "Bot correcto, estado claro de la operación, historial y soporte son especialmente importantes porque tras confirmar el Trade Offer el objeto ya está en manos del servicio."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las ofertas Instant Sell",
+        "paragraphs": [
+          "Los precios de compra dependen del mercado y de la liquidez propia del servicio. Si una skin se vende rápido y la plataforma necesita stock, el spread puede reducirse; si cae la demanda o hay demasiado inventario, la oferta puede bajar mucho.",
+          "También cambian las condiciones de pago: se añaden o eliminan métodos, se modifican comisiones, mínimos, tipos de cambio y requisitos KYC. Una cotización alta puede dejar de ser la mejor al elegir un método concreto de retiro.",
+          "Si la velocidad no es prioritaria, compara <a href=\"/csgo/marketplaces\">marketplaces CS2</a> y <a href=\"/csgo/sell-skins\">sitios para vender skins</a>. Si quieres cambiar un objeto por otro, usa <a href=\"/csgo/trade-skins\">sitios de intercambio</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al vender skins de forma instantánea",
+        "intro": "En instant sell el usuario entrega la skin antes de recibir el pago externo, por lo que hay que comprobar con cuidado el sitio, el Trade Offer y la cotización final.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio antes de Steam",
+            "body": "Las copias de phishing pueden mostrar autorizaciones falsas o sustituir los datos del bot. Usa la dirección correcta y no introduzcas la contraseña de Steam en formularios ajenos."
+          },
+          {
+            "summary": "Verifica el Steam Trade Offer",
+            "body": "Antes de confirmar, revisa la cuenta del bot, todos los objetos y que no aparezcan skins inesperadas en tu lado. No te bases solo en nombre o avatar."
+          },
+          {
+            "summary": "Confirma la cotización actual",
+            "body": "El precio puede cambiar entre el primer cálculo y la creación del Trade Offer. Comprueba que el importe final coincide con la oferta que querías aceptar."
+          },
+          {
+            "summary": "Revisa KYC y límites previamente",
+            "body": "Antes de enviar un inventario caro, confirma que podrás retirar todo por el método elegido y qué documentos o comprobaciones serán necesarios."
+          },
+          {
+            "summary": "Compara por separado los objetos raros y caros",
+            "body": "La liquidez inmediata es útil, pero un modelo automático puede infravalorar una prima coleccionable. Compara varias opciones para pattern, float o sticker craft raros."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre venta instantánea de skins CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Instant Sell de skins CS2?",
+            "body": "Es vender directamente un objeto al servicio a un precio automático sin esperar comprador. Tras el Steam Trade Offer, la plataforma paga el valor mediante un método compatible."
+          },
+          {
+            "summary": "¿Por qué el precio suele ser inferior al mercado?",
+            "body": "El servicio asume riesgo de reventa, movimiento de precio e inventario y ofrece liquidez inmediata. Ese margen aparece normalmente en el spread frente al precio potencial del marketplace."
+          },
+          {
+            "summary": "¿Qué diferencia hay entre Instant Sell y marketplace?",
+            "body": "En un <a href=\"/csgo/marketplaces\">marketplace</a> publicas el objeto y esperas comprador, con posibilidad de obtener más. Instant sell ofrece compra inmediata pero normalmente con mayor descuento."
+          },
+          {
+            "summary": "¿Cuánto tarda el pago?",
+            "body": "La parte automática puede tardar minutos, pero el tiempo real depende del método, KYC, revisión manual, banco o procesamiento blockchain."
+          },
+          {
+            "summary": "¿Se necesita KYC?",
+            "body": "Depende del servicio, país, importe y método de retiro. Operaciones pequeñas pueden pasar sin verificación y las grandes requerirla."
+          },
+          {
+            "summary": "¿Se valoran float, pattern y stickers?",
+            "body": "No siempre. Algunos servicios aplican primas a determinadas propiedades y otros usan solo el precio base. Hay que revisarlo antes de vender un objeto valioso."
+          },
+          {
+            "summary": "¿Puedo vender todo el inventario a la vez?",
+            "body": "Muchos servicios permiten seleccionar múltiples objetos, aunque algunas skins pueden no estar disponibles para compra o tener límites propios."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking Instant Sell de CSGOBROKER?",
+            "body": "Cambian precios de compra, spread, liquidez, comisiones, métodos de pago, KYC, velocidad y fiabilidad de Steam Trade Offer."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Venda instantânea de skins CS2: como funciona o Instant Sell e o que comparar",
+        "paragraphs": [
+          "Instant sell é uma forma de vender uma skin de CS2 diretamente para um serviço em vez de esperar outro usuário comprar. A plataforma avalia os itens do inventário, mostra uma oferta calculada, recebe as skins selecionadas por Steam Trade Offer e depois paga em dinheiro, criptomoeda ou outro método suportado.",
+          "A principal diferença para um <a href=\"/csgo/marketplaces\">marketplace</a> é a velocidade e a ausência de espera por um comprador. Em um mercado tradicional, o vendedor cria um anúncio e espera a negociação; no instant sell o serviço compra imediatamente, mas a oferta costuma ficar abaixo do preço potencial de mercado. Outros métodos estão em <a href=\"/csgo/sell-skins\">venda de skins CS2</a>.",
+          "Por isso, apenas prometer pagamento rápido não basta para comparar serviços. Importam a cotação real para um inventário específico, fonte de preços, spread para o mercado, taxas e conversão, métodos de saque, KYC, mínimos e o tempo entre confirmar o Trade Offer e receber os fundos."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona a venda instantânea de skins CS2",
+        "items": [
+          {
+            "title": "Avaliação automática do inventário",
+            "paragraphs": [
+              "Depois de conectar a Steam ou fornecer o trade URL, o serviço identifica os itens elegíveis e calcula uma oferta para cada um. O preço interno pode depender de liquidez, demanda atual, necessidade de estoque da plataforma e dados de mercados externos."
+            ]
+          },
+          {
+            "title": "Oferta visível antes de enviar o item",
+            "paragraphs": [
+              "Um fluxo adequado mostra o valor da venda antes da confirmação do Steam Trade Offer. O usuário deve ver o valor de cada item e do conjunto, além do prazo de validade da cotação quando o preço fica bloqueado por pouco tempo."
+            ]
+          },
+          {
+            "title": "Compra imediata sem esperar comprador",
+            "paragraphs": [
+              "O serviço atua como comprador direto ou utiliza liquidez própria, eliminando a necessidade de criar listing e esperar. Em troca dessa velocidade, o preço de compra geralmente tem desconto em relação a uma possível venda P2P."
+            ]
+          },
+          {
+            "title": "Pagamento em dinheiro ou criptomoeda",
+            "paragraphs": [
+              "Após receber os itens, a plataforma pode oferecer métodos bancários, carteiras eletrônicas, criptomoedas ou outras opções. A disponibilidade depende do país, moeda, valor mínimo e verificação."
+            ]
+          },
+          {
+            "title": "Avaliação de float, pattern e stickers",
+            "paragraphs": [
+              "Um modelo automático básico nem sempre reconhece float raro, pattern, phase, stickers caros ou combinações especiais. Em itens de alto valor, confira se essas características recebem prêmio ou se apenas a skin base é considerada."
+            ]
+          },
+          {
+            "title": "Venda de vários itens em uma operação",
+            "paragraphs": [
+              "Instant sell é útil para liquidar rapidamente um inventário inteiro ou um grupo grande de skins. O desconto médio do conjunto pode diferir da oferta em uma skin altamente líquida, então vale conferir cada preço."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de uma venda instantânea",
+        "intro": "O maior bônus anunciado não garante o maior payout final; a comparação relevante é a oferta concreta pelos seus itens após todas as deduções.",
+        "items": [
+          {
+            "summary": "Cotação real de compra",
+            "body": "Carregue o mesmo conjunto de itens em vários serviços e compare quanto cada um paga agora. Um percentual promocional é menos útil do que uma cotação concreta do inventário."
+          },
+          {
+            "summary": "Spread para o mercado",
+            "body": "Compare instant sell com preços em <a href=\"/csgo/marketplaces\">marketplaces</a> e outros métodos de venda. A diferença mostra quanto valor é trocado por liquidez imediata e ausência de espera."
+          },
+          {
+            "summary": "Taxas e conversão",
+            "body": "Algumas plataformas incluem todos os custos na oferta, enquanto outras cobram taxa de saque ou conversão separadamente. Compare o valor líquido que chega ao método escolhido."
+          },
+          {
+            "summary": "Métodos e prazo de pagamento",
+            "body": "Confira bancos, cartões, e-wallets, criptomoedas, mínimos, tempo de processamento declarado e possíveis atrasos do provedor de pagamento."
+          },
+          {
+            "summary": "KYC e limites",
+            "body": "A verificação pode depender do país, valor ou método. Para inventário caro, conheça limites diários, documentos e possíveis verificações de origem dos fundos."
+          },
+          {
+            "summary": "Avaliação de propriedades raras",
+            "body": "Facas, luvas, patterns raros, float incomum e crafts com stickers valiosos podem ter prêmio que a compra automática não reconhece integralmente. Compare esses itens com venda normal."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia serviços Instant Sell",
+        "intro": "Nesta categoria, velocidade sozinha não é o principal critério: buscamos preço competitivo, transação clara e recebimento confiável do pagamento.",
+        "items": [
+          {
+            "summary": "Competitividade da oferta",
+            "body": "Comparamos preços reais de compra em itens líquidos comuns e o desconto em relação a mercados alternativos."
+          },
+          {
+            "summary": "Transparência de preço",
+            "body": "Consideramos se o valor final aparece antes do Trade Offer, se bônus de venda e validade da cotação são claros e se avaliações menores em determinados itens são compreensíveis."
+          },
+          {
+            "summary": "Velocidade da operação",
+            "body": "Analisamos desde a seleção e confirmação da troca até a chegada dos fundos, incluindo processamento automático e revisões manuais."
+          },
+          {
+            "summary": "Métodos de pagamento e taxas",
+            "body": "Entram moedas suportadas, métodos bancários e cripto, valores mínimos, taxas do serviço e custos do provedor."
+          },
+          {
+            "summary": "KYC e restrições regionais",
+            "body": "Consideramos quando a verificação é exigida, quais limites existem sem ela e se os principais métodos estão realmente disponíveis em diferentes países."
+          },
+          {
+            "summary": "Trade Offer, segurança e suporte",
+            "body": "Bot correto, status claro, histórico de operações e suporte são especialmente importantes porque, após confirmar o Steam Trade Offer, o item já foi transferido."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que as ofertas Instant Sell mudam",
+        "paragraphs": [
+          "Preços de compra dependem do mercado e da liquidez própria do serviço. Quando uma skin vende rápido e a plataforma precisa de estoque, o spread pode diminuir; quando a demanda cai ou já existe excesso de inventário, a oferta pode cair bastante.",
+          "As condições de pagamento também mudam: serviços adicionam ou removem métodos, ajustam taxas, mínimos, câmbio e KYC. Uma cotação alta pode deixar de ser a melhor depois da escolha do saque específico.",
+          "Se velocidade não for prioridade, compare <a href=\"/csgo/marketplaces\">marketplaces de CS2</a> e <a href=\"/csgo/sell-skins\">sites para vender skins</a>. Para trocar um item por outro, use <a href=\"/csgo/trade-skins\">sites de troca</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao vender skins instantaneamente",
+        "intro": "No instant sell, o usuário entrega o item antes de receber o pagamento externo, então domínio, Trade Offer e cotação final precisam ser verificados com atenção.",
+        "items": [
+          {
+            "summary": "Confira o domínio antes do login Steam",
+            "body": "Cópias de phishing podem exibir autorização falsa ou trocar os dados do bot. Use o endereço correto e não digite senha Steam em formulário de terceiros."
+          },
+          {
+            "summary": "Verifique o Steam Trade Offer",
+            "body": "Antes de confirmar, confira a conta do bot, todos os itens e se não há objetos inesperados no seu lado da troca. Não dependa apenas de nome ou avatar."
+          },
+          {
+            "summary": "Confirme a cotação atual",
+            "body": "O preço pode mudar entre o primeiro cálculo e a criação do Trade Offer. Garanta que o valor final corresponde à oferta que você decidiu aceitar."
+          },
+          {
+            "summary": "Revise KYC e limites com antecedência",
+            "body": "Antes de enviar um inventário caro, confirme que conseguirá sacar todo o valor pelo método escolhido e quais documentos ou verificações serão necessários."
+          },
+          {
+            "summary": "Compare itens raros e caros separadamente",
+            "body": "Liquidez imediata é útil, mas modelos automáticos podem subestimar prêmio colecionável. Compare alternativas para pattern, float ou sticker craft raro."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre venda instantânea de skins CS2",
+        "items": [
+          {
+            "summary": "O que é Instant Sell de skins CS2?",
+            "body": "É vender diretamente um item ao serviço por preço calculado automaticamente, sem esperar comprador. Depois do Steam Trade Offer, a plataforma paga por um método suportado."
+          },
+          {
+            "summary": "Por que o preço costuma ser menor que o mercado?",
+            "body": "O serviço assume risco de revenda, movimento de preço e estoque enquanto fornece liquidez imediata. Essa margem normalmente aparece no spread para o preço potencial de marketplace."
+          },
+          {
+            "summary": "Qual a diferença entre Instant Sell e marketplace?",
+            "body": "Em um <a href=\"/csgo/marketplaces\">marketplace</a>, você lista o item e espera comprador, podendo receber mais. Instant sell oferece compra imediata, normalmente com desconto maior."
+          },
+          {
+            "summary": "Quanto tempo leva o pagamento?",
+            "body": "A parte automática pode levar minutos, mas o prazo real depende do método, KYC, revisão manual, banco ou processamento blockchain."
+          },
+          {
+            "summary": "KYC é necessário?",
+            "body": "Depende do serviço, país, valor e método de saque. Operações pequenas podem não exigir verificação, enquanto maiores podem exigir."
+          },
+          {
+            "summary": "Float, pattern e stickers são considerados?",
+            "body": "Nem sempre. Alguns serviços pagam prêmio por determinadas propriedades, enquanto outros usam só o preço base. Confira antes de vender item valioso."
+          },
+          {
+            "summary": "Posso vender todo o inventário de uma vez?",
+            "body": "Muitos serviços permitem vários itens em uma operação, mas algumas skins podem não estar disponíveis para compra ou ter limites próprios."
+          },
+          {
+            "summary": "Por que o ranking Instant Sell da CSGOBROKER muda?",
+            "body": "Preços de compra, spread, liquidez, taxas, métodos de pagamento, KYC, velocidade e confiabilidade de Steam Trade Offer podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Skin Anında Satış: Instant Sell Nasıl Çalışır ve Neler Karşılaştırılmalı?",
+        "paragraphs": [
+          "Instant sell, CS2 skinini başka bir kullanıcının satın almasını beklemek yerine doğrudan bir servise önceden hesaplanan fiyatla satma yöntemidir. Platform inventory'deki itemları değerlendirir, teklif gösterir, seçilen skinleri Steam Trade Offer ile alır ve ardından para, kripto veya desteklenen başka bir yöntemle ödeme yapar.",
+          "<a href=\"/csgo/marketplaces\">Marketplace</a> ile temel fark hız ve alıcı beklememektir. Normal pazarda satıcı fiyat belirleyip işlem bekler; instant-sell servisi itemı hemen satın alır, ancak teklif genellikle açık pazarda elde edilebilecek potansiyel fiyattan düşüktür. Diğer satış yöntemleri <a href=\"/csgo/sell-skins\">CS2 skin satma</a> sayfasında ele alınır.",
+          "Bu nedenle yalnızca 'hızlı ödeme' vaadini karşılaştırmak yeterli değildir. Belirli inventory için gerçek buyout fiyatı, fiyat kaynağı, markete göre spread, ücret ve conversion, ödeme yöntemleri, KYC, minimumlar ve Trade Offer onayından dış ödemeye kadar geçen süre önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Skin Instant Sell Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Otomatik inventory değerlemesi",
+            "paragraphs": [
+              "Steam bağlandıktan veya trade URL verildikten sonra servis uygun itemları görür ve her biri için teklif hesaplar. İç fiyat likiditeye, güncel talebe, platformun kendi stok ihtiyacına ve dış piyasa verilerine bağlı olabilir."
+            ]
+          },
+          {
+            "title": "Item gönderilmeden önce fiyat gösterilir",
+            "paragraphs": [
+              "Normal instant-sell akışı Steam Trade Offer onayından önce satış değerini göstermelidir. Kullanıcı her itemın ve tüm seçimin tutarını, ayrıca fiyat kısa süre kilitleniyorsa quote'un geçerlilik süresini görebilmelidir."
+            ]
+          },
+          {
+            "title": "Alıcı beklemeden doğrudan buyout",
+            "paragraphs": [
+              "Servis doğrudan alıcı olur veya hazır likidite kullanır; listing oluşturup başka kullanıcı beklemeye gerek kalmaz. Bu hız karşılığında buyout fiyatı genellikle potansiyel P2P satış fiyatına göre indirimlidir."
+            ]
+          },
+          {
+            "title": "Para veya kripto ödeme",
+            "paragraphs": [
+              "Itemları aldıktan sonra platform banka yöntemleri, elektronik cüzdan, kripto veya başka seçenekler sunabilir. Kullanılabilirlik ülke, para birimi, minimum tutar ve verification şartlarına bağlıdır."
+            ]
+          },
+          {
+            "title": "Float, pattern ve sticker değerlemesi",
+            "paragraphs": [
+              "Basit otomatik model rare float, pattern, phase, pahalı sticker veya değerli sticker kombinasyonunu her zaman hesaba katmaz. Pahalı itemlarda bu özelliklere premium verilip verilmediğini kontrol edin."
+            ]
+          },
+          {
+            "title": "Bir işlemde birden çok item satma",
+            "paragraphs": [
+              "Instant sell tüm inventory'yi veya büyük bir item grubunu hızlı biçimde nakde çevirmek için kullanışlıdır. Sepetin ortalama indirimi tek bir likit skin teklifinden farklı olabilir; her seçilen itemın fiyatını ayrı görmek faydalıdır."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Instant Sell Öncesi Neleri Karşılaştırmalı?",
+        "intro": "En yüksek reklam bonusu en yüksek final payout anlamına gelmez; tüm kesintilerden sonra kendi itemlarınız için verilen somut teklif karşılaştırılmalıdır.",
+        "items": [
+          {
+            "summary": "Gerçek buyout teklifi",
+            "body": "Aynı item grubunu birkaç serviste açın ve her birinin şu anda ne kadar ödeyeceğini karşılaştırın. 'Market fiyatının %X'ine kadar' gibi oranlar, somut inventory quote'undan daha az faydalıdır."
+          },
+          {
+            "summary": "Market fiyatına göre spread",
+            "body": "Instant-sell teklifini <a href=\"/csgo/marketplaces\">marketplace</a> fiyatları ve diğer satış yöntemleriyle karşılaştırın. Fark, anında likidite ve alıcı beklememek için ne kadar değerden vazgeçildiğini gösterir."
+          },
+          {
+            "summary": "Ücretler ve conversion",
+            "body": "Bazı platformlar tüm maliyeti buyout fiyatına dahil eder, bazıları çekim veya kur dönüşümünde ayrıca fee alır. Seçilen ödeme yöntemine ulaşan net tutarı karşılaştırın."
+          },
+          {
+            "summary": "Ödeme yöntemleri ve süre",
+            "body": "Banka, kart, e-wallet, kripto, minimum tutar, belirtilen processing süresi ve ödeme sağlayıcısının yaratabileceği gecikmeleri kontrol edin."
+          },
+          {
+            "summary": "KYC ve limitler",
+            "body": "Verification ülke, işlem büyüklüğü veya ödeme yöntemine göre değişebilir. Değerli inventory için günlük limitleri, belge şartlarını ve olası source-of-funds kontrolünü önceden bilin."
+          },
+          {
+            "summary": "Nadir item özelliklerinin değeri",
+            "body": "Bıçak, eldiven, rare pattern, özel float ve pahalı sticker craft'larında otomatik teklif koleksiyon premium'unu tam yansıtmayabilir. Bu itemları normal satışla ayrıca karşılaştırın."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Instant-Sell Servislerini Nasıl Değerlendirir?",
+        "intro": "Bu kategoride hız tek başına ana kriter değildir; rekabetçi fiyat, anlaşılır işlem ve güvenilir ödeme birlikte değerlendirilir.",
+        "items": [
+          {
+            "summary": "Teklifin rekabetçiliği",
+            "body": "Tipik likit itemlarda gerçek buyout fiyatlarını ve alternatif marketlere göre oluşan indirimi karşılaştırıyoruz."
+          },
+          {
+            "summary": "Fiyat şeffaflığı",
+            "body": "Final değerin Trade Offer'dan önce görünmesini, satış bonuslarının ve quote süresinin açık olmasını ve bazı itemların neden daha düşük değerlendiğinin anlaşılmasını dikkate alıyoruz."
+          },
+          {
+            "summary": "İşlem hızı",
+            "body": "Item seçiminden trade onayına ve paranın görünmesine kadar süreci; otomatik işlem ve olası manuel incelemeler dahil değerlendiriyoruz."
+          },
+          {
+            "summary": "Ödeme yöntemleri ve ücretler",
+            "body": "Desteklenen para birimleri, banka ve kripto yöntemleri, minimumlar, servis ücretleri ve ödeme sağlayıcısının ek maliyetleri hesaba katılır."
+          },
+          {
+            "summary": "KYC ve bölgesel kısıtlamalar",
+            "body": "Verification'ın ne zaman gerektiğini, doğrulama olmadan hangi limitlerin uygulandığını ve önemli ödeme yöntemlerinin farklı ülkelerde gerçekten kullanılabilirliğini inceliyoruz."
+          },
+          {
+            "summary": "Trade Offer güvenliği ve destek",
+            "body": "Doğru bot, açık işlem durumu, geçmiş ve destek özellikle önemlidir; çünkü Steam Trade Offer onaylandıktan sonra item artık servise aktarılmıştır."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Instant-Sell Teklifleri Neden Değişir?",
+        "paragraphs": [
+          "Buyout fiyatları markete ve servisin kendi likiditesine bağlıdır. Bir item hızlı satılıyor ve platform stoğa ihtiyaç duyuyorsa spread daralabilir; talep düşerse veya belirli skin fazla stoklanırsa teklif önemli ölçüde azalabilir.",
+          "Ödeme şartları da değişir. Servisler yöntem ekleyip kaldırır, ücret, minimum, kur ve KYC gerekliliklerini ayarlar. Bu nedenle yüksek görünen quote, belirli çekim seçildikten sonra en iyi seçenek olmayabilir.",
+          "Hız ana öncelik değilse <a href=\"/csgo/marketplaces\">CS2 marketplace</a> ve genel <a href=\"/csgo/sell-skins\">skin satma</a> sayfasını karşılaştırın. Satış yerine başka itemla değişim istiyorsanız <a href=\"/csgo/trade-skins\">skin trade sitelerini</a> kullanın."
+        ]
+      },
+      "safety": {
+        "title": "CS2 Skin Instant Sell Güvenliği",
+        "intro": "Instant sell işleminde kullanıcı dış ödemeyi almadan önce itemı gönderir; bu nedenle site adresi, Trade Offer ve final quote özellikle dikkatle kontrol edilmelidir.",
+        "items": [
+          {
+            "summary": "Steam girişinden önce domain'i kontrol edin",
+            "body": "Phishing kopyaları sahte authorization gösterebilir veya bot bilgisini değiştirebilir. Doğru servis adresini kullanın ve Steam şifresini üçüncü taraf forma yazmayın."
+          },
+          {
+            "summary": "Steam Trade Offer'ı doğrulayın",
+            "body": "Onaylamadan önce bot hesabını, gönderilen tüm itemları ve sizin tarafınızda beklenmedik bir skin olmadığını kontrol edin. Yalnız bot adı veya avatarına güvenmeyin."
+          },
+          {
+            "summary": "Güncel quote'u onaylayın",
+            "body": "İlk hesaplama ile Trade Offer oluşturulması arasında fiyat değişebilir. Son adımda gösterilen tutarın kabul etmeyi planladığınız teklifle aynı olduğundan emin olun."
+          },
+          {
+            "summary": "KYC ve limitleri önceden kontrol edin",
+            "body": "Pahalı inventory göndermeden önce tüm tutarı seçilen yöntemle çekebileceğinizi ve hangi belge veya ek kontrollerin gerekeceğini öğrenin."
+          },
+          {
+            "summary": "Nadir pahalı itemları ayrıca karşılaştırın",
+            "body": "Anında likidite yararlıdır ancak otomatik buyout koleksiyon premium'unu düşük değerlendirebilir. Rare pattern, float veya sticker craft için birkaç alternatif teklif kontrol edin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Instant Sell Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 skin instant sell nedir?",
+            "body": "Başka alıcı beklemeden itemı otomatik hesaplanan fiyatla doğrudan servise satmaktır. Steam Trade Offer sonrasında platform desteklenen yöntemle ödeme yapar."
+          },
+          {
+            "summary": "Instant-sell fiyatı neden marketten düşük olur?",
+            "body": "Servis yeniden satış, fiyat hareketi ve inventory riskini üstlenirken anında likidite sağlar. Bu marj buyout fiyatı ile potansiyel marketplace fiyatı arasındaki spread'e yansır."
+          },
+          {
+            "summary": "Instant sell ile marketplace farkı nedir?",
+            "body": "<a href=\"/csgo/marketplaces\">Marketplace</a> üzerinde itemı listeler ve alıcı beklersiniz; daha yüksek fiyat mümkün olabilir. Instant sell hemen teklif verir ancak genellikle daha büyük indirimle."
+          },
+          {
+            "summary": "Ödeme ne kadar sürer?",
+            "body": "Otomatik kısım dakikalar sürebilir, fakat gerçek süre ödeme yöntemi, KYC, manuel inceleme, banka veya blockchain processing'e bağlıdır."
+          },
+          {
+            "summary": "Instant sell için KYC gerekir mi?",
+            "body": "Servis, ülke, tutar ve çekim yöntemine bağlıdır. Küçük işlemler verification olmadan geçebilir, büyük işlemlerde zorunlu olabilir."
+          },
+          {
+            "summary": "Float, pattern ve stickerlar hesaba katılır mı?",
+            "body": "Her zaman değil. Bazı servisler belirli özelliklere premium ekler, bazıları sadece base item fiyatını kullanır. Pahalı özellikleri işlemden önce kontrol edin."
+          },
+          {
+            "summary": "Tüm inventory tek seferde satılabilir mi?",
+            "body": "Birçok servis birden fazla item seçimine izin verir, ancak bazı skinler buyout için uygun olmayabilir veya ayrı limite sahip olabilir."
+          },
+          {
+            "summary": "CSGOBROKER Instant Sell sıralaması neden değişir?",
+            "body": "Buyout fiyatları, spread, likidite, ücretler, ödeme yöntemleri, KYC, processing hızı ve Steam Trade Offer güvenilirliği değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Skins की Instant Sale: Instant Sell कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Instant sell में CS2 skin को किसी दूसरे user के खरीदने का इंतजार करने के बजाय सीधे service को pre-calculated price पर बेचा जाता है। Platform inventory के items evaluate करती है, offer दिखाती है, selected skins Steam Trade Offer से लेती है और फिर cash, cryptocurrency या किसी supported payout method से भुगतान करती है।",
+          "<a href=\"/csgo/marketplaces\">Marketplace</a> से मुख्य फर्क speed और buyer का इंतजार न करना है। Normal marketplace में seller listing बनाकर transaction का इंतजार करता है; instant-sell service item तुरंत खरीदती है, लेकिन offer अक्सर potential open-market price से कम होती है। Selling के दूसरे तरीके <a href=\"/csgo/sell-skins\">CS2 skin selling</a> page पर हैं।",
+          "इसलिए सिर्फ 'fast payout' promise compare करना पर्याप्त नहीं है। Specific inventory की actual quote, pricing source, market spread, fees और conversion, payout methods, KYC, minimum amounts और Trade Offer confirm करने से external funds मिलने तक का समय महत्वपूर्ण है।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Skin Instant Sell कैसे काम करता है",
+        "items": [
+          {
+            "title": "Automatic inventory valuation",
+            "paragraphs": [
+              "Steam connect करने या trade URL देने के बाद service eligible items पढ़कर हर item की offer calculate करती है। Internal price liquidity, current demand, platform inventory needs और external market data पर depend कर सकती है।"
+            ]
+          },
+          {
+            "title": "Item transfer से पहले offer दिखती है",
+            "paragraphs": [
+              "Normal instant-sell flow में Steam Trade Offer confirm करने से पहले sale value दिखाई जानी चाहिए। User को individual items और पूरी selection का amount तथा short-lived quote की validity पता होनी चाहिए।"
+            ]
+          },
+          {
+            "title": "Buyer का इंतजार किए बिना direct buyout",
+            "paragraphs": [
+              "Service direct buyer की तरह काम करती है या pre-arranged liquidity use करती है, इसलिए listing बनाकर किसी user का इंतजार नहीं करना पड़ता। इस speed के बदले buyout price आम तौर पर potential P2P sale से discount पर होती है।"
+            ]
+          },
+          {
+            "title": "Cash या cryptocurrency payout",
+            "paragraphs": [
+              "Items मिलने के बाद platform bank methods, e-wallets, crypto या दूसरे options दे सकती है। Availability country, currency, minimum amount और verification requirements पर depend करती है।"
+            ]
+          },
+          {
+            "title": "Float, pattern और stickers की valuation",
+            "paragraphs": [
+              "Basic automated model हमेशा rare float, pattern, phase, expensive stickers या valuable sticker combinations को पूरी तरह value नहीं करता। Expensive items के लिए देखें कि इन properties पर premium मिलता है या सिर्फ base skin price use होती है।"
+            ]
+          },
+          {
+            "title": "एक transaction में कई items बेचना",
+            "paragraphs": [
+              "Instant sell पूरे inventory या large group को जल्दी liquidate करने के लिए useful है। Basket का average discount एक highly liquid skin की quote से अलग हो सकता है, इसलिए individual prices देखना अच्छा है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Instant Sale से पहले क्या Compare करें",
+        "intro": "सबसे बड़ा advertised bonus जरूरी नहीं कि highest final payout दे; सभी deductions के बाद आपके actual items की concrete offer compare करनी चाहिए।",
+        "items": [
+          {
+            "summary": "Actual buyout quote",
+            "body": "Same item set को कई services पर load करके देखें कि हर service अभी कितना pay करेगी। 'Up to market price' percentage concrete inventory quote से कम useful है।"
+          },
+          {
+            "summary": "Market value से spread",
+            "body": "Instant-sell offer को <a href=\"/csgo/marketplaces\">marketplaces</a> और दूसरे selling methods से compare करें। Difference बताती है कि immediate liquidity और buyer न wait करने के बदले कितनी value छोड़ी जा रही है।"
+          },
+          {
+            "summary": "Fees और conversion",
+            "body": "कुछ platforms सभी costs buyout price में include करती हैं, दूसरी payout या currency conversion fee अलग लेती हैं। Selected method पर पहुंचने वाला net amount compare करें।"
+          },
+          {
+            "summary": "Payout methods और timing",
+            "body": "Available banks, cards, e-wallets, crypto, minimum amounts, stated processing time और payment-provider delays check करें।"
+          },
+          {
+            "summary": "KYC और limits",
+            "body": "Verification country, transaction size या payout method पर depend कर सकती है। Valuable inventory के लिए daily limits, document requirements और possible source-of-funds checks पहले समझें।"
+          },
+          {
+            "summary": "Rare item properties की valuation",
+            "body": "Knives, gloves, rare patterns, unusual float और expensive sticker crafts में automated buyout collectible premium miss कर सकता है। ऐसे items को regular marketplace sale से अलग compare करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Instant-Sell Services को कैसे Rate करता है",
+        "intro": "इस category में speed अकेला मुख्य metric नहीं है; competitive price, clear transaction और reliable payout का combination महत्वपूर्ण है।",
+        "items": [
+          {
+            "summary": "Offer competitiveness",
+            "body": "हम common liquid items की actual buyout prices और alternative markets के मुकाबले discount compare करते हैं।"
+          },
+          {
+            "summary": "Pricing transparency",
+            "body": "हम देखते हैं कि final value Trade Offer से पहले visible है, sale bonuses और quote validity clear हैं और कुछ items की lower valuation का कारण समझ आता है।"
+          },
+          {
+            "summary": "Transaction speed",
+            "body": "Item selection और trade confirmation से funds arrival तक का पूरा flow, automatic processing और possible manual review सहित evaluate किया जाता है।"
+          },
+          {
+            "summary": "Payout methods और fees",
+            "body": "Supported currencies, bank और crypto methods, minimum amounts, service fees और payment-provider costs शामिल होते हैं।"
+          },
+          {
+            "summary": "KYC और regional restrictions",
+            "body": "Verification कब required है, बिना verification कौन से limits हैं और प्रमुख payout methods अलग countries में वास्तव में available हैं या नहीं—यह देखा जाता है।"
+          },
+          {
+            "summary": "Trade Offer security और support",
+            "body": "Correct bot, clear transaction status, history और support खास तौर पर important हैं क्योंकि Steam Trade Offer confirm होने के बाद item service को transfer हो चुका होता है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Instant-Sell Offers क्यों बदलती हैं",
+        "paragraphs": [
+          "Buyout prices market और service की own liquidity पर depend करती हैं। अगर item जल्दी sell होता है और platform को stock चाहिए तो spread कम हो सकता है; demand गिरने या inventory ज्यादा होने पर offer काफी नीचे जा सकती है।",
+          "Payout conditions भी बदलती हैं। Services methods जोड़ती/हटाती हैं और fees, minimums, exchange rates तथा KYC requirements adjust करती हैं। इसलिए high headline quote specific withdrawal method चुनने के बाद best option न भी रहे।",
+          "अगर speed मुख्य priority नहीं है तो <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> और <a href=\"/csgo/sell-skins\">skin selling</a> category compare करें। Item बेचने के बजाय दूसरे item से exchange करना हो तो <a href=\"/csgo/trade-skins\">skin trading sites</a> use करें।"
+        ]
+      },
+      "safety": {
+        "title": "CS2 Skins Instant Sell करते समय Safety",
+        "intro": "Instant sell में user external payout मिलने से पहले item transfer करता है, इसलिए service address, Trade Offer और final quote को विशेष रूप से verify करना चाहिए।",
+        "items": [
+          {
+            "summary": "Steam sign-in से पहले domain verify करें",
+            "body": "Phishing copies fake authorization दिखा सकती हैं या bot details बदल सकती हैं। Correct address use करें और Steam password किसी unrelated form में न डालें।"
+          },
+          {
+            "summary": "Steam Trade Offer check करें",
+            "body": "Confirm करने से पहले bot account, transfer हो रहे हर item और आपकी side पर unexpected items न होने की जांच करें। सिर्फ familiar bot name या avatar पर भरोसा न करें।"
+          },
+          {
+            "summary": "Current quote confirm करें",
+            "body": "First calculation और Trade Offer creation के बीच price change हो सकती है। Final step का amount उस offer से match होना चाहिए जिसे आपने accept करने का निर्णय लिया था।"
+          },
+          {
+            "summary": "KYC और limits पहले review करें",
+            "body": "Expensive inventory भेजने से पहले सुनिश्चित करें कि full amount selected method से withdraw हो सके और कौन से documents या additional checks required होंगे।"
+          },
+          {
+            "summary": "Rare expensive items अलग compare करें",
+            "body": "Immediate liquidity useful है, लेकिन automated buyout collectible premium undervalue कर सकता है। Rare pattern, float या sticker craft के लिए multiple alternatives compare करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Instant Sell के बारे में FAQ",
+        "items": [
+          {
+            "summary": "CS2 skins का Instant Sell क्या है?",
+            "body": "Item को automatically calculated price पर सीधे service को बेचना, बिना दूसरे buyer का इंतजार किए। Steam Trade Offer के बाद platform supported method से payout करती है।"
+          },
+          {
+            "summary": "Instant-sell price market से कम क्यों होती है?",
+            "body": "Service resale, price movement और inventory risk लेती है और immediate liquidity देती है। यह margin buyout quote और potential marketplace price के spread में दिखाई देती है।"
+          },
+          {
+            "summary": "Instant Sell और marketplace में क्या फर्क है?",
+            "body": "<a href=\"/csgo/marketplaces\">Marketplace</a> पर item list करके buyer wait करते हैं और potentially higher price मिल सकती है। Instant sell immediate quote देती है, आम तौर पर larger discount के साथ।"
+          },
+          {
+            "summary": "Payout में कितना समय लगता है?",
+            "body": "Automatic processing minutes में हो सकती है, लेकिन actual time payout method, KYC, manual review, bank या blockchain processing पर depend करता है।"
+          },
+          {
+            "summary": "Instant selling में KYC जरूरी है?",
+            "body": "Platform, country, amount और payout method पर depend करता है। Small transactions बिना verification हो सकती हैं, large transactions में mandatory checks हो सकते हैं।"
+          },
+          {
+            "summary": "Float, pattern और stickers price में शामिल होते हैं?",
+            "body": "हमेशा नहीं। कुछ services selected properties पर premium देती हैं, दूसरी केवल base item price use करती हैं। Valuable properties transaction से पहले check करें।"
+          },
+          {
+            "summary": "क्या पूरा inventory एक साथ sell कर सकते हैं?",
+            "body": "कई instant-sell services multiple items allow करती हैं, लेकिन कुछ skins buyout के लिए unavailable या अलग limits के साथ हो सकती हैं।"
+          },
+          {
+            "summary": "CSGOBROKER Instant Sell ranking क्यों बदलती है?",
+            "body": "Buyout prices, spread, liquidity, fees, payout methods, KYC, processing speed और Steam Trade Offer reliability समय के साथ बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

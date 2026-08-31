@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "upgrader",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Улучшение скинов CS2: как работает режим и что сравнивать",
+        "paragraphs": [
+          "Режим улучшения скинов позволяет использовать имеющийся предмет или внутренний баланс, чтобы попытаться получить более дорогой скин с заранее указанной вероятностью. Пользователь выбирает исходный предмет, целевой предмет и видит шанс успешного обмена; при неудаче исходная стоимость обычно теряется полностью или частично по правилам площадки.",
+          "Математика режима связана с отношением стоимости исходного и целевого предмета, внутренними ценами площадки и её преимуществом. Чем дороже выбранный целевой скин относительно ставки, тем ниже вероятность успешного улучшения.",
+          "CSGOBROKER рассматривает улучшение отдельно от <a href=\"/csgo/trade-skins\">обычного обмена скинов</a> и <a href=\"/csgo/caseopening\">открытия кейсов</a>. В обычном обмене результат заранее известен, а здесь получение целевого предмета зависит от случайного исхода."
+        ]
+      },
+      "categories": {
+        "title": "Как устроено улучшение скинов CS2",
+        "items": [
+          {
+            "title": "Выбор исходного предмета",
+            "paragraphs": [
+              "Пользователь выбирает скин из инвентаря площадки, собственного баланса или ранее полученных предметов. Его внутренняя стоимость становится основой попытки."
+            ]
+          },
+          {
+            "title": "Выбор целевого скина",
+            "paragraphs": [
+              "Из каталога выбирается более дорогой предмет. Разница между стоимостью ставки и целью определяет базовый уровень риска."
+            ]
+          },
+          {
+            "title": "Расчёт вероятности",
+            "paragraphs": [
+              "Площадка показывает вероятность успешного улучшения. Она зависит от отношения цен и математического преимущества сервиса."
+            ]
+          },
+          {
+            "title": "Успешный результат",
+            "paragraphs": [
+              "При успехе пользователь получает целевой предмет или его стоимость на внутренний баланс, в зависимости от правил сайта."
+            ]
+          },
+          {
+            "title": "Неудачная попытка",
+            "paragraphs": [
+              "При неудаче исходный предмет или поставленная стоимость обычно теряется. Некоторые сервисы могут использовать дополнительные механики, которые необходимо проверять заранее."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Если режим поддерживает проверяемую честность, пользователь должен иметь возможность подтвердить результат конкретной попытки после её завершения."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед улучшением скина",
+        "intro": "Одинаковый шанс на экране не всегда означает одинаковую фактическую ценность, если сайты по-разному оценивают исходный и целевой предмет.",
+        "items": [
+          {
+            "summary": "Внутренняя оценка скинов",
+            "body": "Сравните цены исходного и целевого предмета с внешним рынком. Завышенная цена цели или заниженная цена вашего скина ухудшает реальное предложение."
+          },
+          {
+            "summary": "Вероятность и стоимость цели",
+            "body": "Проверьте, насколько указанный шанс соответствует отношению стоимостей. Чем больше разница между предметами, тем ниже должна быть вероятность успеха."
+          },
+          {
+            "summary": "Преимущество площадки",
+            "body": "Сервис обычно закладывает математическую маржу в вероятность или внутренние цены. Полезно оценивать не только процент успеха, но и фактическую стоимость обеих сторон."
+          },
+          {
+            "summary": "Доступность целевого предмета",
+            "body": "Уточните, находится ли выбранный скин в реальном инвентаре и можно ли вывести именно его, а не только эквивалент внутреннего баланса."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверьте, можно ли подтвердить результат завершённой попытки с помощью опубликованных данных Provably Fair."
+          },
+          {
+            "summary": "Вывод и ограничения",
+            "body": "Минимальная сумма, KYC, комиссии, задержка Steam Trade Offer и региональные правила могут действовать независимо от успешного улучшения."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты для улучшения скинов",
+        "intro": "Для этого режима особенно важны внутренние цены: хороший интерфейс не компенсирует невыгодную оценку предметов.",
+        "items": [
+          {
+            "summary": "Оценка исходных и целевых скинов",
+            "body": "Сравниваем внутренние цены и прозрачность того, откуда площадка получает стоимость предметов."
+          },
+          {
+            "summary": "Вероятность и математические условия",
+            "body": "Оцениваем связь между ценой ставки, целью, шансом и фактическим преимуществом площадки."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Учитываем возможность проверить конкретную успешную или неудачную попытку."
+          },
+          {
+            "summary": "Ассортимент целевых предметов",
+            "body": "Важны глубина инвентаря, фильтры, доступность дорогих предметов и реальная возможность их вывода."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Учитываются Steam Trade Offer, карты, криптовалюты, комиссии, KYC и ограничения."
+          },
+          {
+            "summary": "Интерфейс и история",
+            "body": "Понятное отображение цен, шанса, предыдущих попыток и статуса вывода помогает контролировать операции."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов для улучшения скинов меняется",
+        "paragraphs": [
+          "Изменение рыночных цен CS2 напрямую влияет на отношение стоимости исходного и целевого предмета. Если площадка обновляет цены с задержкой или меняет собственную маржу, фактическая привлекательность режима также меняется.",
+          "Сайты могут менять доступный инвентарь, минимальный и максимальный шанс, правила вывода и Provably Fair. Поэтому старое сравнение быстро теряет актуальность.",
+          "Если вы хотите гарантированно получить конкретный предмет без случайного исхода, сравните <a href=\"/csgo/trade-skins\">сайты обмена</a> или <a href=\"/csgo/buy-skins\">сайты покупки скинов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра",
+        "intro": "Улучшение выглядит как обмен одного предмета на другой, но результат зависит от случайности и не является обычной торговой операцией.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Steam Trade Offer",
+            "body": "При пополнении или выводе внимательно сверяйте официальный адрес, отправителя и предметы."
+          },
+          {
+            "summary": "Сравнивайте цены до попытки",
+            "body": "Не ориентируйтесь только на красивый процент успеха: проверьте реальную рыночную стоимость обоих предметов."
+          },
+          {
+            "summary": "Не пытайтесь отыграть неудачное улучшение",
+            "body": "Новая попытка остаётся отдельным случайным событием и не становится более вероятной из-за предыдущего проигрыша."
+          },
+          {
+            "summary": "Проверяйте лимиты и вывод",
+            "body": "Успешное получение дорогого скина может подпадать под KYC, лимит вывода или временную недоступность предмета."
+          },
+          {
+            "summary": "Устанавливайте лимит стоимости",
+            "body": "Определите заранее, какую суммарную стоимость предметов готовы использовать в случайных попытках, и следуйте рекомендациям по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы об улучшении скинов CS2",
+        "items": [
+          {
+            "summary": "Что такое улучшение скинов CS2?",
+            "body": "Это случайная попытка обменять исходный скин или баланс на более дорогой предмет с заранее показанной вероятностью."
+          },
+          {
+            "summary": "От чего зависит шанс успеха?",
+            "body": "Главным образом от отношения стоимости исходной ставки к цене целевого предмета и математических условий площадки."
+          },
+          {
+            "summary": "Чем улучшение отличается от обычного обмена?",
+            "body": "При <a href=\"/csgo/trade-skins\">обычном обмене</a> вы заранее знаете, какой предмет получите. В режиме улучшения результат может быть неудачным."
+          },
+          {
+            "summary": "Можно ли выбрать любой целевой скин?",
+            "body": "Зависит от каталога и доступного инвентаря сайта. Для отдельных дорогих предметов могут действовать ограничения."
+          },
+          {
+            "summary": "Что происходит при неудаче?",
+            "body": "Обычно поставленный предмет или его стоимость теряется, но точные правила нужно читать на конкретном сайте."
+          },
+          {
+            "summary": "Можно ли проверить результат?",
+            "body": "На сайтах с Provably Fair — да, если опубликованы данные и инструмент проверки конкретной попытки."
+          },
+          {
+            "summary": "Можно ли вывести выигранный скин в Steam?",
+            "body": "Часто да, если предмет доступен в инвентаре и выполнены условия вывода."
+          },
+          {
+            "summary": "Почему рейтинг таких сайтов на CSGOBROKER меняется?",
+            "body": "Меняются внутренние цены, вероятность, инвентарь, Provably Fair, платежи и правила вывода."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Skin Upgrader Sites: How Upgrading Works and What to Compare",
+        "paragraphs": [
+          "A CS2 skin upgrader lets users risk an existing item or site balance for a chance to receive a more valuable skin at a displayed probability. The user chooses an input item and a target item; if the attempt fails, the input value is usually lost according to the platform's rules.",
+          "The mathematics depend on the ratio between input and target value, the site's internal pricing, and its built-in edge. The more expensive the target relative to the stake, the lower the success probability should be.",
+          "CSGOBROKER evaluates skin upgrading separately from normal <a href=\"/csgo/trade-skins\">skin trading</a> and <a href=\"/csgo/caseopening\">case opening</a>. A normal trade has a known result, while an upgrader depends on a random outcome."
+        ]
+      },
+      "categories": {
+        "title": "How CS2 Skin Upgrading Works",
+        "items": [
+          {
+            "title": "Choosing the input item",
+            "paragraphs": [
+              "Users select a skin from site inventory, balance, or previously received items. Its internal value becomes the stake."
+            ]
+          },
+          {
+            "title": "Choosing the target skin",
+            "paragraphs": [
+              "A more valuable item is selected from the catalog. The value gap determines the basic risk level."
+            ]
+          },
+          {
+            "title": "Calculating success probability",
+            "paragraphs": [
+              "The platform displays a success chance based on the value ratio and its mathematical edge."
+            ]
+          },
+          {
+            "title": "Successful result",
+            "paragraphs": [
+              "A successful attempt awards the target skin or its internal balance value, depending on site rules."
+            ]
+          },
+          {
+            "title": "Failed attempt",
+            "paragraphs": [
+              "A failed upgrade normally loses the input item or staked value, though some services add special mechanics that should be checked first."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Where supported, users should be able to verify the result of a completed upgrade attempt."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Upgrading a Skin",
+        "intro": "The same displayed probability can represent different value when sites price input and target items differently.",
+        "items": [
+          {
+            "summary": "Internal skin valuation",
+            "body": "Compare input and target prices with external markets. Undervaluing your item or overpricing the target makes the offer worse."
+          },
+          {
+            "summary": "Probability and target value",
+            "body": "Check whether the displayed chance is reasonable relative to the value ratio."
+          },
+          {
+            "summary": "Platform edge",
+            "body": "The service normally embeds a margin in probability or internal pricing, so evaluate both chance and item values."
+          },
+          {
+            "summary": "Target-item availability",
+            "body": "Confirm that the selected skin is actually available and can be withdrawn rather than only credited as site balance."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Check whether a completed result can be verified using seeds, hashes, or another published method."
+          },
+          {
+            "summary": "Withdrawals and restrictions",
+            "body": "Minimums, KYC, fees, Steam Trade Offer delays, and regional rules can still apply after a successful upgrade."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Skin Upgrader Sites",
+        "intro": "Internal pricing is particularly important in this category: a polished interface cannot compensate for poor item valuation.",
+        "items": [
+          {
+            "summary": "Input and target valuation",
+            "body": "We compare internal prices and how transparently the site sources item values."
+          },
+          {
+            "summary": "Probability and mathematical terms",
+            "body": "We review the relationship between stake value, target value, displayed chance, and platform edge."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We consider whether a specific successful or failed attempt can be independently verified."
+          },
+          {
+            "summary": "Target inventory",
+            "body": "Catalog depth, filters, expensive-item availability, and actual withdrawal availability matter."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "Steam Trade Offers, cards, crypto, fees, KYC, and restrictions are included."
+          },
+          {
+            "summary": "Interface and history",
+            "body": "Clear prices, probability display, attempt history, and withdrawal status improve usability and auditability."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Skin Upgrader Rankings Change",
+        "paragraphs": [
+          "CS2 market prices directly change the relationship between input and target items. Delayed pricing updates or a changed platform margin can materially alter the value of an upgrade.",
+          "Sites can change inventory, minimum and maximum success probabilities, withdrawal rules, and Provably Fair implementation.",
+          "If you want a specific item without a random outcome, compare <a href=\"/csgo/trade-skins\">skin trading sites</a> or <a href=\"/csgo/buy-skins\">skin buying sites</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play",
+        "intro": "An upgrader may look like a trade interface, but it is a random-value game rather than a standard exchange.",
+        "items": [
+          {
+            "summary": "Verify the domain and Trade Offer",
+            "body": "When depositing or withdrawing, check the official address, sender, and exact items."
+          },
+          {
+            "summary": "Compare prices before attempting",
+            "body": "Do not focus only on the success percentage; compare the real market value of both items."
+          },
+          {
+            "summary": "Do not chase failed upgrades",
+            "body": "A new attempt is another random event and does not become more likely because the previous one failed."
+          },
+          {
+            "summary": "Check limits and withdrawals",
+            "body": "A valuable successful upgrade can still be subject to KYC, withdrawal limits, or temporary inventory shortages."
+          },
+          {
+            "summary": "Set a value limit",
+            "body": "Decide in advance how much total item value you are willing to risk and use <a href=\"/responsibility\">responsible gambling</a> guidance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Skin Upgrading",
+        "items": [
+          {
+            "summary": "What is a CS2 skin upgrader?",
+            "body": "A random attempt to exchange an input skin or balance for a more valuable target item at a displayed success probability."
+          },
+          {
+            "summary": "What determines the success chance?",
+            "body": "Mainly the ratio between stake value and target price, adjusted by the platform's mathematical terms."
+          },
+          {
+            "summary": "How is upgrading different from normal trading?",
+            "body": "With <a href=\"/csgo/trade-skins\">normal trading</a>, the received item is known in advance. An upgrade can fail."
+          },
+          {
+            "summary": "Can I choose any target skin?",
+            "body": "It depends on the site's catalog and inventory; expensive items can have additional restrictions."
+          },
+          {
+            "summary": "What happens after a failed upgrade?",
+            "body": "The input item or staked value is usually lost, subject to the site's exact rules."
+          },
+          {
+            "summary": "Can the result be verified?",
+            "body": "On Provably Fair sites, yes when the data and verification tool are available."
+          },
+          {
+            "summary": "Can a won skin be withdrawn to Steam?",
+            "body": "Often, if it is available in inventory and withdrawal conditions are met."
+          },
+          {
+            "summary": "Why does the CSGOBROKER upgrader ranking change?",
+            "body": "Internal prices, probabilities, inventory, fairness tools, payments, and withdrawal rules can change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Mejora de skins de CS2: cómo funciona y qué comparar",
+        "paragraphs": [
+          "El modo de mejora de skins permite usar un objeto existente o saldo interno para intentar conseguir una skin más cara con una probabilidad mostrada de antemano. El usuario elige el objeto inicial y el objetivo; si la operación falla, normalmente se pierde el valor apostado según las reglas de la plataforma.",
+          "La matemática depende de la relación entre el valor inicial y el objetivo, de los precios internos del sitio y de su margen. Cuanto más cara sea la skin objetivo frente a la apuesta, menor debería ser la probabilidad de éxito.",
+          "CSGOBROKER analiza este modo por separado del <a href=\"/csgo/trade-skins\">intercambio normal de skins</a> y la <a href=\"/csgo/caseopening\">apertura de cajas</a>. En un intercambio normal el resultado se conoce de antemano; aquí depende de un resultado aleatorio."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona la mejora de skins de CS2",
+        "items": [
+          {
+            "title": "Elegir el objeto inicial",
+            "paragraphs": [
+              "El usuario selecciona una skin del inventario del sitio, de su saldo o de objetos recibidos anteriormente. Su valor interno se convierte en la base de la operación."
+            ]
+          },
+          {
+            "title": "Elegir la skin objetivo",
+            "paragraphs": [
+              "Se selecciona un objeto más caro del catálogo. La diferencia de valor determina el nivel básico de riesgo."
+            ]
+          },
+          {
+            "title": "Calcular la probabilidad",
+            "paragraphs": [
+              "La plataforma muestra la probabilidad de éxito según la relación de precios y su ventaja matemática."
+            ]
+          },
+          {
+            "title": "Resultado exitoso",
+            "paragraphs": [
+              "Si la operación tiene éxito, el usuario recibe la skin objetivo o su valor en saldo interno, según las reglas."
+            ]
+          },
+          {
+            "title": "Intento fallido",
+            "paragraphs": [
+              "Si falla, normalmente se pierde el objeto inicial o el valor apostado. Algunos servicios añaden reglas especiales que deben revisarse antes."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Cuando está disponible, el usuario debería poder verificar el resultado de una operación completada."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de mejorar una skin",
+        "intro": "La misma probabilidad mostrada puede tener distinto valor real si dos sitios valoran de forma diferente la skin inicial y la objetivo.",
+        "items": [
+          {
+            "summary": "Valoración interna",
+            "body": "Compara precios de entrada y objetivo con mercados externos. Infravalorar tu skin o sobrevalorar la objetivo empeora la operación."
+          },
+          {
+            "summary": "Probabilidad y valor objetivo",
+            "body": "Comprueba si la probabilidad mostrada tiene sentido frente a la relación de valores."
+          },
+          {
+            "summary": "Ventaja de la plataforma",
+            "body": "El sitio suele incluir margen en la probabilidad o en los precios internos. Hay que revisar ambos factores."
+          },
+          {
+            "summary": "Disponibilidad de la skin objetivo",
+            "body": "Confirma que el objeto está realmente disponible y puede retirarse, no solo convertirse en saldo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Comprueba si el resultado terminado puede verificarse con seeds, hashes u otro mecanismo publicado."
+          },
+          {
+            "summary": "Retiro y restricciones",
+            "body": "Mínimos, KYC, comisiones, demoras de Steam Trade Offer y reglas regionales pueden aplicarse incluso tras un éxito."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios de mejora de skins",
+        "intro": "Los precios internos son especialmente importantes: una buena interfaz no compensa una valoración desfavorable.",
+        "items": [
+          {
+            "summary": "Valoración de entrada y objetivo",
+            "body": "Comparamos precios internos y transparencia de la fuente de valoración."
+          },
+          {
+            "summary": "Probabilidad y condiciones matemáticas",
+            "body": "Analizamos relación entre apuesta, objetivo, probabilidad y ventaja efectiva."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Valoramos si una operación concreta puede comprobarse."
+          },
+          {
+            "summary": "Inventario objetivo",
+            "body": "Importan profundidad del catálogo, filtros, skins caras y disponibilidad real para retiro."
+          },
+          {
+            "summary": "Depósitos y retiros",
+            "body": "Incluimos Steam Trade Offer, tarjetas, cripto, comisiones, KYC y restricciones."
+          },
+          {
+            "summary": "Interfaz e historial",
+            "body": "Precios claros, probabilidad, historial de intentos y estado del retiro facilitan el control."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de sitios de mejora",
+        "paragraphs": [
+          "Los precios de mercado de CS2 cambian la relación entre la skin inicial y la objetivo. Actualizaciones lentas o cambios de margen pueden alterar mucho el valor real.",
+          "Los sitios también pueden cambiar inventario, probabilidades mínimas y máximas, reglas de retiro y Provably Fair.",
+          "Si quieres una skin concreta sin resultado aleatorio, compara <a href=\"/csgo/trade-skins\">sitios de intercambio</a> o <a href=\"/csgo/buy-skins\">sitios para comprar skins</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "La interfaz puede parecer un intercambio, pero el resultado depende del azar y no es una operación comercial normal.",
+        "items": [
+          {
+            "summary": "Verifica dominio y Trade Offer",
+            "body": "En depósitos y retiros comprueba dirección oficial, remitente y objetos exactos."
+          },
+          {
+            "summary": "Compara precios antes",
+            "body": "No mires solo el porcentaje de éxito; compara el valor real de ambos objetos."
+          },
+          {
+            "summary": "No persigas una pérdida",
+            "body": "Un nuevo intento es otro evento aleatorio y no se vuelve más probable por haber fallado el anterior."
+          },
+          {
+            "summary": "Revisa límites y retiro",
+            "body": "Una skin cara obtenida con éxito todavía puede estar sujeta a KYC, límites o falta temporal de inventario."
+          },
+          {
+            "summary": "Define un límite de valor",
+            "body": "Decide cuánto valor total estás dispuesto a arriesgar y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre mejora de skins CS2",
+        "items": [
+          {
+            "summary": "¿Qué es la mejora de skins de CS2?",
+            "body": "Un intento aleatorio de cambiar una skin o saldo por un objeto más caro con una probabilidad indicada."
+          },
+          {
+            "summary": "¿De qué depende la probabilidad?",
+            "body": "Principalmente de la relación entre el valor apostado y el precio del objetivo, ajustada por las condiciones del sitio."
+          },
+          {
+            "summary": "¿En qué se diferencia del intercambio normal?",
+            "body": "En <a href=\"/csgo/trade-skins\">un intercambio normal</a> sabes qué objeto recibirás; una mejora puede fallar."
+          },
+          {
+            "summary": "¿Puedo elegir cualquier skin objetivo?",
+            "body": "Depende del catálogo e inventario; algunos objetos caros pueden tener restricciones."
+          },
+          {
+            "summary": "¿Qué ocurre si falla?",
+            "body": "Normalmente se pierde el objeto o valor utilizado, según las reglas del sitio."
+          },
+          {
+            "summary": "¿Se puede verificar el resultado?",
+            "body": "En sitios Provably Fair sí, si existen datos y herramienta de verificación."
+          },
+          {
+            "summary": "¿Puedo retirar la skin ganada a Steam?",
+            "body": "A menudo sí si está disponible y se cumplen las condiciones de retiro."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian precios internos, probabilidades, inventario, Provably Fair, pagos y retiro."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Melhoria de skins de CS2: como funciona e o que comparar",
+        "paragraphs": [
+          "O modo de melhoria de skins permite usar um item existente ou saldo interno para tentar receber uma skin mais cara com uma probabilidade mostrada previamente. O usuário escolhe o item inicial e o alvo; se falhar, normalmente perde o valor apostado conforme as regras da plataforma.",
+          "A matemática depende da relação entre valor de entrada e alvo, preços internos e margem do site. Quanto mais caro o alvo em relação à aposta, menor deve ser a chance de sucesso.",
+          "A CSGOBROKER avalia esse modo separadamente da <a href=\"/csgo/trade-skins\">troca normal de skins</a> e da <a href=\"/csgo/caseopening\">abertura de caixas</a>. Em uma troca normal o resultado é conhecido antes; aqui depende de um resultado aleatório."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona a melhoria de skins de CS2",
+        "items": [
+          {
+            "title": "Escolher o item inicial",
+            "paragraphs": [
+              "O usuário seleciona uma skin do inventário do site, saldo ou itens recebidos antes. O valor interno vira a base da tentativa."
+            ]
+          },
+          {
+            "title": "Escolher a skin alvo",
+            "paragraphs": [
+              "Um item mais caro é escolhido no catálogo. A diferença de valor define o nível básico de risco."
+            ]
+          },
+          {
+            "title": "Calcular a probabilidade",
+            "paragraphs": [
+              "A plataforma mostra a chance de sucesso com base na relação de preços e em sua vantagem matemática."
+            ]
+          },
+          {
+            "title": "Resultado de sucesso",
+            "paragraphs": [
+              "Se der certo, o usuário recebe a skin alvo ou seu valor em saldo interno, conforme as regras."
+            ]
+          },
+          {
+            "title": "Tentativa sem sucesso",
+            "paragraphs": [
+              "Se falhar, normalmente o item inicial ou valor apostado é perdido. Regras extras devem ser verificadas antes."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Quando disponível, o resultado de uma tentativa concluída deve poder ser verificado."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de melhorar uma skin",
+        "intro": "A mesma probabilidade pode ter valor real diferente quando sites avaliam entrada e alvo de formas diferentes.",
+        "items": [
+          {
+            "summary": "Avaliação interna",
+            "body": "Compare os preços do item inicial e do alvo com mercados externos. Subvalorizar sua skin ou supervalorizar o alvo piora a oferta."
+          },
+          {
+            "summary": "Probabilidade e valor alvo",
+            "body": "Confira se a chance exibida é coerente com a relação de valores."
+          },
+          {
+            "summary": "Vantagem da plataforma",
+            "body": "O serviço normalmente inclui margem na probabilidade ou nos preços internos; avalie os dois."
+          },
+          {
+            "summary": "Disponibilidade do alvo",
+            "body": "Confirme que a skin está realmente disponível e pode ser sacada, não apenas convertida em saldo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Veja se o resultado concluído pode ser verificado com seeds, hashes ou outro método publicado."
+          },
+          {
+            "summary": "Saque e restrições",
+            "body": "Mínimos, KYC, taxas, atrasos no Steam Trade Offer e regras regionais podem valer mesmo após um sucesso."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de melhoria de skins",
+        "intro": "Preço interno é especialmente importante: uma boa interface não compensa avaliação ruim.",
+        "items": [
+          {
+            "summary": "Avaliação de entrada e alvo",
+            "body": "Comparamos preços internos e transparência da fonte de valores."
+          },
+          {
+            "summary": "Probabilidade e matemática",
+            "body": "Analisamos relação entre aposta, alvo, chance e vantagem efetiva."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Consideramos se uma tentativa específica pode ser conferida."
+          },
+          {
+            "summary": "Inventário alvo",
+            "body": "Profundidade do catálogo, filtros, skins caras e disponibilidade real para saque."
+          },
+          {
+            "summary": "Depósitos e saques",
+            "body": "Steam Trade Offer, cartões, cripto, taxas, KYC e restrições entram na análise."
+          },
+          {
+            "summary": "Interface e histórico",
+            "body": "Preços, chance, histórico de tentativas e status de saque claros ajudam no controle."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de melhoria muda",
+        "paragraphs": [
+          "Preços de mercado de CS2 mudam a relação entre item inicial e alvo. Atualizações lentas ou mudança da margem podem alterar bastante a oferta.",
+          "Sites também podem mudar inventário, probabilidades mínimas e máximas, regras de saque e Provably Fair.",
+          "Se você quer uma skin específica sem resultado aleatório, compare <a href=\"/csgo/trade-skins\">sites de troca</a> ou <a href=\"/csgo/buy-skins\">sites para comprar skins</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "A interface pode parecer uma troca, mas o resultado depende do acaso e não é uma operação comercial normal.",
+        "items": [
+          {
+            "summary": "Confira domínio e Trade Offer",
+            "body": "Em depósito ou saque, confira endereço oficial, remetente e itens."
+          },
+          {
+            "summary": "Compare preços antes",
+            "body": "Não olhe apenas a porcentagem de sucesso; compare o valor de mercado de ambos os itens."
+          },
+          {
+            "summary": "Não persiga uma falha",
+            "body": "Uma nova tentativa é outro evento aleatório e não fica mais provável porque a anterior falhou."
+          },
+          {
+            "summary": "Veja limites e saque",
+            "body": "Uma skin cara recebida pode continuar sujeita a KYC, limite ou falta temporária de inventário."
+          },
+          {
+            "summary": "Defina limite de valor",
+            "body": "Decida quanto valor total está disposto a arriscar e use <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre melhoria de skins CS2",
+        "items": [
+          {
+            "summary": "O que é melhoria de skins de CS2?",
+            "body": "Tentativa aleatória de trocar uma skin ou saldo por um item mais caro com chance exibida."
+          },
+          {
+            "summary": "Do que depende a chance?",
+            "body": "Principalmente da relação entre valor apostado e preço do alvo, ajustada pelas condições do site."
+          },
+          {
+            "summary": "Qual a diferença para troca normal?",
+            "body": "Na <a href=\"/csgo/trade-skins\">troca normal</a> o item recebido é conhecido; a melhoria pode falhar."
+          },
+          {
+            "summary": "Posso escolher qualquer skin alvo?",
+            "body": "Depende do catálogo e inventário; itens caros podem ter restrições."
+          },
+          {
+            "summary": "O que acontece se falhar?",
+            "body": "Normalmente o item ou valor usado é perdido, conforme as regras."
+          },
+          {
+            "summary": "O resultado pode ser verificado?",
+            "body": "Em sites Provably Fair, sim, quando há dados e ferramenta de verificação."
+          },
+          {
+            "summary": "Posso sacar a skin para Steam?",
+            "body": "Frequentemente sim se estiver disponível e as condições forem cumpridas."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Preços internos, chances, inventário, Provably Fair, pagamentos e saques mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Skin Yükseltme Siteleri: Nasıl Çalışır ve Neler Karşılaştırılır?",
+        "paragraphs": [
+          "Skin yükseltme modu, mevcut bir itemı veya site bakiyesini kullanarak daha pahalı bir skin elde etmeyi belirli bir başarı olasılığıyla denemenizi sağlar. Kullanıcı başlangıç itemını ve hedef itemı seçer; deneme başarısız olursa yatırılan değer genellikle site kurallarına göre kaybedilir.",
+          "Matematik başlangıç ve hedef değer oranına, sitenin iç fiyatlamasına ve site avantajına bağlıdır. Hedef skin stake'e göre ne kadar pahalıysa başarı olasılığı o kadar düşük olmalıdır.",
+          "CSGOBROKER skin yükseltmeyi normal <a href=\"/csgo/trade-skins\">skin takasından</a> ve <a href=\"/csgo/caseopening\">kasa açmadan</a> ayrı değerlendirir. Normal takasta sonuç baştan bellidir; yükseltmede hedef item rastgele sonuca bağlıdır."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Skin Yükseltme Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Başlangıç itemı",
+            "paragraphs": [
+              "Kullanıcı site envanterinden, bakiyeden veya daha önce alınan itemlardan bir skin seçer. İç değeri denemenin temelini oluşturur."
+            ]
+          },
+          {
+            "title": "Hedef skin",
+            "paragraphs": [
+              "Katalogdan daha pahalı bir item seçilir. Değer farkı temel risk seviyesini belirler."
+            ]
+          },
+          {
+            "title": "Başarı olasılığı",
+            "paragraphs": [
+              "Platform fiyat oranı ve matematiksel avantajına göre başarı şansını gösterir."
+            ]
+          },
+          {
+            "title": "Başarılı sonuç",
+            "paragraphs": [
+              "Deneme başarılıysa hedef skin veya kurala göre onun iç bakiye değeri alınır."
+            ]
+          },
+          {
+            "title": "Başarısız deneme",
+            "paragraphs": [
+              "Başarısızlıkta başlangıç itemı veya yatırılan değer genellikle kaybedilir. Ek mekanikler varsa önceden okunmalıdır."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Destekleniyorsa tamamlanan denemenin sonucu doğrulanabilmelidir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skin Yükseltmeden Önce Neler Kontrol Edilmeli?",
+        "intro": "Aynı görünen başarı şansı, siteler başlangıç ve hedef itemları farklı fiyatlandırıyorsa farklı gerçek değer sunabilir.",
+        "items": [
+          {
+            "summary": "İç skin değerlemesi",
+            "body": "Başlangıç ve hedef fiyatlarını dış pazarlarla karşılaştırın. Kendi skininizin düşük veya hedefin yüksek fiyatlanması teklifi kötüleştirir."
+          },
+          {
+            "summary": "Olasılık ve hedef değeri",
+            "body": "Gösterilen şansın değer oranıyla uyumlu olup olmadığını kontrol edin."
+          },
+          {
+            "summary": "Site avantajı",
+            "body": "Servis marjı olasılığa veya iç fiyatlara ekleyebilir; hem şansı hem item değerlerini değerlendirin."
+          },
+          {
+            "summary": "Hedef item erişimi",
+            "body": "Skinin gerçek envanterde bulunduğunu ve sadece bakiye yerine item olarak çekilebildiğini doğrulayın."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Tamamlanan sonucu seeds, hash veya yayınlanan başka yöntemle doğrulayabildiğinizi kontrol edin."
+          },
+          {
+            "summary": "Çekim ve kısıtlamalar",
+            "body": "Minimum, KYC, ücret, Steam Trade Offer gecikmesi ve bölgesel kurallar başarıdan sonra da geçerli olabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Skin Yükseltme Sitelerini Nasıl Değerlendirir?",
+        "intro": "Bu modda iç fiyatlar özellikle önemlidir; iyi arayüz kötü item değerlemesini telafi etmez.",
+        "items": [
+          {
+            "summary": "Başlangıç ve hedef değerlemesi",
+            "body": "İç fiyatları ve fiyat kaynağının şeffaflığını karşılaştırırız."
+          },
+          {
+            "summary": "Olasılık ve matematik",
+            "body": "Stake, hedef, gösterilen şans ve site avantajı arasındaki ilişkiyi inceleriz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Belirli başarılı veya başarısız denemenin doğrulanabilirliğini değerlendiririz."
+          },
+          {
+            "summary": "Hedef envanter",
+            "body": "Katalog derinliği, filtreler, pahalı itemlar ve gerçek çekim imkanı önemlidir."
+          },
+          {
+            "summary": "Yatırma ve çekim",
+            "body": "Steam Trade Offer, kart, kripto, ücret, KYC ve kısıtlamalar değerlendirilir."
+          },
+          {
+            "summary": "Arayüz ve geçmiş",
+            "body": "Açık fiyat, şans, deneme geçmişi ve çekim durumu kullanımı kolaylaştırır."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Skin Yükseltme Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "CS2 pazar fiyatları başlangıç ve hedef item arasındaki oranı doğrudan değiştirir. Geciken fiyat güncellemeleri veya değişen site marjı gerçek değeri etkiler.",
+          "Siteler envanteri, minimum ve maksimum başarı şansını, çekim kurallarını ve Provably Fair sistemini değiştirebilir.",
+          "Belirli bir itemı rastgele sonuç olmadan almak istiyorsanız <a href=\"/csgo/trade-skins\">skin takas sitelerini</a> veya <a href=\"/csgo/buy-skins\">skin satın alma sitelerini</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Yükseltme arayüzü takasa benzese de sonuç rastgeleliğe bağlıdır ve normal ticaret işlemi değildir.",
+        "items": [
+          {
+            "summary": "Domain ve Trade Offer kontrolü",
+            "body": "Yatırma veya çekimde resmi adresi, göndereni ve itemları doğrulayın."
+          },
+          {
+            "summary": "Denemeden önce fiyatları karşılaştırın",
+            "body": "Sadece başarı yüzdesine bakmayın; iki itemın gerçek pazar değerini kontrol edin."
+          },
+          {
+            "summary": "Başarısız denemeyi kovalamayın",
+            "body": "Yeni deneme ayrı bir rastgele olaydır; önceki başarısızlık nedeniyle daha olası hale gelmez."
+          },
+          {
+            "summary": "Limit ve çekimi kontrol edin",
+            "body": "Pahalı başarılı sonuç KYC, çekim limiti veya geçici envanter yokluğuna tabi olabilir."
+          },
+          {
+            "summary": "Değer limiti belirleyin",
+            "body": "Rastgele denemelerde riske atacağınız toplam item değerini önceden belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> bilgilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Skin Yükseltme Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 skin yükseltme nedir?",
+            "body": "Bir skin veya bakiyeyi daha pahalı itema gösterilen başarı şansıyla dönüştürmeye yönelik rastgele denemedir."
+          },
+          {
+            "summary": "Başarı şansı neye bağlıdır?",
+            "body": "Temelde stake değeri ile hedef fiyatı arasındaki oran ve site matematiğine."
+          },
+          {
+            "summary": "Normal takastan farkı nedir?",
+            "body": "<a href=\"/csgo/trade-skins\">Normal takasta</a> alacağınız item bellidir; yükseltme başarısız olabilir."
+          },
+          {
+            "summary": "Her hedef skin seçilebilir mi?",
+            "body": "Katalog ve envantere bağlıdır; pahalı itemlarda ek kısıtlama olabilir."
+          },
+          {
+            "summary": "Başarısız olursa ne olur?",
+            "body": "Genellikle kullanılan item veya değer kaybedilir; kesin kuralları site belirler."
+          },
+          {
+            "summary": "Sonuç doğrulanabilir mi?",
+            "body": "Provably Fair sitelerde veri ve doğrulama aracı varsa evet."
+          },
+          {
+            "summary": "Kazanan skin Steam'e çekilebilir mi?",
+            "body": "Çoğu zaman item mevcutsa ve çekim koşulları karşılanıyorsa evet."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "İç fiyatlar, olasılık, envanter, Provably Fair, ödemeler ve çekim değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Skin Upgrader Sites: Skin Upgrade कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Skin upgrader mode existing item या site balance को risk करके अधिक expensive skin पाने का chance देता है। User input item और target item चुनता है और displayed success probability देखता है; failure पर input value आम तौर पर site rules के अनुसार lose हो जाती है।",
+          "Math input और target value के ratio, internal pricing और platform edge पर depend करती है। Target skin stake के मुकाबले जितनी expensive होगी, success probability उतनी lower होनी चाहिए।",
+          "CSGOBROKER upgrading को normal <a href=\"/csgo/trade-skins\">skin trading</a> और <a href=\"/csgo/caseopening\">case opening</a> से अलग evaluate करता है। Normal trade में result पहले से known होता है, जबकि upgrade random outcome पर depend करता है।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Skin Upgrading कैसे काम करता है",
+        "items": [
+          {
+            "title": "Input item चुनना",
+            "paragraphs": [
+              "User site inventory, balance या previously received items से skin चुनता है। Internal value stake बनती है।"
+            ]
+          },
+          {
+            "title": "Target skin चुनना",
+            "paragraphs": [
+              "Catalog से अधिक expensive item चुना जाता है। Value gap basic risk level तय करता है।"
+            ]
+          },
+          {
+            "title": "Success probability",
+            "paragraphs": [
+              "Platform price ratio और अपने mathematical edge के आधार पर success chance दिखाता है।"
+            ]
+          },
+          {
+            "title": "Successful result",
+            "paragraphs": [
+              "Success पर target skin या site rules के अनुसार उसका internal balance value मिलता है।"
+            ]
+          },
+          {
+            "title": "Failed attempt",
+            "paragraphs": [
+              "Failure पर input item या staked value आम तौर पर lost हो जाती है। Extra mechanics हों तो पहले check करें।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Supported होने पर completed upgrade का specific result verify किया जा सकना चाहिए।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skin Upgrade से पहले क्या Check करें",
+        "intro": "Same displayed probability की real value अलग हो सकती है अगर sites input और target items को अलग prices देती हैं।",
+        "items": [
+          {
+            "summary": "Internal skin valuation",
+            "body": "Input और target prices को external markets से compare करें। आपका item undervalued या target overpriced होने से offer खराब होता है।"
+          },
+          {
+            "summary": "Probability और target value",
+            "body": "Displayed chance value ratio के हिसाब से reasonable है या नहीं, देखें।"
+          },
+          {
+            "summary": "Platform edge",
+            "body": "Margin probability या internal pricing में embedded हो सकती है; chance और दोनों item values evaluate करें।"
+          },
+          {
+            "summary": "Target availability",
+            "body": "Confirm करें कि selected skin real inventory में है और सिर्फ balance नहीं बल्कि item के रूप में withdraw हो सकती है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Completed result seeds, hash या published method से verify हो सकता है या नहीं, check करें।"
+          },
+          {
+            "summary": "Withdrawal और restrictions",
+            "body": "Minimums, KYC, fees, Steam Trade Offer delays और regional rules successful upgrade के बाद भी apply हो सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Skin Upgrader Sites को कैसे Rate करता है",
+        "intro": "इस category में internal pricing बहुत महत्वपूर्ण है; polished interface poor item valuation को compensate नहीं करता।",
+        "items": [
+          {
+            "summary": "Input और target valuation",
+            "body": "Internal prices और price-source transparency compare करते हैं।"
+          },
+          {
+            "summary": "Probability और math",
+            "body": "Stake value, target value, displayed chance और platform edge का relation देखते हैं।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Specific successful या failed attempt verify हो सकता है या नहीं, evaluate करते हैं।"
+          },
+          {
+            "summary": "Target inventory",
+            "body": "Catalog depth, filters, expensive items और actual withdrawal availability महत्वपूर्ण हैं।"
+          },
+          {
+            "summary": "Deposits और withdrawals",
+            "body": "Steam Trade Offers, cards, crypto, fees, KYC और restrictions शामिल हैं।"
+          },
+          {
+            "summary": "Interface और history",
+            "body": "Clear prices, chance display, attempt history और withdrawal status usability बढ़ाते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Skin Upgrader Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "CS2 market prices input और target value relation को सीधे बदलती हैं। Delayed price updates या changed platform margin upgrade की real value बदल सकती है।",
+          "Sites inventory, minimum/maximum success probability, withdrawal rules और Provably Fair implementation बदल सकती हैं।",
+          "Specific item बिना random outcome के चाहिए तो <a href=\"/csgo/trade-skins\">skin trading sites</a> या <a href=\"/csgo/buy-skins\">skin buying sites</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Upgrader interface trade जैसा दिख सकता है, लेकिन result random है और standard exchange नहीं है।",
+        "items": [
+          {
+            "summary": "Domain और Trade Offer verify करें",
+            "body": "Deposit या withdrawal पर official address, sender और exact items check करें।"
+          },
+          {
+            "summary": "Attempt से पहले prices compare करें",
+            "body": "सिर्फ success percentage पर focus न करें; दोनों items की real market value देखें।"
+          },
+          {
+            "summary": "Failed upgrades chase न करें",
+            "body": "New attempt अलग random event है और previous failure से अधिक likely नहीं बनता।"
+          },
+          {
+            "summary": "Limits और withdrawal देखें",
+            "body": "Expensive successful upgrade पर KYC, withdrawal limit या temporary inventory shortage हो सकती है।"
+          },
+          {
+            "summary": "Value limit set करें",
+            "body": "पहले तय करें कि total कितनी item value risk करेंगे और <a href=\"/responsibility\">responsible gambling</a> guidance use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Skin Upgrading FAQ",
+        "items": [
+          {
+            "summary": "CS2 skin upgrader क्या है?",
+            "body": "Input skin या balance को more valuable target item में displayed success probability के साथ बदलने की random attempt।"
+          },
+          {
+            "summary": "Success chance किस पर depend करती है?",
+            "body": "मुख्य रूप से stake value और target price ratio तथा platform math पर।"
+          },
+          {
+            "summary": "Normal trading से क्या फर्क है?",
+            "body": "<a href=\"/csgo/trade-skins\">Normal trading</a> में received item known होता है; upgrade fail हो सकता है।"
+          },
+          {
+            "summary": "क्या कोई भी target skin चुन सकते हैं?",
+            "body": "Site catalog और inventory पर depend करता है; expensive items पर restrictions हो सकती हैं।"
+          },
+          {
+            "summary": "Failure पर क्या होता है?",
+            "body": "Input item या staked value आम तौर पर lost होती है, exact rules site define करती है।"
+          },
+          {
+            "summary": "Result verify हो सकता है?",
+            "body": "Provably Fair sites पर data और verifier उपलब्ध हों तो हाँ।"
+          },
+          {
+            "summary": "Won skin Steam में withdraw हो सकती है?",
+            "body": "अक्सर, अगर inventory में available हो और withdrawal conditions पूरी हों।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Internal prices, probabilities, inventory, fairness tools, payments और withdrawal rules बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

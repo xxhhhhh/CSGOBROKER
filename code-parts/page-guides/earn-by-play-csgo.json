@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "earn-by-play-csgo",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Играй и зарабатывай в CS2: как работают сервисы с наградами за игру",
+        "paragraphs": [
+          "Сервисы Earn by Play для CS2 позволяют получать внутриигровые награды, скины, баланс или другие бонусы за игровую активность: выполнение заданий на серверах, участие в событиях, развитие battle pass, лидерборды, турниры или достижение конкретных целей.",
+          "Эта модель отличается от гемблинга: награда здесь обычно связана с выполненным действием или результатом игры, а не со случайным исходом ставки. CSGOBROKER поэтому отделяет такие сервисы от обычных CS2-гемблинг страниц и связывает их с более широким разделом <a href=\"/earning/earn-by-play\">заработка за игру</a>.",
+          "При сравнении важно смотреть не только на размер обещанной награды, но и на время выполнения, реальные требования, правила начисления, доступность серверов, ограничения по аккаунту и способы вывода заработанных скинов или баланса."
+        ]
+      },
+      "categories": {
+        "title": "Какие способы заработка за игру встречаются в CS2",
+        "items": [
+          {
+            "title": "Задания на игровых серверах",
+            "paragraphs": [
+              "Сервис может начислять очки за матчи, киллы, победы, время на сервере или выполнение специальных миссий. Важно понимать, какие действия учитываются и есть ли дневные или недельные лимиты."
+            ]
+          },
+          {
+            "title": "Battle pass и прогресс",
+            "paragraphs": [
+              "Некоторые платформы используют уровни или сезонный pass: награды открываются по мере накопления опыта. Бесплатная и платная ветки могут иметь разные условия."
+            ]
+          },
+          {
+            "title": "Лидерборды",
+            "paragraphs": [
+              "Награды распределяются между пользователями с лучшими результатами за определённый период. Полезно заранее смотреть критерий рейтинга, дату окончания и число призовых мест."
+            ]
+          },
+          {
+            "title": "Турниры и соревнования",
+            "paragraphs": [
+              "Приз может зависеть от результата команды или игрока в конкретном турнире. Здесь важны формат, уровень участников, правила регистрации и способ выплаты."
+            ]
+          },
+          {
+            "title": "Ежедневные задания и streak",
+            "paragraphs": [
+              "Регулярная активность может давать дополнительные очки или награды. Это пересекается с <a href=\"/freebies/daily-rewards\">ежедневными бонусами</a>, но в Earn by Play обычно требуется именно игровое действие."
+            ]
+          },
+          {
+            "title": "Реферальные и дополнительные задания",
+            "paragraphs": [
+              "Некоторые сервисы добавляют задания вне матча — приглашения, социальные действия или партнёрские offers. Для рекламных заданий полезно отдельно сравнить <a href=\"/earning/offerwalls\">offerwall-сайты</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед выбором Earn by Play сервиса",
+        "intro": "Главный вопрос — сколько времени и действий требуется для награды, которую реально можно получить и вывести.",
+        "items": [
+          {
+            "summary": "Что именно нужно сделать",
+            "body": "Условия должны быть конкретными: сыграть число матчей, выполнить миссию, занять место в рейтинге или накопить очки."
+          },
+          {
+            "summary": "Реальная ценность награды",
+            "body": "Сравнивайте не только внутренние coins, но и то, во что они конвертируются: конкретные скины, gift cards, деньги или другой баланс."
+          },
+          {
+            "summary": "Скорость накопления",
+            "body": "Полезно оценивать награду относительно времени. Высокая сумма может требовать слишком большого количества часов или сложных целей."
+          },
+          {
+            "summary": "Доступность серверов и регион",
+            "body": "Пинг, число игроков и география серверов напрямую влияют на возможность выполнять игровые задания."
+          },
+          {
+            "summary": "Правила вывода",
+            "body": "Проверьте минимальный порог, доступный инвентарь, Steam Trade Offer, комиссии, KYC и сроки обработки."
+          },
+          {
+            "summary": "Ограничения аккаунта и античит",
+            "body": "Сервис может требовать Steam Prime, определённый уровень аккаунта, привязку Discord или собственный anti-cheat."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сервисы Earn by Play",
+        "intro": "Для этой категории мы оцениваем практическую достижимость наград, а не только рекламную сумму.",
+        "items": [
+          {
+            "summary": "Понятность механики заработка",
+            "body": "Пользователь должен заранее понимать, за какие действия начисляются очки и сколько их можно получить."
+          },
+          {
+            "summary": "Соотношение времени и награды",
+            "body": "Учитываем объём игрового времени, сложность заданий и реальную стоимость доступных наград."
+          },
+          {
+            "summary": "Вывод и ассортимент наград",
+            "body": "Важны минимальный порог, наличие скинов, частота обновления инвентаря, Trade Offer и альтернативные награды."
+          },
+          {
+            "summary": "Стабильность серверов и заданий",
+            "body": "Проверяется доступность серверов, корректность отслеживания прогресса и работа миссий."
+          },
+          {
+            "summary": "Ограничения и прозрачность правил",
+            "body": "Регион, требования к Steam, anti-cheat, возраст и правила лидербордов должны быть понятны заранее."
+          },
+          {
+            "summary": "Поддержка и история начислений",
+            "body": "Удобный журнал заданий и выплат помогает разбирать ситуации, когда прогресс или награда не были засчитаны."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему условия Earn by Play меняются",
+        "paragraphs": [
+          "Сервисы регулярно меняют сезоны, battle pass, миссии, размер наград, лидерборды и доступные серверы. Поэтому прежняя скорость заработка не гарантирует таких же условий в новом сезоне.",
+          "Стоимость скинов и внутренний курс coins также могут меняться. Если награда номинирована во внутренней валюте, важно смотреть на фактическую стоимость предметов, доступных за неё.",
+          "Для других способов получать награды используйте разделы CSGOBROKER <a href=\"/earning\">заработка</a>, <a href=\"/earning/offerwalls\">offerwalls</a> и <a href=\"/freebies\">бесплатных бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании Earn by Play сервисов",
+        "intro": "Даже если сервис не связан со ставками, он может запрашивать Steam-авторизацию, подключение к серверам или установку дополнительного ПО.",
+        "items": [
+          {
+            "summary": "Проверяйте Steam-авторизацию",
+            "body": "Не вводите пароль Steam на сторонней копии формы входа и проверяйте домен сервиса."
+          },
+          {
+            "summary": "Оценивайте необходимость дополнительного ПО",
+            "body": "Если требуется launcher или anti-cheat, устанавливайте его только из официального источника сервиса и изучайте разрешения."
+          },
+          {
+            "summary": "Проверяйте Trade Offer",
+            "body": "При выводе скина сверяйте отправителя и предмет до подтверждения."
+          },
+          {
+            "summary": "Не считайте рекламную сумму гарантированной ставкой за час",
+            "body": "Доход зависит от заданий, навыка, лимитов, активности и доступности наград. Внутренние coins сами по себе не равны деньгам."
+          },
+          {
+            "summary": "Читайте правила мультиаккаунтов и автоматизации",
+            "body": "Несколько аккаунтов, VPN, автоматизация или обход ограничений могут привести к аннулированию прогресса и наград."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы про заработок за игру в CS2",
+        "items": [
+          {
+            "summary": "Что значит Earn by Play в CS2?",
+            "body": "Получение наград за игровую активность: задания, матчи, турниры, лидерборды или прогресс в системе сервиса."
+          },
+          {
+            "summary": "Можно ли реально получить скины за игру?",
+            "body": "Некоторые сервисы позволяют обменивать заработанные очки на скины или выводить предметы через Steam Trade Offer."
+          },
+          {
+            "summary": "Это то же самое, что бесплатные скины?",
+            "body": "Не совсем. В <a href=\"/freebies\">бонусах</a> награда может выдаваться за регистрацию или промокод, а Earn by Play обычно требует игровой активности."
+          },
+          {
+            "summary": "Чем Earn by Play отличается от offerwall?",
+            "body": "В <a href=\"/earning/offerwalls\">offerwall</a> награды дают за рекламные задания, опросы или установки, а здесь основной источник прогресса — сама игра."
+          },
+          {
+            "summary": "Нужно ли хорошо играть в CS2?",
+            "body": "Зависит от механики: часть заданий начисляет очки за активность, другие требуют побед, статистики или места в лидерборде."
+          },
+          {
+            "summary": "Нужен ли Steam Prime?",
+            "body": "Некоторые сервисы требуют Prime или другие характеристики аккаунта, другие — нет."
+          },
+          {
+            "summary": "Как выводятся заработанные скины?",
+            "body": "Чаще через Steam Trade Offer, но могут использоваться внутренняя витрина, gift cards или другие награды."
+          },
+          {
+            "summary": "Почему рейтинг Earn by Play на CSGOBROKER меняется?",
+            "body": "Меняются задания, сезоны, стоимость наград, серверы, лимиты, вывод и стабильность отслеживания прогресса."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Play CS2 and Earn Rewards: How Earn-by-Play Services Work",
+        "paragraphs": [
+          "CS2 Earn-by-Play services let users receive in-game rewards, skins, balance, or other bonuses for gameplay activity: completing server tasks, joining events, progressing through a battle pass, competing on leaderboards or in tournaments, or reaching specific objectives.",
+          "This model differs from gambling because the reward is usually tied to a completed action or gameplay result rather than the random outcome of a wager. CSGOBROKER therefore separates these services from standard CS2 gambling pages and connects them with the broader <a href=\"/earning/earn-by-play\">earn-by-play</a> category.",
+          "When comparing services, look beyond the advertised reward amount and consider the time required, actual requirements, crediting rules, server availability, account restrictions, and ways to withdraw earned skins or balance."
+        ]
+      },
+      "categories": {
+        "title": "Common Ways to Earn by Playing CS2",
+        "items": [
+          {
+            "title": "Server missions",
+            "paragraphs": [
+              "A service may award points for matches, kills, wins, time spent on a server, or completion of special missions. It is important to understand which actions count and whether daily or weekly limits apply."
+            ]
+          },
+          {
+            "title": "Battle pass and progression",
+            "paragraphs": [
+              "Some platforms use levels or a seasonal pass, with rewards unlocking as experience is earned. Free and paid tracks may have different conditions."
+            ]
+          },
+          {
+            "title": "Leaderboards",
+            "paragraphs": [
+              "Rewards are distributed among users with the best results over a defined period. Check the ranking criterion, end date, and number of prize positions in advance."
+            ]
+          },
+          {
+            "title": "Tournaments and competitions",
+            "paragraphs": [
+              "A prize can depend on a team or player's result in a specific tournament. Format, participant level, registration rules, and payout method all matter."
+            ]
+          },
+          {
+            "title": "Daily missions and streaks",
+            "paragraphs": [
+              "Regular activity can provide extra points or rewards. This overlaps with <a href=\"/freebies/daily-rewards\">daily rewards</a>, but Earn by Play usually requires an actual gameplay action."
+            ]
+          },
+          {
+            "title": "Referral and extra tasks",
+            "paragraphs": [
+              "Some services add tasks outside matches, such as referrals, social actions, or partner offers. For advertising-based tasks, it is useful to compare <a href=\"/earning/offerwalls\">offerwall sites</a> separately."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Choosing an Earn-by-Play Service",
+        "intro": "The main question is how much time and how many actions are required for a reward that can actually be obtained and withdrawn.",
+        "items": [
+          {
+            "summary": "Exact task requirements",
+            "body": "Requirements should be specific: play a certain number of matches, complete a mission, place on a leaderboard, or accumulate points."
+          },
+          {
+            "summary": "Real reward value",
+            "body": "Compare not only internal coins but also what they can be converted into: specific skins, gift cards, money, or another type of balance."
+          },
+          {
+            "summary": "Earning speed",
+            "body": "It is useful to judge a reward relative to the time required. A high headline amount may require too many hours or very difficult objectives."
+          },
+          {
+            "summary": "Server and region availability",
+            "body": "Ping, player population, and server geography directly affect whether gameplay tasks can realistically be completed."
+          },
+          {
+            "summary": "Withdrawal rules",
+            "body": "Check the minimum redemption threshold, available inventory, Steam Trade Offers, fees, KYC, and processing times."
+          },
+          {
+            "summary": "Account and anti-cheat requirements",
+            "body": "A service may require Steam Prime, a certain account level, Discord linking, or its own anti-cheat."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Earn-by-Play Services",
+        "intro": "For this category, we evaluate how realistically rewards can be earned rather than focusing only on the advertised amount.",
+        "items": [
+          {
+            "summary": "Clear earning mechanics",
+            "body": "Users should understand in advance which actions generate points and how many points can be earned."
+          },
+          {
+            "summary": "Time-to-reward value",
+            "body": "We consider the amount of gameplay time, task difficulty, and the real value of available rewards together."
+          },
+          {
+            "summary": "Redemption and reward inventory",
+            "body": "Minimum thresholds, skin availability, inventory refresh frequency, Steam Trade Offers, and alternative rewards are important."
+          },
+          {
+            "summary": "Server and task reliability",
+            "body": "We check server availability, accurate progress tracking, and whether missions work correctly."
+          },
+          {
+            "summary": "Restrictions and rule clarity",
+            "body": "Region, Steam requirements, anti-cheat, age limits, and leaderboard rules should be clear before a user starts."
+          },
+          {
+            "summary": "Support and earning history",
+            "body": "A useful task and payout history helps resolve cases where progress or a reward was not credited."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Earn-by-Play Conditions Change",
+        "paragraphs": [
+          "Services regularly change seasons, battle passes, missions, reward amounts, leaderboards, and available servers. As a result, a previous earning rate does not guarantee the same conditions in a new season.",
+          "Skin values and the internal exchange rate of coins can also change. If rewards are denominated in an internal currency, look at the actual value of the items available for that currency.",
+          "For other ways to receive rewards, use CSGOBROKER sections for <a href=\"/earning\">earning</a>, <a href=\"/earning/offerwalls\">offerwalls</a>, and <a href=\"/freebies\">free bonuses</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety on Earn-by-Play Services",
+        "intro": "Even if a service is not related to wagering, it may request Steam authentication, server access, or installation of additional software.",
+        "items": [
+          {
+            "summary": "Verify Steam sign-in",
+            "body": "Do not enter your Steam password into a third-party copy of the login form, and always verify the service domain."
+          },
+          {
+            "summary": "Review additional software",
+            "body": "If a launcher or anti-cheat is required, install it only from the service's official source and review the permissions it requests."
+          },
+          {
+            "summary": "Verify Trade Offers",
+            "body": "When withdrawing a skin, verify both the sender and the item before confirming the Trade Offer."
+          },
+          {
+            "summary": "Do not treat headline earnings as a guaranteed hourly rate",
+            "body": "Earnings depend on tasks, skill, limits, activity, and reward availability. Internal coins are not automatically equivalent to money."
+          },
+          {
+            "summary": "Read multi-account and automation rules",
+            "body": "Multiple accounts, VPN use, automation, or attempts to bypass restrictions can lead to progress and rewards being cancelled."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Earning by Playing CS2",
+        "items": [
+          {
+            "summary": "What does Earn by Play mean in CS2?",
+            "body": "Earning rewards for gameplay activity such as tasks, matches, tournaments, leaderboards, or progression within a service."
+          },
+          {
+            "summary": "Can I really earn CS2 skins by playing?",
+            "body": "Some services let users exchange earned points for skins or withdraw items through Steam Trade Offers."
+          },
+          {
+            "summary": "Is this the same as free skins?",
+            "body": "Not exactly. In <a href=\"/freebies\">bonuses</a>, a reward may be granted for registration or a promo code, while Earn by Play normally requires gameplay activity."
+          },
+          {
+            "summary": "How is Earn by Play different from offerwalls?",
+            "body": "In an <a href=\"/earning/offerwalls\">offerwall</a>, rewards are given for advertising tasks, surveys, or app installs; here the main source of progress is the game itself."
+          },
+          {
+            "summary": "Do I need to be good at CS2?",
+            "body": "It depends on the mechanics: some tasks give points for participation, while others require wins, statistics, or a leaderboard position."
+          },
+          {
+            "summary": "Is Steam Prime required?",
+            "body": "Some services require Prime or other account characteristics, while others do not."
+          },
+          {
+            "summary": "How are earned skins withdrawn?",
+            "body": "Most commonly through Steam Trade Offers, although an internal reward store, gift cards, or other reward types may also be used."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Earn-by-Play ranking change?",
+            "body": "Tasks, seasons, reward values, servers, limits, withdrawals, and the reliability of progress tracking can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Juega a CS2 y gana skins: cómo funciona Earn by Play",
+        "paragraphs": [
+          "Los servicios Earn by Play para CS2 permiten recibir recompensas dentro del juego, skins, saldo u otros bonus por actividad de juego: completar tareas en servidores, participar en eventos, progresar en un battle pass, competir en leaderboards o torneos, o alcanzar objetivos concretos.",
+          "Este modelo se diferencia del gambling porque la recompensa suele estar vinculada a una acción realizada o a un resultado de juego, y no al resultado aleatorio de una apuesta. Por eso CSGOBROKER separa estos servicios de las páginas habituales de gambling de CS2 y los relaciona con la categoría más amplia de <a href=\"/earning/earn-by-play\">earn by play</a>.",
+          "Al comparar servicios no conviene mirar solo el importe prometido de la recompensa, sino también el tiempo necesario, los requisitos reales, las reglas de acreditación, la disponibilidad de servidores, las limitaciones de la cuenta y las formas de retirar las skins o el saldo obtenidos."
+        ]
+      },
+      "categories": {
+        "title": "Formas de ganar jugando a CS2",
+        "items": [
+          {
+            "title": "Misiones en servidores",
+            "paragraphs": [
+              "Un servicio puede conceder puntos por partidas, kills, victorias, tiempo en el servidor o por completar misiones especiales. Es importante saber qué acciones cuentan y si existen límites diarios o semanales."
+            ]
+          },
+          {
+            "title": "Battle pass",
+            "paragraphs": [
+              "Algunas plataformas utilizan niveles o un pass de temporada: las recompensas se desbloquean al acumular experiencia. Las rutas gratuita y de pago pueden tener condiciones diferentes."
+            ]
+          },
+          {
+            "title": "Leaderboards",
+            "paragraphs": [
+              "Las recompensas se distribuyen entre los usuarios con mejores resultados durante un periodo determinado. Conviene revisar de antemano el criterio del ranking, la fecha de finalización y el número de posiciones premiadas."
+            ]
+          },
+          {
+            "title": "Torneos",
+            "paragraphs": [
+              "El premio puede depender del resultado de un equipo o jugador en un torneo concreto. Importan el formato, el nivel de los participantes, las reglas de inscripción y el método de pago."
+            ]
+          },
+          {
+            "title": "Misiones diarias",
+            "paragraphs": [
+              "La actividad regular puede dar puntos o recompensas adicionales. Se parece a las <a href=\"/freebies/daily-rewards\">recompensas diarias</a>, pero en Earn by Play normalmente se exige una acción dentro del juego."
+            ]
+          },
+          {
+            "title": "Tareas extra",
+            "paragraphs": [
+              "Algunos servicios añaden tareas fuera de las partidas, como invitaciones, acciones sociales u ofertas de partners. Para las tareas publicitarias conviene comparar por separado los <a href=\"/earning/offerwalls\">sitios offerwall</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de elegir",
+        "intro": "La pregunta principal es cuánto tiempo y cuántas acciones hacen falta para conseguir una recompensa que realmente pueda obtenerse y retirarse.",
+        "items": [
+          {
+            "summary": "Requisitos",
+            "body": "Los requisitos deben ser concretos: jugar un número de partidas, completar una misión, alcanzar una posición en el ranking o acumular puntos."
+          },
+          {
+            "summary": "Valor real",
+            "body": "Compara no solo las monedas internas, sino también en qué pueden convertirse: skins concretas, gift cards, dinero u otro tipo de saldo."
+          },
+          {
+            "summary": "Velocidad",
+            "body": "Conviene valorar la recompensa en relación con el tiempo requerido. Una cifra alta puede exigir demasiadas horas o metas muy difíciles."
+          },
+          {
+            "summary": "Servidores",
+            "body": "El ping, el número de jugadores y la ubicación geográfica de los servidores influyen directamente en la posibilidad de completar las tareas de juego."
+          },
+          {
+            "summary": "Retiro",
+            "body": "Comprueba el mínimo para retirar o canjear, el inventario disponible, los Steam Trade Offers, las comisiones, KYC y los plazos de procesamiento."
+          },
+          {
+            "summary": "Cuenta y anti-cheat",
+            "body": "El servicio puede exigir Steam Prime, un nivel determinado de cuenta, vincular Discord o instalar su propio anti-cheat."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa Earn by Play",
+        "intro": "En esta categoría evaluamos la posibilidad real de conseguir las recompensas, y no solo la cifra anunciada.",
+        "items": [
+          {
+            "summary": "Mecánica clara",
+            "body": "El usuario debe saber de antemano qué acciones generan puntos y cuántos puede obtener."
+          },
+          {
+            "summary": "Tiempo y recompensa",
+            "body": "Valoramos conjuntamente el tiempo de juego necesario, la dificultad de las tareas y el valor real de las recompensas disponibles."
+          },
+          {
+            "summary": "Retiro",
+            "body": "Importan el mínimo de canje, la disponibilidad de skins, la frecuencia de actualización del inventario, los Steam Trade Offers y las recompensas alternativas."
+          },
+          {
+            "summary": "Servidores",
+            "body": "Comprobamos la disponibilidad de los servidores, la precisión del seguimiento del progreso y el funcionamiento correcto de las misiones."
+          },
+          {
+            "summary": "Restricciones",
+            "body": "La región, los requisitos de Steam, el anti-cheat, la edad y las reglas de los leaderboards deben estar claros de antemano."
+          },
+          {
+            "summary": "Soporte",
+            "body": "Un historial claro de tareas y pagos ayuda a resolver situaciones en las que el progreso o una recompensa no se acreditaron."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las condiciones",
+        "paragraphs": [
+          "Los servicios cambian regularmente las temporadas, battle passes, misiones, importes de recompensas, leaderboards y servidores disponibles. Por eso una velocidad de ganancias anterior no garantiza las mismas condiciones en una temporada nueva.",
+          "El valor de las skins y el tipo de cambio interno de las coins también pueden cambiar. Si la recompensa está expresada en moneda interna, conviene mirar el valor real de los objetos disponibles por esa moneda.",
+          "Para otras formas de obtener recompensas, utiliza las secciones de CSGOBROKER sobre <a href=\"/earning\">ganancias</a>, <a href=\"/earning/offerwalls\">offerwalls</a> y <a href=\"/freebies\">bonus gratuitos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en Earn by Play",
+        "intro": "Aunque un servicio no esté relacionado con apuestas, puede solicitar autorización de Steam, acceso a servidores o la instalación de software adicional.",
+        "items": [
+          {
+            "summary": "Steam",
+            "body": "No introduzcas tu contraseña de Steam en una copia externa del formulario de acceso y comprueba siempre el dominio del servicio."
+          },
+          {
+            "summary": "Software",
+            "body": "Si se requiere un launcher o anti-cheat, instálalo únicamente desde la fuente oficial del servicio y revisa los permisos solicitados."
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Al retirar una skin, comprueba el remitente y el objeto antes de confirmar el Steam Trade Offer."
+          },
+          {
+            "summary": "Ingresos",
+            "body": "Las ganancias dependen de las tareas, habilidad, límites, actividad y disponibilidad de recompensas. Las monedas internas no equivalen automáticamente a dinero."
+          },
+          {
+            "summary": "Reglas",
+            "body": "El uso de varias cuentas, VPN, automatización o intentos de eludir restricciones puede provocar la anulación del progreso y de las recompensas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Earn by Play CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Earn by Play?",
+            "body": "Obtener recompensas por actividad de juego: tareas, partidas, torneos, leaderboards o progreso dentro del sistema del servicio."
+          },
+          {
+            "summary": "¿Puedo ganar skins?",
+            "body": "Algunos servicios permiten cambiar los puntos ganados por skins o retirar objetos mediante Steam Trade Offers."
+          },
+          {
+            "summary": "¿Es igual que skins gratis?",
+            "body": "No exactamente. En los <a href=\"/freebies\">bonus</a>, una recompensa puede entregarse por registro o mediante un código promocional, mientras que Earn by Play normalmente requiere actividad de juego."
+          },
+          {
+            "summary": "¿Qué diferencia hay con offerwalls?",
+            "body": "En un <a href=\"/earning/offerwalls\">offerwall</a>, las recompensas se obtienen por tareas publicitarias, encuestas o instalaciones; aquí la fuente principal de progreso es el propio juego."
+          },
+          {
+            "summary": "¿Hay que jugar bien?",
+            "body": "Depende de la mecánica: algunas tareas dan puntos por actividad, mientras que otras exigen victorias, estadísticas o una posición en el leaderboard."
+          },
+          {
+            "summary": "¿Hace falta Prime?",
+            "body": "Algunos servicios exigen Prime u otras características de la cuenta y otros no."
+          },
+          {
+            "summary": "¿Cómo se retiran skins?",
+            "body": "Lo más habitual es mediante Steam Trade Offers, aunque también pueden utilizarse una tienda interna, gift cards u otros tipos de recompensa."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking?",
+            "body": "Pueden cambiar las tareas, temporadas, valor de las recompensas, servidores, límites, retiros y la estabilidad del seguimiento del progreso."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Jogue CS2 e ganhe skins: como funciona Earn by Play",
+        "paragraphs": [
+          "Serviços Earn by Play para CS2 permitem receber recompensas dentro do jogo, skins, saldo ou outros bônus por atividade de gameplay: concluir tarefas em servidores, participar de eventos, avançar em um battle pass, competir em leaderboards ou torneios, ou atingir objetivos específicos.",
+          "Esse modelo é diferente de gambling porque a recompensa normalmente está ligada a uma ação concluída ou a um resultado no jogo, e não ao resultado aleatório de uma aposta. Por isso, a CSGOBROKER separa esses serviços das páginas comuns de gambling de CS2 e os relaciona à categoria mais ampla de <a href=\"/earning/earn-by-play\">earn by play</a>.",
+          "Ao comparar serviços, não olhe apenas para o valor prometido da recompensa. Considere também o tempo necessário, os requisitos reais, as regras de crédito, a disponibilidade dos servidores, as restrições da conta e as formas de sacar skins ou saldo ganhos."
+        ]
+      },
+      "categories": {
+        "title": "Formas de ganhar jogando CS2",
+        "items": [
+          {
+            "title": "Missões em servidores",
+            "paragraphs": [
+              "Um serviço pode dar pontos por partidas, kills, vitórias, tempo no servidor ou conclusão de missões especiais. É importante entender quais ações contam e se existem limites diários ou semanais."
+            ]
+          },
+          {
+            "title": "Battle pass",
+            "paragraphs": [
+              "Algumas plataformas usam níveis ou um pass sazonal: as recompensas são liberadas conforme a experiência é acumulada. As trilhas gratuita e paga podem ter condições diferentes."
+            ]
+          },
+          {
+            "title": "Leaderboards",
+            "paragraphs": [
+              "As recompensas são distribuídas entre os usuários com os melhores resultados em um período definido. Vale conferir antecipadamente o critério do ranking, a data de encerramento e o número de posições premiadas."
+            ]
+          },
+          {
+            "title": "Torneios",
+            "paragraphs": [
+              "O prêmio pode depender do resultado de uma equipe ou jogador em um torneio específico. Formato, nível dos participantes, regras de inscrição e forma de pagamento são importantes."
+            ]
+          },
+          {
+            "title": "Missões diárias",
+            "paragraphs": [
+              "A atividade regular pode dar pontos ou recompensas extras. Isso se aproxima de <a href=\"/freebies/daily-rewards\">recompensas diárias</a>, mas no Earn by Play normalmente é necessário realizar uma ação no jogo."
+            ]
+          },
+          {
+            "title": "Tarefas extras",
+            "paragraphs": [
+              "Alguns serviços adicionam tarefas fora das partidas, como convites, ações sociais ou ofertas de parceiros. Para tarefas publicitárias, vale comparar separadamente os <a href=\"/earning/offerwalls\">sites de offerwall</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de escolher",
+        "intro": "A principal pergunta é quanto tempo e quantas ações são necessárias para uma recompensa que realmente possa ser obtida e sacada.",
+        "items": [
+          {
+            "summary": "Requisitos",
+            "body": "Os requisitos devem ser específicos: jogar determinado número de partidas, concluir uma missão, alcançar uma posição no ranking ou acumular pontos."
+          },
+          {
+            "summary": "Valor real",
+            "body": "Compare não apenas as moedas internas, mas também no que elas podem ser convertidas: skins específicas, gift cards, dinheiro ou outro tipo de saldo."
+          },
+          {
+            "summary": "Velocidade",
+            "body": "É útil avaliar a recompensa em relação ao tempo exigido. Um valor alto pode exigir horas demais ou objetivos muito difíceis."
+          },
+          {
+            "summary": "Servidores",
+            "body": "Ping, número de jogadores e localização dos servidores afetam diretamente a possibilidade de concluir as tarefas de gameplay."
+          },
+          {
+            "summary": "Saque",
+            "body": "Confira o valor mínimo de resgate, o inventário disponível, Steam Trade Offers, taxas, KYC e prazos de processamento."
+          },
+          {
+            "summary": "Conta e anti-cheat",
+            "body": "O serviço pode exigir Steam Prime, determinado nível de conta, vínculo com Discord ou seu próprio anti-cheat."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia Earn by Play",
+        "intro": "Nessa categoria, avaliamos a possibilidade prática de obter as recompensas, e não apenas o valor anunciado.",
+        "items": [
+          {
+            "summary": "Mecânica clara",
+            "body": "O usuário deve saber antecipadamente quais ações geram pontos e quantos pontos podem ser obtidos."
+          },
+          {
+            "summary": "Tempo e recompensa",
+            "body": "Consideramos em conjunto o tempo de jogo necessário, a dificuldade das tarefas e o valor real das recompensas disponíveis."
+          },
+          {
+            "summary": "Saque",
+            "body": "São importantes o mínimo de resgate, a disponibilidade de skins, a frequência de atualização do inventário, Steam Trade Offers e recompensas alternativas."
+          },
+          {
+            "summary": "Servidores",
+            "body": "Verificamos a disponibilidade dos servidores, a precisão do rastreamento de progresso e o funcionamento correto das missões."
+          },
+          {
+            "summary": "Restrições",
+            "body": "Região, requisitos da Steam, anti-cheat, idade e regras dos leaderboards devem estar claros antes de começar."
+          },
+          {
+            "summary": "Suporte",
+            "body": "Um histórico claro de tarefas e pagamentos ajuda a resolver casos em que o progresso ou uma recompensa não foram creditados."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que as condições mudam",
+        "paragraphs": [
+          "Os serviços mudam regularmente temporadas, battle passes, missões, valores de recompensa, leaderboards e servidores disponíveis. Por isso, uma taxa de ganho antiga não garante as mesmas condições em uma nova temporada.",
+          "O valor das skins e a taxa interna de conversão das coins também podem mudar. Se a recompensa for denominada em moeda interna, confira o valor real dos itens disponíveis por essa moeda.",
+          "Para outras formas de receber recompensas, use as seções da CSGOBROKER sobre <a href=\"/earning\">ganhos</a>, <a href=\"/earning/offerwalls\">offerwalls</a> e <a href=\"/freebies\">bônus gratuitos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em Earn by Play",
+        "intro": "Mesmo que o serviço não envolva apostas, ele pode solicitar autenticação da Steam, acesso a servidores ou instalação de software adicional.",
+        "items": [
+          {
+            "summary": "Steam",
+            "body": "Não digite sua senha da Steam em uma cópia externa do formulário de login e sempre confira o domínio do serviço."
+          },
+          {
+            "summary": "Software",
+            "body": "Se um launcher ou anti-cheat for exigido, instale-o apenas a partir da fonte oficial do serviço e analise as permissões solicitadas."
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Ao sacar uma skin, confira o remetente e o item antes de confirmar o Steam Trade Offer."
+          },
+          {
+            "summary": "Ganhos",
+            "body": "Os ganhos dependem de tarefas, habilidade, limites, atividade e disponibilidade de recompensas. Moedas internas não equivalem automaticamente a dinheiro."
+          },
+          {
+            "summary": "Regras",
+            "body": "Várias contas, uso de VPN, automação ou tentativas de contornar restrições podem levar ao cancelamento do progresso e das recompensas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Earn by Play CS2",
+        "items": [
+          {
+            "summary": "O que é Earn by Play?",
+            "body": "Receber recompensas por atividade de gameplay: tarefas, partidas, torneios, leaderboards ou progresso dentro do sistema do serviço."
+          },
+          {
+            "summary": "Posso ganhar skins?",
+            "body": "Alguns serviços permitem trocar os pontos ganhos por skins ou sacar itens por Steam Trade Offers."
+          },
+          {
+            "summary": "É igual a skins grátis?",
+            "body": "Não exatamente. Nos <a href=\"/freebies\">bônus</a>, a recompensa pode ser dada por cadastro ou código promocional, enquanto Earn by Play normalmente exige atividade no jogo."
+          },
+          {
+            "summary": "Diferença para offerwalls?",
+            "body": "Em um <a href=\"/earning/offerwalls\">offerwall</a>, as recompensas são dadas por tarefas publicitárias, pesquisas ou instalações; aqui a principal fonte de progresso é o próprio jogo."
+          },
+          {
+            "summary": "Preciso jogar bem?",
+            "body": "Depende da mecânica: algumas tarefas dão pontos por atividade, enquanto outras exigem vitórias, estatísticas ou posição no leaderboard."
+          },
+          {
+            "summary": "Prime é obrigatório?",
+            "body": "Alguns serviços exigem Prime ou outras características da conta; outros não."
+          },
+          {
+            "summary": "Como sacar skins?",
+            "body": "Na maioria das vezes, por Steam Trade Offers, mas também podem ser usadas uma loja interna, gift cards ou outros tipos de recompensa."
+          },
+          {
+            "summary": "Por que o ranking muda?",
+            "body": "Tarefas, temporadas, valor das recompensas, servidores, limites, saques e a estabilidade do rastreamento de progresso podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Oyna ve Skin Kazan: Earn by Play Nasıl Çalışır?",
+        "paragraphs": [
+          "CS2 için Earn by Play servisleri; sunucu görevlerini tamamlama, etkinliklere katılma, battle pass ilerletme, leaderboard veya turnuvalarda yarışma ya da belirli hedeflere ulaşma gibi oyun aktiviteleri karşılığında oyun içi ödüller, skin, bakiye veya başka bonuslar kazandırabilir.",
+          "Bu model gambling'den farklıdır; çünkü ödül genellikle rastgele bir bahis sonucuna değil, tamamlanan bir eyleme veya oyun performansına bağlıdır. Bu nedenle CSGOBROKER bu servisleri standart CS2 gambling sayfalarından ayırır ve daha geniş <a href=\"/earning/earn-by-play\">earn by play</a> kategorisiyle ilişkilendirir.",
+          "Servisleri karşılaştırırken yalnızca vaat edilen ödül miktarına değil; gereken süreye, gerçek şartlara, puanlandırma kurallarına, sunucu erişimine, hesap kısıtlamalarına ve kazanılan skin veya bakiyenin nasıl çekilebildiğine bakın."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Oynayarak Kazanma Yöntemleri",
+        "items": [
+          {
+            "title": "Server görevleri",
+            "paragraphs": [
+              "Bir servis maçlar, kill'ler, galibiyetler, sunucuda geçirilen süre veya özel görevlerin tamamlanması için puan verebilir. Hangi eylemlerin sayıldığını ve günlük ya da haftalık limit olup olmadığını anlamak önemlidir."
+            ]
+          },
+          {
+            "title": "Battle pass",
+            "paragraphs": [
+              "Bazı platformlar seviye veya sezonluk pass sistemi kullanır; deneyim biriktikçe ödüller açılır. Ücretsiz ve ücretli yolların koşulları farklı olabilir."
+            ]
+          },
+          {
+            "title": "Leaderboard",
+            "paragraphs": [
+              "Ödüller belirli bir dönem içinde en iyi sonuçları alan kullanıcılar arasında dağıtılır. Sıralama kriterini, bitiş tarihini ve kaç ödül sırası olduğunu önceden kontrol etmek faydalıdır."
+            ]
+          },
+          {
+            "title": "Turnuvalar",
+            "paragraphs": [
+              "Ödül belirli bir turnuvadaki takım veya oyuncu sonucuna bağlı olabilir. Format, katılımcı seviyesi, kayıt kuralları ve ödeme yöntemi önemlidir."
+            ]
+          },
+          {
+            "title": "Günlük görevler",
+            "paragraphs": [
+              "Düzenli aktivite ek puan veya ödül sağlayabilir. Bu, <a href=\"/freebies/daily-rewards\">günlük ödüllerle</a> kesişir; ancak Earn by Play'de genellikle gerçek bir oyun eylemi gerekir."
+            ]
+          },
+          {
+            "title": "Ek görevler",
+            "paragraphs": [
+              "Bazı servisler maç dışı görevler de ekler: davetler, sosyal eylemler veya partner offer'ları. Reklam tabanlı görevler için <a href=\"/earning/offerwalls\">offerwall sitelerini</a> ayrıca karşılaştırmak faydalıdır."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Servis Seçmeden Önce Neleri Karşılaştırmalı?",
+        "intro": "Ana soru, gerçekten alınabilecek ve çekilebilecek bir ödül için ne kadar süre ve kaç eylem gerektiğidir.",
+        "items": [
+          {
+            "summary": "Şartlar",
+            "body": "Şartlar somut olmalıdır: belirli sayıda maç oynamak, görev tamamlamak, sıralamada yer almak veya puan biriktirmek."
+          },
+          {
+            "summary": "Gerçek değer",
+            "body": "Yalnızca iç coin'leri değil, bunların neye dönüştürülebildiğini de karşılaştırın: belirli skin'ler, gift card'lar, para veya başka bir bakiye."
+          },
+          {
+            "summary": "Kazanç hızı",
+            "body": "Ödülü gereken süreye göre değerlendirmek faydalıdır. Yüksek görünen bir tutar çok fazla saat veya çok zor hedefler gerektirebilir."
+          },
+          {
+            "summary": "Serverlar",
+            "body": "Ping, oyuncu sayısı ve sunucuların coğrafi konumu, oyun görevlerinin gerçekten tamamlanabilmesini doğrudan etkiler."
+          },
+          {
+            "summary": "Çekim",
+            "body": "Minimum çekim/eşya alma eşiğini, mevcut envanteri, Steam Trade Offer'ları, ücretleri, KYC'yi ve işlem sürelerini kontrol edin."
+          },
+          {
+            "summary": "Hesap ve anti-cheat",
+            "body": "Servis Steam Prime, belirli bir hesap seviyesi, Discord bağlantısı veya kendi anti-cheat yazılımını gerektirebilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Earn by Play Servislerini Nasıl Değerlendirir?",
+        "intro": "Bu kategoride yalnızca reklamda gösterilen miktarı değil, ödüllerin pratikte ne kadar ulaşılabilir olduğunu değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Açık mekanik",
+            "body": "Kullanıcı hangi eylemlerin puan kazandırdığını ve ne kadar puan alınabileceğini önceden anlamalıdır."
+          },
+          {
+            "summary": "Zaman ve ödül",
+            "body": "Gerekli oyun süresini, görev zorluğunu ve mevcut ödüllerin gerçek değerini birlikte değerlendiriyoruz."
+          },
+          {
+            "summary": "Çekim",
+            "body": "Minimum eşik, skin bulunabilirliği, envanter yenileme sıklığı, Steam Trade Offer'lar ve alternatif ödüller önemlidir."
+          },
+          {
+            "summary": "Server",
+            "body": "Sunucu erişimini, ilerlemenin doğru takip edilmesini ve görevlerin düzgün çalışmasını kontrol ediyoruz."
+          },
+          {
+            "summary": "Kısıtlamalar",
+            "body": "Bölge, Steam şartları, anti-cheat, yaş ve leaderboard kuralları önceden açık olmalıdır."
+          },
+          {
+            "summary": "Support",
+            "body": "Açık bir görev ve ödeme geçmişi, ilerleme veya ödülün hesabınıza geçmediği durumları çözmeye yardımcı olur."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Şartlar Neden Değişir?",
+        "paragraphs": [
+          "Servisler sezonları, battle pass'leri, görevleri, ödül miktarlarını, leaderboard'ları ve kullanılabilir sunucuları düzenli olarak değiştirir. Bu nedenle eski kazanma hızı yeni sezonda aynı koşulları garanti etmez.",
+          "Skin değerleri ve coin'lerin iç dönüşüm oranı da değişebilir. Ödül iç para birimiyle gösteriliyorsa, bu para birimiyle alınabilen item'ların gerçek değerine bakmak önemlidir.",
+          "Diğer ödül kazanma yöntemleri için CSGOBROKER'ın <a href=\"/earning\">kazanç</a>, <a href=\"/earning/offerwalls\">offerwall</a> ve <a href=\"/freebies\">ücretsiz bonus</a> bölümlerini kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Earn by Play Güvenliği",
+        "intro": "Servis bahisle ilgili olmasa bile Steam yetkilendirmesi, sunucu bağlantısı veya ek yazılım kurulumu isteyebilir.",
+        "items": [
+          {
+            "summary": "Steam",
+            "body": "Steam şifrenizi üçüncü taraf bir giriş formu kopyasına girmeyin ve servis alan adını her zaman kontrol edin."
+          },
+          {
+            "summary": "Software",
+            "body": "Launcher veya anti-cheat gerekiyorsa yalnızca servisin resmi kaynağından kurun ve istediği izinleri inceleyin."
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Skin çekerken Steam Trade Offer'ı onaylamadan önce hem göndereni hem de item'ı kontrol edin."
+          },
+          {
+            "summary": "Kazanç",
+            "body": "Kazanç; görevler, beceri, limitler, aktivite ve ödül bulunabilirliğine bağlıdır. İç coin'ler otomatik olarak para ile aynı değerde değildir."
+          },
+          {
+            "summary": "Kurallar",
+            "body": "Birden fazla hesap, VPN, otomasyon veya kısıtlamaları aşma girişimleri ilerlemenin ve ödüllerin iptal edilmesine yol açabilir."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Earn by Play Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Earn by Play nedir?",
+            "body": "Görevler, maçlar, turnuvalar, leaderboard'lar veya servis içindeki ilerleme gibi oyun aktiviteleri karşılığında ödül kazanmak."
+          },
+          {
+            "summary": "Skin kazanabilir miyim?",
+            "body": "Bazı servisler kazanılan puanların skin'lere çevrilmesine veya item'ların Steam Trade Offer üzerinden çekilmesine izin verir."
+          },
+          {
+            "summary": "Free skin ile aynı mı?",
+            "body": "Tam olarak değil. <a href=\"/freebies\">Bonuslarda</a> ödül kayıt veya promo code karşılığında verilebilir; Earn by Play ise genellikle oyun aktivitesi gerektirir."
+          },
+          {
+            "summary": "Offerwall farkı?",
+            "body": "Bir <a href=\"/earning/offerwalls\">offerwall</a>'da reklam görevleri, anketler veya uygulama kurulumları için ödül verilir; burada ilerlemenin ana kaynağı oyunun kendisidir."
+          },
+          {
+            "summary": "İyi oynamak gerekir mi?",
+            "body": "Mekaniğe bağlıdır: bazı görevler aktivite için puan verir, bazıları ise galibiyet, istatistik veya leaderboard sırası gerektirir."
+          },
+          {
+            "summary": "Prime gerekli mi?",
+            "body": "Bazı servisler Prime veya başka hesap özellikleri ister; bazıları istemez."
+          },
+          {
+            "summary": "Skin nasıl çekilir?",
+            "body": "En yaygın yöntem Steam Trade Offer'dır; ancak iç ödül mağazası, gift card veya başka ödül türleri de kullanılabilir."
+          },
+          {
+            "summary": "Sıralama neden değişir?",
+            "body": "Görevler, sezonlar, ödül değerleri, sunucular, limitler, çekimler ve ilerleme takibinin güvenilirliği değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 खेलें और Skins Earn करें: Earn by Play कैसे काम करता है",
+        "paragraphs": [
+          "CS2 के Earn by Play services gameplay activity के बदले in-game rewards, skins, balance या दूसरे bonuses दे सकते हैं: server tasks complete करना, events में भाग लेना, battle pass progress करना, leaderboards या tournaments में compete करना, या specific goals हासिल करना।",
+          "यह model gambling से अलग है, क्योंकि reward आम तौर पर random bet result की जगह completed action या gameplay result से जुड़ा होता है। इसलिए CSGOBROKER इन services को सामान्य CS2 gambling pages से अलग रखता है और broader <a href=\"/earning/earn-by-play\">earn by play</a> category से जोड़ता है।",
+          "Compare करते समय सिर्फ promised reward amount न देखें; required time, actual requirements, crediting rules, server availability, account restrictions और earned skins या balance withdraw करने के तरीकों को भी देखें।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 खेलकर Earn करने के तरीके",
+        "items": [
+          {
+            "title": "Server missions",
+            "paragraphs": [
+              "Service matches, kills, wins, server पर बिताए समय या special missions complete करने के लिए points दे सकती है। यह समझना जरूरी है कि कौन-सी actions count होती हैं और daily या weekly limits हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Battle pass",
+            "paragraphs": [
+              "कुछ platforms levels या seasonal pass इस्तेमाल करती हैं; experience बढ़ने पर rewards unlock होते हैं। Free और paid tracks की conditions अलग हो सकती हैं।"
+            ]
+          },
+          {
+            "title": "Leaderboards",
+            "paragraphs": [
+              "Rewards तय period में best results वाले users के बीच distribute होते हैं। Ranking criterion, end date और prize positions की संख्या पहले से check करना useful है।"
+            ]
+          },
+          {
+            "title": "Tournaments",
+            "paragraphs": [
+              "Prize किसी specific tournament में team या player के result पर depend कर सकता है। Format, participant level, registration rules और payout method important हैं।"
+            ]
+          },
+          {
+            "title": "Daily missions",
+            "paragraphs": [
+              "Regular activity extra points या rewards दे सकती है। यह <a href=\"/freebies/daily-rewards\">daily rewards</a> से मिलता-जुलता है, लेकिन Earn by Play में आम तौर पर actual gameplay action जरूरी होता है।"
+            ]
+          },
+          {
+            "title": "Extra tasks",
+            "paragraphs": [
+              "कुछ services match के बाहर भी tasks जोड़ती हैं, जैसे referrals, social actions या partner offers। Advertising tasks के लिए <a href=\"/earning/offerwalls\">offerwall sites</a> को अलग से compare करना useful है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Service चुनने से पहले क्या Compare करें",
+        "intro": "मुख्य सवाल यह है कि ऐसी reward के लिए कितना time और कितनी actions चाहिए जिसे वास्तव में पाया और withdraw किया जा सके।",
+        "items": [
+          {
+            "summary": "Requirements",
+            "body": "Requirements specific होने चाहिए: तय संख्या में matches खेलना, mission complete करना, ranking position हासिल करना या points accumulate करना।"
+          },
+          {
+            "summary": "Real value",
+            "body": "सिर्फ internal coins compare न करें, बल्कि यह भी देखें कि वे किसमें convert होते हैं: specific skins, gift cards, money या किसी दूसरे balance में।"
+          },
+          {
+            "summary": "Earning speed",
+            "body": "Reward को required time के मुकाबले evaluate करना useful है। बड़ा amount बहुत ज्यादा hours या बहुत कठिन goals मांग सकता है।"
+          },
+          {
+            "summary": "Servers",
+            "body": "Ping, player population और server geography gameplay tasks complete करने की practical ability को सीधे प्रभावित करते हैं।"
+          },
+          {
+            "summary": "Withdrawal",
+            "body": "Minimum redemption threshold, available inventory, Steam Trade Offers, fees, KYC और processing time check करें।"
+          },
+          {
+            "summary": "Account और anti-cheat",
+            "body": "Service Steam Prime, specific account level, Discord linking या अपना anti-cheat require कर सकती है।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Earn by Play Services को कैसे Rate करता है",
+        "intro": "इस category में हम सिर्फ advertised amount नहीं, बल्कि rewards की practical attainability evaluate करते हैं।",
+        "items": [
+          {
+            "summary": "Clear mechanics",
+            "body": "User को पहले से पता होना चाहिए कि किन actions पर points मिलते हैं और कितने points earn किए जा सकते हैं।"
+          },
+          {
+            "summary": "Time-to-reward",
+            "body": "हम required gameplay time, task difficulty और available rewards की actual value को साथ में consider करते हैं।"
+          },
+          {
+            "summary": "Withdrawal",
+            "body": "Minimum threshold, skin availability, inventory refresh frequency, Steam Trade Offers और alternative rewards important हैं।"
+          },
+          {
+            "summary": "Servers",
+            "body": "हम server availability, accurate progress tracking और missions के सही काम करने को check करते हैं।"
+          },
+          {
+            "summary": "Restrictions",
+            "body": "Region, Steam requirements, anti-cheat, age और leaderboard rules पहले से clear होने चाहिए।"
+          },
+          {
+            "summary": "Support",
+            "body": "Clear task और payout history उन cases को resolve करने में मदद करती है जहाँ progress या reward credit नहीं हुआ।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Conditions क्यों बदलती हैं",
+        "paragraphs": [
+          "Services seasons, battle passes, missions, reward amounts, leaderboards और available servers नियमित रूप से बदलती हैं। इसलिए पुरानी earning rate नए season में वही conditions guarantee नहीं करती।",
+          "Skin prices और coins का internal exchange rate भी बदल सकता है। अगर reward internal currency में है, तो उस currency से मिलने वाले items की actual value देखना जरूरी है।",
+          "Rewards पाने के दूसरे तरीकों के लिए CSGOBROKER के <a href=\"/earning\">earning</a>, <a href=\"/earning/offerwalls\">offerwalls</a> और <a href=\"/freebies\">free bonuses</a> sections देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Earn by Play Safety",
+        "intro": "Service betting से related न हो तब भी Steam authentication, server access या additional software installation मांग सकती है।",
+        "items": [
+          {
+            "summary": "Steam",
+            "body": "Steam password किसी third-party copied login form में न डालें और service domain हमेशा verify करें।"
+          },
+          {
+            "summary": "Software",
+            "body": "अगर launcher या anti-cheat जरूरी हो, तो उसे सिर्फ service के official source से install करें और requested permissions review करें।"
+          },
+          {
+            "summary": "Trade Offer",
+            "body": "Skin withdraw करते समय Steam Trade Offer confirm करने से पहले sender और item दोनों verify करें।"
+          },
+          {
+            "summary": "Earnings",
+            "body": "Earnings tasks, skill, limits, activity और reward availability पर depend करती हैं। Internal coins अपने-आप money के बराबर नहीं होते।"
+          },
+          {
+            "summary": "Rules",
+            "body": "Multiple accounts, VPN, automation या restrictions bypass करने की कोशिश progress और rewards cancel होने का कारण बन सकती है।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Earn by Play FAQ",
+        "items": [
+          {
+            "summary": "Earn by Play क्या है?",
+            "body": "Gameplay activity जैसे tasks, matches, tournaments, leaderboards या service progression के बदले rewards प्राप्त करना।"
+          },
+          {
+            "summary": "क्या skins earn कर सकते हैं?",
+            "body": "कुछ services earned points को skins में exchange करने या items को Steam Trade Offers से withdraw करने देती हैं।"
+          },
+          {
+            "summary": "Free skins जैसा है?",
+            "body": "पूरी तरह नहीं। <a href=\"/freebies\">Bonuses</a> में reward registration या promo code पर मिल सकती है, जबकि Earn by Play में आम तौर पर gameplay activity जरूरी होती है।"
+          },
+          {
+            "summary": "Offerwall से फर्क?",
+            "body": "<a href=\"/earning/offerwalls\">Offerwall</a> में rewards advertising tasks, surveys या app installs के लिए मिलते हैं; यहाँ progress का मुख्य source खुद game है।"
+          },
+          {
+            "summary": "क्या skill जरूरी है?",
+            "body": "यह mechanics पर depend करता है: कुछ tasks activity के लिए points देते हैं, जबकि दूसरे wins, statistics या leaderboard position मांगते हैं।"
+          },
+          {
+            "summary": "Prime जरूरी है?",
+            "body": "कुछ services Prime या दूसरी account characteristics require करती हैं, दूसरी नहीं।"
+          },
+          {
+            "summary": "Skins कैसे withdraw होती हैं?",
+            "body": "सबसे आम तरीका Steam Trade Offer है, लेकिन internal reward store, gift cards या दूसरे reward types भी इस्तेमाल हो सकते हैं।"
+          },
+          {
+            "summary": "Ranking क्यों बदलती है?",
+            "body": "Tasks, seasons, reward values, servers, limits, withdrawals और progress tracking की reliability बदल सकती है।"
+          }
+        ]
+      }
+    }
+  }
+}

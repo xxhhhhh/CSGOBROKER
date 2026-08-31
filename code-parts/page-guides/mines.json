@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "mines",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Мины CS2: как работает режим и что сравнивать между сайтами",
+        "paragraphs": [
+          "«Мины» — случайная игра на поле из закрытых клеток. Перед раундом пользователь выбирает размер ставки и обычно количество мин, после чего открывает клетки одну за другой. Безопасная клетка увеличивает текущий коэффициент, а попадание на мину завершает раунд и приводит к потере ставки.",
+          "Чем больше мин выбрано и чем больше безопасных клеток уже открыто, тем выше потенциальный коэффициент и тем ниже вероятность успешно продолжить. Поэтому основная математика режима строится вокруг количества мин, размера поля, коэффициентов и преимущества площадки.",
+          "CSGOBROKER рассматривает этот режим отдельно от <a href=\"/csgo/dice\">костей</a>, <a href=\"/csgo/crash\">краш</a> и <a href=\"/csgo/plinko\">плинко</a>. Для сравнения важны Provably Fair, таблица коэффициентов, возможность забрать выигрыш после каждого безопасного хода, лимиты и правила автоматической игры."
+        ]
+      },
+      "categories": {
+        "title": "Как устроен режим «Мины»",
+        "items": [
+          {
+            "title": "Игровое поле",
+            "paragraphs": [
+              "Площадка размещает скрытые мины среди закрытых клеток. Размер поля и доступное число мин могут различаться между сайтами."
+            ]
+          },
+          {
+            "title": "Выбор количества мин",
+            "paragraphs": [
+              "Небольшое число мин повышает вероятность безопасного открытия, но даёт более медленный рост коэффициента. Большое число мин увеличивает риск и потенциальную выплату."
+            ]
+          },
+          {
+            "title": "Открытие безопасных клеток",
+            "paragraphs": [
+              "После каждого успешного выбора коэффициент обычно растёт. Пользователь решает: продолжить или забрать текущую выплату."
+            ]
+          },
+          {
+            "title": "Завершение на мине",
+            "paragraphs": [
+              "Если выбранная клетка содержит мину, раунд заканчивается. Открытые до этого клетки обычно не дают возврата ставки."
+            ]
+          },
+          {
+            "title": "Автоматический выбор",
+            "paragraphs": [
+              "Некоторые сайты позволяют автоматически выбирать клетки или заранее задавать число ходов. Это меняет удобство, но не математическую вероятность конкретной раскладки."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Проверяемая схема позволяет подтвердить расположение мин после завершения раунда с помощью опубликованных данных Provably Fair."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед игрой в «Мины»",
+        "intro": "Внешне одинаковые поля могут использовать разные таблицы выплат и разное преимущество площадки.",
+        "items": [
+          {
+            "summary": "Размер поля и число мин",
+            "body": "Посмотрите, какие конфигурации доступны и как они влияют на коэффициент после каждого безопасного открытия."
+          },
+          {
+            "summary": "Таблица коэффициентов",
+            "body": "Сравнивайте фактические множители с вероятностью пройти соответствующее число клеток. Так можно понять математические условия режима."
+          },
+          {
+            "summary": "Преимущество площадки",
+            "body": "Даже при одинаковом числе мин два сайта могут давать разные коэффициенты. Более низкие выплаты при той же вероятности означают большее преимущество площадки."
+          },
+          {
+            "summary": "Возможность забрать выигрыш",
+            "body": "Уточните, можно ли завершить раунд после любого безопасного хода и есть ли минимальный коэффициент для получения выплаты."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверьте, можно ли после раунда подтвердить расположение мин, используя опубликованные данные."
+          },
+          {
+            "summary": "Лимиты и бонусы",
+            "body": "Минимальная ставка, максимальный выигрыш, условия отыгрыша бонусов, KYC и вывод могут ограничивать фактическую выплату."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с режимом «Мины»",
+        "intro": "Мы сравниваем не количество анимаций, а математику поля, проверяемость и условия получения выплаты.",
+        "items": [
+          {
+            "summary": "Коэффициенты и преимущество площадки",
+            "body": "Оцениваем связь между количеством мин, числом открытых клеток и выплатой."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Проверяем наличие данных и инструмента для подтверждения конкретной раскладки."
+          },
+          {
+            "summary": "Настройки поля",
+            "body": "Учитываем диапазон количества мин, понятность интерфейса и возможность быстро изменить конфигурацию."
+          },
+          {
+            "summary": "Забор выигрыша и автоматические функции",
+            "body": "Смотрим, насколько ясно работает досрочное завершение раунда и какие настройки автоматизации доступны."
+          },
+          {
+            "summary": "Платежи и вывод",
+            "body": "Учитываем скины, деньги, криптовалюты, комиссии, минимумы, KYC и доступность вывода."
+          },
+          {
+            "summary": "История и стабильность",
+            "body": "Полезны история раундов, отображение коэффициентов, корректная работа на мобильных устройствах и поддержка."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с «Минами» меняется",
+        "paragraphs": [
+          "Площадки могут менять таблицу коэффициентов, доступное число мин, максимальный выигрыш, бонусные условия и способы оплаты. Даже небольшая корректировка выплат меняет математическую привлекательность режима.",
+          "История прошлых полей не показывает, где будут находиться мины в следующем независимом раунде. Если раскладка создаётся заново, предыдущие позиции не дают преимущества.",
+          "Для других быстрых режимов сравните <a href=\"/csgo/dice\">кости</a>, <a href=\"/csgo/crash\">краш</a>, <a href=\"/csgo/plinko\">плинко</a> или общий раздел <a href=\"/csgo/casino\">казино</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра",
+        "intro": "Возможность остановиться после каждого безопасного хода не устраняет случайность и преимущество площадки.",
+        "items": [
+          {
+            "summary": "Проверяйте Provably Fair",
+            "body": "Убедитесь, что после завершения раунда можно проверить именно вашу раскладку мин."
+          },
+          {
+            "summary": "Не ищите безопасные позиции по прошлым полям",
+            "body": "Расположение мин в предыдущих независимых раундах не делает отдельные клетки безопаснее в следующем."
+          },
+          {
+            "summary": "Следите за ростом риска",
+            "body": "Каждая дополнительная открытая клетка повышает потенциальную выплату, но одновременно увеличивает вероятность завершить раунд на мине."
+          },
+          {
+            "summary": "Проверяйте максимальный выигрыш и вывод",
+            "body": "Ограничение выплаты, KYC, комиссия и минимальная сумма могут влиять на получаемый результат."
+          },
+          {
+            "summary": "Устанавливайте лимиты",
+            "body": "Быстрые повторные раунды позволяют незаметно увеличить общий объём ставок. Используйте ограничения и рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о режиме «Мины» в CS2",
+        "items": [
+          {
+            "summary": "Что такое «Мины» на сайтах CS2?",
+            "body": "Это игра с закрытым полем, где нужно открывать безопасные клетки и избегать скрытых мин."
+          },
+          {
+            "summary": "Как растёт коэффициент?",
+            "body": "Он увеличивается по мере открытия безопасных клеток; точная таблица зависит от числа мин и правил площадки."
+          },
+          {
+            "summary": "Можно ли забрать выигрыш до конца поля?",
+            "body": "Обычно да: пользователь может остановить раунд после безопасного хода, но точные правила нужно проверить на сайте."
+          },
+          {
+            "summary": "Чем больше мин, тем выше коэффициент?",
+            "body": "Как правило, да, потому что вероятность безопасного выбора снижается. Конкретные выплаты зависят от площадки."
+          },
+          {
+            "summary": "Можно ли заранее узнать расположение мин?",
+            "body": "При честной случайной генерации — нет. Provably Fair предназначен для проверки результата, а не для предварительного раскрытия раскладки."
+          },
+          {
+            "summary": "Помогает ли история прошлых полей?",
+            "body": "Она полезна для проверки завершённых раундов, но не предсказывает расположение мин в новом независимом раунде."
+          },
+          {
+            "summary": "Можно ли использовать бонусы?",
+            "body": "Иногда да, но могут действовать условия отыгрыша и ограничения максимальной ставки. Смотрите <a href=\"/freebies\">бонусы</a>."
+          },
+          {
+            "summary": "Почему рейтинг «Мин» на CSGOBROKER меняется?",
+            "body": "Меняются коэффициенты, настройки, Provably Fair, лимиты, платежи, вывод и стабильность работы."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Mines Sites: How the Game Works and What to Compare",
+        "paragraphs": [
+          "Mines is a random grid game with hidden mines. Before a round, users choose a wager and usually the number of mines, then reveal cells one by one. A safe cell increases the current multiplier, while hitting a mine ends the round and loses the wager.",
+          "The more mines selected and the more safe cells already revealed, the higher the potential multiplier and the lower the probability of continuing successfully. The core mathematics therefore depend on mine count, grid size, payout table, and house edge.",
+          "CSGOBROKER evaluates Mines separately from <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a>, and <a href=\"/csgo/plinko\">Plinko</a>. Important factors include Provably Fair, the multiplier table, cashout after safe picks, limits, and automation rules."
+        ]
+      },
+      "categories": {
+        "title": "How CS2 Mines Works",
+        "items": [
+          {
+            "title": "The grid",
+            "paragraphs": [
+              "The platform places hidden mines among closed cells. Grid size and supported mine counts can vary."
+            ]
+          },
+          {
+            "title": "Choosing the mine count",
+            "paragraphs": [
+              "Fewer mines increase the chance of a safe pick but produce slower multiplier growth. More mines raise both risk and potential payout."
+            ]
+          },
+          {
+            "title": "Revealing safe cells",
+            "paragraphs": [
+              "After each successful selection, the multiplier typically increases and the user can continue or cash out."
+            ]
+          },
+          {
+            "title": "Hitting a mine",
+            "paragraphs": [
+              "Selecting a mined cell ends the round. Previously revealed safe cells do not normally return the wager."
+            ]
+          },
+          {
+            "title": "Automatic selection",
+            "paragraphs": [
+              "Some sites can automate picks or a target number of steps. This changes convenience, not the probability of a particular layout."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "A verifiable system can reveal data after the round so the mine placement can be independently checked."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Playing Mines",
+        "intro": "Two visually identical grids can use different payout tables and different effective house edges.",
+        "items": [
+          {
+            "summary": "Grid size and mine count",
+            "body": "Review available configurations and how they affect the multiplier after each safe reveal."
+          },
+          {
+            "summary": "Multiplier table",
+            "body": "Compare actual payouts with the probability of surviving the corresponding number of picks."
+          },
+          {
+            "summary": "House edge",
+            "body": "Two sites can pay different multipliers for the same risk. Lower payouts at the same probability mean a larger platform edge."
+          },
+          {
+            "summary": "Cashout rules",
+            "body": "Check whether the round can be ended after any safe pick and whether a minimum multiplier applies."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verify that the mine layout of a completed round can be checked using published data."
+          },
+          {
+            "summary": "Limits and bonuses",
+            "body": "Minimum wager, maximum win, bonus wagering, KYC, and withdrawal rules can affect the practical payout."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Mines Sites",
+        "intro": "We focus on grid mathematics, verification, and payout conditions rather than visual effects.",
+        "items": [
+          {
+            "summary": "Multipliers and house edge",
+            "body": "We evaluate the relationship between mine count, safe picks, and payouts."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We review the data and tools available for verifying a specific layout."
+          },
+          {
+            "summary": "Grid settings",
+            "body": "Supported mine counts, interface clarity, and configuration controls are considered."
+          },
+          {
+            "summary": "Cashout and automation",
+            "body": "We check how clearly early cashout works and what automation options are available."
+          },
+          {
+            "summary": "Payments and withdrawals",
+            "body": "Skins, cash, crypto, fees, minimums, KYC, and withdrawal availability are included."
+          },
+          {
+            "summary": "History and stability",
+            "body": "Round history, multiplier display, mobile performance, and support contribute to the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Mines Rankings Change",
+        "paragraphs": [
+          "Platforms can change payout tables, mine-count options, maximum wins, bonuses, and payment methods. Even a small payout adjustment changes the mathematics of the mode.",
+          "Previous grids do not reveal where mines will appear in a new independent round when a fresh layout is generated.",
+          "For other instant games compare <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/plinko\">Plinko</a>, or <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Responsible Play",
+        "intro": "The ability to cash out after safe picks does not remove randomness or the platform edge.",
+        "items": [
+          {
+            "summary": "Verify Provably Fair",
+            "body": "Make sure the mine layout of your completed round can actually be checked."
+          },
+          {
+            "summary": "Do not infer safe cells from past grids",
+            "body": "Mine positions in previous independent rounds do not make particular cells safer next time."
+          },
+          {
+            "summary": "Track rising risk",
+            "body": "Each additional safe pick increases potential payout while also increasing the chance of eventually hitting a mine."
+          },
+          {
+            "summary": "Check maximum win and withdrawals",
+            "body": "Payout caps, KYC, fees, and withdrawal minimums can affect the result received."
+          },
+          {
+            "summary": "Set limits",
+            "body": "Fast repeated rounds can increase total wagering quickly. Use limits and <a href=\"/responsibility\">responsible gambling</a> information."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Mines",
+        "items": [
+          {
+            "summary": "What is CS2 Mines?",
+            "body": "A hidden-grid game where users reveal safe cells while avoiding mines."
+          },
+          {
+            "summary": "How does the multiplier increase?",
+            "body": "It generally rises after each safe cell, with the exact table depending on mine count and site rules."
+          },
+          {
+            "summary": "Can I cash out before clearing the grid?",
+            "body": "Usually yes after a safe pick, though the exact rules should be checked."
+          },
+          {
+            "summary": "Do more mines mean a higher multiplier?",
+            "body": "Generally yes because safe-pick probability is lower, but exact payouts vary."
+          },
+          {
+            "summary": "Can mine positions be known in advance?",
+            "body": "Not in a properly random game. Provably Fair verifies a completed layout rather than revealing it beforehand."
+          },
+          {
+            "summary": "Does previous grid history help?",
+            "body": "It can audit completed rounds but does not predict a fresh independent layout."
+          },
+          {
+            "summary": "Can bonus balance be used?",
+            "body": "Sometimes, subject to wagering and maximum-bet rules. See <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Mines ranking change?",
+            "body": "Multipliers, settings, fairness tools, limits, payments, withdrawals, and stability can change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Minas de CS2: cómo funciona el modo y qué comparar",
+        "paragraphs": [
+          "Minas es un juego aleatorio sobre una cuadrícula de casillas cerradas. Antes de la ronda, el usuario elige la apuesta y normalmente el número de minas; después abre casillas una a una. Una casilla segura aumenta el multiplicador actual y encontrar una mina termina la ronda y hace perder la apuesta.",
+          "Cuantas más minas haya y más casillas seguras se hayan abierto, mayor puede ser el multiplicador y menor la probabilidad de continuar con éxito. La matemática depende del número de minas, tamaño del tablero, tabla de pagos y ventaja de la plataforma.",
+          "CSGOBROKER evalúa Minas por separado de <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a> y <a href=\"/csgo/plinko\">Plinko</a>. Para comparar importan Provably Fair, tabla de multiplicadores, posibilidad de retirar tras una selección segura, límites y reglas de automatización."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona Minas en CS2",
+        "items": [
+          {
+            "title": "Tablero",
+            "paragraphs": [
+              "La plataforma coloca minas ocultas entre casillas cerradas. El tamaño y el número de minas disponibles pueden cambiar por sitio."
+            ]
+          },
+          {
+            "title": "Número de minas",
+            "paragraphs": [
+              "Pocas minas aumentan la probabilidad de una selección segura pero el multiplicador crece más despacio. Muchas minas elevan riesgo y pago potencial."
+            ]
+          },
+          {
+            "title": "Casillas seguras",
+            "paragraphs": [
+              "Tras cada elección correcta, el multiplicador suele subir y el usuario puede continuar o retirar."
+            ]
+          },
+          {
+            "title": "Encontrar una mina",
+            "paragraphs": [
+              "Elegir una casilla con mina termina la ronda. Las casillas seguras anteriores normalmente no devuelven la apuesta."
+            ]
+          },
+          {
+            "title": "Selección automática",
+            "paragraphs": [
+              "Algunos sitios automatizan elecciones o permiten fijar un número de pasos. Cambia la ejecución, no la probabilidad de una distribución concreta."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Un sistema verificable permite revisar después de la ronda dónde estaban las minas mediante datos publicados."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de jugar a Minas",
+        "intro": "Dos tableros visualmente iguales pueden utilizar tablas de pago y ventajas de la plataforma diferentes.",
+        "items": [
+          {
+            "summary": "Tamaño y número de minas",
+            "body": "Revisa configuraciones disponibles y cómo cambian el multiplicador tras cada casilla segura."
+          },
+          {
+            "summary": "Tabla de multiplicadores",
+            "body": "Compara los pagos reales con la probabilidad de sobrevivir el número correspondiente de elecciones."
+          },
+          {
+            "summary": "Ventaja de la plataforma",
+            "body": "Dos sitios pueden pagar distinto para el mismo riesgo. Un pago menor con la misma probabilidad implica mayor ventaja del operador."
+          },
+          {
+            "summary": "Reglas de retiro",
+            "body": "Comprueba si puedes terminar la ronda después de cualquier casilla segura y si existe un multiplicador mínimo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verifica que la distribución de una ronda terminada pueda comprobarse con los datos publicados."
+          },
+          {
+            "summary": "Límites y bonos",
+            "body": "Apuesta mínima, premio máximo, wagering, KYC y retiro pueden modificar el pago práctico."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa sitios de Minas CS2",
+        "intro": "Nos centramos en la matemática del tablero, la verificación y las condiciones de pago.",
+        "items": [
+          {
+            "summary": "Multiplicadores y ventaja",
+            "body": "Evaluamos la relación entre número de minas, casillas abiertas y pagos."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Revisamos los datos y herramientas para verificar una distribución concreta."
+          },
+          {
+            "summary": "Configuración del tablero",
+            "body": "Número de minas disponible, claridad de interfaz y controles de configuración."
+          },
+          {
+            "summary": "Retiro y automatización",
+            "body": "Comprobamos cómo funciona el retiro anticipado y qué opciones automáticas existen."
+          },
+          {
+            "summary": "Pagos y retiros",
+            "body": "Skins, dinero, cripto, comisiones, mínimos, KYC y disponibilidad de retiro."
+          },
+          {
+            "summary": "Historial y estabilidad",
+            "body": "Historial de rondas, multiplicadores, funcionamiento móvil y soporte."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de Minas",
+        "paragraphs": [
+          "Las plataformas pueden cambiar la tabla de pagos, opciones de minas, premio máximo, bonos y métodos de pago. Incluso un pequeño ajuste modifica la matemática del modo.",
+          "Los tableros anteriores no revelan dónde aparecerán las minas en una nueva ronda independiente.",
+          "Para otros juegos rápidos compara <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/plinko\">Plinko</a> o <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "Poder retirar después de una casilla segura no elimina la aleatoriedad ni la ventaja de la plataforma.",
+        "items": [
+          {
+            "summary": "Verifica Provably Fair",
+            "body": "Asegúrate de poder comprobar la distribución exacta de una ronda terminada."
+          },
+          {
+            "summary": "No deduzcas casillas seguras de tableros anteriores",
+            "body": "Las posiciones previas no hacen más segura una casilla en una nueva ronda independiente."
+          },
+          {
+            "summary": "Controla el aumento de riesgo",
+            "body": "Cada casilla segura adicional aumenta el pago potencial y también la posibilidad de terminar encontrando una mina."
+          },
+          {
+            "summary": "Revisa premio máximo y retiro",
+            "body": "Límites, KYC, comisiones y mínimos pueden afectar el resultado recibido."
+          },
+          {
+            "summary": "Define límites",
+            "body": "Las rondas rápidas pueden aumentar mucho el volumen de apuestas. Usa límites y recursos de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Minas de CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Minas en sitios de CS2?",
+            "body": "Un juego de cuadrícula oculta donde se abren casillas seguras evitando minas."
+          },
+          {
+            "summary": "¿Cómo aumenta el multiplicador?",
+            "body": "Normalmente sube con cada casilla segura; la tabla exacta depende del número de minas y del sitio."
+          },
+          {
+            "summary": "¿Puedo retirar antes de terminar el tablero?",
+            "body": "Normalmente sí después de una elección segura, según las reglas del sitio."
+          },
+          {
+            "summary": "¿Más minas significan mayor multiplicador?",
+            "body": "Generalmente sí, porque baja la probabilidad de una elección segura; los pagos exactos varían."
+          },
+          {
+            "summary": "¿Se puede conocer la posición de las minas antes?",
+            "body": "No en un sistema aleatorio correcto. Provably Fair sirve para verificar una ronda terminada."
+          },
+          {
+            "summary": "¿Ayuda el historial de tableros?",
+            "body": "Sirve para auditar rondas anteriores, no para predecir una nueva distribución independiente."
+          },
+          {
+            "summary": "¿Puedo usar bonos?",
+            "body": "A veces, con wagering y límites máximos de apuesta. Consulta <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian multiplicadores, ajustes, Provably Fair, límites, pagos, retiros y estabilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Minas de CS2: como o modo funciona e o que comparar",
+        "paragraphs": [
+          "Minas é um jogo aleatório em uma grade de casas fechadas. Antes da rodada, o usuário escolhe a aposta e normalmente o número de minas, depois revela casas uma a uma. Uma casa segura aumenta o multiplicador atual, enquanto encontrar uma mina encerra a rodada e perde a aposta.",
+          "Quanto mais minas forem escolhidas e mais casas seguras já tiverem sido abertas, maior pode ser o multiplicador e menor a chance de continuar com sucesso. A matemática depende da quantidade de minas, tamanho da grade, tabela de pagamentos e vantagem da plataforma.",
+          "A CSGOBROKER avalia Minas separadamente de <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a> e <a href=\"/csgo/plinko\">Plinko</a>. Provably Fair, multiplicadores, saque após escolhas seguras, limites e automação são fatores importantes."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona Minas em CS2",
+        "items": [
+          {
+            "title": "Grade",
+            "paragraphs": [
+              "A plataforma esconde minas entre as casas. Tamanho e número de minas disponíveis variam por site."
+            ]
+          },
+          {
+            "title": "Quantidade de minas",
+            "paragraphs": [
+              "Poucas minas aumentam a chance de uma escolha segura, mas fazem o multiplicador crescer mais devagar. Muitas minas aumentam risco e pagamento potencial."
+            ]
+          },
+          {
+            "title": "Casas seguras",
+            "paragraphs": [
+              "Após cada escolha correta, o multiplicador normalmente sobe e o usuário decide continuar ou sacar."
+            ]
+          },
+          {
+            "title": "Encontrar uma mina",
+            "paragraphs": [
+              "Escolher uma casa com mina encerra a rodada. Casas seguras abertas antes normalmente não devolvem a aposta."
+            ]
+          },
+          {
+            "title": "Seleção automática",
+            "paragraphs": [
+              "Alguns sites automatizam escolhas ou permitem definir passos. Isso muda a execução, não a probabilidade de uma configuração específica."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Um sistema verificável permite confirmar depois da rodada onde as minas estavam usando dados publicados."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de jogar Minas",
+        "intro": "Duas grades visualmente iguais podem usar tabelas de pagamento e vantagens diferentes.",
+        "items": [
+          {
+            "summary": "Tamanho e número de minas",
+            "body": "Veja configurações disponíveis e como alteram o multiplicador após cada escolha segura."
+          },
+          {
+            "summary": "Tabela de multiplicadores",
+            "body": "Compare pagamentos reais com a chance de sobreviver ao número correspondente de escolhas."
+          },
+          {
+            "summary": "Vantagem da plataforma",
+            "body": "Dois sites podem pagar diferente para o mesmo risco. Pagamento menor com a mesma probabilidade significa vantagem maior do operador."
+          },
+          {
+            "summary": "Regras de saque",
+            "body": "Confira se a rodada pode terminar após qualquer casa segura e se existe multiplicador mínimo."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verifique se a distribuição de uma rodada concluída pode ser conferida pelos dados publicados."
+          },
+          {
+            "summary": "Limites e bônus",
+            "body": "Aposta mínima, ganho máximo, wagering, KYC e saque podem afetar o pagamento real."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de Minas CS2",
+        "intro": "Focamos na matemática da grade, verificabilidade e condições de pagamento.",
+        "items": [
+          {
+            "summary": "Multiplicadores e vantagem",
+            "body": "Avaliamos a relação entre minas, casas abertas e pagamentos."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Revisamos dados e ferramentas usados para verificar uma configuração concreta."
+          },
+          {
+            "summary": "Configuração da grade",
+            "body": "Quantidade de minas, clareza da interface e controles."
+          },
+          {
+            "summary": "Saque e automação",
+            "body": "Analisamos saque antecipado e opções automáticas."
+          },
+          {
+            "summary": "Pagamentos e saques",
+            "body": "Skins, dinheiro, cripto, taxas, mínimos, KYC e disponibilidade."
+          },
+          {
+            "summary": "Histórico e estabilidade",
+            "body": "Histórico de rodadas, exibição dos multiplicadores, mobile e suporte."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de Minas muda",
+        "paragraphs": [
+          "Plataformas podem alterar tabela de pagamentos, opções de minas, ganho máximo, bônus e métodos de pagamento. Pequenas mudanças já alteram a matemática do modo.",
+          "Grades anteriores não revelam onde estarão as minas em uma nova rodada independente.",
+          "Para outros jogos rápidos compare <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/plinko\">Plinko</a> ou <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "Poder sacar depois de uma casa segura não remove a aleatoriedade nem a vantagem da plataforma.",
+        "items": [
+          {
+            "summary": "Verifique Provably Fair",
+            "body": "Confirme que a distribuição exata da rodada concluída pode ser checada."
+          },
+          {
+            "summary": "Não deduza casas seguras pelo histórico",
+            "body": "Posições anteriores não tornam uma casa mais segura em uma nova rodada independente."
+          },
+          {
+            "summary": "Acompanhe o aumento de risco",
+            "body": "Cada casa segura adicional aumenta o pagamento potencial e a chance de acabar encontrando uma mina."
+          },
+          {
+            "summary": "Confira ganho máximo e saque",
+            "body": "Caps, KYC, taxas e mínimos podem afetar o resultado recebido."
+          },
+          {
+            "summary": "Defina limites",
+            "body": "Rodadas rápidas podem aumentar muito o volume de apostas. Use limites e <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Minas de CS2",
+        "items": [
+          {
+            "summary": "O que é Minas em sites de CS2?",
+            "body": "Jogo de grade oculta em que o usuário revela casas seguras evitando minas."
+          },
+          {
+            "summary": "Como o multiplicador aumenta?",
+            "body": "Normalmente cresce a cada casa segura; a tabela depende do número de minas e das regras."
+          },
+          {
+            "summary": "Posso sacar antes de terminar a grade?",
+            "body": "Normalmente sim depois de uma escolha segura, conforme as regras do site."
+          },
+          {
+            "summary": "Mais minas significam multiplicador maior?",
+            "body": "Geralmente sim porque a chance de escolha segura diminui; os pagamentos exatos variam."
+          },
+          {
+            "summary": "Dá para saber onde as minas estão antes?",
+            "body": "Não em uma geração aleatória correta. Provably Fair verifica uma rodada concluída."
+          },
+          {
+            "summary": "O histórico ajuda?",
+            "body": "Ajuda a auditar rodadas passadas, mas não prevê uma nova distribuição independente."
+          },
+          {
+            "summary": "Posso usar bônus?",
+            "body": "Às vezes, com wagering e limite máximo de aposta. Veja <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Multiplicadores, configurações, Provably Fair, limites, pagamentos, saques e estabilidade mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Mayın Modu: Nasıl Çalışır ve Siteler Nasıl Karşılaştırılır?",
+        "paragraphs": [
+          "Mayın modu, kapalı hücrelerden oluşan bir alanda oynanan rastgele bir oyundur. Turdan önce kullanıcı bahis miktarını ve genellikle mayın sayısını seçer, ardından hücreleri tek tek açar. Güvenli hücre mevcut çarpanı yükseltir; mayına denk gelmek turu bitirir ve bahsin kaybedilmesine yol açar.",
+          "Mayın sayısı ve açılan güvenli hücre sayısı arttıkça potansiyel çarpan yükselir, başarılı şekilde devam etme olasılığı düşer. Bu nedenle matematik mayın sayısı, alan boyutu, ödeme tablosu ve site avantajına dayanır.",
+          "CSGOBROKER bu modu <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a> ve <a href=\"/csgo/plinko\">Plinko</a> modlarından ayrı değerlendirir. Provably Fair, çarpan tablosu, güvenli seçimden sonra kazancı alma, limitler ve otomasyon kuralları önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Mayın Modu Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Oyun alanı",
+            "paragraphs": [
+              "Platform kapalı hücrelerin arasına gizli mayınlar yerleştirir. Alan boyutu ve desteklenen mayın sayısı siteye göre değişebilir."
+            ]
+          },
+          {
+            "title": "Mayın sayısı seçimi",
+            "paragraphs": [
+              "Az mayın güvenli seçim ihtimalini artırır fakat çarpan daha yavaş büyür. Çok mayın riski ve potansiyel ödemeyi yükseltir."
+            ]
+          },
+          {
+            "title": "Güvenli hücre açma",
+            "paragraphs": [
+              "Her başarılı seçimden sonra çarpan genellikle yükselir ve kullanıcı devam etmek veya kazancı almak arasında seçim yapar."
+            ]
+          },
+          {
+            "title": "Mayına denk gelme",
+            "paragraphs": [
+              "Mayın bulunan hücre turu bitirir. Daha önce açılan güvenli hücreler genellikle bahsi geri getirmez."
+            ]
+          },
+          {
+            "title": "Otomatik seçim",
+            "paragraphs": [
+              "Bazı siteler seçimleri otomatikleştirir veya hedef adım sayısı belirletir. Bu kolaylık sağlar, belirli bir yerleşimin olasılığını değiştirmez."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Doğrulanabilir sistem turdan sonra mayın yerleşiminin yayınlanan verilerle kontrol edilmesini sağlar."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Mayın Modu Oynamadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Görsel olarak aynı iki alan farklı ödeme tabloları ve farklı site avantajları kullanabilir.",
+        "items": [
+          {
+            "summary": "Alan boyutu ve mayın sayısı",
+            "body": "Mevcut yapılandırmaları ve her güvenli seçimden sonra çarpanın nasıl değiştiğini inceleyin."
+          },
+          {
+            "summary": "Çarpan tablosu",
+            "body": "Gerçek ödemeleri ilgili sayıda güvenli seçim yapma olasılığıyla karşılaştırın."
+          },
+          {
+            "summary": "Site avantajı",
+            "body": "Aynı risk için iki site farklı çarpan verebilir. Aynı olasılıkta daha düşük ödeme daha yüksek site avantajı anlamına gelir."
+          },
+          {
+            "summary": "Kazancı alma kuralları",
+            "body": "Her güvenli seçimden sonra turun bitirilip bitirilemediğini ve minimum çarpan şartını kontrol edin."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Tamamlanan turun mayın yerleşiminin yayınlanan bilgilerle doğrulanabildiğinden emin olun."
+          },
+          {
+            "summary": "Limit ve bonuslar",
+            "body": "Minimum bahis, maksimum kazanç, bonus çevrimi, KYC ve çekim gerçek ödemeyi etkileyebilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Mayın Sitelerini Nasıl Değerlendirir?",
+        "intro": "Görsel efektlerden çok alan matematiği, doğrulanabilirlik ve ödeme koşullarına odaklanıyoruz.",
+        "items": [
+          {
+            "summary": "Çarpan ve site avantajı",
+            "body": "Mayın sayısı, güvenli hücre ve ödeme ilişkisini değerlendiririz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Belirli bir yerleşimi doğrulayacak veri ve araçları inceleriz."
+          },
+          {
+            "summary": "Alan ayarları",
+            "body": "Mayın aralığı, arayüz açıklığı ve yapılandırma kontrolleri önemlidir."
+          },
+          {
+            "summary": "Kazancı alma ve otomasyon",
+            "body": "Erken çıkışın ve otomatik seçeneklerin nasıl çalıştığını kontrol ederiz."
+          },
+          {
+            "summary": "Ödeme ve çekim",
+            "body": "Skin, para, kripto, ücret, minimum, KYC ve çekim imkanları değerlendirilir."
+          },
+          {
+            "summary": "Geçmiş ve kararlılık",
+            "body": "Tur geçmişi, çarpan gösterimi, mobil kullanım ve destek puana katkı sağlar."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Mayın Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar ödeme tablosunu, mayın seçeneklerini, maksimum kazancı, bonusları ve ödeme yöntemlerini değiştirebilir. Küçük bir ödeme değişikliği bile modu matematiksel olarak etkiler.",
+          "Önceki alanlar yeni bağımsız turda mayınların nerede olacağını göstermez.",
+          "Diğer hızlı modlar için <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/plinko\">Plinko</a> veya <a href=\"/csgo/casino\">Casino</a> sayfalarını karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Güvenli seçimden sonra kazancı alabilmek rastgeleliği veya site avantajını ortadan kaldırmaz.",
+        "items": [
+          {
+            "summary": "Provably Fair kullanın",
+            "body": "Tamamlanan turun gerçek mayın yerleşimini kontrol edebildiğinizden emin olun."
+          },
+          {
+            "summary": "Geçmiş alanlardan güvenli hücre çıkarmayın",
+            "body": "Önceki bağımsız turlardaki konumlar yeni turda belirli hücreleri daha güvenli yapmaz."
+          },
+          {
+            "summary": "Artan riski takip edin",
+            "body": "Her ek güvenli seçim potansiyel ödemeyi artırırken sonunda mayına denk gelme ihtimalini de yükseltir."
+          },
+          {
+            "summary": "Maksimum kazanç ve çekimi kontrol edin",
+            "body": "Ödeme limiti, KYC, ücret ve minimum çekim sonucu etkileyebilir."
+          },
+          {
+            "summary": "Limit belirleyin",
+            "body": "Hızlı tekrar turları toplam bahis hacmini hızla artırabilir. Limit kullanın ve <a href=\"/responsibility\">sorumlu oyun</a> bilgilerine bakın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Mayın Modu Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 Mayın modu nedir?",
+            "body": "Kapalı hücrelerden güvenli olanları açıp gizli mayınlardan kaçınılan oyundur."
+          },
+          {
+            "summary": "Çarpan nasıl artar?",
+            "body": "Her güvenli hücreden sonra genellikle yükselir; kesin tablo mayın sayısına ve site kurallarına bağlıdır."
+          },
+          {
+            "summary": "Alan bitmeden kazanç alınabilir mi?",
+            "body": "Çoğu sitede güvenli seçimden sonra evet; kesin kural siteye göre kontrol edilmelidir."
+          },
+          {
+            "summary": "Daha fazla mayın daha yüksek çarpan mı demek?",
+            "body": "Genellikle evet, çünkü güvenli seçim olasılığı azalır; kesin ödeme siteye bağlıdır."
+          },
+          {
+            "summary": "Mayınların yeri önceden bilinebilir mi?",
+            "body": "Doğru rastgele üretimde hayır. Provably Fair tamamlanan yerleşimi doğrulamak içindir."
+          },
+          {
+            "summary": "Geçmiş alanlar yardımcı olur mu?",
+            "body": "Geçmiş turları kontrol etmeye yarar, yeni bağımsız yerleşimi tahmin etmez."
+          },
+          {
+            "summary": "Bonus kullanılabilir mi?",
+            "body": "Bazen; çevrim ve maksimum bahis kısıtlamaları olabilir. <a href=\"/freebies\">Bonuslara</a> bakın."
+          },
+          {
+            "summary": "CSGOBROKER Mayın sıralaması neden değişir?",
+            "body": "Çarpan, ayar, Provably Fair, limit, ödeme, çekim ve kararlılık değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Mines Sites: Mines Mode कैसे काम करता है और क्या Compare करें",
+        "paragraphs": [
+          "Mines एक random grid game है जिसमें hidden mines होती हैं। Round से पहले user wager और आम तौर पर mines की संख्या चुनता है, फिर cells एक-एक करके खोलता है। Safe cell current multiplier बढ़ाती है, जबकि mine मिलने पर round खत्म होता है और wager खो जाती है।",
+          "जितनी ज्यादा mines चुनी जाती हैं और जितनी ज्यादा safe cells पहले खुल चुकी होती हैं, potential multiplier उतना बढ़ता है और successfully continue करने की probability घटती है। इसलिए core math mine count, grid size, payout table और platform edge पर depend करती है।",
+          "CSGOBROKER Mines को <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a> और <a href=\"/csgo/plinko\">Plinko</a> से अलग evaluate करता है। Provably Fair, multiplier table, safe pick के बाद cashout, limits और automation rules महत्वपूर्ण हैं।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Mines कैसे काम करता है",
+        "items": [
+          {
+            "title": "Grid",
+            "paragraphs": [
+              "Platform closed cells के बीच hidden mines place करती है। Grid size और supported mine counts अलग हो सकते हैं।"
+            ]
+          },
+          {
+            "title": "Mine count चुनना",
+            "paragraphs": [
+              "कम mines safe pick की chance बढ़ाती हैं लेकिन multiplier धीरे बढ़ता है। ज्यादा mines risk और potential payout दोनों बढ़ाती हैं।"
+            ]
+          },
+          {
+            "title": "Safe cells खोलना",
+            "paragraphs": [
+              "हर successful selection के बाद multiplier आम तौर पर बढ़ता है और user continue या cashout चुन सकता है।"
+            ]
+          },
+          {
+            "title": "Mine hit करना",
+            "paragraphs": [
+              "Mine वाली cell select होने पर round खत्म होता है। पहले की safe cells आम तौर पर wager वापस नहीं दिलातीं।"
+            ]
+          },
+          {
+            "title": "Automatic selection",
+            "paragraphs": [
+              "कुछ sites picks automate या target steps set करने देती हैं। इससे execution बदलता है, specific layout की probability नहीं।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Verifiable system round के बाद published data से mine placement check करने देता है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Mines खेलने से पहले क्या Check करें",
+        "intro": "एक जैसे दिखने वाले grids अलग payout tables और अलग platform edges use कर सकते हैं।",
+        "items": [
+          {
+            "summary": "Grid size और mine count",
+            "body": "Available configurations और हर safe reveal के बाद multiplier change देखें।"
+          },
+          {
+            "summary": "Multiplier table",
+            "body": "Actual payouts को corresponding number of safe picks survive करने की probability से compare करें।"
+          },
+          {
+            "summary": "Platform edge",
+            "body": "Same risk पर दो sites अलग multipliers दे सकती हैं। Same probability पर lower payout larger edge का संकेत है।"
+          },
+          {
+            "summary": "Cashout rules",
+            "body": "हर safe pick के बाद round end कर सकते हैं या नहीं और minimum multiplier है या नहीं, check करें।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Completed round का mine layout published data से verify हो सकता है या नहीं, देखें।"
+          },
+          {
+            "summary": "Limits और bonuses",
+            "body": "Minimum wager, maximum win, bonus wagering, KYC और withdrawal practical payout बदल सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Mines Sites को कैसे Rate करता है",
+        "intro": "हम visual effects से ज्यादा grid math, verification और payout conditions देखते हैं।",
+        "items": [
+          {
+            "summary": "Multipliers और platform edge",
+            "body": "Mine count, safe picks और payouts का relation evaluate करते हैं।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Specific layout verify करने के data और tools देखते हैं।"
+          },
+          {
+            "summary": "Grid settings",
+            "body": "Supported mine counts, interface clarity और configuration controls शामिल हैं।"
+          },
+          {
+            "summary": "Cashout और automation",
+            "body": "Early cashout और automated options की clarity check करते हैं।"
+          },
+          {
+            "summary": "Payments और withdrawals",
+            "body": "Skins, cash, crypto, fees, minimums, KYC और withdrawal availability शामिल हैं।"
+          },
+          {
+            "summary": "History और stability",
+            "body": "Round history, multiplier display, mobile performance और support rating में शामिल हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Mines Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms payout tables, mine-count options, maximum wins, bonuses और payment methods बदल सकती हैं। छोटा payout adjustment भी mode की math बदल देता है।",
+          "Previous grids नई independent round में mines की position नहीं बताते।",
+          "दूसरे instant games के लिए <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/crash\">Crash</a>, <a href=\"/csgo/plinko\">Plinko</a> या <a href=\"/csgo/casino\">Casino</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Safe picks के बाद cashout option randomness या platform edge को खत्म नहीं करता।",
+        "items": [
+          {
+            "summary": "Provably Fair verify करें",
+            "body": "Completed round का actual mine layout check होना चाहिए।"
+          },
+          {
+            "summary": "Past grids से safe cells infer न करें",
+            "body": "Previous independent positions next round में किसी cell को safer नहीं बनातीं।"
+          },
+          {
+            "summary": "Rising risk track करें",
+            "body": "हर additional safe pick potential payout और mine hit होने की overall chance दोनों बढ़ाती है।"
+          },
+          {
+            "summary": "Maximum win और withdrawal देखें",
+            "body": "Payout caps, KYC, fees और minimum withdrawal final result को प्रभावित कर सकते हैं।"
+          },
+          {
+            "summary": "Limits set करें",
+            "body": "Fast repeated rounds total wagering जल्दी बढ़ा सकते हैं। Limits और <a href=\"/responsibility\">responsible gambling</a> information use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Mines FAQ",
+        "items": [
+          {
+            "summary": "CS2 Mines क्या है?",
+            "body": "Hidden-grid game जिसमें safe cells खोलते हुए mines avoid की जाती हैं।"
+          },
+          {
+            "summary": "Multiplier कैसे बढ़ता है?",
+            "body": "हर safe cell के बाद आम तौर पर बढ़ता है; exact table mine count और site rules पर depend करती है।"
+          },
+          {
+            "summary": "क्या grid clear होने से पहले cashout कर सकते हैं?",
+            "body": "आम तौर पर safe pick के बाद हाँ, लेकिन exact rules site पर check करें।"
+          },
+          {
+            "summary": "क्या ज्यादा mines higher multiplier देती हैं?",
+            "body": "Generally हाँ क्योंकि safe-pick probability lower होती है; exact payouts vary करते हैं।"
+          },
+          {
+            "summary": "क्या mine positions पहले से जान सकते हैं?",
+            "body": "Proper random game में नहीं। Provably Fair completed layout verify करने के लिए है।"
+          },
+          {
+            "summary": "क्या previous grid history मदद करती है?",
+            "body": "Past rounds audit करने में, नई independent layout predict करने में नहीं।"
+          },
+          {
+            "summary": "क्या bonus balance use कर सकते हैं?",
+            "body": "कभी-कभी, wagering और maximum-bet rules के साथ। <a href=\"/freebies\">Bonuses</a> देखें।"
+          },
+          {
+            "summary": "CSGOBROKER Mines ranking क्यों बदलती है?",
+            "body": "Multipliers, settings, fairness tools, limits, payments, withdrawals और stability बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

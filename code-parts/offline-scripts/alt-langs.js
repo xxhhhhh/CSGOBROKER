@@ -354,6 +354,101 @@ const PAGE_GUIDES = {
     route: "rust",
     file: "/code-parts/page-guides/rust.json",
     canonical: { en: "/rust.html", ru: "/ru/rust.html" }
+  },
+  freebies: {
+    route: "freebies",
+    file: "/code-parts/page-guides/freebies.json",
+    canonical: { en: "/freebies.html", ru: "/ru/freebies.html" }
+  },
+  buySkins: {
+    route: "csgo/buy-skins",
+    file: "/code-parts/page-guides/buy-skins.json",
+    canonical: { en: "/csgo/buy-skins.html", ru: "/ru/csgo/buy-skins.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  caseOpening: {
+    route: "csgo/caseopening",
+    file: "/code-parts/page-guides/caseopening.json",
+    canonical: { en: "/csgo/caseopening.html", ru: "/ru/csgo/caseopening.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  caseBattle: {
+    route: "csgo/case-battle",
+    file: "/code-parts/page-guides/case-battle.json",
+    canonical: { en: "/csgo/case-battle.html", ru: "/ru/csgo/case-battle.html" }
+  },
+  casino: {
+    route: "csgo/casino",
+    file: "/code-parts/page-guides/casino.json",
+    canonical: { en: "/csgo/casino.html", ru: "/ru/csgo/casino.html" }
+  },
+  dice: {
+    route: "csgo/dice",
+    file: "/code-parts/page-guides/dice.json",
+    canonical: { en: "/csgo/dice.html", ru: "/ru/csgo/dice.html" }
+  },
+  earnByPlayCsgo: {
+    route: "csgo/earn-by-play-csgo",
+    file: "/code-parts/page-guides/earn-by-play-csgo.json",
+    canonical: { en: "/csgo/earn-by-play-csgo.html", ru: "/ru/csgo/earn-by-play-csgo.html" }
+  },
+  coinflip: {
+    route: "csgo/coinflip",
+    file: "/code-parts/page-guides/coinflip.json",
+    canonical: { en: "/csgo/coinflip.html", ru: "/ru/csgo/coinflip.html" }
+  },
+  crash: {
+    route: "csgo/crash",
+    file: "/code-parts/page-guides/crash.json",
+    canonical: { en: "/csgo/crash.html", ru: "/ru/csgo/crash.html" }
+  },
+  jackpot: {
+    route: "csgo/jackpot",
+    file: "/code-parts/page-guides/jackpot.json",
+    canonical: { en: "/csgo/jackpot.html", ru: "/ru/csgo/jackpot.html" }
+  },
+  instantSell: {
+    route: "csgo/instant-sell",
+    file: "/code-parts/page-guides/instant-sell.json",
+    canonical: { en: "/csgo/instant-sell.html", ru: "/ru/csgo/instant-sell.html" }
+  },
+  matchBetting: {
+    route: "csgo/matchbetting",
+    file: "/code-parts/page-guides/matchbetting.json",
+    canonical: { en: "/csgo/matchbetting.html", ru: "/ru/csgo/matchbetting.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  marketplaces: {
+    route: "csgo/marketplaces",
+    file: "/code-parts/page-guides/marketplaces.json",
+    canonical: { en: "/csgo/marketplaces.html", ru: "/ru/csgo/marketplaces.html" }
+  },
+  roulette: {
+    route: "csgo/roulette",
+    file: "/code-parts/page-guides/roulette.json",
+    canonical: { en: "/csgo/roulette.html", ru: "/ru/csgo/roulette.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  mines: {
+    route: "csgo/mines",
+    file: "/code-parts/page-guides/mines.json",
+    canonical: { en: "/csgo/mines.html", ru: "/ru/csgo/mines.html" }
+  },
+  upgrader: {
+    route: "csgo/upgrader",
+    file: "/code-parts/page-guides/upgrader.json",
+    canonical: { en: "/csgo/upgrader.html", ru: "/ru/csgo/upgrader.html" }
+  },
+  tradeSkins: {
+    route: "csgo/trade-skins",
+    file: "/code-parts/page-guides/trade-skins.json",
+    canonical: { en: "/csgo/trade-skins.html", ru: "/ru/csgo/trade-skins.html" },
+    removeLegacy: [{ tag: "div", className: "criteria-descriptions" }]
+  },
+  plinko: {
+    route: "csgo/plinko",
+    file: "/code-parts/page-guides/plinko.json",
+    canonical: { en: "/csgo/plinko.html", ru: "/ru/csgo/plinko.html" }
   }
 };
 
@@ -558,6 +653,7 @@ function upsertMainGuide(html, guideHtml){
   const after = out.slice(footerPos);
   return before + block + nl + nl + after;
 }
+
 
 function applyPageGuide(html, pageName, config, guideData, lang){
   let out = html;

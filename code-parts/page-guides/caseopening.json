@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "caseopening",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Сайты с кейсами CS2: как работает открытие кейсов и что сравнивать",
+        "paragraphs": [
+          "Сайты с кейсами CS2 — сторонние платформы, где пользователь выбирает виртуальный кейс с заданным набором возможных предметов и получает случайный результат после открытия. Такие кейсы не являются официальными контейнерами Valve: площадка сама определяет содержимое, стоимость, вероятность выпадения предметов и правила вывода.",
+          "На CSGOBROKER сайты с открытием кейсов сравниваются отдельно от других режимов CS2. У многих площадок вместе с классическими кейсами доступны <a href=\"/csgo/case-battle\">кейс-баттлы</a>, <a href=\"/csgo/upgrader\">апгрейдеры</a>, контракты и ежедневные награды.",
+          "При выборе кейс-сайта полезно смотреть не только на цену кейса или редкий предмет на обложке. Важнее опубликованные шансы, полный пул предметов, механизм Provably Fair, оценка выпавших скинов, доступность вывода и условия бонусов."
+        ]
+      },
+      "categories": {
+        "title": "Какие механики встречаются на сайтах с кейсами CS2",
+        "items": [
+          {
+            "title": "Классическое открытие кейсов",
+            "paragraphs": [
+              "Пользователь оплачивает открытие внутренним балансом и получает один предмет из заданного пула. Основные параметры — цена кейса, список возможных предметов и вероятность каждого результата."
+            ]
+          },
+          {
+            "title": "Тематические и пользовательские кейсы",
+            "paragraphs": [
+              "Сторонние сайты создают собственные кейсы по цене, типу оружия, цвету, редкости или тематике. Одинаковые названия на разных площадках не означают одинаковые состав и шансы."
+            ]
+          },
+          {
+            "title": "Кейс-баттлы",
+            "paragraphs": [
+              "В <a href=\"/csgo/case-battle\">кейс-баттлах</a> несколько участников открывают одинаковые наборы кейсов, а итог определяется правилами режима. До участия важно понять, как определяется победитель, что происходит при ничьей и кому достаются предметы."
+            ]
+          },
+          {
+            "title": "Апгрейд выпавшего предмета",
+            "paragraphs": [
+              "Некоторые площадки позволяют использовать полученный скин в <a href=\"/csgo/upgrader\">апгрейдере</a>, чтобы попытаться получить более дорогой предмет с указанной вероятностью. Это отдельная случайная операция."
+            ]
+          },
+          {
+            "title": "Бесплатные и ежедневные кейсы",
+            "paragraphs": [
+              "Бесплатный кейс может выдаваться после регистрации, по промокоду, за ежедневный вход или активность. Такие предложения собраны в разделе <a href=\"/freebies\">бонусов CSGOBROKER</a>. Бесплатное открытие не всегда означает мгновенный вывод без дополнительных условий."
+            ]
+          },
+          {
+            "title": "Вывод скинов или внутреннего баланса",
+            "paragraphs": [
+              "После открытия сервис может разрешить вывести предмет через Steam, обменять его, продать сайту за внутренний баланс или использовать в других режимах. Правила вывода во многом определяют реальную ценность выигрыша."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед открытием кейса",
+        "intro": "У двух кейсов с похожей ценой и одинаково дорогим главным призом может быть совершенно разная математика.",
+        "items": [
+          {
+            "summary": "Шансы выпадения каждого предмета",
+            "body": "Если площадка публикует проценты, смотрите не только вероятность самого дорогого скина, но и распределение всех результатов."
+          },
+          {
+            "summary": "Ожидаемая стоимость и цена кейса",
+            "body": "Если известны шансы и стоимость всех предметов, можно приблизительно оценить математическое ожидание: вероятность каждого результата умножается на его стоимость, после чего значения складываются. Это не предсказывает конкретное открытие."
+          },
+          {
+            "summary": "Как работает Provably Fair",
+            "body": "Проверьте, описывает ли сайт механизм генерации результата и позволяет ли проверить раунд по server seed, client seed, nonce или другим опубликованным параметрам."
+          },
+          {
+            "summary": "Как площадка оценивает выпавший скин",
+            "body": "Цена предмета внутри сайта может отличаться от Steam и сторонних маркетплейсов. Это особенно важно, если вы планируете продать его площадке или использовать в контракте или апгрейдере."
+          },
+          {
+            "summary": "Доступность предмета для вывода",
+            "body": "Скин может присутствовать в пуле кейса, но временно отсутствовать в инвентаре для вывода. Проверьте, что предлагает сервис в таком случае."
+          },
+          {
+            "summary": "Бонусы, отыгрыш и ограничения",
+            "body": "Промокод или бонус к депозиту может увеличить баланс, но бонусные средства иногда имеют отдельные правила использования и вывода."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с кейсами CS2",
+        "intro": "Для рейтинга кейс-сайтов недостаточно сравнить количество кейсов или размер приветственного бонуса.",
+        "items": [
+          {
+            "summary": "Прозрачность кейсов и шансов",
+            "body": "Оценивается, насколько легко увидеть состав кейса, стоимость открытия и вероятности результатов до операции."
+          },
+          {
+            "summary": "Provably Fair и проверка результата",
+            "body": "Мы смотрим, есть ли возможность проверить конкретное открытие и насколько понятно сайт объясняет механизм случайности."
+          },
+          {
+            "summary": "Цены предметов и правила вывода",
+            "body": "Важны внутренняя оценка скинов, доступность предметов, минимальные суммы, комиссии и альтернативы, если предмет нельзя вывести сразу."
+          },
+          {
+            "summary": "Ассортимент кейсов и дополнительных режимов",
+            "body": "Учитываются реальное разнообразие кейсов, фильтры и реализация связанных режимов вроде case battle и upgrader."
+          },
+          {
+            "summary": "Пополнение и бонусные условия",
+            "body": "Учитываются способы оплаты, комиссии, минимальные суммы, промокоды, депозитные бонусы и ограничения бонусного баланса."
+          },
+          {
+            "summary": "Стабильность, интерфейс и поддержка",
+            "body": "Скорость сайта, мобильная версия, история операций, статусы вывода и доступность поддержки влияют на общую оценку."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг сайтов с кейсами меняется",
+        "paragraphs": [
+          "Кейс-сайты регулярно добавляют новые наборы, меняют состав старых кейсов, стоимость открытия, бонусы и способы пополнения.",
+          "Отдельно меняется рынок скинов CS2. Когда площадка пересчитывает стоимость предметов, меняется фактическая ценность кейсов, контрактов, апгрейдов и вывода.",
+          "Если нужен конкретный скин, а не случайный результат, используйте разделы CSGOBROKER: <a href=\"/csgo/buy-skins\">покупка</a>, <a href=\"/csgo/sell-skins\">продажа</a>, <a href=\"/csgo/trade-skins\">обмен</a> или <a href=\"/csgo/marketplaces\">торговые площадки</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании сайтов с кейсами",
+        "intro": "Кейс-сайты являются сторонними сервисами и не относятся к официальной системе контейнеров Valve.",
+        "items": [
+          {
+            "summary": "Проверяйте домен перед входом через Steam",
+            "body": "Фишинговые копии могут повторять дизайн известного сайта и имитировать Steam-авторизацию."
+          },
+          {
+            "summary": "Проверяйте каждый Steam Trade Offer",
+            "body": "Если сайт выводит предмет через Steam, сверяйте отправителя и сам скин перед подтверждением."
+          },
+          {
+            "summary": "Не передавайте пароль и секретные данные Steam",
+            "body": "Обычный вывод не требует отправлять пароль, Steam Guard-код или другие секретные данные сотруднику поддержки."
+          },
+          {
+            "summary": "Читайте правила вывода до пополнения",
+            "body": "Минимальная сумма, KYC, комиссии, лимиты и региональные ограничения могут проявиться только на этапе вывода."
+          },
+          {
+            "summary": "Не рассматривайте кейсы как гарантированный способ получить скин дешевле",
+            "body": "Результат открытия случаен. Наличие дорогого предмета не делает его получение вероятным и не гарантирует, что серия открытий окажется выгоднее прямой <a href=\"/csgo/buy-skins\">покупки скина</a>. Используйте <a href=\"/responsibility\">ответственную игру</a> и заранее определяйте лимит расходов."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о сайтах с кейсами CS2",
+        "items": [
+          {
+            "summary": "Чем сторонние кейсы отличаются от кейсов внутри CS2?",
+            "body": "Официальные контейнеры относятся к экосистеме Valve. На стороннем сайте содержимое, стоимость, шансы, баланс и правила вывода определяются самой площадкой."
+          },
+          {
+            "summary": "Что такое Provably Fair при открытии кейсов?",
+            "body": "Это криптографический подход, позволяющий проверить, что результат конкретного раунда не был изменён после формирования. Реализация зависит от сайта."
+          },
+          {
+            "summary": "Можно ли узнать шанс выпадения конкретного скина?",
+            "body": "Если сайт публикует odds, вероятность можно увидеть в интерфейсе кейса. Без точных процентов сравнение значительно сложнее."
+          },
+          {
+            "summary": "Что такое ожидаемая стоимость кейса?",
+            "body": "Это расчётная средняя стоимость результата при известных шансах. Она не гарантирует конкретный результат."
+          },
+          {
+            "summary": "Можно ли вывести выпавший скин в Steam?",
+            "body": "Зависит от площадки и доступности предмета. Некоторые сайты выводят через Steam Trade Offer, другие предлагают внутреннюю продажу или обмен."
+          },
+          {
+            "summary": "Где найти бесплатные кейсы CS2?",
+            "body": "Они могут встречаться в бонусах за регистрацию, ежедневных акциях и промокодах. CSGOBROKER собирает такие предложения в разделе <a href=\"/freebies\">бонусов</a>."
+          },
+          {
+            "summary": "Чем case battle отличается от обычного открытия?",
+            "body": "В <a href=\"/csgo/case-battle\">case battle</a> несколько игроков участвуют в общем раунде, а распределение выигрыша зависит от правил формата."
+          },
+          {
+            "summary": "Почему позиции кейс-сайтов в рейтинге CSGOBROKER меняются?",
+            "body": "Меняются состав и цена кейсов, шансы, бонусы, способы оплаты, вывод и стабильность работы, поэтому оценка может пересматриваться."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Case Opening Sites: How Cases Work and What to Compare",
+        "paragraphs": [
+          "CS2 case opening sites are third-party platforms where users select a virtual case with a defined pool of possible items and receive a random result. These are not official Valve containers: the platform sets contents, opening price, probabilities, and withdrawal rules.",
+          "CSGOBROKER compares case sites separately from other CS2 modes. Many platforms also offer <a href=\"/csgo/case-battle\">case battles</a>, <a href=\"/csgo/upgrader\">upgraders</a>, contracts, and daily rewards.",
+          "Case price and the rare skin on the cover are not enough. Published odds, the full item pool, Provably Fair, item valuation, withdrawal availability, and bonus terms matter more."
+        ]
+      },
+      "categories": {
+        "title": "Common Mechanics on CS2 Case Sites",
+        "items": [
+          {
+            "title": "Classic case opening",
+            "paragraphs": [
+              "The user pays for the opening with the platform’s internal balance and receives one item from the defined pool. Key parameters are the case price, the list of possible items, and the probability of each result."
+            ]
+          },
+          {
+            "title": "Themed and custom cases",
+            "paragraphs": [
+              "Platforms create cases by price, weapon, color, rarity, or theme. Similar names on different sites do not imply the same contents or odds."
+            ]
+          },
+          {
+            "title": "Case battles",
+            "paragraphs": [
+              "In <a href=\"/csgo/case-battle\">case battles</a>, several participants open the same case sets. Check winner, tie, and item-distribution rules before joining."
+            ]
+          },
+          {
+            "title": "Upgrading a dropped item",
+            "paragraphs": [
+              "Some sites let users put a drop into an <a href=\"/csgo/upgrader\">upgrader</a> for a chance at a more valuable item. This is a separate random operation."
+            ]
+          },
+          {
+            "title": "Free and daily cases",
+            "paragraphs": [
+              "Free cases may be available after registration, through a promo code, daily login, or activity. Related offers are collected under CSGOBROKER <a href=\"/freebies\">bonuses</a>. Free opening does not always mean unrestricted withdrawal."
+            ]
+          },
+          {
+            "title": "Skin withdrawal or internal balance",
+            "paragraphs": [
+              "After opening, a service may allow Steam withdrawal, exchange, internal sale for balance, or use in other modes. Withdrawal rules strongly affect the practical value of a drop."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Opening a Case",
+        "intro": "Two similarly priced cases with the same headline jackpot can have very different mathematics.",
+        "items": [
+          {
+            "summary": "Drop odds for every item",
+            "body": "If percentages are published, review the complete distribution rather than only the rarest skin."
+          },
+          {
+            "summary": "Expected value versus case price",
+            "body": "When prices and probabilities are known, approximate expected value can be calculated by multiplying each outcome value by its probability and adding the results. It does not predict one opening."
+          },
+          {
+            "summary": "How Provably Fair works",
+            "body": "Check whether the site explains result generation and lets users verify a round using server seed, client seed, nonce, or other published values."
+          },
+          {
+            "summary": "How dropped skins are valued",
+            "body": "Internal prices can differ from Steam and third-party markets, especially if you sell the drop back to the site or use it in contracts or an upgrader."
+          },
+          {
+            "summary": "Whether the item is available for withdrawal",
+            "body": "A skin can be in the case pool but temporarily unavailable in withdrawal inventory. Check what alternative the site provides."
+          },
+          {
+            "summary": "Bonuses, wagering and restrictions",
+            "body": "A promo code or deposit bonus can increase the balance, but bonus funds may have separate rules for use and withdrawal."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Case Opening Sites",
+        "intro": "A case-site ranking should not be based only on case count or welcome bonus.",
+        "items": [
+          {
+            "summary": "Case and odds transparency",
+            "body": "We consider how clearly contents, opening price, and outcome probabilities are shown before opening."
+          },
+          {
+            "summary": "Provably Fair and result verification",
+            "body": "We review whether a specific opening can be checked and how clearly the randomness mechanism is explained."
+          },
+          {
+            "summary": "Item prices and withdrawal rules",
+            "body": "Internal valuation, inventory availability, minimums, fees, and alternatives when an item cannot be withdrawn immediately matter."
+          },
+          {
+            "summary": "Case variety and related modes",
+            "body": "We consider meaningful case variety, filters, and implementation of case battle and upgrader features."
+          },
+          {
+            "summary": "Deposits and bonus conditions",
+            "body": "Payment methods, fees, minimums, promo codes, bonuses, and bonus-balance restrictions are included."
+          },
+          {
+            "summary": "Stability, interface and support",
+            "body": "Performance, mobile usability, transaction history, withdrawal status, and support contribute to the rating."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Case Opening Rankings Change",
+        "paragraphs": [
+          "Case sites regularly add new cases and change old pools, opening prices, bonuses, and payment methods.",
+          "The CS2 skin market also changes. When internal item valuation changes, the practical value of cases, contracts, upgrades, and withdrawals changes as well.",
+          "If you want a specific skin rather than a random result, use <a href=\"/csgo/buy-skins\">buying</a>, <a href=\"/csgo/sell-skins\">selling</a>, <a href=\"/csgo/trade-skins\">trading</a>, or <a href=\"/csgo/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety on CS2 Case Opening Sites",
+        "intro": "Case sites are third-party services separate from Valve's official container system.",
+        "items": [
+          {
+            "summary": "Check the domain before Steam login",
+            "body": "Phishing copies can imitate a known platform and Steam sign-in flow."
+          },
+          {
+            "summary": "Verify every Steam Trade Offer",
+            "body": "If a site withdraws an item through Steam, check both the sender and the exact skin."
+          },
+          {
+            "summary": "Do not share Steam passwords or secret data",
+            "body": "A normal withdrawal does not require sending a password, Steam Guard code, or other private credential to support."
+          },
+          {
+            "summary": "Read withdrawal terms before depositing",
+            "body": "Minimums, KYC, fees, limits, and regional restrictions may become relevant only when withdrawing."
+          },
+          {
+            "summary": "Do not treat cases as a guaranteed cheaper way to get a skin",
+            "body": "Results are random. A valuable item in the pool does not make it likely or guarantee that repeated openings are cheaper than directly <a href=\"/csgo/buy-skins\">buying the skin</a>. Set a spending limit and use <a href=\"/responsibility\">responsible gambling</a> information."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Case Sites",
+        "items": [
+          {
+            "summary": "How are third-party cases different from cases inside CS2?",
+            "body": "Official containers are part of Valve's ecosystem. On third-party sites, contents, prices, odds, balance mechanics, and withdrawal rules are set by the platform."
+          },
+          {
+            "summary": "What does Provably Fair mean for case opening?",
+            "body": "It is a cryptographic approach that can let users verify that a specific result was not changed after generation. Implementations vary."
+          },
+          {
+            "summary": "Can I see the chance of getting a specific skin?",
+            "body": "If the site publishes odds, probability should be visible in the case interface. Without exact percentages, comparison is much harder."
+          },
+          {
+            "summary": "What is the expected value of a case?",
+            "body": "It is the calculated average outcome value when probabilities are known. It does not guarantee an individual result."
+          },
+          {
+            "summary": "Can I withdraw a dropped skin to Steam?",
+            "body": "It depends on the platform and item availability. Some sites use Steam Trade Offers; others offer internal sale or exchange."
+          },
+          {
+            "summary": "Where can I find free CS2 cases?",
+            "body": "They can appear in sign-up offers, daily rewards, and promo codes. CSGOBROKER collects related promotions under <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "How is a case battle different from normal opening?",
+            "body": "In a <a href=\"/csgo/case-battle\">case battle</a>, several players participate in one round and prizes follow the selected format rules."
+          },
+          {
+            "summary": "Why does the CSGOBROKER case-site ranking change?",
+            "body": "Case pools and prices, odds, bonuses, payment methods, withdrawals, and service stability change over time, so the rating may be revised."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sitios de cajas de CS2: cómo funcionan y qué comparar",
+        "paragraphs": [
+          "Los sitios de cajas de CS2 son plataformas de terceros donde el usuario elige una caja virtual con un conjunto definido de objetos posibles y recibe un resultado aleatorio al abrirla. Estas cajas no son contenedores oficiales de Valve: la propia plataforma determina el contenido, el precio de apertura, las probabilidades de obtener cada objeto y las reglas de retiro.",
+          "En CSGOBROKER, los sitios de apertura de cajas se comparan por separado de otros modos de CS2. Muchas plataformas, además de las cajas clásicas, ofrecen <a href=\"/csgo/case-battle\">case battles</a>, <a href=\"/csgo/upgrader\">upgraders</a>, contratos y recompensas diarias.",
+          "Al elegir un sitio de cajas no conviene fijarse solo en el precio de la caja o en el objeto raro de la portada. Son más importantes las probabilidades publicadas, el pool completo de objetos, el mecanismo Provably Fair, la valoración de las skins obtenidas, la disponibilidad de retiro y las condiciones de los bonos."
+        ]
+      },
+      "categories": {
+        "title": "Mecánicas habituales en los sitios de cajas de CS2",
+        "items": [
+          {
+            "title": "Apertura clásica de cajas",
+            "paragraphs": [
+              "El usuario paga la apertura con el saldo interno y recibe un objeto de un pool definido. Los parámetros principales son el precio de la caja, la lista de objetos posibles y la probabilidad de cada resultado."
+            ]
+          },
+          {
+            "title": "Cajas temáticas y personalizadas",
+            "paragraphs": [
+              "Los sitios de terceros crean sus propias cajas por precio, tipo de arma, color, rareza o temática. Que dos cajas tengan el mismo nombre en plataformas distintas no significa que tengan el mismo contenido ni las mismas probabilidades."
+            ]
+          },
+          {
+            "title": "Case battles",
+            "paragraphs": [
+              "En las <a href=\"/csgo/case-battle\">case battles</a>, varios participantes abren los mismos conjuntos de cajas y el resultado depende de las reglas del modo. Antes de participar, conviene entender cómo se determina al ganador, qué ocurre en caso de empate y quién recibe los objetos."
+            ]
+          },
+          {
+            "title": "Mejora del objeto obtenido",
+            "paragraphs": [
+              "Algunas plataformas permiten usar la skin obtenida en un <a href=\"/csgo/upgrader\">upgrader</a> para intentar conseguir un objeto más caro con una probabilidad indicada. Se trata de una operación aleatoria independiente."
+            ]
+          },
+          {
+            "title": "Cajas gratis y diarias",
+            "paragraphs": [
+              "Una caja gratuita puede ofrecerse tras el registro, mediante un código promocional, por iniciar sesión cada día o por actividad. Estas ofertas se recopilan en la sección de <a href=\"/freebies\">bonos de CSGOBROKER</a>. Una apertura gratuita no siempre implica que el premio pueda retirarse inmediatamente y sin condiciones adicionales."
+            ]
+          },
+          {
+            "title": "Retiro de skins o saldo interno",
+            "paragraphs": [
+              "Después de abrir una caja, el servicio puede permitir retirar el objeto a Steam, cambiarlo, venderlo al sitio por saldo interno o usarlo en otros modos. Las reglas de retiro determinan en gran medida el valor real del premio."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de abrir una caja",
+        "intro": "Dos cajas con un precio parecido y el mismo premio principal de gran valor pueden tener una matemática completamente distinta.",
+        "items": [
+          {
+            "summary": "Probabilidad de obtener cada objeto",
+            "body": "Si la plataforma publica porcentajes, revise no solo la probabilidad de la skin más cara, sino también la distribución de todos los resultados."
+          },
+          {
+            "summary": "Valor esperado y precio de la caja",
+            "body": "Si se conocen las probabilidades y el valor de todos los objetos, se puede estimar aproximadamente el valor esperado: se multiplica la probabilidad de cada resultado por su valor y después se suman los valores obtenidos. Esto no permite predecir una apertura concreta."
+          },
+          {
+            "summary": "Cómo funciona Provably Fair",
+            "body": "Compruebe si el sitio explica el mecanismo de generación del resultado y permite verificar una ronda mediante server seed, client seed, nonce u otros parámetros publicados."
+          },
+          {
+            "summary": "Cómo valora la plataforma la skin obtenida",
+            "body": "El precio de un objeto dentro del sitio puede diferir del de Steam y de los marketplaces de terceros. Esto es especialmente importante si piensa venderlo de nuevo a la plataforma o usarlo en un contrato o en un upgrader."
+          },
+          {
+            "summary": "Disponibilidad del objeto para retiro",
+            "body": "Una skin puede aparecer en el pool de la caja pero no estar disponible temporalmente en el inventario de retiro. Compruebe qué alternativa ofrece el servicio en ese caso."
+          },
+          {
+            "summary": "Bonos, wagering y restricciones",
+            "body": "Un código promocional o un bono de depósito puede aumentar el saldo, pero los fondos de bono a veces tienen reglas independientes de uso y retiro."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de cajas de CS2",
+        "intro": "Para elaborar un ranking de sitios de cajas no basta con comparar el número de cajas o el tamaño del bono de bienvenida.",
+        "items": [
+          {
+            "summary": "Transparencia de cajas y probabilidades",
+            "body": "Evaluamos lo fácil que resulta ver el contenido de la caja, el precio de apertura y las probabilidades de los resultados antes de realizar la operación."
+          },
+          {
+            "summary": "Provably Fair y verificación del resultado",
+            "body": "Comprobamos si es posible verificar una apertura concreta y con qué claridad explica el sitio el mecanismo de aleatoriedad."
+          },
+          {
+            "summary": "Precios de los objetos y reglas de retiro",
+            "body": "Importan la valoración interna de las skins, la disponibilidad de objetos, los mínimos, las comisiones y las alternativas cuando un objeto no puede retirarse de inmediato."
+          },
+          {
+            "summary": "Variedad de cajas y modos adicionales",
+            "body": "Tenemos en cuenta la variedad real de cajas, los filtros y la implementación de modos relacionados como case battle y upgrader."
+          },
+          {
+            "summary": "Depósitos y condiciones de los bonos",
+            "body": "Se tienen en cuenta los métodos de pago, las comisiones, los importes mínimos, los códigos promocionales, los bonos de depósito y las restricciones del saldo de bono."
+          },
+          {
+            "summary": "Estabilidad, interfaz y soporte",
+            "body": "La velocidad del sitio, la versión móvil, el historial de operaciones, los estados de retiro y la disponibilidad del soporte influyen en la puntuación general."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking de sitios de cajas",
+        "paragraphs": [
+          "Los sitios de cajas añaden regularmente nuevos conjuntos y cambian el contenido de cajas antiguas, los precios de apertura, los bonos y los métodos de depósito.",
+          "El mercado de skins de CS2 también cambia. Cuando una plataforma recalcula el valor de los objetos, cambia el valor real de las cajas, los contratos, los upgraders y los retiros.",
+          "Si busca una skin concreta en lugar de un resultado aleatorio, use las secciones de CSGOBROKER: <a href=\"/csgo/buy-skins\">compra</a>, <a href=\"/csgo/sell-skins\">venta</a>, <a href=\"/csgo/trade-skins\">intercambio</a> o <a href=\"/csgo/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en sitios de cajas de CS2",
+        "intro": "Los sitios de cajas son servicios de terceros y no forman parte del sistema oficial de contenedores de Valve.",
+        "items": [
+          {
+            "summary": "Compruebe el dominio antes de iniciar sesión con Steam",
+            "body": "Las copias de phishing pueden reproducir el diseño de un sitio conocido e imitar el inicio de sesión de Steam."
+          },
+          {
+            "summary": "Verifique cada Steam Trade Offer",
+            "body": "Si el sitio retira un objeto a través de Steam, compruebe el remitente y la skin exacta antes de confirmar la oferta."
+          },
+          {
+            "summary": "No comparta la contraseña ni datos secretos de Steam",
+            "body": "Un retiro normal no requiere enviar a un empleado de soporte la contraseña, el código de Steam Guard ni otros datos secretos."
+          },
+          {
+            "summary": "Lea las reglas de retiro antes de depositar",
+            "body": "El importe mínimo, KYC, las comisiones, los límites y las restricciones regionales pueden aparecer solo en la fase de retiro."
+          },
+          {
+            "summary": "No considere las cajas una forma garantizada de conseguir una skin más barata",
+            "body": "El resultado de la apertura es aleatorio. Que haya un objeto caro en el pool no hace probable obtenerlo ni garantiza que una serie de aperturas resulte más barata que <a href=\"/csgo/buy-skins\">comprar la skin</a> directamente. Use la información sobre <a href=\"/responsibility\">juego responsable</a> y establezca de antemano un límite de gasto."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre sitios de cajas de CS2",
+        "items": [
+          {
+            "summary": "¿En qué se diferencian las cajas de terceros de las cajas dentro de CS2?",
+            "body": "Los contenedores oficiales forman parte del ecosistema de Valve. En un sitio de terceros, el contenido, el precio, las probabilidades, el saldo y las reglas de retiro los determina la propia plataforma."
+          },
+          {
+            "summary": "¿Qué es Provably Fair al abrir cajas?",
+            "body": "Es un enfoque criptográfico que permite comprobar que el resultado de una ronda concreta no fue modificado después de generarse. La implementación depende del sitio."
+          },
+          {
+            "summary": "¿Se puede saber la probabilidad de obtener una skin concreta?",
+            "body": "Si el sitio publica las odds, la probabilidad puede verse en la interfaz de la caja. Sin porcentajes exactos, comparar resulta mucho más difícil."
+          },
+          {
+            "summary": "¿Qué es el valor esperado de una caja?",
+            "body": "Es el valor medio calculado del resultado cuando se conocen las probabilidades. No garantiza un resultado concreto."
+          },
+          {
+            "summary": "¿Se puede retirar a Steam una skin obtenida?",
+            "body": "Depende de la plataforma y de la disponibilidad del objeto. Algunos sitios retiran mediante Steam Trade Offer; otros ofrecen venta interna o intercambio."
+          },
+          {
+            "summary": "¿Dónde se pueden encontrar cajas gratis de CS2?",
+            "body": "Pueden aparecer como bonos de registro, promociones diarias y códigos promocionales. CSGOBROKER recopila este tipo de ofertas en la sección de <a href=\"/freebies\">bonos</a>."
+          },
+          {
+            "summary": "¿En qué se diferencia una case battle de una apertura normal?",
+            "body": "En una <a href=\"/csgo/case-battle\">case battle</a>, varios jugadores participan en una ronda común y la distribución de los premios depende de las reglas del formato."
+          },
+          {
+            "summary": "¿Por qué cambian las posiciones de los sitios de cajas en el ranking de CSGOBROKER?",
+            "body": "Cambian el contenido y el precio de las cajas, las probabilidades, los bonos, los métodos de pago, los retiros y la estabilidad del servicio, por lo que la puntuación puede revisarse."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sites de caixas de CS2: como funcionam e o que comparar",
+        "paragraphs": [
+          "Sites de caixas de CS2 são plataformas de terceiros nas quais o usuário escolhe uma caixa virtual com um conjunto definido de itens possíveis e recebe um resultado aleatório após a abertura. Essas caixas não são contêineres oficiais da Valve: a própria plataforma define o conteúdo, o preço da abertura, as probabilidades de obter os itens e as regras de saque.",
+          "Na CSGOBROKER, os sites de abertura de caixas são comparados separadamente de outros modos de CS2. Muitas plataformas, além das caixas clássicas, também oferecem <a href=\"/csgo/case-battle\">case battles</a>, <a href=\"/csgo/upgrader\">upgraders</a>, contratos e recompensas diárias.",
+          "Ao escolher um site de caixas, não vale olhar apenas para o preço da caixa ou para o item raro mostrado na capa. São mais importantes as probabilidades publicadas, o pool completo de itens, o mecanismo Provably Fair, a avaliação das skins obtidas, a disponibilidade de saque e as condições dos bônus."
+        ]
+      },
+      "categories": {
+        "title": "Mecânicas comuns em sites de caixas de CS2",
+        "items": [
+          {
+            "title": "Abertura clássica de caixas",
+            "paragraphs": [
+              "O usuário paga a abertura com o saldo interno e recebe um item de um pool definido. Os principais parâmetros são o preço da caixa, a lista de itens possíveis e a probabilidade de cada resultado."
+            ]
+          },
+          {
+            "title": "Caixas temáticas e personalizadas",
+            "paragraphs": [
+              "Sites de terceiros criam suas próprias caixas por preço, tipo de arma, cor, raridade ou tema. Nomes iguais em plataformas diferentes não significam que o conteúdo e as probabilidades sejam os mesmos."
+            ]
+          },
+          {
+            "title": "Case battles",
+            "paragraphs": [
+              "Nas <a href=\"/csgo/case-battle\">case battles</a>, vários participantes abrem os mesmos conjuntos de caixas, e o resultado depende das regras do modo. Antes de participar, é importante entender como o vencedor é definido, o que acontece em caso de empate e quem fica com os itens."
+            ]
+          },
+          {
+            "title": "Upgrade do item obtido",
+            "paragraphs": [
+              "Algumas plataformas permitem usar a skin obtida em um <a href=\"/csgo/upgrader\">upgrader</a> para tentar conseguir um item mais caro com uma probabilidade indicada. Trata-se de uma operação aleatória separada."
+            ]
+          },
+          {
+            "title": "Caixas grátis e diárias",
+            "paragraphs": [
+              "Uma caixa grátis pode ser oferecida após o cadastro, por código promocional, login diário ou atividade. Essas ofertas são reunidas na seção de <a href=\"/freebies\">bônus da CSGOBROKER</a>. Uma abertura gratuita nem sempre significa saque imediato e sem condições adicionais."
+            ]
+          },
+          {
+            "title": "Saque de skins ou saldo interno",
+            "paragraphs": [
+              "Depois da abertura, o serviço pode permitir sacar o item para a Steam, trocá-lo, vendê-lo ao site por saldo interno ou usá-lo em outros modos. As regras de saque determinam em grande parte o valor real do prêmio."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de abrir uma caixa",
+        "intro": "Duas caixas com preços parecidos e o mesmo prêmio principal de alto valor podem ter uma matemática completamente diferente.",
+        "items": [
+          {
+            "summary": "Chance de drop de cada item",
+            "body": "Se a plataforma publica porcentagens, analise não apenas a chance da skin mais cara, mas também a distribuição de todos os resultados."
+          },
+          {
+            "summary": "Valor esperado e preço da caixa",
+            "body": "Se as probabilidades e os valores de todos os itens forem conhecidos, é possível estimar aproximadamente o valor esperado: multiplica-se a probabilidade de cada resultado pelo seu valor e depois somam-se os resultados. Isso não prevê uma abertura específica."
+          },
+          {
+            "summary": "Como funciona o Provably Fair",
+            "body": "Verifique se o site explica o mecanismo de geração do resultado e permite conferir uma rodada usando server seed, client seed, nonce ou outros parâmetros publicados."
+          },
+          {
+            "summary": "Como a plataforma avalia a skin obtida",
+            "body": "O preço de um item dentro do site pode ser diferente do valor na Steam e em marketplaces de terceiros. Isso é especialmente importante se você pretende vendê-lo de volta ao site ou usá-lo em um contrato ou upgrader."
+          },
+          {
+            "summary": "Disponibilidade do item para saque",
+            "body": "Uma skin pode estar no pool da caixa, mas ficar temporariamente indisponível no inventário de saque. Verifique qual alternativa o serviço oferece nesse caso."
+          },
+          {
+            "summary": "Bônus, wagering e restrições",
+            "body": "Um código promocional ou bônus de depósito pode aumentar o saldo, mas os fundos de bônus às vezes têm regras separadas de uso e saque."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de caixas de CS2",
+        "intro": "Para montar um ranking de sites de caixas, não basta comparar a quantidade de caixas ou o tamanho do bônus de boas-vindas.",
+        "items": [
+          {
+            "summary": "Transparência das caixas e probabilidades",
+            "body": "Avaliamos quão fácil é ver o conteúdo da caixa, o preço da abertura e as probabilidades dos resultados antes da operação."
+          },
+          {
+            "summary": "Provably Fair e verificação do resultado",
+            "body": "Verificamos se é possível conferir uma abertura específica e quão claramente o site explica o mecanismo de aleatoriedade."
+          },
+          {
+            "summary": "Preços dos itens e regras de saque",
+            "body": "Importam a avaliação interna das skins, a disponibilidade dos itens, valores mínimos, taxas e alternativas quando um item não pode ser sacado imediatamente."
+          },
+          {
+            "summary": "Variedade de caixas e modos adicionais",
+            "body": "Consideramos a variedade real de caixas, os filtros e a implementação de modos relacionados, como case battle e upgrader."
+          },
+          {
+            "summary": "Depósitos e condições dos bônus",
+            "body": "São considerados métodos de pagamento, taxas, valores mínimos, códigos promocionais, bônus de depósito e restrições do saldo de bônus."
+          },
+          {
+            "summary": "Estabilidade, interface e suporte",
+            "body": "A velocidade do site, a versão mobile, o histórico de operações, os status de saque e a disponibilidade do suporte influenciam a avaliação geral."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking de sites de caixas muda",
+        "paragraphs": [
+          "Sites de caixas adicionam novos conjuntos regularmente e alteram o conteúdo de caixas antigas, os preços de abertura, os bônus e os métodos de depósito.",
+          "O mercado de skins de CS2 também muda. Quando uma plataforma recalcula o valor dos itens, muda também o valor real de caixas, contratos, upgraders e saques.",
+          "Se você quer uma skin específica em vez de um resultado aleatório, use as seções da CSGOBROKER: <a href=\"/csgo/buy-skins\">compra</a>, <a href=\"/csgo/sell-skins\">venda</a>, <a href=\"/csgo/trade-skins\">troca</a> ou <a href=\"/csgo/marketplaces\">marketplaces</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em sites de caixas de CS2",
+        "intro": "Sites de caixas são serviços de terceiros e não fazem parte do sistema oficial de contêineres da Valve.",
+        "items": [
+          {
+            "summary": "Confira o domínio antes de entrar pela Steam",
+            "body": "Cópias de phishing podem reproduzir o design de um site conhecido e imitar o login da Steam."
+          },
+          {
+            "summary": "Verifique cada Steam Trade Offer",
+            "body": "Se o site envia um item pela Steam, confira o remetente e a skin exata antes de confirmar o Steam Trade Offer."
+          },
+          {
+            "summary": "Não compartilhe senha nem dados secretos da Steam",
+            "body": "Um saque normal não exige enviar senha, código do Steam Guard ou outros dados secretos a um funcionário do suporte."
+          },
+          {
+            "summary": "Leia as regras de saque antes de depositar",
+            "body": "Valor mínimo, KYC, taxas, limites e restrições regionais podem aparecer apenas na etapa de saque."
+          },
+          {
+            "summary": "Não trate caixas como uma forma garantida de conseguir uma skin mais barata",
+            "body": "O resultado da abertura é aleatório. A presença de um item caro no pool não torna sua obtenção provável nem garante que uma série de aberturas seja mais barata do que <a href=\"/csgo/buy-skins\">comprar a skin</a> diretamente. Consulte as informações sobre <a href=\"/responsibility\">jogo responsável</a> e defina antecipadamente um limite de gastos."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre sites de caixas de CS2",
+        "items": [
+          {
+            "summary": "Como as caixas de terceiros diferem das caixas dentro do CS2?",
+            "body": "Os contêineres oficiais fazem parte do ecossistema da Valve. Em um site de terceiros, conteúdo, preço, probabilidades, saldo e regras de saque são definidos pela própria plataforma."
+          },
+          {
+            "summary": "O que é Provably Fair na abertura de caixas?",
+            "body": "É uma abordagem criptográfica que permite verificar se o resultado de uma rodada específica não foi alterado depois de gerado. A implementação varia de site para site."
+          },
+          {
+            "summary": "É possível saber a chance de obter uma skin específica?",
+            "body": "Se o site publica as odds, a probabilidade pode ser vista na interface da caixa. Sem porcentagens exatas, a comparação fica muito mais difícil."
+          },
+          {
+            "summary": "O que é o valor esperado de uma caixa?",
+            "body": "É o valor médio calculado do resultado quando as probabilidades são conhecidas. Ele não garante um resultado específico."
+          },
+          {
+            "summary": "É possível sacar para a Steam uma skin obtida?",
+            "body": "Depende da plataforma e da disponibilidade do item. Alguns sites fazem o saque por Steam Trade Offer; outros oferecem venda interna ou troca."
+          },
+          {
+            "summary": "Onde encontrar caixas grátis de CS2?",
+            "body": "Elas podem aparecer em bônus de cadastro, promoções diárias e códigos promocionais. A CSGOBROKER reúne essas ofertas na seção de <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Como uma case battle difere de uma abertura normal?",
+            "body": "Em uma <a href=\"/csgo/case-battle\">case battle</a>, vários jogadores participam de uma rodada conjunta, e a distribuição dos prêmios depende das regras do formato."
+          },
+          {
+            "summary": "Por que as posições dos sites de caixas no ranking da CSGOBROKER mudam?",
+            "body": "Mudam o conteúdo e o preço das caixas, as probabilidades, os bônus, os métodos de pagamento, os saques e a estabilidade do serviço; por isso, a avaliação pode ser revisada."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Kasa Açma Siteleri: Nasıl Çalışır ve Neleri Karşılaştırmalı?",
+        "paragraphs": [
+          "CS2 kasa siteleri, kullanıcının olası öğelerden oluşan belirli bir havuza sahip sanal bir kasa seçtiği ve açılıştan sonra rastgele bir sonuç aldığı üçüncü taraf platformlardır. Bu kasalar Valve'ın resmi konteynerleri değildir: içerikleri, açılış ücretini, öğe düşme olasılıklarını ve çekim kurallarını platformun kendisi belirler.",
+          "CSGOBROKER'da kasa açma siteleri diğer CS2 modlarından ayrı olarak karşılaştırılır. Birçok platform klasik kasaların yanı sıra <a href=\"/csgo/case-battle\">case battle</a>, <a href=\"/csgo/upgrader\">upgrader</a>, kontratlar ve günlük ödüller de sunar.",
+          "Bir kasa sitesi seçerken yalnızca kasa fiyatına veya kapaktaki nadir öğeye bakmak yeterli değildir. Yayınlanan olasılıklar, tüm öğe havuzu, Provably Fair mekanizması, düşen skinlerin nasıl değerlendirildiği, çekim imkânı ve bonus koşulları daha önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Kasa Sitelerinde Yaygın Mekanikler",
+        "items": [
+          {
+            "title": "Klasik kasa açma",
+            "paragraphs": [
+              "Kullanıcı açılış ücretini site içi bakiyeyle öder ve belirlenmiş havuzdan bir öğe alır. Temel parametreler kasa fiyatı, olası öğelerin listesi ve her sonucun olasılığıdır."
+            ]
+          },
+          {
+            "title": "Tematik ve özel kasalar",
+            "paragraphs": [
+              "Üçüncü taraf siteler fiyat, silah türü, renk, nadirlik veya temaya göre kendi kasalarını oluşturur. Farklı platformlarda aynı adı taşıyan kasaların içerikleri ve olasılıkları aynı olmak zorunda değildir."
+            ]
+          },
+          {
+            "title": "Case battle",
+            "paragraphs": [
+              "<a href=\"/csgo/case-battle\">Case battle</a> modunda birden fazla katılımcı aynı kasa setlerini açar ve sonuç modun kurallarına göre belirlenir. Katılmadan önce kazananın nasıl belirlendiğini, beraberlikte ne olduğunu ve öğelerin kime verildiğini anlamak önemlidir."
+            ]
+          },
+          {
+            "title": "Düşen öğeyi yükseltme",
+            "paragraphs": [
+              "Bazı platformlar, düşen skini belirtilen bir olasılıkla daha pahalı bir öğe elde etmeyi denemek için <a href=\"/csgo/upgrader\">upgrader</a> içinde kullanmaya izin verir. Bu, ayrı bir rastgele işlemdir."
+            ]
+          },
+          {
+            "title": "Ücretsiz ve günlük kasalar",
+            "paragraphs": [
+              "Ücretsiz kasa kayıt sonrası, promo koduyla, günlük girişle veya aktivite karşılığında verilebilir. Bu tür teklifler CSGOBROKER'ın <a href=\"/freebies\">bonuslar</a> bölümünde toplanır. Ücretsiz açılış, ödülün her zaman ek koşul olmadan hemen çekilebileceği anlamına gelmez."
+            ]
+          },
+          {
+            "title": "Skin veya site içi bakiye çekimi",
+            "paragraphs": [
+              "Açılıştan sonra servis öğeyi Steam'e çekmeye, takas etmeye, siteye iç bakiye karşılığında satmaya veya diğer modlarda kullanmaya izin verebilir. Çekim kuralları, kazanılan öğenin gerçek değerini büyük ölçüde belirler."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Kasa Açmadan Önce Neleri Kontrol Etmeli?",
+        "intro": "Benzer fiyatlı ve aynı pahalı ana ödüle sahip iki kasanın matematiği tamamen farklı olabilir.",
+        "items": [
+          {
+            "summary": "Her öğenin düşme olasılığı",
+            "body": "Platform yüzdeleri yayınlıyorsa yalnızca en pahalı skinin olasılığına değil, tüm sonuçların dağılımına bakın."
+          },
+          {
+            "summary": "Beklenen değer ve kasa fiyatı",
+            "body": "Tüm öğelerin olasılıkları ve değerleri biliniyorsa beklenen değer yaklaşık olarak hesaplanabilir: her sonucun olasılığı kendi değeriyle çarpılır ve elde edilen değerler toplanır. Bu hesap tek bir açılışın sonucunu tahmin etmez."
+          },
+          {
+            "summary": "Provably Fair nasıl çalışır?",
+            "body": "Sitenin sonuç üretme mekanizmasını açıklayıp açıklamadığını ve server seed, client seed, nonce veya yayımlanan başka parametrelerle bir turu doğrulamaya izin verip vermediğini kontrol edin."
+          },
+          {
+            "summary": "Platform düşen skini nasıl değerlendirir?",
+            "body": "Bir öğenin site içindeki fiyatı Steam'den ve üçüncü taraf pazar yerlerinden farklı olabilir. Bu, özellikle öğeyi siteye geri satmayı veya kontrat ya da upgrader içinde kullanmayı planlıyorsanız önemlidir."
+          },
+          {
+            "summary": "Öğenin çekime uygunluğu",
+            "body": "Bir skin kasa havuzunda bulunabilir ancak çekim envanterinde geçici olarak olmayabilir. Böyle bir durumda servisin hangi alternatifi sunduğunu kontrol edin."
+          },
+          {
+            "summary": "Bonuslar, wagering ve kısıtlamalar",
+            "body": "Promo kodu veya yatırım bonusu bakiyeyi artırabilir, ancak bonus bakiyesinin kullanım ve çekim için ayrı kuralları olabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Kasa Sitelerini Nasıl Değerlendirir?",
+        "intro": "Kasa sitelerini sıralamak için yalnızca kasa sayısını veya hoş geldin bonusunun büyüklüğünü karşılaştırmak yeterli değildir.",
+        "items": [
+          {
+            "summary": "Kasa ve olasılık şeffaflığı",
+            "body": "Kasanın içeriğinin, açılış ücretinin ve sonuç olasılıklarının işlemden önce ne kadar kolay görülebildiğini değerlendiriyoruz."
+          },
+          {
+            "summary": "Provably Fair ve sonuç doğrulaması",
+            "body": "Belirli bir açılışın doğrulanıp doğrulanamadığına ve sitenin rastgelelik mekanizmasını ne kadar açık anlattığına bakıyoruz."
+          },
+          {
+            "summary": "Öğe fiyatları ve çekim kuralları",
+            "body": "Skinlerin site içi değerlemesi, öğelerin bulunabilirliği, minimum tutarlar, ücretler ve bir öğe hemen çekilemiyorsa sunulan alternatifler önemlidir."
+          },
+          {
+            "summary": "Kasa çeşitliliği ve ek modlar",
+            "body": "Gerçek kasa çeşitliliğini, filtreleri ve case battle ile upgrader gibi ilgili modların nasıl uygulandığını dikkate alıyoruz."
+          },
+          {
+            "summary": "Para yatırma ve bonus koşulları",
+            "body": "Ödeme yöntemleri, ücretler, minimum tutarlar, promo kodları, yatırım bonusları ve bonus bakiyesi kısıtlamaları değerlendirmeye dahil edilir."
+          },
+          {
+            "summary": "İstikrar, arayüz ve destek",
+            "body": "Site hızı, mobil sürüm, işlem geçmişi, çekim durumları ve desteğin erişilebilirliği genel puanı etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Kasa Sitesi Sıralamaları Neden Değişir?",
+        "paragraphs": [
+          "Kasa siteleri düzenli olarak yeni setler ekler; eski kasaların havuzlarını, açılış fiyatlarını, bonusları ve para yatırma yöntemlerini değiştirir.",
+          "CS2 skin pazarı da değişir. Platform öğelerin değerini yeniden hesapladığında kasaların, kontratların, upgrader işlemlerinin ve çekimlerin gerçek değeri de değişir.",
+          "Rastgele bir sonuç yerine belirli bir skin istiyorsanız CSGOBROKER'ın şu bölümlerini kullanın: <a href=\"/csgo/buy-skins\">satın alma</a>, <a href=\"/csgo/sell-skins\">satma</a>, <a href=\"/csgo/trade-skins\">takas</a> veya <a href=\"/csgo/marketplaces\">pazar yerleri</a>."
+        ]
+      },
+      "safety": {
+        "title": "CS2 Kasa Sitelerinde Güvenlik",
+        "intro": "Kasa siteleri üçüncü taraf hizmetlerdir ve Valve'ın resmi konteyner sisteminin parçası değildir.",
+        "items": [
+          {
+            "summary": "Steam ile giriş yapmadan önce alan adını kontrol edin",
+            "body": "Phishing kopyaları bilinen bir sitenin tasarımını taklit edebilir ve Steam giriş ekranını sahte olarak gösterebilir."
+          },
+          {
+            "summary": "Her Steam Trade Offer'ı doğrulayın",
+            "body": "Site bir öğeyi Steam üzerinden çekiyorsa teklifi onaylamadan önce hem göndereni hem de ilgili skini kontrol edin."
+          },
+          {
+            "summary": "Steam şifresini ve gizli verileri paylaşmayın",
+            "body": "Normal bir çekim için şifre, Steam Guard kodu veya başka gizli bilgileri destek çalışanına göndermek gerekmez."
+          },
+          {
+            "summary": "Para yatırmadan önce çekim kurallarını okuyun",
+            "body": "Minimum tutar, KYC, ücretler, limitler ve bölgesel kısıtlamalar yalnızca çekim aşamasında ortaya çıkabilir."
+          },
+          {
+            "summary": "Kasaları daha ucuza skin almanın garantili yolu olarak görmeyin",
+            "body": "Kasa açılışının sonucu rastgeledir. Havuzda pahalı bir öğenin bulunması onu elde etmeyi olası hâle getirmez ve art arda kasa açmanın doğrudan <a href=\"/csgo/buy-skins\">skin satın almaktan</a> daha ucuz olacağını garanti etmez. <a href=\"/responsibility\">Sorumlu oyun</a> bilgilerini kullanın ve harcama limitinizi önceden belirleyin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Kasa Siteleri Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Üçüncü taraf kasalar CS2 içindeki kasalardan nasıl farklıdır?",
+            "body": "Resmi konteynerler Valve ekosisteminin parçasıdır. Üçüncü taraf bir sitede içerik, fiyat, olasılıklar, bakiye ve çekim kuralları platformun kendisi tarafından belirlenir."
+          },
+          {
+            "summary": "Kasa açılışında Provably Fair nedir?",
+            "body": "Belirli bir turun sonucunun oluşturulduktan sonra değiştirilmediğini doğrulamaya imkân veren kriptografik bir yaklaşımdır. Uygulama siteden siteye değişir."
+          },
+          {
+            "summary": "Belirli bir skinin düşme olasılığı görülebilir mi?",
+            "body": "Site odds değerlerini yayınlıyorsa olasılık kasa arayüzünde görülebilir. Kesin yüzdeler olmadan karşılaştırma yapmak çok daha zordur."
+          },
+          {
+            "summary": "Bir kasanın beklenen değeri nedir?",
+            "body": "Olasılıklar bilindiğinde sonucun hesaplanan ortalama değeridir. Belirli bir sonucu garanti etmez."
+          },
+          {
+            "summary": "Düşen skin Steam'e çekilebilir mi?",
+            "body": "Platforma ve öğenin bulunabilirliğine bağlıdır. Bazı siteler Steam Trade Offer ile çekim yapar; bazıları ise site içi satış veya takas sunar."
+          },
+          {
+            "summary": "Ücretsiz CS2 kasaları nerede bulunur?",
+            "body": "Kayıt bonuslarında, günlük kampanyalarda ve promo kodlarında bulunabilirler. CSGOBROKER bu tür teklifleri <a href=\"/freebies\">bonuslar</a> bölümünde toplar."
+          },
+          {
+            "summary": "Case battle normal kasa açılışından nasıl farklıdır?",
+            "body": "Bir <a href=\"/csgo/case-battle\">case battle</a> içinde birden fazla oyuncu ortak bir tura katılır ve ödüllerin dağılımı formatın kurallarına bağlıdır."
+          },
+          {
+            "summary": "CSGOBROKER kasa sitesi sıralamasındaki konumlar neden değişir?",
+            "body": "Kasa havuzları ve fiyatları, olasılıklar, bonuslar, ödeme yöntemleri, çekimler ve hizmetin istikrarı değiştiği için değerlendirme yeniden gözden geçirilebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Case Opening Sites: Cases कैसे काम करते हैं और क्या Compare करें",
+        "paragraphs": [
+          "CS2 case sites third-party platforms हैं, जहाँ user संभावित items के तय pool वाली virtual case चुनता है और opening के बाद random result प्राप्त करता है। ये Valve के official containers नहीं हैं: platform खुद contents, opening price, item drop probabilities और withdrawal rules तय करता है।",
+          "CSGOBROKER पर case-opening sites की तुलना दूसरे CS2 modes से अलग की जाती है। कई platforms classic cases के साथ <a href=\"/csgo/case-battle\">case battles</a>, <a href=\"/csgo/upgrader\">upgraders</a>, contracts और daily rewards भी देते हैं।",
+          "Case site चुनते समय केवल case की price या cover पर दिख रही rare item को देखना पर्याप्त नहीं है। Published odds, पूरा item pool, Provably Fair mechanism, मिले हुए skins की valuation, withdrawal availability और bonus terms अधिक महत्वपूर्ण हैं।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Case Sites पर Common Mechanics",
+        "items": [
+          {
+            "title": "Classic case opening",
+            "paragraphs": [
+              "User internal balance से opening की कीमत चुकाता है और तय pool से एक item प्राप्त करता है। मुख्य parameters हैं case price, संभावित items की list और हर result की probability।"
+            ]
+          },
+          {
+            "title": "Themed और custom cases",
+            "paragraphs": [
+              "Third-party sites price, weapon type, color, rarity या theme के आधार पर अपनी cases बनाती हैं। अलग-अलग platforms पर एक जैसा नाम होने का मतलब यह नहीं कि contents और odds भी समान हों।"
+            ]
+          },
+          {
+            "title": "Case battles",
+            "paragraphs": [
+              "<a href=\"/csgo/case-battle\">Case battles</a> में कई participants समान case sets खोलते हैं और result mode के rules से तय होता है। Join करने से पहले समझें कि winner कैसे तय होता है, tie होने पर क्या होता है और items किसे मिलते हैं।"
+            ]
+          },
+          {
+            "title": "मिले हुए item का upgrade",
+            "paragraphs": [
+              "कुछ platforms मिले हुए skin को <a href=\"/csgo/upgrader\">upgrader</a> में इस्तेमाल करके बताई गई probability के साथ अधिक महंगा item पाने की कोशिश करने देती हैं। यह एक अलग random operation है।"
+            ]
+          },
+          {
+            "title": "Free और daily cases",
+            "paragraphs": [
+              "Free case registration, promo code, daily login या activity के बाद मिल सकती है। ऐसे offers CSGOBROKER के <a href=\"/freebies\">bonuses</a> section में इकट्ठे किए जाते हैं। Free opening का मतलब हमेशा यह नहीं कि reward बिना अतिरिक्त conditions के तुरंत withdraw किया जा सके।"
+            ]
+          },
+          {
+            "title": "Skin withdrawal या internal balance",
+            "paragraphs": [
+              "Opening के बाद service item को Steam पर withdraw करने, exchange करने, site को internal balance के बदले बेचने या दूसरे modes में इस्तेमाल करने की अनुमति दे सकती है। Withdrawal rules reward की वास्तविक value को काफी हद तक तय करते हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Case खोलने से पहले क्या Check करें",
+        "intro": "लगभग समान price और एक ही महंगे main prize वाली दो cases की mathematics पूरी तरह अलग हो सकती है।",
+        "items": [
+          {
+            "summary": "हर item की drop probability",
+            "body": "अगर platform percentages publish करता है, तो केवल सबसे महंगी skin की probability नहीं बल्कि सभी results का पूरा distribution देखें।"
+          },
+          {
+            "summary": "Expected value और case price",
+            "body": "अगर सभी items की probabilities और values ज्ञात हों, तो expected value का लगभग अनुमान लगाया जा सकता है: हर result की probability को उसकी value से गुणा किया जाता है और फिर सभी values को जोड़ा जाता है। यह किसी एक opening का result predict नहीं करता।"
+          },
+          {
+            "summary": "Provably Fair कैसे काम करता है",
+            "body": "Check करें कि site result generation mechanism समझाती है या नहीं और server seed, client seed, nonce या अन्य published parameters के जरिए round verify करने देती है या नहीं।"
+          },
+          {
+            "summary": "Platform मिले हुए skin की valuation कैसे करता है",
+            "body": "Site के भीतर item की price Steam और third-party marketplaces से अलग हो सकती है। यह खास तौर पर महत्वपूर्ण है अगर आप item को site को वापस बेचना या contract अथवा upgrader में इस्तेमाल करना चाहते हैं।"
+          },
+          {
+            "summary": "Withdrawal के लिए item availability",
+            "body": "Skin case pool में हो सकती है लेकिन withdrawal inventory में अस्थायी रूप से unavailable हो सकती है। ऐसे में service कौन-सा alternative देती है, यह देखें।"
+          },
+          {
+            "summary": "Bonuses, wagering और restrictions",
+            "body": "Promo code या deposit bonus balance बढ़ा सकता है, लेकिन bonus funds के use और withdrawal के लिए अलग rules हो सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Case Sites को कैसे Rate करता है",
+        "intro": "Case sites की ranking के लिए केवल cases की संख्या या welcome bonus का size compare करना पर्याप्त नहीं है।",
+        "items": [
+          {
+            "summary": "Cases और odds की transparency",
+            "body": "हम देखते हैं कि opening से पहले case contents, opening price और result probabilities कितनी आसानी से दिखाई देती हैं।"
+          },
+          {
+            "summary": "Provably Fair और result verification",
+            "body": "हम देखते हैं कि किसी specific opening को verify किया जा सकता है या नहीं और site randomness mechanism को कितनी स्पष्टता से समझाती है।"
+          },
+          {
+            "summary": "Item prices और withdrawal rules",
+            "body": "Internal skin valuation, item availability, minimum amounts, fees और उस स्थिति के alternatives महत्वपूर्ण हैं जब item तुरंत withdraw नहीं किया जा सकता।"
+          },
+          {
+            "summary": "Case variety और additional modes",
+            "body": "हम वास्तविक case variety, filters और case battle तथा upgrader जैसे related modes की implementation को ध्यान में रखते हैं।"
+          },
+          {
+            "summary": "Deposits और bonus conditions",
+            "body": "Payment methods, fees, minimum amounts, promo codes, deposit bonuses और bonus-balance restrictions को evaluation में शामिल किया जाता है।"
+          },
+          {
+            "summary": "Stability, interface और support",
+            "body": "Site speed, mobile version, transaction history, withdrawal statuses और support availability overall rating को प्रभावित करते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Case Site Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Case sites नियमित रूप से नए sets जोड़ती हैं और पुरानी cases के pools, opening prices, bonuses तथा deposit methods बदलती हैं।",
+          "CS2 skin market भी बदलता रहता है। जब platform items की value दोबारा calculate करता है, तो cases, contracts, upgraders और withdrawals की वास्तविक value भी बदल जाती है।",
+          "अगर random result के बजाय कोई specific skin चाहिए, तो CSGOBROKER के sections इस्तेमाल करें: <a href=\"/csgo/buy-skins\">buying</a>, <a href=\"/csgo/sell-skins\">selling</a>, <a href=\"/csgo/trade-skins\">trading</a> या <a href=\"/csgo/marketplaces\">marketplaces</a>।"
+        ]
+      },
+      "safety": {
+        "title": "CS2 Case Sites पर Safety",
+        "intro": "Case sites third-party services हैं और Valve के official container system का हिस्सा नहीं हैं।",
+        "items": [
+          {
+            "summary": "Steam login से पहले domain check करें",
+            "body": "Phishing copies किसी प्रसिद्ध site का design और Steam sign-in flow imitate कर सकती हैं।"
+          },
+          {
+            "summary": "हर Steam Trade Offer verify करें",
+            "body": "अगर site Steam के जरिए item withdraw करती है, तो offer confirm करने से पहले sender और exact skin दोनों verify करें।"
+          },
+          {
+            "summary": "Steam password और secret data share न करें",
+            "body": "Normal withdrawal के लिए support employee को password, Steam Guard code या अन्य secret data भेजने की जरूरत नहीं होती।"
+          },
+          {
+            "summary": "Deposit से पहले withdrawal rules पढ़ें",
+            "body": "Minimum amount, KYC, fees, limits और regional restrictions केवल withdrawal stage पर सामने आ सकते हैं।"
+          },
+          {
+            "summary": "Cases को सस्ती skin पाने का guaranteed तरीका न मानें",
+            "body": "Opening का result random होता है। Pool में महंगा item होने से उसे मिलने की probability अपने-आप ज्यादा नहीं हो जाती और repeated openings के direct <a href=\"/csgo/buy-skins\">skin खरीदने</a> से सस्ता होने की कोई guarantee नहीं है। <a href=\"/responsibility\">Responsible gambling</a> information देखें और spending limit पहले से तय करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Case Sites के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Third-party cases, CS2 के अंदर की cases से कैसे अलग हैं?",
+            "body": "Official containers Valve ecosystem का हिस्सा हैं। Third-party site पर contents, price, odds, balance और withdrawal rules platform खुद तय करता है।"
+          },
+          {
+            "summary": "Case opening में Provably Fair क्या है?",
+            "body": "यह एक cryptographic approach है जिससे verify किया जा सकता है कि किसी specific round का result generate होने के बाद बदला नहीं गया। Implementation site पर निर्भर करती है।"
+          },
+          {
+            "summary": "क्या specific skin की drop probability देखी जा सकती है?",
+            "body": "अगर site odds publish करती है, तो probability case interface में दिखाई दे सकती है। Exact percentages के बिना comparison काफी कठिन हो जाता है।"
+          },
+          {
+            "summary": "Case की expected value क्या होती है?",
+            "body": "Known probabilities के आधार पर result की calculated average value को expected value कहते हैं। यह किसी specific result की guarantee नहीं देती।"
+          },
+          {
+            "summary": "क्या मिला हुआ skin Steam पर withdraw किया जा सकता है?",
+            "body": "यह platform और item availability पर निर्भर करता है। कुछ sites Steam Trade Offer के जरिए withdrawal देती हैं, जबकि अन्य internal sale या exchange offer करती हैं।"
+          },
+          {
+            "summary": "Free CS2 cases कहाँ मिल सकती हैं?",
+            "body": "Free cases sign-up bonuses, daily promotions और promo codes में मिल सकती हैं। CSGOBROKER ऐसे offers को <a href=\"/freebies\">bonuses</a> section में इकट्ठा करता है।"
+          },
+          {
+            "summary": "Case battle normal opening से कैसे अलग है?",
+            "body": "<a href=\"/csgo/case-battle\">Case battle</a> में कई players एक common round में भाग लेते हैं और prizes का distribution format के rules पर निर्भर करता है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking में case sites की positions क्यों बदलती हैं?",
+            "body": "Case pools और prices, odds, bonuses, payment methods, withdrawals और service stability बदलते रहते हैं, इसलिए rating को revise किया जा सकता है।"
+          }
+        ]
+      }
+    }
+  }
+}

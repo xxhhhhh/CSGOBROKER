@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "buy-skins",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Где и как покупать скины CS2 за реальные деньги",
+        "paragraphs": [
+          "Покупка скинов CS2 на сторонних площадках позволяет выбрать конкретный предмет и оплатить его деньгами, криптовалютой или другим доступным способом, вместо того чтобы получать случайный предмет через игровые режимы. При этом разные сервисы используют разные модели продажи: P2P-маркетплейсы, собственный инвентарь, торговых ботов или сочетание нескольких способов.",
+          "CSGOBROKER собирает сайты, где можно купить скины CS2, и помогает сравнивать их по цене, ассортименту, комиссиям, способам оплаты и процессу передачи предмета. Для более широкого сравнения торговых сервисов есть отдельный раздел <a href=\"/csgo/marketplaces\">маркетплейсов CS2</a>.",
+          "Самая низкая цена в карточке предмета не всегда означает самую выгодную покупку. Итоговая стоимость может измениться из-за комиссии за пополнение, валютной конвертации, комиссии площадки или особенностей конкретного способа оплаты."
+        ]
+      },
+      "categories": {
+        "title": "Основные способы купить скины CS2",
+        "items": [
+          {
+            "title": "P2P-маркетплейсы",
+            "paragraphs": [
+              "На P2P-площадке скин обычно продаёт другой пользователь, а сервис выступает посредником сделки. Преимущество такой модели — большой выбор и конкуренция между продавцами. При этом важно смотреть на правила резерва предмета, подтверждения сделки и возврата средств."
+            ]
+          },
+          {
+            "title": "Покупка из инвентаря платформы",
+            "paragraphs": [
+              "Некоторые сервисы сами держат предметы в торговых аккаунтах или ботах. Покупатель выбирает скин из доступного инвентаря и получает Steam Trade Offer после оплаты. Такой формат может быть быстрее, но ассортимент и цена напрямую зависят от текущего запаса площадки."
+            ]
+          },
+          {
+            "title": "Обменники с возможностью покупки",
+            "paragraphs": [
+              "На части <a href=\"/csgo/trade-skins\">сайтов для обмена скинов</a> можно не только менять предметы, но и докупить нужный скин за деньги или баланс. Это удобно, если часть стоимости уже покрывается предметами из вашего инвентаря."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Официальный рынок Steam тоже позволяет покупать предметы CS2, но деньги после продажи остаются внутри Steam Wallet. Сторонние площадки отличаются тем, что могут предлагать другие цены, способы оплаты и возможность работать с реальными деньгами за пределами экосистемы Steam."
+            ]
+          },
+          {
+            "title": "Редкие и дорогие предметы",
+            "paragraphs": [
+              "Для ножей, перчаток и редких вариантов особенно важны float, pattern, фаза, наклейки и другие характеристики конкретного экземпляра. Перед оплатой полезно сверить inspect-ссылку и данные предмета. Найти информацию по самим скинам можно в разделе <a href=\"/topic/skins\">скинов CS2</a>."
+            ]
+          },
+          {
+            "title": "Покупка и дальнейшая продажа",
+            "paragraphs": [
+              "Если скин покупается не только для инвентаря, но и с расчётом на дальнейшую перепродажу, заранее проверьте, где его потом можно реализовать. Для этого на CSGOBROKER есть отдельные разделы <a href=\"/csgo/sell-skins\">продажи скинов</a> и <a href=\"/csgo/instant-sell\">быстрой продажи</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед покупкой скина",
+        "intro": "Цена предмета — только один из параметров. Перед оплатой полезно проверить полную стоимость сделки и то, как именно скин попадёт в ваш Steam-инвентарь.",
+        "items": [
+          {
+            "summary": "Итоговая цена с учётом комиссий",
+            "body": "Сравнивайте сумму, которую вы реально заплатите после комиссии за пополнение, оплаты картой, конвертации валюты и других сборов. Иногда более высокая цена самого предмета на другой площадке в итоге оказывается дешевле."
+          },
+          {
+            "summary": "Способ передачи предмета",
+            "body": "Уточните, используется ли бот сервиса, P2P Trade Offer от продавца или другой механизм. От этого зависят скорость сделки, необходимость подтверждения и действия в случае отмены обмена."
+          },
+          {
+            "summary": "Доступные способы оплаты",
+            "body": "Карты, криптовалюта, электронные кошельки и локальные методы доступны не на всех площадках и не во всех странах. Комиссии и минимальные суммы тоже могут различаться."
+          },
+          {
+            "summary": "Float, pattern и наклейки",
+            "body": "Два предмета с одинаковым названием могут заметно отличаться по рыночной стоимости. Для дорогих скинов проверяйте конкретный float, pattern index, фазу и ценность наклеек, а не только название и wear."
+          },
+          {
+            "summary": "Ликвидность и возможность перепродажи",
+            "body": "Если предмет может понадобиться продать позже, учитывайте спрос на него и разницу цен между покупкой и продажей. Сильный дисконт при покупке не всегда означает такую же цену при обратной продаже."
+          },
+          {
+            "summary": "KYC и региональные ограничения",
+            "body": "На некоторых площадках верификация нужна для оплаты, увеличения лимитов или возврата средств. Кроме того, часть способов оплаты может быть недоступна в конкретной стране."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты для покупки скинов",
+        "intro": "Для страниц покупки скинов важны другие факторы, чем для игровых режимов. Основной акцент — на стоимости сделки, ассортименте, способах оплаты и надёжности процесса получения предмета.",
+        "items": [
+          {
+            "summary": "Цены и комиссии",
+            "body": "Мы смотрим не только на цену предметов, но и на комиссии площадки, пополнения и другие расходы, которые влияют на итоговую стоимость покупки."
+          },
+          {
+            "summary": "Ассортимент и доступность предметов",
+            "body": "Большой каталог полезен только тогда, когда нужные скины действительно доступны для покупки. Для сервисов с собственным инвентарём особенно важны его объём и регулярность пополнения."
+          },
+          {
+            "summary": "Скорость и понятность сделки",
+            "body": "Оценивается путь от оплаты до получения Trade Offer: насколько понятно отображается статус сделки, сколько шагов требуется и что происходит при задержке или отмене."
+          },
+          {
+            "summary": "Способы оплаты",
+            "body": "Учитываются карты, криптовалюта и другие методы, а также связанные с ними комиссии, лимиты и региональная доступность."
+          },
+          {
+            "summary": "Функции для выбора конкретного скина",
+            "body": "Фильтры по цене, wear, float и другим характеристикам, inspect-ссылки, поиск и сортировка помогают точнее выбрать нужный экземпляр и поэтому повышают практическую ценность площадки."
+          },
+          {
+            "summary": "Репутация и поддержка",
+            "body": "Стабильная работа, понятные правила, история сервиса и возможность получить помощь при проблеме со сделкой учитываются вместе с ценой и ассортиментом."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему цены на скины отличаются между площадками",
+        "paragraphs": [
+          "У одного и того же скина может одновременно быть несколько цен. На P2P-маркетплейсе стоимость задают продавцы, сервис с собственным инвентарём использует свою систему оценки, а Steam Community Market формирует отдельный рынок внутри Steam.",
+          "На разницу влияют ликвидность, комиссия площадки, спрос, валютный курс, доступность способов оплаты и конкретные характеристики предмета. Поэтому сравнивать лучше один и тот же экземпляр или максимально близкие параметры, а не только название скина.",
+          "Если задача шире простой покупки, используйте связанные разделы CSGOBROKER: <a href=\"/csgo/marketplaces\">торговые площадки</a>, <a href=\"/csgo/trade-skins\">обмен</a>, <a href=\"/csgo/sell-skins\">продажу</a> и <a href=\"/csgo/instant-sell\">быструю продажу</a>."
+        ]
+      },
+      "safety": {
+        "title": "Как безопаснее покупать скины CS2",
+        "intro": "При покупке через сторонний сервис основные риски связаны с фишинговыми сайтами, поддельными Steam Trade Offer и несоответствием получаемого предмета выбранному.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и авторизацию Steam",
+            "body": "Перед входом убедитесь, что открыта нужная площадка и официальный процесс авторизации Steam. Не вводите пароль Steam на странице, которая имитирует окно входа."
+          },
+          {
+            "summary": "Сверяйте предмет в Trade Offer",
+            "body": "Перед подтверждением проверьте название, внешний вид, float и другие важные характеристики предмета. Для дорогой покупки дополнительно сравните inspect-данные с карточкой заказа."
+          },
+          {
+            "summary": "Проверяйте отправителя обмена",
+            "body": "Не ориентируйтесь только на имя или аватар бота. Сверяйте информацию, которую показывает сама площадка, с фактическим Steam Trade Offer."
+          },
+          {
+            "summary": "Не переходите по случайным ссылкам из сообщений",
+            "body": "Поддельные сотрудники поддержки и продавцы могут присылать внешние ссылки на авторизацию или «подтверждение сделки». Все действия лучше выполнять из интерфейса самой платформы."
+          },
+          {
+            "summary": "Читайте правила возврата и отмены",
+            "body": "До оплаты полезно знать, что произойдёт, если продавец не отправит предмет, Trade Offer будет отменён или скин окажется временно недоступен."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о покупке скинов CS2",
+        "items": [
+          {
+            "summary": "Где можно купить скины CS2?",
+            "body": "Скины продаются на Steam Community Market и сторонних площадках: P2P-маркетплейсах, сервисах с собственным инвентарём и некоторых обменниках. CSGOBROKER собирает такие сервисы на этой странице и в разделе <a href=\"/csgo/marketplaces\">маркетплейсов</a>."
+          },
+          {
+            "summary": "Где покупать скины дешевле Steam?",
+            "body": "Цена зависит от конкретного предмета и комиссии. На сторонней площадке скин может стоить дешевле Steam, но нужно учитывать комиссию пополнения, конвертацию и другие расходы."
+          },
+          {
+            "summary": "Можно ли купить скин за реальные деньги?",
+            "body": "Да. Многие сторонние площадки принимают банковские карты, криптовалюту или другие платёжные методы. Доступность конкретного способа зависит от сайта и страны."
+          },
+          {
+            "summary": "Чем тоговая площадка отличается от обменника?",
+            "body": "На маркетплейсе обычно выбирают конкретное объявление или предмет за деньги. <a href=\"/csgo/trade-skins\">Обменник</a> в первую очередь меняет ваши предметы на другие и может использовать внутреннюю оценку каждого скина."
+          },
+          {
+            "summary": "Что такое P2P-покупка скина?",
+            "body": "P2P означает, что предмет передаёт другой пользователь, а площадка организует сделку и расчёты. Скин может не находиться у бота сервиса заранее."
+          },
+          {
+            "summary": "Почему одинаковые скины стоят по-разному?",
+            "body": "Цена зависит от площадки, продавца, float, pattern, наклеек, ликвидности и комиссии. Для редких предметов разница между экземплярами может быть значительной."
+          },
+          {
+            "summary": "Можно ли потом продать купленный скин?",
+            "body": "Обычно да, если на предмет не действует временное ограничение Steam и площадка принимает его. Варианты можно сравнить в разделах <a href=\"/csgo/sell-skins\">продажи</a> и <a href=\"/csgo/instant-sell\">быстрой продажи</a>."
+          },
+          {
+            "summary": "Что проверить перед подтверждением Steam Trade Offer?",
+            "body": "Сверьте отправителя, сам предмет и все его важные характеристики. Не подтверждайте обмен, если предложение отличается от заказа или появилось вне ожидаемого процесса покупки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Where and How to Buy CS2 Skins with Real Money",
+        "paragraphs": [
+          "Buying CS2 skins on third-party platforms lets you choose a specific item and pay with money, cryptocurrency, or another supported method instead of relying on a random game outcome. Services use different models, including P2P marketplaces, platform-owned inventory, trading bots, or a combination of these methods.",
+          "CSGOBROKER lists sites where users can buy CS2 skins and compares them by price, inventory, fees, payment methods, and item-delivery process. For a broader overview of trading services, see the <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> section.",
+          "The lowest item price is not always the lowest final cost. Deposit fees, payment processing, currency conversion, or marketplace charges can change the amount you actually pay."
+        ]
+      },
+      "categories": {
+        "title": "Main Ways to Buy CS2 Skins",
+        "items": [
+          {
+            "title": "P2P marketplaces",
+            "paragraphs": [
+              "On a P2P marketplace, the skin is usually sold by another user while the platform handles the transaction. This can provide a large selection and seller competition, but reservation, trade confirmation, and refund rules should be checked."
+            ]
+          },
+          {
+            "title": "Buying from platform inventory",
+            "paragraphs": [
+              "Some services hold items in trading accounts or bots. The buyer selects an available skin and receives a Steam Trade Offer after payment. This can be fast, but selection and pricing depend on current platform inventory."
+            ]
+          },
+          {
+            "title": "Trading sites with a buy option",
+            "paragraphs": [
+              "Some <a href=\"/csgo/trade-skins\">skin trading sites</a> let users add money or balance when exchanging items. This can be useful when part of the purchase price is already covered by skins in your inventory."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam also supports CS2 skin purchases, but proceeds from sales remain in Steam Wallet. Third-party services can offer different prices, payment methods, and transactions involving real money outside the Steam ecosystem."
+            ]
+          },
+          {
+            "title": "Rare and expensive items",
+            "paragraphs": [
+              "For knives, gloves, and rare variants, float, pattern, phase, stickers, and other properties can materially affect value. Check the inspect data before payment. Item information can also be explored in the <a href=\"/topic/skins\">CS2 skins</a> section."
+            ]
+          },
+          {
+            "title": "Buying with resale in mind",
+            "paragraphs": [
+              "If you may resell the item later, check where it can be sold and how large the buy/sell spread is. CSGOBROKER has separate sections for <a href=\"/csgo/sell-skins\">selling skins</a> and <a href=\"/csgo/instant-sell\">instant selling</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Buying a Skin",
+        "intro": "Item price is only one factor. Before paying, compare the full transaction cost and how the item will be delivered to your Steam inventory.",
+        "items": [
+          {
+            "summary": "Final cost including fees",
+            "body": "Compare what you will actually pay after deposit fees, card processing, currency conversion, and other charges. A slightly more expensive listing can sometimes result in a lower total cost."
+          },
+          {
+            "summary": "Item delivery method",
+            "body": "Check whether the trade comes from a platform bot, a P2P seller, or another mechanism. This affects timing, confirmation steps, and what happens if the trade is cancelled."
+          },
+          {
+            "summary": "Available payment methods",
+            "body": "Cards, cryptocurrency, e-wallets, and local methods are not available on every site or in every country. Fees and minimum amounts also differ."
+          },
+          {
+            "summary": "Float, pattern and stickers",
+            "body": "Two items with the same market name can have different values. For expensive skins, compare the exact float, pattern index, phase, stickers, and not only the wear category."
+          },
+          {
+            "summary": "Liquidity and future resale",
+            "body": "If you may sell the item later, consider demand and the spread between purchase and resale prices. A strong discount on purchase does not guarantee the same valuation when selling."
+          },
+          {
+            "summary": "KYC and regional restrictions",
+            "body": "Some platforms require verification for payments, higher limits, or refunds. Payment options can also be restricted in specific countries."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Sites for Buying CS2 Skins",
+        "intro": "Buying pages require different criteria from game-mode rankings. The main focus is transaction cost, inventory, payment methods, and the reliability of receiving the selected item.",
+        "items": [
+          {
+            "summary": "Prices and fees",
+            "body": "We look beyond listed skin prices and consider platform fees, deposit charges, and other costs that affect the final purchase amount."
+          },
+          {
+            "summary": "Inventory and item availability",
+            "body": "A large catalog matters only when the desired skins are actually available. For services with their own inventory, stock size and replenishment are especially important."
+          },
+          {
+            "summary": "Transaction speed and clarity",
+            "body": "We consider the path from payment to Steam Trade Offer, including status visibility, number of required steps, and handling of delays or cancellations."
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Cards, crypto, and other options are considered together with fees, limits, and regional availability."
+          },
+          {
+            "summary": "Tools for choosing a specific skin",
+            "body": "Filters for price, wear, float and other properties, inspect links, search, and sorting make it easier to select the exact item and improve practical usability."
+          },
+          {
+            "summary": "Reputation and support",
+            "body": "Service history, operational stability, clear rules, and access to support when a transaction goes wrong are considered alongside price and inventory."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why CS2 Skin Prices Differ Between Platforms",
+        "paragraphs": [
+          "The same skin can have several prices at the same time. On a P2P marketplace, sellers set listings; services with their own inventory use internal pricing; and Steam Community Market forms a separate market inside Steam.",
+          "Liquidity, platform fees, demand, exchange rates, payment availability, and the exact characteristics of an item all affect the difference. Compare the same item or closely matched properties rather than only the skin name.",
+          "For related tasks, use CSGOBROKER sections for <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/trade-skins\">trading</a>, <a href=\"/csgo/sell-skins\">selling</a>, and <a href=\"/csgo/instant-sell\">instant selling</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safer Ways to Buy CS2 Skins",
+        "intro": "The main risks on third-party marketplaces include phishing, fake Steam Trade Offers, and receiving an item that does not match the selected listing.",
+        "items": [
+          {
+            "summary": "Check the domain and Steam login",
+            "body": "Confirm that you are on the intended platform and using the official Steam sign-in flow. Do not enter a Steam password into a page that imitates the login window."
+          },
+          {
+            "summary": "Verify the item in the Trade Offer",
+            "body": "Before confirming, check the item name, appearance, float, and any other important properties. For expensive purchases, compare inspect data with the order."
+          },
+          {
+            "summary": "Verify the trade sender",
+            "body": "Do not rely only on a bot name or avatar. Compare the sender details shown by the platform with the actual Steam Trade Offer."
+          },
+          {
+            "summary": "Avoid random links in messages",
+            "body": "Fake support accounts or sellers may send external links for login or 'trade confirmation'. Keep transaction actions inside the platform's own interface."
+          },
+          {
+            "summary": "Read refund and cancellation rules",
+            "body": "Before payment, understand what happens if the seller does not deliver, the Trade Offer is cancelled, or the item becomes unavailable."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Buying CS2 Skins",
+        "items": [
+          {
+            "summary": "Where can I buy CS2 skins?",
+            "body": "CS2 skins can be purchased on Steam Community Market and third-party P2P marketplaces, inventory-based stores, and some trading sites. CSGOBROKER lists these services here and in the <a href=\"/csgo/marketplaces\">marketplaces</a> section."
+          },
+          {
+            "summary": "Where can I buy CS2 skins cheaper than Steam?",
+            "body": "It depends on the specific item and fees. A third-party listing can be cheaper than Steam, but deposit charges, currency conversion, and other costs should be included."
+          },
+          {
+            "summary": "Can I buy a CS2 skin with real money?",
+            "body": "Yes. Many third-party platforms support bank cards, cryptocurrency, or other payment methods. Availability depends on the site and country."
+          },
+          {
+            "summary": "How is a marketplace different from a trading site?",
+            "body": "A marketplace usually lets you buy a specific listing for money. A <a href=\"/csgo/trade-skins\">trading site</a> primarily exchanges your items for other items and can use its own internal valuation."
+          },
+          {
+            "summary": "What is a P2P skin purchase?",
+            "body": "P2P means the item is transferred by another user while the platform handles the transaction. The skin may not be held by a platform bot in advance."
+          },
+          {
+            "summary": "Why do identical skins have different prices?",
+            "body": "Price depends on the platform, seller, float, pattern, stickers, liquidity, and fees. Rare variants can differ substantially even when the base name is the same."
+          },
+          {
+            "summary": "Can I sell a skin after buying it?",
+            "body": "Usually yes, subject to any Steam trade restrictions and whether the destination platform accepts the item. Compare options under <a href=\"/csgo/sell-skins\">sell skins</a> and <a href=\"/csgo/instant-sell\">instant sell</a>."
+          },
+          {
+            "summary": "What should I check before confirming a Steam Trade Offer?",
+            "body": "Verify the sender, item, and all important item properties. Do not confirm a trade if it differs from your order or appears outside the expected purchase process."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Dónde y cómo comprar skins de CS2 con dinero real",
+        "paragraphs": [
+          "Comprar skins de CS2 en plataformas de terceros permite elegir un objeto concreto y pagarlo con dinero, criptomonedas u otro método disponible, en lugar de obtener un objeto aleatorio mediante modos de juego. Los servicios utilizan distintos modelos de venta: marketplaces P2P, inventario propio, bots de trading o una combinación de varios métodos.",
+          "CSGOBROKER reúne sitios donde se pueden comprar skins de CS2 y ayuda a compararlos por precio, catálogo, comisiones, métodos de pago y proceso de entrega del objeto. Para una comparación más amplia de servicios de trading existe una sección independiente de <a href=\"/csgo/marketplaces\">marketplaces de CS2</a>.",
+          "El precio más bajo mostrado en la ficha de un objeto no siempre significa la compra más barata. El coste final puede cambiar por comisiones de depósito, conversión de divisa, comisión de la plataforma o características del método de pago elegido."
+        ]
+      },
+      "categories": {
+        "title": "Principales formas de comprar skins de CS2",
+        "items": [
+          {
+            "title": "Marketplaces P2P",
+            "paragraphs": [
+              "En un marketplace P2P, normalmente otro usuario vende la skin y el servicio actúa como intermediario. Este modelo puede ofrecer una gran selección y competencia entre vendedores, pero conviene revisar las reglas de reserva del objeto, confirmación de la operación y reembolso."
+            ]
+          },
+          {
+            "title": "Compra desde el inventario de la plataforma",
+            "paragraphs": [
+              "Algunos servicios mantienen los objetos en sus propias cuentas de trading o bots. El comprador elige una skin del inventario disponible y recibe un Steam Trade Offer después del pago. Este formato puede ser más rápido, pero el catálogo y el precio dependen directamente del stock actual de la plataforma."
+            ]
+          },
+          {
+            "title": "Sitios de intercambio con opción de compra",
+            "paragraphs": [
+              "En algunos <a href=\"/csgo/trade-skins\">sitios de intercambio de skins</a> no solo se pueden cambiar objetos, sino también pagar dinero o saldo adicional para obtener la skin deseada. Es útil si una parte del precio ya se cubre con objetos de tu inventario."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market también permite comprar objetos de CS2, pero el dinero procedente de las ventas permanece dentro de Steam Wallet. Las plataformas de terceros pueden ofrecer otros precios, métodos de pago y operaciones con dinero real fuera del ecosistema de Steam."
+            ]
+          },
+          {
+            "title": "Objetos raros y caros",
+            "paragraphs": [
+              "En cuchillos, guantes y variantes raras son especialmente importantes el float, pattern, fase, stickers y otras características del ejemplar concreto. Antes de pagar conviene comprobar el inspect link y los datos del objeto. Puedes consultar información sobre las propias skins en la sección de <a href=\"/topic/skins\">skins de CS2</a>."
+            ]
+          },
+          {
+            "title": "Compra pensando en una futura venta",
+            "paragraphs": [
+              "Si compras una skin no solo para usarla, sino pensando en venderla más adelante, comprueba de antemano dónde podrás hacerlo. CSGOBROKER tiene secciones independientes de <a href=\"/csgo/sell-skins\">venta de skins</a> y <a href=\"/csgo/instant-sell\">venta rápida</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de comprar una skin",
+        "intro": "El precio del objeto es solo uno de los parámetros. Antes de pagar conviene comprobar el coste total de la operación y cómo llegará exactamente la skin a tu inventario de Steam.",
+        "items": [
+          {
+            "summary": "Precio final con comisiones",
+            "body": "Compara la cantidad que realmente pagarás después de las comisiones de depósito, tarjeta, conversión de divisa y otros cargos. A veces una plataforma con un precio nominal más alto para la skin termina siendo más barata."
+          },
+          {
+            "summary": "Método de entrega",
+            "body": "Comprueba si se utiliza un bot del servicio, un P2P Trade Offer del vendedor u otro mecanismo. De ello dependen la velocidad de la operación, las confirmaciones necesarias y qué ocurre si el intercambio se cancela."
+          },
+          {
+            "summary": "Métodos de pago",
+            "body": "Tarjetas, criptomonedas, monederos electrónicos y métodos locales no están disponibles en todas las plataformas ni en todos los países. Las comisiones y los importes mínimos también pueden variar."
+          },
+          {
+            "summary": "Float, pattern y stickers",
+            "body": "Dos objetos con el mismo nombre pueden diferir mucho en valor de mercado. Para skins caras, comprueba el float concreto, pattern index, fase y valor de los stickers, no solo el nombre y el wear."
+          },
+          {
+            "summary": "Liquidez y reventa",
+            "body": "Si puede ser necesario vender el objeto más adelante, ten en cuenta la demanda y la diferencia entre precio de compra y de venta. Un gran descuento al comprar no garantiza un precio equivalente al revender."
+          },
+          {
+            "summary": "KYC y restricciones regionales",
+            "body": "En algunas plataformas la verificación es necesaria para pagar, aumentar límites o solicitar un reembolso. Además, determinados métodos de pago pueden no estar disponibles en un país concreto."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios para comprar skins",
+        "intro": "Para las páginas de compra de skins importan factores distintos que para los modos de juego. El foco principal está en el coste de la operación, el catálogo, los métodos de pago y la fiabilidad del proceso de recepción del objeto.",
+        "items": [
+          {
+            "summary": "Precios y comisiones",
+            "body": "No analizamos solo el precio de los objetos, sino también las comisiones de la plataforma, del depósito y otros gastos que influyen en el coste final de la compra."
+          },
+          {
+            "summary": "Inventario y disponibilidad",
+            "body": "Un catálogo grande solo es útil si las skins necesarias están realmente disponibles. En servicios con inventario propio importan especialmente su tamaño y la frecuencia con la que se repone."
+          },
+          {
+            "summary": "Velocidad y claridad de la operación",
+            "body": "Evaluamos el recorrido desde el pago hasta la recepción del Trade Offer: si el estado de la operación se muestra con claridad, cuántos pasos son necesarios y qué ocurre en caso de retraso o cancelación."
+          },
+          {
+            "summary": "Métodos de pago",
+            "body": "Se tienen en cuenta tarjetas, criptomonedas y otros métodos, junto con sus comisiones, límites y disponibilidad regional."
+          },
+          {
+            "summary": "Herramientas para elegir una skin concreta",
+            "body": "Los filtros por precio, wear, float y otras características, los inspect links, la búsqueda y la ordenación permiten elegir mejor un ejemplar concreto y aumentan el valor práctico de la plataforma."
+          },
+          {
+            "summary": "Reputación y soporte",
+            "body": "La estabilidad del servicio, unas reglas claras, su historial y la posibilidad de obtener ayuda cuando hay un problema con una operación se valoran junto con el precio y el catálogo."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué los precios de skins cambian entre plataformas",
+        "paragraphs": [
+          "Una misma skin puede tener varios precios al mismo tiempo. En un marketplace P2P los precios los fijan los vendedores, un servicio con inventario propio utiliza su propio sistema de valoración y Steam Community Market constituye un mercado independiente dentro de Steam.",
+          "Las diferencias dependen de la liquidez, las comisiones de la plataforma, la demanda, el tipo de cambio, la disponibilidad de métodos de pago y las características concretas del objeto. Por eso conviene comparar el mismo ejemplar o parámetros lo más parecidos posible, y no solo el nombre de la skin.",
+          "Si necesitas algo más que una simple compra, utiliza las secciones relacionadas de CSGOBROKER: <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/trade-skins\">intercambio</a>, <a href=\"/csgo/sell-skins\">venta</a> y <a href=\"/csgo/instant-sell\">venta rápida</a>."
+        ]
+      },
+      "safety": {
+        "title": "Cómo comprar skins de CS2 con más seguridad",
+        "intro": "Al comprar mediante un servicio de terceros, los principales riesgos son los sitios de phishing, los Steam Trade Offers falsos y recibir un objeto distinto del elegido.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio y el login de Steam",
+            "body": "Antes de iniciar sesión, comprueba que has abierto la plataforma correcta y el proceso oficial de autorización de Steam. No introduzcas tu contraseña de Steam en una página que imite la ventana de acceso."
+          },
+          {
+            "summary": "Comprueba el objeto del Trade Offer",
+            "body": "Antes de confirmar, revisa el nombre, el aspecto, el float y otras características importantes del objeto. En compras caras, compara también los inspect data con la ficha del pedido."
+          },
+          {
+            "summary": "Verifica el remitente",
+            "body": "No te fíes solo del nombre o avatar del bot. Compara la información mostrada por la propia plataforma con el Steam Trade Offer real."
+          },
+          {
+            "summary": "Evita enlaces aleatorios en mensajes",
+            "body": "Falsos agentes de soporte o vendedores pueden enviar enlaces externos para iniciar sesión o «confirmar la operación». Es más seguro realizar todas las acciones desde la interfaz de la propia plataforma."
+          },
+          {
+            "summary": "Lee las reglas de reembolso y cancelación",
+            "body": "Antes de pagar conviene saber qué ocurrirá si el vendedor no envía el objeto, el Trade Offer se cancela o la skin queda temporalmente no disponible."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre comprar skins de CS2",
+        "items": [
+          {
+            "summary": "¿Dónde puedo comprar skins de CS2?",
+            "body": "Las skins se venden en Steam Community Market y en plataformas de terceros: marketplaces P2P, servicios con inventario propio y algunos intercambiadores. CSGOBROKER reúne estos servicios en esta página y en la sección de <a href=\"/csgo/marketplaces\">marketplaces</a>."
+          },
+          {
+            "summary": "¿Dónde comprar skins más baratas que en Steam?",
+            "body": "El precio depende del objeto concreto y de las comisiones. En una plataforma de terceros una skin puede costar menos que en Steam, pero hay que incluir comisiones de depósito, conversión y otros gastos."
+          },
+          {
+            "summary": "¿Puedo comprar skins con dinero real?",
+            "body": "Sí. Muchas plataformas de terceros aceptan tarjetas bancarias, criptomonedas u otros métodos de pago. La disponibilidad de cada método depende del sitio y del país."
+          },
+          {
+            "summary": "¿Qué diferencia hay entre marketplace e intercambio?",
+            "body": "En un marketplace normalmente eliges un anuncio u objeto concreto y pagas dinero. Un <a href=\"/csgo/trade-skins\">sitio de intercambio</a> está pensado principalmente para cambiar tus objetos por otros y puede usar su propia valoración interna para cada skin."
+          },
+          {
+            "summary": "¿Qué significa compra P2P?",
+            "body": "P2P significa que el objeto lo entrega otro usuario mientras la plataforma organiza la operación y los pagos. La skin no tiene por qué estar previamente almacenada en un bot del servicio."
+          },
+          {
+            "summary": "¿Por qué dos skins iguales tienen precios diferentes?",
+            "body": "El precio depende de la plataforma, el vendedor, float, pattern, stickers, liquidez y comisiones. En objetos raros, la diferencia entre ejemplares puede ser considerable."
+          },
+          {
+            "summary": "¿Puedo vender después la skin comprada?",
+            "body": "Normalmente sí, siempre que el objeto no tenga una restricción temporal de Steam y la plataforma lo acepte. Puedes comparar opciones en las secciones de <a href=\"/csgo/sell-skins\">venta</a> y <a href=\"/csgo/instant-sell\">venta rápida</a>."
+          },
+          {
+            "summary": "¿Qué debo revisar antes de confirmar un Trade Offer?",
+            "body": "Comprueba el remitente, el propio objeto y todas sus características importantes. No confirmes el intercambio si el Trade Offer difiere del pedido o aparece fuera del proceso de compra esperado."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Onde e como comprar skins de CS2 com dinheiro real",
+        "paragraphs": [
+          "Comprar skins de CS2 em plataformas de terceiros permite escolher um item específico e pagar com dinheiro, criptomoeda ou outro método disponível, em vez de receber um item aleatório por meio de modos de jogo. Os serviços usam modelos diferentes de venda: marketplaces P2P, inventário próprio, bots de trade ou uma combinação desses formatos.",
+          "A CSGOBROKER reúne sites onde é possível comprar skins de CS2 e ajuda a compará-los por preço, variedade, taxas, métodos de pagamento e processo de entrega do item. Para uma comparação mais ampla de serviços de trading, há uma seção separada de <a href=\"/csgo/marketplaces\">marketplaces de CS2</a>.",
+          "O menor preço exibido no anúncio de um item nem sempre significa a compra mais barata. O custo final pode mudar por causa de taxas de depósito, conversão de moeda, comissão da plataforma ou particularidades do método de pagamento escolhido."
+        ]
+      },
+      "categories": {
+        "title": "Principais formas de comprar skins de CS2",
+        "items": [
+          {
+            "title": "Marketplaces P2P",
+            "paragraphs": [
+              "Em um marketplace P2P, normalmente outra pessoa vende a skin e o serviço atua como intermediário da transação. Esse modelo pode oferecer grande variedade e competição entre vendedores, mas é importante conferir as regras de reserva do item, confirmação da negociação e reembolso."
+            ]
+          },
+          {
+            "title": "Compra pelo inventário da plataforma",
+            "paragraphs": [
+              "Alguns serviços mantêm os itens em suas próprias contas de trading ou bots. O comprador escolhe uma skin do inventário disponível e recebe um Steam Trade Offer depois do pagamento. Esse formato pode ser mais rápido, mas variedade e preço dependem diretamente do estoque atual da plataforma."
+            ]
+          },
+          {
+            "title": "Sites de troca com opção de compra",
+            "paragraphs": [
+              "Em alguns <a href=\"/csgo/trade-skins\">sites de troca de skins</a>, além de trocar itens, é possível adicionar dinheiro ou saldo para obter a skin desejada. Isso é útil quando parte do valor já é coberta por itens do seu inventário."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "O Steam Community Market também permite comprar itens de CS2, mas o dinheiro obtido com vendas permanece no Steam Wallet. Plataformas de terceiros podem oferecer outros preços, métodos de pagamento e transações com dinheiro real fora do ecossistema Steam."
+            ]
+          },
+          {
+            "title": "Itens raros e caros",
+            "paragraphs": [
+              "Para facas, luvas e variantes raras, float, pattern, fase, stickers e outras características do exemplar específico são especialmente importantes. Antes de pagar, vale conferir o inspect link e os dados do item. Informações sobre as próprias skins estão na seção de <a href=\"/topic/skins\">skins de CS2</a>."
+            ]
+          },
+          {
+            "title": "Compra pensando em revenda",
+            "paragraphs": [
+              "Se a skin for comprada não apenas para uso no inventário, mas também pensando em revenda, verifique antes onde será possível vendê-la depois. A CSGOBROKER possui seções separadas de <a href=\"/csgo/sell-skins\">venda de skins</a> e <a href=\"/csgo/instant-sell\">venda instantânea</a>."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de comprar uma skin",
+        "intro": "O preço do item é apenas um dos fatores. Antes de pagar, confira o custo total da transação e como exatamente a skin chegará ao seu inventário da Steam.",
+        "items": [
+          {
+            "summary": "Preço final com taxas",
+            "body": "Compare o valor que você realmente pagará depois de taxas de depósito, cartão, conversão de moeda e outros encargos. Às vezes uma plataforma com preço nominal maior para o item acaba sendo mais barata no total."
+          },
+          {
+            "summary": "Método de entrega",
+            "body": "Confira se a entrega usa um bot do serviço, um P2P Trade Offer do vendedor ou outro mecanismo. Isso afeta a velocidade da transação, as confirmações necessárias e o que acontece em caso de cancelamento da troca."
+          },
+          {
+            "summary": "Formas de pagamento",
+            "body": "Cartões, criptomoedas, carteiras eletrônicas e métodos locais não estão disponíveis em todas as plataformas nem em todos os países. Taxas e valores mínimos também podem variar."
+          },
+          {
+            "summary": "Float, pattern e stickers",
+            "body": "Dois itens com o mesmo nome podem ter valores de mercado bem diferentes. Em skins caras, confira o float específico, pattern index, fase e valor dos stickers, e não apenas o nome e o wear."
+          },
+          {
+            "summary": "Liquidez e revenda",
+            "body": "Se houver possibilidade de vender o item depois, considere a demanda e a diferença entre preço de compra e de venda. Um grande desconto na compra não garante uma revenda pelo mesmo nível de preço."
+          },
+          {
+            "summary": "KYC e restrições regionais",
+            "body": "Em algumas plataformas, a verificação é necessária para pagar, aumentar limites ou solicitar reembolso. Além disso, certos métodos de pagamento podem não estar disponíveis em determinado país."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites para comprar skins",
+        "intro": "Para páginas de compra de skins, os fatores relevantes são diferentes dos modos de jogo. O foco principal está no custo da transação, variedade, métodos de pagamento e confiabilidade do processo de recebimento do item.",
+        "items": [
+          {
+            "summary": "Preços e taxas",
+            "body": "Analisamos não apenas o preço dos itens, mas também taxas da plataforma, do depósito e outros custos que afetam o valor final da compra."
+          },
+          {
+            "summary": "Inventário e disponibilidade",
+            "body": "Um catálogo grande só é útil quando as skins desejadas realmente estão disponíveis. Em serviços com inventário próprio, o tamanho do estoque e a frequência de reposição são especialmente importantes."
+          },
+          {
+            "summary": "Velocidade e clareza da transação",
+            "body": "Avaliamos o caminho do pagamento até o recebimento do Trade Offer: se o status da transação é mostrado com clareza, quantas etapas são necessárias e o que acontece em caso de atraso ou cancelamento."
+          },
+          {
+            "summary": "Formas de pagamento",
+            "body": "São considerados cartões, criptomoedas e outros métodos, junto com as taxas, limites e disponibilidade regional associados."
+          },
+          {
+            "summary": "Ferramentas para escolher a skin",
+            "body": "Filtros por preço, wear, float e outras características, inspect links, busca e ordenação ajudam a escolher um exemplar específico com mais precisão e aumentam o valor prático da plataforma."
+          },
+          {
+            "summary": "Reputação e suporte",
+            "body": "Estabilidade, regras claras, histórico do serviço e a possibilidade de obter suporte quando há um problema na transação são considerados junto com preço e variedade."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que os preços de skins mudam entre plataformas",
+        "paragraphs": [
+          "A mesma skin pode ter vários preços ao mesmo tempo. Em um marketplace P2P, os vendedores definem o preço; um serviço com inventário próprio usa seu próprio sistema de avaliação; e o Steam Community Market forma um mercado separado dentro da Steam.",
+          "As diferenças dependem de liquidez, taxas da plataforma, demanda, câmbio, disponibilidade de métodos de pagamento e características específicas do item. Por isso, é melhor comparar o mesmo exemplar ou parâmetros o mais próximos possível, e não apenas o nome da skin.",
+          "Se sua necessidade for além de uma compra simples, use as seções relacionadas da CSGOBROKER: <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/trade-skins\">troca</a>, <a href=\"/csgo/sell-skins\">venda</a> e <a href=\"/csgo/instant-sell\">venda instantânea</a>."
+        ]
+      },
+      "safety": {
+        "title": "Como comprar skins de CS2 com mais segurança",
+        "intro": "Ao comprar por um serviço de terceiros, os principais riscos são sites de phishing, Steam Trade Offers falsos e receber um item diferente do escolhido.",
+        "items": [
+          {
+            "summary": "Confira o domínio e login Steam",
+            "body": "Antes de entrar, confirme que está na plataforma correta e no processo oficial de autenticação da Steam. Não digite sua senha da Steam em uma página que imita a janela de login."
+          },
+          {
+            "summary": "Confira o item no Trade Offer",
+            "body": "Antes de confirmar, confira nome, aparência, float e outras características importantes do item. Em compras caras, compare também os inspect data com a página do pedido."
+          },
+          {
+            "summary": "Verifique o remetente",
+            "body": "Não confie apenas no nome ou avatar do bot. Compare as informações mostradas pela própria plataforma com o Steam Trade Offer real."
+          },
+          {
+            "summary": "Evite links aleatórios em mensagens",
+            "body": "Falsos atendentes de suporte ou vendedores podem enviar links externos para login ou para «confirmar a transação». É melhor realizar todas as ações pela interface da própria plataforma."
+          },
+          {
+            "summary": "Leia regras de reembolso e cancelamento",
+            "body": "Antes de pagar, é útil saber o que acontece se o vendedor não enviar o item, o Trade Offer for cancelado ou a skin ficar temporariamente indisponível."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre compra de skins de CS2",
+        "items": [
+          {
+            "summary": "Onde posso comprar skins de CS2?",
+            "body": "Skins são vendidas no Steam Community Market e em plataformas de terceiros: marketplaces P2P, serviços com inventário próprio e alguns sites de troca. A CSGOBROKER reúne esses serviços nesta página e na seção de <a href=\"/csgo/marketplaces\">marketplaces</a>."
+          },
+          {
+            "summary": "Onde comprar skins mais barato que na Steam?",
+            "body": "O preço depende do item específico e das taxas. Em uma plataforma de terceiros, uma skin pode custar menos do que na Steam, mas é preciso considerar taxas de depósito, conversão e outros custos."
+          },
+          {
+            "summary": "Posso comprar skin com dinheiro real?",
+            "body": "Sim. Muitas plataformas de terceiros aceitam cartões bancários, criptomoedas ou outros métodos de pagamento. A disponibilidade de cada método depende do site e do país."
+          },
+          {
+            "summary": "Qual a diferença entre marketplace e site de troca?",
+            "body": "Em um marketplace, normalmente você escolhe um anúncio ou item específico e paga em dinheiro. Um <a href=\"/csgo/trade-skins\">site de troca</a> serve principalmente para trocar seus itens por outros e pode usar uma avaliação interna para cada skin."
+          },
+          {
+            "summary": "O que é compra P2P?",
+            "body": "P2P significa que outro usuário entrega o item enquanto a plataforma organiza a transação e os pagamentos. A skin não precisa estar armazenada previamente em um bot do serviço."
+          },
+          {
+            "summary": "Por que skins iguais têm preços diferentes?",
+            "body": "O preço depende da plataforma, vendedor, float, pattern, stickers, liquidez e taxas. Para itens raros, a diferença entre exemplares pode ser significativa."
+          },
+          {
+            "summary": "Posso vender depois a skin comprada?",
+            "body": "Normalmente sim, desde que o item não esteja sob restrição temporária da Steam e a plataforma o aceite. Compare opções nas seções de <a href=\"/csgo/sell-skins\">venda</a> e <a href=\"/csgo/instant-sell\">venda instantânea</a>."
+          },
+          {
+            "summary": "O que verificar antes de confirmar um Trade Offer?",
+            "body": "Confira o remetente, o próprio item e todas as características importantes. Não confirme a troca se o Trade Offer for diferente do pedido ou aparecer fora do processo de compra esperado."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Gerçek Parayla CS2 Skini Nereden ve Nasıl Satın Alınır?",
+        "paragraphs": [
+          "Üçüncü taraf platformlardan CS2 skin satın almak, oyun modlarından rastgele bir item almak yerine belirli bir item seçip para, kripto para veya desteklenen başka bir yöntemle ödeme yapmayı sağlar. Servisler P2P marketplace, kendi envanteri, trading botları veya bunların birleşimi gibi farklı satış modelleri kullanır.",
+          "CSGOBROKER, CS2 skin satın alınabilen siteleri toplar ve fiyat, ürün çeşitliliği, ücretler, ödeme yöntemleri ve item teslim sürecine göre karşılaştırmaya yardımcı olur. Trading servislerini daha geniş karşılaştırmak için ayrı bir <a href=\"/csgo/marketplaces\">CS2 marketplace</a> bölümü bulunur.",
+          "Bir item kartındaki en düşük fiyat her zaman en avantajlı toplam maliyet anlamına gelmez. Deposit ücreti, para birimi dönüşümü, platform komisyonu veya seçilen ödeme yönteminin özellikleri nihai tutarı değiştirebilir."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Skini Satın Almanın Başlıca Yolları",
+        "items": [
+          {
+            "title": "P2P pazarları",
+            "paragraphs": [
+              "P2P marketplace'te skin genellikle başka bir kullanıcı tarafından satılır ve servis işlemin aracısı olur. Bu model geniş seçim ve satıcılar arasında rekabet sağlayabilir; ancak item rezervasyonu, işlem onayı ve iade kurallarını kontrol etmek önemlidir."
+            ]
+          },
+          {
+            "title": "Platform envanterinden satın alma",
+            "paragraphs": [
+              "Bazı servisler item'ları kendi trading hesaplarında veya botlarında tutar. Alıcı mevcut envanterden bir skin seçer ve ödeme sonrasında Steam Trade Offer alır. Bu yöntem daha hızlı olabilir, ancak çeşitlilik ve fiyat doğrudan platformun güncel stokuna bağlıdır."
+            ]
+          },
+          {
+            "title": "Satın alma özelliği olan takas siteleri",
+            "paragraphs": [
+              "Bazı <a href=\"/csgo/trade-skins\">skin takas sitelerinde</a> yalnızca item değiştirmek değil, istenen skin için para veya bakiye eklemek de mümkündür. Envanterinizdeki item'lar fiyatın bir bölümünü karşılıyorsa bu kullanışlıdır."
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market de CS2 item satın almaya izin verir, ancak satışlardan elde edilen para Steam Wallet içinde kalır. Üçüncü taraf platformlar farklı fiyatlar, ödeme yöntemleri ve Steam ekosistemi dışında gerçek parayla işlem imkânı sunabilir."
+            ]
+          },
+          {
+            "title": "Nadir ve pahalı eşyalar",
+            "paragraphs": [
+              "Bıçaklar, eldivenler ve nadir varyantlarda float, pattern, phase, sticker'lar ve belirli örneğin diğer özellikleri özellikle önemlidir. Ödeme yapmadan önce inspect linkini ve item verilerini kontrol etmek faydalıdır. Skin'ler hakkında bilgi için <a href=\"/topic/skins\">CS2 skinleri</a> bölümünü kullanabilirsiniz."
+            ]
+          },
+          {
+            "title": "Yeniden satış düşünerek satın alma",
+            "paragraphs": [
+              "Skin yalnızca envanter için değil ileride yeniden satmak amacıyla da alınıyorsa, sonradan nerede satılabileceğini önceden kontrol edin. CSGOBROKER'da <a href=\"/csgo/sell-skins\">skin satışı</a> ve <a href=\"/csgo/instant-sell\">hızlı satış</a> için ayrı bölümler vardır."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skin Satın Almadan Önce Neleri Karşılaştırmalı?",
+        "intro": "Item fiyatı yalnızca bir parametredir. Ödeme öncesinde işlemin toplam maliyetini ve skin'in Steam envanterinize tam olarak nasıl ulaşacağını kontrol etmek faydalıdır.",
+        "items": [
+          {
+            "summary": "Ücretler dahil toplam fiyat",
+            "body": "Deposit, kart ödemesi, kur dönüşümü ve diğer ücretler sonrasında gerçekten ödeyeceğiniz tutarı karşılaştırın. Bazen item fiyatı daha yüksek görünen başka bir platform toplamda daha ucuz olabilir."
+          },
+          {
+            "summary": "Teslimat yöntemi",
+            "body": "Servis botu, satıcıdan P2P Trade Offer veya başka bir mekanizma kullanılıp kullanılmadığını öğrenin. Bu, işlem hızını, gerekli onayları ve takas iptal edilirse ne olacağını etkiler."
+          },
+          {
+            "summary": "Ödeme yöntemleri",
+            "body": "Kartlar, kripto paralar, e-cüzdanlar ve yerel yöntemler her platformda ve her ülkede mevcut değildir. Ücretler ve minimum tutarlar da farklı olabilir."
+          },
+          {
+            "summary": "Float, pattern ve stickerlar",
+            "body": "Aynı ada sahip iki item piyasa değerinde ciddi biçimde farklı olabilir. Pahalı skin'lerde yalnızca ad ve wear değil, belirli float, pattern index, phase ve sticker değerini kontrol edin."
+          },
+          {
+            "summary": "Likidite ve yeniden satış",
+            "body": "Item'ı ileride satmanız gerekebilecekse talebi ve alış-satış fiyat farkını hesaba katın. Satın alırken büyük indirim olması, yeniden satışta aynı fiyat avantajını garanti etmez."
+          },
+          {
+            "summary": "KYC ve bölgesel kısıtlamalar",
+            "body": "Bazı platformlarda ödeme, limit artırma veya iade için doğrulama gerekebilir. Ayrıca bazı ödeme yöntemleri belirli ülkelerde kullanılamayabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Skin Satın Alma Sitelerini Nasıl Değerlendirir?",
+        "intro": "Skin satın alma sayfalarında önemli faktörler oyun modlarından farklıdır. Ana odak işlem maliyeti, çeşitlilik, ödeme yöntemleri ve item'ı alma sürecinin güvenilirliğidir.",
+        "items": [
+          {
+            "summary": "Fiyatlar ve ücretler",
+            "body": "Yalnızca item fiyatlarına değil, platform ve deposit ücretleriyle nihai satın alma maliyetini etkileyen diğer masraflara da bakıyoruz."
+          },
+          {
+            "summary": "Envanter ve bulunabilirlik",
+            "body": "Büyük katalog yalnızca aranan skin'ler gerçekten satın alınabiliyorsa faydalıdır. Kendi envanteri olan servislerde stok büyüklüğü ve ne kadar düzenli yenilendiği özellikle önemlidir."
+          },
+          {
+            "summary": "İşlem hızı ve açıklığı",
+            "body": "Ödemeden Trade Offer alınmasına kadar olan süreci değerlendiriyoruz: işlem durumunun ne kadar açık gösterildiği, kaç adım gerektiği ve gecikme veya iptalde ne olduğu."
+          },
+          {
+            "summary": "Ödeme yöntemleri",
+            "body": "Kartlar, kripto paralar ve diğer yöntemler; bunlara bağlı ücretler, limitler ve bölgesel kullanılabilirlikle birlikte değerlendirilir."
+          },
+          {
+            "summary": "Belirli skini seçme araçları",
+            "body": "Fiyat, wear, float ve diğer özelliklere göre filtreler, inspect linkleri, arama ve sıralama belirli bir örneği daha doğru seçmeye yardımcı olur ve platformun pratik değerini artırır."
+          },
+          {
+            "summary": "İtibar ve destek",
+            "body": "Stabil çalışma, açık kurallar, servis geçmişi ve işlem sorununda yardım alabilme imkânı fiyat ve çeşitlilikle birlikte değerlendirilir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "CS2 Skin Fiyatları Platformlara Göre Neden Değişir?",
+        "paragraphs": [
+          "Aynı skin aynı anda birden fazla fiyata sahip olabilir. P2P marketplace'te fiyatı satıcılar belirler, kendi envanteri olan servis kendi değerleme sistemini kullanır, Steam Community Market ise Steam içinde ayrı bir piyasa oluşturur.",
+          "Farkları likidite, platform komisyonu, talep, döviz kuru, ödeme yöntemi erişimi ve item'ın belirli özellikleri etkiler. Bu yüzden yalnızca skin adını değil, aynı örneği veya olabildiğince yakın parametreleri karşılaştırmak daha doğrudur.",
+          "İhtiyacınız basit satın almanın ötesindeyse CSGOBROKER'ın ilgili bölümlerini kullanın: <a href=\"/csgo/marketplaces\">marketplace'ler</a>, <a href=\"/csgo/trade-skins\">takas</a>, <a href=\"/csgo/sell-skins\">satış</a> ve <a href=\"/csgo/instant-sell\">hızlı satış</a>."
+        ]
+      },
+      "safety": {
+        "title": "CS2 Skini Satın Alırken Güvenlik",
+        "intro": "Üçüncü taraf servis üzerinden satın almada başlıca riskler phishing siteleri, sahte Steam Trade Offer'lar ve seçilen item yerine farklı bir item almaktır.",
+        "items": [
+          {
+            "summary": "Alan adını ve Steam girişini kontrol edin",
+            "body": "Giriş yapmadan önce doğru platformu ve Steam'in resmi yetkilendirme sürecini açtığınızdan emin olun. Steam giriş penceresini taklit eden bir sayfaya Steam şifrenizi girmeyin."
+          },
+          {
+            "summary": "Trade Offer'daki eşyayı kontrol edin",
+            "body": "Onaylamadan önce item'ın adını, görünümünü, float'ını ve diğer önemli özelliklerini kontrol edin. Pahalı alışlarda inspect verilerini sipariş kartıyla ayrıca karşılaştırın."
+          },
+          {
+            "summary": "Göndereni doğrulayın",
+            "body": "Yalnızca botun adına veya avatarına güvenmeyin. Platformun gösterdiği bilgiyi gerçek Steam Trade Offer ile karşılaştırın."
+          },
+          {
+            "summary": "Mesajlardaki rastgele linklerden kaçının",
+            "body": "Sahte destek çalışanları veya satıcılar giriş ya da «işlemi onaylama» için dış bağlantılar gönderebilir. Tüm işlemleri platformun kendi arayüzünden yapmak daha güvenlidir."
+          },
+          {
+            "summary": "İade ve iptal kurallarını okuyun",
+            "body": "Ödeme öncesinde satıcı item'ı göndermezse, Trade Offer iptal edilirse veya skin geçici olarak kullanılamazsa ne olacağını bilmek faydalıdır."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Skini Satın Alma Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 skinleri nereden satın alınır?",
+            "body": "Skin'ler Steam Community Market'te ve P2P marketplace'ler, kendi envanteri olan servisler ve bazı takas siteleri gibi üçüncü taraf platformlarda satılır. CSGOBROKER bu servisleri bu sayfada ve <a href=\"/csgo/marketplaces\">marketplace</a> bölümünde toplar."
+          },
+          {
+            "summary": "Steam'den daha ucuza nereden skin alınır?",
+            "body": "Fiyat belirli item'a ve ücretlere bağlıdır. Üçüncü taraf platformda skin Steam'den daha ucuz olabilir, ancak deposit komisyonu, kur dönüşümü ve diğer masraflar hesaba katılmalıdır."
+          },
+          {
+            "summary": "Gerçek parayla CS2 skini satın alınabilir mi?",
+            "body": "Evet. Birçok üçüncü taraf platform banka kartı, kripto para veya başka ödeme yöntemlerini kabul eder. Belirli bir yöntemin kullanılabilirliği siteye ve ülkeye bağlıdır."
+          },
+          {
+            "summary": "Marketplace ile takas sitesi farkı nedir?",
+            "body": "Marketplace'te genellikle belirli bir ilan veya item seçilip parayla satın alınır. <a href=\"/csgo/trade-skins\">Takas sitesi</a> ise öncelikle sizin item'larınızı başkalarıyla değiştirir ve her skin için iç değerleme kullanabilir."
+          },
+          {
+            "summary": "P2P skin satın alma nedir?",
+            "body": "P2P, item'ın başka bir kullanıcı tarafından teslim edildiği, platformun ise işlem ve ödemeyi organize ettiği anlamına gelir. Skin önceden servis botunda bulunmak zorunda değildir."
+          },
+          {
+            "summary": "Aynı skinler neden farklı fiyatlı?",
+            "body": "Fiyat platforma, satıcıya, float'a, pattern'a, sticker'lara, likiditeye ve komisyona bağlıdır. Nadir item'larda örnekler arasındaki fark önemli olabilir."
+          },
+          {
+            "summary": "Satın aldığım skini sonra satabilir miyim?",
+            "body": "Genellikle evet; item üzerinde geçici Steam kısıtlaması yoksa ve platform kabul ediyorsa satılabilir. Seçenekleri <a href=\"/csgo/sell-skins\">satış</a> ve <a href=\"/csgo/instant-sell\">hızlı satış</a> bölümlerinde karşılaştırabilirsiniz."
+          },
+          {
+            "summary": "Steam Trade Offer'ı onaylamadan önce ne kontrol edilmeli?",
+            "body": "Göndereni, item'ın kendisini ve tüm önemli özelliklerini kontrol edin. Trade Offer siparişten farklıysa veya beklenen satın alma süreci dışında ortaya çıktıysa takası onaylamayın."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Real Money से CS2 Skins कहाँ और कैसे खरीदें",
+        "paragraphs": [
+          "Third-party platforms पर CS2 skins खरीदने से random game modes के जरिए item मिलने की जगह specific item चुनकर money, cryptocurrency या किसी available payment method से भुगतान किया जा सकता है। अलग services P2P marketplaces, अपना inventory, trading bots या इन methods का combination इस्तेमाल करती हैं।",
+          "CSGOBROKER उन sites को इकट्ठा करता है जहाँ CS2 skins खरीदी जा सकती हैं और price, selection, fees, payment methods तथा item delivery process के आधार पर compare करने में मदद करता है। Trading services की broader comparison के लिए <a href=\"/csgo/marketplaces\">CS2 marketplaces</a> का अलग section है।",
+          "Item card पर सबसे कम price हमेशा सबसे सस्ती final purchase नहीं होती। Deposit fee, currency conversion, platform commission या specific payment method की conditions के कारण total cost बदल सकती है।"
+        ]
+      },
+      "categories": {
+        "title": "CS2 Skins खरीदने के मुख्य तरीके",
+        "items": [
+          {
+            "title": "P2P marketplaces",
+            "paragraphs": [
+              "P2P marketplace पर skin आम तौर पर दूसरे user द्वारा बेची जाती है और service transaction की intermediary होती है। इस model में selection बड़ा और sellers के बीच competition हो सकता है, लेकिन item reservation, deal confirmation और refund rules check करना जरूरी है।"
+            ]
+          },
+          {
+            "title": "Platform inventory से खरीदना",
+            "paragraphs": [
+              "कुछ services items को अपने trading accounts या bots में रखती हैं। Buyer available inventory से skin चुनता है और payment के बाद Steam Trade Offer प्राप्त करता है। यह format तेज हो सकता है, लेकिन selection और price platform के current stock पर निर्भर करते हैं।"
+            ]
+          },
+          {
+            "title": "Buy option वाले trading sites",
+            "paragraphs": [
+              "कुछ <a href=\"/csgo/trade-skins\">skin trading sites</a> पर items exchange करने के साथ desired skin पाने के लिए money या balance add किया जा सकता है। यह तब useful है जब price का कुछ हिस्सा पहले से आपके inventory items से cover हो रहा हो।"
+            ]
+          },
+          {
+            "title": "Steam Community Market",
+            "paragraphs": [
+              "Steam Community Market भी CS2 items खरीदने देता है, लेकिन sale से मिलने वाला पैसा Steam Wallet में ही रहता है। Third-party platforms अलग prices, payment methods और Steam ecosystem के बाहर real-money transactions दे सकती हैं।"
+            ]
+          },
+          {
+            "title": "Rare और expensive items",
+            "paragraphs": [
+              "Knives, gloves और rare variants के लिए float, pattern, phase, stickers और specific item की दूसरी characteristics बहुत important होती हैं। Payment से पहले inspect link और item data compare करें। Skins की जानकारी <a href=\"/topic/skins\">CS2 skins</a> section में भी मिल सकती है।"
+            ]
+          },
+          {
+            "title": "Resale को ध्यान में रखकर खरीदना",
+            "paragraphs": [
+              "अगर skin सिर्फ inventory के लिए नहीं बल्कि future resale के लिए भी खरीदी जा रही है, तो पहले से देखें कि बाद में उसे कहाँ बेचा जा सकता है। CSGOBROKER पर <a href=\"/csgo/sell-skins\">skin selling</a> और <a href=\"/csgo/instant-sell\">instant selling</a> के अलग sections हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Skin खरीदने से पहले क्या Compare करें",
+        "intro": "Item की price केवल एक parameter है। Payment से पहले total transaction cost और skin आपके Steam inventory में किस तरह पहुँचेगी, दोनों check करें।",
+        "items": [
+          {
+            "summary": "Fees सहित final price",
+            "body": "Deposit, card payment, currency conversion और दूसरी fees के बाद वास्तव में कितना pay करना होगा, उसे compare करें। कभी-कभी दूसरे platform पर item की listed price अधिक होते हुए भी total cost कम हो सकती है।"
+          },
+          {
+            "summary": "Item delivery method",
+            "body": "Check करें कि service bot, seller का P2P Trade Offer या कोई दूसरा mechanism इस्तेमाल होता है। इससे transaction speed, required confirmations और exchange cancel होने पर process तय होता है।"
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Cards, cryptocurrency, e-wallets और local methods सभी platforms और सभी countries में उपलब्ध नहीं होते। Fees और minimum amounts भी अलग हो सकते हैं।"
+          },
+          {
+            "summary": "Float, pattern और stickers",
+            "body": "एक ही नाम वाले दो items की market value काफी अलग हो सकती है। Expensive skins के लिए सिर्फ name और wear नहीं, बल्कि exact float, pattern index, phase और sticker value check करें।"
+          },
+          {
+            "summary": "Liquidity और future resale",
+            "body": "अगर item को बाद में बेचने की जरूरत पड़ सकती है, तो demand और buy/sell price difference ध्यान में रखें। खरीदते समय बड़ा discount, resale पर उसी level की price guarantee नहीं करता।"
+          },
+          {
+            "summary": "KYC और regional restrictions",
+            "body": "कुछ platforms पर payment, limits बढ़ाने या refund के लिए verification जरूरी हो सकती है। इसके अलावा कुछ payment methods specific country में उपलब्ध नहीं हो सकते।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Skin Buying Sites को कैसे Rate करता है",
+        "intro": "Skin खरीदने वाली pages के लिए important factors game modes से अलग हैं। मुख्य focus transaction cost, selection, payment methods और item प्राप्त करने की process की reliability पर है।",
+        "items": [
+          {
+            "summary": "Prices और fees",
+            "body": "हम सिर्फ item prices नहीं देखते, बल्कि platform fees, deposit fees और final purchase cost को प्रभावित करने वाले अन्य expenses भी देखते हैं।"
+          },
+          {
+            "summary": "Inventory और availability",
+            "body": "बड़ा catalog तभी useful है जब required skins वास्तव में खरीदने के लिए available हों। Own-inventory services में stock size और replenishment frequency खास तौर पर important हैं।"
+          },
+          {
+            "summary": "Transaction speed और clarity",
+            "body": "हम payment से Trade Offer मिलने तक की process evaluate करते हैं: transaction status कितनी साफ दिखाई जाती है, कितने steps लगते हैं और delay या cancellation में क्या होता है।"
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Cards, cryptocurrencies और अन्य methods को उनकी fees, limits और regional availability के साथ evaluate किया जाता है।"
+          },
+          {
+            "summary": "Specific skin चुनने के tools",
+            "body": "Price, wear, float और दूसरी characteristics के filters, inspect links, search और sorting specific item चुनने में मदद करते हैं और platform की practical value बढ़ाते हैं।"
+          },
+          {
+            "summary": "Reputation और support",
+            "body": "Stable service, clear rules, service history और transaction problem में support मिलने की क्षमता को price और selection के साथ consider किया जाता है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "CS2 Skin Prices अलग Platforms पर क्यों बदलती हैं",
+        "paragraphs": [
+          "एक ही skin की एक समय में कई prices हो सकती हैं। P2P marketplace में sellers price तय करते हैं, own-inventory service अपना valuation system इस्तेमाल करती है, और Steam Community Market Steam के अंदर अलग market बनाता है।",
+          "Difference पर liquidity, platform commission, demand, exchange rate, payment method availability और item की specific characteristics असर डालते हैं। इसलिए सिर्फ skin name नहीं, बल्कि same item या जितना संभव हो उतने close parameters compare करना बेहतर है।",
+          "अगर आपका काम simple purchase से broader है, तो CSGOBROKER के related sections देखें: <a href=\"/csgo/marketplaces\">marketplaces</a>, <a href=\"/csgo/trade-skins\">trading</a>, <a href=\"/csgo/sell-skins\">selling</a> और <a href=\"/csgo/instant-sell\">instant selling</a>।"
+        ]
+      },
+      "safety": {
+        "title": "CS2 Skins खरीदते समय Safety",
+        "intro": "Third-party service से खरीदते समय मुख्य risks phishing sites, fake Steam Trade Offers और चुने हुए item से अलग item मिलने के हैं।",
+        "items": [
+          {
+            "summary": "Domain और Steam login check करें",
+            "body": "Sign in से पहले confirm करें कि सही platform और official Steam authorization process खुला है। ऐसी page पर Steam password न डालें जो login window की नकल करती हो।"
+          },
+          {
+            "summary": "Trade Offer का item verify करें",
+            "body": "Confirm करने से पहले item का name, appearance, float और दूसरी important characteristics check करें। Expensive purchase के लिए inspect data को order card से भी compare करें।"
+          },
+          {
+            "summary": "Trade sender verify करें",
+            "body": "सिर्फ bot के name या avatar पर भरोसा न करें। Platform द्वारा दिखाई गई information को actual Steam Trade Offer से match करें।"
+          },
+          {
+            "summary": "Messages के random links avoid करें",
+            "body": "Fake support agents या sellers login या «transaction confirmation» के लिए external links भेज सकते हैं। सभी actions platform के अपने interface से करना बेहतर है।"
+          },
+          {
+            "summary": "Refund और cancellation rules पढ़ें",
+            "body": "Payment से पहले जान लें कि seller item न भेजे, Trade Offer cancel हो जाए या skin temporarily unavailable हो तो क्या होगा।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Skins खरीदने के बारे में अक्सर पूछे जाने वाले सवाल",
+        "items": [
+          {
+            "summary": "CS2 skins कहाँ खरीद सकते हैं?",
+            "body": "Skins Steam Community Market और third-party platforms जैसे P2P marketplaces, own-inventory services और कुछ exchange sites पर बेची जाती हैं। CSGOBROKER इन services को इस page और <a href=\"/csgo/marketplaces\">marketplaces</a> section में इकट्ठा करता है।"
+          },
+          {
+            "summary": "Steam से सस्ती CS2 skins कहाँ मिलती हैं?",
+            "body": "Price specific item और fees पर depend करती है। Third-party platform पर skin Steam से सस्ती हो सकती है, लेकिन deposit fee, conversion और दूसरे expenses को भी जोड़ना चाहिए।"
+          },
+          {
+            "summary": "क्या real money से CS2 skin खरीद सकते हैं?",
+            "body": "हाँ। कई third-party platforms bank cards, cryptocurrency या दूसरे payment methods accept करती हैं। किसी specific method की availability site और country पर depend करती है।"
+          },
+          {
+            "summary": "Marketplace और trading site में क्या फर्क है?",
+            "body": "Marketplace पर आम तौर पर specific listing या item चुनकर money से खरीदा जाता है। <a href=\"/csgo/trade-skins\">Trading site</a> मुख्य रूप से आपके items को दूसरे items से exchange करती है और हर skin के लिए internal valuation इस्तेमाल कर सकती है।"
+          },
+          {
+            "summary": "P2P skin purchase क्या है?",
+            "body": "P2P का मतलब है कि item दूसरा user deliver करता है और platform transaction व payment organize करती है। Skin पहले से service bot में होना जरूरी नहीं है।"
+          },
+          {
+            "summary": "Same skins की prices अलग क्यों होती हैं?",
+            "body": "Price platform, seller, float, pattern, stickers, liquidity और fees पर depend करती है। Rare items में अलग examples के बीच difference काफी बड़ा हो सकता है।"
+          },
+          {
+            "summary": "क्या खरीदी गई skin बाद में बेच सकते हैं?",
+            "body": "आम तौर पर हाँ, अगर item पर temporary Steam restriction नहीं है और platform उसे accept करती है। Options को <a href=\"/csgo/sell-skins\">selling</a> और <a href=\"/csgo/instant-sell\">instant selling</a> sections में compare कर सकते हैं।"
+          },
+          {
+            "summary": "Steam Trade Offer confirm करने से पहले क्या check करें?",
+            "body": "Sender, item और उसकी सभी important characteristics check करें। अगर Trade Offer order से अलग हो या expected purchase process के बाहर आए, तो exchange confirm न करें।"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "marketplaces",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Маркетплейсы скинов CS2: как работают торговые площадки и что сравнивать",
+        "paragraphs": [
+          "Маркетплейсы скинов CS2 — сторонние площадки, где пользователи покупают и продают предметы Counter-Strike 2 за реальные деньги, криптовалюту или внутренний баланс. В отличие от Steam Community Market, многие внешние сервисы позволяют вывести деньги за пределы экосистемы Steam и предлагают собственные комиссии, способы оплаты, фильтры и механики сделки.",
+          "На CSGOBROKER маркетплейсы рассматриваются как отдельный тип сервиса наряду со страницами <a href=\"/csgo/buy-skins\">покупки скинов</a>, <a href=\"/csgo/sell-skins\">продажи</a>, <a href=\"/csgo/instant-sell\">быстрой продажи</a> и <a href=\"/csgo/trade-skins\">обмена</a>. Один маркетплейс может поддерживать несколько сценариев сразу: P2P-листинги, ботовый инвентарь, buy orders, аукционы и мгновенную продажу.",
+          "При выборе площадки важно сравнивать не только цену конкретного предмета. Итог сделки зависит от комиссии продавца и покупателя, способа хранения скина, ликвидности, spread между лучшей покупкой и продажей, платёжных комиссий, KYC, валютной конвертации и доступности предметов после Steam trade restrictions."
+        ]
+      },
+      "categories": {
+        "title": "Какие модели маркетплейсов встречаются в CS2",
+        "items": [
+          {
+            "title": "P2P-маркетплейсы",
+            "paragraphs": [
+              "Скин остаётся у продавца до момента сделки или передаётся напрямую через Steam Trade Offer. Такая модель может расширять ассортимент, но требует надёжного подтверждения сделки и контроля того, что предмет не исчез из инвентаря до покупки."
+            ]
+          },
+          {
+            "title": "Ботовые маркетплейсы",
+            "paragraphs": [
+              "Предметы заранее передаются ботам площадки и выставляются из её инвентаря. Покупателю проще получить уже депонированный скин, но ассортимент ограничен тем, что фактически находится у сервиса и доступно для передачи."
+            ]
+          },
+          {
+            "title": "Buy orders",
+            "paragraphs": [
+              "Покупатель заранее размещает заявку с ценой, по которой готов купить определённый предмет. Продавец может принять лучший подходящий ордер вместо ожидания обычной продажи по своему листингу."
+            ]
+          },
+          {
+            "title": "Аукционы",
+            "paragraphs": [
+              "Некоторые платформы позволяют продавать редкие или дорогие предметы через конкурентные ставки покупателей. Важны длительность аукциона, резервная цена, комиссия и правила отмены."
+            ]
+          },
+          {
+            "title": "Мгновенная продажа внутри маркетплейса",
+            "paragraphs": [
+              "Площадка или сторонний покупатель может предложить немедленный выкуп по цене ниже обычного листинга. Если скорость важнее максимальной цены, отдельно полезно сравнить <a href=\"/csgo/instant-sell\">instant sell сайты</a>."
+            ]
+          },
+          {
+            "title": "Маркетплейсы для нескольких игр",
+            "paragraphs": [
+              "Часть сервисов одновременно работает с CS2, Dota 2, Rust или TF2. Это удобно для общего баланса, но ликвидность и комиссии могут заметно отличаться между играми и отдельными категориями предметов."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед выбором маркетплейса CS2",
+        "intro": "Цена в карточке товара — только одна часть сделки. Для корректного сравнения нужно смотреть на итоговую сумму после всех комиссий и на то, насколько быстро можно купить, продать и вывести средства.",
+        "items": [
+          {
+            "summary": "Комиссия продавца и покупателя",
+            "body": "Некоторые площадки берут комиссию только с продавца, другие добавляют buyer fee или платёжный сбор. Сравнивайте итоговую цену покупки и чистую сумму, которую получает продавец."
+          },
+          {
+            "summary": "Ликвидность и объём торгов",
+            "body": "Большой активный рынок обычно означает больше листингов и более быстрое исполнение. Для редких предметов важнее количество реальных предложений и история продаж, а не общий размер каталога."
+          },
+          {
+            "summary": "Spread и ценовая история",
+            "body": "Разница между лучшим buy order и самым дешёвым sell listing показывает текущий spread. История сделок помогает понять, является ли выставленная цена реалистичной или сильно отклоняется от последних продаж."
+          },
+          {
+            "summary": "Float, pattern и наклейки",
+            "body": "Для редких скинов базового названия недостаточно. Float value, paint seed, pattern, редкие stickers и их расположение могут существенно менять стоимость; площадка должна позволять увидеть эти параметры до сделки."
+          },
+          {
+            "summary": "Пополнение и вывод денег",
+            "body": "Карты, банковские переводы, электронные кошельки и криптовалюты имеют разные комиссии, сроки и региональную доступность. Валютная конвертация также может менять итоговую стоимость сделки."
+          },
+          {
+            "summary": "KYC, лимиты и Steam-ограничения",
+            "body": "Проверка личности, дневные лимиты, trade lock и правила Steam могут влиять на скорость покупки или вывода. Эти условия лучше проверять до крупной сделки."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает маркетплейсы скинов CS2",
+        "intro": "Для рейтинга торговых площадок мы оцениваем и цену сделки, и инфраструктуру, которая позволяет безопасно довести её до конца.",
+        "items": [
+          {
+            "summary": "Комиссии и итоговая цена",
+            "body": "Мы учитываем seller fee, buyer fee, платёжные сборы и конвертацию, чтобы сравнивать не рекламную цену, а фактическую стоимость покупки или продажи."
+          },
+          {
+            "summary": "Ликвидность и ассортимент",
+            "body": "Важны количество активных листингов, доступность популярных предметов, редких вариантов и реальная скорость продажи в разных ценовых диапазонах."
+          },
+          {
+            "summary": "Ценообразование и данные о предметах",
+            "body": "Фильтры по float, pattern, stickers, price history, buy orders и сравнение предложений помогают пользователю оценить предмет до сделки."
+          },
+          {
+            "summary": "Модель хранения и Steam Trade Offer",
+            "body": "Для P2P и ботовых систем оценивается понятность передачи предмета, защита от подмены оффера, статус trade lock и прозрачность этапов сделки."
+          },
+          {
+            "summary": "Платежи и вывод",
+            "body": "Учитываются доступные валюты, карты, банковские методы, криптовалюты, минимумы, комиссии, KYC и скорость вывода денег."
+          },
+          {
+            "summary": "Интерфейс, поддержка и история операций",
+            "body": "Поиск, сортировка, уведомления, история покупок и продаж, мобильная версия и поддержка важны при спорной сделке или задержке выплаты."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему цены и рейтинг маркетплейсов меняются",
+        "paragraphs": [
+          "Цены скинов CS2 меняются вслед за спросом, предложением, обновлениями игры, турнирами, коллекциями и общим состоянием рынка. Поэтому цена на Steam, одном внешнем маркетплейсе и другом сервисе может различаться в один и тот же момент.",
+          "Сами площадки также меняют комиссии, способы выплат, KYC, лимиты, правила P2P и доступность регионов. Даже если каталог остаётся тем же, изменение seller fee или стоимости вывода может заметно изменить итоговую выгодность.",
+          "Если задача уже определена, можно перейти к более узким рейтингам CSGOBROKER: <a href=\"/csgo/buy-skins\">где купить скины</a>, <a href=\"/csgo/sell-skins\">где продать</a>, <a href=\"/csgo/instant-sell\">где продать мгновенно</a> или <a href=\"/csgo/trade-skins\">где обменять</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при покупке и продаже скинов",
+        "intro": "Большинство рисков на маркетплейсах связано не с самой ценой предмета, а с фишингом, подменой Trade Offer, переводом сделки за пределы площадки и неправильным пониманием правил вывода.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и Steam-вход",
+            "body": "Фишинговые копии могут повторять дизайн маркетплейса и окно авторизации. Входите только на правильном домене и не вводите Steam-пароль в подозрительной форме."
+          },
+          {
+            "summary": "Сверяйте каждый Steam Trade Offer",
+            "body": "Перед подтверждением проверьте аккаунт отправителя или получателя, название предмета, float/pattern при необходимости и отсутствие лишних скинов в оффере."
+          },
+          {
+            "summary": "Не переносите P2P-сделку в личные сообщения",
+            "body": "Предложение провести оплату напрямую в Telegram, Discord или другом канале обычно лишает вас защиты и истории сделки внутри маркетплейса."
+          },
+          {
+            "summary": "Проверяйте условия вывода заранее",
+            "body": "KYC, минимальная сумма, банковские комиссии, ограничения страны и сроки обработки могут стать важны уже после продажи. Лучше знать их до листинга дорогого предмета."
+          },
+          {
+            "summary": "Отдельно проверяйте редкие предметы",
+            "body": "Для дорогих ножей, перчаток, редких patterns и sticker crafts используйте несколько источников цены и изучайте параметры предмета. Общая market price может не отражать премию конкретного экземпляра."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о маркетплейсах скинов CS2",
+        "items": [
+          {
+            "summary": "Что такое маркетплейс скинов CS2?",
+            "body": "Это сторонняя торговая площадка, где пользователи покупают и продают предметы Counter-Strike 2 за деньги, криптовалюту или внутренний баланс."
+          },
+          {
+            "summary": "Чем внешний маркетплейс отличается от Steam Community Market?",
+            "body": "На Steam средства обычно остаются в Steam Wallet, тогда как многие внешние площадки позволяют вывести деньги. При этом у них свои комиссии, KYC и риски."
+          },
+          {
+            "summary": "Чем P2P отличается от ботового маркетплейса?",
+            "body": "В P2P предмет часто остаётся у продавца до сделки, а в ботовой модели заранее хранится в инвентаре площадки."
+          },
+          {
+            "summary": "Что такое buy order?",
+            "body": "Заявка покупателя с максимальной ценой, которую он готов заплатить за определённый предмет. Подходящий продавец может исполнить её без создания нового листинга."
+          },
+          {
+            "summary": "Почему один и тот же скин стоит по-разному на разных сайтах?",
+            "body": "Различаются спрос, ликвидность, комиссии, валюты, регион, доступный инвентарь и особенности конкретного экземпляра."
+          },
+          {
+            "summary": "Насколько важны float и pattern?",
+            "body": "Для некоторых предметов очень важны. Они могут заметно влиять на стоимость вместе с редкими наклейками и их расположением."
+          },
+          {
+            "summary": "Что выбрать: маркетплейс или instant sell?",
+            "body": "Маркетплейс обычно даёт больше контроля над ценой, но требует ожидания покупателя. <a href=\"/csgo/instant-sell\">Instant sell</a> быстрее, но предложение обычно ниже рыночного листинга."
+          },
+          {
+            "summary": "Почему рейтинг маркетплейсов на CSGOBROKER меняется?",
+            "body": "Меняются комиссии, ликвидность, платежи, KYC, P2P-механика, поддержка и условия Steam, поэтому оценка площадки пересматривается."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Skin Marketplaces: How Trading Platforms Work and What to Compare",
+        "paragraphs": [
+          "CS2 skin marketplaces are third-party platforms where users buy and sell Counter-Strike 2 items for cash, cryptocurrency, or internal balance. Unlike the Steam Community Market, many external services allow money to be withdrawn outside the Steam ecosystem and use their own fees, payment methods, filters, and transaction models.",
+          "CSGOBROKER treats marketplaces as a separate service type alongside <a href=\"/csgo/buy-skins\">buy-skins sites</a>, <a href=\"/csgo/sell-skins\">selling platforms</a>, <a href=\"/csgo/instant-sell\">instant sell</a>, and <a href=\"/csgo/trade-skins\">skin trading</a>. One marketplace can support several workflows at once, including P2P listings, bot inventory, buy orders, auctions, and instant sale.",
+          "Choosing a marketplace requires more than comparing the displayed price of one item. The final result depends on seller and buyer fees, custody model, liquidity, the spread between bids and listings, payment fees, KYC, currency conversion, and whether an item is transferable under current Steam restrictions."
+        ]
+      },
+      "categories": {
+        "title": "Common CS2 Marketplace Models",
+        "items": [
+          {
+            "title": "P2P marketplaces",
+            "paragraphs": [
+              "The skin can remain in the seller inventory until a sale or be transferred directly through a Steam Trade Offer. This can increase available inventory, but the marketplace needs reliable transaction confirmation and protection against an item disappearing before delivery."
+            ]
+          },
+          {
+            "title": "Bot-based marketplaces",
+            "paragraphs": [
+              "Items are deposited to marketplace bots before they are listed. Buyers can receive already-custodied inventory, but selection is limited to items actually held by the service and currently transferable."
+            ]
+          },
+          {
+            "title": "Buy orders",
+            "paragraphs": [
+              "A buyer places an order showing the maximum price they are willing to pay for a defined item. A seller can fill a suitable order instead of waiting for a normal listing to sell."
+            ]
+          },
+          {
+            "title": "Auctions",
+            "paragraphs": [
+              "Some platforms allow rare or expensive items to be sold through competitive bidding. Auction duration, reserve price, fees, and cancellation rules are important."
+            ]
+          },
+          {
+            "title": "Instant sale inside a marketplace",
+            "paragraphs": [
+              "The platform or another buyer may offer immediate purchase below a normal listing price. When speed matters more than maximizing price, compare dedicated <a href=\"/csgo/instant-sell\">instant-sell sites</a> as well."
+            ]
+          },
+          {
+            "title": "Multi-game marketplaces",
+            "paragraphs": [
+              "Some services support CS2 together with Dota 2, Rust, or TF2. A shared balance can be convenient, but liquidity and fees can differ substantially between games and item categories."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Choosing a CS2 Marketplace",
+        "intro": "The price shown on an item card is only one part of the transaction. A fair comparison uses the final amount after fees and considers how quickly a user can buy, sell, and withdraw.",
+        "items": [
+          {
+            "summary": "Seller and buyer fees",
+            "body": "Some marketplaces charge only the seller, while others add a buyer fee or payment-processing fee. Compare the final purchase price and the net amount received by the seller."
+          },
+          {
+            "summary": "Liquidity and trading volume",
+            "body": "An active market usually means more listings and faster execution. For rare items, the number of real offers and recent sales matters more than the total size of the catalog."
+          },
+          {
+            "summary": "Spread and price history",
+            "body": "The gap between the best buy order and the cheapest sell listing shows the current spread. Sale history helps determine whether an asking price is realistic or far from recent transactions."
+          },
+          {
+            "summary": "Float, pattern and stickers",
+            "body": "For rare skins, the base item name is not enough. Float value, paint seed, pattern, rare stickers, and sticker placement can materially change value, so these properties should be visible before a trade."
+          },
+          {
+            "summary": "Deposits and cash withdrawals",
+            "body": "Cards, bank transfers, e-wallets, and cryptocurrency have different fees, processing times, and regional availability. Currency conversion can also alter the effective transaction cost."
+          },
+          {
+            "summary": "KYC, limits and Steam restrictions",
+            "body": "Identity checks, daily limits, trade locks, and Steam rules can affect purchase or withdrawal speed. These conditions should be checked before a large transaction."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates CS2 Skin Marketplaces",
+        "intro": "We evaluate both transaction economics and the infrastructure that lets a buyer or seller complete the deal safely.",
+        "items": [
+          {
+            "summary": "Fees and final price",
+            "body": "We consider seller fee, buyer fee, payment charges, and currency conversion so the comparison reflects actual buy or sell value rather than a headline price."
+          },
+          {
+            "summary": "Liquidity and inventory",
+            "body": "Active listings, popular items, rare variants, and real selling speed across different price ranges all matter."
+          },
+          {
+            "summary": "Pricing tools and item data",
+            "body": "Float and pattern filters, sticker data, price history, buy orders, and listing comparison help users value an item before committing."
+          },
+          {
+            "summary": "Custody model and Steam Trade Offers",
+            "body": "For P2P and bot systems, we review transfer clarity, protection against incorrect offers, trade-lock status, and transparency at each transaction step."
+          },
+          {
+            "summary": "Payments and withdrawals",
+            "body": "Supported currencies, cards, bank methods, crypto, minimums, fees, KYC, and withdrawal processing are included."
+          },
+          {
+            "summary": "Interface, support and transaction history",
+            "body": "Search, sorting, alerts, purchase and sale history, mobile usability, and support become especially important during a disputed transaction or delayed payout."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Marketplace Prices and Rankings Change",
+        "paragraphs": [
+          "CS2 skin prices move with supply, demand, game updates, tournaments, collections, and the broader market. As a result, Steam and two external marketplaces can show different prices for the same item at the same time.",
+          "Marketplaces also change fees, payout methods, KYC requirements, limits, P2P rules, and regional availability. Even when inventory is similar, a change in seller fee or withdrawal cost can materially change the final result.",
+          "If the task is already clear, use narrower CSGOBROKER rankings: <a href=\"/csgo/buy-skins\">where to buy skins</a>, <a href=\"/csgo/sell-skins\">where to sell</a>, <a href=\"/csgo/instant-sell\">where to sell instantly</a>, or <a href=\"/csgo/trade-skins\">where to trade</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Buying and Selling CS2 Skins",
+        "intro": "Many marketplace risks come not from the item price itself but from phishing, substituted Trade Offers, moving a transaction off-platform, or misunderstanding withdrawal rules.",
+        "items": [
+          {
+            "summary": "Verify the domain and Steam sign-in",
+            "body": "Phishing copies can imitate a marketplace and Steam authentication. Use the correct domain and never enter Steam credentials into a suspicious form."
+          },
+          {
+            "summary": "Check every Steam Trade Offer",
+            "body": "Before confirming, verify the sender or recipient, item name, float or pattern when relevant, and make sure no unintended skins are included."
+          },
+          {
+            "summary": "Keep P2P transactions on the marketplace",
+            "body": "Requests to move payment to Telegram, Discord, or another private channel usually remove marketplace protection and transaction history."
+          },
+          {
+            "summary": "Check withdrawal requirements in advance",
+            "body": "KYC, minimum payouts, bank fees, country restrictions, and processing times can matter after the sale, so review them before listing an expensive item."
+          },
+          {
+            "summary": "Value rare items separately",
+            "body": "For expensive knives, gloves, rare patterns, and sticker crafts, use multiple price references and inspect the exact item attributes. A generic market price may not capture the premium of a specific copy."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Skin Marketplaces",
+        "items": [
+          {
+            "summary": "What is a CS2 skin marketplace?",
+            "body": "A third-party trading platform where users buy and sell Counter-Strike 2 items for cash, crypto, or internal balance."
+          },
+          {
+            "summary": "How is an external marketplace different from the Steam Community Market?",
+            "body": "Steam proceeds generally remain in Steam Wallet, while many external marketplaces allow cash withdrawal. External sites also have their own fees, KYC, and risks."
+          },
+          {
+            "summary": "How is P2P different from a bot marketplace?",
+            "body": "In P2P, an item often remains with the seller until the sale; in a bot model, it is deposited into marketplace custody before listing."
+          },
+          {
+            "summary": "What is a buy order?",
+            "body": "A buyer instruction showing the maximum price they will pay for a defined item. A matching seller can fill it without creating a new listing."
+          },
+          {
+            "summary": "Why does the same skin have different prices on different sites?",
+            "body": "Demand, liquidity, fees, currencies, region, inventory, and attributes of the specific item can all differ."
+          },
+          {
+            "summary": "How important are float and pattern?",
+            "body": "For some skins they are extremely important and can materially affect price together with rare stickers and their placement."
+          },
+          {
+            "summary": "Should I use a marketplace or instant sell?",
+            "body": "A marketplace usually gives more price control but may require waiting for a buyer. <a href=\"/csgo/instant-sell\">Instant sell</a> is faster but usually pays below a normal listing price."
+          },
+          {
+            "summary": "Why does the CSGOBROKER marketplace ranking change?",
+            "body": "Fees, liquidity, payments, KYC, P2P mechanics, support, and Steam conditions can change, so marketplace ratings are updated."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Marketplaces de skins de CS2: cómo funcionan y qué comparar",
+        "paragraphs": [
+          "Los marketplaces de skins de CS2 son plataformas de terceros donde los usuarios compran y venden objetos de Counter-Strike 2 por dinero, criptomonedas o saldo interno. A diferencia del Steam Community Market, muchos servicios externos permiten retirar dinero fuera de Steam y aplican sus propias comisiones, métodos de pago, filtros y modelos de transacción.",
+          "CSGOBROKER trata los marketplaces como un tipo de servicio distinto junto a <a href=\"/csgo/buy-skins\">sitios para comprar skins</a>, <a href=\"/csgo/sell-skins\">vender skins</a>, <a href=\"/csgo/instant-sell\">instant sell</a> y <a href=\"/csgo/trade-skins\">trade de skins</a>. Una misma plataforma puede ofrecer listados P2P, inventario de bots, buy orders, subastas y venta inmediata.",
+          "Para elegir marketplace no basta con comparar el precio visible de un objeto. El resultado final depende de comisiones de comprador y vendedor, modelo de custodia, liquidez, spread entre órdenes y listados, comisiones de pago, KYC, conversión de moneda y restricciones de trade de Steam."
+        ]
+      },
+      "categories": {
+        "title": "Modelos habituales de marketplaces de CS2",
+        "items": [
+          {
+            "title": "Marketplaces P2P",
+            "paragraphs": [
+              "La skin puede permanecer en el inventario del vendedor hasta la venta o transferirse directamente mediante Steam Trade Offer. Esto amplía la oferta, pero exige confirmación fiable y control de disponibilidad."
+            ]
+          },
+          {
+            "title": "Marketplaces con bots",
+            "paragraphs": [
+              "Los objetos se depositan previamente en bots de la plataforma. El comprador recibe inventario ya custodiado, aunque la selección se limita a lo que el servicio tiene y puede transferir."
+            ]
+          },
+          {
+            "title": "Buy orders",
+            "paragraphs": [
+              "El comprador publica el precio máximo que pagará por un objeto definido. El vendedor puede ejecutar una orden adecuada sin esperar a que se venda un listing propio."
+            ]
+          },
+          {
+            "title": "Subastas",
+            "paragraphs": [
+              "Algunas plataformas venden objetos raros o caros mediante pujas competitivas. Importan duración, precio de reserva, comisión y reglas de cancelación."
+            ]
+          },
+          {
+            "title": "Venta instantánea dentro del marketplace",
+            "paragraphs": [
+              "La plataforma u otro comprador puede ofrecer compra inmediata por debajo del precio normal de listing. Si la velocidad es prioritaria, compara también <a href=\"/csgo/instant-sell\">sitios de instant sell</a>."
+            ]
+          },
+          {
+            "title": "Marketplaces multijuego",
+            "paragraphs": [
+              "Algunos servicios trabajan con CS2, Dota 2, Rust o TF2. El saldo compartido puede ser útil, pero liquidez y comisiones pueden variar mucho entre juegos."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de elegir un marketplace de CS2",
+        "intro": "El precio de la ficha es solo una parte. La comparación correcta usa el importe final después de comisiones y la velocidad real para comprar, vender y retirar.",
+        "items": [
+          {
+            "summary": "Comisiones de comprador y vendedor",
+            "body": "Algunos sitios cobran solo al vendedor; otros añaden buyer fee o comisión de pago. Compara el precio final de compra y el neto que recibe el vendedor."
+          },
+          {
+            "summary": "Liquidez y volumen",
+            "body": "Un mercado activo suele ofrecer más listings y ejecución más rápida. Para objetos raros, cuentan más las ofertas reales y ventas recientes que el tamaño total del catálogo."
+          },
+          {
+            "summary": "Spread e historial de precios",
+            "body": "La diferencia entre el mejor buy order y el listing más barato muestra el spread. El historial de ventas ayuda a saber si un precio pedido es realista."
+          },
+          {
+            "summary": "Float, pattern y stickers",
+            "body": "En skins raras el nombre base no basta. Float value, paint seed, pattern, stickers raros y su posición pueden cambiar mucho el valor y deberían verse antes de comprar."
+          },
+          {
+            "summary": "Depósitos y retiros de dinero",
+            "body": "Tarjetas, transferencias, e-wallets y cripto tienen comisiones, tiempos y disponibilidad regional distintos. La conversión de moneda también influye."
+          },
+          {
+            "summary": "KYC, límites y restricciones de Steam",
+            "body": "Verificación, límites diarios, trade lock y reglas de Steam pueden afectar la velocidad. Conviene revisarlos antes de una operación grande."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa marketplaces de skins CS2",
+        "intro": "Evaluamos tanto la economía de la operación como la infraestructura necesaria para completar la transacción con seguridad.",
+        "items": [
+          {
+            "summary": "Comisiones y precio final",
+            "body": "Consideramos seller fee, buyer fee, costes de pago y conversión para comparar el valor real, no solo el precio anunciado."
+          },
+          {
+            "summary": "Liquidez e inventario",
+            "body": "Importan listings activos, objetos populares, variantes raras y velocidad de venta real en distintos rangos de precio."
+          },
+          {
+            "summary": "Datos y herramientas de precio",
+            "body": "Filtros de float y pattern, stickers, historial, buy orders y comparación de ofertas ayudan a valorar el objeto."
+          },
+          {
+            "summary": "Custodia y Steam Trade Offer",
+            "body": "En P2P y bots revisamos claridad de transferencia, protección contra ofertas incorrectas, trade lock y transparencia de cada paso."
+          },
+          {
+            "summary": "Pagos y retiros",
+            "body": "Monedas, tarjetas, transferencias, cripto, mínimos, comisiones, KYC y tiempo de retiro forman parte de la evaluación."
+          },
+          {
+            "summary": "Interfaz, soporte e historial",
+            "body": "Búsqueda, filtros, alertas, historial de compras y ventas, móvil y soporte son importantes ante disputas o retrasos."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian los precios y el ranking de marketplaces",
+        "paragraphs": [
+          "Los precios de skins CS2 cambian con oferta, demanda, actualizaciones, torneos, colecciones y el mercado general. Por eso Steam y dos marketplaces externos pueden mostrar precios distintos al mismo tiempo.",
+          "Las plataformas también cambian comisiones, métodos de pago, KYC, límites, reglas P2P y regiones. Incluso con inventario similar, un cambio de seller fee o coste de retiro puede alterar el resultado final.",
+          "Si ya sabes qué necesitas, usa rankings más específicos de CSGOBROKER: <a href=\"/csgo/buy-skins\">comprar skins</a>, <a href=\"/csgo/sell-skins\">vender</a>, <a href=\"/csgo/instant-sell\">vender al instante</a> o <a href=\"/csgo/trade-skins\">intercambiar</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al comprar y vender skins CS2",
+        "intro": "Muchos riesgos de marketplaces están relacionados con phishing, Trade Offers sustituidos, operaciones fuera de la plataforma o desconocimiento de las reglas de retiro.",
+        "items": [
+          {
+            "summary": "Comprueba dominio y Steam",
+            "body": "Las copias phishing pueden imitar marketplace y login. Usa el dominio correcto y no introduzcas credenciales en formularios sospechosos."
+          },
+          {
+            "summary": "Revisa cada Steam Trade Offer",
+            "body": "Comprueba remitente o receptor, objeto, float/pattern cuando importe y que no haya skins adicionales no deseadas."
+          },
+          {
+            "summary": "Mantén las operaciones P2P dentro de la plataforma",
+            "body": "Mover el pago a Telegram, Discord u otro canal privado suele eliminar la protección y el historial del marketplace."
+          },
+          {
+            "summary": "Comprueba el retiro antes",
+            "body": "KYC, mínimos, comisiones bancarias, restricciones de país y tiempos pueden importar después de vender; revísalos antes de listar un objeto caro."
+          },
+          {
+            "summary": "Valora los objetos raros por separado",
+            "body": "Para cuchillos, guantes, patterns raros y sticker crafts, usa varias referencias y revisa atributos exactos. Un precio genérico puede no reflejar la prima."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre marketplaces de skins CS2",
+        "items": [
+          {
+            "summary": "¿Qué es un marketplace de skins CS2?",
+            "body": "Una plataforma externa donde se compran y venden objetos de Counter-Strike 2 por dinero, cripto o saldo interno."
+          },
+          {
+            "summary": "¿En qué se diferencia del Steam Community Market?",
+            "body": "En Steam el dinero suele permanecer en Steam Wallet; muchos marketplaces externos permiten retirarlo, pero tienen sus propias comisiones, KYC y riesgos."
+          },
+          {
+            "summary": "¿Qué diferencia hay entre P2P y bots?",
+            "body": "En P2P el objeto suele quedarse con el vendedor hasta la venta; con bots se deposita antes en custodia de la plataforma."
+          },
+          {
+            "summary": "¿Qué es un buy order?",
+            "body": "Una orden del comprador con el precio máximo que pagará por un objeto. Un vendedor compatible puede ejecutarla directamente."
+          },
+          {
+            "summary": "¿Por qué una skin cuesta distinto en diferentes sitios?",
+            "body": "Cambian demanda, liquidez, comisiones, moneda, región, inventario y atributos del ejemplar."
+          },
+          {
+            "summary": "¿Qué importancia tienen float y pattern?",
+            "body": "En algunas skins son decisivos y pueden cambiar mucho el precio junto con stickers raros y su posición."
+          },
+          {
+            "summary": "¿Marketplace o instant sell?",
+            "body": "Marketplace da más control de precio pero puede requerir esperar comprador. <a href=\"/csgo/instant-sell\">Instant sell</a> es más rápido pero suele pagar menos."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian comisiones, liquidez, pagos, KYC, P2P, soporte y condiciones de Steam."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Marketplaces de skins CS2: como funcionam e o que comparar",
+        "paragraphs": [
+          "Marketplaces de skins CS2 são plataformas de terceiros onde usuários compram e vendem itens de Counter-Strike 2 por dinheiro, criptomoeda ou saldo interno. Diferente do Steam Community Market, muitos serviços externos permitem sacar dinheiro para fora do ecossistema Steam e usam suas próprias taxas, métodos de pagamento, filtros e modelos de transação.",
+          "A CSGOBROKER trata marketplaces como um tipo de serviço separado junto de <a href=\"/csgo/buy-skins\">sites para comprar skins</a>, <a href=\"/csgo/sell-skins\">vender skins</a>, <a href=\"/csgo/instant-sell\">instant sell</a> e <a href=\"/csgo/trade-skins\">trocar skins</a>. Uma mesma plataforma pode oferecer listings P2P, inventário de bots, buy orders, leilões e venda imediata.",
+          "Escolher marketplace exige mais do que comparar o preço exibido de um item. O resultado final depende de taxas do comprador e vendedor, custódia, liquidez, spread entre ordens e listings, custos de pagamento, KYC, conversão de moeda e restrições de trade da Steam."
+        ]
+      },
+      "categories": {
+        "title": "Modelos comuns de marketplaces de CS2",
+        "items": [
+          {
+            "title": "Marketplaces P2P",
+            "paragraphs": [
+              "A skin pode ficar no inventário do vendedor até a venda ou ser transferida diretamente por Steam Trade Offer. Isso amplia a oferta, mas exige confirmação confiável e controle de disponibilidade."
+            ]
+          },
+          {
+            "title": "Marketplaces com bots",
+            "paragraphs": [
+              "Itens são depositados previamente em bots da plataforma. O comprador recebe inventário já custodiado, mas a seleção se limita ao que o serviço realmente possui e pode transferir."
+            ]
+          },
+          {
+            "title": "Buy orders",
+            "paragraphs": [
+              "O comprador publica o preço máximo que aceita pagar por um item definido. Um vendedor pode preencher uma ordem adequada em vez de esperar a venda de um listing próprio."
+            ]
+          },
+          {
+            "title": "Leilões",
+            "paragraphs": [
+              "Algumas plataformas vendem itens raros ou caros por lances competitivos. Duração, preço de reserva, taxa e regras de cancelamento são importantes."
+            ]
+          },
+          {
+            "title": "Venda instantânea dentro do marketplace",
+            "paragraphs": [
+              "A plataforma ou outro comprador pode oferecer compra imediata abaixo do preço normal de listing. Se velocidade for prioridade, compare também <a href=\"/csgo/instant-sell\">sites de instant sell</a>."
+            ]
+          },
+          {
+            "title": "Marketplaces multijogo",
+            "paragraphs": [
+              "Alguns serviços trabalham com CS2, Dota 2, Rust ou TF2. Saldo compartilhado pode ajudar, mas liquidez e taxas variam muito entre jogos."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de escolher um marketplace de CS2",
+        "intro": "O preço mostrado no item é só uma parte. A comparação correta considera o valor final após taxas e a velocidade real para comprar, vender e sacar.",
+        "items": [
+          {
+            "summary": "Taxas do comprador e vendedor",
+            "body": "Alguns sites cobram só do vendedor; outros adicionam buyer fee ou taxa de pagamento. Compare o preço final de compra e o valor líquido recebido pelo vendedor."
+          },
+          {
+            "summary": "Liquidez e volume",
+            "body": "Mercado ativo normalmente tem mais listings e execução rápida. Para itens raros, ofertas reais e vendas recentes importam mais que o tamanho total do catálogo."
+          },
+          {
+            "summary": "Spread e histórico de preços",
+            "body": "A diferença entre melhor buy order e listing mais barato mostra o spread atual. Histórico ajuda a saber se o preço pedido está próximo das vendas recentes."
+          },
+          {
+            "summary": "Float, pattern e stickers",
+            "body": "Em skins raras o nome base não basta. Float value, paint seed, pattern, stickers raros e posição podem mudar bastante o preço e devem aparecer antes da compra."
+          },
+          {
+            "summary": "Depósitos e saques",
+            "body": "Cartões, transferências, e-wallets e cripto têm taxas, tempos e disponibilidade regional diferentes. Conversão de moeda também altera o custo."
+          },
+          {
+            "summary": "KYC, limites e restrições Steam",
+            "body": "Verificação, limites diários, trade lock e regras Steam podem afetar velocidade da compra ou saque. Confira antes de uma operação grande."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia marketplaces de skins CS2",
+        "intro": "Avaliamos a economia da transação e a infraestrutura necessária para concluir a operação com segurança.",
+        "items": [
+          {
+            "summary": "Taxas e preço final",
+            "body": "Consideramos seller fee, buyer fee, custos de pagamento e conversão para comparar o valor real, não apenas o preço anunciado."
+          },
+          {
+            "summary": "Liquidez e inventário",
+            "body": "Listings ativos, itens populares, variantes raras e velocidade real de venda em diferentes faixas contam."
+          },
+          {
+            "summary": "Dados e ferramentas de preço",
+            "body": "Filtros de float/pattern, stickers, histórico, buy orders e comparação de ofertas ajudam a avaliar o item."
+          },
+          {
+            "summary": "Custódia e Steam Trade Offer",
+            "body": "Em P2P e bots, analisamos clareza da transferência, proteção contra oferta incorreta, trade lock e transparência das etapas."
+          },
+          {
+            "summary": "Pagamentos e saques",
+            "body": "Moedas, cartões, transferências, cripto, mínimos, taxas, KYC e tempo de saque entram na avaliação."
+          },
+          {
+            "summary": "Interface, suporte e histórico",
+            "body": "Busca, filtros, alertas, histórico de compras/vendas, mobile e suporte são importantes em disputa ou atraso."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que preços e ranking de marketplaces mudam",
+        "paragraphs": [
+          "Preços de skins CS2 mudam com oferta, demanda, updates, torneios, coleções e o mercado geral. Por isso Steam e dois marketplaces externos podem mostrar preços diferentes ao mesmo tempo.",
+          "As plataformas também alteram taxas, payouts, KYC, limites, regras P2P e regiões. Mesmo com inventário parecido, mudança de seller fee ou custo de saque pode alterar o resultado final.",
+          "Se o objetivo já está definido, use rankings específicos da CSGOBROKER: <a href=\"/csgo/buy-skins\">comprar skins</a>, <a href=\"/csgo/sell-skins\">vender</a>, <a href=\"/csgo/instant-sell\">vender instantaneamente</a> ou <a href=\"/csgo/trade-skins\">trocar</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao comprar e vender skins CS2",
+        "intro": "Muitos riscos de marketplace vêm de phishing, Trade Offers trocados, negociação fora da plataforma ou desconhecimento das regras de saque.",
+        "items": [
+          {
+            "summary": "Confira domínio e Steam",
+            "body": "Cópias de phishing podem imitar marketplace e login. Use o domínio correto e não informe credenciais em formulário suspeito."
+          },
+          {
+            "summary": "Revise cada Steam Trade Offer",
+            "body": "Confira remetente ou destinatário, item, float/pattern quando necessário e se não há skins extras na oferta."
+          },
+          {
+            "summary": "Mantenha P2P dentro da plataforma",
+            "body": "Mover pagamento para Telegram, Discord ou outro canal privado normalmente remove proteção e histórico do marketplace."
+          },
+          {
+            "summary": "Confira saque antes",
+            "body": "KYC, mínimos, taxas bancárias, restrições de país e prazo podem importar depois da venda; veja isso antes de listar item caro."
+          },
+          {
+            "summary": "Avalie itens raros separadamente",
+            "body": "Para facas, luvas, patterns raros e sticker crafts, use várias referências e confira atributos exatos. Preço genérico pode não refletir o prêmio do exemplar."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre marketplaces de skins CS2",
+        "items": [
+          {
+            "summary": "O que é um marketplace de skins CS2?",
+            "body": "Plataforma externa onde usuários compram e vendem itens de Counter-Strike 2 por dinheiro, cripto ou saldo interno."
+          },
+          {
+            "summary": "Qual a diferença para Steam Community Market?",
+            "body": "Na Steam o valor normalmente fica no Steam Wallet; marketplaces externos podem permitir saque, mas têm taxas, KYC e riscos próprios."
+          },
+          {
+            "summary": "P2P ou bot: qual a diferença?",
+            "body": "No P2P o item geralmente fica com o vendedor até a venda; no modelo bot é depositado antes na custódia da plataforma."
+          },
+          {
+            "summary": "O que é buy order?",
+            "body": "Ordem do comprador com o preço máximo que aceita pagar. Um vendedor compatível pode executá-la diretamente."
+          },
+          {
+            "summary": "Por que a mesma skin custa diferente?",
+            "body": "Demanda, liquidez, taxas, moeda, região, inventário e atributos do item variam."
+          },
+          {
+            "summary": "Float e pattern são importantes?",
+            "body": "Para algumas skins são decisivos e podem alterar muito o preço junto com stickers raros e posição."
+          },
+          {
+            "summary": "Marketplace ou instant sell?",
+            "body": "Marketplace dá mais controle de preço, mas pode exigir espera. <a href=\"/csgo/instant-sell\">Instant sell</a> é rápido, normalmente por valor menor."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Taxas, liquidez, pagamentos, KYC, P2P, suporte e condições Steam mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Skin Marketplaces: Pazar Yerleri Nasıl Çalışır ve Neleri Karşılaştırmalı?",
+        "paragraphs": [
+          "CS2 skin marketplaces, kullanıcıların Counter-Strike 2 itemlarını para, kripto veya iç bakiye karşılığında alıp sattığı üçüncü taraf platformlardır. Steam Community Marketten farklı olarak birçok external service paranın Steam dışına çekilmesine izin verir ve kendi fee, payment method, filter ve transaction modelini kullanır.",
+          "CSGOBROKER marketplaces kategorisini <a href=\"/csgo/buy-skins\">skin satın alma</a>, <a href=\"/csgo/sell-skins\">skin satma</a>, <a href=\"/csgo/instant-sell\">instant sell</a> ve <a href=\"/csgo/trade-skins\">skin trade</a> sayfalarından ayrı değerlendirir. Tek platform P2P listings, bot inventory, buy orders, auctions ve instant sale seçeneklerini birlikte sunabilir.",
+          "Marketplace seçerken yalnız bir itemın görünen fiyatına bakmak yeterli değildir. Sonuç seller/buyer fees, custody model, liquidity, buy order ile listing arasındaki spread, payment fees, KYC, currency conversion ve Steam trade restrictions durumuna bağlıdır."
+        ]
+      },
+      "categories": {
+        "title": "CS2 Marketplaces Modelleri",
+        "items": [
+          {
+            "title": "P2P marketplaces",
+            "paragraphs": [
+              "Skin satış anına kadar seller inventory içinde kalabilir veya Steam Trade Offer ile doğrudan aktarılır. Bu model inventoryyi genişletebilir fakat işlem onayı ve item availability kontrolü güvenilir olmalıdır."
+            ]
+          },
+          {
+            "title": "Bot marketplaces",
+            "paragraphs": [
+              "Itemlar listing öncesi platform botlarına deposit edilir. Buyer hazır inventoryden item alabilir, ancak seçim sitenin gerçekten tuttuğu ve transfer edebildiği itemlarla sınırlıdır."
+            ]
+          },
+          {
+            "title": "Buy orders",
+            "paragraphs": [
+              "Buyer belirli item için ödemeye razı olduğu maksimum fiyatı önceden girer. Seller normal listing beklemek yerine uygun orderı doğrudan doldurabilir."
+            ]
+          },
+          {
+            "title": "Auctions",
+            "paragraphs": [
+              "Bazı platformlar nadir veya pahalı itemları rekabetçi teklifler ile satar. Auction süresi, reserve price, fee ve cancellation rules önemlidir."
+            ]
+          },
+          {
+            "title": "Marketplace içinde instant sale",
+            "paragraphs": [
+              "Platform veya başka bir buyer normal listing fiyatından daha düşük anlık teklif verebilir. Hız fiyatı maksimize etmekten önemliyse <a href=\"/csgo/instant-sell\">instant sell sitelerini</a> de karşılaştırın."
+            ]
+          },
+          {
+            "title": "Multi-game marketplaces",
+            "paragraphs": [
+              "Bazı servisler CS2 yanında Dota 2, Rust veya TF2 destekler. Ortak balance kullanışlıdır fakat liquidity ve fees oyunlar arasında ciddi değişebilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "CS2 Marketplace Seçmeden Önce Neleri Karşılaştırmalı?",
+        "intro": "Item kartındaki fiyat işlemin yalnız bir parçasıdır. Gerçek karşılaştırma tüm fees sonrası final tutarı ve buy/sell/withdraw hızını dikkate alır.",
+        "items": [
+          {
+            "summary": "Seller ve buyer fees",
+            "body": "Bazı siteler yalnız sellerdan fee alır, bazıları buyer fee veya payment processing ekler. Final purchase price ve sellerın aldığı net tutarı karşılaştırın."
+          },
+          {
+            "summary": "Liquidity ve trading volume",
+            "body": "Aktif market genelde daha fazla listing ve daha hızlı execution sağlar. Nadir itemlarda gerçek offers ve recent sales toplam katalog büyüklüğünden daha önemlidir."
+          },
+          {
+            "summary": "Spread ve price history",
+            "body": "En iyi buy order ile en ucuz sell listing arasındaki fark current spreadi gösterir. Sales history istenen fiyatın recent transactions ile uyumunu anlamaya yardımcı olur."
+          },
+          {
+            "summary": "Float, pattern ve stickers",
+            "body": "Nadir skinlerde base name yeterli değildir. Float value, paint seed, pattern, rare stickers ve placement fiyatı ciddi değiştirebilir; işlem öncesi görünmelidir."
+          },
+          {
+            "summary": "Deposit ve para çekme",
+            "body": "Kart, bank transfer, e-wallet ve kripto farklı fees, süre ve bölgesel availability sunar. Currency conversion da gerçek maliyeti değiştirir."
+          },
+          {
+            "summary": "KYC, limit ve Steam restrictions",
+            "body": "Identity verification, daily limits, trade lock ve Steam rules alım veya çekim hızını etkileyebilir. Büyük işlem öncesi kontrol edin."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Skin Marketplaces Sitelerini Nasıl Değerlendirir?",
+        "intro": "Hem transaction economics hem de işlemi güvenli tamamlamayı sağlayan altyapıyı değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Fees ve final price",
+            "body": "Seller fee, buyer fee, payment charges ve currency conversion dahil edilerek reklam fiyatı yerine gerçek buy/sell value karşılaştırılır."
+          },
+          {
+            "summary": "Liquidity ve inventory",
+            "body": "Aktif listings, popüler itemlar, nadir variants ve farklı fiyat aralıklarında gerçek selling speed önemlidir."
+          },
+          {
+            "summary": "Pricing tools ve item data",
+            "body": "Float/pattern filters, sticker data, price history, buy orders ve offer comparison itemı değerlemeye yardımcı olur."
+          },
+          {
+            "summary": "Custody ve Steam Trade Offer",
+            "body": "P2P ve bot sistemlerinde transfer açıklığı, yanlış offer koruması, trade-lock status ve işlem adımlarının şeffaflığı değerlendirilir."
+          },
+          {
+            "summary": "Payments ve withdrawals",
+            "body": "Currencies, cards, bank methods, crypto, minimums, fees, KYC ve withdrawal processing dikkate alınır."
+          },
+          {
+            "summary": "Interface, support ve history",
+            "body": "Search, sorting, alerts, purchase/sale history, mobile ve support disputed transaction veya delayed payout sırasında önemlidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Marketplace Fiyatları ve Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "CS2 skin fiyatları supply, demand, game updates, tournaments, collections ve genel market durumuyla değişir. Bu yüzden Steam ve iki external marketplace aynı item için aynı anda farklı fiyat gösterebilir.",
+          "Platformlar da fees, payout methods, KYC, limits, P2P rules ve regional availability değiştirir. Inventory benzer kalsa bile seller fee veya withdrawal cost değişimi final sonucu ciddi etkileyebilir.",
+          "Amacınız belliyse daha özel CSGOBROKER sıralamalarını kullanın: <a href=\"/csgo/buy-skins\">skin satın alma</a>, <a href=\"/csgo/sell-skins\">skin satma</a>, <a href=\"/csgo/instant-sell\">anında satma</a> veya <a href=\"/csgo/trade-skins\">trade</a>."
+        ]
+      },
+      "safety": {
+        "title": "CS2 Skin Alım Satımında Güvenlik",
+        "intro": "Marketplace risklerinin çoğu item fiyatından değil phishing, değiştirilmiş Trade Offer, işlemi platform dışına taşıma veya withdrawal rules yanlış anlaşılmasından gelir.",
+        "items": [
+          {
+            "summary": "Domain ve Steam girişini kontrol edin",
+            "body": "Phishing kopyaları marketplace ve Steam authentication ekranını taklit edebilir. Doğru domaini kullanın ve şüpheli formda Steam bilgisi girmeyin."
+          },
+          {
+            "summary": "Her Steam Trade Offerı kontrol edin",
+            "body": "Onaydan önce sender/recipient, item name, gerektiğinde float/pattern ve offer içinde istemediğiniz ekstra skin olmadığını kontrol edin."
+          },
+          {
+            "summary": "P2P işlemini marketplace içinde tutun",
+            "body": "Ödemeyi Telegram, Discord veya özel kanala taşıma talebi genellikle marketplace protection ve transaction history kaybına yol açar."
+          },
+          {
+            "summary": "Withdrawal şartlarını önceden kontrol edin",
+            "body": "KYC, minimum payout, bank fees, country restrictions ve processing time satıştan sonra önemli hale gelir; pahalı item listing öncesi okuyun."
+          },
+          {
+            "summary": "Nadir itemları ayrı değerleyin",
+            "body": "Pahalı knife, gloves, rare patterns ve sticker crafts için birkaç price source kullanın ve exact attributes inceleyin. Generic market price belirli kopyanın premiumunu yansıtmayabilir."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Skin Marketplaces Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "CS2 skin marketplace nedir?",
+            "body": "Kullanıcıların Counter-Strike 2 itemlarını para, kripto veya iç bakiye ile alıp sattığı üçüncü taraf platformdur."
+          },
+          {
+            "summary": "Steam Community Marketten farkı nedir?",
+            "body": "Steam satış geliri genellikle Steam Walletta kalır; external marketplaces cash withdrawal sunabilir fakat kendi fees, KYC ve riskleri vardır."
+          },
+          {
+            "summary": "P2P ve bot marketplace farkı nedir?",
+            "body": "P2P modelinde item genelde satışa kadar sellerda kalır; bot modelinde listing öncesi platform custody içine deposit edilir."
+          },
+          {
+            "summary": "Buy order nedir?",
+            "body": "Buyerın belirli item için ödemeye hazır olduğu maksimum fiyatı gösteren orderdır. Uygun seller doğrudan doldurabilir."
+          },
+          {
+            "summary": "Aynı skin farklı sitelerde neden farklı fiyatlı?",
+            "body": "Demand, liquidity, fees, currencies, region, inventory ve item attributes farklı olabilir."
+          },
+          {
+            "summary": "Float ve pattern ne kadar önemli?",
+            "body": "Bazı skinlerde çok önemlidir; rare stickers ve placement ile birlikte fiyatı ciddi etkileyebilir."
+          },
+          {
+            "summary": "Marketplace mi instant sell mi?",
+            "body": "Marketplace daha fazla price control verir ama buyer beklemek gerekebilir. <a href=\"/csgo/instant-sell\">Instant sell</a> hızlıdır fakat genelde listing fiyatından düşük ödeme yapar."
+          },
+          {
+            "summary": "CSGOBROKER marketplace sıralaması neden değişir?",
+            "body": "Fees, liquidity, payments, KYC, P2P mechanics, support ve Steam koşulları değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Skin Marketplaces: Trading Platforms कैसे काम करती हैं और क्या Compare करें",
+        "paragraphs": [
+          "CS2 skin marketplaces third-party platforms हैं जहाँ users Counter-Strike 2 items को cash, cryptocurrency या internal balance में buy और sell करते हैं। Steam Community Market के विपरीत कई external services money को Steam ecosystem के बाहर withdraw करने देती हैं और अपनी fees, payment methods, filters और transaction models use करती हैं।",
+          "CSGOBROKER marketplaces को <a href=\"/csgo/buy-skins\">buy skins</a>, <a href=\"/csgo/sell-skins\">sell skins</a>, <a href=\"/csgo/instant-sell\">instant sell</a> और <a href=\"/csgo/trade-skins\">skin trading</a> से अलग service type मानता है। एक marketplace P2P listings, bot inventory, buy orders, auctions और instant sale एक साथ दे सकती है।",
+          "Marketplace चुनते समय सिर्फ item का displayed price compare करना पर्याप्त नहीं है। Final result seller/buyer fees, custody model, liquidity, buy orders और listings के बीच spread, payment fees, KYC, currency conversion और Steam trade restrictions पर depend करता है।"
+        ]
+      },
+      "categories": {
+        "title": "Common CS2 Marketplace Models",
+        "items": [
+          {
+            "title": "P2P marketplaces",
+            "paragraphs": [
+              "Skin sale तक seller inventory में रह सकती है या Steam Trade Offer से directly transfer हो सकती है। इससे inventory बढ़ सकती है, लेकिन transaction confirmation और item availability reliable होना चाहिए।"
+            ]
+          },
+          {
+            "title": "Bot-based marketplaces",
+            "paragraphs": [
+              "Items listing से पहले platform bots में deposit होते हैं। Buyer already-custodied inventory से लेता है, लेकिन selection उसी inventory तक सीमित है जिसे service hold और transfer कर सकती है।"
+            ]
+          },
+          {
+            "title": "Buy orders",
+            "paragraphs": [
+              "Buyer defined item के लिए maximum price पहले set करता है। Seller normal listing का इंतजार करने के बजाय suitable order fill कर सकता है।"
+            ]
+          },
+          {
+            "title": "Auctions",
+            "paragraphs": [
+              "कुछ platforms rare या expensive items को competitive bidding से sell करती हैं। Duration, reserve price, fee और cancellation rules महत्वपूर्ण हैं।"
+            ]
+          },
+          {
+            "title": "Marketplace के अंदर instant sale",
+            "paragraphs": [
+              "Platform या दूसरा buyer normal listing price से कम immediate offer दे सकता है। Speed ज्यादा महत्वपूर्ण हो तो dedicated <a href=\"/csgo/instant-sell\">instant-sell sites</a> भी compare करें।"
+            ]
+          },
+          {
+            "title": "Multi-game marketplaces",
+            "paragraphs": [
+              "कुछ services CS2 के साथ Dota 2, Rust या TF2 support करती हैं। Shared balance convenient हो सकती है, लेकिन liquidity और fees हर game में अलग हो सकती हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "CS2 Marketplace चुनने से पहले क्या Compare करें",
+        "intro": "Item card का price transaction का सिर्फ एक हिस्सा है। सही comparison fees के बाद final amount और buy, sell तथा withdrawal speed को देखती है।",
+        "items": [
+          {
+            "summary": "Seller और buyer fees",
+            "body": "कुछ marketplaces सिर्फ seller से charge करती हैं, अन्य buyer fee या payment-processing fee जोड़ती हैं। Final purchase price और seller का net amount compare करें।"
+          },
+          {
+            "summary": "Liquidity और trading volume",
+            "body": "Active market आम तौर पर ज्यादा listings और faster execution देती है। Rare items के लिए real offers और recent sales total catalog size से ज्यादा useful हैं।"
+          },
+          {
+            "summary": "Spread और price history",
+            "body": "Best buy order और cheapest sell listing का gap current spread दिखाता है। Sales history asking price को recent transactions से compare करने में मदद करती है।"
+          },
+          {
+            "summary": "Float, pattern और stickers",
+            "body": "Rare skins में base name पर्याप्त नहीं है। Float value, paint seed, pattern, rare stickers और placement value को काफी बदल सकते हैं और trade से पहले visible होने चाहिए।"
+          },
+          {
+            "summary": "Deposits और cash withdrawals",
+            "body": "Cards, bank transfers, e-wallets और crypto की fees, processing times और regional availability अलग होती है। Currency conversion भी effective cost बदलती है।"
+          },
+          {
+            "summary": "KYC, limits और Steam restrictions",
+            "body": "Identity checks, daily limits, trade locks और Steam rules purchase या withdrawal speed को प्रभावित कर सकते हैं। Large transaction से पहले check करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER CS2 Skin Marketplaces को कैसे Rate करता है",
+        "intro": "हम transaction economics और deal को safely complete करने वाली infrastructure दोनों evaluate करते हैं।",
+        "items": [
+          {
+            "summary": "Fees और final price",
+            "body": "Seller fee, buyer fee, payment charges और currency conversion को शामिल करके actual buy/sell value compare की जाती है, headline price नहीं।"
+          },
+          {
+            "summary": "Liquidity और inventory",
+            "body": "Active listings, popular items, rare variants और different price ranges में real selling speed महत्वपूर्ण हैं।"
+          },
+          {
+            "summary": "Pricing tools और item data",
+            "body": "Float/pattern filters, sticker data, price history, buy orders और listing comparison item value समझने में मदद करते हैं।"
+          },
+          {
+            "summary": "Custody model और Steam Trade Offers",
+            "body": "P2P और bot systems में transfer clarity, incorrect offer protection, trade-lock status और हर transaction step की transparency देखी जाती है।"
+          },
+          {
+            "summary": "Payments और withdrawals",
+            "body": "Supported currencies, cards, bank methods, crypto, minimums, fees, KYC और withdrawal processing शामिल हैं।"
+          },
+          {
+            "summary": "Interface, support और history",
+            "body": "Search, sorting, alerts, purchase/sale history, mobile usability और support dispute या delayed payout में महत्वपूर्ण होते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Marketplace Prices और Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "CS2 skin prices supply, demand, game updates, tournaments, collections और broader market के साथ बदलती हैं। इसलिए Steam और दो external marketplaces same item के लिए same time पर अलग prices दिखा सकती हैं।",
+          "Marketplaces fees, payout methods, KYC, limits, P2P rules और regional availability भी बदलती हैं। Inventory similar रहने पर भी seller fee या withdrawal cost change final result को काफी बदल सकता है।",
+          "अगर task clear है तो specific CSGOBROKER rankings देखें: <a href=\"/csgo/buy-skins\">buy skins</a>, <a href=\"/csgo/sell-skins\">sell skins</a>, <a href=\"/csgo/instant-sell\">instant sell</a> या <a href=\"/csgo/trade-skins\">trade skins</a>।"
+        ]
+      },
+      "safety": {
+        "title": "CS2 Skins Buy/Sell करते समय Safety",
+        "intro": "Marketplace risks अक्सर item price से नहीं बल्कि phishing, substituted Trade Offers, off-platform deals और withdrawal rules गलत समझने से आते हैं।",
+        "items": [
+          {
+            "summary": "Domain और Steam sign-in verify करें",
+            "body": "Phishing copies marketplace और Steam authentication की नकल कर सकती हैं। सही domain use करें और suspicious form में Steam credentials न दें।"
+          },
+          {
+            "summary": "हर Steam Trade Offer check करें",
+            "body": "Confirm करने से पहले sender/recipient, item name, जरूरत होने पर float/pattern और unintended extra skins verify करें।"
+          },
+          {
+            "summary": "P2P transaction marketplace के अंदर रखें",
+            "body": "Payment को Telegram, Discord या private channel में ले जाने से marketplace protection और transaction history खत्म हो सकती है।"
+          },
+          {
+            "summary": "Withdrawal requirements पहले check करें",
+            "body": "KYC, minimum payouts, bank fees, country restrictions और processing times sale के बाद important हो सकते हैं; expensive item list करने से पहले review करें।"
+          },
+          {
+            "summary": "Rare items की अलग valuation करें",
+            "body": "Expensive knives, gloves, rare patterns और sticker crafts के लिए multiple price references use करें और exact attributes देखें। Generic market price specific copy का premium capture नहीं कर सकती।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Skin Marketplaces के बारे में FAQ",
+        "items": [
+          {
+            "summary": "CS2 skin marketplace क्या है?",
+            "body": "Third-party platform जहाँ users Counter-Strike 2 items को cash, crypto या internal balance में buy और sell करते हैं।"
+          },
+          {
+            "summary": "Steam Community Market से क्या फर्क है?",
+            "body": "Steam proceeds आम तौर पर Steam Wallet में रहती हैं; external marketplaces cash withdrawal दे सकती हैं, लेकिन अपनी fees, KYC और risks रखती हैं।"
+          },
+          {
+            "summary": "P2P और bot marketplace में फर्क क्या है?",
+            "body": "P2P में item sale तक seller के पास रह सकती है; bot model में listing से पहले platform custody में deposit होती है।"
+          },
+          {
+            "summary": "Buy order क्या है?",
+            "body": "Buyer instruction जिसमें defined item के लिए maximum price set होता है। Matching seller इसे directly fill कर सकता है।"
+          },
+          {
+            "summary": "Same skin अलग sites पर अलग price क्यों है?",
+            "body": "Demand, liquidity, fees, currencies, region, inventory और exact item attributes अलग हो सकते हैं।"
+          },
+          {
+            "summary": "Float और pattern कितने important हैं?",
+            "body": "कुछ skins में बहुत important हैं और rare stickers तथा placement के साथ price को काफी बदल सकते हैं।"
+          },
+          {
+            "summary": "Marketplace या instant sell?",
+            "body": "Marketplace ज्यादा price control देती है लेकिन buyer का इंतजार करना पड़ सकता है। <a href=\"/csgo/instant-sell\">Instant sell</a> fast है लेकिन payout आम तौर पर lower होती है।"
+          },
+          {
+            "summary": "CSGOBROKER marketplace ranking क्यों बदलती है?",
+            "body": "Fees, liquidity, payments, KYC, P2P mechanics, support और Steam conditions बदलती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

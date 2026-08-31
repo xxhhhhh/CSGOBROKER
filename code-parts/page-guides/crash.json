@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "crash",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Crash CS2: как работает множитель и что сравнивать между сайтами",
+        "paragraphs": [
+          "Crash — это instant game, где множитель начинается с низкого значения и растёт до случайного момента завершения раунда. Пользователь должен зафиксировать выплату до crash point: если cash out происходит раньше, ставка умножается на текущий коэффициент; если раунд завершается раньше, ставка теряется.",
+          "Сайты CS2 часто добавляют Crash рядом с <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, рулеткой и другими быстрыми режимами. Отличия между платформами находятся в house edge, формуле crash point, Provably Fair, скорости раундов, auto cashout, max win и правилах баланса.",
+          "История прошлых множителей удобна для просмотра завершённых раундов, но сама по себе не делает следующий crash point предсказуемым. Для сравнения важнее проверяемость генерации результата и фактическая математика выплат."
+        ]
+      },
+      "categories": {
+        "title": "Как устроен Crash на сайтах CS2",
+        "items": [
+          {
+            "title": "Рост множителя",
+            "paragraphs": [
+              "После старта коэффициент увеличивается до случайного crash point. Размер потенциальной выплаты растёт вместе с ним."
+            ]
+          },
+          {
+            "title": "Cash out",
+            "paragraphs": [
+              "Игрок фиксирует текущий множитель вручную или через auto cashout. Если crash происходит раньше, ставка не возвращается."
+            ]
+          },
+          {
+            "title": "Auto cashout",
+            "paragraphs": [
+              "Пользователь заранее задаёт коэффициент автоматического выхода. Это снижает зависимость от реакции и задержки интерфейса, но не меняет вероятность достижения выбранного множителя."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Проверяемая система должна позволять подтвердить crash point конкретного раунда через seeds, hash или другой опубликованный алгоритм."
+            ]
+          },
+          {
+            "title": "Мультиставки",
+            "paragraphs": [
+              "Некоторые сайты позволяют одновременно поставить несколько ставок с разными суммами или auto cashout. Это расширяет управление раундом, но не уменьшает house edge."
+            ]
+          },
+          {
+            "title": "Скины, баланс и криптовалюта",
+            "paragraphs": [
+              "Crash может использовать баланс, пополняемый скинами, деньгами или криптовалютой. В skin-based сервисах важна внутренняя цена предметов."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед игрой в Crash",
+        "intro": "Одинаковая графика растущего множителя не означает одинаковую математику на разных площадках.",
+        "items": [
+          {
+            "summary": "House edge и формула crash point",
+            "body": "Проверьте, публикует ли сайт информацию о преимуществе площадки и алгоритме распределения множителей."
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "Важно иметь возможность проверить уже завершённый раунд, а не просто видеть значок Provably Fair."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Уточните минимальный и максимальный коэффициент, момент срабатывания и поведение при сетевой задержке."
+          },
+          {
+            "summary": "Максимальная ставка и max win",
+            "body": "Платформа может ограничивать не только размер ставки, но и максимальную выплату с одного раунда."
+          },
+          {
+            "summary": "История раундов",
+            "body": "История полезна для аудита и проверки конкретных результатов, но не является прогнозом будущих crash point."
+          },
+          {
+            "summary": "Бонусы и вывод",
+            "body": "Bonus balance, wagering, минимальный вывод, KYC, комиссии и региональные ограничения могут действовать отдельно."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает Crash-сайты",
+        "intro": "Для Crash особенно важны Provably Fair, скорость интерфейса и прозрачность фактической выплаты.",
+        "items": [
+          {
+            "summary": "House edge и математика",
+            "body": "Смотрим, насколько понятно описано распределение и какую долю математической выплаты удерживает площадка."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Оцениваем verifier, доступность seeds/hash и возможность проверить конкретный crash point."
+          },
+          {
+            "summary": "Auto cashout и управление ставкой",
+            "body": "Проверяем удобство настроек, ограничения, несколько ставок и корректность автоматического выхода."
+          },
+          {
+            "summary": "Лимиты и выплаты",
+            "body": "Учитываются min/max bet, max win, комиссии и ограничения по валютам."
+          },
+          {
+            "summary": "Пополнение и вывод",
+            "body": "Скины, карты, криптовалюты, минимумы, KYC, скорость и доступность вывода входят в оценку."
+          },
+          {
+            "summary": "Стабильность в реальном времени",
+            "body": "Для Crash важны задержка интерфейса, корректное отображение cashout, история раундов, мобильная версия и поддержка."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему рейтинг Crash-сайтов меняется",
+        "paragraphs": [
+          "Площадки меняют house edge, лимиты, auto cashout, бонусы, способы оплаты и систему вывода. Любое из этих изменений влияет на условия режима.",
+          "Серии низких или высоких множителей не означают, что следующий раунд обязан компенсировать предыдущие. Если раунды независимы, прошлые crash point не повышают вероятность конкретного будущего значения.",
+          "Для других instant games используйте <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a> или общий раздел <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и ответственная игра в Crash",
+        "intro": "Быстрые раунды и растущий множитель могут стимулировать частые повторные ставки, поэтому контроль сессии особенно важен.",
+        "items": [
+          {
+            "summary": "Проверяйте Provably Fair",
+            "body": "Используйте verifier для завершённых раундов и проверяйте правильный домен платформы."
+          },
+          {
+            "summary": "Не пытайтесь прогнозировать по графику истории",
+            "body": "Прошлые множители могут выглядеть как закономерность, но не доказывают предсказуемость следующего независимого раунда."
+          },
+          {
+            "summary": "Используйте auto cashout как технический инструмент",
+            "body": "Он фиксирует выбранный коэффициент автоматически, но не улучшает математику режима."
+          },
+          {
+            "summary": "Проверяйте лимиты и вывод заранее",
+            "body": "Max win, KYC, комиссии и минимальные суммы могут существенно изменить фактическую выплату."
+          },
+          {
+            "summary": "Ограничивайте время и сумму",
+            "body": "Crash позволяет быстро переходить от раунда к раунду. Заранее установите лимиты и используйте <a href=\"/responsibility\">ответственную игру</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о Crash CS2",
+        "items": [
+          {
+            "summary": "Что такое Crash CS2?",
+            "body": "Игра с растущим множителем, где нужно сделать cash out до случайного момента завершения раунда."
+          },
+          {
+            "summary": "Как рассчитывается выигрыш?",
+            "body": "Если ставка выведена до crash point, она умножается на коэффициент в момент cashout с учётом правил площадки."
+          },
+          {
+            "summary": "Что такое auto cashout?",
+            "body": "Автоматический выход при заранее заданном множителе."
+          },
+          {
+            "summary": "Можно ли предсказать следующий множитель?",
+            "body": "История предыдущих раундов сама по себе не даёт надёжного прогноза независимого будущего crash point."
+          },
+          {
+            "summary": "Что такое Provably Fair в Crash?",
+            "body": "Система, позволяющая проверить, что конкретный crash point сформирован по заявленному алгоритму."
+          },
+          {
+            "summary": "Почему высокие множители встречаются реже?",
+            "body": "Чем выше целевой коэффициент, тем меньше вероятность, что раунд дойдёт до него; точное распределение зависит от формулы площадки."
+          },
+          {
+            "summary": "Можно ли играть бонусным балансом?",
+            "body": "Иногда да, но wagering и max bet могут отличаться. Сравните <a href=\"/freebies\">бонусы</a>."
+          },
+          {
+            "summary": "Почему рейтинг Crash на CSGOBROKER меняется?",
+            "body": "Меняются house edge, Provably Fair, лимиты, auto cashout, платежи и вывод."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "CS2 Crash Sites: How the Multiplier Works and What to Compare",
+        "paragraphs": [
+          "Crash is an instant game where the multiplier starts at a low value and rises until a randomly determined crash point. The user must lock in the payout before that point: if cash out happens first, the wager is multiplied by the current multiplier; if the round crashes first, the wager is lost.",
+          "CS2 sites often place Crash alongside <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, roulette, and other fast modes. Platforms differ in house edge, crash-point formula, Provably Fair implementation, round speed, auto cashout, max win, and balance rules.",
+          "Past multiplier history is useful for reviewing completed rounds, but it does not make the next crash point predictable. For comparison, verifiable result generation and the actual payout mathematics matter more."
+        ]
+      },
+      "categories": {
+        "title": "How CS2 Crash Works",
+        "items": [
+          {
+            "title": "Rising multiplier",
+            "paragraphs": [
+              "After the round starts, the multiplier rises until a random crash point. The potential payout grows with it."
+            ]
+          },
+          {
+            "title": "Cash out",
+            "paragraphs": [
+              "The player locks in the current multiplier manually or through auto cashout. If the crash happens first, the wager is not returned."
+            ]
+          },
+          {
+            "title": "Auto cashout",
+            "paragraphs": [
+              "The user presets an automatic exit multiplier. This reduces dependence on reaction time and interface latency, but it does not change the probability of reaching the selected multiplier."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "A verifiable system should allow the crash point of a specific round to be confirmed through seeds, a hash, or another published algorithm."
+            ]
+          },
+          {
+            "title": "Multiple bets",
+            "paragraphs": [
+              "Some sites allow several simultaneous wagers with different amounts or auto-cashout targets. This gives more control over the round but does not reduce the house edge."
+            ]
+          },
+          {
+            "title": "Skins, balance and crypto",
+            "paragraphs": [
+              "Crash can use a balance funded with skins, money, or cryptocurrency. On skin-based services, the platform's internal item valuation is important."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Playing Crash",
+        "intro": "Identical rising-multiplier graphics do not mean that different platforms use the same mathematics.",
+        "items": [
+          {
+            "summary": "House edge and crash formula",
+            "body": "Check whether the site publishes information about its house edge and the algorithm used to distribute crash multipliers."
+          },
+          {
+            "summary": "Provably Fair verifier",
+            "body": "It is important to be able to verify a completed round, rather than simply seeing a Provably Fair badge."
+          },
+          {
+            "summary": "Auto cashout behavior",
+            "body": "Check the minimum and maximum auto-cashout multiplier, when it triggers, and how it behaves during network latency."
+          },
+          {
+            "summary": "Bet and maximum-win limits",
+            "body": "A platform may limit not only wager size but also the maximum payout from a single round."
+          },
+          {
+            "summary": "Round history",
+            "body": "Round history is useful for auditing and checking specific outcomes, but it is not a forecast of future crash points."
+          },
+          {
+            "summary": "Bonuses and withdrawals",
+            "body": "Bonus balance, wagering requirements, minimum withdrawals, KYC, fees, and regional restrictions may apply separately."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Crash Sites",
+        "intro": "For Crash, Provably Fair verification, interface speed, and transparency of the actual payout are especially important.",
+        "items": [
+          {
+            "summary": "House edge and mathematics",
+            "body": "We assess how clearly the distribution is described and what share of the mathematical payout is retained by the platform."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "We evaluate the verifier, access to seeds or hashes, and the ability to check a specific crash point."
+          },
+          {
+            "summary": "Auto cashout and controls",
+            "body": "We review control usability, restrictions, multiple-wager support, and whether automatic cashout executes correctly."
+          },
+          {
+            "summary": "Limits and payouts",
+            "body": "Minimum and maximum bets, max win, fees, and currency restrictions are included in the assessment."
+          },
+          {
+            "summary": "Deposits and withdrawals",
+            "body": "Skins, cards, cryptocurrencies, minimums, KYC, withdrawal speed, and withdrawal availability are all considered."
+          },
+          {
+            "summary": "Real-time stability",
+            "body": "For Crash, interface latency, correct cashout display, round history, mobile usability, and support are particularly important."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Crash Rankings Change",
+        "paragraphs": [
+          "Platforms can change house edge, limits, auto cashout, bonuses, payment methods, and withdrawal systems. Any of these changes can materially affect the conditions of the mode.",
+          "A run of low or high multipliers does not mean the next round must compensate for previous ones. If rounds are independent, earlier crash points do not increase the probability of any particular future value.",
+          "For other instant games, use <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, or the broader <a href=\"/csgo/casino\">Casino</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Crash Safety and Responsible Play",
+        "intro": "Fast rounds and a rising multiplier can encourage frequent repeat wagers, so session control is especially important.",
+        "items": [
+          {
+            "summary": "Verify Provably Fair",
+            "body": "Use the verifier for completed rounds and make sure you are on the platform's correct domain."
+          },
+          {
+            "summary": "Do not forecast from chart patterns",
+            "body": "Past multipliers may appear to form a pattern, but they do not prove that the next independent round is predictable."
+          },
+          {
+            "summary": "Treat auto cashout as an execution tool",
+            "body": "Auto cashout locks in the selected multiplier automatically, but it does not improve the mathematics of the game."
+          },
+          {
+            "summary": "Check limits and withdrawals first",
+            "body": "Max win, KYC, fees, and minimum amounts can materially change the payout you actually receive."
+          },
+          {
+            "summary": "Limit time and spend",
+            "body": "Crash makes it easy to move quickly from one round to the next. Set limits in advance and use <a href=\"/responsibility\">responsible gambling</a> guidance."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About CS2 Crash",
+        "items": [
+          {
+            "summary": "What is CS2 Crash?",
+            "body": "A rising-multiplier game where you must cash out before the round ends at a random crash point."
+          },
+          {
+            "summary": "How is a win calculated?",
+            "body": "If the wager is cashed out before the crash point, it is multiplied by the multiplier at the moment of cashout, subject to the platform's rules."
+          },
+          {
+            "summary": "What is auto cashout?",
+            "body": "An automatic exit at a multiplier set in advance."
+          },
+          {
+            "summary": "Can the next multiplier be predicted?",
+            "body": "History from previous rounds alone does not provide a reliable forecast of an independent future crash point."
+          },
+          {
+            "summary": "What does Provably Fair mean in Crash?",
+            "body": "A system that lets users verify that a specific crash point was generated according to the stated algorithm."
+          },
+          {
+            "summary": "Why are high multipliers less common?",
+            "body": "The higher the target multiplier, the lower the probability that the round reaches it; the exact distribution depends on the platform's formula."
+          },
+          {
+            "summary": "Can bonus balance be used?",
+            "body": "Sometimes, but wagering requirements and max-bet rules may differ. Compare <a href=\"/freebies\">bonuses</a>."
+          },
+          {
+            "summary": "Why does the CSGOBROKER Crash ranking change?",
+            "body": "House edge, Provably Fair, limits, auto cashout, payments, and withdrawal conditions can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Crash CS2: cómo funciona el multiplicador",
+        "paragraphs": [
+          "Crash es un juego instantáneo en el que el multiplicador comienza en un valor bajo y aumenta hasta un crash point determinado aleatoriamente. El usuario debe asegurar el pago antes de ese momento: si hace cash out primero, la apuesta se multiplica por el multiplicador actual; si la ronda termina antes, se pierde la apuesta.",
+          "Los sitios de CS2 suelen ofrecer Crash junto a <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, ruleta y otros modos rápidos. Las plataformas se diferencian por el house edge, la fórmula del crash point, Provably Fair, la velocidad de las rondas, el auto cashout, el max win y las reglas del saldo.",
+          "El historial de multiplicadores anteriores sirve para revisar rondas terminadas, pero por sí solo no permite predecir el siguiente crash point. Para comparar sitios importan más la verificabilidad de la generación del resultado y la matemática real de los pagos."
+        ]
+      },
+      "categories": {
+        "title": "Cómo funciona Crash",
+        "items": [
+          {
+            "title": "Multiplicador",
+            "paragraphs": [
+              "Después de empezar la ronda, el multiplicador aumenta hasta un crash point aleatorio. El pago potencial crece junto con él."
+            ]
+          },
+          {
+            "title": "Cash out",
+            "paragraphs": [
+              "El jugador fija el multiplicador actual manualmente o mediante auto cashout. Si el crash ocurre antes, la apuesta no se devuelve."
+            ]
+          },
+          {
+            "title": "Auto cashout",
+            "paragraphs": [
+              "El usuario establece de antemano un multiplicador de salida automática. Esto reduce la dependencia del tiempo de reacción y de la latencia de la interfaz, pero no cambia la probabilidad de alcanzar el multiplicador elegido."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Un sistema verificable debe permitir confirmar el crash point de una ronda concreta mediante seeds, hash u otro algoritmo publicado."
+            ]
+          },
+          {
+            "title": "Múltiples apuestas",
+            "paragraphs": [
+              "Algunos sitios permiten hacer varias apuestas simultáneas con importes o objetivos de auto cashout diferentes. Esto amplía el control de la ronda, pero no reduce el house edge."
+            ]
+          },
+          {
+            "title": "Skins y cripto",
+            "paragraphs": [
+              "Crash puede utilizar un saldo financiado con skins, dinero o criptomonedas. En los servicios basados en skins es importante la valoración interna de los objetos."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué revisar antes de jugar",
+        "intro": "Que dos plataformas muestren el mismo gráfico de multiplicador creciente no significa que utilicen la misma matemática.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Comprueba si el sitio publica información sobre su house edge y sobre el algoritmo con el que se distribuyen los multiplicadores."
+          },
+          {
+            "summary": "Verifier",
+            "body": "Es importante poder verificar una ronda ya terminada, y no limitarse a ver una etiqueta de Provably Fair."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Comprueba el multiplicador mínimo y máximo de auto cashout, el momento en que se activa y su comportamiento con retrasos de red."
+          },
+          {
+            "summary": "Límites",
+            "body": "La plataforma puede limitar no solo el importe de la apuesta, sino también el pago máximo de una sola ronda."
+          },
+          {
+            "summary": "Historial",
+            "body": "El historial es útil para auditar y comprobar resultados concretos, pero no sirve como pronóstico de futuros crash points."
+          },
+          {
+            "summary": "Bonos y retiro",
+            "body": "El saldo de bonus, los requisitos de wagering, el retiro mínimo, KYC, las comisiones y las restricciones regionales pueden aplicarse por separado."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa Crash",
+        "intro": "En Crash son especialmente importantes Provably Fair, la velocidad de la interfaz y la transparencia del pago real.",
+        "items": [
+          {
+            "summary": "Matemática",
+            "body": "Analizamos hasta qué punto se explica con claridad la distribución y qué parte del pago matemático retiene la plataforma."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Evaluamos el verifier, el acceso a seeds o hashes y la posibilidad de comprobar un crash point concreto."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Revisamos la facilidad de los controles, las restricciones, las apuestas múltiples y el funcionamiento correcto del auto cashout."
+          },
+          {
+            "summary": "Límites",
+            "body": "Se tienen en cuenta las apuestas mínimas y máximas, el max win, las comisiones y las restricciones por divisa."
+          },
+          {
+            "summary": "Pagos",
+            "body": "Se valoran skins, tarjetas, criptomonedas, mínimos, KYC, velocidad y disponibilidad del retiro."
+          },
+          {
+            "summary": "Estabilidad",
+            "body": "En Crash importan especialmente la latencia de la interfaz, la visualización correcta del cashout, el historial de rondas, la versión móvil y el soporte."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambia el ranking",
+        "paragraphs": [
+          "Las plataformas pueden cambiar el house edge, los límites, el auto cashout, los bonus, los métodos de pago y el sistema de retiro. Cualquiera de estos cambios puede modificar de forma importante las condiciones del modo.",
+          "Una serie de multiplicadores bajos o altos no significa que la siguiente ronda deba compensar las anteriores. Si las rondas son independientes, los crash points pasados no aumentan la probabilidad de un valor futuro concreto.",
+          "Para otros juegos instantáneos, consulta <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a> o la sección general de <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y juego responsable",
+        "intro": "Las rondas rápidas y el multiplicador creciente pueden incentivar apuestas repetidas con mucha frecuencia, por lo que controlar la sesión es especialmente importante.",
+        "items": [
+          {
+            "summary": "Verifica Provably Fair",
+            "body": "Utiliza el verifier para las rondas terminadas y comprueba que estás en el dominio correcto de la plataforma."
+          },
+          {
+            "summary": "No predigas por patrones",
+            "body": "Los multiplicadores pasados pueden parecer formar un patrón, pero no demuestran que la siguiente ronda independiente sea predecible."
+          },
+          {
+            "summary": "Auto cashout no mejora odds",
+            "body": "El auto cashout fija automáticamente el multiplicador elegido, pero no mejora la matemática del modo."
+          },
+          {
+            "summary": "Revisa límites",
+            "body": "El max win, KYC, las comisiones y los importes mínimos pueden cambiar de forma significativa el pago que realmente recibes."
+          },
+          {
+            "summary": "Define límites",
+            "body": "Crash permite pasar rápidamente de una ronda a otra. Establece límites con antelación y utiliza las recomendaciones de <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre Crash CS2",
+        "items": [
+          {
+            "summary": "¿Qué es Crash?",
+            "body": "Un juego de multiplicador creciente en el que hay que hacer cash out antes de que la ronda termine en un crash point aleatorio."
+          },
+          {
+            "summary": "¿Cómo se calcula el premio?",
+            "body": "Si la apuesta se retira antes del crash point, se multiplica por el multiplicador del momento del cashout, de acuerdo con las reglas de la plataforma."
+          },
+          {
+            "summary": "¿Qué es auto cashout?",
+            "body": "Una salida automática al multiplicador configurado previamente."
+          },
+          {
+            "summary": "¿Se puede predecir?",
+            "body": "El historial de rondas anteriores por sí solo no ofrece una predicción fiable de un crash point futuro e independiente."
+          },
+          {
+            "summary": "¿Qué es Provably Fair?",
+            "body": "Un sistema que permite comprobar que un crash point concreto se generó según el algoritmo declarado."
+          },
+          {
+            "summary": "¿Por qué grandes multiplicadores son raros?",
+            "body": "Cuanto mayor sea el multiplicador objetivo, menor será la probabilidad de que la ronda llegue hasta él; la distribución exacta depende de la fórmula de la plataforma."
+          },
+          {
+            "summary": "¿Se puede usar bonus?",
+            "body": "A veces sí, pero los requisitos de wagering y las reglas de max bet pueden variar. Compara los <a href=\"/freebies\">bonus</a>."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking?",
+            "body": "Pueden cambiar el house edge, Provably Fair, los límites, el auto cashout, los pagos y las condiciones de retiro."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Crash CS2: como funciona o multiplicador",
+        "paragraphs": [
+          "Crash é um jogo instantâneo em que o multiplicador começa em um valor baixo e cresce até um crash point determinado aleatoriamente. O usuário precisa garantir o pagamento antes desse ponto: se fizer cash out primeiro, a aposta é multiplicada pelo multiplicador atual; se a rodada terminar antes, a aposta é perdida.",
+          "Sites de CS2 costumam oferecer Crash ao lado de <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, roleta e outros modos rápidos. As plataformas diferem em house edge, fórmula do crash point, Provably Fair, velocidade das rodadas, auto cashout, max win e regras do saldo.",
+          "O histórico de multiplicadores anteriores é útil para revisar rodadas concluídas, mas por si só não torna o próximo crash point previsível. Para comparar plataformas, a verificabilidade da geração do resultado e a matemática real dos pagamentos são mais importantes."
+        ]
+      },
+      "categories": {
+        "title": "Como funciona Crash",
+        "items": [
+          {
+            "title": "Multiplicador",
+            "paragraphs": [
+              "Depois que a rodada começa, o multiplicador cresce até um crash point aleatório. O pagamento potencial aumenta junto com ele."
+            ]
+          },
+          {
+            "title": "Cash out",
+            "paragraphs": [
+              "O jogador fixa o multiplicador atual manualmente ou por auto cashout. Se o crash acontecer antes, a aposta não é devolvida."
+            ]
+          },
+          {
+            "title": "Auto cashout",
+            "paragraphs": [
+              "O usuário define antecipadamente um multiplicador de saída automática. Isso reduz a dependência do tempo de reação e da latência da interface, mas não altera a probabilidade de atingir o multiplicador escolhido."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Um sistema verificável deve permitir confirmar o crash point de uma rodada específica por meio de seeds, hash ou outro algoritmo publicado."
+            ]
+          },
+          {
+            "title": "Múltiplas apostas",
+            "paragraphs": [
+              "Alguns sites permitem várias apostas simultâneas com valores ou alvos de auto cashout diferentes. Isso amplia o controle sobre a rodada, mas não reduz o house edge."
+            ]
+          },
+          {
+            "title": "Skins e cripto",
+            "paragraphs": [
+              "Crash pode usar saldo financiado com skins, dinheiro ou criptomoedas. Em serviços baseados em skins, a avaliação interna dos itens é importante."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de jogar",
+        "intro": "Gráficos iguais de multiplicador crescente não significam que plataformas diferentes usem a mesma matemática.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Confira se o site publica informações sobre seu house edge e sobre o algoritmo usado para distribuir os multiplicadores."
+          },
+          {
+            "summary": "Verifier",
+            "body": "É importante conseguir verificar uma rodada já concluída, e não apenas ver um selo de Provably Fair."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Confira o multiplicador mínimo e máximo do auto cashout, o momento em que ele é acionado e seu comportamento em caso de latência de rede."
+          },
+          {
+            "summary": "Limites",
+            "body": "A plataforma pode limitar não apenas o tamanho da aposta, mas também o pagamento máximo de uma única rodada."
+          },
+          {
+            "summary": "Histórico",
+            "body": "O histórico é útil para auditoria e verificação de resultados específicos, mas não serve como previsão de crash points futuros."
+          },
+          {
+            "summary": "Bônus e saque",
+            "body": "Saldo de bônus, requisitos de wagering, saque mínimo, KYC, taxas e restrições regionais podem ser aplicados separadamente."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia Crash",
+        "intro": "Para Crash, Provably Fair, velocidade da interface e transparência do pagamento real são especialmente importantes.",
+        "items": [
+          {
+            "summary": "Matemática",
+            "body": "Avaliamos quão claramente a distribuição é descrita e qual parcela do pagamento matemático fica com a plataforma."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Avaliamos o verifier, o acesso a seeds ou hashes e a possibilidade de conferir um crash point específico."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Revisamos a usabilidade dos controles, restrições, suporte a várias apostas e a execução correta do auto cashout."
+          },
+          {
+            "summary": "Limites",
+            "body": "Apostas mínimas e máximas, max win, taxas e restrições por moeda entram na avaliação."
+          },
+          {
+            "summary": "Pagamentos",
+            "body": "Skins, cartões, criptomoedas, valores mínimos, KYC, velocidade e disponibilidade de saque são considerados."
+          },
+          {
+            "summary": "Estabilidade",
+            "body": "Em Crash, latência da interface, exibição correta do cashout, histórico de rodadas, versão mobile e suporte são especialmente importantes."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que o ranking muda",
+        "paragraphs": [
+          "As plataformas podem mudar o house edge, limites, auto cashout, bônus, métodos de pagamento e sistema de saque. Qualquer uma dessas mudanças pode alterar de forma relevante as condições do modo.",
+          "Uma sequência de multiplicadores baixos ou altos não significa que a próxima rodada precise compensar as anteriores. Se as rodadas forem independentes, crash points passados não aumentam a probabilidade de um valor futuro específico.",
+          "Para outros jogos instantâneos, consulte <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a> ou a seção geral de <a href=\"/csgo/casino\">Casino</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e jogo responsável",
+        "intro": "Rodadas rápidas e um multiplicador crescente podem incentivar apostas repetidas com muita frequência, por isso o controle da sessão é especialmente importante.",
+        "items": [
+          {
+            "summary": "Verifique Provably Fair",
+            "body": "Use o verifier para rodadas concluídas e confirme que está no domínio correto da plataforma."
+          },
+          {
+            "summary": "Não preveja por padrões",
+            "body": "Multiplicadores anteriores podem parecer formar um padrão, mas não provam que a próxima rodada independente seja previsível."
+          },
+          {
+            "summary": "Auto cashout não melhora odds",
+            "body": "O auto cashout fixa automaticamente o multiplicador escolhido, mas não melhora a matemática do modo."
+          },
+          {
+            "summary": "Veja limites",
+            "body": "Max win, KYC, taxas e valores mínimos podem alterar significativamente o pagamento realmente recebido."
+          },
+          {
+            "summary": "Defina limites",
+            "body": "Crash permite passar rapidamente de uma rodada para outra. Defina limites com antecedência e siga as orientações de <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre Crash CS2",
+        "items": [
+          {
+            "summary": "O que é Crash?",
+            "body": "Um jogo de multiplicador crescente em que é preciso fazer cash out antes de a rodada terminar em um crash point aleatório."
+          },
+          {
+            "summary": "Como o prêmio é calculado?",
+            "body": "Se a aposta for retirada antes do crash point, ela é multiplicada pelo multiplicador no momento do cashout, de acordo com as regras da plataforma."
+          },
+          {
+            "summary": "O que é auto cashout?",
+            "body": "Uma saída automática no multiplicador definido previamente."
+          },
+          {
+            "summary": "Dá para prever?",
+            "body": "O histórico das rodadas anteriores, por si só, não oferece uma previsão confiável de um crash point futuro e independente."
+          },
+          {
+            "summary": "O que é Provably Fair?",
+            "body": "Um sistema que permite verificar se um crash point específico foi gerado de acordo com o algoritmo declarado."
+          },
+          {
+            "summary": "Por que multiplicadores altos são raros?",
+            "body": "Quanto maior o multiplicador-alvo, menor a probabilidade de a rodada chegar até ele; a distribuição exata depende da fórmula da plataforma."
+          },
+          {
+            "summary": "Posso usar bônus?",
+            "body": "Às vezes, mas requisitos de wagering e regras de max bet podem variar. Compare os <a href=\"/freebies\">bônus</a>."
+          },
+          {
+            "summary": "Por que o ranking muda?",
+            "body": "House edge, Provably Fair, limites, auto cashout, pagamentos e condições de saque podem mudar."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2 Crash Siteleri: Multiplier Nasıl Çalışır?",
+        "paragraphs": [
+          "Crash, çarpanın düşük bir değerden başlayıp rastgele belirlenen crash point'e kadar yükseldiği bir instant game türüdür. Kullanıcı ödemeyi crash point'ten önce sabitlemelidir: cash out önce gerçekleşirse bahis mevcut çarpanla çarpılır; round önce sona ererse bahis kaybedilir.",
+          "CS2 siteleri Crash'i genellikle <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, rulet ve diğer hızlı modların yanında sunar. Platformlar house edge, crash point formülü, Provably Fair, round hızı, auto cashout, max win ve bakiye kuralları açısından farklılaşır.",
+          "Geçmiş çarpanların geçmişi tamamlanmış round'ları incelemek için kullanışlıdır, ancak tek başına sonraki crash point'i tahmin edilebilir hâle getirmez. Karşılaştırmada sonuç üretiminin doğrulanabilirliği ve gerçek ödeme matematiği daha önemlidir."
+        ]
+      },
+      "categories": {
+        "title": "Crash Nasıl Çalışır?",
+        "items": [
+          {
+            "title": "Multiplier",
+            "paragraphs": [
+              "Round başladıktan sonra çarpan rastgele bir crash point'e kadar yükselir. Potansiyel ödeme de onunla birlikte artar."
+            ]
+          },
+          {
+            "title": "Cash out",
+            "paragraphs": [
+              "Oyuncu mevcut çarpanı manuel olarak veya auto cashout ile sabitler. Crash daha önce gerçekleşirse bahis iade edilmez."
+            ]
+          },
+          {
+            "title": "Auto cashout",
+            "paragraphs": [
+              "Kullanıcı otomatik çıkış çarpanını önceden belirler. Bu, tepki süresi ve arayüz gecikmesine bağımlılığı azaltır, ancak seçilen çarpana ulaşma olasılığını değiştirmez."
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "Doğrulanabilir bir sistem, belirli bir round'un crash point'ini seed'ler, hash veya yayınlanmış başka bir algoritma üzerinden doğrulamaya izin vermelidir."
+            ]
+          },
+          {
+            "title": "Çoklu bahis",
+            "paragraphs": [
+              "Bazı siteler farklı tutarlar veya auto cashout hedefleriyle aynı anda birden fazla bahis açmaya izin verir. Bu, round üzerinde daha fazla kontrol sağlar ancak house edge'i azaltmaz."
+            ]
+          },
+          {
+            "title": "Skin ve kripto",
+            "paragraphs": [
+              "Crash, skin, para veya kripto para ile yüklenen bir bakiye kullanabilir. Skin tabanlı servislerde platformun iç item değerlemesi önemlidir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Oynamadan Önce Neleri Kontrol Etmeli?",
+        "intro": "Yükselen çarpan grafiğinin aynı görünmesi, farklı platformların aynı matematiği kullandığı anlamına gelmez.",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "Sitenin house edge ve çarpanların dağıtımında kullanılan algoritma hakkında bilgi yayınlayıp yayınlamadığını kontrol edin."
+          },
+          {
+            "summary": "Verifier",
+            "body": "Sadece Provably Fair rozeti görmek yerine, tamamlanmış bir round'u gerçekten doğrulayabilmek önemlidir."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Auto cashout için minimum ve maksimum çarpanı, tetiklenme anını ve ağ gecikmesinde nasıl davrandığını kontrol edin."
+          },
+          {
+            "summary": "Limitler",
+            "body": "Platform yalnızca bahis miktarını değil, tek bir round'dan alınabilecek maksimum ödemeyi de sınırlayabilir."
+          },
+          {
+            "summary": "Geçmiş",
+            "body": "Round geçmişi denetim ve belirli sonuçları kontrol etmek için yararlıdır, ancak gelecekteki crash point'leri tahmin etmez."
+          },
+          {
+            "summary": "Bonus ve çekim",
+            "body": "Bonus bakiyesi, wagering şartları, minimum çekim, KYC, ücretler ve bölgesel kısıtlamalar ayrı ayrı uygulanabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Crash Sitelerini Nasıl Değerlendirir?",
+        "intro": "Crash için Provably Fair doğrulaması, arayüz hızı ve gerçek ödemenin şeffaflığı özellikle önemlidir.",
+        "items": [
+          {
+            "summary": "Matematik",
+            "body": "Dağılımın ne kadar açık anlatıldığını ve matematiksel ödemenin ne kadarının platform tarafından tutulduğunu inceliyoruz."
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "Verifier'ı, seed/hash erişimini ve belirli bir crash point'i doğrulama imkânını değerlendiriyoruz."
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Kontrollerin kullanım kolaylığını, kısıtlamaları, çoklu bahis desteğini ve auto cashout'un doğru çalışmasını inceliyoruz."
+          },
+          {
+            "summary": "Limitler",
+            "body": "Min/max bet, max win, ücretler ve para birimi kısıtlamaları değerlendirmeye dahil edilir."
+          },
+          {
+            "summary": "Ödemeler",
+            "body": "Skin'ler, kartlar, kripto paralar, minimumlar, KYC, çekim hızı ve çekim kullanılabilirliği dikkate alınır."
+          },
+          {
+            "summary": "İstikrar",
+            "body": "Crash'te arayüz gecikmesi, cashout'un doğru gösterilmesi, round geçmişi, mobil kullanım ve destek özellikle önemlidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Crash Sıralaması Neden Değişir?",
+        "paragraphs": [
+          "Platformlar house edge, limitler, auto cashout, bonuslar, ödeme yöntemleri ve çekim sistemini değiştirebilir. Bu değişikliklerin her biri modun koşullarını önemli ölçüde etkileyebilir.",
+          "Düşük veya yüksek çarpan serileri, sonraki round'un önceki sonuçları telafi etmesi gerektiği anlamına gelmez. Round'lar bağımsızsa geçmiş crash point'ler belirli bir gelecekteki değerin olasılığını artırmaz.",
+          "Diğer instant game'ler için <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a> veya genel <a href=\"/csgo/casino\">Casino</a> bölümünü kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Sorumlu Oyun",
+        "intro": "Hızlı round'lar ve yükselen çarpan sık tekrar bahislerini teşvik edebilir; bu nedenle oturum kontrolü özellikle önemlidir.",
+        "items": [
+          {
+            "summary": "Provably Fair",
+            "body": "Tamamlanmış round'lar için verifier kullanın ve platformun doğru alan adında olduğunuzdan emin olun."
+          },
+          {
+            "summary": "Pattern ile tahmin etmeyin",
+            "body": "Geçmiş çarpanlar bir desen varmış gibi görünebilir, ancak sonraki bağımsız round'un tahmin edilebilir olduğunu kanıtlamaz."
+          },
+          {
+            "summary": "Auto cashout odds'u iyileştirmez",
+            "body": "Auto cashout seçilen çarpanı otomatik olarak sabitler, ancak oyunun matematiğini iyileştirmez."
+          },
+          {
+            "summary": "Limitleri kontrol edin",
+            "body": "Max win, KYC, ücretler ve minimum tutarlar gerçekten alınan ödemeyi önemli ölçüde değiştirebilir."
+          },
+          {
+            "summary": "Limit belirleyin",
+            "body": "Crash bir round'dan diğerine çok hızlı geçmeye imkân verir. Önceden limit belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> önerilerini kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Crash Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Crash nedir?",
+            "body": "Rastgele bir crash point'te sona ermeden önce cash out yapılması gereken yükselen çarpanlı bir oyun."
+          },
+          {
+            "summary": "Ödül nasıl hesaplanır?",
+            "body": "Bahis crash point'ten önce cash out edilirse, platform kurallarına göre cashout anındaki çarpanla çarpılır."
+          },
+          {
+            "summary": "Auto cashout nedir?",
+            "body": "Önceden belirlenmiş bir çarpanda otomatik çıkış."
+          },
+          {
+            "summary": "Tahmin edilebilir mi?",
+            "body": "Önceki round geçmişi tek başına bağımsız bir gelecekteki crash point için güvenilir tahmin sağlamaz."
+          },
+          {
+            "summary": "Provably Fair nedir?",
+            "body": "Belirli bir crash point'in açıklanan algoritmaya göre üretildiğini doğrulamaya izin veren sistem."
+          },
+          {
+            "summary": "Yüksek multiplier neden nadir?",
+            "body": "Hedef çarpan ne kadar yüksekse round'un ona ulaşma olasılığı o kadar düşüktür; tam dağılım platformun formülüne bağlıdır."
+          },
+          {
+            "summary": "Bonus kullanılabilir mi?",
+            "body": "Bazen evet, ancak wagering şartları ve max bet kuralları farklı olabilir. <a href=\"/freebies\">Bonusları</a> karşılaştırın."
+          },
+          {
+            "summary": "Sıralama neden değişir?",
+            "body": "House edge, Provably Fair, limitler, auto cashout, ödemeler ve çekim koşulları değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2 Crash Sites: Multiplier कैसे काम करता है",
+        "paragraphs": [
+          "Crash एक instant game है जिसमें multiplier कम value से शुरू होकर random crash point तक बढ़ता है। यूज़र को payout उस point से पहले lock करना होता है: अगर cash out पहले हो जाए तो bet current multiplier से multiply होती है; अगर round पहले crash हो जाए तो bet खो जाती है।",
+          "CS2 sites अक्सर Crash को <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a>, roulette और दूसरे fast modes के साथ रखते हैं। Platforms house edge, crash-point formula, Provably Fair, round speed, auto cashout, max win और balance rules में अलग हो सकते हैं।",
+          "पिछले multipliers का history completed rounds देखने के लिए useful है, लेकिन उससे अगला crash point predictable नहीं हो जाता। Comparison के लिए result generation की verifiability और actual payout mathematics ज्यादा important हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Crash कैसे काम करता है",
+        "items": [
+          {
+            "title": "Multiplier",
+            "paragraphs": [
+              "Round शुरू होने के बाद multiplier random crash point तक बढ़ता है। उसके साथ potential payout भी बढ़ती है।"
+            ]
+          },
+          {
+            "title": "Cash out",
+            "paragraphs": [
+              "Player current multiplier को manually या auto cashout से lock करता है। अगर crash पहले हो जाए तो bet वापस नहीं मिलती।"
+            ]
+          },
+          {
+            "title": "Auto cashout",
+            "paragraphs": [
+              "यूज़र automatic exit multiplier पहले से set करता है। इससे reaction time और interface latency पर निर्भरता कम होती है, लेकिन चुने हुए multiplier तक पहुँचने की probability नहीं बदलती।"
+            ]
+          },
+          {
+            "title": "Provably Fair",
+            "paragraphs": [
+              "एक verifiable system को seeds, hash या किसी दूसरे published algorithm के जरिए किसी specific round का crash point confirm करने देना चाहिए।"
+            ]
+          },
+          {
+            "title": "Multiple bets",
+            "paragraphs": [
+              "कुछ sites अलग amounts या अलग auto-cashout targets के साथ एक ही समय में कई bets लगाने देती हैं। इससे round control बढ़ता है, लेकिन house edge कम नहीं होता।"
+            ]
+          },
+          {
+            "title": "Skins और crypto",
+            "paragraphs": [
+              "Crash में skins, money या cryptocurrency से fund किया गया balance इस्तेमाल हो सकता है। Skin-based services में platform की internal item valuation देखना जरूरी है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Play करने से पहले क्या Check करें",
+        "intro": "एक जैसा rising-multiplier graph यह साबित नहीं करता कि अलग platforms की mathematics भी एक जैसी है।",
+        "items": [
+          {
+            "summary": "House edge",
+            "body": "देखें कि site अपने house edge और multipliers distribute करने वाले algorithm की जानकारी publish करती है या नहीं।"
+          },
+          {
+            "summary": "Verifier",
+            "body": "सिर्फ Provably Fair badge दिखना काफी नहीं है; completed round को वास्तव में verify करने की सुविधा होनी चाहिए।"
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "Auto cashout का minimum और maximum multiplier, trigger point और network latency के दौरान उसका behavior जांचें।"
+          },
+          {
+            "summary": "Limits",
+            "body": "Platform केवल bet size ही नहीं, बल्कि एक round का maximum payout भी limit कर सकता है।"
+          },
+          {
+            "summary": "History",
+            "body": "Round history audit और specific results check करने के लिए useful है, लेकिन future crash points की prediction नहीं है।"
+          },
+          {
+            "summary": "Bonus और withdrawal",
+            "body": "Bonus balance, wagering requirements, minimum withdrawal, KYC, fees और regional restrictions अलग-अलग लागू हो सकते हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Crash Sites को कैसे Rate करता है",
+        "intro": "Crash के लिए Provably Fair verification, interface speed और actual payout की transparency खास तौर पर important हैं।",
+        "items": [
+          {
+            "summary": "Math",
+            "body": "हम देखते हैं कि distribution कितनी साफ तरह से explain की गई है और mathematical payout का कितना हिस्सा platform अपने पास रखता है।"
+          },
+          {
+            "summary": "Provably Fair",
+            "body": "हम verifier, seeds/hash की availability और किसी specific crash point को check करने की क्षमता evaluate करते हैं।"
+          },
+          {
+            "summary": "Auto cashout",
+            "body": "हम controls की usability, restrictions, multiple bets और automatic cashout के सही execution को check करते हैं।"
+          },
+          {
+            "summary": "Limits",
+            "body": "Min/max bet, max win, fees और currency restrictions evaluation में शामिल होते हैं।"
+          },
+          {
+            "summary": "Payments",
+            "body": "Skins, cards, cryptocurrencies, minimums, KYC, withdrawal speed और withdrawal availability को भी ध्यान में रखा जाता है।"
+          },
+          {
+            "summary": "Stability",
+            "body": "Crash में interface latency, cashout का सही display, round history, mobile version और support विशेष रूप से important हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Crash Rankings क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms house edge, limits, auto cashout, bonuses, payment methods और withdrawal system बदल सकते हैं। इनमें से कोई भी बदलाव mode की conditions को काफी प्रभावित कर सकता है।",
+          "Low या high multipliers की streak का मतलब यह नहीं कि अगला round पिछले results को compensate करेगा। अगर rounds independent हैं, तो पुराने crash points किसी specific future value की probability नहीं बढ़ाते।",
+          "दूसरे instant games के लिए <a href=\"/csgo/dice\">Dice</a>, <a href=\"/csgo/mines\">Mines</a> या general <a href=\"/csgo/casino\">Casino</a> section देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Responsible Play",
+        "intro": "Fast rounds और rising multiplier बार-बार जल्दी bet लगाने के लिए प्रेरित कर सकते हैं, इसलिए session control खास तौर पर important है।",
+        "items": [
+          {
+            "summary": "Provably Fair verify करें",
+            "body": "Completed rounds के लिए verifier इस्तेमाल करें और यह भी check करें कि आप platform के सही domain पर हैं।"
+          },
+          {
+            "summary": "Patterns से predict न करें",
+            "body": "Past multipliers pattern जैसे दिख सकते हैं, लेकिन वे यह साबित नहीं करते कि अगला independent round predictable है।"
+          },
+          {
+            "summary": "Auto cashout odds improve नहीं करता",
+            "body": "Auto cashout चुने हुए multiplier को automatically lock करता है, लेकिन game की mathematics बेहतर नहीं करता।"
+          },
+          {
+            "summary": "Limits देखें",
+            "body": "Max win, KYC, fees और minimum amounts actual payout को काफी बदल सकते हैं।"
+          },
+          {
+            "summary": "Limits set करें",
+            "body": "Crash में एक round से अगले round पर बहुत जल्दी जाया जा सकता है। पहले से limits set करें और <a href=\"/responsibility\">responsible gambling</a> guidance का उपयोग करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "CS2 Crash FAQ",
+        "items": [
+          {
+            "summary": "Crash क्या है?",
+            "body": "एक rising-multiplier game जिसमें random crash point पर round खत्म होने से पहले cash out करना होता है।"
+          },
+          {
+            "summary": "Win कैसे calculate होता है?",
+            "body": "अगर bet crash point से पहले cash out हो जाए, तो platform rules के अनुसार वह cashout के समय वाले multiplier से multiply होती है।"
+          },
+          {
+            "summary": "Auto cashout क्या है?",
+            "body": "पहले से set multiplier पर automatic exit।"
+          },
+          {
+            "summary": "Predict कर सकते हैं?",
+            "body": "Previous rounds का history अकेले किसी independent future crash point की reliable prediction नहीं देता।"
+          },
+          {
+            "summary": "Provably Fair क्या है?",
+            "body": "एक ऐसा system जो verify करने देता है कि specific crash point stated algorithm के अनुसार generate हुआ था।"
+          },
+          {
+            "summary": "High multipliers rare क्यों हैं?",
+            "body": "Target multiplier जितना ऊँचा होगा, round के वहाँ तक पहुँचने की probability उतनी कम होगी; exact distribution platform formula पर depend करता है।"
+          },
+          {
+            "summary": "Bonus use कर सकते हैं?",
+            "body": "कभी-कभी, लेकिन wagering requirements और max-bet rules अलग हो सकते हैं। <a href=\"/freebies\">Bonuses</a> compare करें।"
+          },
+          {
+            "summary": "Ranking क्यों बदलती है?",
+            "body": "House edge, Provably Fair, limits, auto cashout, payments और withdrawal conditions बदल सकते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}
