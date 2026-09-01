@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "deposit-bonuses",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Бонусы к пополнению: как сравнивать предложения сайтов CS2, Rust и крипто-казино",
+        "paragraphs": [
+          "Бонус к пополнению увеличивает баланс после внесения денег, криптовалюты или, на некоторых игровых площадках, предметов. Предложение может выглядеть как процент от первого пополнения, фиксированная сумма или серия бонусов за несколько депозитов.",
+          "Одинаковая надпись «+100% к пополнению» не означает одинаковую ценность. Один сайт разрешает использовать бонус почти во всех режимах, другой вводит требования по отыгрышу, ограничение максимальной ставки, срок действия и отдельные правила вывода выигрыша.",
+          "CSGOBROKER сравнивает бонусы вместе с условиями, а не только по максимальному проценту. Для других типов акций используйте разделы <a href=\"/freebies/daily-rewards\">ежедневных наград</a>, <a href=\"/freebies/giveaways\">розыгрышей</a> и <a href=\"/freebies/bonuses-to-sale\">бонусов к продаже</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие бонусы к пополнению встречаются",
+        "items": [
+          {
+            "title": "Процент к первому пополнению",
+            "paragraphs": [
+              "Площадка добавляет к первому депозиту определённый процент в пределах установленного максимума. Перед пополнением важно проверить минимальную сумму и верхний лимит бонуса."
+            ]
+          },
+          {
+            "title": "Фиксированная сумма",
+            "paragraphs": [
+              "Вместо процента сервис может начислять конкретную сумму после пополнения от заданного порога. Такой формат проще сравнивать, но условия использования бонусного баланса всё равно могут отличаться."
+            ]
+          },
+          {
+            "title": "Серия бонусов на несколько пополнений",
+            "paragraphs": [
+              "Некоторые сайты распределяют предложение на несколько депозитов. Общая рекламная сумма может быть большой, но для её получения потребуется пополнять счёт несколько раз."
+            ]
+          },
+          {
+            "title": "Бонус по промокоду",
+            "paragraphs": [
+              "Дополнительный процент или сумма активируются кодом до или во время пополнения. Проверьте, действует ли код для новых пользователей, выбранной страны и конкретного способа оплаты."
+            ]
+          },
+          {
+            "title": "Бонус при пополнении криптовалютой",
+            "paragraphs": [
+              "Часть сервисов делает отдельные предложения для определённых монет или сетей. Итоговую ценность нужно считать с учётом курса, сетевой комиссии и правил самого бонуса."
+            ]
+          },
+          {
+            "title": "Бонус при пополнении предметами",
+            "paragraphs": [
+              "На сайтах CS2 и Rust депозит скинами может давать дополнительный процент к внутренней оценке предмета. Сначала сравните цену предмета с рынком: высокий бонус не компенсирует сильно заниженную исходную оценку."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед активацией бонуса",
+        "intro": "Размер бонуса полезно оценивать только после проверки всех условий, которые влияют на использование и вывод средств.",
+        "items": [
+          {
+            "summary": "Требования по отыгрышу",
+            "body": "Проверьте, какой объём ставок нужно сделать до вывода бонуса или связанных с ним средств. Важно понимать, применяется множитель к самому бонусу, к депозиту и бонусу вместе или по другой формуле."
+          },
+          {
+            "summary": "Минимальное и максимальное пополнение",
+            "body": "У бонуса может быть нижний порог активации и предел суммы, к которой применяется процент. Депозит выше лимита не всегда увеличивает бонус."
+          },
+          {
+            "summary": "Срок действия",
+            "body": "Бонусный баланс и требования по отыгрышу могут иметь ограниченный срок. Если он истекает раньше, чем реально выполнить условия, рекламный процент теряет смысл."
+          },
+          {
+            "summary": "Ограничение максимальной ставки",
+            "body": "Некоторые акции ограничивают размер одной ставки во время отыгрыша. Нарушение такого правила может привести к отмене бонуса или связанного выигрыша."
+          },
+          {
+            "summary": "Какие режимы учитываются",
+            "body": "Слоты, ставки, кейсы и собственные игры площадки могут иметь разный вклад в отыгрыш или вообще не учитываться. Смотрите таблицу вкладов, если она опубликована."
+          },
+          {
+            "summary": "Вывод и проверка личности",
+            "body": "До пополнения проверьте минимальную сумму вывода, комиссии, доступные методы и возможную проверку личности. Выполнение отыгрыша не отменяет обычные требования сервиса к выводу."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает бонусы к пополнению",
+        "intro": "Мы сравниваем не рекламный максимум, а то, насколько понятным и реально применимым является предложение.",
+        "items": [
+          {
+            "summary": "Реальная величина бонуса",
+            "body": "Учитываем процент, максимальную сумму, минимальный депозит и то, сколько пользователь фактически может получить при обычном размере пополнения."
+          },
+          {
+            "summary": "Сложность условий",
+            "body": "Чем выше требования по отыгрышу, короче срок или жёстче ограничения ставок, тем меньше практическая ценность одинакового по размеру бонуса."
+          },
+          {
+            "summary": "Доступность по странам и способам оплаты",
+            "body": "Проверяем, для каких регионов и способов пополнения действует акция и нет ли исключений для криптовалют, скинов или отдельных платёжных систем."
+          },
+          {
+            "summary": "Прозрачность правил",
+            "body": "Основные ограничения должны быть доступны до внесения денег: отыгрыш, срок, максимальная ставка, вклад игр, отмена бонуса и правила вывода."
+          },
+          {
+            "summary": "Фактическое начисление",
+            "body": "Важны корректная активация промокода, своевременное начисление бонусного баланса и понятный статус выполнения условий."
+          },
+          {
+            "summary": "Стабильность предложения",
+            "body": "Проверяем, не изменились ли процент, лимиты и условия по сравнению с ранее опубликованной акцией, и обновляем рейтинг при заметных изменениях."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему условия бонусов к пополнению меняются",
+        "paragraphs": [
+          "Площадки регулярно меняют процент, максимальную сумму, промокоды и требования по отыгрышу. Сезонная акция может действовать несколько дней, а постоянное предложение — быть пересмотрено без изменения общего названия.",
+          "Условия также зависят от страны и способа пополнения. Один пользователь может видеть бонус для банковской карты, другой — отдельную акцию для криптовалюты или вообще не иметь доступа к предложению.",
+          "Если пополнять счёт не планируется, сравните <a href=\"/freebies/daily-rewards\">ежедневные награды</a>, <a href=\"/freebies/giveaways\">розыгрыши</a> и другие варианты в разделе <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании бонусов к пополнению",
+        "intro": "Бонус не должен заставлять вносить больше денег, чем вы изначально планировали потратить.",
+        "items": [
+          {
+            "summary": "Читайте условия до оплаты",
+            "body": "Сохраняйте страницу акции или основные правила до внесения средств, особенно если предложение ограничено по времени."
+          },
+          {
+            "summary": "Не увеличивайте депозит только ради максимума",
+            "body": "Максимальная сумма бонуса часто требует значительно большего пополнения. Сначала определите собственный лимит расходов, а уже затем смотрите, какой бонус ему соответствует."
+          },
+          {
+            "summary": "Проверяйте промокод до подтверждения",
+            "body": "Если акция требует код, убедитесь, что он принят интерфейсом до завершения пополнения. Некоторые сервисы не добавляют бонус задним числом."
+          },
+          {
+            "summary": "Не путайте бонусный и основной баланс",
+            "body": "У площадок могут отличаться правила использования и вывода этих средств. Проверяйте, какой баланс расходуется первым и когда бонус можно отменить."
+          },
+          {
+            "summary": "Учитывайте риск азартной игры",
+            "body": "Высокий бонус не меняет математическое преимущество площадки. Используйте ограничения по расходам и рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о бонусах к пополнению",
+        "items": [
+          {
+            "summary": "Что такое бонус к пополнению?",
+            "body": "Это дополнительный баланс или другая награда, которую сервис начисляет после подходящего депозита."
+          },
+          {
+            "summary": "Всегда ли 100% бонус лучше 50%?",
+            "body": "Нет. Нужно сравнивать максимальную сумму, отыгрыш, срок, лимит ставки и правила вывода. Меньший процент с простыми условиями может быть практичнее."
+          },
+          {
+            "summary": "Что такое требования по отыгрышу?",
+            "body": "Это необходимый объём ставок до того, как бонус или связанные с ним средства станут доступны для вывода."
+          },
+          {
+            "summary": "Нужен ли промокод?",
+            "body": "Зависит от акции. Некоторые предложения активируются автоматически, другие требуют ввести код до пополнения."
+          },
+          {
+            "summary": "Можно ли вывести бонус сразу?",
+            "body": "Обычно нет, если действуют требования по отыгрышу. Точные правила нужно смотреть на конкретной площадке."
+          },
+          {
+            "summary": "Действуют ли бонусы на пополнение скинами?",
+            "body": "На некоторых сайтах CS2 и Rust — да. Сравнивайте не только процент, но и внутреннюю оценку самих предметов."
+          },
+          {
+            "summary": "Что будет, если нарушить максимальную ставку?",
+            "body": "На площадках с таким ограничением бонус и связанный выигрыш могут быть отменены. Точный порядок определяется правилами акции."
+          },
+          {
+            "summary": "Почему рейтинг бонусов на CSGOBROKER меняется?",
+            "body": "Меняются проценты, лимиты, отыгрыш, промокоды, способы оплаты, региональная доступность и правила вывода."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Deposit Bonuses: How to Compare Offers on CS2, Rust, and Crypto Gambling Sites",
+        "paragraphs": [
+          "A deposit bonus increases the account balance after a qualifying payment, cryptocurrency deposit, or, on some gaming platforms, an item deposit. The offer can be a percentage of the first deposit, a fixed amount, or a sequence of bonuses across several deposits.",
+          "The same “100% deposit bonus” label does not guarantee equal value. One site may allow the bonus in most modes, while another applies wagering requirements, maximum-bet rules, expiry dates, and separate withdrawal conditions.",
+          "CSGOBROKER compares bonuses together with their terms rather than ranking only the headline percentage. For other promotion types, see <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/giveaways\">giveaways</a>, and <a href=\"/freebies/bonuses-to-sale\">selling bonuses</a>."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Deposit Bonuses",
+        "items": [
+          {
+            "title": "Percentage on the first deposit",
+            "paragraphs": [
+              "The platform adds a stated percentage to the first qualifying deposit up to a maximum. Check both the minimum deposit and the cap before paying."
+            ]
+          },
+          {
+            "title": "Fixed bonus amount",
+            "paragraphs": [
+              "Instead of a percentage, the service can credit a fixed reward after a deposit above a threshold. The amount is easier to compare, but bonus-balance restrictions can still differ."
+            ]
+          },
+          {
+            "title": "Multi-deposit bonus series",
+            "paragraphs": [
+              "Some offers are spread across several deposits. The total advertised amount can be large, but receiving all of it requires funding the account more than once."
+            ]
+          },
+          {
+            "title": "Promo-code deposit bonus",
+            "paragraphs": [
+              "An extra percentage or fixed reward can require a code before or during payment. Verify that the code is valid for your region, user status, and selected deposit method."
+            ]
+          },
+          {
+            "title": "Cryptocurrency deposit bonus",
+            "paragraphs": [
+              "Some services run separate offers for specific coins or networks. Final value depends on the exchange rate, network fees, and the bonus rules themselves."
+            ]
+          },
+          {
+            "title": "Item-deposit bonus",
+            "paragraphs": [
+              "On CS2 and Rust sites, depositing skins can add a percentage to the platform's internal valuation. Compare the item's base valuation with the market first, because a large bonus may not compensate for an undervalued skin."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Activating a Deposit Bonus",
+        "intro": "The headline amount only becomes meaningful after every condition affecting use and withdrawal has been reviewed.",
+        "items": [
+          {
+            "summary": "Wagering requirements",
+            "body": "Check the betting volume required before bonus-related funds can be withdrawn. Determine whether the multiplier applies to the bonus only, deposit plus bonus, or another base."
+          },
+          {
+            "summary": "Minimum and maximum deposit",
+            "body": "An offer can have an activation threshold and a cap on the amount receiving the bonus percentage. Depositing above the cap may not increase the reward."
+          },
+          {
+            "summary": "Expiry",
+            "body": "Bonus funds and wagering progress can expire. If the deadline is too short to complete the requirements realistically, the advertised percentage has less practical value."
+          },
+          {
+            "summary": "Maximum bet rule",
+            "body": "Some promotions restrict the size of individual bets while wagering is active. Breaking this rule can cause the bonus or associated winnings to be cancelled."
+          },
+          {
+            "summary": "Eligible game contribution",
+            "body": "Slots, betting, cases, and proprietary games can contribute at different rates or be excluded entirely. Review the contribution table when one is published."
+          },
+          {
+            "summary": "Withdrawals and identity verification",
+            "body": "Before depositing, review withdrawal minimums, fees, supported methods, and possible identity checks. Completing wagering does not remove the site's standard withdrawal requirements."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Deposit Bonuses",
+        "intro": "We compare practical usability rather than simply sorting offers by the largest advertised number.",
+        "items": [
+          {
+            "summary": "Effective bonus size",
+            "body": "We consider the percentage, maximum reward, minimum deposit, and how much a user can realistically receive with a normal deposit amount."
+          },
+          {
+            "summary": "Difficulty of the terms",
+            "body": "Higher wagering, shorter expiry, and stricter bet limits reduce the practical value of two otherwise similar bonuses."
+          },
+          {
+            "summary": "Regional and payment-method availability",
+            "body": "We check which countries and deposit methods qualify and whether crypto, skins, or specific payment systems are excluded."
+          },
+          {
+            "summary": "Rule transparency",
+            "body": "Wagering, expiry, bet limits, game contribution, bonus cancellation, and withdrawal rules should be visible before money is deposited."
+          },
+          {
+            "summary": "Actual crediting",
+            "body": "Promo-code activation, timely bonus credit, and a clear progress indicator all matter in practice."
+          },
+          {
+            "summary": "Offer stability",
+            "body": "We monitor changes to percentages, caps, and rules and adjust rankings when a previously available promotion materially changes."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Deposit Bonus Terms Change",
+        "paragraphs": [
+          "Platforms regularly change bonus percentages, maximum amounts, promo codes, and wagering conditions. A seasonal offer may last only a few days, while a long-running bonus can be revised without changing its general name.",
+          "Availability also differs by country and payment method. One user may see a bank-card promotion while another receives a crypto-specific offer or no bonus at all.",
+          "If you do not plan to deposit, compare <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/giveaways\">giveaways</a>, and other options in the main <a href=\"/freebies\">bonuses</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Using Deposit Bonuses",
+        "intro": "A bonus should never be a reason to deposit more than you originally intended to spend.",
+        "items": [
+          {
+            "summary": "Read the terms before paying",
+            "body": "Save the promotion page or its key conditions before depositing, especially when the offer is time-limited."
+          },
+          {
+            "summary": "Do not increase a deposit just to reach the maximum",
+            "body": "Maximum bonuses often require a much larger payment. Set your own spending limit first, then see which reward applies to that amount."
+          },
+          {
+            "summary": "Verify the promo code before confirmation",
+            "body": "If a code is required, make sure the interface accepts it before completing the payment. Some services do not add missed bonuses retroactively."
+          },
+          {
+            "summary": "Separate bonus and cash balances",
+            "body": "Platforms can apply different use and withdrawal rules to each. Check which balance is spent first and whether the bonus can be cancelled."
+          },
+          {
+            "summary": "Remember the gambling risk",
+            "body": "A larger promotion does not remove the platform's mathematical edge. Set spending limits and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Deposit Bonuses",
+        "items": [
+          {
+            "summary": "What is a deposit bonus?",
+            "body": "An extra balance or reward credited after a qualifying deposit."
+          },
+          {
+            "summary": "Is a 100% bonus always better than 50%?",
+            "body": "No. Maximum amount, wagering, expiry, bet limits, and withdrawal rules can make a smaller but simpler offer more useful."
+          },
+          {
+            "summary": "What are wagering requirements?",
+            "body": "The required betting volume before bonus funds or related winnings become withdrawable."
+          },
+          {
+            "summary": "Do I need a promo code?",
+            "body": "It depends on the promotion. Some activate automatically, while others require a code before depositing."
+          },
+          {
+            "summary": "Can I withdraw the bonus immediately?",
+            "body": "Usually not when wagering applies. The exact rule depends on the individual platform."
+          },
+          {
+            "summary": "Do skin deposits qualify?",
+            "body": "Some CS2 and Rust sites support them. Compare the bonus percentage together with the platform's base valuation of the items."
+          },
+          {
+            "summary": "What happens if I exceed the maximum bet?",
+            "body": "On promotions with that restriction, the bonus and associated winnings can be cancelled according to the site's rules."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Percentages, caps, wagering, promo codes, payment methods, regional availability, and withdrawal terms can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Bonos de depósito: cómo comparar ofertas en sitios de CS2, Rust y cripto",
+        "paragraphs": [
+          "Un bono de depósito aumenta el saldo después de un pago válido, un depósito en criptomonedas o, en algunas plataformas, un depósito con objetos. Puede ser un porcentaje del primer ingreso, una cantidad fija o una serie de bonos para varios depósitos.",
+          "La misma frase «100% de bono» no implica el mismo valor. Un sitio puede permitir usarlo en casi todos los modos y otro aplicar requisitos de apuesta, límite máximo por jugada, caducidad y reglas específicas de retiro.",
+          "CSGOBROKER compara el bono junto con sus condiciones, no solo el porcentaje. Para otras promociones consulta <a href=\"/freebies/daily-rewards\">recompensas diarias</a>, <a href=\"/freebies/giveaways\">sorteos</a> y <a href=\"/freebies/bonuses-to-sale\">bonos por venta</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de bonos de depósito",
+        "items": [
+          {
+            "title": "Porcentaje sobre el primer depósito",
+            "paragraphs": [
+              "La plataforma añade un porcentaje hasta un máximo. Comprueba el mínimo exigido y el límite al que se aplica el porcentaje."
+            ]
+          },
+          {
+            "title": "Cantidad fija",
+            "paragraphs": [
+              "El servicio puede acreditar una cantidad concreta después de superar un depósito mínimo. Es sencillo de comparar, aunque el saldo promocional puede tener restricciones."
+            ]
+          },
+          {
+            "title": "Serie de bonos para varios depósitos",
+            "paragraphs": [
+              "Algunas promociones dividen la recompensa entre varios ingresos. La cifra total puede parecer alta, pero exige depositar más de una vez."
+            ]
+          },
+          {
+            "title": "Bono con código promocional",
+            "paragraphs": [
+              "Un porcentaje o importe adicional puede requerir un código. Comprueba país, condición de nuevo usuario y método de pago antes de depositar."
+            ]
+          },
+          {
+            "title": "Bono por depósito en criptomonedas",
+            "paragraphs": [
+              "Algunas plataformas crean ofertas para monedas o redes concretas. Ten en cuenta tipo de cambio, comisión de red y reglas del bono."
+            ]
+          },
+          {
+            "title": "Bono por depósito con objetos",
+            "paragraphs": [
+              "En sitios de CS2 y Rust, las skins pueden recibir un porcentaje adicional sobre la valoración interna. Compara primero el precio base con el mercado."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de activar un bono",
+        "intro": "La cantidad anunciada solo es útil después de revisar todas las condiciones que afectan a su uso y retiro.",
+        "items": [
+          {
+            "summary": "Requisitos de apuesta",
+            "body": "Revisa el volumen necesario antes de retirar fondos relacionados con el bono y sobre qué base se aplica el multiplicador."
+          },
+          {
+            "summary": "Depósito mínimo y máximo",
+            "body": "Puede existir un umbral de activación y un límite máximo bonificado. Depositar más del límite no siempre aumenta la recompensa."
+          },
+          {
+            "summary": "Caducidad",
+            "body": "El saldo y el progreso pueden expirar. Un plazo demasiado corto reduce el valor práctico del porcentaje anunciado."
+          },
+          {
+            "summary": "Límite máximo por apuesta",
+            "body": "Algunas promociones restringen el tamaño de cada jugada durante el cumplimiento. Superarlo puede anular el bono o las ganancias."
+          },
+          {
+            "summary": "Contribución de juegos",
+            "body": "Slots, apuestas, cajas y juegos propios pueden contar de forma diferente o no contar. Revisa la tabla de contribución si existe."
+          },
+          {
+            "summary": "Retiro y verificación de identidad",
+            "body": "Antes de depositar revisa mínimos, comisiones, métodos y posibles controles de identidad. Completar el requisito no elimina las reglas normales de retiro."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los bonos de depósito",
+        "intro": "Comparamos la utilidad real y no simplemente la mayor cifra publicitaria.",
+        "items": [
+          {
+            "summary": "Tamaño efectivo",
+            "body": "Consideramos porcentaje, máximo, mínimo y cuánto puede recibir realmente un usuario con un depósito habitual."
+          },
+          {
+            "summary": "Dificultad de las condiciones",
+            "body": "Más requisitos, menos tiempo y límites más estrictos reducen el valor práctico de un bono."
+          },
+          {
+            "summary": "Disponibilidad regional y de pago",
+            "body": "Comprobamos países y métodos admitidos y exclusiones para cripto, skins o sistemas concretos."
+          },
+          {
+            "summary": "Transparencia",
+            "body": "Requisitos, caducidad, límites, contribución, cancelación y retiro deberían estar visibles antes del pago."
+          },
+          {
+            "summary": "Acreditación real",
+            "body": "Importan la activación del código, el abono correcto y un indicador claro del progreso."
+          },
+          {
+            "summary": "Estabilidad de la oferta",
+            "body": "Seguimos cambios de porcentajes, máximos y reglas y actualizamos la valoración cuando cambian de forma relevante."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las condiciones de los bonos",
+        "paragraphs": [
+          "Las plataformas cambian porcentajes, máximos, códigos y requisitos. Una campaña estacional puede durar días y una oferta permanente puede revisarse sin cambiar de nombre.",
+          "La disponibilidad también depende del país y método de pago. Un usuario puede ver una promoción con tarjeta y otro una oferta cripto o ninguna.",
+          "Si no quieres depositar, compara <a href=\"/freebies/daily-rewards\">recompensas diarias</a>, <a href=\"/freebies/giveaways\">sorteos</a> y otras opciones en <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al utilizar bonos de depósito",
+        "intro": "Un bono no debería ser motivo para depositar más de lo que pensabas gastar.",
+        "items": [
+          {
+            "summary": "Lee las reglas antes de pagar",
+            "body": "Guarda la página o las condiciones principales antes de depositar, especialmente en promociones limitadas."
+          },
+          {
+            "summary": "No aumentes el depósito solo por alcanzar el máximo",
+            "body": "Los bonos máximos suelen exigir pagos mucho mayores. Define primero tu límite personal."
+          },
+          {
+            "summary": "Comprueba el código antes de confirmar",
+            "body": "Si se necesita código, asegúrate de que el sistema lo acepta antes del pago. Algunos sitios no añaden bonos después."
+          },
+          {
+            "summary": "Distingue saldo real y promocional",
+            "body": "Pueden tener reglas diferentes. Comprueba qué saldo se usa primero y si se puede cancelar el bono."
+          },
+          {
+            "summary": "Recuerda el riesgo del juego",
+            "body": "La promoción no elimina la ventaja matemática de la plataforma. Usa límites y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre bonos de depósito",
+        "items": [
+          {
+            "summary": "¿Qué es un bono de depósito?",
+            "body": "Saldo o recompensa adicional que se acredita después de un depósito válido."
+          },
+          {
+            "summary": "¿100% siempre es mejor que 50%?",
+            "body": "No. Máximo, requisitos, caducidad, límites y retiro pueden hacer más útil una oferta menor."
+          },
+          {
+            "summary": "¿Qué son los requisitos de apuesta?",
+            "body": "El volumen de apuestas necesario antes de poder retirar fondos asociados al bono."
+          },
+          {
+            "summary": "¿Necesito código promocional?",
+            "body": "Depende de la promoción. Algunas se activan automáticamente y otras necesitan código."
+          },
+          {
+            "summary": "¿Puedo retirar el bono inmediatamente?",
+            "body": "Normalmente no cuando existe un requisito de apuesta. Revisa las reglas del sitio."
+          },
+          {
+            "summary": "¿Sirven los depósitos con skins?",
+            "body": "En algunos sitios de CS2 y Rust sí. Compara el porcentaje con la valoración base del objeto."
+          },
+          {
+            "summary": "¿Qué pasa si supero la apuesta máxima?",
+            "body": "El sitio puede anular el bono y las ganancias relacionadas según las reglas."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian porcentajes, máximos, requisitos, códigos, pagos, disponibilidad y retiro."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Bônus de depósito: como comparar ofertas em sites de CS2, Rust e cripto",
+        "paragraphs": [
+          "Um bônus de depósito aumenta o saldo depois de pagamento válido, depósito em criptomoeda ou, em algumas plataformas, depósito de itens. Pode ser porcentagem no primeiro depósito, valor fixo ou série de bônus. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista.",
+          "A mesma frase «100% de bônus» não significa o mesmo valor. Um site pode permitir uso amplo, enquanto outro aplica requisitos de aposta, limite por jogada, validade e regras próprias de saque. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação.",
+          "A CSGOBROKER compara bônus junto com as condições, não apenas a porcentagem. Para outras promoções veja <a href=\"/freebies/daily-rewards\">recompensas diárias</a>, <a href=\"/freebies/giveaways\">sorteios</a> e <a href=\"/freebies/bonuses-to-sale\">bônus de venda</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de bônus de depósito",
+        "items": [
+          {
+            "title": "Porcentagem no primeiro depósito",
+            "paragraphs": [
+              "A plataforma adiciona uma porcentagem até um limite. Confira mínimo e teto antes de pagar. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Valor fixo",
+            "paragraphs": [
+              "O serviço pode creditar valor específico acima de um mínimo. É simples comparar, mas o saldo promocional pode ter regras próprias. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Série em vários depósitos",
+            "paragraphs": [
+              "Algumas promoções dividem a recompensa em vários depósitos. O total pode ser grande, mas exige financiar a conta mais de uma vez. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          },
+          {
+            "title": "Bônus com código",
+            "paragraphs": [
+              "Porcentagem ou valor extra pode exigir código. Confira região, novo usuário e método de pagamento. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Bônus com criptomoeda",
+            "paragraphs": [
+              "Alguns sites têm ofertas para moedas ou redes específicas. Considere câmbio, taxa de rede e condições. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Bônus com depósito de itens",
+            "paragraphs": [
+              "Em sites de CS2 e Rust, skins podem receber porcentagem extra sobre a avaliação interna. Compare antes o valor base com o mercado. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de ativar",
+        "intro": "O valor anunciado só faz sentido depois de revisar todas as condições que afetam uso e saque.",
+        "items": [
+          {
+            "summary": "Requisitos de aposta",
+            "body": "Veja o volume necessário antes do saque e a base usada pelo multiplicador. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Depósito mínimo e máximo",
+            "body": "Pode existir valor mínimo e teto bonificado; depositar acima nem sempre aumenta o bônus."
+          },
+          {
+            "summary": "Validade",
+            "body": "Saldo e progresso podem expirar. Prazo curto reduz o valor prático."
+          },
+          {
+            "summary": "Limite máximo por aposta",
+            "body": "Algumas promoções limitam cada jogada. Ultrapassar pode cancelar bônus ou ganhos."
+          },
+          {
+            "summary": "Contribuição dos jogos",
+            "body": "Slots, apostas, caixas e jogos próprios podem contar de forma diferente ou ser excluídos."
+          },
+          {
+            "summary": "Saque e verificação de identidade",
+            "body": "Confira mínimos, taxas, métodos e possíveis verificações; cumprir o requisito não remove as regras normais."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia bônus de depósito",
+        "intro": "Comparamos utilidade prática, não apenas o maior número publicitário.",
+        "items": [
+          {
+            "summary": "Tamanho efetivo",
+            "body": "Consideramos porcentagem, teto, mínimo e crédito real para um depósito comum."
+          },
+          {
+            "summary": "Dificuldade das condições",
+            "body": "Requisitos altos, prazo curto e limites rígidos diminuem o valor."
+          },
+          {
+            "summary": "Disponibilidade regional e de pagamento",
+            "body": "Verificamos países, métodos e exclusões para cripto, skins ou sistemas específicos."
+          },
+          {
+            "summary": "Transparência",
+            "body": "Requisitos, validade, limites, contribuição, cancelamento e saque devem aparecer antes do pagamento."
+          },
+          {
+            "summary": "Crédito real",
+            "body": "Ativação do código, crédito correto e acompanhamento do progresso importam."
+          },
+          {
+            "summary": "Estabilidade",
+            "body": "Monitoramos mudanças em porcentagem, teto e regras e ajustamos a avaliação."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que as condições mudam",
+        "paragraphs": [
+          "Plataformas alteram porcentagens, tetos, códigos e requisitos. Campanhas sazonais podem durar poucos dias e ofertas permanentes podem ser revistas.",
+          "A disponibilidade também varia por país e pagamento. Um usuário pode ver promoção com cartão, outro em cripto ou nenhuma.",
+          "Se não pretende depositar, compare <a href=\"/freebies/daily-rewards\">recompensas diárias</a>, <a href=\"/freebies/giveaways\">sorteios</a> e outras opções em <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao usar bônus de depósito",
+        "intro": "Um bônus não deve levar você a depositar mais do que planejava gastar.",
+        "items": [
+          {
+            "summary": "Leia as regras antes de pagar",
+            "body": "Salve a página ou condições principais antes do depósito, principalmente em campanhas limitadas."
+          },
+          {
+            "summary": "Não aumente o depósito só para alcançar o máximo",
+            "body": "Bônus máximos costumam exigir pagamentos muito maiores. Defina primeiro seu limite."
+          },
+          {
+            "summary": "Confira o código antes de confirmar",
+            "body": "Se houver código, confirme que foi aceito antes do pagamento. Alguns sites não adicionam depois."
+          },
+          {
+            "summary": "Separe saldo real e promocional",
+            "body": "Eles podem ter regras diferentes. Veja qual é usado primeiro e se o bônus pode ser cancelado."
+          },
+          {
+            "summary": "Considere o risco do jogo",
+            "body": "A promoção não remove a vantagem matemática da plataforma. Use limites e <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre bônus de depósito",
+        "items": [
+          {
+            "summary": "O que é bônus de depósito?",
+            "body": "Saldo ou recompensa extra creditada após um depósito válido."
+          },
+          {
+            "summary": "100% sempre é melhor que 50%?",
+            "body": "Não. Teto, requisitos, validade, limites e saque podem tornar uma oferta menor mais útil."
+          },
+          {
+            "summary": "O que são requisitos de aposta?",
+            "body": "Volume necessário antes do saque de fundos ligados ao bônus."
+          },
+          {
+            "summary": "Preciso de código?",
+            "body": "Depende; algumas promoções são automáticas e outras exigem código."
+          },
+          {
+            "summary": "Posso sacar imediatamente?",
+            "body": "Normalmente não quando há requisitos. Veja as regras da plataforma."
+          },
+          {
+            "summary": "Depósitos de skins contam?",
+            "body": "Em alguns sites de CS2 e Rust, sim. Compare porcentagem e avaliação base."
+          },
+          {
+            "summary": "O que ocorre se ultrapassar a aposta máxima?",
+            "body": "O site pode cancelar bônus e ganhos relacionados."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Porcentagens, limites, requisitos, códigos, pagamentos, regiões e saque mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Yatırma Bonusları: CS2, Rust ve Kripto Sitelerindeki Teklifler Nasıl Karşılaştırılır?",
+        "paragraphs": [
+          "Yatırma bonusu uygun para yatırma, kripto transferi veya bazı oyun sitelerinde eşya yatırma sonrasında bakiyeyi artırır. Teklif ilk yatırmaya yüzde, sabit tutar veya birkaç yatırmaya bölünmüş seri olabilir. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir.",
+          "Aynı “%100 bonus” ifadesi aynı değeri garanti etmez. Bir site bonusu çoğu modda kullandırırken diğeri çevrim şartı, maksimum bahis, süre ve ayrı çekim kuralları uygulayabilir. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir.",
+          "CSGOBROKER bonusları yalnız başlık yüzdesine göre değil tüm şartlarıyla karşılaştırır. Diğer kampanyalar için <a href=\"/freebies/daily-rewards\">günlük ödüller</a>, <a href=\"/freebies/giveaways\">çekilişler</a> ve <a href=\"/freebies/bonuses-to-sale\">satış bonusları</a> bölümlerine bakın."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Yatırma Bonusu Türleri",
+        "items": [
+          {
+            "title": "İlk yatırmaya yüzde",
+            "paragraphs": [
+              "Platform ilk uygun yatırmaya belirli yüzde ekler ve üst sınır uygular. Minimum tutarı ve maksimum bonusu kontrol edin. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Sabit tutar",
+            "paragraphs": [
+              "Servis belirli eşiğin üstündeki yatırmaya sabit ödül verebilir. Karşılaştırması kolaydır ancak bonus bakiyesi ayrı kurallara sahip olabilir. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Birden fazla yatırmaya seri",
+            "paragraphs": [
+              "Bazı teklifler birkaç yatırmaya bölünür. Toplam rakam yüksek olabilir ancak tamamını almak için hesabı birden fazla kez finanse etmek gerekir. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          },
+          {
+            "title": "Promosyon kodlu bonus",
+            "paragraphs": [
+              "Ek yüzde veya tutar kod gerektirebilir. Kodun ülke, yeni kullanıcı durumu ve ödeme yöntemi için geçerli olduğunu doğrulayın. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Kripto yatırma bonusu",
+            "paragraphs": [
+              "Bazı servisler belirli coin veya ağlar için ayrı teklifler sunar. Kur, ağ ücreti ve bonus şartlarını birlikte değerlendirin."
+            ]
+          },
+          {
+            "title": "Eşya yatırma bonusu",
+            "paragraphs": [
+              "CS2 ve Rust sitelerinde skin yatırma iç değerlemeye ek yüzde verebilir. Yüksek bonus düşük temel fiyatı gizlememelidir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Bonusu Etkinleştirmeden Önce Neler Kontrol Edilmeli?",
+        "intro": "Reklam edilen tutar, kullanım ve çekimi etkileyen tüm şartlar incelendikten sonra anlam kazanır.",
+        "items": [
+          {
+            "summary": "Çevrim şartı",
+            "body": "Bonusla ilişkili fonları çekmeden önce gereken bahis hacmini ve çarpanın hangi tutara uygulandığını kontrol edin."
+          },
+          {
+            "summary": "Minimum ve maksimum yatırma",
+            "body": "Aktivasyon eşiği ve üst sınır olabilir; sınır üzerindeki ödeme bonusu artırmayabilir."
+          },
+          {
+            "summary": "Süre",
+            "body": "Bonus ve çevrim ilerlemesi sona erebilir. Çok kısa süre pratik değeri düşürür."
+          },
+          {
+            "summary": "Maksimum bahis",
+            "body": "Bazı kampanyalar çevrim sırasında tek bahis tutarını sınırlar. İhlal bonusun veya kazancın iptaline yol açabilir."
+          },
+          {
+            "summary": "Oyun katkısı",
+            "body": "Slot, bahis, kasa ve platform oyunları farklı oranda sayılabilir veya hariç olabilir."
+          },
+          {
+            "summary": "Çekim ve kimlik doğrulama",
+            "body": "Minimum, ücret, yöntem ve olası kimlik kontrolünü inceleyin; çevrimi tamamlamak normal çekim kurallarını kaldırmaz."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Yatırma Bonuslarını Nasıl Değerlendirir?",
+        "intro": "En büyük reklam rakamını değil, teklifin pratik kullanımını karşılaştırıyoruz.",
+        "items": [
+          {
+            "summary": "Gerçek bonus büyüklüğü",
+            "body": "Yüzde, maksimum tutar, minimum yatırma ve normal bir yatırmayla gerçek krediyi değerlendiriyoruz."
+          },
+          {
+            "summary": "Şartların zorluğu",
+            "body": "Yüksek çevrim, kısa süre ve katı bahis limiti değeri düşürür."
+          },
+          {
+            "summary": "Bölge ve ödeme erişimi",
+            "body": "Ülkeleri, ödeme yöntemlerini ve kripto/skin istisnalarını kontrol ediyoruz."
+          },
+          {
+            "summary": "Kural şeffaflığı",
+            "body": "Çevrim, süre, limit, katkı, iptal ve çekim kuralları ödeme öncesi görünmelidir."
+          },
+          {
+            "summary": "Gerçek bonus kredisi",
+            "body": "Kodun çalışması, bakiyenin zamanında eklenmesi ve ilerleme göstergesi önemlidir."
+          },
+          {
+            "summary": "Teklif istikrarı",
+            "body": "Yüzde, limit ve şartlardaki değişiklikleri izleyip sıralamayı güncelliyoruz."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Yatırma Bonusu Şartları Neden Değişir?",
+        "paragraphs": [
+          "Platformlar yüzde, maksimum, kod ve çevrim şartlarını değiştirir. Sezonluk kampanya birkaç gün sürebilir, kalıcı teklif aynı adla revize edilebilir.",
+          "Erişim ülke ve ödeme yöntemine göre değişir. Bir kullanıcı kart bonusu, diğeri kripto teklifi görebilir veya hiç uygun olmayabilir.",
+          "Yatırma yapmak istemiyorsanız <a href=\"/freebies/daily-rewards\">günlük ödülleri</a>, <a href=\"/freebies/giveaways\">çekilişleri</a> ve <a href=\"/freebies\">diğer bonusları</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Yatırma Bonuslarında Güvenlik",
+        "intro": "Bonus, planladığınızdan daha fazla para yatırmanız için bir sebep olmamalıdır.",
+        "items": [
+          {
+            "summary": "Ödemeden önce şartları okuyun",
+            "body": "Özellikle süreli tekliflerde yatırmadan önce promosyon sayfasını veya temel koşulları saklayın."
+          },
+          {
+            "summary": "Maksimum için yatırmayı büyütmeyin",
+            "body": "En yüksek bonus genellikle daha büyük ödeme gerektirir. Önce kendi harcama limitinizi belirleyin."
+          },
+          {
+            "summary": "Kodu onaydan önce kontrol edin",
+            "body": "Kod gerekiyorsa ödeme bitmeden kabul edildiğini doğrulayın. Bazı siteler sonradan eklemez."
+          },
+          {
+            "summary": "Nakit ve bonus bakiyesini ayırın",
+            "body": "Kullanım ve çekim kuralları farklı olabilir. Hangi bakiyenin önce harcandığını kontrol edin."
+          },
+          {
+            "summary": "Kumar riskini unutmayın",
+            "body": "Bonus matematiksel avantajı kaldırmaz. Limit belirleyin ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Yatırma Bonusları Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Yatırma bonusu nedir?",
+            "body": "Uygun yatırma sonrasında hesaba eklenen ilave bakiye veya ödüldür."
+          },
+          {
+            "summary": "%100 her zaman %50'den iyi midir?",
+            "body": "Hayır. Maksimum, çevrim, süre, bahis limiti ve çekim daha küçük teklifi daha kullanışlı yapabilir."
+          },
+          {
+            "summary": "Çevrim şartı nedir?",
+            "body": "Bonusla ilişkili paranın çekiminden önce yapılması gereken toplam bahis hacmidir."
+          },
+          {
+            "summary": "Promosyon kodu gerekir mi?",
+            "body": "Kampanyaya bağlıdır. Bazıları otomatik, bazıları kod gerektirir."
+          },
+          {
+            "summary": "Bonusu hemen çekebilir miyim?",
+            "body": "Çevrim varsa genellikle hayır. Kesin kural platforma bağlıdır."
+          },
+          {
+            "summary": "Skin yatırmaları uygun mu?",
+            "body": "Bazı CS2 ve Rust sitelerinde evet. Bonus yüzdesiyle birlikte temel eşya değerini karşılaştırın."
+          },
+          {
+            "summary": "Maksimum bahsi aşarsam ne olur?",
+            "body": "Kurala bağlı olarak bonus ve ilişkili kazanç iptal edilebilir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Yüzde, limit, çevrim, kod, ödeme, bölge ve çekim şartları değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Deposit Bonuses: CS2, Rust और Crypto Sites के Offers कैसे Compare करें",
+        "paragraphs": [
+          "Deposit bonus qualifying payment, cryptocurrency deposit या कुछ gaming platforms पर item deposit के बाद balance बढ़ाता है। Offer first deposit percentage, fixed amount या multiple-deposit series हो सकती है। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।",
+          "Same “100% deposit bonus” label same value guarantee नहीं करता। एक site bonus को ज्यादा modes में use करने देती है, दूसरी wagering requirements, maximum-bet rule, expiry और अलग withdrawal conditions लगा सकती है। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।",
+          "CSGOBROKER headline percentage के बजाय complete terms के साथ offers compare करता है। दूसरे promotions के लिए <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/giveaways\">giveaways</a> और <a href=\"/freebies/bonuses-to-sale\">selling bonuses</a> देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Common Deposit Bonus Types",
+        "items": [
+          {
+            "title": "First deposit percentage",
+            "paragraphs": [
+              "Platform qualifying first deposit पर stated percentage add करती है, usually maximum cap के साथ। Minimum deposit और cap दोनों check करें। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Fixed amount",
+            "paragraphs": [
+              "Service threshold के ऊपर fixed reward credit कर सकती है। Compare करना आसान है, लेकिन bonus balance restrictions अलग हो सकती हैं। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Multi-deposit series",
+            "paragraphs": [
+              "कुछ promotions reward कई deposits में divide करती हैं। Total amount बड़ा हो सकता है, लेकिन पूरा लेने के लिए multiple deposits चाहिए। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          },
+          {
+            "title": "Promo-code bonus",
+            "paragraphs": [
+              "Extra percentage या amount code require कर सकता है। Country, new-user status और payment method validity verify करें। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Crypto deposit bonus",
+            "paragraphs": [
+              "कुछ services specific coins या networks के लिए offer देती हैं। Exchange rate, network fee और bonus terms compare करें।"
+            ]
+          },
+          {
+            "title": "Item-deposit bonus",
+            "paragraphs": [
+              "CS2 और Rust sites पर skin deposit internal valuation पर extra percentage दे सकती है। High bonus low base valuation को hide न करे।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Bonus Activate करने से पहले क्या Check करें",
+        "intro": "Headline amount तभी meaningful है जब use और withdrawal को affect करने वाली सभी conditions review की जाएँ।",
+        "items": [
+          {
+            "summary": "Wagering requirements",
+            "body": "Required betting volume और multiplier किस base पर apply होता है, check करें।"
+          },
+          {
+            "summary": "Minimum और maximum deposit",
+            "body": "Activation threshold और bonus cap हो सकते हैं; cap के ऊपर deposit reward नहीं बढ़ा सकती।"
+          },
+          {
+            "summary": "Expiry",
+            "body": "Bonus balance और progress expire हो सकते हैं। Short deadline practical value कम करती है।"
+          },
+          {
+            "summary": "Maximum bet rule",
+            "body": "कुछ promotions wagering के दौरान bet size limit करती हैं। Rule break होने पर bonus या winnings cancel हो सकती हैं।"
+          },
+          {
+            "summary": "Game contribution",
+            "body": "Slots, betting, cases और proprietary games अलग rate से count या exclude हो सकते हैं।"
+          },
+          {
+            "summary": "Withdrawal और identity verification",
+            "body": "Deposit से पहले minimums, fees, methods और possible identity checks देखें; wagering complete होने पर standard rules खत्म नहीं होते।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Deposit Bonuses को कैसे Rate करता है",
+        "intro": "हम largest advertising number के बजाय practical usability compare करते हैं।",
+        "items": [
+          {
+            "summary": "Effective bonus size",
+            "body": "Percentage, maximum reward, minimum deposit और normal deposit पर actual credit evaluate किया जाता है।"
+          },
+          {
+            "summary": "Terms की difficulty",
+            "body": "Higher wagering, shorter expiry और stricter bet limits value कम करते हैं।"
+          },
+          {
+            "summary": "Regional और payment availability",
+            "body": "Countries, payment methods और crypto/skins exclusions check किए जाते हैं।"
+          },
+          {
+            "summary": "Rule transparency",
+            "body": "Wagering, expiry, limits, contribution, cancellation और withdrawal rules payment से पहले visible होने चाहिए।"
+          },
+          {
+            "summary": "Actual crediting",
+            "body": "Promo code activation, timely credit और clear progress indicator important हैं।"
+          },
+          {
+            "summary": "Offer stability",
+            "body": "Percentage, caps और terms changes monitor करके ranking update की जाती है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Deposit Bonus Terms क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms percentages, maximums, promo codes और wagering conditions regularly बदलती हैं। Seasonal offer कुछ days रह सकती है और long-running bonus revise हो सकती है।",
+          "Availability country और payment method पर भी depend करती है। एक user card promotion, दूसरा crypto offer या कोई bonus नहीं देख सकता।",
+          "अगर deposit नहीं करना है, तो <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/giveaways\">giveaways</a> और <a href=\"/freebies\">other bonuses</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Deposit Bonuses Use करते समय Safety",
+        "intro": "Bonus आपको planned amount से ज्यादा deposit करने की वजह नहीं बननी चाहिए।",
+        "items": [
+          {
+            "summary": "Payment से पहले terms पढ़ें",
+            "body": "Time-limited promotion में deposit से पहले page या key conditions save रखें।"
+          },
+          {
+            "summary": "Maximum bonus के लिए deposit न बढ़ाएँ",
+            "body": "Maximum reward अक्सर much larger payment मांगती है। पहले अपना spending limit तय करें।"
+          },
+          {
+            "summary": "Promo code check करें",
+            "body": "Code required हो तो payment से पहले acceptance verify करें। कुछ sites बाद में bonus add नहीं करतीं।"
+          },
+          {
+            "summary": "Cash और bonus balance अलग समझें",
+            "body": "Use और withdrawal rules अलग हो सकते हैं। कौन सा balance पहले spend होता है, check करें।"
+          },
+          {
+            "summary": "Gambling risk याद रखें",
+            "body": "Bigger bonus platform advantage remove नहीं करता। Limits set करें और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Deposit Bonuses के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Deposit bonus क्या है?",
+            "body": "Qualifying deposit के बाद credited extra balance या reward।"
+          },
+          {
+            "summary": "क्या 100% हमेशा 50% से बेहतर है?",
+            "body": "नहीं। Cap, wagering, expiry, bet limits और withdrawal smaller offer को ज्यादा useful बना सकते हैं।"
+          },
+          {
+            "summary": "Wagering requirement क्या है?",
+            "body": "Bonus-related funds withdraw करने से पहले required betting volume।"
+          },
+          {
+            "summary": "Promo code जरूरी है?",
+            "body": "Promotion पर depend करता है; कुछ automatic होती हैं, कुछ code मांगती हैं।"
+          },
+          {
+            "summary": "क्या bonus तुरंत withdraw कर सकते हैं?",
+            "body": "Wagering होने पर usually नहीं। Exact rule platform पर depend करता है।"
+          },
+          {
+            "summary": "क्या skin deposits qualify करती हैं?",
+            "body": "कुछ CS2 और Rust sites पर हाँ। Bonus percentage के साथ base valuation compare करें।"
+          },
+          {
+            "summary": "Maximum bet exceed करने पर क्या होता है?",
+            "body": "Rules के अनुसार bonus और related winnings cancel हो सकती हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Percentages, caps, wagering, codes, payments, regions और withdrawal terms बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

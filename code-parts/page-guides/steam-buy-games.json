@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "steam-buy-games",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Покупка игр для Steam: ключи, подарки, магазины и что сравнивать",
+        "paragraphs": [
+          "Сторонние магазины Steam-игр продают цифровые ключи, подарочные копии, дополнения, подарочные карты и другие цифровые товары. Покупатель выбирает продукт, проверяет регион и способ активации, оплачивает заказ и получает ключ или инструкцию по добавлению игры в библиотеку.",
+          "Одна и та же игра может продаваться напрямую магазином или через маркетплейс, где предложение размещает отдельный продавец. Во втором случае важны не только цена и рейтинг площадки, но и репутация конкретного продавца, условия возврата и то, кто отвечает за неработающий или уже использованный ключ.",
+          "CSGOBROKER сравнивает такие сервисы отдельно от <a href=\"/steam/topup\">пополнения кошелька Steam</a>. Иногда дешевле купить игру напрямую у стороннего продавца, а иногда — пополнить Steam и воспользоваться ценой внутри магазина. Для карточек и оформления профиля есть отдельная подборка <a href=\"/steam/levelup\">сервисов повышения уровня Steam</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие цифровые товары встречаются на сайтах",
+        "items": [
+          {
+            "title": "Ключи Steam",
+            "paragraphs": [
+              "Покупатель получает код продукта и активирует его в клиенте Steam. Перед оплатой нужно проверить регион, платформу, издание и отсутствие ограничений на активацию."
+            ]
+          },
+          {
+            "title": "Подарочные копии игр",
+            "paragraphs": [
+              "Игра передаётся как подарок или через предусмотренный продавцом способ получения. Условия могут зависеть от страны получателя и региональных ограничений Steam."
+            ]
+          },
+          {
+            "title": "Дополнения и внутриигровой контент",
+            "paragraphs": [
+              "DLC, сезонные пропуски и дополнительные наборы требуют базовую игру или конкретное издание. Проверьте совместимость перед покупкой."
+            ]
+          },
+          {
+            "title": "Подарочные карты Steam",
+            "paragraphs": [
+              "Цифровая карта пополняет кошелёк на фиксированную сумму. Для обычного пополнения можно также сравнить <a href=\"/steam/topup\">сервисы пополнения Steam</a>."
+            ]
+          },
+          {
+            "title": "Игровые наборы и издания",
+            "paragraphs": [
+              "Standard, Deluxe, Ultimate и комплектные издания могут содержать разный набор дополнений. Сравнивайте состав, а не только название и процент скидки."
+            ]
+          },
+          {
+            "title": "Аккаунты с играми",
+            "paragraphs": [
+              "Некоторые торговые площадки предлагают аккаунты с уже добавленными играми. Такой формат заметно рискованнее ключа: доступ может быть восстановлен прежним владельцем, а передача аккаунта может нарушать правила используемой платформы."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед покупкой игры",
+        "intro": "Самая низкая цена полезна только тогда, когда товар подходит вашему региону, активируется ожидаемым способом и соответствует нужному изданию.",
+        "items": [
+          {
+            "summary": "Регион активации",
+            "body": "Проверьте обозначения Global, Europe, CIS и другие региональные ограничения. Товар, предназначенный для другой страны, может не активироваться на вашем аккаунте."
+          },
+          {
+            "summary": "Способ получения",
+            "body": "Уточните, получите ли вы обычный ключ, подарок, ссылку, аккаунт или другую форму цифрового товара. Эти способы имеют разный уровень риска и удобства."
+          },
+          {
+            "summary": "Издание и состав",
+            "body": "Сравните точное название, DLC, бонусы предзаказа и наличие базовой игры. Похожая обложка не гарантирует одинаковый комплект."
+          },
+          {
+            "summary": "Кто продаёт товар",
+            "body": "На маркетплейсе смотрите рейтинг продавца, число завершённых заказов, возраст аккаунта и отзывы по конкретной категории товаров."
+          },
+          {
+            "summary": "Итоговая цена",
+            "body": "Добавьте комиссию площадки, платёжный сбор и конвертацию валюты. Цена на карточке товара может быть ниже фактической суммы на этапе оплаты."
+          },
+          {
+            "summary": "Возврат и поддержка",
+            "body": "До покупки выясните, какие доказательства потребуются для возврата неработающего или уже использованного ключа и сколько времени даётся на обращение."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает магазины игр для Steam",
+        "intro": "Мы учитываем не только скидки, но и вероятность получить подходящий цифровой товар без лишних рисков и неожиданных доплат.",
+        "items": [
+          {
+            "summary": "Итоговая цена",
+            "body": "Сравниваем стоимость после комиссий и конвертации, а не только исходную цену в каталоге."
+          },
+          {
+            "summary": "Прозрачность региона и активации",
+            "body": "До оплаты должны быть ясно указаны регион, платформа, способ получения и ограничения."
+          },
+          {
+            "summary": "Надёжность продавцов",
+            "body": "Для маркетплейсов учитываем систему рейтингов, историю продавцов, защиту покупателя и порядок разбирательства споров."
+          },
+          {
+            "summary": "Скорость доставки",
+            "body": "Цифровой ключ обычно должен приходить быстро; если товар требует ручной обработки, срок должен быть указан заранее."
+          },
+          {
+            "summary": "Ассортимент и версии",
+            "body": "Оцениваем наличие разных игр, изданий, DLC, подарочных карт и удобство поиска нужной версии."
+          },
+          {
+            "summary": "Поддержка и возвраты",
+            "body": "Важны понятные правила по невалидным ключам, дубликатам, региональным ошибкам и ошибочно купленным версиям."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему цены на игры и ключи меняются",
+        "paragraphs": [
+          "Стоимость цифровых ключей зависит от распродаж издателей, остатков у продавцов, спроса, валютных курсов и региональной цены. Поэтому сторонний магазин может быть дешевле Steam сегодня и дороже после следующей распродажи.",
+          "Региональные ограничения и доступность ключей тоже меняются. Карточка товара, подходившая раньше, может получить другой регион или закончиться у одного продавца и остаться у другого.",
+          "Перед покупкой полезно сравнить два сценария: купить ключ напрямую или <a href=\"/steam/topup\">пополнить Steam</a> и приобрести игру в официальном магазине. Для дополнительных Steam-сервисов используйте <a href=\"/steam/levelup\">повышение уровня профиля</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при покупке цифровых игр",
+        "intro": "Для активации обычного Steam-ключа стороннему продавцу не нужен пароль от вашего аккаунта.",
+        "items": [
+          {
+            "summary": "Проверяйте домен и продавца",
+            "body": "На маркетплейсе обращайте внимание и на саму площадку, и на профиль конкретного продавца. Слишком низкая цена без истории продаж увеличивает риск."
+          },
+          {
+            "summary": "Не передавайте пароль Steam",
+            "body": "Для ключа или подарочной карты пароль, код Steam Guard и резервные коды не требуются. Не вводите их в формы продавца."
+          },
+          {
+            "summary": "Сохраняйте данные заказа",
+            "body": "До успешной активации сохраните чек, номер заказа, описание товара и указанный регион. Это пригодится при споре."
+          },
+          {
+            "summary": "Осторожно с покупкой аккаунтов",
+            "body": "Аккаунт с игрой не равен ключу в вашей собственной библиотеке. Есть риск восстановления доступа предыдущим владельцем и ограничений со стороны платформы."
+          },
+          {
+            "summary": "Проверяйте товар сразу после получения",
+            "body": "Не откладывайте активацию на длительный срок, если правила продавца устанавливают ограниченное время для обращения по неработающему ключу."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о покупке игр для Steam",
+        "items": [
+          {
+            "summary": "Что лучше покупать: ключ или пополнять Steam?",
+            "body": "Зависит от итоговой цены, региона и текущей скидки. Сравните стоимость ключа с ценой игры после <a href=\"/steam/topup\">пополнения Steam</a>."
+          },
+          {
+            "summary": "Что означает Global-ключ?",
+            "body": "Обычно это ключ с широкой региональной совместимостью, но точные ограничения всё равно нужно смотреть в карточке конкретного товара."
+          },
+          {
+            "summary": "Почему ключ может не активироваться?",
+            "body": "Причины включают неправильный регион, неверную платформу, уже использованный код или ошибку в самом товаре."
+          },
+          {
+            "summary": "Безопасно ли покупать на маркетплейсе?",
+            "body": "Риск зависит от площадки и продавца. Проверяйте рейтинг, историю заказов, защиту покупателя и правила споров."
+          },
+          {
+            "summary": "Можно ли вернуть цифровой ключ?",
+            "body": "Условия зависят от магазина. После раскрытия или успешной активации возврат часто ограничен, поэтому правила нужно читать заранее."
+          },
+          {
+            "summary": "Чем подарок отличается от ключа?",
+            "body": "Ключ активируется кодом, а подарок передаётся другим способом через Steam или инструкцию продавца. Региональные правила могут отличаться."
+          },
+          {
+            "summary": "Стоит ли покупать аккаунт с игрой?",
+            "body": "Это более рискованный формат, чем ключ на собственный аккаунт: доступ может быть восстановлен, а передача аккаунта может иметь ограничения."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются цены, продавцы, комиссии, ассортимент, региональные ограничения, доставка и качество поддержки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Buying Steam Games: Keys, Gifts, Stores, and What to Compare",
+        "paragraphs": [
+          "Third-party Steam game stores sell digital keys, gift copies, downloadable content, gift cards, and other digital products. The buyer selects a product, checks its region and activation method, pays, and receives a key or instructions for adding the game to the Steam library.",
+          "The same title can be sold directly by a store or through a marketplace where an independent seller lists the product. In the marketplace model, the individual seller's reputation, refund policy, and responsibility for invalid or previously used keys matter in addition to the platform itself.",
+          "CSGOBROKER compares these services separately from <a href=\"/steam/topup\">Steam Wallet top-ups</a>. Sometimes a third-party key is cheaper, while in other cases funding Steam and buying during a store sale is better. For trading cards and profile levels, see <a href=\"/steam/levelup\">Steam leveling services</a>."
+        ]
+      },
+      "categories": {
+        "title": "Common Digital Products on Steam Game Stores",
+        "items": [
+          {
+            "title": "Steam keys",
+            "paragraphs": [
+              "The buyer receives a product code and activates it in the Steam client. Check region, platform, edition, and activation restrictions before payment."
+            ]
+          },
+          {
+            "title": "Gift copies",
+            "paragraphs": [
+              "A game is delivered as a gift or through another seller-defined delivery method. Eligibility can depend on the recipient's country and Steam regional rules."
+            ]
+          },
+          {
+            "title": "DLC and in-game content",
+            "paragraphs": [
+              "Downloadable content, season passes, and add-on packs can require a base game or specific edition. Verify compatibility before purchase."
+            ]
+          },
+          {
+            "title": "Steam gift cards",
+            "paragraphs": [
+              "A digital gift card adds a fixed value to the Steam Wallet. For general funding, also compare <a href=\"/steam/topup\">Steam top-up services</a>."
+            ]
+          },
+          {
+            "title": "Bundles and editions",
+            "paragraphs": [
+              "Standard, Deluxe, Ultimate, and bundled editions can contain different DLC and bonuses. Compare the exact contents rather than only the title and discount percentage."
+            ]
+          },
+          {
+            "title": "Accounts with games",
+            "paragraphs": [
+              "Some marketplaces list accounts with games already attached. This is materially riskier than buying a key: access can potentially be recovered by a previous owner, and account transfers can conflict with platform rules."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Buying a Game",
+        "intro": "The lowest price is useful only when the product works in your region, activates in the expected way, and includes the edition you actually want.",
+        "items": [
+          {
+            "summary": "Activation region",
+            "body": "Check labels such as Global, Europe, CIS, and other regional restrictions. A product intended for another region may not activate on your account."
+          },
+          {
+            "summary": "Delivery method",
+            "body": "Confirm whether you receive a standard key, gift, link, account, or another form of digital product. These methods have different risk and convenience."
+          },
+          {
+            "summary": "Edition and included content",
+            "body": "Review the exact title, DLC, pre-order bonuses, and whether the base game is included. Similar artwork does not guarantee the same package."
+          },
+          {
+            "summary": "Seller identity",
+            "body": "On marketplaces, review seller rating, completed sales, account age, and feedback for the relevant product category."
+          },
+          {
+            "summary": "Final price",
+            "body": "Include marketplace commission, payment fees, and currency conversion. The catalog price can be lower than the actual checkout total."
+          },
+          {
+            "summary": "Refunds and support",
+            "body": "Check what evidence is required for an invalid or used key and how long you have to open a dispute."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Steam Game Stores",
+        "intro": "We consider discounts together with the probability of receiving the correct digital product without unexpected fees or unnecessary risk.",
+        "items": [
+          {
+            "summary": "Final price",
+            "body": "We compare the checkout cost after commissions and conversion rather than only the catalog price."
+          },
+          {
+            "summary": "Region and activation transparency",
+            "body": "Region, platform, delivery method, and restrictions should be clearly visible before payment."
+          },
+          {
+            "summary": "Seller reliability",
+            "body": "For marketplaces, seller ratings, history, buyer protection, and dispute procedures all matter."
+          },
+          {
+            "summary": "Delivery speed",
+            "body": "Digital keys should normally arrive quickly; products requiring manual handling should show an expected delivery time."
+          },
+          {
+            "summary": "Catalog and editions",
+            "body": "We consider title variety, editions, DLC, gift cards, and how easy it is to find the correct version."
+          },
+          {
+            "summary": "Support and refunds",
+            "body": "Rules for invalid keys, duplicates, regional errors, and incorrect editions should be clear and practical."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Game and Key Prices Change",
+        "paragraphs": [
+          "Digital key prices move with publisher promotions, seller inventory, demand, exchange rates, and regional pricing. A third-party store can be cheaper than Steam today and more expensive after the next official sale.",
+          "Regional restrictions and key availability also change. A listing that previously worked in one region can be replaced by a different version or disappear from one seller while remaining available from another.",
+          "Before buying, compare two paths: purchasing a key directly or <a href=\"/steam/topup\">funding Steam</a> and buying from the official store. For other Steam-related services, see <a href=\"/steam/levelup\">profile leveling</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Buying Digital Games",
+        "intro": "A normal Steam key does not require a third-party seller to know your Steam password.",
+        "items": [
+          {
+            "summary": "Verify the domain and seller",
+            "body": "On a marketplace, evaluate both the platform and the individual seller. An unusually low price from a new seller increases risk."
+          },
+          {
+            "summary": "Never provide your Steam password",
+            "body": "Keys and gift cards do not require Steam passwords, Steam Guard codes, or backup codes. Do not enter them into seller forms."
+          },
+          {
+            "summary": "Keep order records",
+            "body": "Until activation succeeds, save the receipt, order number, product description, and stated region."
+          },
+          {
+            "summary": "Be cautious with account purchases",
+            "body": "An account containing a game is not the same as adding the game to your own library. Previous-owner recovery and platform restrictions create additional risk."
+          },
+          {
+            "summary": "Test the product promptly",
+            "body": "Do not delay activation unnecessarily when the seller provides only a limited dispute window for invalid keys."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Buying Steam Games",
+        "items": [
+          {
+            "summary": "Is it better to buy a key or fund Steam?",
+            "body": "It depends on final price, region, and current sales. Compare the key price with the game price after <a href=\"/steam/topup\">funding Steam</a>."
+          },
+          {
+            "summary": "What does a Global key mean?",
+            "body": "It usually indicates broad regional compatibility, but the exact restrictions still need to be checked on the individual listing."
+          },
+          {
+            "summary": "Why can a Steam key fail to activate?",
+            "body": "Possible reasons include wrong region, wrong platform, an already used code, or a defective listing."
+          },
+          {
+            "summary": "Is buying from a marketplace safe?",
+            "body": "Risk depends on both the platform and seller. Review ratings, sales history, buyer protection, and dispute rules."
+          },
+          {
+            "summary": "Can a digital key be refunded?",
+            "body": "Policies vary. Refunds are often limited after the key is revealed or activated, so read the rules before buying."
+          },
+          {
+            "summary": "How is a gift different from a key?",
+            "body": "A key is redeemed as a code, while a gift is delivered through another Steam or seller-defined method. Regional rules can differ."
+          },
+          {
+            "summary": "Should I buy an account with a game?",
+            "body": "It is more risky than adding a key to your own account because access can be recovered and account transfers may face platform restrictions."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Prices, sellers, fees, catalog, regional restrictions, delivery, and support quality can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Comprar juegos para Steam: claves, regalos, tiendas y qué comparar",
+        "paragraphs": [
+          "Las tiendas externas de juegos Steam venden claves digitales, copias regalo, DLC, tarjetas regalo y otros productos. El comprador elige el producto, revisa región y método de activación, paga y recibe una clave o instrucciones para añadir el juego a la biblioteca.",
+          "El mismo juego puede venderlo directamente una tienda o un vendedor independiente dentro de un marketplace. En este último caso importan la reputación del vendedor, los reembolsos y quién responde por una clave usada o inválida. Por eso una oferta barata de un vendedor nuevo no debe evaluarse igual que una venta directa de una tienda establecida.",
+          "CSGOBROKER compara estos servicios por separado de <a href=\"/steam/topup\">recargas de Steam</a>. A veces una clave externa es más barata y otras conviene recargar Steam y comprar durante una oferta oficial. Para cromos y nivel consulta <a href=\"/steam/levelup\">servicios de nivel Steam</a>."
+        ]
+      },
+      "categories": {
+        "title": "Productos digitales habituales",
+        "items": [
+          {
+            "title": "Claves Steam",
+            "paragraphs": [
+              "El comprador recibe un código y lo activa en Steam. Revisa región, plataforma, edición y restricciones."
+            ]
+          },
+          {
+            "title": "Copias regalo",
+            "paragraphs": [
+              "El juego se entrega como regalo o mediante otro método indicado por el vendedor. La disponibilidad puede depender del país."
+            ]
+          },
+          {
+            "title": "DLC y contenido adicional",
+            "paragraphs": [
+              "Los complementos pueden exigir el juego base o una edición concreta. Comprueba compatibilidad."
+            ]
+          },
+          {
+            "title": "Tarjetas regalo Steam",
+            "paragraphs": [
+              "Añaden una cantidad fija al monedero. Para financiación general compara <a href=\"/steam/topup\">recargas Steam</a>."
+            ]
+          },
+          {
+            "title": "Paquetes y ediciones",
+            "paragraphs": [
+              "Standard, Deluxe, Ultimate y otros paquetes pueden incluir contenido distinto. Compara el contenido exacto."
+            ]
+          },
+          {
+            "title": "Cuentas con juegos",
+            "paragraphs": [
+              "Algunos marketplaces venden cuentas con juegos. Es más arriesgado que una clave: el propietario anterior puede recuperar acceso y la transferencia puede entrar en conflicto con reglas de la plataforma."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de comprar",
+        "intro": "La menor precio solo sirve si el producto funciona en tu región, se activa como esperas y contiene la edición correcta.",
+        "items": [
+          {
+            "summary": "Región de activación",
+            "body": "Comprueba Global, Europe, CIS y otras restricciones. Un producto de otra región puede no activarse."
+          },
+          {
+            "summary": "Método de entrega",
+            "body": "Confirma si recibes clave, regalo, enlace, cuenta u otro producto digital."
+          },
+          {
+            "summary": "Edición y contenido",
+            "body": "Revisa nombre exacto, DLC, bonos y si incluye el juego base. Comprueba también si el producto es solo una mejora de edición y no una copia completa del juego."
+          },
+          {
+            "summary": "Quién vende",
+            "body": "En marketplaces revisa puntuación, ventas completadas, antigüedad y opiniones del vendedor."
+          },
+          {
+            "summary": "Precio final",
+            "body": "Añade comisión, pago y conversión. El precio de catálogo puede ser menor que el total final."
+          },
+          {
+            "summary": "Reembolso y soporte",
+            "body": "Averigua qué pruebas se necesitan para una clave inválida y cuánto tiempo hay para reclamar."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa las tiendas Steam",
+        "intro": "Valoramos descuentos junto con la probabilidad de recibir el producto correcto sin cargos o riesgos inesperados.",
+        "items": [
+          {
+            "summary": "Precio final",
+            "body": "Comparamos el total después de comisiones y conversión."
+          },
+          {
+            "summary": "Transparencia regional y de activación",
+            "body": "Región, plataforma, entrega y restricciones deben aparecer antes del pago."
+          },
+          {
+            "summary": "Fiabilidad de vendedores",
+            "body": "En marketplaces importan puntuación, historial, protección al comprador y disputas. La existencia de un proceso claro para reclamar una clave inválida reduce el riesgo del modelo marketplace."
+          },
+          {
+            "summary": "Rapidez de entrega",
+            "body": "Las claves deberían llegar rápido; el procesamiento manual debe indicar plazo."
+          },
+          {
+            "summary": "Catálogo y ediciones",
+            "body": "Valoramos variedad, DLC, tarjetas y facilidad para encontrar la versión correcta."
+          },
+          {
+            "summary": "Soporte y devoluciones",
+            "body": "Las reglas sobre claves inválidas, duplicadas o de región incorrecta deben ser claras."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian los precios",
+        "paragraphs": [
+          "Los precios dependen de promociones del editor, inventario, demanda, cambio de moneda y precios regionales. Una tienda externa puede ser más barata hoy y más cara tras una oferta oficial.",
+          "También cambian regiones y disponibilidad. Una versión puede agotarse o ser sustituida por otra con restricciones distintas.",
+          "Antes de comprar compara una clave directa con <a href=\"/steam/topup\">recargar Steam</a> y comprar en la tienda oficial. Para otros servicios usa <a href=\"/steam/levelup\">nivel Steam</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al comprar juegos digitales",
+        "intro": "Una clave Steam normal no requiere entregar tu contraseña al vendedor.",
+        "items": [
+          {
+            "summary": "Comprueba dominio y vendedor",
+            "body": "En marketplace revisa la plataforma y también el perfil del vendedor. Un precio anormalmente bajo sin historial aumenta el riesgo."
+          },
+          {
+            "summary": "No compartas la contraseña",
+            "body": "Claves y tarjetas no necesitan contraseña, Steam Guard ni códigos de recuperación."
+          },
+          {
+            "summary": "Guarda los datos del pedido",
+            "body": "Conserva recibo, número, descripción y región hasta activar correctamente. Una captura de la ficha original puede demostrar qué región y edición se anunciaban en el momento de la compra."
+          },
+          {
+            "summary": "Cuidado con las cuentas",
+            "body": "Comprar una cuenta no equivale a añadir el juego a tu propia biblioteca y tiene riesgo de recuperación y restricciones."
+          },
+          {
+            "summary": "Prueba el producto pronto",
+            "body": "No retrases la activación si el plazo para reclamar una clave inválida es limitado."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre comprar juegos Steam",
+        "items": [
+          {
+            "summary": "¿Clave o recargar Steam?",
+            "body": "Depende de precio final, región y descuentos. Compara con el coste después de <a href=\"/steam/topup\">recargar Steam</a>."
+          },
+          {
+            "summary": "¿Qué significa clave Global?",
+            "body": "Suele indicar compatibilidad amplia, pero hay que revisar la ficha concreta."
+          },
+          {
+            "summary": "¿Por qué puede fallar una clave?",
+            "body": "Región incorrecta, plataforma equivocada, código usado o problema del producto."
+          },
+          {
+            "summary": "¿Es seguro un marketplace?",
+            "body": "Depende de plataforma y vendedor. Revisa puntuación, historial, protección y disputas."
+          },
+          {
+            "summary": "¿Se puede devolver una clave?",
+            "body": "Depende de la tienda; después de mostrarla o activarla el reembolso suele estar limitado."
+          },
+          {
+            "summary": "¿Regalo y clave son lo mismo?",
+            "body": "No. La clave se activa como código y el regalo se entrega por otro método."
+          },
+          {
+            "summary": "¿Conviene comprar una cuenta con juego?",
+            "body": "Es más arriesgado que una clave propia por recuperación del acceso y restricciones."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian precios, vendedores, comisiones, catálogo, regiones, entrega y soporte."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Comprar jogos para Steam: chaves, presentes, lojas e o que comparar",
+        "paragraphs": [
+          "Lojas externas de jogos Steam vendem chaves digitais, cópias-presente, DLC, cartões-presente e outros produtos. O comprador escolhe, confere região e ativação, paga e recebe a chave ou instruções para adicionar o jogo à biblioteca.",
+          "O mesmo jogo pode ser vendido pela própria loja ou por um vendedor independente em marketplace. Nesse caso, reputação do vendedor, política de reembolso e responsabilidade por chave inválida ou usada são importantes. Por isso, uma oferta muito barata de um vendedor novo não deve ser tratada como equivalente a uma venda direta de uma loja estabelecida.",
+          "A CSGOBROKER compara esses serviços separadamente de <a href=\"/steam/topup\">recarga Steam</a>. Às vezes a chave externa é mais barata; em outras, vale recarregar Steam e comprar em promoção oficial. Para cartas e nível veja <a href=\"/steam/levelup\">serviços de nível Steam</a>."
+        ]
+      },
+      "categories": {
+        "title": "Produtos digitais comuns",
+        "items": [
+          {
+            "title": "Chaves Steam",
+            "paragraphs": [
+              "O comprador recebe um código e ativa no cliente Steam. Confira região, plataforma, edição e restrições. Também vale conferir se a chave é entregue imediatamente ou somente depois de uma verificação manual do pedido."
+            ]
+          },
+          {
+            "title": "Cópias-presente",
+            "paragraphs": [
+              "O jogo é entregue como presente ou outro método definido pelo vendedor. A elegibilidade pode depender do país."
+            ]
+          },
+          {
+            "title": "DLC e conteúdo adicional",
+            "paragraphs": [
+              "Complementos podem exigir o jogo base ou edição específica. Confira compatibilidade. Uma DLC de outra edição ou região pode não funcionar mesmo quando o nome do conteúdo parece idêntico."
+            ]
+          },
+          {
+            "title": "Cartões-presente Steam",
+            "paragraphs": [
+              "Adicionam valor fixo à carteira. Para recarga geral compare <a href=\"/steam/topup\">serviços de recarga Steam</a>."
+            ]
+          },
+          {
+            "title": "Pacotes e edições",
+            "paragraphs": [
+              "Standard, Deluxe, Ultimate e pacotes podem conter DLC e bônus diferentes. Compare o conteúdo exato."
+            ]
+          },
+          {
+            "title": "Contas com jogos",
+            "paragraphs": [
+              "Alguns marketplaces vendem contas com jogos. É mais arriscado que uma chave: o antigo dono pode recuperar acesso e a transferência pode conflitar com regras da plataforma."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de comprar",
+        "intro": "O menor preço só ajuda se o produto funcionar na sua região, ativar do modo esperado e incluir a edição correta.",
+        "items": [
+          {
+            "summary": "Região",
+            "body": "Confira Global, Europe, CIS e outras limitações. Produto de outra região pode não ativar. A marcação regional deve ser lida junto com qualquer lista de países excluídos na descrição."
+          },
+          {
+            "summary": "Método de entrega",
+            "body": "Confirme se recebe chave, presente, link, conta ou outro formato."
+          },
+          {
+            "summary": "Edição e conteúdo",
+            "body": "Veja nome exato, DLC, bônus e se o jogo base está incluído. Confira também se o anúncio vende o jogo completo ou apenas uma atualização de edição."
+          },
+          {
+            "summary": "Vendedor",
+            "body": "Em marketplace confira nota, vendas concluídas, idade da conta e avaliações. Um grande número de vendas concluídas é mais informativo quando acompanhado de avaliações recentes do mesmo tipo de produto."
+          },
+          {
+            "summary": "Preço final",
+            "body": "Inclua comissão, taxa de pagamento e câmbio."
+          },
+          {
+            "summary": "Reembolso e suporte",
+            "body": "Veja quais provas são exigidas para chave inválida e o prazo de reclamação. O prazo para abrir disputa pode ser curto, então é melhor conhecer as regras antes de revelar ou ativar a chave."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia lojas de jogos Steam",
+        "intro": "Consideramos descontos junto com a chance de receber o produto correto sem taxas ou riscos inesperados.",
+        "items": [
+          {
+            "summary": "Preço final",
+            "body": "Comparamos o total após taxas e conversão."
+          },
+          {
+            "summary": "Transparência de região e ativação",
+            "body": "Região, plataforma, entrega e limitações devem estar claras."
+          },
+          {
+            "summary": "Confiabilidade de vendedores",
+            "body": "Em marketplaces consideramos notas, histórico, proteção e disputas. Também consideramos se a plataforma oferece um processo documentado para contestar uma chave inválida."
+          },
+          {
+            "summary": "Velocidade de entrega",
+            "body": "Chaves digitais devem chegar rápido; processamento manual precisa de prazo."
+          },
+          {
+            "summary": "Catálogo e edições",
+            "body": "Avaliamos variedade, DLC, cartões e facilidade de encontrar a versão correta."
+          },
+          {
+            "summary": "Suporte e reembolso",
+            "body": "Regras para chaves inválidas, duplicadas ou de região errada precisam ser claras. Uma política clara reduz a incerteza quando o produto entregue não corresponde à descrição."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que os preços mudam",
+        "paragraphs": [
+          "Preços variam com promoções da editora, estoque, demanda, câmbio e valores regionais. Uma loja externa pode ser mais barata hoje e mais cara depois de uma promoção Steam.",
+          "Restrições regionais e disponibilidade também mudam. Uma versão pode esgotar ou ser substituída por outra.",
+          "Antes de comprar, compare chave direta com <a href=\"/steam/topup\">recarregar Steam</a> e comprar na loja oficial. Para outros serviços veja <a href=\"/steam/levelup\">nível Steam</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao comprar jogos digitais",
+        "intro": "Uma chave Steam normal não exige que o vendedor conheça sua senha.",
+        "items": [
+          {
+            "summary": "Confira domínio e vendedor",
+            "body": "Em marketplace avalie a plataforma e o vendedor. Preço muito baixo sem histórico aumenta o risco."
+          },
+          {
+            "summary": "Não compartilhe senha",
+            "body": "Chaves e cartões não exigem senha, Steam Guard ou códigos de recuperação."
+          },
+          {
+            "summary": "Guarde dados do pedido",
+            "body": "Mantenha recibo, número, descrição e região até ativar. Guardar uma captura da página original ajuda a comprovar região, edição e forma de entrega anunciadas."
+          },
+          {
+            "summary": "Cuidado com contas",
+            "body": "Comprar conta não é igual a adicionar jogo à sua biblioteca e traz risco de recuperação e restrições."
+          },
+          {
+            "summary": "Teste o produto rapidamente",
+            "body": "Não adie a ativação se o prazo de reclamação for curto."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre comprar jogos Steam",
+        "items": [
+          {
+            "summary": "Chave ou recarga Steam?",
+            "body": "Depende do preço, região e promoção. Compare com o custo após <a href=\"/steam/topup\">recarga Steam</a>."
+          },
+          {
+            "summary": "O que significa chave Global?",
+            "body": "Normalmente indica compatibilidade ampla, mas as restrições da oferta específica devem ser verificadas."
+          },
+          {
+            "summary": "Por que a chave pode falhar?",
+            "body": "Região errada, plataforma incorreta, código já usado ou problema do anúncio."
+          },
+          {
+            "summary": "Marketplace é seguro?",
+            "body": "Depende da plataforma e vendedor. Confira nota, histórico, proteção e disputas."
+          },
+          {
+            "summary": "Posso devolver chave digital?",
+            "body": "Depende da loja; depois de revelar ou ativar, o reembolso costuma ser limitado. Se a loja limita o prazo de reclamação após revelar a chave, essa condição é especialmente importante."
+          },
+          {
+            "summary": "Presente e chave são iguais?",
+            "body": "Não. Chave usa código e presente é entregue por outro método."
+          },
+          {
+            "summary": "Vale comprar conta com jogo?",
+            "body": "É mais arriscado que chave na sua própria conta por recuperação de acesso e restrições."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Preços, vendedores, taxas, catálogo, regiões, entrega e suporte mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Steam Oyun Satın Alma: Anahtarlar, Hediyeler, Mağazalar ve Karşılaştırma",
+        "paragraphs": [
+          "Üçüncü taraf Steam oyun mağazaları dijital anahtar, hediye kopya, DLC, hediye kartı ve başka ürünler satar. Alıcı ürünü, bölgeyi ve etkinleştirme yöntemini kontrol eder, ödeme yapar ve anahtar veya kütüphaneye ekleme talimatı alır.",
+          "Aynı oyun mağazanın kendisi veya marketplace içindeki bağımsız satıcı tarafından satılabilir. Marketplace modelinde satıcının itibarı, iade kuralları ve geçersiz/kullanılmış anahtardan kimin sorumlu olduğu özellikle önemlidir. Bu yüzden yeni ve geçmişi olmayan satıcının çok ucuz teklifi, mağazanın doğrudan sattığı ürünle aynı risk düzeyinde görülmemelidir.",
+          "CSGOBROKER bunları <a href=\"/steam/topup\">Steam bakiye yüklemeden</a> ayrı karşılaştırır. Bazen dış anahtar daha ucuz, bazen Steam'e para yükleyip resmî indirimden almak daha iyidir. Kart ve profil seviyesi için <a href=\"/steam/levelup\">Steam seviye servislerine</a> bakın."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Dijital Ürün Türleri",
+        "items": [
+          {
+            "title": "Steam anahtarları",
+            "paragraphs": [
+              "Alıcı ürün kodunu Steam istemcisinde etkinleştirir. Bölge, platform, sürüm ve kısıtlamaları ödeme öncesi kontrol edin. Anahtarın anında mı yoksa sipariş kontrolünden sonra mı teslim edildiğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Hediye kopyalar",
+            "paragraphs": [
+              "Oyun hediye veya satıcının belirttiği başka yöntemle teslim edilir. Ülke ve Steam bölgesel kuralları etkili olabilir."
+            ]
+          },
+          {
+            "title": "DLC ve ek içerik",
+            "paragraphs": [
+              "Ek paketler temel oyun veya belirli sürüm gerektirebilir. Uyumluluğu kontrol edin."
+            ]
+          },
+          {
+            "title": "Steam hediye kartları",
+            "paragraphs": [
+              "Cüzdana sabit değer ekler. Genel bakiye için <a href=\"/steam/topup\">Steam yükleme servislerini</a> karşılaştırın."
+            ]
+          },
+          {
+            "title": "Paket ve sürümler",
+            "paragraphs": [
+              "Standard, Deluxe, Ultimate ve paketler farklı DLC ve bonus içerir. Yalnız indirim oranına değil içeriğe bakın."
+            ]
+          },
+          {
+            "title": "Oyunlu hesaplar",
+            "paragraphs": [
+              "Bazı marketplace'ler oyun eklenmiş hesap satar. Anahtardan daha risklidir: önceki sahip erişimi geri alabilir ve hesap devri platform kurallarıyla çakışabilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Oyun Satın Almadan Önce Neler Kontrol Edilmeli?",
+        "intro": "En düşük fiyat ancak ürün bölgenizde çalışıyor, beklenen şekilde etkinleşiyor ve doğru sürümü içeriyorsa anlamlıdır.",
+        "items": [
+          {
+            "summary": "Etkinleştirme bölgesi",
+            "body": "Global, Europe, CIS ve diğer bölge kısıtlamalarını kontrol edin. Bölge etiketiyle birlikte ürün açıklamasındaki hariç tutulan ülkeler listesini de okuyun."
+          },
+          {
+            "summary": "Teslim yöntemi",
+            "body": "Anahtar, hediye, bağlantı, hesap veya başka format aldığınızı doğrulayın."
+          },
+          {
+            "summary": "Sürüm ve içerik",
+            "body": "Tam adı, DLC, ön sipariş bonuslarını ve temel oyunun dahil olup olmadığını inceleyin. İlanın tam oyun mu yoksa yalnız sürüm yükseltmesi mi olduğunu doğrulayın."
+          },
+          {
+            "summary": "Satıcı kimliği",
+            "body": "Marketplace'te satıcı puanı, tamamlanan satış, hesap yaşı ve yorumlara bakın."
+          },
+          {
+            "summary": "Net fiyat",
+            "body": "Platform komisyonu, ödeme ücreti ve döviz dönüşümünü ekleyin."
+          },
+          {
+            "summary": "İade ve destek",
+            "body": "Geçersiz veya kullanılmış anahtar için gereken kanıtı ve itiraz süresini öğrenin."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Steam Oyun Mağazalarını Nasıl Değerlendirir?",
+        "intro": "İndirimin yanında doğru ürünü beklenmeyen ücret ve gereksiz risk olmadan alma ihtimalini değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Net fiyat",
+            "body": "Komisyon ve dönüşüm sonrası ödeme toplamını karşılaştırıyoruz."
+          },
+          {
+            "summary": "Bölge ve aktivasyon şeffaflığı",
+            "body": "Bölge, platform, teslim ve kısıtlamalar ödeme öncesi açık olmalıdır."
+          },
+          {
+            "summary": "Satıcı güvenilirliği",
+            "body": "Marketplace'te puan, geçmiş, alıcı koruması ve itiraz sistemi önemlidir. Geçersiz anahtar için belgelenmiş itiraz süreci marketplace riskini azaltır."
+          },
+          {
+            "summary": "Teslimat hızı",
+            "body": "Dijital anahtar hızlı gelmeli; manuel işlem varsa süre belirtilmelidir."
+          },
+          {
+            "summary": "Katalog ve sürümler",
+            "body": "Oyun, DLC, hediye kartı ve doğru sürümü bulma kolaylığı değerlendirilir."
+          },
+          {
+            "summary": "Destek ve iade",
+            "body": "Geçersiz, kopya veya yanlış bölge anahtarı için kurallar açık olmalıdır."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Oyun ve Anahtar Fiyatları Neden Değişir?",
+        "paragraphs": [
+          "Fiyatlar yayıncı kampanyaları, satıcı stoğu, talep, kur ve bölgesel fiyatlara göre değişir. Dış mağaza bugün ucuzken sonraki Steam indiriminde daha pahalı olabilir.",
+          "Bölgesel kısıtlamalar ve anahtar bulunabilirliği de değişir. Bir sürüm tükenebilir veya farklı bölge şartlı ürünle değiştirilebilir.",
+          "Satın almadan önce doğrudan anahtarı <a href=\"/steam/topup\">Steam'e bakiye yükleyip</a> resmî mağazadan almakla karşılaştırın. Diğer hizmetler için <a href=\"/steam/levelup\">Steam seviye</a> bölümünü kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Dijital Oyun Satın Alırken Güvenlik",
+        "intro": "Normal Steam anahtarı için üçüncü taraf satıcının Steam şifrenize ihtiyacı yoktur.",
+        "items": [
+          {
+            "summary": "Domain ve satıcıyı kontrol edin",
+            "body": "Marketplace'te hem platformu hem satıcıyı değerlendirin. Geçmişi olmayan satıcının aşırı düşük fiyatı riski artırır."
+          },
+          {
+            "summary": "Steam şifresi vermeyin",
+            "body": "Anahtar ve hediye kartı Steam şifresi, Steam Guard veya yedek kod gerektirmez."
+          },
+          {
+            "summary": "Sipariş bilgilerini saklayın",
+            "body": "Aktivasyon başarılı olana kadar makbuz, sipariş numarası, ürün açıklaması ve bölgeyi saklayın. Ürün sayfasının ekran görüntüsü, satın alma anında hangi bölge ve sürümün vaat edildiğini kanıtlamaya yardımcı olur."
+          },
+          {
+            "summary": "Hesap satın alırken dikkatli olun",
+            "body": "Oyunlu hesap kendi kütüphanenize anahtar eklemekle aynı değildir; erişim geri alınabilir ve platform kısıtlamaları olabilir."
+          },
+          {
+            "summary": "Ürünü kısa sürede test edin",
+            "body": "Geçersiz anahtar için itiraz süresi sınırlıysa aktivasyonu gereksiz yere ertelemeyin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Steam Oyun Satın Alma Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Anahtar mı Steam bakiyesi mi?",
+            "body": "Net fiyat, bölge ve indirime bağlıdır. Anahtar fiyatını <a href=\"/steam/topup\">Steam bakiye yükleme</a> sonrası oyun fiyatıyla karşılaştırın."
+          },
+          {
+            "summary": "Global anahtar ne demek?",
+            "body": "Genellikle geniş bölgesel uyum anlamına gelir ancak ürün sayfasındaki kesin kısıtlamaları kontrol edin."
+          },
+          {
+            "summary": "Anahtar neden etkinleşmeyebilir?",
+            "body": "Yanlış bölge, yanlış platform, daha önce kullanılmış kod veya ürün hatası olabilir."
+          },
+          {
+            "summary": "Marketplace güvenli mi?",
+            "body": "Platform ve satıcıya bağlıdır. Puan, geçmiş, alıcı koruması ve itiraz kurallarını inceleyin."
+          },
+          {
+            "summary": "Dijital anahtar iade edilir mi?",
+            "body": "Mağazaya bağlıdır; anahtar gösterildikten veya etkinleştirildikten sonra iade çoğu zaman sınırlıdır."
+          },
+          {
+            "summary": "Hediye ile anahtar arasındaki fark nedir?",
+            "body": "Anahtar kodla etkinleşir, hediye başka Steam veya satıcı yöntemiyle teslim edilir."
+          },
+          {
+            "summary": "Oyunlu hesap alınmalı mı?",
+            "body": "Kendi hesabınıza anahtar eklemekten daha risklidir; erişim geri alınabilir ve kısıtlamalar olabilir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Fiyat, satıcı, ücret, katalog, bölge, teslimat ve destek değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Steam Games खरीदना: Keys, Gifts, Stores और क्या Compare करें",
+        "paragraphs": [
+          "Third-party Steam game stores digital keys, gift copies, DLC, gift cards और other products बेचती हैं। Buyer product, region और activation method check करता है, payment करता है और key या library में game add करने की instructions receive करता है।",
+          "Same game store directly बेच सकती है या marketplace में independent seller list कर सकता है। Marketplace model में individual seller reputation, refund policy और invalid/used key की responsibility platform जितनी ही important है। इसलिए new seller की unusually cheap listing को established store की direct sale जितना reliable assume नहीं करना चाहिए।",
+          "CSGOBROKER इन services को <a href=\"/steam/topup\">Steam Wallet top-ups</a> से अलग compare करता है। कभी third-party key cheaper होती है, कभी Steam fund करके official sale में खरीदना बेहतर होता है। Cards/profile level के लिए <a href=\"/steam/levelup\">Steam leveling services</a> देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Common Digital Product Types",
+        "items": [
+          {
+            "title": "Steam keys",
+            "paragraphs": [
+              "Buyer product code receive करके Steam client में activate करता है। Region, platform, edition और restrictions check करें।"
+            ]
+          },
+          {
+            "title": "Gift copies",
+            "paragraphs": [
+              "Game gift या seller-defined method से deliver होती है। Recipient country और Steam regional rules eligibility affect कर सकती हैं।"
+            ]
+          },
+          {
+            "title": "DLC और extra content",
+            "paragraphs": [
+              "Add-ons base game या specific edition require कर सकते हैं। Compatibility verify करें।"
+            ]
+          },
+          {
+            "title": "Steam gift cards",
+            "paragraphs": [
+              "Wallet में fixed value add करती हैं। General funding के लिए <a href=\"/steam/topup\">Steam top-up services</a> compare करें।"
+            ]
+          },
+          {
+            "title": "Bundles और editions",
+            "paragraphs": [
+              "Standard, Deluxe, Ultimate और bundles में different DLC/bonuses हो सकते हैं। Exact content compare करें।"
+            ]
+          },
+          {
+            "title": "Games वाले accounts",
+            "paragraphs": [
+              "कुछ marketplaces preloaded accounts list करती हैं। यह key से ज्यादा risky है: previous owner access recover कर सकता है और account transfer platform rules से conflict कर सकता है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Game खरीदने से पहले क्या Check करें",
+        "intro": "Lowest price तभी useful है जब product आपके region में work करे, expected method से activate हो और सही edition include करे।",
+        "items": [
+          {
+            "summary": "Activation region",
+            "body": "Global, Europe, CIS और other region restrictions check करें।"
+          },
+          {
+            "summary": "Delivery method",
+            "body": "Key, gift, link, account या other digital format में क्या मिलेगा, confirm करें।"
+          },
+          {
+            "summary": "Edition और content",
+            "body": "Exact title, DLC, bonuses और base game inclusion verify करें। यह भी verify करें कि listing complete game है या सिर्फ edition upgrade।"
+          },
+          {
+            "summary": "Seller identity",
+            "body": "Marketplace पर seller rating, completed sales, account age और relevant reviews देखें।"
+          },
+          {
+            "summary": "Final price",
+            "body": "Marketplace commission, payment fee और currency conversion include करें।"
+          },
+          {
+            "summary": "Refunds और support",
+            "body": "Invalid/used key पर required proof और dispute deadline पहले देखें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Steam Game Stores को कैसे Rate करता है",
+        "intro": "हम discounts के साथ correct product बिना unexpected fees या unnecessary risk मिलने की probability evaluate करते हैं।",
+        "items": [
+          {
+            "summary": "Final price",
+            "body": "Checkout cost after commissions और conversion compare किया जाता है।"
+          },
+          {
+            "summary": "Region और activation transparency",
+            "body": "Region, platform, delivery method और restrictions payment से पहले clear होने चाहिए।"
+          },
+          {
+            "summary": "Seller reliability",
+            "body": "Marketplaces में ratings, history, buyer protection और dispute process important हैं। Invalid key के लिए clear documented dispute process marketplace risk को कम करती है।"
+          },
+          {
+            "summary": "Delivery speed",
+            "body": "Digital keys normally quickly arrive करनी चाहिए; manual handling हो तो expected time दिखना चाहिए।"
+          },
+          {
+            "summary": "Catalog और editions",
+            "body": "Games, editions, DLC, gift cards और correct version search ease evaluate होती है।"
+          },
+          {
+            "summary": "Support और refunds",
+            "body": "Invalid keys, duplicates, regional mistakes और wrong editions के rules clear होने चाहिए।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Game और Key Prices क्यों बदलती हैं",
+        "paragraphs": [
+          "Digital key prices publisher promotions, seller inventory, demand, exchange rates और regional pricing से बदलती हैं। Third-party store आज cheaper और next official sale के बाद more expensive हो सकती है।",
+          "Regional restrictions और key availability भी बदलती हैं। One listing replace या sold out हो सकती है जबकि another seller अलग region version offer करे।",
+          "Buy करने से पहले direct key को <a href=\"/steam/topup\">Steam fund करके</a> official store purchase से compare करें। Other Steam services के लिए <a href=\"/steam/levelup\">profile leveling</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Digital Games खरीदते समय Safety",
+        "intro": "Normal Steam key के लिए third-party seller को आपके Steam password की जरूरत नहीं होती।",
+        "items": [
+          {
+            "summary": "Domain और seller verify करें",
+            "body": "Marketplace पर platform और individual seller दोनों evaluate करें। New seller का unusually low price higher risk हो सकता है।"
+          },
+          {
+            "summary": "Steam password share न करें",
+            "body": "Keys/gift cards को Steam password, Steam Guard या backup codes नहीं चाहिए।"
+          },
+          {
+            "summary": "Order records रखें",
+            "body": "Activation तक receipt, order number, product description और stated region save रखें। Original listing का screenshot advertised region, edition और delivery method prove करने में useful हो सकता है।"
+          },
+          {
+            "summary": "Account purchases में सावधान रहें",
+            "body": "Preloaded account आपके own library में game जोड़ने जैसा नहीं है; previous-owner recovery और platform restrictions का risk है।"
+          },
+          {
+            "summary": "Product जल्दी test करें",
+            "body": "Invalid key dispute window limited हो तो activation unnecessarily delay न करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Steam Games खरीदने के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Key खरीदें या Steam fund करें?",
+            "body": "Final price, region और current sale पर depend करता है। Key price को <a href=\"/steam/topup\">Steam funding</a> के बाद official game price से compare करें।"
+          },
+          {
+            "summary": "Global key का क्या मतलब है?",
+            "body": "Usually broad regional compatibility, लेकिन exact listing restrictions check करनी चाहिए।"
+          },
+          {
+            "summary": "Steam key activate क्यों fail हो सकती है?",
+            "body": "Wrong region, wrong platform, already-used code या defective listing।"
+          },
+          {
+            "summary": "Marketplace से खरीदना safe है?",
+            "body": "Platform और seller पर depend करता है। Ratings, history, buyer protection और disputes देखें।"
+          },
+          {
+            "summary": "Digital key refund हो सकती है?",
+            "body": "Store policy पर depend करता है; key reveal/activation के बाद refunds अक्सर limited होती हैं।"
+          },
+          {
+            "summary": "Gift और key में क्या difference है?",
+            "body": "Key code से redeem होती है; gift दूसरे Steam/seller-defined method से deliver होती है।"
+          },
+          {
+            "summary": "Game वाला account खरीदना चाहिए?",
+            "body": "Own account पर key add करने से ज्यादा risky है क्योंकि access recover हो सकता है और restrictions हो सकती हैं।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Prices, sellers, fees, catalog, regional restrictions, delivery और support quality बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

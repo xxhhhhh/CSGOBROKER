@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "offerwalls",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Сайты с заданиями: как работают офферволы и сервисы Get Paid To",
+        "paragraphs": [
+          "Сайты с заданиями, или Get Paid To-сервисы, позволяют получать вознаграждение за действия для сторонних рекламодателей. Внутри таких платформ обычно работают офферволы — каталоги заданий от рекламных сетей: опросы, установка приложений, регистрация на сайтах, достижение определённого уровня в мобильной игре и другие действия с заранее указанной наградой.",
+          "После открытия задания пользователь переходит на сайт или в приложение рекламодателя, выполняет условия, а система отслеживания передаёт платформе подтверждение. Поэтому важна не только сумма награды, но и точное выполнение условий: страна, устройство, первый запуск, срок, необходимый уровень и запрет на повторное выполнение одной и той же акции.",
+          "CSGOBROKER сравнивает такие площадки по доступности заданий, размеру наград, надёжности отслеживания, правилам подтверждения и способам вывода. Если хочется получать награды именно за обычную игровую активность, а не рекламные задания, используйте раздел <a href=\"/earning/earn-by-play\">заработка на играх</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие задания встречаются на офферволах",
+        "items": [
+          {
+            "title": "Опросы и анкеты",
+            "paragraphs": [
+              "Пользователь отвечает на вопросы для исследовательской компании. Доход зависит от страны и профиля, а часть опросов может завершаться досрочно, если участник не подходит под нужную аудиторию."
+            ]
+          },
+          {
+            "title": "Мобильные игры",
+            "paragraphs": [
+              "Награда начисляется за установку игры и достижение указанного уровня, главы, силы аккаунта или другой цели за ограниченный срок. Важно начинать задание только через ссылку оффервола, чтобы установка была правильно отслежена."
+            ]
+          },
+          {
+            "title": "Установка приложений",
+            "paragraphs": [
+              "Некоторые задания требуют установить приложение, открыть его впервые или выполнить внутри несколько действий. Повторная установка ранее использованного приложения часто не засчитывается."
+            ]
+          },
+          {
+            "title": "Регистрация на сайтах и сервисах",
+            "paragraphs": [
+              "Задание может требовать создать новый аккаунт, подтвердить электронную почту или выполнить дополнительный шаг. Используйте отдельную электронную почту для рекламных регистраций, если не хотите смешивать их с основной перепиской."
+            ]
+          },
+          {
+            "title": "Платные и пробные предложения",
+            "paragraphs": [
+              "Часть заданий связана с покупкой, подпиской или пробным периодом. Перед выполнением обязательно сравните размер награды с реальной стоимостью, правилами отмены и возможным автоматическим продлением."
+            ]
+          },
+          {
+            "title": "Многоэтапные задания",
+            "paragraphs": [
+              "Крупная награда может делиться на несколько этапов: например, зарегистрироваться, достичь нескольких уровней и выполнить покупку. Сравнивайте каждый этап отдельно и проверяйте, какие части обязательны."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед выполнением задания",
+        "intro": "Большинство проблем с начислением возникает из-за несовпадения условий или неправильного отслеживания, поэтому правила лучше читать до первого перехода.",
+        "items": [
+          {
+            "summary": "Полные условия задания",
+            "body": "Проверьте страну, устройство, срок, требуемый уровень, необходимость быть новым пользователем и дополнительные действия. Скриншот условий до начала поможет при спорном начислении."
+          },
+          {
+            "summary": "Размер награды относительно времени и затрат",
+            "body": "Оцените, сколько часов или дней понадобится и требует ли задача реальных покупок. Большая цифра не всегда означает выгодное предложение, если обязательные расходы почти равны награде."
+          },
+          {
+            "summary": "Надёжность отслеживания",
+            "body": "Отключение cookies, смена устройства, VPN, рекламные блокировщики или повторная установка приложения могут мешать фиксации. Следуйте инструкции конкретного оффервола."
+          },
+          {
+            "summary": "Срок подтверждения",
+            "body": "Некоторые задания начисляются сразу, другие проходят проверку рекламодателем несколько часов или дней. Отдельно проверьте, может ли награда временно находиться в ожидании."
+          },
+          {
+            "summary": "Минимальная сумма и способы вывода",
+            "body": "Сравните порог выплаты, комиссии и доступные варианты: подарочные карты, криптовалюта, игровые предметы или другие методы, которые поддерживает сервис."
+          },
+          {
+            "summary": "Правила отмены награды",
+            "body": "Рекламодатель может отменить начисление при возврате покупки, нарушении условий, дублировании аккаунта или признании действия недействительным. Такие правила должны быть понятны заранее."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сайты с заданиями",
+        "intro": "Хорошая площадка — это не просто большой каталог, а понятная система, где задания отслеживаются, спорные случаи разбираются, а заработанное можно получить удобным способом.",
+        "items": [
+          {
+            "summary": "Количество и разнообразие заданий",
+            "body": "Учитываем не только общее число предложений, но и наличие разных офферволов, опросов, игровых заданий и вариантов для пользователей из разных стран."
+          },
+          {
+            "summary": "Размер и конкурентность наград",
+            "body": "Одинаковое рекламное задание на разных площадках может оплачиваться по-разному. Мы сравниваем фактическую награду и требования, а не только максимальные суммы в рекламных блоках."
+          },
+          {
+            "summary": "Надёжность отслеживания",
+            "body": "Важно, чтобы переход, установка и этапы задания фиксировались предсказуемо, а статус можно было проверить в истории."
+          },
+          {
+            "summary": "Подтверждение и поддержка",
+            "body": "Оцениваем сроки начисления, процесс обращения по пропавшему заданию, требования к доказательствам и качество ответа поддержки."
+          },
+          {
+            "summary": "Способы вывода и минимальная сумма",
+            "body": "Учитываем доступные методы получения наград, комиссии, минимальный порог, географические ограничения и время обработки."
+          },
+          {
+            "summary": "Прозрачность правил и интерфейс",
+            "body": "Условия задания должны быть видны до начала, а платформа — понятно показывать статус, оставшееся время, этапы и историю начислений."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему список заданий и награды постоянно меняются",
+        "paragraphs": [
+          "Офферволы формируются рекламными сетями и рекламодателями, поэтому предложения зависят от страны, устройства, профиля пользователя, бюджета кампании и количества доступных мест. Два пользователя одной площадки могут видеть разный набор заданий.",
+          "Вознаграждение за одну и ту же кампанию также может меняться. Рекламодатель корректирует бюджет, сервис меняет свою долю, а отдельное предложение может временно исчезнуть после достижения нужного количества пользователей.",
+          "Для других способов получения наград используйте <a href=\"/earning/earn-by-play\">заработок на играх</a> или общий раздел <a href=\"/earning\">заработка</a>. Если интересуют именно бесплатные бонусы и промокоды без длинных цепочек заданий, сравните раздел <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при выполнении оплачиваемых заданий",
+        "intro": "Задания могут вести на сторонние сайты и приложения, поэтому условия платформы и безопасность рекламодателя нужно оценивать отдельно.",
+        "items": [
+          {
+            "summary": "Не вводите чувствительные данные без необходимости",
+            "body": "Опросу или игровой установке обычно не нужны пароль от Steam, данные банковского аккаунта или коды двухфакторной защиты. Проверяйте, какие сведения действительно необходимы для конкретной услуги."
+          },
+          {
+            "summary": "Проверяйте платные подписки и пробные периоды",
+            "body": "Если предложение требует карту или оплату, заранее посмотрите полную стоимость, дату продления и способ отмены. Не ориентируйтесь только на размер вознаграждения."
+          },
+          {
+            "summary": "Сохраняйте доказательства выполнения",
+            "body": "Для длинных и дорогих заданий полезно сохранять скриншоты условий, идентификатор задания, дату начала и подтверждение достигнутого этапа."
+          },
+          {
+            "summary": "Не пытайтесь обходить региональные ограничения",
+            "body": "VPN, несколько аккаунтов и другие способы искусственно изменить условия могут нарушать правила рекламодателя и привести к отмене награды или блокировке аккаунта."
+          },
+          {
+            "summary": "Проверяйте правила вывода до накопления баланса",
+            "body": "Минимальная сумма, проверка личности, доступные страны и способы выплаты могут различаться. Лучше узнать их до выполнения большого количества заданий."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о сайтах с заданиями и офферволах",
+        "items": [
+          {
+            "summary": "Что такое Get Paid To-сайт?",
+            "body": "Это сервис, который платит пользователям вознаграждения за выполнение заданий рекламодателей: опросов, установок приложений, регистраций, игровых целей и других действий."
+          },
+          {
+            "summary": "Что такое оффервол?",
+            "body": "Это встроенный каталог рекламных предложений от одного или нескольких поставщиков. Платформа показывает задания, а внешний рекламодатель подтверждает их выполнение."
+          },
+          {
+            "summary": "Почему выполненное задание не засчиталось?",
+            "body": "Причиной могут быть нарушение условия нового пользователя, неправильное устройство или регион, проблемы отслеживания, блокировка cookies, повторная установка или задержка подтверждения."
+          },
+          {
+            "summary": "Можно ли выполнить одно и то же задание несколько раз?",
+            "body": "Обычно нет, если условие рассчитано на нового пользователя. Повторное выполнение через другой аккаунт может нарушать правила и привести к отмене начисления."
+          },
+          {
+            "summary": "Какие способы вывода бывают?",
+            "body": "Сервисы могут предлагать подарочные карты, криптовалюту, игровые предметы и другие варианты. Доступность и минимальная сумма зависят от конкретной площадки и страны."
+          },
+          {
+            "summary": "Нужно ли проходить проверку личности?",
+            "body": "Некоторые сервисы запрашивают её при определённых суммах, способах вывода или подозрительной активности. Условия лучше проверить до накопления крупного баланса."
+          },
+          {
+            "summary": "Чем оффервол отличается от заработка на игре?",
+            "body": "Оффервол оплачивает рекламное действие для стороннего сервиса. В разделе <a href=\"/earning/earn-by-play\">заработка на играх</a> награда связана непосредственно с игровой активностью."
+          },
+          {
+            "summary": "Почему рейтинг сайтов с заданиями на CSGOBROKER меняется?",
+            "body": "Меняются рекламные партнёры, доступность заданий, размер наград, отслеживание, сроки подтверждения, способы вывода и качество поддержки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Paid Task Sites: How Offerwalls and Get Paid To Platforms Work",
+        "paragraphs": [
+          "Get Paid To platforms reward users for completing actions for third-party advertisers. These sites commonly integrate offerwalls: catalogs supplied by advertising networks with surveys, app installations, website registrations, mobile-game progression goals, and other tasks that display a defined reward.",
+          "After opening an offer, the user moves to the advertiser's website or application and completes the required conditions. Tracking then sends completion data back to the reward platform. This makes the details important: country, device, first installation, deadline, required level, and whether the same offer has been completed before.",
+          "CSGOBROKER compares these services by task availability, reward level, tracking reliability, confirmation rules, and withdrawal options. If you want rewards for normal gameplay rather than advertiser-funded actions, use the <a href=\"/earning/earn-by-play\">earning by playing</a> section."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Offerwall Tasks",
+        "items": [
+          {
+            "title": "Surveys and questionnaires",
+            "paragraphs": [
+              "Users answer questions for research companies. Availability and reward depend heavily on country and profile, and a survey can end early when the participant does not match the target audience."
+            ]
+          },
+          {
+            "title": "Mobile game offers",
+            "paragraphs": [
+              "The reward is paid for installing a game and reaching a stated level, chapter, account power, or other goal within a deadline. Start through the offerwall link so the installation can be attributed correctly."
+            ]
+          },
+          {
+            "title": "App installation offers",
+            "paragraphs": [
+              "Some tasks require installing an application, opening it for the first time, or completing several actions inside it. Reinstalling an app used previously often does not qualify."
+            ]
+          },
+          {
+            "title": "Website and service registrations",
+            "paragraphs": [
+              "An offer can require a new account, email verification, or an additional action. A separate email address can be useful for promotional registrations if you do not want them mixed with personal correspondence."
+            ]
+          },
+          {
+            "title": "Paid and trial offers",
+            "paragraphs": [
+              "Some tasks involve a purchase, subscription, or trial period. Compare the reward with the real cost, cancellation rules, and any automatic renewal before accepting the offer."
+            ]
+          },
+          {
+            "title": "Multi-stage offers",
+            "paragraphs": [
+              "A large reward may be divided into several milestones, for example registration, several game levels, and a purchase. Review each stage separately and identify which ones are mandatory."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Starting an Offer",
+        "intro": "Most missing-credit problems come from mismatched conditions or tracking failures, so the rules are best reviewed before the first click.",
+        "items": [
+          {
+            "summary": "Complete offer requirements",
+            "body": "Check country, device, deadline, required level, new-user status, and any additional actions. A screenshot of the terms before starting can be useful in a later dispute."
+          },
+          {
+            "summary": "Reward compared with time and spending",
+            "body": "Estimate the hours or days required and whether real-money purchases are mandatory. A large headline reward may be poor value if required spending approaches the reward amount."
+          },
+          {
+            "summary": "Tracking reliability",
+            "body": "Disabled cookies, changing devices, VPN use, ad blockers, or reinstalling an application can interfere with attribution. Follow the instructions of the specific offerwall."
+          },
+          {
+            "summary": "Confirmation time",
+            "body": "Some tasks credit immediately, while others are reviewed by the advertiser for hours or days. Check whether rewards can remain pending before becoming withdrawable."
+          },
+          {
+            "summary": "Withdrawal minimum and methods",
+            "body": "Compare payout threshold, fees, and available options such as gift cards, cryptocurrency, game items, or other methods supported by the service."
+          },
+          {
+            "summary": "Reward reversal rules",
+            "body": "An advertiser can reverse credit after a refunded purchase, rule violation, duplicate account, or invalid activity. These conditions should be clear before you commit time or money."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Paid Task Sites",
+        "intro": "A useful platform needs more than a large offer catalog: tasks should track correctly, disputes should be handled, and earned value should be withdrawable through practical methods.",
+        "items": [
+          {
+            "summary": "Task quantity and variety",
+            "body": "We consider not only total offer count but also multiple offerwall providers, surveys, game tasks, and options available across different countries."
+          },
+          {
+            "summary": "Reward competitiveness",
+            "body": "The same advertiser campaign can pay differently on different reward sites. We compare the actual reward and requirements rather than only the largest promotional numbers."
+          },
+          {
+            "summary": "Tracking reliability",
+            "body": "Clicks, installations, and milestones should be recorded predictably, and users should be able to inspect status in their history."
+          },
+          {
+            "summary": "Confirmation and support",
+            "body": "We evaluate crediting times, the missing-offer claim process, evidence requirements, and the quality of support responses."
+          },
+          {
+            "summary": "Withdrawals and minimums",
+            "body": "Available reward methods, fees, minimum payout, geographic restrictions, and processing times are part of the rating."
+          },
+          {
+            "summary": "Rule transparency and interface",
+            "body": "Offer terms should be visible before starting, while the platform should clearly show status, remaining time, milestones, and reward history."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Offers and Reward Amounts Constantly Change",
+        "paragraphs": [
+          "Offerwalls are supplied by ad networks and advertisers, so available campaigns depend on country, device, user profile, campaign budget, and remaining acquisition capacity. Two users on the same platform can therefore see different offers.",
+          "The payout for the same campaign can change as well. An advertiser may adjust its budget, a reward platform can change its share, and an offer can disappear temporarily after enough users have completed it.",
+          "For other reward models, see <a href=\"/earning/earn-by-play\">earning by playing</a> or the broader <a href=\"/earning\">earning</a> section. If you mainly want free bonuses and promo codes without long task chains, compare <a href=\"/freebies\">bonuses</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Completing Paid Offers",
+        "intro": "Offerwalls can send users to third-party websites and applications, so the reward platform and the advertiser should be evaluated separately.",
+        "items": [
+          {
+            "summary": "Do not provide sensitive data unnecessarily",
+            "body": "A survey or game installation normally does not need your Steam password, banking password, or two-factor authentication codes. Check what information the specific service genuinely requires."
+          },
+          {
+            "summary": "Review paid subscriptions and trials",
+            "body": "If an offer requires a card or payment, check the full cost, renewal date, and cancellation method in advance. Do not judge the task only by its reward amount."
+          },
+          {
+            "summary": "Keep proof of completion",
+            "body": "For long or expensive tasks, keep screenshots of the original conditions, offer identifier, start date, and evidence of reaching the required milestone."
+          },
+          {
+            "summary": "Do not bypass regional restrictions",
+            "body": "VPNs, multiple accounts, and other methods intended to change eligibility can violate advertiser rules and lead to reversed credit or account restrictions."
+          },
+          {
+            "summary": "Check withdrawal rules before building a balance",
+            "body": "Minimum payout, identity verification, supported countries, and payment methods can differ. Verify them before completing a large number of offers."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Offerwalls and Paid Task Sites",
+        "items": [
+          {
+            "summary": "What is a Get Paid To site?",
+            "body": "A service that rewards users for advertiser-funded tasks such as surveys, app installations, registrations, game goals, and other actions."
+          },
+          {
+            "summary": "What is an offerwall?",
+            "body": "An embedded catalog of advertising offers supplied by one or more providers. The reward site displays the task while an external advertiser verifies completion."
+          },
+          {
+            "summary": "Why was my completed offer not credited?",
+            "body": "Possible reasons include failing a new-user condition, using the wrong device or region, attribution problems, blocked cookies, reinstalling an app, or delayed advertiser confirmation."
+          },
+          {
+            "summary": "Can I complete the same offer more than once?",
+            "body": "Usually not when the offer is intended for new users. Repeating it through another account can violate the rules and cause rewards to be reversed."
+          },
+          {
+            "summary": "What withdrawal methods are available?",
+            "body": "Services can offer gift cards, cryptocurrency, game items, and other methods. Availability and minimums depend on the platform and country."
+          },
+          {
+            "summary": "Is identity verification required?",
+            "body": "Some services request it at certain payout levels, for specific withdrawal methods, or after suspicious activity. Check the policy before accumulating a large balance."
+          },
+          {
+            "summary": "How is an offerwall different from earning by playing?",
+            "body": "An offerwall pays for an advertiser-funded action for another service. In <a href=\"/earning/earn-by-play\">earning by playing</a>, the reward is tied directly to gameplay activity."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Advertising partners, offer availability, reward amounts, tracking, confirmation times, withdrawal methods, and support quality can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sitios de tareas pagadas: cómo funcionan los offerwalls y las plataformas Get Paid To",
+        "paragraphs": [
+          "Las plataformas Get Paid To recompensan a los usuarios por realizar acciones para anunciantes externos. Suelen integrar offerwalls, catálogos de redes publicitarias con encuestas, instalaciones de aplicaciones, registros, objetivos en juegos móviles y otras tareas con una recompensa indicada.",
+          "Al abrir una oferta, el usuario pasa al sitio o aplicación del anunciante y completa las condiciones. El sistema de seguimiento envía después la confirmación a la plataforma. Por eso importan país, dispositivo, primera instalación, plazo, nivel exigido y si la misma oferta ya se realizó anteriormente.",
+          "CSGOBROKER compara estos servicios por disponibilidad de tareas, recompensas, fiabilidad del seguimiento, reglas de confirmación y opciones de retiro. Para recibir premios por jugar normalmente, consulta <a href=\"/earning/earn-by-play\">recompensas por jugar</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de tareas en offerwalls",
+        "items": [
+          {
+            "title": "Encuestas y cuestionarios",
+            "paragraphs": [
+              "El usuario responde preguntas para empresas de investigación. La disponibilidad y el pago dependen mucho del país y del perfil, y una encuesta puede terminar antes si no encaja con el público objetivo."
+            ]
+          },
+          {
+            "title": "Ofertas de juegos móviles",
+            "paragraphs": [
+              "La recompensa se obtiene por instalar un juego y alcanzar un nivel, capítulo, fuerza de cuenta u otro objetivo dentro de un plazo. Hay que empezar desde el enlace del offerwall para que la instalación se atribuya correctamente."
+            ]
+          },
+          {
+            "title": "Instalación de aplicaciones",
+            "paragraphs": [
+              "Algunas tareas piden instalar una aplicación, abrirla por primera vez o completar varias acciones. Reinstalar una aplicación utilizada anteriormente normalmente no cumple la condición."
+            ]
+          },
+          {
+            "title": "Registro en sitios y servicios",
+            "paragraphs": [
+              "Una oferta puede exigir una cuenta nueva, verificar el correo o realizar un paso adicional. Puede ser útil emplear un correo separado para registros promocionales."
+            ]
+          },
+          {
+            "title": "Ofertas pagadas y periodos de prueba",
+            "paragraphs": [
+              "Algunas tareas requieren una compra, suscripción o prueba. Compara la recompensa con el coste real, reglas de cancelación y posible renovación automática."
+            ]
+          },
+          {
+            "title": "Ofertas por etapas",
+            "paragraphs": [
+              "Una recompensa grande puede dividirse en hitos: registro, varios niveles y una compra. Revisa cada etapa y qué partes son realmente obligatorias."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de empezar una oferta",
+        "intro": "La mayoría de problemas de acreditación aparecen por condiciones no cumplidas o fallos de seguimiento, así que conviene leer las reglas antes del primer clic.",
+        "items": [
+          {
+            "summary": "Requisitos completos",
+            "body": "Comprueba país, dispositivo, plazo, nivel exigido, condición de nuevo usuario y acciones adicionales. Una captura de las reglas antes de empezar puede ayudar en una reclamación."
+          },
+          {
+            "summary": "Recompensa frente a tiempo y gasto",
+            "body": "Calcula cuántas horas o días puede requerir y si obliga a realizar compras. Una recompensa alta puede ser poco rentable si el gasto necesario se acerca a su valor."
+          },
+          {
+            "summary": "Fiabilidad del seguimiento",
+            "body": "Cookies desactivadas, cambio de dispositivo, VPN, bloqueadores o reinstalar una aplicación pueden impedir la atribución. Sigue las instrucciones del proveedor concreto."
+          },
+          {
+            "summary": "Tiempo de confirmación",
+            "body": "Algunas tareas se acreditan al momento y otras necesitan horas o días de revisión del anunciante. Revisa si la recompensa puede quedar temporalmente pendiente."
+          },
+          {
+            "summary": "Mínimo y métodos de retiro",
+            "body": "Compara umbral, comisiones y opciones como tarjetas regalo, criptomonedas, objetos de juego u otros métodos compatibles."
+          },
+          {
+            "summary": "Reglas de reversión",
+            "body": "El anunciante puede retirar una recompensa tras un reembolso, incumplimiento, cuenta duplicada o actividad inválida. Las condiciones deberían conocerse antes de invertir tiempo o dinero."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sitios de tareas pagadas",
+        "intro": "Una buena plataforma necesita algo más que muchas ofertas: el seguimiento debe funcionar, las reclamaciones deben poder resolverse y la recompensa debe ser retirable.",
+        "items": [
+          {
+            "summary": "Cantidad y variedad de tareas",
+            "body": "Valoramos no solo el total, sino también varios proveedores, encuestas, tareas de juegos y opciones para usuarios de diferentes países."
+          },
+          {
+            "summary": "Competitividad de las recompensas",
+            "body": "La misma campaña puede pagar distinto en dos plataformas. Comparamos recompensa real y requisitos, no solo las cifras máximas publicitadas."
+          },
+          {
+            "summary": "Fiabilidad del seguimiento",
+            "body": "Clics, instalaciones e hitos deberían registrarse de forma predecible y el usuario debería poder consultar el estado en su historial."
+          },
+          {
+            "summary": "Confirmación y soporte",
+            "body": "Evaluamos plazos, proceso de reclamación, pruebas solicitadas y calidad de las respuestas del soporte."
+          },
+          {
+            "summary": "Retiro y mínimos",
+            "body": "Métodos, comisiones, mínimo de pago, restricciones geográficas y tiempos de procesamiento forman parte de la valoración."
+          },
+          {
+            "summary": "Transparencia e interfaz",
+            "body": "Las condiciones deben verse antes de empezar y la plataforma debe mostrar estado, tiempo restante, etapas e historial de recompensas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian constantemente las ofertas y recompensas",
+        "paragraphs": [
+          "Los offerwalls dependen de redes publicitarias y anunciantes, así que las campañas varían según país, dispositivo, perfil, presupuesto y cupos disponibles. Dos usuarios de la misma plataforma pueden ver tareas diferentes.",
+          "El pago de una misma campaña también puede cambiar. El anunciante ajusta presupuesto, la plataforma cambia su parte y una oferta puede desaparecer temporalmente después de alcanzar suficientes usuarios.",
+          "Para otros modelos consulta <a href=\"/earning/earn-by-play\">recompensas por jugar</a> o la sección general de <a href=\"/earning\">ganancias</a>. Para bonos gratuitos y códigos sin cadenas largas, revisa <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al completar tareas pagadas",
+        "intro": "Los offerwalls pueden dirigir a sitios y aplicaciones externos, así que la plataforma de recompensas y el anunciante deben evaluarse por separado.",
+        "items": [
+          {
+            "summary": "No entregues datos sensibles sin necesidad",
+            "body": "Una encuesta o instalación de juego normalmente no necesita tu contraseña de Steam, banca o códigos de autenticación. Comprueba qué datos exige realmente el servicio."
+          },
+          {
+            "summary": "Revisa suscripciones y pruebas",
+            "body": "Si la oferta requiere tarjeta o pago, comprueba coste total, fecha de renovación y forma de cancelar antes de empezar. No mires solo la recompensa."
+          },
+          {
+            "summary": "Guarda pruebas",
+            "body": "En tareas largas o caras, conserva capturas de las condiciones, identificador de la oferta, fecha de inicio y evidencia del hito alcanzado."
+          },
+          {
+            "summary": "No evites restricciones regionales",
+            "body": "VPN, múltiples cuentas u otros métodos para cambiar la elegibilidad pueden incumplir las reglas y provocar retirada de la recompensa o bloqueo."
+          },
+          {
+            "summary": "Comprueba el retiro antes de acumular saldo",
+            "body": "Mínimo, verificación de identidad, países y métodos pueden variar. Revisa estas reglas antes de completar muchas tareas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre offerwalls y tareas pagadas",
+        "items": [
+          {
+            "summary": "¿Qué es un sitio Get Paid To?",
+            "body": "Un servicio que recompensa tareas financiadas por anunciantes: encuestas, instalaciones, registros, objetivos en juegos y otras acciones."
+          },
+          {
+            "summary": "¿Qué es un offerwall?",
+            "body": "Un catálogo integrado de ofertas publicitarias de uno o varios proveedores. La plataforma muestra la tarea y un anunciante externo verifica el cumplimiento."
+          },
+          {
+            "summary": "¿Por qué no se acreditó una tarea completada?",
+            "body": "Puede deberse a la condición de nuevo usuario, dispositivo o región incorrectos, problemas de atribución, cookies bloqueadas, reinstalación o retraso del anunciante."
+          },
+          {
+            "summary": "¿Puedo repetir la misma oferta?",
+            "body": "Normalmente no si está destinada a usuarios nuevos. Repetirla con otra cuenta puede incumplir las reglas y provocar una reversión."
+          },
+          {
+            "summary": "¿Qué métodos de retiro existen?",
+            "body": "Puede haber tarjetas regalo, criptomonedas, objetos de juego y otros métodos. Disponibilidad y mínimos dependen de plataforma y país."
+          },
+          {
+            "summary": "¿Es necesaria la verificación de identidad?",
+            "body": "Algunos servicios la piden a determinados importes, para ciertos retiros o ante actividad sospechosa. Compruébalo antes de acumular mucho saldo."
+          },
+          {
+            "summary": "¿Qué diferencia hay con ganar jugando?",
+            "body": "El offerwall paga una acción para un anunciante externo. En <a href=\"/earning/earn-by-play\">recompensas por jugar</a>, el premio depende directamente de la actividad de juego."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian socios publicitarios, tareas, recompensas, seguimiento, plazos, métodos de retiro y calidad del soporte."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sites de tarefas pagas: como funcionam offerwalls e plataformas Get Paid To",
+        "paragraphs": [
+          "Plataformas Get Paid To recompensam usuários por ações realizadas para anunciantes externos. Elas normalmente integram offerwalls, catálogos de redes publicitárias com pesquisas, instalações de aplicativos, cadastros, objetivos em jogos mobile e outras tarefas com recompensa definida.",
+          "Ao abrir uma oferta, o usuário vai ao site ou aplicativo do anunciante e cumpre as condições. O rastreamento envia depois a confirmação para a plataforma. Por isso importam país, dispositivo, primeira instalação, prazo, nível exigido e se a mesma oferta já foi realizada antes.",
+          "A CSGOBROKER compara esses serviços por disponibilidade de tarefas, valor das recompensas, confiabilidade do rastreamento, regras de confirmação e opções de saque. Para ganhar com atividade normal de jogo, consulte <a href=\"/earning/earn-by-play\">recompensas por jogar</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de tarefas em offerwalls",
+        "items": [
+          {
+            "title": "Pesquisas e questionários",
+            "paragraphs": [
+              "O usuário responde perguntas para empresas de pesquisa. Disponibilidade e pagamento dependem muito do país e perfil, e uma pesquisa pode terminar cedo quando a pessoa não corresponde ao público desejado."
+            ]
+          },
+          {
+            "title": "Ofertas de jogos mobile",
+            "paragraphs": [
+              "A recompensa é paga por instalar um jogo e atingir nível, capítulo, poder da conta ou outro objetivo dentro de um prazo. Comece pelo link do offerwall para que a instalação seja rastreada corretamente."
+            ]
+          },
+          {
+            "title": "Instalação de aplicativos",
+            "paragraphs": [
+              "Algumas tarefas exigem instalar um app, abrir pela primeira vez ou realizar ações adicionais. Reinstalar um aplicativo usado anteriormente normalmente não é válido."
+            ]
+          },
+          {
+            "title": "Cadastros em sites e serviços",
+            "paragraphs": [
+              "A oferta pode pedir nova conta, confirmação de e-mail ou outro passo. Um e-mail separado pode ser útil para registros promocionais."
+            ]
+          },
+          {
+            "title": "Ofertas pagas e períodos de teste",
+            "paragraphs": [
+              "Algumas tarefas exigem compra, assinatura ou teste. Compare a recompensa com custo real, regras de cancelamento e possível renovação automática."
+            ]
+          },
+          {
+            "title": "Ofertas em várias etapas",
+            "paragraphs": [
+              "Uma recompensa grande pode ser dividida em etapas, como cadastro, vários níveis e compra. Analise cada etapa e identifique quais partes são obrigatórias."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de começar uma oferta",
+        "intro": "A maioria dos problemas de crédito vem de condição não cumprida ou falha de rastreamento, então leia as regras antes do primeiro clique.",
+        "items": [
+          {
+            "summary": "Requisitos completos",
+            "body": "Confira país, dispositivo, prazo, nível, condição de novo usuário e ações adicionais. Uma captura das regras antes do início pode ajudar em uma disputa."
+          },
+          {
+            "summary": "Recompensa em relação a tempo e gastos",
+            "body": "Estime horas ou dias necessários e se há compras obrigatórias. Uma recompensa grande pode ser pouco vantajosa quando o gasto exigido se aproxima do valor recebido."
+          },
+          {
+            "summary": "Confiabilidade do rastreamento",
+            "body": "Cookies desativados, troca de dispositivo, VPN, bloqueadores ou reinstalação podem atrapalhar a atribuição. Siga as instruções do offerwall específico."
+          },
+          {
+            "summary": "Tempo de confirmação",
+            "body": "Algumas tarefas creditam imediatamente e outras passam por análise do anunciante durante horas ou dias. Confira se a recompensa pode ficar pendente."
+          },
+          {
+            "summary": "Mínimo e métodos de saque",
+            "body": "Compare limite, taxas e opções como cartões-presente, criptomoedas, itens de jogo ou outros métodos oferecidos."
+          },
+          {
+            "summary": "Regras de reversão",
+            "body": "O anunciante pode retirar o crédito após reembolso, violação, conta duplicada ou atividade inválida. Essas condições devem estar claras antes de investir tempo ou dinheiro."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sites de tarefas pagas",
+        "intro": "Uma boa plataforma precisa de mais do que um catálogo grande: o rastreamento deve funcionar, disputas precisam de solução e a recompensa deve poder ser sacada.",
+        "items": [
+          {
+            "summary": "Quantidade e variedade de tarefas",
+            "body": "Consideramos não apenas o total, mas vários provedores, pesquisas, tarefas de jogos e opções disponíveis para usuários de diferentes países."
+          },
+          {
+            "summary": "Competitividade das recompensas",
+            "body": "A mesma campanha pode pagar valores diferentes em duas plataformas. Comparamos recompensa real e requisitos, não apenas o maior número promocional."
+          },
+          {
+            "summary": "Confiabilidade do rastreamento",
+            "body": "Cliques, instalações e etapas devem ser registrados de forma previsível e o usuário deve conseguir consultar o status no histórico."
+          },
+          {
+            "summary": "Confirmação e suporte",
+            "body": "Avaliamos prazos, processo de reclamação de tarefa ausente, provas exigidas e qualidade das respostas do suporte."
+          },
+          {
+            "summary": "Saques e mínimos",
+            "body": "Métodos, taxas, mínimo de pagamento, restrições geográficas e tempo de processamento fazem parte da avaliação."
+          },
+          {
+            "summary": "Transparência e interface",
+            "body": "As condições devem aparecer antes do início e a plataforma deve mostrar status, tempo restante, etapas e histórico de recompensas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que ofertas e recompensas mudam o tempo todo",
+        "paragraphs": [
+          "Offerwalls dependem de redes e anunciantes, então campanhas variam por país, dispositivo, perfil, orçamento e vagas disponíveis. Dois usuários da mesma plataforma podem ver tarefas diferentes.",
+          "O pagamento da mesma campanha também pode mudar. O anunciante ajusta orçamento, a plataforma muda sua parcela e uma oferta pode desaparecer temporariamente após atingir o número necessário de usuários.",
+          "Para outros modelos, veja <a href=\"/earning/earn-by-play\">recompensas por jogar</a> ou a seção geral de <a href=\"/earning\">ganhos</a>. Para bônus gratuitos e códigos sem longas sequências, compare <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao completar tarefas pagas",
+        "intro": "Offerwalls podem levar a sites e aplicativos externos, então a plataforma de recompensas e o anunciante devem ser avaliados separadamente.",
+        "items": [
+          {
+            "summary": "Não forneça dados sensíveis sem necessidade",
+            "body": "Uma pesquisa ou instalação de jogo normalmente não precisa da sua senha Steam, senha bancária ou códigos de autenticação. Confira quais dados o serviço realmente exige."
+          },
+          {
+            "summary": "Revise assinaturas e testes",
+            "body": "Se a oferta exige cartão ou pagamento, veja custo total, data de renovação e forma de cancelar antes de começar. Não avalie apenas a recompensa."
+          },
+          {
+            "summary": "Guarde provas",
+            "body": "Em tarefas longas ou caras, mantenha capturas das condições, identificador da oferta, data de início e evidência da etapa atingida."
+          },
+          {
+            "summary": "Não contorne restrições regionais",
+            "body": "VPN, múltiplas contas e métodos para alterar elegibilidade podem violar regras e causar reversão da recompensa ou bloqueio."
+          },
+          {
+            "summary": "Confira saque antes de acumular saldo",
+            "body": "Mínimo, verificação de identidade, países e métodos podem variar. Verifique antes de completar muitas tarefas."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre offerwalls e tarefas pagas",
+        "items": [
+          {
+            "summary": "O que é um site Get Paid To?",
+            "body": "Um serviço que recompensa tarefas financiadas por anunciantes, como pesquisas, instalações, cadastros, objetivos em jogos e outras ações."
+          },
+          {
+            "summary": "O que é um offerwall?",
+            "body": "Um catálogo integrado de ofertas publicitárias de um ou mais provedores. A plataforma mostra a tarefa e o anunciante externo confirma o cumprimento."
+          },
+          {
+            "summary": "Por que uma tarefa concluída não foi creditada?",
+            "body": "Pode ser condição de novo usuário, dispositivo ou região incorretos, problema de atribuição, cookies bloqueados, reinstalação ou atraso do anunciante."
+          },
+          {
+            "summary": "Posso repetir a mesma oferta?",
+            "body": "Normalmente não quando é destinada a novos usuários. Repetir com outra conta pode violar as regras e resultar em reversão."
+          },
+          {
+            "summary": "Quais métodos de saque existem?",
+            "body": "Podem incluir cartões-presente, criptomoedas, itens de jogo e outros métodos. Disponibilidade e mínimos dependem da plataforma e país."
+          },
+          {
+            "summary": "É necessário verificar identidade?",
+            "body": "Alguns serviços pedem em determinados valores, métodos de saque ou atividade suspeita. Confira a política antes de acumular saldo alto."
+          },
+          {
+            "summary": "Qual a diferença para ganhar jogando?",
+            "body": "O offerwall paga uma ação para um anunciante externo. Em <a href=\"/earning/earn-by-play\">recompensas por jogar</a>, o prêmio depende diretamente da atividade de jogo."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Parceiros, tarefas, recompensas, rastreamento, prazos, métodos de saque e qualidade do suporte mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Ücretli Görev Siteleri: Offerwall ve Get Paid To Platformları Nasıl Çalışır?",
+        "paragraphs": [
+          "Get Paid To platformları kullanıcıları üçüncü taraf reklamverenler için tamamladıkları işlemler karşılığında ödüllendirir. Bu siteler genellikle offerwall adı verilen reklam kataloglarını entegre eder: anketler, uygulama kurulumları, site kayıtları, mobil oyun hedefleri ve önceden belirtilen ödüllü başka görevler.",
+          "Bir teklif açıldığında kullanıcı reklamverenin sitesine veya uygulamasına gider ve şartları tamamlar. Takip sistemi daha sonra tamamlanma bilgisini ödül platformuna gönderir. Bu yüzden ülke, cihaz, ilk kurulum, son tarih, gereken seviye ve teklifin daha önce yapılıp yapılmadığı önemlidir.",
+          "CSGOBROKER bu servisleri görev bulunabilirliği, ödül miktarı, takip güvenilirliği, onay kuralları ve çekim yöntemlerine göre karşılaştırır. Reklam görevi yerine normal oyun aktivitesinden ödül almak için <a href=\"/earning/earn-by-play\">oynayarak kazanma</a> bölümünü kullanın."
+        ]
+      },
+      "categories": {
+        "title": "Offerwall'larda Yaygın Görev Türleri",
+        "items": [
+          {
+            "title": "Anketler ve soru formları",
+            "paragraphs": [
+              "Kullanıcı araştırma şirketleri için soruları yanıtlar. Uygunluk ve ödeme ülke ile profile göre ciddi değişir; hedef kitleye uymayan katılımcının anketi erken bitebilir."
+            ]
+          },
+          {
+            "title": "Mobil oyun teklifleri",
+            "paragraphs": [
+              "Ödül oyunu kurup belirtilen seviyeye, bölüme, hesap gücüne veya başka hedefe süre içinde ulaşınca verilir. Kurulumun doğru izlenmesi için göreve offerwall bağlantısından başlayın."
+            ]
+          },
+          {
+            "title": "Uygulama kurulumları",
+            "paragraphs": [
+              "Bazı görevler uygulamayı kurma, ilk kez açma veya içinde birkaç işlem yapmayı ister. Daha önce kullanılmış uygulamayı tekrar kurmak çoğu zaman geçerli değildir."
+            ]
+          },
+          {
+            "title": "Site ve servis kayıtları",
+            "paragraphs": [
+              "Teklif yeni hesap, e-posta doğrulaması veya ek işlem isteyebilir. Promosyon kayıtlarını kişisel yazışmadan ayırmak için farklı e-posta kullanmak faydalı olabilir."
+            ]
+          },
+          {
+            "title": "Ücretli ve deneme teklifleri",
+            "paragraphs": [
+              "Bazı görevlerde satın alma, abonelik veya deneme süresi vardır. Ödülü gerçek maliyet, iptal kuralları ve otomatik yenilemeyle birlikte karşılaştırın."
+            ]
+          },
+          {
+            "title": "Çok aşamalı teklifler",
+            "paragraphs": [
+              "Büyük ödül kayıt, birkaç seviye ve satın alma gibi aşamalara bölünebilir. Her aşamayı ayrı inceleyin ve hangilerinin zorunlu olduğunu kontrol edin."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Bir Teklife Başlamadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Eksik ödül sorunlarının çoğu şart uyuşmazlığı veya takip hatasından kaynaklanır; bu nedenle kuralları ilk tıklamadan önce okuyun.",
+        "items": [
+          {
+            "summary": "Tam teklif şartları",
+            "body": "Ülke, cihaz, son tarih, gereken seviye, yeni kullanıcı şartı ve ek işlemleri kontrol edin. Başlangıçtaki koşulların ekran görüntüsü daha sonra itiraz için yararlı olabilir."
+          },
+          {
+            "summary": "Zaman ve harcamaya göre ödül",
+            "body": "Kaç saat veya gün gerektiğini ve gerçek para harcamanın zorunlu olup olmadığını hesaplayın. Zorunlu masraf ödüle yaklaşıyorsa yüksek görünen tutar avantajlı olmayabilir."
+          },
+          {
+            "summary": "Takip güvenilirliği",
+            "body": "Cookies kapalı olması, cihaz değiştirmek, VPN, reklam engelleyici veya uygulamayı yeniden kurmak ilişkilendirmeyi bozabilir. İlgili offerwall talimatlarını izleyin."
+          },
+          {
+            "summary": "Onay süresi",
+            "body": "Bazı görevler hemen, bazıları reklamveren incelemesinden sonra saatler veya günler içinde ödüllenir. Ödülün beklemede kalıp kalamayacağını kontrol edin."
+          },
+          {
+            "summary": "Minimum çekim ve yöntemler",
+            "body": "Hediye kartı, kripto para, oyun eşyası veya diğer seçeneklerin minimum tutarını, ücretlerini ve kullanılabilirliğini karşılaştırın."
+          },
+          {
+            "summary": "Ödül iptal kuralları",
+            "body": "İade edilen satın alma, kural ihlali, kopya hesap veya geçersiz aktivite sonrası reklamveren ödülü geri alabilir. Bu şartlar önceden açık olmalıdır."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Ücretli Görev Sitelerini Nasıl Değerlendirir?",
+        "intro": "İyi bir platform yalnız büyük katalog sunmamalı; görevler doğru izlenmeli, itirazlar çözülebilmeli ve kazanılan değer kullanılabilir yöntemlerle çekilebilmelidir.",
+        "items": [
+          {
+            "summary": "Görev sayısı ve çeşitliliği",
+            "body": "Yalnız toplam sayıyı değil, farklı offerwall sağlayıcılarını, anketleri, oyun görevlerini ve farklı ülkelerdeki kullanıcı seçeneklerini dikkate alıyoruz."
+          },
+          {
+            "summary": "Ödül rekabetçiliği",
+            "body": "Aynı reklam kampanyası farklı platformlarda farklı ödeme verebilir. Sadece en büyük reklam rakamını değil gerçek ödül ve şartları karşılaştırıyoruz."
+          },
+          {
+            "summary": "Takip güvenilirliği",
+            "body": "Tıklamalar, kurulumlar ve aşamalar öngörülebilir biçimde kaydedilmeli ve kullanıcı geçmişten durumunu kontrol edebilmelidir."
+          },
+          {
+            "summary": "Onay ve destek",
+            "body": "Ödül süresini, eksik görev itiraz sürecini, gereken kanıtları ve destek yanıtlarının kalitesini değerlendiriyoruz."
+          },
+          {
+            "summary": "Çekim ve minimumlar",
+            "body": "Ödül yöntemleri, ücretler, minimum ödeme, bölgesel kısıtlamalar ve işlem süresi puana dahildir."
+          },
+          {
+            "summary": "Kural şeffaflığı ve arayüz",
+            "body": "Teklif şartları başlamadan görünmeli; platform durum, kalan süre, aşamalar ve ödül geçmişini açık biçimde göstermelidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Teklifler ve Ödül Miktarları Neden Sürekli Değişir?",
+        "paragraphs": [
+          "Offerwall'lar reklam ağları ve reklamverenler tarafından sağlanır; kampanyalar ülke, cihaz, kullanıcı profili, bütçe ve kalan kullanıcı kapasitesine göre değişir. Aynı platformdaki iki kullanıcı farklı görevler görebilir.",
+          "Aynı kampanyanın ödemesi de değişebilir. Reklamveren bütçeyi ayarlar, ödül platformu payını değiştirebilir ve yeterli kullanıcı tamamladıktan sonra teklif geçici olarak kaybolabilir.",
+          "Diğer ödül modelleri için <a href=\"/earning/earn-by-play\">oynayarak kazanma</a> veya genel <a href=\"/earning\">kazanç</a> bölümüne bakın. Uzun görev zinciri olmadan ücretsiz bonus ve kodlar için <a href=\"/freebies\">bonusları</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Ücretli Görevlerde Güvenlik",
+        "intro": "Offerwall kullanıcıyı üçüncü taraf site ve uygulamalara yönlendirebilir; bu nedenle ödül platformu ve reklamveren ayrı ayrı değerlendirilmelidir.",
+        "items": [
+          {
+            "summary": "Gereksiz hassas bilgi vermeyin",
+            "body": "Anket veya oyun kurulumu normalde Steam şifresi, banka şifresi veya iki aşamalı doğrulama kodu istemez. Servisin gerçekten hangi bilgiye ihtiyaç duyduğunu kontrol edin."
+          },
+          {
+            "summary": "Ücretli abonelik ve denemeleri inceleyin",
+            "body": "Teklif kart veya ödeme istiyorsa başlamadan tam maliyeti, yenileme tarihini ve iptal yöntemini öğrenin. Yalnız ödül miktarına bakmayın."
+          },
+          {
+            "summary": "Tamamlama kanıtlarını saklayın",
+            "body": "Uzun veya pahalı görevlerde başlangıç şartları, teklif kimliği, başlangıç tarihi ve gereken aşamaya ulaşıldığını gösteren ekran görüntülerini saklayın."
+          },
+          {
+            "summary": "Bölgesel kısıtlamaları aşmaya çalışmayın",
+            "body": "VPN, birden fazla hesap ve uygunluğu değiştiren yöntemler reklamveren kurallarını ihlal edip ödül iptaline veya hesap kısıtlamasına yol açabilir."
+          },
+          {
+            "summary": "Bakiye biriktirmeden çekim kurallarını kontrol edin",
+            "body": "Minimum ödeme, kimlik doğrulama, desteklenen ülkeler ve yöntemler değişebilir. Çok sayıda görev tamamlamadan önce bunları öğrenin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Offerwall ve Ücretli Görev Siteleri Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Get Paid To sitesi nedir?",
+            "body": "Anket, uygulama kurulumu, kayıt, oyun hedefi ve başka reklamveren destekli işlemler karşılığında kullanıcıya ödül veren servistir."
+          },
+          {
+            "summary": "Offerwall nedir?",
+            "body": "Bir veya daha fazla sağlayıcıdan gelen reklam tekliflerinin gömülü kataloğudur. Ödül sitesi görevi gösterir, dış reklamveren tamamlanmayı doğrular."
+          },
+          {
+            "summary": "Tamamladığım görev neden ödüllenmedi?",
+            "body": "Yeni kullanıcı şartı, yanlış cihaz veya bölge, takip sorunu, kapalı cookies, yeniden kurulum veya reklamveren onay gecikmesi sebep olabilir."
+          },
+          {
+            "summary": "Aynı teklifi birden fazla kez yapabilir miyim?",
+            "body": "Yeni kullanıcıya yönelik tekliflerde genellikle hayır. Başka hesapla tekrar etmek kuralları ihlal edip ödülün geri alınmasına yol açabilir."
+          },
+          {
+            "summary": "Hangi çekim yöntemleri vardır?",
+            "body": "Hediye kartı, kripto para, oyun eşyası ve diğer yöntemler olabilir. Kullanılabilirlik ve minimumlar platform ile ülkeye bağlıdır."
+          },
+          {
+            "summary": "Kimlik doğrulama gerekir mi?",
+            "body": "Bazı servisler belirli tutar, çekim yöntemi veya şüpheli aktivitede isteyebilir. Büyük bakiye biriktirmeden politikayı kontrol edin."
+          },
+          {
+            "summary": "Offerwall ile oynayarak kazanma arasındaki fark nedir?",
+            "body": "Offerwall başka servis için reklam işlemini ödüllendirir. <a href=\"/earning/earn-by-play\">Oynayarak kazanma</a> bölümünde ödül doğrudan oyun aktivitesine bağlıdır."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Reklam ortakları, görevler, ödüller, takip, onay süreleri, çekim yöntemleri ve destek kalitesi değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Paid Task Sites: Offerwalls और Get Paid To Platforms कैसे काम करती हैं",
+        "paragraphs": [
+          "Get Paid To platforms users को third-party advertisers के लिए actions complete करने पर rewards देती हैं। इनमें offerwalls होते हैं—advertising networks के catalogs जिनमें surveys, app installations, website registrations, mobile-game progression goals और दूसरे tasks predefined reward के साथ listed होते हैं।",
+          "Offer खोलने के बाद user advertiser की website या app पर जाता है और required conditions complete करता है। Tracking system completion data reward platform को भेजती है। इसलिए country, device, first installation, deadline, required level और offer पहले complete हुई है या नहीं, सभी details important हैं।",
+          "CSGOBROKER इन services को task availability, reward level, tracking reliability, confirmation rules और withdrawal options से compare करता है। Normal gameplay activity पर reward चाहिए तो <a href=\"/earning/earn-by-play\">earning by playing</a> section देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Offerwalls पर Common Task Types",
+        "items": [
+          {
+            "title": "Surveys और questionnaires",
+            "paragraphs": [
+              "User research companies के लिए questions answer करता है। Availability और reward country तथा profile पर काफी depend करते हैं, और target audience match न होने पर survey जल्दी end हो सकती है।"
+            ]
+          },
+          {
+            "title": "Mobile game offers",
+            "paragraphs": [
+              "Reward game install करके stated level, chapter, account power या दूसरे goal को deadline के अंदर reach करने पर मिलती है। Installation सही track हो इसलिए offerwall link से ही शुरुआत करें।"
+            ]
+          },
+          {
+            "title": "App installation offers",
+            "paragraphs": [
+              "कुछ tasks app install, first open या अंदर कुछ actions complete करने को कहती हैं। पहले use की गई app को reinstall करना अक्सर eligible नहीं होता।"
+            ]
+          },
+          {
+            "title": "Website और service registrations",
+            "paragraphs": [
+              "Offer नया account, email verification या additional step मांग सकती है। Promotional registrations को personal email से अलग रखने के लिए separate email useful हो सकती है।"
+            ]
+          },
+          {
+            "title": "Paid और trial offers",
+            "paragraphs": [
+              "कुछ tasks purchase, subscription या trial period से जुड़ी होती हैं। Reward को actual cost, cancellation rules और automatic renewal के साथ compare करें।"
+            ]
+          },
+          {
+            "title": "Multi-stage offers",
+            "paragraphs": [
+              "Large reward कई milestones में split हो सकती है, जैसे registration, several levels और purchase। हर stage को अलग देखें और कौन से parts mandatory हैं यह check करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Offer शुरू करने से पहले क्या Check करें",
+        "intro": "Missing-credit problems अक्सर condition mismatch या tracking failure से आते हैं, इसलिए rules first click से पहले पढ़ना बेहतर है।",
+        "items": [
+          {
+            "summary": "Complete offer requirements",
+            "body": "Country, device, deadline, required level, new-user condition और additional actions check करें। Start से पहले terms का screenshot later dispute में useful हो सकता है।"
+          },
+          {
+            "summary": "Time और spending के मुकाबले reward",
+            "body": "Estimate करें task कितने hours/days लेगी और real-money purchase mandatory है या नहीं। Required spending reward के करीब हो तो large headline amount भी poor value हो सकती है।"
+          },
+          {
+            "summary": "Tracking reliability",
+            "body": "Disabled cookies, device change, VPN, ad blockers या app reinstall attribution को interfere कर सकते हैं। Specific offerwall की instructions follow करें।"
+          },
+          {
+            "summary": "Confirmation time",
+            "body": "कुछ tasks immediately credit होती हैं, दूसरी advertiser review के बाद hours/days लेती हैं। Check करें reward pending status में कितनी देर रह सकती है।"
+          },
+          {
+            "summary": "Withdrawal minimum और methods",
+            "body": "Payout threshold, fees और gift cards, cryptocurrency, game items या दूसरे supported methods compare करें।"
+          },
+          {
+            "summary": "Reward reversal rules",
+            "body": "Refunded purchase, rule violation, duplicate account या invalid activity के बाद advertiser credit reverse कर सकता है। Time या money spend करने से पहले rules clear होने चाहिए।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Paid Task Sites को कैसे Rate करता है",
+        "intro": "Useful platform सिर्फ बड़ा catalog नहीं है; tasks reliably track हों, disputes handle हों और earned value practical methods से withdraw हो सके।",
+        "items": [
+          {
+            "summary": "Task quantity और variety",
+            "body": "हम total count के साथ multiple offerwall providers, surveys, game tasks और different countries के users के लिए available options देखते हैं।"
+          },
+          {
+            "summary": "Reward competitiveness",
+            "body": "Same advertiser campaign अलग reward sites पर अलग payment दे सकती है। हम सिर्फ largest promotional number नहीं, actual reward और requirements compare करते हैं।"
+          },
+          {
+            "summary": "Tracking reliability",
+            "body": "Clicks, installations और milestones predictably record होने चाहिए और user history में status check कर सके।"
+          },
+          {
+            "summary": "Confirmation और support",
+            "body": "Crediting times, missing-offer claim process, required proof और support response quality evaluate किए जाते हैं।"
+          },
+          {
+            "summary": "Withdrawals और minimums",
+            "body": "Available reward methods, fees, minimum payout, geographic restrictions और processing time rating में शामिल हैं।"
+          },
+          {
+            "summary": "Rule transparency और interface",
+            "body": "Offer terms start से पहले visible होने चाहिए और platform status, remaining time, milestones तथा reward history clearly दिखाए।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Offers और Reward Amounts लगातार क्यों बदलती हैं",
+        "paragraphs": [
+          "Offerwalls ad networks और advertisers से आती हैं, इसलिए campaigns country, device, user profile, budget और remaining acquisition capacity पर depend करती हैं। Same platform पर दो users अलग tasks देख सकते हैं।",
+          "Same campaign का payout भी बदल सकता है। Advertiser budget adjust कर सकता है, reward platform अपना share बदल सकती है और enough users complete होने पर offer temporarily disappear हो सकती है।",
+          "दूसरे reward models के लिए <a href=\"/earning/earn-by-play\">earning by playing</a> या broader <a href=\"/earning\">earning</a> section देखें। Long task chains के बिना free bonuses और promo codes के लिए <a href=\"/freebies\">bonuses</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Paid Offers Complete करते समय Safety",
+        "intro": "Offerwalls users को third-party websites और apps पर भेज सकती हैं, इसलिए reward platform और advertiser दोनों को separately evaluate करना चाहिए।",
+        "items": [
+          {
+            "summary": "Sensitive data बिना जरूरत share न करें",
+            "body": "Survey या game installation को normally Steam password, banking password या two-factor codes की जरूरत नहीं होती। Specific service वास्तव में कौन सी information मांगती है, यह check करें।"
+          },
+          {
+            "summary": "Paid subscriptions और trials review करें",
+            "body": "Offer card या payment मांगती है तो full cost, renewal date और cancellation method पहले देखें। सिर्फ reward amount से task judge न करें।"
+          },
+          {
+            "summary": "Completion proof रखें",
+            "body": "Long या expensive tasks में original conditions, offer identifier, start date और required milestone का evidence screenshot के रूप में save रखें।"
+          },
+          {
+            "summary": "Regional restrictions bypass न करें",
+            "body": "VPN, multiple accounts या eligibility बदलने वाले methods advertiser rules violate कर सकते हैं और reward reversal या account restriction ला सकते हैं।"
+          },
+          {
+            "summary": "Balance बनाने से पहले withdrawal rules check करें",
+            "body": "Minimum payout, identity verification, supported countries और payment methods अलग हो सकते हैं। बहुत tasks complete करने से पहले इन्हें verify करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Offerwalls और Paid Task Sites के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Get Paid To site क्या है?",
+            "body": "Service जो surveys, app installs, registrations, game goals और दूसरे advertiser-funded actions complete करने पर rewards देती है।"
+          },
+          {
+            "summary": "Offerwall क्या है?",
+            "body": "एक या अधिक providers के advertising offers का embedded catalog। Reward site task दिखाती है और external advertiser completion verify करता है।"
+          },
+          {
+            "summary": "Completed offer credit क्यों नहीं हुई?",
+            "body": "New-user condition fail, wrong device/region, attribution problem, blocked cookies, reinstall या advertiser confirmation delay कारण हो सकते हैं।"
+          },
+          {
+            "summary": "क्या same offer कई बार complete कर सकते हैं?",
+            "body": "New users के लिए designed offer में आम तौर पर नहीं। दूसरे account से repeat करना rules violate करके reward reverse करा सकता है।"
+          },
+          {
+            "summary": "कौन से withdrawal methods मिलते हैं?",
+            "body": "Gift cards, cryptocurrency, game items और दूसरे methods हो सकते हैं। Availability और minimum platform तथा country पर depend करते हैं।"
+          },
+          {
+            "summary": "क्या identity verification जरूरी है?",
+            "body": "कुछ services certain payout levels, specific methods या suspicious activity पर इसे मांग सकती हैं। Large balance accumulate करने से पहले policy check करें।"
+          },
+          {
+            "summary": "Offerwall और earning by playing में क्या फर्क है?",
+            "body": "Offerwall external advertiser के action को pay करती है। <a href=\"/earning/earn-by-play\">Earning by playing</a> में reward directly gameplay activity से जुड़ी है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Advertising partners, offers, rewards, tracking, confirmation times, withdrawal methods और support quality बदल सकती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

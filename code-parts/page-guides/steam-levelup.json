@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "steam-levelup",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Повышение уровня Steam: как работают сервисы с наборами карточек",
+        "paragraphs": [
+          "Сервисы повышения уровня Steam помогают быстрее получать опыт профиля за счёт наборов коллекционных карточек. Пользователь выбирает желаемый уровень или количество наборов, оплачивает заказ доступным способом, после чего получает карточки через обмен Steam и создаёт значки в своём аккаунте.",
+          "Важно различать покупку наборов карточек и сам процесс повышения уровня. Внешний сервис может подготовить нужное количество комплектов и автоматизировать обмен, но опыт начисляет Steam только после создания значков. Итоговый уровень зависит от текущего опыта аккаунта, количества подходящих наборов и особенностей уже созданных значков.",
+          "CSGOBROKER сравнивает такие площадки по стоимости опыта, ассортименту карточек, способам оплаты, скорости обменов и удобству расчёта. Для пополнения кошелька используйте отдельный раздел <a href=\"/steam/topup\">пополнения Steam</a>, а для покупки игр и ключей — <a href=\"/steam/buy-games\">магазины игр</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие способы повышения уровня Steam встречаются",
+        "items": [
+          {
+            "title": "Покупка готовых наборов карточек",
+            "paragraphs": [
+              "Сервис предлагает комплект карточек одной игры, достаточный для создания значка. Пользователь получает набор через обмен и самостоятельно создаёт значок в Steam."
+            ]
+          },
+          {
+            "title": "Заказ до определённого уровня",
+            "paragraphs": [
+              "Площадка рассчитывает, сколько опыта не хватает до выбранного уровня, и подбирает соответствующее количество наборов. Перед оплатой полезно сверить текущий уровень и расчёт требуемого опыта."
+            ]
+          },
+          {
+            "title": "Покупка наборов за деньги",
+            "paragraphs": [
+              "Оплата может приниматься картой, криптовалютой или другими доступными методами. Сравнивайте итоговую цену после комиссий, а не только стоимость одного набора."
+            ]
+          },
+          {
+            "title": "Обмен игровых предметов на карточки",
+            "paragraphs": [
+              "Некоторые сервисы принимают предметы Steam или скины поддерживаемых игр и выдают взамен наборы карточек. Здесь особенно важна внутренняя оценка передаваемых предметов."
+            ]
+          },
+          {
+            "title": "Автоматизированные обмены через торговых ботов",
+            "paragraphs": [
+              "После оплаты торговый бот отправляет одно или несколько предложений обмена Steam. Большой заказ может делиться на несколько операций из-за размера инвентаря или доступности карточек."
+            ]
+          },
+          {
+            "title": "Дополнительные игры или цифровые товары",
+            "paragraphs": [
+              "Часть сервисов одновременно предлагает игры, подарочные копии или другие Steam-товары. Эти функции стоит оценивать отдельно от стоимости повышения уровня."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед покупкой наборов",
+        "intro": "Цена одного набора сама по себе мало говорит о выгоде: важнее стоимость нужного количества опыта и фактические условия получения карточек.",
+        "items": [
+          {
+            "summary": "Стоимость опыта",
+            "body": "Сравните, сколько стоит достижение одинакового целевого уровня на разных сайтах. Учитывайте текущий опыт аккаунта, комиссии оплаты и возможный минимальный заказ."
+          },
+          {
+            "summary": "Точность калькулятора уровня",
+            "body": "Хороший сервис показывает текущий уровень, необходимый опыт, количество наборов и ожидаемый результат до оплаты. Слишком общий расчёт может привести к лишней покупке."
+          },
+          {
+            "summary": "Наличие уникальных наборов",
+            "body": "Для повторного создания значков одной игры существуют ограничения, поэтому сервису нужен достаточный ассортимент разных наборов. Чем выше целевой уровень, тем важнее глубина доступного каталога."
+          },
+          {
+            "summary": "Способы оплаты",
+            "body": "Проверьте карты, криптовалюту, игровые предметы и другие доступные варианты, а также комиссии и минимальную сумму."
+          },
+          {
+            "summary": "Скорость и количество обменов",
+            "body": "Большой заказ может поступать несколькими предложениями обмена. Посмотрите, насколько быстро сервис формирует операции и понятно ли показывает их статус."
+          },
+          {
+            "summary": "Возвраты и поддержка",
+            "body": "Если часть карточек недоступна или обмен не состоялся, должны быть понятны порядок замены, возврата средств и обращения в поддержку."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сервисы повышения уровня Steam",
+        "intro": "Мы смотрим не только на рекламную цену, но и на то, насколько предсказуемо пользователь получает нужное количество опыта и карточек.",
+        "items": [
+          {
+            "summary": "Цена до целевого уровня",
+            "body": "Сравниваем итоговую стоимость для одинаковой цели, а не отдельную минимальную цену одного набора."
+          },
+          {
+            "summary": "Ассортимент карточек",
+            "body": "Оцениваем наличие достаточного числа разных комплектов и способность сервиса выполнять более крупные заказы без постоянных замен."
+          },
+          {
+            "summary": "Прозрачность расчёта",
+            "body": "До оплаты должны быть видны целевой уровень, количество наборов, итоговая стоимость и дополнительные комиссии."
+          },
+          {
+            "summary": "Работа предложений обмена",
+            "body": "Учитываем скорость торговых ботов, корректность состава обмена, стабильность выдачи и понятность статуса заказа."
+          },
+          {
+            "summary": "Оплата и региональная доступность",
+            "body": "Смотрим на доступные способы оплаты, комиссии, ограничения по странам и удобство для пользователей с разными способами пополнения."
+          },
+          {
+            "summary": "Поддержка и актуальность",
+            "body": "Проверяем, насколько сервис решает проблемы с недоступными наборами, задержками и изменениями в работе Steam."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему стоимость и доступность наборов меняются",
+        "paragraphs": [
+          "Цена карточек Steam зависит от предложения на рынке, популярности игр и доступности конкретных наборов. Поэтому стоимость одинакового количества опыта может меняться даже при неизменной комиссии самого сервиса.",
+          "Steam также меняет ограничения, работу обменов и доступность предметов. Сервисам приходится обновлять торговых ботов, каталоги и расчёты, поэтому старые цены или сроки выдачи могут перестать быть актуальными.",
+          "Если цель не уровень профиля, а баланс кошелька или покупка игр, используйте соответствующие подборки CSGOBROKER: <a href=\"/steam/topup\">пополнение Steam</a> и <a href=\"/steam/buy-games\">покупка игр</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при покупке карточек и повышении уровня",
+        "intro": "Для получения карточек достаточно официального предложения обмена Steam; передавать пароль или код Steam Guard стороннему сервису не требуется.",
+        "items": [
+          {
+            "summary": "Проверяйте официальный домен",
+            "body": "Авторизуйтесь только на настоящем сайте сервиса и внимательно проверяйте окно входа через Steam."
+          },
+          {
+            "summary": "Сверяйте каждое предложение обмена",
+            "body": "Проверьте отправителя, количество карточек и отсутствие ваших предметов в той стороне обмена, где их не должно быть."
+          },
+          {
+            "summary": "Не передавайте пароль и коды защиты",
+            "body": "Торговому сервису не нужен ваш пароль Steam, код Steam Guard или резервные коды двухфакторной защиты."
+          },
+          {
+            "summary": "Не покупайте лишний объём только из-за скидки",
+            "body": "Большой пакет может снижать цену набора, но имеет смысл только если вы действительно планируете достигнуть соответствующего уровня."
+          },
+          {
+            "summary": "Учитывайте ограничения аккаунта Steam",
+            "body": "Новые или ограниченные аккаунты могут иметь ограничения на обмены и функции сообщества. Проверьте состояние аккаунта до оплаты."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о повышении уровня Steam",
+        "items": [
+          {
+            "summary": "Как повышается уровень Steam?",
+            "body": "Опыт профиля начисляется при создании значков, чаще всего из полных наборов коллекционных карточек."
+          },
+          {
+            "summary": "Сервис сам повышает уровень аккаунта?",
+            "body": "Обычно сервис выдаёт необходимые наборы карточек, а пользователь создаёт значки в своём аккаунте Steam."
+          },
+          {
+            "summary": "Сколько наборов нужно для следующего уровня?",
+            "body": "Зависит от текущего уровня и уже накопленного опыта. Калькулятор сервиса должен показывать расчёт до оплаты."
+          },
+          {
+            "summary": "Можно ли платить скинами?",
+            "body": "Некоторые площадки принимают игровые предметы или скины в обмен на карточки. В этом случае сравнивайте внутреннюю оценку предметов с рынком."
+          },
+          {
+            "summary": "Почему большой заказ приходит несколькими обменами?",
+            "body": "Количество предметов и доступность наборов могут требовать нескольких предложений обмена от торговых ботов."
+          },
+          {
+            "summary": "Можно ли использовать один и тот же набор много раз?",
+            "body": "Создание значков имеет ограничения, поэтому для высоких уровней обычно нужен ассортимент комплектов из разных игр."
+          },
+          {
+            "summary": "Что делать, если обмен не пришёл?",
+            "body": "Проверьте статус заказа, доступность обменов в Steam и обратитесь в поддержку сервиса, если заявленный срок истёк."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются цены карточек, ассортимент, комиссии, способы оплаты, скорость ботов, ограничения Steam и качество поддержки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Steam Leveling Services: How Trading Card Set Sites Work",
+        "paragraphs": [
+          "Steam leveling services help users gain profile experience faster by supplying complete sets of Steam Trading Cards. A user chooses a target level or number of sets, pays through an available method, receives the cards through Steam trades, and then crafts badges on the account.",
+          "Buying card sets and gaining the level are separate steps. A third-party service can calculate and deliver the required sets, but Steam awards profile experience only when badges are crafted. The final result depends on current account experience, available sets, and badges already created.",
+          "CSGOBROKER compares these services by experience cost, card-set inventory, payment methods, trade speed, and calculator quality. For wallet funding use <a href=\"/steam/topup\">Steam top-up services</a>; for games and keys see <a href=\"/steam/buy-games\">game stores</a>."
+        ]
+      },
+      "categories": {
+        "title": "Common Ways Steam Leveling Services Work",
+        "items": [
+          {
+            "title": "Buying ready-made card sets",
+            "paragraphs": [
+              "The service sells a complete set from one game that can be used to craft a badge. The user receives the set through a Steam trade and crafts the badge manually."
+            ]
+          },
+          {
+            "title": "Ordering up to a target level",
+            "paragraphs": [
+              "The platform calculates how much experience is missing and selects enough sets for the chosen target. Check the current level and required experience before payment."
+            ]
+          },
+          {
+            "title": "Buying sets with money",
+            "paragraphs": [
+              "Payment can be available by bank card, cryptocurrency, or other methods. Compare the final cost after payment fees rather than only the advertised set price."
+            ]
+          },
+          {
+            "title": "Trading game items for card sets",
+            "paragraphs": [
+              "Some services accept Steam items or skins from supported games and provide card sets in exchange. The service's internal valuation of the deposited items becomes important."
+            ]
+          },
+          {
+            "title": "Automated delivery through trading bots",
+            "paragraphs": [
+              "After payment, a bot sends one or more Steam trade offers. Large orders can be split because of inventory size or the availability of individual card sets."
+            ]
+          },
+          {
+            "title": "Games and other digital products",
+            "paragraphs": [
+              "Some leveling sites also sell games, gifts, or other Steam-related products. These functions should be evaluated separately from leveling value."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Buying Card Sets",
+        "intro": "The price of one set alone does not show the real value; the cost of reaching the intended experience target and the delivery conditions matter more.",
+        "items": [
+          {
+            "summary": "Cost to reach the target",
+            "body": "Compare the total price for the same target level across sites. Include current account experience, payment fees, and minimum order requirements."
+          },
+          {
+            "summary": "Level calculator accuracy",
+            "body": "A useful service shows current level, required experience, set count, and expected result before checkout. An overly broad estimate can lead to unnecessary purchases."
+          },
+          {
+            "summary": "Depth of unique card sets",
+            "body": "Badge crafting has repetition limits, so a high target level requires enough different sets. The larger the order, the more important the catalog depth becomes."
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Review cards, cryptocurrency, game items, and other options together with fees and minimum amounts."
+          },
+          {
+            "summary": "Trade speed and number of offers",
+            "body": "Large purchases may arrive in several trades. Check how quickly the platform creates offers and whether order progress is visible."
+          },
+          {
+            "summary": "Refunds and support",
+            "body": "If some sets become unavailable or a trade fails, the replacement, refund, and support process should be clear."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Steam Leveling Services",
+        "intro": "We evaluate how predictably a user receives the required sets and experience value, not only the lowest promotional price.",
+        "items": [
+          {
+            "summary": "Price to the target level",
+            "body": "We compare the full cost for the same target rather than the smallest advertised price per set."
+          },
+          {
+            "summary": "Card-set inventory",
+            "body": "We consider the number of different sets and whether larger orders can be fulfilled without repeated shortages."
+          },
+          {
+            "summary": "Calculation transparency",
+            "body": "Target level, set count, final cost, and extra fees should be visible before payment."
+          },
+          {
+            "summary": "Steam trade execution",
+            "body": "Bot speed, correct trade contents, delivery stability, and clear order status all affect the rating."
+          },
+          {
+            "summary": "Payments and regional access",
+            "body": "We review available payment methods, fees, country restrictions, and usability for different user regions."
+          },
+          {
+            "summary": "Support and freshness",
+            "body": "We consider how the service handles unavailable sets, delays, and changes to Steam trading behavior."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Card-Set Prices and Availability Change",
+        "paragraphs": [
+          "Steam card prices move with market supply, game popularity, and the availability of specific sets. The cost of the same amount of profile experience can therefore change even when the service's own fee does not.",
+          "Steam can also change trade restrictions, item behavior, and account limitations. Leveling services must update bots, catalogs, and calculations, so old prices or delivery estimates can become outdated.",
+          "If your goal is wallet balance or buying games rather than profile level, use the dedicated CSGOBROKER sections for <a href=\"/steam/topup\">Steam top-ups</a> and <a href=\"/steam/buy-games\">buying games</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Buying Card Sets",
+        "intro": "Receiving card sets only requires an official Steam trade offer; a third-party service does not need your Steam password or Steam Guard code.",
+        "items": [
+          {
+            "summary": "Verify the official domain",
+            "body": "Sign in only on the real service website and carefully check the Steam authorization window."
+          },
+          {
+            "summary": "Review every Steam trade offer",
+            "body": "Check the sender, card count, and that your own items are not included on the wrong side of the trade."
+          },
+          {
+            "summary": "Never share passwords or security codes",
+            "body": "A leveling service does not need your Steam password, Steam Guard code, or two-factor backup codes."
+          },
+          {
+            "summary": "Do not overbuy just for a bulk discount",
+            "body": "A larger package may reduce the price per set, but it only makes sense when you actually intend to reach that level."
+          },
+          {
+            "summary": "Check Steam account restrictions",
+            "body": "New or limited accounts can have restrictions on trading and community functions. Review account status before paying."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Steam Leveling",
+        "items": [
+          {
+            "summary": "How does Steam level increase?",
+            "body": "Profile experience is earned by crafting badges, most commonly from complete sets of Steam Trading Cards."
+          },
+          {
+            "summary": "Does the service level my account directly?",
+            "body": "Usually the service provides the required card sets and the user crafts badges on the Steam account."
+          },
+          {
+            "summary": "How many sets are needed for the next level?",
+            "body": "It depends on current level and accumulated experience. The service calculator should show the amount before checkout."
+          },
+          {
+            "summary": "Can I pay with skins?",
+            "body": "Some services accept supported game items or skins for card sets. Compare the internal item valuation with the wider market."
+          },
+          {
+            "summary": "Why does a large order arrive in several trades?",
+            "body": "Item limits and set availability can require several trade offers from automated bots."
+          },
+          {
+            "summary": "Can the same set be used many times?",
+            "body": "Badge crafting has repetition limits, so higher levels generally require sets from many different games."
+          },
+          {
+            "summary": "What if the trade does not arrive?",
+            "body": "Check the order status and Steam trade availability, then contact the service if the stated delivery time has passed."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Card prices, inventory, fees, payments, bot speed, Steam restrictions, and support quality can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Servicios para subir el nivel de Steam: cómo funcionan los sitios de sets de cromos",
+        "paragraphs": [
+          "Los servicios para subir el nivel de Steam permiten conseguir experiencia de perfil más rápido mediante sets completos de cromos. El usuario elige un nivel objetivo o cantidad de sets, paga, recibe los cromos mediante intercambios de Steam y crea las insignias en su cuenta.",
+          "Comprar los sets y subir el nivel son pasos distintos. El servicio externo puede calcular y entregar los cromos necesarios, pero Steam concede la experiencia cuando se crean las insignias. El resultado depende de la experiencia actual, los sets disponibles y las insignias ya creadas.",
+          "CSGOBROKER compara coste de experiencia, inventario de sets, pagos, rapidez de intercambios y calidad del calculador. Para saldo consulta <a href=\"/steam/topup\">recargas de Steam</a>; para juegos y claves, <a href=\"/steam/buy-games\">tiendas de juegos</a>."
+        ]
+      },
+      "categories": {
+        "title": "Formas habituales de subir el nivel de Steam",
+        "items": [
+          {
+            "title": "Compra de sets completos",
+            "paragraphs": [
+              "El servicio vende un conjunto de cromos de un juego suficiente para crear una insignia. El usuario lo recibe por intercambio y crea la insignia en Steam."
+            ]
+          },
+          {
+            "title": "Pedido hasta un nivel objetivo",
+            "paragraphs": [
+              "La plataforma calcula la experiencia que falta y selecciona suficientes sets. Conviene comprobar nivel actual y cálculo antes de pagar."
+            ]
+          },
+          {
+            "title": "Compra con dinero",
+            "paragraphs": [
+              "Puede haber tarjeta, criptomonedas u otros métodos. Compara el precio final después de comisiones y no solo el coste anunciado por set."
+            ]
+          },
+          {
+            "title": "Intercambio de objetos por cromos",
+            "paragraphs": [
+              "Algunos servicios aceptan objetos Steam o skins de juegos compatibles. La valoración interna de los objetos entregados es una parte importante del coste."
+            ]
+          },
+          {
+            "title": "Entrega automática mediante bots",
+            "paragraphs": [
+              "Tras el pago, uno o varios bots envían ofertas de intercambio. Los pedidos grandes pueden dividirse por límites de inventario o disponibilidad."
+            ]
+          },
+          {
+            "title": "Juegos y otros productos digitales",
+            "paragraphs": [
+              "Algunos sitios también venden juegos, regalos u otros productos Steam. Esas funciones deben compararse por separado del servicio de nivel."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de comprar sets",
+        "intro": "El precio de un solo set no muestra todo el valor; importa más el coste de alcanzar el objetivo y las condiciones de entrega.",
+        "items": [
+          {
+            "summary": "Coste hasta el nivel objetivo",
+            "body": "Compara el precio total para la misma meta, incluyendo experiencia actual, comisiones y posibles mínimos."
+          },
+          {
+            "summary": "Precisión del calculador",
+            "body": "Debe mostrar nivel, experiencia necesaria, cantidad de sets y resultado esperado antes del pago."
+          },
+          {
+            "summary": "Cantidad de sets diferentes",
+            "body": "La creación repetida de insignias tiene límites, por lo que niveles altos requieren una buena variedad de juegos. En pedidos grandes, la falta de variedad puede obligar a sustituir sets o retrasar la entrega."
+          },
+          {
+            "summary": "Métodos de pago",
+            "body": "Revisa tarjeta, cripto, objetos y otras opciones junto con comisiones y mínimos."
+          },
+          {
+            "summary": "Rapidez y número de intercambios",
+            "body": "Un pedido grande puede llegar en varias ofertas. Comprueba velocidad y estado visible del pedido."
+          },
+          {
+            "summary": "Reembolsos y soporte",
+            "body": "Si faltan sets o falla un intercambio, sustitución, devolución y soporte deben estar explicados."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los servicios para subir de nivel",
+        "intro": "Valoramos lo predecible que resulta recibir los sets necesarios y no solo el precio promocional.",
+        "items": [
+          {
+            "summary": "Precio hasta la meta",
+            "body": "Comparamos el coste completo para un mismo nivel objetivo."
+          },
+          {
+            "summary": "Inventario de cromos",
+            "body": "Revisamos variedad y capacidad para completar pedidos grandes. La variedad disponible es especialmente importante cuando el usuario ya ha creado insignias de muchos juegos."
+          },
+          {
+            "summary": "Transparencia del cálculo",
+            "body": "Nivel objetivo, número de sets, precio y comisiones deben verse antes del pago."
+          },
+          {
+            "summary": "Ejecución de intercambios",
+            "body": "Velocidad de bots, contenido correcto y estabilidad de entrega influyen en la nota."
+          },
+          {
+            "summary": "Pagos y regiones",
+            "body": "Valoramos métodos, comisiones, restricciones por país y facilidad de uso."
+          },
+          {
+            "summary": "Soporte y actualidad",
+            "body": "Importa cómo se resuelven faltas de stock, retrasos y cambios en Steam."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian los precios y la disponibilidad",
+        "paragraphs": [
+          "Los precios de cromos dependen de oferta, popularidad de juegos y disponibilidad. El coste de la misma experiencia puede variar aunque la comisión del servicio no cambie.",
+          "Steam puede modificar restricciones de intercambio y comportamiento de objetos. Los servicios deben actualizar bots, catálogos y cálculos, por lo que precios o plazos antiguos pueden dejar de ser válidos.",
+          "Para objetivos distintos al nivel, usa <a href=\"/steam/topup\">recargas de Steam</a> y <a href=\"/steam/buy-games\">compra de juegos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al comprar cromos",
+        "intro": "Para recibir los sets basta una oferta oficial de Steam; no es necesario entregar contraseña ni código Steam Guard al servicio.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio oficial",
+            "body": "Inicia sesión solo en el sitio auténtico y revisa la ventana de autorización Steam."
+          },
+          {
+            "summary": "Revisa cada intercambio",
+            "body": "Comprueba remitente, número de cromos y que tus objetos no aparezcan donde no corresponde."
+          },
+          {
+            "summary": "No compartas contraseñas ni códigos",
+            "body": "El servicio no necesita contraseña Steam, Steam Guard ni códigos de recuperación."
+          },
+          {
+            "summary": "No compres de más por descuento",
+            "body": "Un paquete grande solo tiene sentido si realmente necesitas alcanzar ese nivel."
+          },
+          {
+            "summary": "Comprueba restricciones de la cuenta",
+            "body": "Cuentas nuevas o limitadas pueden tener restricciones de intercambio o comunidad."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre subir el nivel de Steam",
+        "items": [
+          {
+            "summary": "¿Cómo sube el nivel de Steam?",
+            "body": "La experiencia se obtiene al crear insignias, normalmente con sets completos de cromos."
+          },
+          {
+            "summary": "¿El servicio sube directamente mi cuenta?",
+            "body": "Normalmente entrega los cromos y el usuario crea las insignias."
+          },
+          {
+            "summary": "¿Cuántos sets necesito?",
+            "body": "Depende del nivel y experiencia actuales; el calculador debería mostrarlo antes del pago."
+          },
+          {
+            "summary": "¿Puedo pagar con skins?",
+            "body": "Algunos sitios aceptan objetos de juegos compatibles. Compara su valoración interna con el mercado."
+          },
+          {
+            "summary": "¿Por qué llegan varios intercambios?",
+            "body": "Los límites y la disponibilidad pueden obligar a dividir un pedido grande."
+          },
+          {
+            "summary": "¿Puedo usar el mismo set muchas veces?",
+            "body": "Hay límites en la creación de insignias, así que niveles altos requieren sets de distintos juegos."
+          },
+          {
+            "summary": "¿Qué hago si no llega el intercambio?",
+            "body": "Comprueba estado del pedido y disponibilidad de intercambios en Steam y contacta con soporte si hay retraso."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian precios, inventario, comisiones, pagos, velocidad de bots, restricciones Steam y soporte."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Serviços para aumentar o nível Steam: como funcionam sites de conjuntos de cartas",
+        "paragraphs": [
+          "Serviços de nível Steam ajudam o usuário a ganhar experiência de perfil mais rápido por meio de conjuntos completos de cartas colecionáveis. O usuário escolhe um nível ou quantidade de conjuntos, paga, recebe as cartas por troca Steam e cria insígnias na conta.",
+          "Comprar conjuntos e subir o nível são etapas diferentes. O serviço externo pode calcular e entregar as cartas necessárias, mas a experiência é concedida pela Steam quando as insígnias são criadas. O resultado depende da experiência atual, dos conjuntos disponíveis e das insígnias já feitas. Por isso, o cálculo precisa considerar o estado atual da conta e não apenas uma tabela genérica de níveis.",
+          "A CSGOBROKER compara custo de experiência, variedade de cartas, pagamentos, velocidade das trocas e qualidade do calculador. Para saldo use <a href=\"/steam/topup\">recarga Steam</a>; para jogos e chaves veja <a href=\"/steam/buy-games\">lojas de jogos</a>."
+        ]
+      },
+      "categories": {
+        "title": "Formas comuns de aumentar o nível Steam",
+        "items": [
+          {
+            "title": "Compra de conjuntos prontos",
+            "paragraphs": [
+              "O serviço vende as cartas completas de um jogo para criar uma insígnia. O usuário recebe pela troca e cria a insígnia na Steam."
+            ]
+          },
+          {
+            "title": "Pedido até um nível definido",
+            "paragraphs": [
+              "A plataforma calcula a experiência que falta e seleciona conjuntos suficientes. Confira nível atual e cálculo antes do pagamento. Um pedido por nível é mais conveniente quando o site mostra exatamente quantos conjuntos serão entregues."
+            ]
+          },
+          {
+            "title": "Compra com dinheiro",
+            "paragraphs": [
+              "Cartão, criptomoeda e outros métodos podem estar disponíveis. Compare o custo final após taxas."
+            ]
+          },
+          {
+            "title": "Troca de itens por cartas",
+            "paragraphs": [
+              "Alguns serviços aceitam itens Steam ou skins de jogos suportados. A avaliação interna dos itens influencia o custo real. Se o item usado no pagamento estiver subavaliado, a aparente economia no preço dos conjuntos pode desaparecer."
+            ]
+          },
+          {
+            "title": "Entrega automática por bots",
+            "paragraphs": [
+              "Depois do pagamento, bots enviam uma ou mais ofertas Steam. Pedidos grandes podem ser divididos por estoque ou limites."
+            ]
+          },
+          {
+            "title": "Jogos e outros produtos digitais",
+            "paragraphs": [
+              "Alguns serviços também vendem jogos, presentes e outros produtos. Avalie essas funções separadamente do nível."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de comprar conjuntos",
+        "intro": "O preço de um conjunto não mostra sozinho a vantagem; o custo da meta e as condições de entrega são mais importantes.",
+        "items": [
+          {
+            "summary": "Custo até o nível alvo",
+            "body": "Compare o preço total para a mesma meta, considerando experiência atual, taxas e pedido mínimo. Compare a mesma meta em todos os serviços, porque preço por conjunto pode esconder diferenças no número necessário."
+          },
+          {
+            "summary": "Precisão do calculador",
+            "body": "O serviço deve mostrar nível, experiência necessária, número de conjuntos e resultado esperado."
+          },
+          {
+            "summary": "Variedade de conjuntos",
+            "body": "Há limites para repetir insígnias, então níveis altos precisam de muitos conjuntos diferentes. Em pedidos grandes, pouca variedade pode causar substituições ou atrasos na entrega."
+          },
+          {
+            "summary": "Métodos de pagamento",
+            "body": "Confira cartão, cripto, itens e outras opções com taxas e mínimos."
+          },
+          {
+            "summary": "Velocidade e número de trocas",
+            "body": "Pedidos grandes podem chegar em várias ofertas; veja velocidade e acompanhamento do status. O histórico do pedido ajuda a distinguir uma divisão normal em várias ofertas de uma entrega incompleta."
+          },
+          {
+            "summary": "Reembolso e suporte",
+            "body": "Falta de estoque ou falha de troca deve ter processo claro de substituição, reembolso e atendimento."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia serviços de nível Steam",
+        "intro": "Analisamos a previsibilidade de receber os conjuntos necessários, não apenas a menor propaganda de preço.",
+        "items": [
+          {
+            "summary": "Preço até a meta",
+            "body": "Comparamos o custo completo para o mesmo nível alvo."
+          },
+          {
+            "summary": "Estoque de cartas",
+            "body": "Consideramos variedade e capacidade de concluir pedidos maiores. A profundidade do estoque é especialmente importante para contas que já criaram insígnias de muitos jogos."
+          },
+          {
+            "summary": "Transparência do cálculo",
+            "body": "Nível, conjuntos, custo final e taxas devem estar visíveis antes do pagamento."
+          },
+          {
+            "summary": "Execução das trocas",
+            "body": "Velocidade dos bots, conteúdo correto e estabilidade da entrega contam. Também observamos se o serviço identifica claramente cada bot e cada etapa da entrega."
+          },
+          {
+            "summary": "Pagamentos e regiões",
+            "body": "Métodos, taxas, restrições por país e facilidade de uso são avaliados."
+          },
+          {
+            "summary": "Suporte e atualização",
+            "body": "Importa como o serviço resolve falta de conjuntos, atrasos e mudanças da Steam."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que preços e disponibilidade mudam",
+        "paragraphs": [
+          "O preço das cartas muda com oferta, popularidade dos jogos e disponibilidade. O custo da mesma experiência pode variar mesmo com taxa do serviço estável.",
+          "A Steam também pode alterar restrições de troca e comportamento de itens. Os serviços precisam atualizar bots, catálogo e cálculos.",
+          "Para outras necessidades veja <a href=\"/steam/topup\">recarga Steam</a> e <a href=\"/steam/buy-games\">compra de jogos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao comprar cartas",
+        "intro": "Receber conjuntos exige apenas uma oferta oficial Steam; o serviço não precisa da sua senha ou código Steam Guard.",
+        "items": [
+          {
+            "summary": "Confira o domínio oficial",
+            "body": "Entre somente no site verdadeiro e verifique a autorização Steam."
+          },
+          {
+            "summary": "Revise cada oferta de troca",
+            "body": "Confira remetente, quantidade de cartas e se seus itens estão no lado correto. Uma oferta legítima deve conter somente os itens esperados e pode ser recusada se algo estiver diferente."
+          },
+          {
+            "summary": "Não compartilhe senha ou códigos",
+            "body": "O serviço não precisa de senha Steam, Steam Guard ou códigos de recuperação."
+          },
+          {
+            "summary": "Não compre demais por desconto",
+            "body": "Pacote grande só faz sentido se você realmente pretende atingir aquele nível."
+          },
+          {
+            "summary": "Confira restrições da conta",
+            "body": "Contas novas ou limitadas podem ter restrições de troca e comunidade."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre nível Steam",
+        "items": [
+          {
+            "summary": "Como o nível Steam aumenta?",
+            "body": "A experiência é obtida criando insígnias, normalmente com conjuntos completos de cartas."
+          },
+          {
+            "summary": "O serviço aumenta minha conta diretamente?",
+            "body": "Normalmente entrega os conjuntos e o usuário cria as insígnias."
+          },
+          {
+            "summary": "Quantos conjuntos são necessários?",
+            "body": "Depende do nível e experiência atuais; o calculador deve mostrar antes do pagamento. Para metas maiores, o número necessário cresce conforme a experiência exigida por cada faixa de nível."
+          },
+          {
+            "summary": "Posso pagar com skins?",
+            "body": "Alguns serviços aceitam itens de jogos suportados. Compare a avaliação interna com o mercado."
+          },
+          {
+            "summary": "Por que o pedido chega em várias trocas?",
+            "body": "Limites e disponibilidade podem exigir divisão do pedido."
+          },
+          {
+            "summary": "Posso usar o mesmo conjunto várias vezes?",
+            "body": "Existem limites de criação de insígnias; níveis altos exigem variedade."
+          },
+          {
+            "summary": "O que fazer se a troca não chegar?",
+            "body": "Confira o pedido, as trocas da Steam e fale com o suporte após o prazo informado."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Preços, estoque, taxas, pagamentos, velocidade dos bots, restrições Steam e suporte mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Steam Seviye Yükseltme Siteleri: Kart Seti Servisleri Nasıl Çalışır?",
+        "paragraphs": [
+          "Steam seviye servisleri, tam Steam koleksiyon kartı setleri sağlayarak profil deneyimini daha hızlı artırmaya yardımcı olur. Kullanıcı hedef seviye veya set sayısını seçer, ödeme yapar, kartları Steam takasıyla alır ve hesabında rozet oluşturur.",
+          "Kart setini satın almak ile seviyenin yükselmesi ayrı adımlardır. Dış servis gerekli setleri hesaplayıp teslim edebilir ancak profil deneyimini Steam, rozet oluşturulduğunda verir. Sonuç mevcut deneyime, setlere ve daha önce oluşturulan rozetlere bağlıdır. Bu nedenle hesaplama yalnız genel seviye tablosuna değil hesabın mevcut deneyimine dayanmalıdır.",
+          "CSGOBROKER deneyim maliyeti, kart çeşitliliği, ödeme yöntemleri, takas hızı ve hesaplayıcı kalitesini karşılaştırır. Bakiye için <a href=\"/steam/topup\">Steam bakiye yükleme</a>, oyun ve anahtarlar için <a href=\"/steam/buy-games\">oyun mağazaları</a> bölümünü kullanın."
+        ]
+      },
+      "categories": {
+        "title": "Steam Seviyesi Yükseltmenin Yaygın Yolları",
+        "items": [
+          {
+            "title": "Hazır kart seti satın alma",
+            "paragraphs": [
+              "Servis bir oyunun rozet oluşturmak için gerekli tam kart setini satar. Kullanıcı Steam takasıyla alıp rozeti kendisi oluşturur."
+            ]
+          },
+          {
+            "title": "Hedef seviyeye kadar sipariş",
+            "paragraphs": [
+              "Platform eksik deneyimi hesaplar ve yeterli sayıda set seçer. Ödeme öncesi mevcut seviye ve gereken deneyimi kontrol edin. Hedef seviye siparişi, kaç set teslim edileceği ödeme öncesi açıkça gösterildiğinde daha kullanışlıdır."
+            ]
+          },
+          {
+            "title": "Para ile set satın alma",
+            "paragraphs": [
+              "Kart, kripto veya başka yöntemler bulunabilir. Tek set fiyatı yerine ücretler dahil toplam maliyeti karşılaştırın."
+            ]
+          },
+          {
+            "title": "Oyun eşyalarını karta çevirme",
+            "paragraphs": [
+              "Bazı servisler Steam eşyaları veya desteklenen oyun skinlerini kabul eder. İç eşya değerlemesi gerçek maliyeti etkiler. Ödeme olarak verilen eşya düşük değerlenirse set fiyatındaki görünen avantaj kaybolabilir."
+            ]
+          },
+          {
+            "title": "Botlarla otomatik teslimat",
+            "paragraphs": [
+              "Ödeme sonrası bot bir veya birkaç Steam takas teklifi yollar. Büyük sipariş stok veya envanter sınırı nedeniyle bölünebilir."
+            ]
+          },
+          {
+            "title": "Oyunlar ve diğer dijital ürünler",
+            "paragraphs": [
+              "Bazı siteler oyun, hediye veya başka Steam ürünleri de satar. Bunları seviye hizmetinden ayrı değerlendirin."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Kart Seti Almadan Önce Neler Karşılaştırılmalı?",
+        "intro": "Tek set fiyatından çok hedef seviyeye ulaşmanın toplam maliyeti ve teslimat şartları önemlidir.",
+        "items": [
+          {
+            "summary": "Hedef seviyenin maliyeti",
+            "body": "Aynı hedef için toplam fiyatı mevcut deneyim, ödeme ücreti ve minimum siparişle birlikte karşılaştırın."
+          },
+          {
+            "summary": "Seviye hesaplayıcısının doğruluğu",
+            "body": "Mevcut seviye, gereken deneyim, set sayısı ve beklenen sonuç ödeme öncesi görünmelidir."
+          },
+          {
+            "summary": "Farklı setlerin bulunabilirliği",
+            "body": "Rozet tekrarında sınırlar olduğundan yüksek seviye için çok sayıda farklı oyun seti gerekir. Büyük siparişte az çeşitlilik set değişimine veya teslimat gecikmesine yol açabilir."
+          },
+          {
+            "summary": "Ödeme yöntemleri",
+            "body": "Kart, kripto, oyun eşyası ve diğer seçenekleri ücret ve minimumlarla birlikte kontrol edin."
+          },
+          {
+            "summary": "Takas hızı ve sayısı",
+            "body": "Büyük sipariş birkaç teklif halinde gelebilir. Oluşturma hızını ve sipariş durumunu kontrol edin. Sipariş geçmişi, normal çoklu teslimat ile eksik teslimatı ayırt etmeyi kolaylaştırır."
+          },
+          {
+            "summary": "İade ve destek",
+            "body": "Set stokta yoksa veya takas başarısızsa değiştirme, iade ve destek süreci açık olmalıdır."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Steam Seviye Servislerini Nasıl Değerlendirir?",
+        "intro": "Yalnız reklam fiyatına değil, kullanıcının gerekli setleri ne kadar öngörülebilir biçimde aldığına bakıyoruz.",
+        "items": [
+          {
+            "summary": "Hedef seviyeye toplam fiyat",
+            "body": "Aynı hedef için tam maliyeti karşılaştırıyoruz."
+          },
+          {
+            "summary": "Kart seti stoku",
+            "body": "Farklı set sayısını ve büyük siparişleri karşılama kapasitesini inceliyoruz. Çok sayıda oyunun rozetini daha önce oluşturmuş hesaplarda stok çeşitliliği daha da önemlidir."
+          },
+          {
+            "summary": "Hesaplama şeffaflığı",
+            "body": "Hedef seviye, set sayısı, toplam fiyat ve ücretler ödeme öncesi görünmelidir."
+          },
+          {
+            "summary": "Steam takaslarının çalışması",
+            "body": "Bot hızı, doğru içerik, teslimat istikrarı ve sipariş durumu değerlendirilir."
+          },
+          {
+            "summary": "Ödeme ve bölgesel erişim",
+            "body": "Yöntemler, ücretler, ülke kısıtlamaları ve kullanım kolaylığı dikkate alınır."
+          },
+          {
+            "summary": "Destek ve güncellik",
+            "body": "Eksik set, gecikme ve Steam değişikliklerinin nasıl çözüldüğü önemlidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Kart Fiyatları ve Bulunabilirlik Neden Değişir?",
+        "paragraphs": [
+          "Steam kart fiyatları arz, oyun popülerliği ve set bulunabilirliğine göre değişir. Servis ücreti aynı kalsa bile aynı deneyimin maliyeti farklılaşabilir.",
+          "Steam takas kısıtlamalarını ve eşya davranışını değiştirebilir. Servisler bot, katalog ve hesaplamalarını güncellemek zorunda kalır.",
+          "Profil seviyesi dışında amaçlar için <a href=\"/steam/topup\">Steam bakiye yükleme</a> ve <a href=\"/steam/buy-games\">oyun satın alma</a> bölümlerini kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Kart Satın Alırken Güvenlik",
+        "intro": "Kart almak için resmî Steam takas teklifi yeterlidir; servise Steam şifresi veya Steam Guard kodu vermek gerekmez.",
+        "items": [
+          {
+            "summary": "Resmî domaini kontrol edin",
+            "body": "Yalnız gerçek servis sitesinden giriş yapın ve Steam yetkilendirme penceresini kontrol edin."
+          },
+          {
+            "summary": "Her takas teklifini inceleyin",
+            "body": "Göndereni, kart sayısını ve kendi eşyalarınızın doğru tarafta olduğunu kontrol edin. Beklenmeyen bir eşya veya yön varsa takas teklifini kabul etmek yerine önce sipariş detayını kontrol edin."
+          },
+          {
+            "summary": "Şifre veya güvenlik kodu paylaşmayın",
+            "body": "Servisin Steam şifresi, Steam Guard veya yedek kodlara ihtiyacı yoktur."
+          },
+          {
+            "summary": "Sadece indirim için fazla almayın",
+            "body": "Büyük paket ancak o seviyeye gerçekten ulaşmayı planlıyorsanız anlamlıdır."
+          },
+          {
+            "summary": "Steam hesap kısıtlamalarını kontrol edin",
+            "body": "Yeni veya sınırlı hesaplarda takas ve topluluk kısıtlamaları olabilir."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Steam Seviye Yükseltme Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Steam seviyesi nasıl yükselir?",
+            "body": "Profil deneyimi, çoğunlukla tam kart setlerinden rozet oluşturularak kazanılır."
+          },
+          {
+            "summary": "Servis hesabımı doğrudan yükseltir mi?",
+            "body": "Genellikle gerekli kartları verir; rozeti kullanıcı oluşturur."
+          },
+          {
+            "summary": "Kaç set gerekir?",
+            "body": "Mevcut seviye ve deneyime bağlıdır; hesaplayıcı ödeme öncesi göstermelidir."
+          },
+          {
+            "summary": "Skin ile ödeme yapılabilir mi?",
+            "body": "Bazı servisler desteklenen oyun eşyalarını kabul eder. İç değerlemeyi piyasa ile karşılaştırın."
+          },
+          {
+            "summary": "Neden birkaç takas geliyor?",
+            "body": "Stok ve eşya sınırları büyük siparişi bölmeyi gerektirebilir."
+          },
+          {
+            "summary": "Aynı set defalarca kullanılabilir mi?",
+            "body": "Rozet oluşturma sınırları vardır, bu yüzden yüksek seviyeler farklı oyun setleri gerektirir."
+          },
+          {
+            "summary": "Takas gelmezse ne yapmalıyım?",
+            "body": "Sipariş durumunu ve Steam takaslarını kontrol edip süre geçince desteğe başvurun."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Kart fiyatı, stok, ücret, ödeme, bot hızı, Steam kısıtlamaları ve destek değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Steam Leveling Services: Trading Card Set Sites कैसे काम करती हैं",
+        "paragraphs": [
+          "Steam leveling services complete Steam Trading Card sets देकर profile experience जल्दी बढ़ाने में मदद करती हैं। User target level या sets की quantity चुनता है, payment करता है, Steam trades से cards receive करता है और account पर badges craft करता है।",
+          "Card sets खरीदना और level increase होना अलग steps हैं। Third-party service required sets calculate और deliver कर सकती है, लेकिन profile experience Steam badge craft होने पर देता है। Final result current experience, available sets और already crafted badges पर depend करता है। इसलिए calculation generic level table की जगह account के current experience पर based होनी चाहिए।",
+          "CSGOBROKER experience cost, card-set inventory, payment methods, trade speed और calculator quality compare करता है। Wallet funding के लिए <a href=\"/steam/topup\">Steam top-up</a> और games/keys के लिए <a href=\"/steam/buy-games\">game stores</a> देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Steam Level बढ़ाने के Common तरीके",
+        "items": [
+          {
+            "title": "Ready card sets खरीदना",
+            "paragraphs": [
+              "Service एक game का complete set बेचती है जिससे badge craft हो सके। User Steam trade से set receive करके badge खुद craft करता है।"
+            ]
+          },
+          {
+            "title": "Target level तक order",
+            "paragraphs": [
+              "Platform missing experience calculate करके enough sets select करती है। Payment से पहले current level और required experience verify करें।"
+            ]
+          },
+          {
+            "title": "Money से sets खरीदना",
+            "paragraphs": [
+              "Card, cryptocurrency या other methods available हो सकती हैं। Advertised per-set price की जगह fees सहित final cost compare करें।"
+            ]
+          },
+          {
+            "title": "Game items को card sets में exchange करना",
+            "paragraphs": [
+              "कुछ services Steam items या supported game skins accept करती हैं। Deposited items की internal valuation real cost को affect करती है। अगर payment item undervalued है, तो cheap set price की apparent saving खत्म हो सकती है।"
+            ]
+          },
+          {
+            "title": "Trading bots से automated delivery",
+            "paragraphs": [
+              "Payment के बाद bot one or more Steam trade offers भेजता है। Large order inventory limits या set availability के कारण split हो सकती है।"
+            ]
+          },
+          {
+            "title": "Games और other digital products",
+            "paragraphs": [
+              "कुछ leveling sites games, gifts या other Steam products भी बेचती हैं। इन्हें leveling value से अलग evaluate करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Card Sets खरीदने से पहले क्या Compare करें",
+        "intro": "One set price अकेले value नहीं दिखाती; target experience तक total cost और delivery conditions ज्यादा important हैं।",
+        "items": [
+          {
+            "summary": "Target तक total cost",
+            "body": "Same target level के लिए total price compare करें, current experience, payment fees और minimum order सहित।"
+          },
+          {
+            "summary": "Level calculator accuracy",
+            "body": "Current level, required experience, set count और expected result checkout से पहले visible होने चाहिए।"
+          },
+          {
+            "summary": "Unique sets की depth",
+            "body": "Badge repetition limits के कारण high target levels को कई different game sets चाहिए। Large orders में limited variety substitutions या delivery delay ला सकती है।"
+          },
+          {
+            "summary": "Payment methods",
+            "body": "Cards, crypto, game items और other options को fees और minimums के साथ compare करें।"
+          },
+          {
+            "summary": "Trade speed और offers की संख्या",
+            "body": "Large purchase several trades में आ सकती है। Offer creation speed और order status visibility देखें।"
+          },
+          {
+            "summary": "Refunds और support",
+            "body": "Set unavailable या trade fail होने पर replacement, refund और support process clear होना चाहिए।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Steam Leveling Services को कैसे Rate करता है",
+        "intro": "हम सिर्फ lowest advertising price नहीं, required sets और experience value की predictable delivery evaluate करते हैं।",
+        "items": [
+          {
+            "summary": "Target-level price",
+            "body": "Same target के लिए full cost compare की जाती है।"
+          },
+          {
+            "summary": "Card-set inventory",
+            "body": "Different sets की depth और larger orders fulfill करने की ability review होती है। जिन accounts ने कई games के badges पहले craft किए हैं, उनके लिए inventory depth और ज्यादा important है।"
+          },
+          {
+            "summary": "Calculation transparency",
+            "body": "Target level, set count, final cost और extra fees payment से पहले visible होने चाहिए।"
+          },
+          {
+            "summary": "Steam trade execution",
+            "body": "Bot speed, correct trade contents, delivery stability और clear status important हैं।"
+          },
+          {
+            "summary": "Payments और regional access",
+            "body": "Methods, fees, country restrictions और usability evaluate होते हैं।"
+          },
+          {
+            "summary": "Support और freshness",
+            "body": "Unavailable sets, delays और Steam changes handle करने की quality देखी जाती है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Card-Set Prices और Availability क्यों बदलती हैं",
+        "paragraphs": [
+          "Steam card prices market supply, game popularity और specific set availability से बदलती हैं। Same experience amount का cost service fee same होने पर भी बदल सकता है।",
+          "Steam trade restrictions और item behavior बदल सकता है। Services को bots, catalogs और calculations update करने पड़ते हैं, इसलिए old prices/delivery estimates outdated हो सकती हैं।",
+          "Profile level के अलावा जरूरत हो तो <a href=\"/steam/topup\">Steam top-up</a> और <a href=\"/steam/buy-games\">game buying</a> sections देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Card Sets खरीदते समय Safety",
+        "intro": "Cards receive करने के लिए official Steam trade offer पर्याप्त है; third-party service को Steam password या Steam Guard code की जरूरत नहीं होती।",
+        "items": [
+          {
+            "summary": "Official domain verify करें",
+            "body": "सिर्फ real service site पर sign in करें और Steam authorization window carefully check करें।"
+          },
+          {
+            "summary": "हर trade offer review करें",
+            "body": "Sender, card count और अपने items सही side पर हैं या नहीं, verify करें। Offer में unexpected item या direction हो तो accept करने से पहले order details verify करें।"
+          },
+          {
+            "summary": "Passwords/security codes share न करें",
+            "body": "Leveling service को Steam password, Steam Guard या backup codes नहीं चाहिए।"
+          },
+          {
+            "summary": "Bulk discount के लिए extra न खरीदें",
+            "body": "Large package तभी useful है जब आप वास्तव में उस target level तक जाना चाहते हैं।"
+          },
+          {
+            "summary": "Steam account restrictions check करें",
+            "body": "New या limited accounts पर trading/community restrictions हो सकती हैं।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Steam Leveling के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Steam level कैसे बढ़ता है?",
+            "body": "Profile experience badges craft करने से मिलता है, usually complete Steam Trading Card sets से।"
+          },
+          {
+            "summary": "क्या service account को directly level करती है?",
+            "body": "Usually service required card sets देती है और user badges craft करता है।"
+          },
+          {
+            "summary": "Next level के लिए कितने sets चाहिए?",
+            "body": "Current level और accumulated experience पर depend करता है; calculator checkout से पहले amount दिखाए।"
+          },
+          {
+            "summary": "क्या skins से payment हो सकती है?",
+            "body": "कुछ services supported game items accept करती हैं। Internal valuation को market से compare करें।"
+          },
+          {
+            "summary": "Large order कई trades में क्यों आती है?",
+            "body": "Item limits और set availability multiple bot offers require कर सकती हैं।"
+          },
+          {
+            "summary": "Same set कितनी बार use कर सकते हैं?",
+            "body": "Badge crafting repetition limits हैं, इसलिए high levels को different games के sets चाहिए।"
+          },
+          {
+            "summary": "Trade न आए तो क्या करें?",
+            "body": "Order status और Steam trading availability check करें, फिर stated time के बाद support contact करें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Card prices, inventory, fees, payments, bot speed, Steam restrictions और support quality बदलती हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

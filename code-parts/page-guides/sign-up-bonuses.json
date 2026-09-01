@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "sign-up-bonuses",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Бонусы за регистрацию: какие бывают и что проверить до создания аккаунта",
+        "paragraphs": [
+          "Бонус за регистрацию — это приветственная награда, которую площадка выдаёт новому пользователю после создания аккаунта и выполнения указанных условий. Это может быть бесплатный кейс, внутренняя валюта, промокод, скидка, бесплатная попытка в игровом режиме или дополнительный процент к первому пополнению.",
+          "Сам факт регистрации не всегда означает автоматическое начисление. Одни сайты требуют подтвердить электронную почту или телефон, другие — ввести промокод, привязать Steam, внести первый депозит или выполнить небольшую активность. Поэтому сравнивать нужно не только размер награды, но и полный путь до её получения.",
+          "CSGOBROKER рассматривает бонусы за регистрацию отдельно от <a href=\"/freebies/deposit-bonuses\">бонусов к пополнению</a>, <a href=\"/freebies/daily-rewards\">ежедневных наград</a> и <a href=\"/freebies/giveaways\">розыгрышей</a>. Это помогает отличать действительно бесплатную приветственную награду от предложения, которое требует дополнительных расходов."
+        ]
+      },
+      "categories": {
+        "title": "Какие бонусы за регистрацию встречаются",
+        "items": [
+          {
+            "title": "Бесплатный кейс",
+            "paragraphs": [
+              "Новый пользователь получает одно или несколько открытий специального кейса. Важно проверить набор возможных предметов, вероятность результатов и можно ли вывести выигрыш без дополнительного пополнения."
+            ]
+          },
+          {
+            "title": "Фиксированный бонусный баланс",
+            "paragraphs": [
+              "После регистрации сервис начисляет определённую сумму во внутренней валюте. Она может быть доступна только в отдельных режимах или требовать выполнения условий перед выводом."
+            ]
+          },
+          {
+            "title": "Промокод с приветственной наградой",
+            "paragraphs": [
+              "Для активации нужно ввести код при регистрации или в профиле. Один и тот же сайт может иметь несколько кодов с разными наградами, поэтому проверяйте актуальные условия."
+            ]
+          },
+          {
+            "title": "Скидка или бесплатная попытка",
+            "paragraphs": [
+              "Вместо баланса площадка может дать скидку на кейс, бесплатное вращение, попытку улучшения или другую разовую функцию. Полезность зависит от стоимости режима и правил результата."
+            ]
+          },
+          {
+            "title": "Бонус к первому пополнению",
+            "paragraphs": [
+              "Иногда он рекламируется рядом с регистрационной наградой, но фактически требует внесения средств. Такие предложения правильнее сравнивать также в разделе <a href=\"/freebies/deposit-bonuses\">бонусов к пополнению</a>."
+            ]
+          },
+          {
+            "title": "Набор из нескольких приветственных наград",
+            "paragraphs": [
+              "Некоторые сервисы объединяют бесплатный кейс, промокод, небольшую сумму и последующий бонус к депозиту. Каждый элемент нужно оценивать отдельно, потому что условия использования могут отличаться."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед регистрацией",
+        "intro": "Приветственный бонус имеет смысл только тогда, когда условия получения понятны заранее и не появляются уже после создания аккаунта.",
+        "items": [
+          {
+            "summary": "Нужен ли депозит",
+            "body": "Проверьте, действительно ли награда выдаётся только за регистрацию или требуется первое пополнение. Формулировка «до X бонуса» может включать депозитную часть."
+          },
+          {
+            "summary": "Нужен ли промокод",
+            "body": "Уточните, когда его нужно вводить: до создания аккаунта, сразу после регистрации или перед первым пополнением. Пропущенный этап иногда нельзя восстановить."
+          },
+          {
+            "summary": "Какие подтверждения обязательны",
+            "body": "Электронная почта, телефон, Steam или проверка личности могут быть частью условий. Лучше знать это до регистрации, особенно если вы не хотите передавать дополнительные данные."
+          },
+          {
+            "summary": "Можно ли вывести награду",
+            "body": "Бесплатный баланс или предмет может иметь минимальную сумму вывода, отыгрыш, ограничение по режимам или требование сначала пополнить аккаунт."
+          },
+          {
+            "summary": "Срок действия",
+            "body": "Некоторые приветственные награды нужно активировать или использовать в течение нескольких часов или дней. Неиспользованный бонус может исчезнуть."
+          },
+          {
+            "summary": "Доступность по стране",
+            "body": "Регистрационный бонус, промокод или способ вывода могут быть недоступны в отдельных регионах, даже если сам сайт открывается."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает бонусы за регистрацию",
+        "intro": "Мы сравниваем не рекламный размер, а реальную ценность награды для нового пользователя без дополнительных действий, которые не были очевидны заранее.",
+        "items": [
+          {
+            "summary": "Фактическая бесплатная часть",
+            "body": "Отделяем то, что начисляется только за регистрацию, от депозитных бонусов и других наград, требующих расходов."
+          },
+          {
+            "summary": "Простота получения",
+            "body": "Учитываем количество обязательных шагов: подтверждение контактов, промокод, привязка аккаунта, минимальная активность и другие требования."
+          },
+          {
+            "summary": "Условия использования",
+            "body": "Проверяем, где можно потратить бонус, есть ли отыгрыш, срок действия, ограничения по ставкам и возможность отказаться от бонусного баланса."
+          },
+          {
+            "summary": "Вывод полученной ценности",
+            "body": "Для скинов, криптовалюты и внутреннего баланса важны минимальная сумма, комиссии, наличие предметов и обычные правила проверки аккаунта."
+          },
+          {
+            "summary": "Прозрачность рекламы",
+            "body": "Описание должно ясно отделять бесплатную награду от возможного бонуса к депозиту и не складывать разные предложения в одну максимальную цифру без пояснения."
+          },
+          {
+            "summary": "Актуальность предложения",
+            "body": "Промокоды и приветственные акции меняются быстро, поэтому CSGOBROKER обновляет рейтинг при изменении размера, состава или условий."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему бонусы за регистрацию меняются",
+        "paragraphs": [
+          "Площадки регулярно меняют промокоды, бесплатные кейсы, размер внутренней валюты и условия для новых пользователей. Старый код может перестать работать, а знакомая акция — получить другой набор наград.",
+          "Приветственные предложения могут различаться по источнику перехода, стране и партнёрской кампании. Поэтому одна и та же площадка иногда показывает разный бонус разным пользователям.",
+          "После регистрации можно отдельно сравнить <a href=\"/freebies/daily-rewards\">ежедневные награды</a>, <a href=\"/freebies/progressive-rewards\">прогрессивные награды</a>, <a href=\"/freebies/rakeback-system\">возврат части расходов</a> и другие акции в разделе <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при получении регистрационного бонуса",
+        "intro": "Бесплатная приветственная награда не должна требовать передачи пароля или секретных кодов сотруднику площадки.",
+        "items": [
+          {
+            "summary": "Проверяйте официальный адрес",
+            "body": "Фишинговые копии часто используют обещание бесплатного бонуса как повод для входа через поддельное окно Steam или другого сервиса."
+          },
+          {
+            "summary": "Не передавайте коды защиты",
+            "body": "Для начисления бонуса не нужно отправлять кому-либо пароль, код Steam Guard или резервные коды двухфакторной защиты."
+          },
+          {
+            "summary": "Осторожно с обязательным депозитом",
+            "body": "Если «бесплатный» бонус требует пополнения, оцените его как депозитную акцию и не вносите больше, чем планировали."
+          },
+          {
+            "summary": "Читайте правила до ввода промокода",
+            "body": "Проверьте, не заменяет ли код другое приветственное предложение и можно ли изменить выбор после активации."
+          },
+          {
+            "summary": "Соблюдайте возрастные и региональные ограничения",
+            "body": "Если бонус связан с азартной игрой, применяются правила площадки и требования вашей юрисдикции. Используйте рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о бонусах за регистрацию",
+        "items": [
+          {
+            "summary": "Что такое бонус за регистрацию?",
+            "body": "Это приветственная награда для нового аккаунта: бесплатный кейс, баланс, промокод, скидка, бесплатная попытка или другое предложение."
+          },
+          {
+            "summary": "Всегда ли бонус полностью бесплатный?",
+            "body": "Нет. Часть акций требует первого депозита или другой платной активности. Бесплатную и депозитную части нужно разделять."
+          },
+          {
+            "summary": "Когда вводить промокод?",
+            "body": "Это зависит от сайта: при регистрации, после неё или перед первым пополнением. Правильный момент указан в условиях акции."
+          },
+          {
+            "summary": "Можно ли получить несколько приветственных бонусов?",
+            "body": "Иногда площадка объединяет несколько наград, но разные промокоды или партнёрские предложения обычно нельзя складывать без разрешения сервиса."
+          },
+          {
+            "summary": "Можно ли вывести бесплатный кейс или баланс?",
+            "body": "Зависит от правил. Возможны минимальная сумма, отыгрыш, ограничение режимов или требование верификации."
+          },
+          {
+            "summary": "Почему бонус не начислился?",
+            "body": "Причиной могут быть неверный промокод, повторная регистрация, неподходящий регион, пропущенное подтверждение или несоблюдение условий акции."
+          },
+          {
+            "summary": "Чем регистрационный бонус отличается от бонуса к пополнению?",
+            "body": "Регистрационный бонус связан с созданием нового аккаунта, а <a href=\"/freebies/deposit-bonuses\">бонус к пополнению</a> требует внесения средств."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются промокоды, бесплатные награды, условия регистрации, вывод, региональная доступность и действующие акции."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Sign-Up Bonuses: Common Types and What to Check Before Creating an Account",
+        "paragraphs": [
+          "A sign-up bonus is a welcome reward offered to a new user after account creation and completion of the stated eligibility steps. It can be a free case, internal balance, promo code, discount, free attempt in a game mode, or an additional percentage on the first deposit.",
+          "Registration itself does not always trigger the reward automatically. Some sites require email or phone verification, while others require a promo code, a linked Steam account, a first deposit, or a small activity requirement. The useful comparison is therefore the complete path to receiving the reward, not only its advertised size.",
+          "CSGOBROKER evaluates sign-up bonuses separately from <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>, <a href=\"/freebies/daily-rewards\">daily rewards</a>, and <a href=\"/freebies/giveaways\">giveaways</a>. This makes it easier to distinguish a genuinely free welcome reward from an offer that requires additional spending."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Sign-Up Bonuses",
+        "items": [
+          {
+            "title": "Free case",
+            "paragraphs": [
+              "A new user receives one or more openings of a special case. Check the complete item pool, outcome probabilities, and whether the result can be withdrawn without making an additional deposit."
+            ]
+          },
+          {
+            "title": "Fixed bonus balance",
+            "paragraphs": [
+              "The service credits a stated amount of internal currency after registration. It may only be usable in selected modes or require conditions before withdrawal."
+            ]
+          },
+          {
+            "title": "Promo-code welcome reward",
+            "paragraphs": [
+              "A code must be entered during registration or from the account profile. The same site can have several codes with different rewards, so the active terms should be checked."
+            ]
+          },
+          {
+            "title": "Discount or free attempt",
+            "paragraphs": [
+              "Instead of balance, a platform may provide a case discount, free spin, upgrade attempt, or another one-time function. Its value depends on the normal mode price and result rules."
+            ]
+          },
+          {
+            "title": "First-deposit bonus",
+            "paragraphs": [
+              "This is sometimes marketed together with the welcome reward but requires funding the account. It should also be compared under <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>."
+            ]
+          },
+          {
+            "title": "Bundle of welcome rewards",
+            "paragraphs": [
+              "Some services combine a free case, promo code, small balance, and later deposit bonus. Each component should be evaluated separately because use and withdrawal terms can differ."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Signing Up",
+        "intro": "A welcome bonus is useful only when the requirements are clear before account creation rather than appearing afterward.",
+        "items": [
+          {
+            "summary": "Whether a deposit is required",
+            "body": "Confirm whether the reward is truly registration-only or requires a first deposit. An advertisement using “up to” can combine a free component with a deposit-related one."
+          },
+          {
+            "summary": "Whether a promo code is required",
+            "body": "Check when the code must be entered: before account creation, immediately after registration, or before the first deposit. A missed step may not be recoverable."
+          },
+          {
+            "summary": "Required verification steps",
+            "body": "Email, phone, Steam linking, or identity verification can be part of eligibility. It is better to know this before registering if you prefer not to provide additional information."
+          },
+          {
+            "summary": "Whether the reward is withdrawable",
+            "body": "Free balance or an item can have a minimum withdrawal, wagering requirement, mode restriction, or a requirement to fund the account first."
+          },
+          {
+            "summary": "Expiry",
+            "body": "Some welcome rewards must be activated or used within hours or days. An unused bonus can disappear after the deadline."
+          },
+          {
+            "summary": "Regional availability",
+            "body": "The welcome offer, promo code, or withdrawal method can be unavailable in some countries even when the website itself remains accessible."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Sign-Up Bonuses",
+        "intro": "We compare the real value for a new user rather than the largest promotional number or steps that were not obvious before registration.",
+        "items": [
+          {
+            "summary": "Genuinely free component",
+            "body": "We separate rewards credited for registration itself from deposit bonuses and other benefits that require spending."
+          },
+          {
+            "summary": "Ease of claiming",
+            "body": "We consider required steps such as contact verification, promo-code entry, account linking, minimum activity, and other conditions."
+          },
+          {
+            "summary": "Use conditions",
+            "body": "We review where the bonus can be used, wagering, expiry, bet restrictions, and whether users can decline or cancel the bonus balance."
+          },
+          {
+            "summary": "Withdrawal of received value",
+            "body": "For skins, crypto, and internal balance, minimums, fees, item availability, and ordinary account-verification rules all matter."
+          },
+          {
+            "summary": "Advertising transparency",
+            "body": "The page should clearly distinguish the free reward from any deposit bonus rather than combining unrelated benefits into one maximum number without explanation."
+          },
+          {
+            "summary": "Offer freshness",
+            "body": "Promo codes and welcome campaigns change quickly, so CSGOBROKER updates the ranking when reward size, composition, or terms materially change."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Sign-Up Bonuses Change",
+        "paragraphs": [
+          "Platforms regularly replace promo codes, free cases, internal-currency amounts, and new-user requirements. An old code can stop working while a familiar campaign receives a different reward bundle.",
+          "Welcome offers can also vary by traffic source, country, or partner campaign. The same platform may therefore display different introductory rewards to different users.",
+          "After registering, compare <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/progressive-rewards\">progressive rewards</a>, <a href=\"/freebies/rakeback-system\">rakeback</a>, and other promotions in the main <a href=\"/freebies\">bonuses</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Claiming a Sign-Up Bonus",
+        "intro": "A legitimate welcome reward does not require sending your password or secret security codes to a platform employee.",
+        "items": [
+          {
+            "summary": "Verify the official domain",
+            "body": "Phishing copies often use a free-bonus promise to direct users into a fake Steam or third-party login window."
+          },
+          {
+            "summary": "Never share security codes",
+            "body": "Receiving a bonus does not require sending anyone your password, Steam Guard code, or two-factor backup codes."
+          },
+          {
+            "summary": "Be careful with required deposits",
+            "body": "If a supposedly free welcome offer requires funding, treat it as a deposit promotion and do not deposit more than planned."
+          },
+          {
+            "summary": "Read the rules before entering a promo code",
+            "body": "Check whether the code replaces another welcome offer and whether the choice can be changed after activation."
+          },
+          {
+            "summary": "Follow age and regional rules",
+            "body": "When the reward is connected to gambling, platform rules and local legal requirements apply. Use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Sign-Up Bonuses",
+        "items": [
+          {
+            "summary": "What is a sign-up bonus?",
+            "body": "A welcome reward for a new account, such as a free case, balance, promo code, discount, free attempt, or another introductory benefit."
+          },
+          {
+            "summary": "Is every sign-up bonus completely free?",
+            "body": "No. Some campaigns require a first deposit or another paid action. The free and deposit components should be separated."
+          },
+          {
+            "summary": "When should I enter the promo code?",
+            "body": "It depends on the site: during registration, afterward, or before the first deposit. The correct stage should be stated in the promotion terms."
+          },
+          {
+            "summary": "Can I receive several welcome bonuses?",
+            "body": "A platform can bundle several rewards, but separate promo codes or affiliate offers usually cannot be combined unless the service explicitly allows it."
+          },
+          {
+            "summary": "Can a free case or balance be withdrawn?",
+            "body": "It depends on the rules. Minimum withdrawals, wagering, mode restrictions, or verification can apply."
+          },
+          {
+            "summary": "Why was my bonus not credited?",
+            "body": "Possible reasons include an invalid promo code, repeat registration, unsupported region, missed verification, or another unmet promotion condition."
+          },
+          {
+            "summary": "How is a sign-up bonus different from a deposit bonus?",
+            "body": "A sign-up bonus is connected to creating a new account, while a <a href=\"/freebies/deposit-bonuses\">deposit bonus</a> requires funding."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Promo codes, free rewards, registration requirements, withdrawal rules, regional availability, and active campaigns can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Bonos de registro: tipos habituales y qué comprobar antes de crear una cuenta",
+        "paragraphs": [
+          "Un bono de registro es una recompensa de bienvenida para un usuario nuevo después de crear la cuenta y cumplir los requisitos indicados. Puede ser una caja gratuita, saldo interno, código promocional, descuento, intento gratis en un modo o un porcentaje adicional sobre el primer depósito.",
+          "Registrarse no siempre activa la recompensa automáticamente. Algunos sitios exigen verificar correo o teléfono; otros requieren código, vincular Steam, realizar un primer depósito o completar una actividad. Por eso conviene comparar el proceso completo hasta recibir el premio, no solo su tamaño anunciado.",
+          "CSGOBROKER analiza estos bonos por separado de los <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a>, <a href=\"/freebies/daily-rewards\">recompensas diarias</a> y <a href=\"/freebies/giveaways\">sorteos</a>, para distinguir una recompensa realmente gratuita de una oferta que exige gasto adicional."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de bonos de registro",
+        "items": [
+          {
+            "title": "Caja gratuita",
+            "paragraphs": [
+              "El usuario nuevo recibe una o varias aperturas. Revisa todos los objetos posibles, las probabilidades y si el resultado puede retirarse sin depósito adicional."
+            ]
+          },
+          {
+            "title": "Saldo promocional fijo",
+            "paragraphs": [
+              "El servicio acredita una cantidad concreta de moneda interna. Puede servir solo en determinados modos o tener condiciones antes del retiro."
+            ]
+          },
+          {
+            "title": "Recompensa con código promocional",
+            "paragraphs": [
+              "El código se introduce durante el registro o desde el perfil. Un mismo sitio puede tener varios códigos con premios distintos, así que conviene revisar cuál está activo."
+            ]
+          },
+          {
+            "title": "Descuento o intento gratuito",
+            "paragraphs": [
+              "En lugar de saldo, el sitio puede ofrecer descuento en una caja, giro gratis, intento de mejora u otra función puntual. Su valor depende del coste normal y de las reglas del resultado."
+            ]
+          },
+          {
+            "title": "Bono al primer depósito",
+            "paragraphs": [
+              "A veces aparece junto al regalo de registro, pero exige aportar fondos. También debe compararse en <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a>."
+            ]
+          },
+          {
+            "title": "Paquete de recompensas de bienvenida",
+            "paragraphs": [
+              "Algunos servicios combinan caja gratis, código, pequeño saldo y posterior bono de depósito. Cada componente debe analizarse por separado porque sus condiciones pueden ser diferentes."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de registrarse",
+        "intro": "La recompensa solo es útil cuando los requisitos están claros antes de crear la cuenta.",
+        "items": [
+          {
+            "summary": "Si exige depósito",
+            "body": "Comprueba si el premio es realmente por registro o si necesita un primer depósito. Una cifra «hasta X» puede combinar una parte gratis con otra ligada al depósito."
+          },
+          {
+            "summary": "Si exige código promocional",
+            "body": "Revisa cuándo debe introducirse: antes de crear la cuenta, justo después o antes del primer depósito. Un paso omitido puede no recuperarse."
+          },
+          {
+            "summary": "Verificaciones obligatorias",
+            "body": "Correo, teléfono, vinculación con Steam o verificación de identidad pueden formar parte de los requisitos. Conviene saberlo antes de registrarse."
+          },
+          {
+            "summary": "Si la recompensa se puede retirar",
+            "body": "El saldo o un objeto gratuito pueden tener mínimo de retiro, requisitos de apuesta, restricciones de uso o exigir primero un depósito."
+          },
+          {
+            "summary": "Caducidad",
+            "body": "Algunas recompensas deben activarse o utilizarse en horas o días. El bono puede desaparecer después del plazo."
+          },
+          {
+            "summary": "Disponibilidad regional",
+            "body": "La promoción, el código o el método de retiro pueden no estar disponibles en algunas regiones aunque el sitio sea accesible."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los bonos de registro",
+        "intro": "Comparamos el valor real para un usuario nuevo y no simplemente el mayor número promocional.",
+        "items": [
+          {
+            "summary": "Parte realmente gratuita",
+            "body": "Separamos lo que se obtiene únicamente por registrarse de los bonos de depósito y otras ventajas que requieren gasto."
+          },
+          {
+            "summary": "Facilidad para obtenerlo",
+            "body": "Valoramos pasos obligatorios como verificación, código, vinculación de cuenta y actividad mínima."
+          },
+          {
+            "summary": "Condiciones de uso",
+            "body": "Revisamos modos válidos, requisitos, caducidad, límites y posibilidad de cancelar el saldo promocional."
+          },
+          {
+            "summary": "Retiro del valor recibido",
+            "body": "Para skins, cripto o saldo importan mínimos, comisiones, disponibilidad y reglas normales de verificación."
+          },
+          {
+            "summary": "Transparencia publicitaria",
+            "body": "La descripción debe diferenciar la parte gratuita de un posible bono de depósito y no sumarlos en una sola cifra sin explicación."
+          },
+          {
+            "summary": "Actualidad",
+            "body": "Los códigos y campañas cambian rápido, así que CSGOBROKER actualiza la valoración cuando cambia el importe, contenido o reglas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian los bonos de registro",
+        "paragraphs": [
+          "Las plataformas sustituyen códigos, cajas gratuitas, cantidades y requisitos para nuevos usuarios. Un código antiguo puede dejar de funcionar o una campaña conocida cambiar de contenido.",
+          "Las ofertas también pueden variar según país, fuente de tráfico o campaña de socios, por lo que dos usuarios pueden ver recompensas distintas en el mismo sitio.",
+          "Después del registro puedes comparar <a href=\"/freebies/daily-rewards\">recompensas diarias</a>, <a href=\"/freebies/progressive-rewards\">recompensas progresivas</a>, <a href=\"/freebies/rakeback-system\">devoluciones</a> y otras promociones en <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al reclamar un bono de registro",
+        "intro": "Una recompensa legítima no exige enviar contraseñas o códigos secretos a un empleado.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio oficial",
+            "body": "Las copias de phishing pueden utilizar un supuesto bono para dirigir a una ventana falsa de acceso de Steam u otro servicio."
+          },
+          {
+            "summary": "No compartas códigos de seguridad",
+            "body": "El bono no requiere enviar contraseña, código Steam Guard o códigos de recuperación de dos factores."
+          },
+          {
+            "summary": "Cuidado con depósitos obligatorios",
+            "body": "Si la oferta «gratuita» exige ingresar fondos, trátala como una promoción de depósito y no aportes más de lo previsto."
+          },
+          {
+            "summary": "Lee las reglas antes de usar el código",
+            "body": "Comprueba si sustituye otra oferta y si la elección puede modificarse después de activarla."
+          },
+          {
+            "summary": "Respeta edad y región",
+            "body": "Cuando el bono está relacionado con juego, se aplican las reglas del sitio y de tu jurisdicción. Consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre bonos de registro",
+        "items": [
+          {
+            "summary": "¿Qué es un bono de registro?",
+            "body": "Una recompensa de bienvenida como caja gratuita, saldo, código, descuento, intento gratis u otra ventaja inicial."
+          },
+          {
+            "summary": "¿Siempre es completamente gratuito?",
+            "body": "No. Algunas campañas requieren primer depósito u otra acción pagada. Conviene separar ambas partes."
+          },
+          {
+            "summary": "¿Cuándo debo introducir el código?",
+            "body": "Depende del sitio: durante el registro, después o antes del primer depósito."
+          },
+          {
+            "summary": "¿Puedo recibir varios bonos?",
+            "body": "Puede haber un paquete de recompensas, pero varios códigos o campañas de afiliación normalmente no se acumulan salvo indicación expresa."
+          },
+          {
+            "summary": "¿Puedo retirar una caja o saldo gratuito?",
+            "body": "Depende de las reglas: pueden existir mínimos, requisitos, restricciones o verificación."
+          },
+          {
+            "summary": "¿Por qué no se acreditó el bono?",
+            "body": "Código inválido, registro repetido, región no admitida, verificación pendiente o condición incumplida son causas habituales."
+          },
+          {
+            "summary": "¿En qué se diferencia de un bono de depósito?",
+            "body": "El bono de registro está ligado a una cuenta nueva; el <a href=\"/freebies/deposit-bonuses\">bono de depósito</a> requiere ingresar fondos."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian códigos, premios, requisitos, retiro, disponibilidad regional y campañas activas."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Bônus de cadastro: tipos comuns e o que verificar antes de criar uma conta",
+        "paragraphs": [
+          "Um bônus de cadastro é uma recompensa de boas-vindas para novos usuários depois da criação da conta e do cumprimento dos requisitos indicados. Pode ser caixa grátis, saldo interno, código promocional, desconto, tentativa gratuita em um modo ou porcentagem adicional no primeiro depósito.",
+          "O cadastro nem sempre libera a recompensa automaticamente. Alguns sites exigem confirmação de e-mail ou telefone; outros pedem código, vínculo com Steam, primeiro depósito ou pequena atividade. Por isso, compare todo o processo até receber o benefício e não apenas o valor anunciado. Um benefício que exige vários passos ou pagamento deve ser avaliado de forma diferente de um prêmio liberado logo após o cadastro.",
+          "A CSGOBROKER avalia esses bônus separadamente de <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a>, <a href=\"/freebies/daily-rewards\">recompensas diárias</a> e <a href=\"/freebies/giveaways\">sorteios</a>, distinguindo recompensa realmente gratuita de oferta que exige gasto."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de bônus de cadastro",
+        "items": [
+          {
+            "title": "Caixa grátis",
+            "paragraphs": [
+              "O novo usuário recebe uma ou mais aberturas. Confira todos os itens possíveis, probabilidades e se o resultado pode ser sacado sem depósito adicional."
+            ]
+          },
+          {
+            "title": "Saldo promocional fixo",
+            "paragraphs": [
+              "O serviço credita um valor de moeda interna. Ele pode funcionar apenas em alguns modos ou exigir condições antes do saque."
+            ]
+          },
+          {
+            "title": "Recompensa com código promocional",
+            "paragraphs": [
+              "O código é usado durante o cadastro ou no perfil. Um site pode ter vários códigos com benefícios diferentes, então confira a opção válida."
+            ]
+          },
+          {
+            "title": "Desconto ou tentativa grátis",
+            "paragraphs": [
+              "Em vez de saldo, a plataforma pode oferecer desconto de caixa, giro grátis, tentativa de melhoria ou função única. O valor depende do preço normal e das regras."
+            ]
+          },
+          {
+            "title": "Bônus no primeiro depósito",
+            "paragraphs": [
+              "Pode ser anunciado junto com a recompensa de cadastro, mas exige colocar dinheiro. Compare também em <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a>."
+            ]
+          },
+          {
+            "title": "Pacote de boas-vindas",
+            "paragraphs": [
+              "Alguns serviços combinam caixa grátis, código, pequeno saldo e bônus posterior no depósito. Cada parte deve ser analisada separadamente."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes do cadastro",
+        "intro": "A recompensa só é útil quando os requisitos estão claros antes da criação da conta.",
+        "items": [
+          {
+            "summary": "Se exige depósito",
+            "body": "Confira se é realmente um benefício de cadastro ou se depende de primeiro depósito. Uma chamada «até X» pode somar parte grátis e parte ligada ao pagamento."
+          },
+          {
+            "summary": "Se exige código",
+            "body": "Veja quando o código deve ser informado: antes de criar a conta, depois do cadastro ou antes do primeiro depósito. Se o código for obrigatório, vale confirmar também se ele substitui uma campanha automática já associada ao acesso."
+          },
+          {
+            "summary": "Verificações obrigatórias",
+            "body": "E-mail, telefone, vínculo com Steam ou verificação de identidade podem fazer parte das condições."
+          },
+          {
+            "summary": "Se a recompensa pode ser sacada",
+            "body": "Saldo ou item grátis pode ter mínimo, requisito de aposta, restrição de modo ou obrigação de depositar antes. O fato de aparecer no saldo não significa necessariamente que o valor esteja livre para saque."
+          },
+          {
+            "summary": "Validade",
+            "body": "Alguns benefícios precisam ser ativados ou usados em horas ou dias e desaparecem após o prazo."
+          },
+          {
+            "summary": "Disponibilidade regional",
+            "body": "Promoção, código ou saque podem não funcionar em certas regiões, mesmo quando o site abre normalmente."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia bônus de cadastro",
+        "intro": "Comparamos o valor real para o novo usuário, e não apenas o maior número promocional.",
+        "items": [
+          {
+            "summary": "Parte realmente gratuita",
+            "body": "Separamos o que é recebido somente pelo cadastro dos bônus de depósito e benefícios que exigem gasto. Isso evita tratar uma campanha de depósito como se fosse uma recompensa totalmente gratuita."
+          },
+          {
+            "summary": "Facilidade para receber",
+            "body": "Consideramos confirmação, código, vínculo de conta, atividade mínima e outros passos."
+          },
+          {
+            "summary": "Condições de uso",
+            "body": "Analisamos modos, requisitos, validade, limites e possibilidade de cancelar o saldo promocional."
+          },
+          {
+            "summary": "Saque do valor recebido",
+            "body": "Para skins, cripto e saldo importam mínimos, taxas, disponibilidade e regras normais de verificação."
+          },
+          {
+            "summary": "Transparência da publicidade",
+            "body": "A parte gratuita deve ser separada de um possível bônus de depósito, sem somar tudo em um único máximo sem explicação. Uma cifra máxima que soma vários benefícios só é útil quando cada componente está explicado."
+          },
+          {
+            "summary": "Atualidade",
+            "body": "Códigos e campanhas mudam rápido, e a CSGOBROKER atualiza o ranking quando valor, composição ou regras mudam."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que bônus de cadastro mudam",
+        "paragraphs": [
+          "Plataformas substituem códigos, caixas grátis, valores e requisitos. Um código antigo pode parar de funcionar ou uma campanha conhecida mudar de conteúdo.",
+          "A oferta pode variar por país, origem do acesso ou campanha de parceiro; dois usuários podem ver benefícios diferentes no mesmo site. Essa variação é um motivo para conferir a oferta exibida no momento da criação da conta.",
+          "Depois do cadastro, compare <a href=\"/freebies/daily-rewards\">recompensas diárias</a>, <a href=\"/freebies/progressive-rewards\">recompensas progressivas</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> e outras opções em <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao receber bônus de cadastro",
+        "intro": "Uma recompensa legítima não exige enviar senha ou códigos secretos para funcionários.",
+        "items": [
+          {
+            "summary": "Confira o domínio oficial",
+            "body": "Cópias de phishing podem usar promessa de bônus para levar a uma janela falsa de login Steam ou de outro serviço."
+          },
+          {
+            "summary": "Não compartilhe códigos de segurança",
+            "body": "O recebimento não exige senha, código Steam Guard ou códigos de recuperação."
+          },
+          {
+            "summary": "Cuidado com depósito obrigatório",
+            "body": "Se a oferta «grátis» exige pagamento, trate como promoção de depósito e não coloque mais do que planejava."
+          },
+          {
+            "summary": "Leia as regras antes do código",
+            "body": "Confira se o código substitui outra oferta e se a escolha pode ser alterada depois. Em caso de dúvida, registre a oferta escolhida antes de ativar o código."
+          },
+          {
+            "summary": "Respeite idade e região",
+            "body": "Quando envolve apostas, valem as regras do serviço e da sua jurisdição. Consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre bônus de cadastro",
+        "items": [
+          {
+            "summary": "O que é bônus de cadastro?",
+            "body": "Uma recompensa de boas-vindas como caixa grátis, saldo, código, desconto, tentativa grátis ou outro benefício."
+          },
+          {
+            "summary": "É sempre totalmente grátis?",
+            "body": "Não. Algumas campanhas exigem primeiro depósito ou ação paga; as partes devem ser separadas."
+          },
+          {
+            "summary": "Quando usar o código?",
+            "body": "Depende do site: durante o cadastro, depois ou antes do primeiro depósito."
+          },
+          {
+            "summary": "Posso receber vários bônus?",
+            "body": "O serviço pode oferecer um pacote, mas códigos separados normalmente não acumulam sem autorização."
+          },
+          {
+            "summary": "Posso sacar caixa ou saldo grátis?",
+            "body": "Depende das regras; podem existir mínimos, requisitos, restrições ou verificação."
+          },
+          {
+            "summary": "Por que o bônus não foi creditado?",
+            "body": "Código inválido, cadastro repetido, região não elegível, verificação pendente ou condição não cumprida são causas possíveis."
+          },
+          {
+            "summary": "Qual a diferença para bônus de depósito?",
+            "body": "O bônus de cadastro está ligado à conta nova; o <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a> exige pagamento."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Códigos, recompensas, requisitos, saque, disponibilidade e campanhas mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Kayıt Bonusları: Yaygın Türler ve Hesap Açmadan Önce Kontrol Edilecekler",
+        "paragraphs": [
+          "Kayıt bonusu, yeni kullanıcının hesap oluşturup belirtilen şartları tamamlamasından sonra verilen hoş geldin ödülüdür. Ücretsiz kasa, iç bakiye, promosyon kodu, indirim, bir oyun modunda ücretsiz deneme veya ilk yatırmaya ek yüzde olabilir.",
+          "Yalnız kayıt olmak ödülü her zaman otomatik olarak vermez. Bazı siteler e-posta veya telefon doğrulaması, bazıları promosyon kodu, Steam bağlantısı, ilk yatırma veya küçük aktivite ister. Bu nedenle yalnız reklam edilen tutarı değil, ödüle ulaşmak için gereken tüm süreci karşılaştırın. Birden fazla adım veya ödeme gerektiren teklif, kayıt sonrası hemen açılan ücretsiz ödülle aynı değerde görülmemelidir.",
+          "CSGOBROKER kayıt bonuslarını <a href=\"/freebies/deposit-bonuses\">yatırma bonuslarından</a>, <a href=\"/freebies/daily-rewards\">günlük ödüllerden</a> ve <a href=\"/freebies/giveaways\">çekilişlerden</a> ayrı değerlendirir; böylece gerçekten ücretsiz ödül ile harcama gerektiren teklif ayrılır."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Kayıt Bonusu Türleri",
+        "items": [
+          {
+            "title": "Ücretsiz kasa",
+            "paragraphs": [
+              "Yeni kullanıcı özel kasayı bir veya birkaç kez açabilir. Tüm eşya havuzunu, olasılıkları ve ek yatırma olmadan çekim yapılıp yapılamadığını kontrol edin."
+            ]
+          },
+          {
+            "title": "Sabit bonus bakiyesi",
+            "paragraphs": [
+              "Servis kayıt sonrası belirli iç para verir. Yalnız bazı modlarda kullanılabilir veya çekimden önce şart gerektirebilir."
+            ]
+          },
+          {
+            "title": "Promosyon kodlu hoş geldin ödülü",
+            "paragraphs": [
+              "Kod kayıt sırasında veya profilde girilir. Aynı sitede farklı ödüller veren birden çok kod olabilir."
+            ]
+          },
+          {
+            "title": "İndirim veya ücretsiz deneme",
+            "paragraphs": [
+              "Bakiye yerine kasa indirimi, ücretsiz spin, yükseltme denemesi veya başka tek seferlik özellik verilebilir. Değer normal fiyat ve sonuç kurallarına bağlıdır."
+            ]
+          },
+          {
+            "title": "İlk yatırma bonusu",
+            "paragraphs": [
+              "Kayıt ödülüyle birlikte reklam edilebilir ancak para yatırmayı gerektirir. Ayrıca <a href=\"/freebies/deposit-bonuses\">yatırma bonusları</a> altında karşılaştırılmalıdır."
+            ]
+          },
+          {
+            "title": "Birden fazla hoş geldin ödülü",
+            "paragraphs": [
+              "Bazı servisler ücretsiz kasa, kod, küçük bakiye ve sonraki yatırma bonusunu birleştirir. Her parçanın kullanım ve çekim şartını ayrı inceleyin."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Kayıttan Önce Neler Kontrol Edilmeli?",
+        "intro": "Hoş geldin bonusu, şartlar hesap açmadan önce açıkça görülebiliyorsa anlamlıdır.",
+        "items": [
+          {
+            "summary": "Yatırma gerekip gerekmediği",
+            "body": "Ödül yalnız kayıt için mi yoksa ilk yatırma sonrası mı veriliyor kontrol edin. «X'e kadar» ifadesi ücretsiz ve yatırmaya bağlı parçayı birleştirebilir."
+          },
+          {
+            "summary": "Promosyon kodu gerekip gerekmediği",
+            "body": "Kodun kayıt öncesi, hemen sonrası veya ilk yatırmadan önce mi girileceğini öğrenin. Kaçırılan adım geri alınamayabilir. Kod zorunluysa mevcut otomatik kampanyayı değiştirip değiştirmediğini de kontrol edin."
+          },
+          {
+            "summary": "Zorunlu doğrulamalar",
+            "body": "E-posta, telefon, Steam bağlantısı veya kimlik doğrulama şart olabilir. Hesap açmadan önce bunu bilmek faydalıdır."
+          },
+          {
+            "summary": "Ödülün çekilebilirliği",
+            "body": "Ücretsiz bakiye veya eşya minimum çekim, çevrim, mod kısıtlaması veya önce yatırma şartına sahip olabilir. Bakiyede görünmesi paranın otomatik olarak çekilebilir olduğu anlamına gelmez."
+          },
+          {
+            "summary": "Süre",
+            "body": "Bazı ödüller saatler veya günler içinde etkinleştirilmeli ya da kullanılmalıdır."
+          },
+          {
+            "summary": "Bölgesel erişim",
+            "body": "Site açık olsa bile bonus, kod veya çekim yöntemi belirli ülkelerde kullanılamayabilir."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Kayıt Bonuslarını Nasıl Değerlendirir?",
+        "intro": "En büyük reklam rakamından çok yeni kullanıcı için gerçek değeri karşılaştırıyoruz.",
+        "items": [
+          {
+            "summary": "Gerçekten ücretsiz bölüm",
+            "body": "Yalnız kayıtla verilen ödülü yatırma veya başka harcama gerektiren avantajlardan ayırıyoruz. Böylece yatırma kampanyası tamamen ücretsiz kayıt ödülü gibi değerlendirilmez."
+          },
+          {
+            "summary": "Alma kolaylığı",
+            "body": "Doğrulama, kod, hesap bağlantısı, minimum aktivite ve diğer adımlar değerlendirilir."
+          },
+          {
+            "summary": "Kullanım şartları",
+            "body": "Hangi modlarda kullanılabildiği, çevrim, süre, limit ve bonus bakiyesini iptal seçeneği incelenir."
+          },
+          {
+            "summary": "Alınan değerin çekimi",
+            "body": "Skin, kripto ve iç bakiye için minimum, ücret, bulunabilirlik ve normal hesap doğrulama kuralları önemlidir."
+          },
+          {
+            "summary": "Reklam şeffaflığı",
+            "body": "Ücretsiz ödül ile yatırma bonusu açıkça ayrılmalı, ilgisiz avantajlar tek maksimum rakama açıklamasız eklenmemelidir. Birden çok avantajı tek maksimum rakama eklemek ancak her parça açıkça anlatılıyorsa anlamlıdır."
+          },
+          {
+            "summary": "Güncellik",
+            "body": "Kodlar ve kampanyalar hızlı değişir; CSGOBROKER tutar, içerik veya şart değiştiğinde sıralamayı günceller."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Kayıt Bonusları Neden Değişir?",
+        "paragraphs": [
+          "Platformlar kodları, ücretsiz kasaları, iç bakiye miktarını ve yeni kullanıcı şartlarını değiştirir. Eski kod çalışmayı bırakabilir veya aynı kampanya farklı ödüller sunabilir.",
+          "Teklif ülke, trafik kaynağı veya ortak kampanyaya göre de değişebilir; aynı sitedeki iki kullanıcı farklı hoş geldin ödülü görebilir. Bu nedenle hesap açarken ekranda gösterilen güncel teklifi ayrıca kontrol etmek gerekir.",
+          "Kayıttan sonra <a href=\"/freebies/daily-rewards\">günlük ödülleri</a>, <a href=\"/freebies/progressive-rewards\">ilerlemeli ödülleri</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> ve diğer <a href=\"/freebies\">bonusları</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Kayıt Bonusu Alırken Güvenlik",
+        "intro": "Gerçek bir hoş geldin ödülü, şifre veya gizli güvenlik kodunu personele göndermenizi gerektirmez.",
+        "items": [
+          {
+            "summary": "Resmî domaini kontrol edin",
+            "body": "Phishing kopyaları ücretsiz bonus vaadini sahte Steam veya başka giriş penceresine yönlendirmek için kullanabilir."
+          },
+          {
+            "summary": "Güvenlik kodu paylaşmayın",
+            "body": "Bonus için şifre, Steam Guard kodu veya iki aşamalı yedek kod göndermek gerekmez."
+          },
+          {
+            "summary": "Zorunlu yatırmaya dikkat edin",
+            "body": "Sözde ücretsiz teklif para yatırmayı gerektiriyorsa bunu yatırma promosyonu gibi değerlendirin ve planınızdan fazla yatırmayın."
+          },
+          {
+            "summary": "Kodu girmeden önce şartları okuyun",
+            "body": "Kodun başka hoş geldin teklifini değiştirip değiştirmediğini ve seçim sonrası değişiklik yapılıp yapılamadığını kontrol edin. Şüphe varsa kodu etkinleştirmeden önce seçilen teklifin ekran görüntüsünü saklayın."
+          },
+          {
+            "summary": "Yaş ve bölge kurallarına uyun",
+            "body": "Bonus kumarla ilişkiliyse site ve yerel kurallar geçerlidir. <a href=\"/responsibility\">Sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Kayıt Bonusları Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Kayıt bonusu nedir?",
+            "body": "Yeni hesap için ücretsiz kasa, bakiye, kod, indirim, ücretsiz deneme veya başka hoş geldin ödülüdür."
+          },
+          {
+            "summary": "Her zaman tamamen ücretsiz midir?",
+            "body": "Hayır. Bazı kampanyalar ilk yatırma veya ücretli aktivite gerektirir."
+          },
+          {
+            "summary": "Promosyon kodu ne zaman girilir?",
+            "body": "Siteye göre kayıt sırasında, sonrasında veya ilk yatırmadan önce olabilir."
+          },
+          {
+            "summary": "Birden fazla bonus alabilir miyim?",
+            "body": "Paket halinde birkaç ödül olabilir, ancak farklı kodlar genellikle açık izin olmadan birleştirilemez."
+          },
+          {
+            "summary": "Ücretsiz kasa veya bakiye çekilebilir mi?",
+            "body": "Kurala bağlıdır; minimum, çevrim, kısıtlama veya doğrulama olabilir."
+          },
+          {
+            "summary": "Bonus neden gelmedi?",
+            "body": "Geçersiz kod, tekrar kayıt, uygun olmayan bölge, eksik doğrulama veya yerine getirilmemiş şart sebep olabilir."
+          },
+          {
+            "summary": "Kayıt bonusu ile yatırma bonusu arasındaki fark nedir?",
+            "body": "Kayıt bonusu yeni hesaba bağlıdır; <a href=\"/freebies/deposit-bonuses\">yatırma bonusu</a> para yatırmayı gerektirir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Kodlar, ödüller, kayıt şartları, çekim, bölgesel erişim ve kampanyalar değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Sign-Up Bonuses: Common Types और Account बनाने से पहले क्या Check करें",
+        "paragraphs": [
+          "Sign-up bonus नए user को account create करने और stated eligibility steps complete करने के बाद मिलने वाली welcome reward है। यह free case, internal balance, promo code, discount, game mode में free attempt या first deposit पर extra percentage हो सकती है।",
+          "Registration alone हमेशा reward automatically trigger नहीं करती। कुछ sites email/phone verification मांगती हैं, दूसरी promo code, Steam linking, first deposit या small activity require करती हैं। इसलिए सिर्फ advertised amount नहीं, reward receive करने का पूरा process compare करना चाहिए।",
+          "CSGOBROKER sign-up bonuses को <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>, <a href=\"/freebies/daily-rewards\">daily rewards</a> और <a href=\"/freebies/giveaways\">giveaways</a> से अलग evaluate करता है, ताकि genuinely free reward और additional spending वाली offer अलग दिखाई दे।"
+        ]
+      },
+      "categories": {
+        "title": "Common Sign-Up Bonus Types",
+        "items": [
+          {
+            "title": "Free case",
+            "paragraphs": [
+              "New user को special case की एक या अधिक openings मिलती हैं। Complete item pool, probabilities और बिना extra deposit withdrawal possible है या नहीं, check करें।"
+            ]
+          },
+          {
+            "title": "Fixed bonus balance",
+            "paragraphs": [
+              "Service registration के बाद stated internal currency credit करती है। यह selected modes तक limited हो सकती है या withdrawal से पहले conditions रख सकती है।"
+            ]
+          },
+          {
+            "title": "Promo-code welcome reward",
+            "paragraphs": [
+              "Code registration के दौरान या account profile में enter करना पड़ सकता है। Same site पर different rewards वाले कई codes हो सकते हैं।"
+            ]
+          },
+          {
+            "title": "Discount या free attempt",
+            "paragraphs": [
+              "Balance की जगह case discount, free spin, upgrade attempt या another one-time feature मिल सकती है। Value normal mode price और result rules पर depend करती है।"
+            ]
+          },
+          {
+            "title": "First-deposit bonus",
+            "paragraphs": [
+              "यह welcome reward के साथ advertise हो सकती है, लेकिन account funding require करती है। इसे <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a> में भी compare करें।"
+            ]
+          },
+          {
+            "title": "Welcome reward bundle",
+            "paragraphs": [
+              "कुछ services free case, promo code, small balance और later deposit bonus combine करती हैं। हर component के अलग use और withdrawal terms हो सकते हैं।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Sign Up करने से पहले क्या Check करें",
+        "intro": "Welcome bonus तभी useful है जब requirements account creation से पहले clear हों।",
+        "items": [
+          {
+            "summary": "Deposit required है या नहीं",
+            "body": "Confirm करें reward registration-only है या first deposit चाहिए। “Up to” figure free और deposit-linked components combine कर सकती है।"
+          },
+          {
+            "summary": "Promo code required है या नहीं",
+            "body": "Code account creation से पहले, immediately after registration या first deposit से पहले enter करना है, यह verify करें।"
+          },
+          {
+            "summary": "Required verification",
+            "body": "Email, phone, Steam linking या identity verification eligibility का हिस्सा हो सकते हैं।"
+          },
+          {
+            "summary": "Reward withdrawable है या नहीं",
+            "body": "Free balance या item पर minimum withdrawal, wagering, mode restriction या funding requirement हो सकती है।"
+          },
+          {
+            "summary": "Expiry",
+            "body": "कुछ welcome rewards hours या days के अंदर activate/use करनी होती हैं और deadline के बाद disappear कर सकती हैं।"
+          },
+          {
+            "summary": "Regional availability",
+            "body": "Website accessible होने पर भी bonus, promo code या withdrawal method कुछ countries में unavailable हो सकती है।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Sign-Up Bonuses को कैसे Rate करता है",
+        "intro": "हम largest promotional number के बजाय new user के लिए actual value compare करते हैं।",
+        "items": [
+          {
+            "summary": "Genuinely free component",
+            "body": "Registration alone से मिलने वाली reward को deposit bonuses और spending-required benefits से अलग किया जाता है।"
+          },
+          {
+            "summary": "Claiming ease",
+            "body": "Verification, promo-code entry, account linking, minimum activity और दूसरे required steps evaluate होते हैं।"
+          },
+          {
+            "summary": "Use conditions",
+            "body": "Eligible modes, wagering, expiry, limits और bonus balance cancel करने की possibility review होती है।"
+          },
+          {
+            "summary": "Received value withdrawal",
+            "body": "Skins, crypto और internal balance के लिए minimums, fees, availability और normal verification rules important हैं।"
+          },
+          {
+            "summary": "Advertising transparency",
+            "body": "Free reward और possible deposit bonus clearly separate होने चाहिए; unrelated benefits को बिना explanation one maximum number में नहीं जोड़ना चाहिए।"
+          },
+          {
+            "summary": "Offer freshness",
+            "body": "Promo codes और campaigns जल्दी बदलती हैं, इसलिए CSGOBROKER amount, composition या terms change होने पर ranking update करता है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Sign-Up Bonuses क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms promo codes, free cases, internal-currency amounts और new-user requirements regularly बदलती हैं। Old code stop हो सकती है या familiar campaign different reward bundle दे सकती है।",
+          "Welcome offer country, traffic source या partner campaign के अनुसार भी बदल सकती है, इसलिए same platform पर two users अलग rewards देख सकते हैं।",
+          "Registration के बाद <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/progressive-rewards\">progressive rewards</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> और दूसरे <a href=\"/freebies\">bonuses</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Sign-Up Bonus Claim करते समय Safety",
+        "intro": "Legitimate welcome reward के लिए platform employee को password या secret security code भेजने की जरूरत नहीं होती।",
+        "items": [
+          {
+            "summary": "Official domain verify करें",
+            "body": "Phishing copies free bonus promise का use fake Steam या other login window तक ले जाने के लिए कर सकती हैं।"
+          },
+          {
+            "summary": "Security codes share न करें",
+            "body": "Bonus पाने के लिए password, Steam Guard code या two-factor backup codes किसी को भेजना जरूरी नहीं है।"
+          },
+          {
+            "summary": "Required deposit से सावधान रहें",
+            "body": "अगर supposedly free offer funding require करती है, तो इसे deposit promotion की तरह evaluate करें और planned amount से ज्यादा deposit न करें।"
+          },
+          {
+            "summary": "Promo code से पहले rules पढ़ें",
+            "body": "Check करें code दूसरी welcome offer replace करती है या नहीं और activation के बाद choice change हो सकती है या नहीं।"
+          },
+          {
+            "summary": "Age और regional rules follow करें",
+            "body": "Gambling-related reward पर platform और local jurisdiction rules apply होते हैं। <a href=\"/responsibility\">Responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Sign-Up Bonuses के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Sign-up bonus क्या है?",
+            "body": "New account के लिए free case, balance, promo code, discount, free attempt या दूसरी welcome reward।"
+          },
+          {
+            "summary": "क्या हर sign-up bonus completely free है?",
+            "body": "नहीं। कुछ campaigns first deposit या another paid action require करती हैं।"
+          },
+          {
+            "summary": "Promo code कब enter करना चाहिए?",
+            "body": "Site पर depend करता है: registration के दौरान, उसके बाद या first deposit से पहले।"
+          },
+          {
+            "summary": "क्या multiple welcome bonuses मिल सकती हैं?",
+            "body": "Platform reward bundle दे सकती है, लेकिन separate codes/affiliate offers usually combine नहीं होतीं जब तक site allow न करे।"
+          },
+          {
+            "summary": "क्या free case या balance withdraw कर सकते हैं?",
+            "body": "Rules पर depend करता है; minimums, wagering, restrictions या verification हो सकती है।"
+          },
+          {
+            "summary": "Bonus credit क्यों नहीं हुई?",
+            "body": "Invalid code, repeat registration, unsupported region, missed verification या unmet condition कारण हो सकते हैं।"
+          },
+          {
+            "summary": "Sign-up और deposit bonus में क्या difference है?",
+            "body": "Sign-up bonus new account से जुड़ी है; <a href=\"/freebies/deposit-bonuses\">deposit bonus</a> funding require करती है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Promo codes, free rewards, registration rules, withdrawals, regional availability और campaigns बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

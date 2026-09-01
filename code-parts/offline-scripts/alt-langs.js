@@ -519,6 +519,76 @@ const PAGE_GUIDES = {
     route: "rust/upgrader",
     file: "/code-parts/page-guides/rust-upgrader.json",
     canonical: { en: "/rust/upgrader.html", ru: "/ru/rust/upgrader.html" }
+  },
+  offerwalls: {
+    route: "earning/offerwalls",
+    file: "/code-parts/page-guides/offerwalls.json",
+    canonical: { en: "/earning/offerwalls.html", ru: "/ru/earning/offerwalls.html" }
+  },
+  earnByPlay: {
+    route: "earning/earn-by-play",
+    file: "/code-parts/page-guides/earn-by-play.json",
+    canonical: { en: "/earning/earn-by-play.html", ru: "/ru/earning/earn-by-play.html" }
+  },
+  freebiesGiveaways: {
+    route: "freebies/giveaways",
+    file: "/code-parts/page-guides/giveaways.json",
+    canonical: { en: "/freebies/giveaways.html", ru: "/ru/freebies/giveaways.html" }
+  },
+  freebiesBonusesToSale: {
+    route: "freebies/bonuses-to-sale",
+    file: "/code-parts/page-guides/bonuses-to-sale.json",
+    canonical: { en: "/freebies/bonuses-to-sale.html", ru: "/ru/freebies/bonuses-to-sale.html" }
+  },
+  freebiesDailyRewards: {
+    route: "freebies/daily-rewards",
+    file: "/code-parts/page-guides/daily-rewards.json",
+    canonical: { en: "/freebies/daily-rewards.html", ru: "/ru/freebies/daily-rewards.html" }
+  },
+  freebiesDepositBonuses: {
+    route: "freebies/deposit-bonuses",
+    file: "/code-parts/page-guides/deposit-bonuses.json",
+    canonical: { en: "/freebies/deposit-bonuses.html", ru: "/ru/freebies/deposit-bonuses.html" }
+  },
+  freebiesFaucetSystem: {
+    route: "freebies/faucet-system",
+    file: "/code-parts/page-guides/faucet-system.json",
+    canonical: { en: "/freebies/faucet-system.html", ru: "/ru/freebies/faucet-system.html" }
+  },
+  freebiesRainSystem: {
+    route: "freebies/rain-system",
+    file: "/code-parts/page-guides/rain-system.json",
+    canonical: { en: "/freebies/rain-system.html", ru: "/ru/freebies/rain-system.html" }
+  },
+  freebiesRakebackSystem: {
+    route: "freebies/rakeback-system",
+    file: "/code-parts/page-guides/rakeback-system.json",
+    canonical: { en: "/freebies/rakeback-system.html", ru: "/ru/freebies/rakeback-system.html" }
+  },
+  freebiesSignUpBonuses: {
+    route: "freebies/sign-up-bonuses",
+    file: "/code-parts/page-guides/sign-up-bonuses.json",
+    canonical: { en: "/freebies/sign-up-bonuses.html", ru: "/ru/freebies/sign-up-bonuses.html" }
+  },
+  freebiesProgressiveRewards: {
+    route: "freebies/progressive-rewards",
+    file: "/code-parts/page-guides/progressive-rewards.json",
+    canonical: { en: "/freebies/progressive-rewards.html", ru: "/ru/freebies/progressive-rewards.html" }
+  },
+  steamLevelUp: {
+    route: "steam/levelup",
+    file: "/code-parts/page-guides/steam-levelup.json",
+    canonical: { en: "/steam/levelup.html", ru: "/ru/steam/levelup.html" }
+  },
+  steamTopUp: {
+    route: "steam/topup",
+    file: "/code-parts/page-guides/steam-topup.json",
+    canonical: { en: "/steam/topup.html", ru: "/ru/steam/topup.html" }
+  },
+  steamBuyGames: {
+    route: "steam/buy-games",
+    file: "/code-parts/page-guides/steam-buy-games.json",
+    canonical: { en: "/steam/buy-games.html", ru: "/ru/steam/buy-games.html" }
   }
 };
 

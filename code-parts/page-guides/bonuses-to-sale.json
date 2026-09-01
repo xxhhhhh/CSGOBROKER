@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "bonuses-to-sale",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Бонусы к продаже скинов: как сравнивать доплату при продаже CS2 и Rust-предметов",
+        "paragraphs": [
+          "Бонус к продаже увеличивает сумму, которую сервис выплачивает за проданный скин или другой игровой предмет. Чаще всего это дополнительный процент к первой продаже, акция для новых пользователей или временная надбавка, которая активируется по промокоду.",
+          "Такая акция полезна только вместе с базовой оценкой предмета. Если площадка изначально предлагает за скин заметно меньше рынка, дополнительный процент может лишь частично компенсировать разницу. Поэтому сравнивать нужно итоговую сумму выплаты после бонуса, комиссий и конвертации.",
+          "CSGOBROKER собирает такие предложения отдельно от <a href=\"/freebies/deposit-bonuses\">бонусов к пополнению</a> и <a href=\"/freebies/daily-rewards\">ежедневных наград</a>. Для самого процесса продажи можно также сравнить <a href=\"/csgo/sell-skins\">сервисы продажи CS2-скинов</a> и <a href=\"/rust/sell-skins\">сервисы продажи Rust-скинов</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие бонусы к продаже встречаются",
+        "items": [
+          {
+            "title": "Процент к первой продаже",
+            "paragraphs": [
+              "Новый пользователь получает дополнительный процент к стоимости первой подходящей сделки. Обычно действует максимальная сумма бонуса и ограничения по типу предметов или способу выплаты."
+            ]
+          },
+          {
+            "title": "Бонус по промокоду",
+            "paragraphs": [
+              "Доплата активируется кодом до создания сделки. Важно проверить, применяется ли код именно к продаже, а не к пополнению или другой акции."
+            ]
+          },
+          {
+            "title": "Временная повышенная оценка",
+            "paragraphs": [
+              "Сервис может на ограниченный срок увеличить цену выкупа отдельных предметов, игр или категорий. Такой формат нужно сравнивать с обычной рыночной ценой в тот же момент."
+            ]
+          },
+          {
+            "title": "Бонус за продажу определённых игр",
+            "paragraphs": [
+              "Площадка может давать разные проценты для предметов CS2, Rust, Dota 2 или других игр. Условия и ликвидность внутри одного сервиса могут заметно различаться."
+            ]
+          },
+          {
+            "title": "Доплата по уровню или статусу",
+            "paragraphs": [
+              "Постоянным пользователям иногда предлагают повышенный коэффициент продажи или персональную надбавку. Для нового пользователя такие условия обычно недоступны сразу."
+            ]
+          },
+          {
+            "title": "Акция на крупную продажу",
+            "paragraphs": [
+              "Дополнительный процент может включаться только после достижения минимальной стоимости сделки. Не стоит добавлять лишние предметы только ради порога, если итоговая цена становится хуже."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед продажей с бонусом",
+        "intro": "Главный показатель — не размер процента, а фактическая сумма, которую вы получите после завершения сделки.",
+        "items": [
+          {
+            "summary": "Базовая оценка предмета",
+            "body": "Сначала сравните цену без бонуса со Steam и сторонними торговыми площадками. Если исходная оценка сильно занижена, большая надбавка может оказаться менее выгодной, чем обычная продажа на другом сервисе."
+          },
+          {
+            "summary": "Итоговая сумма после бонуса",
+            "body": "Рассчитайте конкретную выплату, а не процент отдельно. Например, дополнительная надбавка имеет смысл только если после неё предложение действительно становится конкурентным."
+          },
+          {
+            "summary": "Максимальная сумма бонуса",
+            "body": "Процент часто действует только до установленного лимита. Для дорогой продажи часть суммы может уже не получать дополнительную надбавку."
+          },
+          {
+            "summary": "Комиссии и способ выплаты",
+            "body": "Банковская карта, криптовалюта, электронный кошелёк или другой способ могут иметь собственную комиссию и курс конвертации. Сравнивайте сумму, которая фактически поступит вам."
+          },
+          {
+            "summary": "Какие предметы участвуют",
+            "body": "Редкие, дешёвые или малоликвидные предметы могут исключаться из акции. Иногда бонус действует только на конкретную игру или отдельный способ продажи."
+          },
+          {
+            "summary": "Срок и условия активации",
+            "body": "Проверьте, когда заканчивается акция, нужен ли промокод и должен ли пользователь быть новым. После создания сделки изменить условия обычно уже нельзя."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает бонусы к продаже",
+        "intro": "Мы рассматриваем надбавку как часть итогового предложения сервиса, а не как самостоятельную рекламную цифру.",
+        "items": [
+          {
+            "summary": "Итоговая конкурентность выплаты",
+            "body": "Сравниваем базовую оценку, бонус и комиссии, чтобы понять, насколько получаемая сумма отличается от других площадок."
+          },
+          {
+            "summary": "Понятность расчёта",
+            "body": "Пользователь должен видеть, какая часть суммы относится к цене предмета, какая — к бонусу и какие удержания применяются."
+          },
+          {
+            "summary": "Ограничения акции",
+            "body": "Учитываем максимальную сумму, минимальный порог, поддерживаемые игры, категории предметов, способы выплаты и срок действия."
+          },
+          {
+            "summary": "Корректность промокода",
+            "body": "Проверяем, активируется ли код до подтверждения сделки и отображается ли повышенная сумма до передачи предметов."
+          },
+          {
+            "summary": "Скорость выплаты",
+            "body": "Доплата имеет меньшую ценность, если после продажи приходится долго ждать проверки или вывода. Учитываем фактический порядок выплаты."
+          },
+          {
+            "summary": "Актуальность предложения",
+            "body": "Проценты и лимиты часто меняются, поэтому CSGOBROKER обновляет рейтинг при изменении условий или завершении акции."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему бонусы к продаже меняются",
+        "paragraphs": [
+          "Сервисы корректируют бонусы в зависимости от маркетинговой кампании, спроса на конкретные предметы и текущей потребности в инвентаре. Акция на один тип скинов может исчезнуть, а на другой — появиться.",
+          "Даже при неизменном проценте итоговая выгода меняется вместе с базовой оценкой предмета. Если рыночная цена выросла, а внутренняя цена сервиса обновилась с задержкой, прежний бонус может стать менее привлекательным.",
+          "Если скорость важнее максимальной цены, сравните <a href=\"/csgo/instant-sell\">быструю продажу CS2-скинов</a> или <a href=\"/rust/instant-sell\">быструю продажу Rust-скинов</a>. Другие типы акций находятся в разделе <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при продаже с бонусом",
+        "intro": "Высокий процент не должен отвлекать от проверки самой сделки и предложения обмена Steam.",
+        "items": [
+          {
+            "summary": "Проверяйте сумму до передачи предметов",
+            "body": "Убедитесь, что бонус уже учтён в расчёте до подтверждения сделки. Не рассчитывайте на обещание поддержки добавить его позже."
+          },
+          {
+            "summary": "Сверяйте предложение обмена Steam",
+            "body": "Перед подтверждением проверьте отправителя или получателя, список предметов и отсутствие лишних позиций."
+          },
+          {
+            "summary": "Используйте официальный промокод",
+            "body": "Не вводите коды на сторонних страницах и не передавайте пароль ради активации. Промокод должен применяться внутри интерфейса сервиса."
+          },
+          {
+            "summary": "Проверяйте способ выплаты",
+            "body": "Уточните минимальную сумму, комиссию, курс и возможную проверку личности до передачи дорогих предметов."
+          },
+          {
+            "summary": "Не спешите из-за таймера",
+            "body": "Ограниченная акция не делает невыгодную цену хорошей. Если предложение заметно ниже рынка, сравните другие площадки до продажи."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о бонусах к продаже",
+        "items": [
+          {
+            "summary": "Что такое бонус к продаже скинов?",
+            "body": "Это дополнительный процент или сумма, которые сервис добавляет к выплате за подходящую продажу."
+          },
+          {
+            "summary": "Бонус начисляется к рыночной цене?",
+            "body": "Не обязательно. Обычно процент применяется к внутренней оценке сервиса, поэтому сначала нужно проверить саму базовую цену."
+          },
+          {
+            "summary": "Нужен ли промокод?",
+            "body": "Некоторые акции требуют код, другие активируются автоматически для новых пользователей или определённых предметов."
+          },
+          {
+            "summary": "Можно ли получить бонус несколько раз?",
+            "body": "Чаще всего бонус на первую продажу действует один раз. Повторные или постоянные акции имеют отдельные правила."
+          },
+          {
+            "summary": "Есть ли максимальная сумма?",
+            "body": "Часто да. Дополнительный процент может применяться только к части сделки до установленного лимита."
+          },
+          {
+            "summary": "Работает ли акция для Rust и CS2 одновременно?",
+            "body": "Зависит от площадки. Некоторые сервисы поддерживают обе игры, но процент и условия могут отличаться."
+          },
+          {
+            "summary": "Как понять, что предложение выгодное?",
+            "body": "Сравните итоговую выплату после бонуса и комиссий с несколькими альтернативными площадками, а не только рекламный процент."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются базовые цены, бонусные проценты, лимиты, способы выплаты, промокоды и доступность акций."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Skin Selling Bonuses: How to Compare Extra Payouts for CS2 and Rust Items",
+        "paragraphs": [
+          "A selling bonus increases the amount a service pays for a sold skin or other game item. It is commonly offered as an extra percentage on the first sale, a new-user promotion, or a temporary markup activated by a promo code.",
+          "The promotion is only useful together with the base item valuation. If a site initially values a skin well below the market, the extra percentage may only partly offset the difference. Compare the final payout after the bonus, fees, and currency conversion.",
+          "CSGOBROKER lists these offers separately from <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a> and <a href=\"/freebies/daily-rewards\">daily rewards</a>. For the underlying selling services, compare <a href=\"/csgo/sell-skins\">CS2 skin selling sites</a> and <a href=\"/rust/sell-skins\">Rust skin selling sites</a>."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Selling Bonuses",
+        "items": [
+          {
+            "title": "First-sale percentage",
+            "paragraphs": [
+              "A new user receives an additional percentage on the first qualifying transaction, usually with a maximum bonus and item or payout restrictions."
+            ]
+          },
+          {
+            "title": "Promo-code selling bonus",
+            "paragraphs": [
+              "The markup is activated with a code before creating the sale. Verify that the code applies to selling rather than deposits or another promotion."
+            ]
+          },
+          {
+            "title": "Temporary improved valuation",
+            "paragraphs": [
+              "A service can raise buyout prices for selected items, games, or categories for a limited period. Compare the temporary price with the current market."
+            ]
+          },
+          {
+            "title": "Game-specific selling bonus",
+            "paragraphs": [
+              "Different percentages may apply to CS2, Rust, Dota 2, or other items. Conditions and liquidity can vary within the same service."
+            ]
+          },
+          {
+            "title": "Level- or status-based bonus",
+            "paragraphs": [
+              "Returning users may receive a higher selling coefficient or personal markup. These conditions are usually not immediately available to new accounts."
+            ]
+          },
+          {
+            "title": "High-value sale promotion",
+            "paragraphs": [
+              "An extra percentage can require a minimum transaction size. Do not add unnecessary items only to reach a threshold if the final price becomes worse."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Selling With a Bonus",
+        "intro": "The main metric is the actual amount received after the transaction rather than the percentage alone.",
+        "items": [
+          {
+            "summary": "Base item valuation",
+            "body": "First compare the price without the bonus against Steam and third-party markets. A strongly undervalued base can make a large markup unattractive."
+          },
+          {
+            "summary": "Final payout after bonus",
+            "body": "Calculate the concrete amount. The extra percentage matters only when the resulting offer is competitive."
+          },
+          {
+            "summary": "Maximum bonus amount",
+            "body": "The percentage often applies only up to a cap, so part of a high-value sale may receive no additional markup."
+          },
+          {
+            "summary": "Fees and payout method",
+            "body": "Cards, crypto, wallets, and other methods can have separate fees and conversion rates. Compare what actually reaches you."
+          },
+          {
+            "summary": "Eligible items",
+            "body": "Rare, cheap, or illiquid items can be excluded. Some bonuses apply only to a specific game or selling method."
+          },
+          {
+            "summary": "Expiry and activation",
+            "body": "Check the deadline, promo-code requirement, and new-user status before creating the sale because terms usually cannot be changed afterward."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Selling Bonuses",
+        "intro": "We treat the markup as part of the final offer rather than an isolated marketing number.",
+        "items": [
+          {
+            "summary": "Final payout competitiveness",
+            "body": "Base valuation, bonus, and fees are combined to compare the actual amount against alternatives."
+          },
+          {
+            "summary": "Calculation transparency",
+            "body": "Users should see which amount is item value, which is the bonus, and which deductions apply."
+          },
+          {
+            "summary": "Promotion restrictions",
+            "body": "We consider caps, minimums, eligible games, item categories, payout methods, and expiry."
+          },
+          {
+            "summary": "Promo-code reliability",
+            "body": "We check whether the code activates before confirmation and whether the higher amount is shown before items are transferred."
+          },
+          {
+            "summary": "Payout speed",
+            "body": "A higher amount is less useful when the sale is followed by a long verification or withdrawal delay."
+          },
+          {
+            "summary": "Offer freshness",
+            "body": "Percentages and caps change frequently, so rankings are updated when terms change or a campaign ends."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Selling Bonuses Change",
+        "paragraphs": [
+          "Services adjust promotions according to marketing campaigns, demand for specific items, and inventory needs. A bonus on one category can disappear while another is introduced.",
+          "Even with the same percentage, the real benefit changes with the base valuation. If market prices move while a service updates slowly, the old bonus can become less competitive.",
+          "If speed matters more than maximum price, compare <a href=\"/csgo/instant-sell\">CS2 quick-selling sites</a> or <a href=\"/rust/instant-sell\">Rust quick-selling sites</a>. Other promotions are in <a href=\"/freebies\">bonuses</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Selling With a Bonus",
+        "intro": "A large percentage should not distract from checking the transaction and Steam Trade Offer.",
+        "items": [
+          {
+            "summary": "Verify the amount before transferring items",
+            "body": "Make sure the bonus is already included before confirming. Do not rely on support promises to add it later."
+          },
+          {
+            "summary": "Check the Steam Trade Offer",
+            "body": "Verify sender or recipient, item list, and the absence of unexpected items before confirmation."
+          },
+          {
+            "summary": "Use official promo codes",
+            "body": "Do not enter codes on third-party pages or share passwords for activation. The code should apply inside the service interface."
+          },
+          {
+            "summary": "Review the payout method",
+            "body": "Check minimums, fees, conversion, and possible identity verification before transferring valuable items."
+          },
+          {
+            "summary": "Do not rush because of a timer",
+            "body": "A limited promotion does not make a poor price good. Compare alternatives when the offer is noticeably below market."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Selling Bonuses",
+        "items": [
+          {
+            "summary": "What is a skin selling bonus?",
+            "body": "An extra percentage or amount added to the payout for a qualifying item sale."
+          },
+          {
+            "summary": "Is the bonus applied to market price?",
+            "body": "Not necessarily. It usually applies to the service's internal valuation, so the base price must be checked first."
+          },
+          {
+            "summary": "Do I need a promo code?",
+            "body": "Some promotions require one, while others activate automatically for new users or selected items."
+          },
+          {
+            "summary": "Can I receive it more than once?",
+            "body": "First-sale bonuses are usually one-time. Recurring promotions follow separate rules."
+          },
+          {
+            "summary": "Is there a maximum amount?",
+            "body": "Often yes. The extra percentage may apply only up to a defined transaction cap."
+          },
+          {
+            "summary": "Does the offer work for both Rust and CS2?",
+            "body": "It depends on the site. A service may support both but use different percentages and conditions."
+          },
+          {
+            "summary": "How do I know whether the offer is good?",
+            "body": "Compare the final payout after bonus and fees across several services rather than looking only at the percentage."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Base valuations, bonus percentages, caps, payout methods, codes, and promotion availability all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Bonos por venta de skins: cómo comparar pagos extra para objetos de CS2 y Rust",
+        "paragraphs": [
+          "Un bono por venta aumenta la cantidad que un servicio paga por una skin u otro objeto. Suele ser un porcentaje adicional en la primera venta, una promoción para nuevos usuarios o una mejora temporal activada con código. Este punto puede cambiar de forma importante el valor real de dos ofertas que a primera vista parecen iguales.",
+          "La promoción solo es útil junto con la valoración base. Si el sitio ofrece inicialmente mucho menos que el mercado, el porcentaje extra puede compensar solo una parte. Compara el pago final después de bono, comisiones y conversión. Conviene comprobarlo antes de comprometer tiempo, objetos o dinero, porque después puede ser difícil modificar la operación.",
+          "CSGOBROKER separa estas ofertas de <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a> y <a href=\"/freebies/daily-rewards\">recompensas diarias</a>. Para vender compara también <a href=\"/csgo/sell-skins\">sitios de venta de CS2</a> y <a href=\"/rust/sell-skins\">sitios de venta de Rust</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de bonos por venta",
+        "items": [
+          {
+            "title": "Porcentaje en la primera venta",
+            "paragraphs": [
+              "El nuevo usuario recibe un porcentaje adicional en la primera operación válida, normalmente con máximo y restricciones. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Bono con código",
+            "paragraphs": [
+              "La mejora se activa antes de crear la venta. Comprueba que el código sea para venta y no para depósito. El valor práctico depende de las reglas completas y no solo del nombre o de la cifra destacada en la promoción."
+            ]
+          },
+          {
+            "title": "Valoración mejorada temporalmente",
+            "paragraphs": [
+              "El servicio puede subir precios de compra para objetos, juegos o categorías durante un periodo limitado. Si la plataforma aplica límites adicionales, deben tenerse en cuenta antes de completar la acción requerida."
+            ]
+          },
+          {
+            "title": "Bono según el juego",
+            "paragraphs": [
+              "CS2, Rust, Dota 2 u otros objetos pueden tener porcentajes diferentes dentro de la misma plataforma. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Bono por nivel o estado",
+            "paragraphs": [
+              "Usuarios habituales pueden recibir mejor coeficiente o mejora personal, normalmente no disponible al crear una cuenta."
+            ]
+          },
+          {
+            "title": "Promoción para ventas grandes",
+            "paragraphs": [
+              "El porcentaje extra puede requerir una operación mínima. No añadas objetos innecesarios solo para alcanzar el umbral."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de vender con bono",
+        "intro": "Lo importante es la cantidad real recibida al terminar, no el porcentaje aislado.",
+        "items": [
+          {
+            "summary": "Valoración base",
+            "body": "Compara el precio sin bono con Steam y mercados externos. Una base baja puede hacer poco útil una gran mejora."
+          },
+          {
+            "summary": "Pago final",
+            "body": "Calcula la cantidad concreta después del bono. El porcentaje importa solo si la oferta final es competitiva."
+          },
+          {
+            "summary": "Máximo del bono",
+            "body": "La mejora puede aplicarse solo hasta un límite y dejar parte de una venta grande sin porcentaje extra."
+          },
+          {
+            "summary": "Comisiones y método de pago",
+            "body": "Tarjeta, cripto, monedero u otros métodos pueden tener comisiones y conversión propias."
+          },
+          {
+            "summary": "Objetos admitidos",
+            "body": "Objetos raros, baratos o poco líquidos pueden quedar fuera. Algunas promociones cubren solo un juego."
+          },
+          {
+            "summary": "Caducidad y activación",
+            "body": "Comprueba plazo, código y requisito de nuevo usuario antes de crear la operación."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los bonos por venta",
+        "intro": "Tratamos la mejora como parte del pago final y no como una cifra publicitaria separada.",
+        "items": [
+          {
+            "summary": "Competitividad del pago",
+            "body": "Combinamos valoración base, bono y comisiones para comparar con alternativas."
+          },
+          {
+            "summary": "Transparencia del cálculo",
+            "body": "Debe verse qué parte es precio del objeto, cuál es el bono y qué deducciones existen."
+          },
+          {
+            "summary": "Restricciones",
+            "body": "Consideramos máximos, mínimos, juegos, categorías, métodos y caducidad."
+          },
+          {
+            "summary": "Fiabilidad del código",
+            "body": "Comprobamos que se active antes de confirmar y que la cantidad mejorada aparezca antes de transferir."
+          },
+          {
+            "summary": "Velocidad de pago",
+            "body": "Una mejora vale menos si después hay una larga espera para verificación o retiro."
+          },
+          {
+            "summary": "Actualidad",
+            "body": "Actualizamos el ranking cuando cambian porcentajes, máximos o termina la promoción."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian los bonos por venta",
+        "paragraphs": [
+          "Los servicios ajustan promociones según campañas, demanda de objetos y necesidades de inventario.",
+          "Incluso con el mismo porcentaje, la ventaja cambia cuando cambia la valoración base o el mercado.",
+          "Si priorizas velocidad, compara <a href=\"/csgo/instant-sell\">venta rápida de CS2</a> o <a href=\"/rust/instant-sell\">venta rápida de Rust</a>. Otras promociones están en <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al vender con bono",
+        "intro": "Un porcentaje alto no debe distraer de comprobar la operación y la oferta de Steam.",
+        "items": [
+          {
+            "summary": "Comprueba la cantidad antes de transferir",
+            "body": "Asegúrate de que el bono ya está incluido antes de confirmar."
+          },
+          {
+            "summary": "Verifica la oferta de Steam",
+            "body": "Comprueba remitente o destinatario y todos los objetos."
+          },
+          {
+            "summary": "Usa códigos oficiales",
+            "body": "No introduzcas códigos en páginas externas ni compartas contraseña."
+          },
+          {
+            "summary": "Revisa el método de pago",
+            "body": "Comprueba mínimos, comisiones, conversión y posible verificación."
+          },
+          {
+            "summary": "No te apresures por un temporizador",
+            "body": "Una promoción limitada no convierte una mala valoración en buena."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre bonos por venta",
+        "items": [
+          {
+            "summary": "¿Qué es un bono por venta de skins?",
+            "body": "Un porcentaje o cantidad extra añadida al pago por una venta válida."
+          },
+          {
+            "summary": "¿Se aplica al precio de mercado?",
+            "body": "No necesariamente; suele aplicarse a la valoración interna del servicio."
+          },
+          {
+            "summary": "¿Necesito código?",
+            "body": "Depende; algunas promociones lo exigen y otras son automáticas."
+          },
+          {
+            "summary": "¿Puedo recibirlo varias veces?",
+            "body": "El bono de primera venta suele ser único; otras campañas tienen sus propias reglas."
+          },
+          {
+            "summary": "¿Existe máximo?",
+            "body": "Con frecuencia sí; el porcentaje puede aplicarse solo hasta un límite."
+          },
+          {
+            "summary": "¿Funciona para Rust y CS2?",
+            "body": "Depende del sitio y los porcentajes pueden ser diferentes."
+          },
+          {
+            "summary": "¿Cómo sé si es buena oferta?",
+            "body": "Compara el pago final después de bono y comisiones con varias alternativas."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian valoraciones, porcentajes, máximos, pagos, códigos y disponibilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Bônus de venda de skins: como comparar pagamentos extras para itens de CS2 e Rust",
+        "paragraphs": [
+          "Um bônus de venda aumenta o valor pago por uma skin ou outro item. Normalmente é porcentagem extra na primeira venda, promoção de novo usuário ou aumento temporário com código. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista.",
+          "A promoção só é útil junto com a avaliação base. Se o serviço já paga abaixo do mercado, o percentual extra pode compensar apenas parte da diferença. Compare o valor final após bônus, taxas e conversão. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação.",
+          "A CSGOBROKER separa essas ofertas de <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a> e <a href=\"/freebies/daily-rewards\">recompensas diárias</a>. Para venda, compare também <a href=\"/csgo/sell-skins\">sites de CS2</a> e <a href=\"/rust/sell-skins\">sites de Rust</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de bônus de venda",
+        "items": [
+          {
+            "title": "Porcentagem na primeira venda",
+            "paragraphs": [
+              "Novo usuário recebe porcentagem extra na primeira operação válida, geralmente com limite. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Bônus com código",
+            "paragraphs": [
+              "O aumento é ativado antes da venda. Confira se o código vale para venda e não para depósito. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Avaliação temporariamente maior",
+            "paragraphs": [
+              "O serviço pode elevar preços de compra de certos itens, jogos ou categorias por tempo limitado. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          },
+          {
+            "title": "Bônus por jogo",
+            "paragraphs": [
+              "CS2, Rust, Dota 2 e outros podem ter percentuais diferentes. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Bônus por nível ou status",
+            "paragraphs": [
+              "Usuários recorrentes podem receber melhor coeficiente, normalmente indisponível no início. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Promoção para venda grande",
+            "paragraphs": [
+              "O bônus pode exigir valor mínimo. Não adicione itens desnecessários apenas para alcançar o limite. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes de vender com bônus",
+        "intro": "O principal é o valor final recebido, não a porcentagem isolada.",
+        "items": [
+          {
+            "summary": "Avaliação base",
+            "body": "Compare o preço sem bônus com Steam e mercados externos. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Pagamento final",
+            "body": "Calcule a quantia concreta depois do bônus e veja se fica competitiva. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação."
+          },
+          {
+            "summary": "Limite máximo",
+            "body": "Parte de uma venda grande pode ficar fora do bônus. Se a informação não estiver clara na interface, leia as regras completas antes de continuar."
+          },
+          {
+            "summary": "Taxas e método de pagamento",
+            "body": "Cartão, cripto, carteira ou outros métodos podem ter taxas e conversão. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Itens elegíveis",
+            "body": "Itens raros, baratos ou pouco líquidos podem ser excluídos. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação."
+          },
+          {
+            "summary": "Validade e ativação",
+            "body": "Confira prazo, código e condição de novo usuário antes da operação. Se a informação não estiver clara na interface, leia as regras completas antes de continuar."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia bônus de venda",
+        "intro": "Tratamos o aumento como parte do pagamento final.",
+        "items": [
+          {
+            "summary": "Competitividade",
+            "body": "Combinamos avaliação base, bônus e taxas. Também verificamos se essa informação aparece para o usuário antes da ação e não apenas depois."
+          },
+          {
+            "summary": "Transparência",
+            "body": "Deve ficar claro o valor do item, bônus e descontos. Esse critério é analisado junto com custos, restrições e possibilidade real de usar ou sacar a recompensa."
+          },
+          {
+            "summary": "Restrições",
+            "body": "Consideramos teto, mínimo, jogos, categorias, métodos e validade. Uma mudança importante nesse ponto pode alterar a posição do site mesmo quando a promoção principal continua igual."
+          },
+          {
+            "summary": "Código",
+            "body": "Verificamos ativação antes da confirmação. Também verificamos se essa informação aparece para o usuário antes da ação e não apenas depois."
+          },
+          {
+            "summary": "Velocidade",
+            "body": "Espera longa reduz o valor do bônus."
+          },
+          {
+            "summary": "Atualidade",
+            "body": "Ranking é atualizado quando percentuais e regras mudam."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que bônus de venda mudam",
+        "paragraphs": [
+          "Serviços ajustam promoções conforme campanha, demanda e necessidade de inventário.",
+          "A vantagem também muda quando a avaliação base ou o mercado muda.",
+          "Para prioridade em velocidade veja <a href=\"/csgo/instant-sell\">venda rápida CS2</a> ou <a href=\"/rust/instant-sell\">venda rápida Rust</a>. Outros tipos estão em <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao vender com bônus",
+        "intro": "Percentual alto não substitui a verificação da operação e da oferta Steam.",
+        "items": [
+          {
+            "summary": "Confira o valor antes da transferência",
+            "body": "O bônus deve aparecer antes da confirmação."
+          },
+          {
+            "summary": "Verifique a oferta Steam",
+            "body": "Confira remetente/destinatário e itens."
+          },
+          {
+            "summary": "Use códigos oficiais",
+            "body": "Não use páginas externas nem compartilhe senha."
+          },
+          {
+            "summary": "Revise o pagamento",
+            "body": "Veja mínimo, taxas, conversão e verificação."
+          },
+          {
+            "summary": "Não corra por causa do prazo",
+            "body": "Promoção limitada não transforma preço ruim em bom."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre bônus de venda",
+        "items": [
+          {
+            "summary": "O que é bônus de venda?",
+            "body": "Porcentagem ou valor extra sobre uma venda elegível."
+          },
+          {
+            "summary": "É aplicado ao preço de mercado?",
+            "body": "Não necessariamente; geralmente usa a avaliação interna."
+          },
+          {
+            "summary": "Preciso de código?",
+            "body": "Depende da promoção."
+          },
+          {
+            "summary": "Posso receber várias vezes?",
+            "body": "O de primeira venda costuma ser único."
+          },
+          {
+            "summary": "Existe limite máximo?",
+            "body": "Frequentemente sim."
+          },
+          {
+            "summary": "Funciona em Rust e CS2?",
+            "body": "Depende do serviço e as condições podem variar."
+          },
+          {
+            "summary": "Como saber se vale a pena?",
+            "body": "Compare o pagamento final após bônus e taxas."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Avaliações, percentuais, limites, pagamentos, códigos e promoções mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Skin Satış Bonusları: CS2 ve Rust Eşyalarında Ek Ödeme Nasıl Karşılaştırılır?",
+        "paragraphs": [
+          "Satış bonusu, satılan skin veya oyun eşyası için servisin ödediği tutarı artırır. Genellikle ilk satışa ek yüzde, yeni kullanıcı kampanyası veya kodla etkinleşen geçici artış şeklindedir. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir.",
+          "Kampanya yalnız temel eşya değerlemesiyle birlikte anlamlıdır. Site başlangıçta piyasanın çok altında fiyat veriyorsa ek yüzde farkın yalnız bir kısmını kapatabilir. Bonus, ücret ve dönüşüm sonrası son ödemeyi karşılaştırın. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir.",
+          "CSGOBROKER bu teklifleri <a href=\"/freebies/deposit-bonuses\">yatırma bonuslarından</a> ve <a href=\"/freebies/daily-rewards\">günlük ödüllerden</a> ayrı listeler. Satış servisleri için <a href=\"/csgo/sell-skins\">CS2</a> ve <a href=\"/rust/sell-skins\">Rust</a> bölümlerini karşılaştırın."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Satış Bonusu Türleri",
+        "items": [
+          {
+            "title": "İlk satış yüzdesi",
+            "paragraphs": [
+              "Yeni kullanıcı ilk uygun işlemde ek yüzde alır; genellikle maksimum bonus ve kısıtlamalar vardır. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Promosyon kodlu satış bonusu",
+            "paragraphs": [
+              "Artış satıştan önce kodla etkinleşir. Kodun yatırma değil satış için olduğundan emin olun. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Geçici yüksek değerleme",
+            "paragraphs": [
+              "Servis belirli eşya, oyun veya kategorilerin alış fiyatını süreli artırabilir. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          },
+          {
+            "title": "Oyuna özel bonus",
+            "paragraphs": [
+              "CS2, Rust, Dota 2 veya diğer oyunlar farklı yüzde alabilir. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Seviye veya statü bonusu",
+            "paragraphs": [
+              "Düzenli kullanıcılar daha yüksek satış katsayısı alabilir; yeni hesaplarda hemen yoktur. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Büyük satış kampanyası",
+            "paragraphs": [
+              "Ek yüzde minimum işlem tutarı isteyebilir. Sırf eşiğe ulaşmak için gereksiz eşya eklemeyin. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Bonuslu Satıştan Önce Neler Karşılaştırılmalı?",
+        "intro": "Temel ölçüt yüzde değil, işlem sonunda elinize geçen gerçek tutardır.",
+        "items": [
+          {
+            "summary": "Temel eşya değeri",
+            "body": "Bonus olmadan fiyatı Steam ve dış pazarlarla karşılaştırın. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir."
+          },
+          {
+            "summary": "Bonus sonrası ödeme",
+            "body": "Somut son tutarı hesaplayın ve rekabetçi olup olmadığına bakın. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir."
+          },
+          {
+            "summary": "Maksimum bonus",
+            "body": "Yüksek değerli satışın bir kısmı üst sınırın dışında kalabilir. Bilgi arayüzde açık değilse devam etmeden önce tam kuralları okuyun."
+          },
+          {
+            "summary": "Ücret ve ödeme yöntemi",
+            "body": "Kart, kripto, cüzdan veya başka yöntemlerde ücret ve kur farklı olabilir. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir."
+          },
+          {
+            "summary": "Uygun eşyalar",
+            "body": "Nadir, ucuz veya düşük likiditeli eşyalar kampanya dışında olabilir. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir."
+          },
+          {
+            "summary": "Süre ve aktivasyon",
+            "body": "Satıştan önce son tarih, kod ve yeni kullanıcı şartını kontrol edin. Bilgi arayüzde açık değilse devam etmeden önce tam kuralları okuyun."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Satış Bonuslarını Nasıl Değerlendirir?",
+        "intro": "Ek yüzdeli reklamı değil, toplam son teklifi değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Son ödeme rekabeti",
+            "body": "Temel değer, bonus ve ücretleri birleştirip alternatiflerle karşılaştırıyoruz. Bu bilginin kullanıcıya işlemden önce açıkça gösterilip gösterilmediğini de değerlendiriyoruz."
+          },
+          {
+            "summary": "Hesaplama şeffaflığı",
+            "body": "Eşya değeri, bonus ve kesintiler ayrı görülmelidir. Kriter; maliyet, kısıtlama ve ödülü gerçekten kullanma veya çekme imkânıyla birlikte ele alınır."
+          },
+          {
+            "summary": "Kısıtlamalar",
+            "body": "Limit, minimum, oyun, kategori, ödeme ve süre dikkate alınır. Bu alandaki önemli değişiklik, ana kampanyanın adı aynı kalsa bile sitenin sıralamasını etkileyebilir."
+          },
+          {
+            "summary": "Kod güvenilirliği",
+            "body": "Kodun onaydan önce çalışıp artan tutarı gösterdiğini kontrol ediyoruz."
+          },
+          {
+            "summary": "Ödeme hızı",
+            "body": "Uzun doğrulama veya çekim beklemesi bonus değerini azaltır."
+          },
+          {
+            "summary": "Güncellik",
+            "body": "Yüzde ve limit değişince sıralama güncellenir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Satış Bonusları Neden Değişir?",
+        "paragraphs": [
+          "Servisler kampanya, eşya talebi ve envanter ihtiyacına göre bonusları değiştirir.",
+          "Aynı yüzde kalsa bile temel değerleme veya piyasa değişince gerçek avantaj değişir.",
+          "Hız öncelikliyse <a href=\"/csgo/instant-sell\">CS2 hızlı satış</a> veya <a href=\"/rust/instant-sell\">Rust hızlı satış</a> karşılaştırın. Diğer teklifler <a href=\"/freebies\">bonuslarda</a>."
+        ]
+      },
+      "safety": {
+        "title": "Bonuslu Satışta Güvenlik",
+        "intro": "Yüksek yüzde işlem ve Steam teklifini kontrol etmenin yerine geçmez.",
+        "items": [
+          {
+            "summary": "Aktarımdan önce tutarı kontrol edin",
+            "body": "Bonus onaydan önce hesaplanmış olmalıdır."
+          },
+          {
+            "summary": "Steam takas teklifini doğrulayın",
+            "body": "Gönderen/alıcı ve tüm eşyaları kontrol edin."
+          },
+          {
+            "summary": "Resmî kod kullanın",
+            "body": "Dış sayfalara kod veya şifre girmeyin."
+          },
+          {
+            "summary": "Ödeme yöntemini inceleyin",
+            "body": "Minimum, ücret, kur ve kimlik doğrulamayı kontrol edin."
+          },
+          {
+            "summary": "Timer yüzünden acele etmeyin",
+            "body": "Süreli kampanya kötü fiyatı iyi yapmaz."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Satış Bonusları Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Skin satış bonusu nedir?",
+            "body": "Uygun satış ödemesine eklenen yüzde veya tutardır."
+          },
+          {
+            "summary": "Piyasa fiyatına mı uygulanır?",
+            "body": "Her zaman değil; genellikle servisin iç değerine uygulanır."
+          },
+          {
+            "summary": "Kod gerekir mi?",
+            "body": "Kampanyaya bağlıdır."
+          },
+          {
+            "summary": "Birden fazla kez alınabilir mi?",
+            "body": "İlk satış bonusu çoğunlukla tek kullanımlıktır."
+          },
+          {
+            "summary": "Maksimum var mı?",
+            "body": "Çoğu kampanyada vardır."
+          },
+          {
+            "summary": "Rust ve CS2 için aynı mı?",
+            "body": "Siteye göre yüzde ve şartlar farklı olabilir."
+          },
+          {
+            "summary": "Teklifin iyi olduğunu nasıl anlarım?",
+            "body": "Bonus ve ücret sonrası son ödemeyi başka sitelerle karşılaştırın."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Değerleme, yüzde, limit, ödeme, kod ve kampanya erişimi değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Skin Selling Bonuses: CS2 और Rust Items पर Extra Payout कैसे Compare करें",
+        "paragraphs": [
+          "Selling bonus sold skin या game item के लिए service payout बढ़ाती है। Common formats first sale percentage, new-user promotion या promo code से activated temporary markup हैं। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।",
+          "Promotion base item valuation के साथ ही useful है। अगर site market से काफी कम base price देती है, extra percentage सिर्फ difference का हिस्सा cover कर सकती है। Final payout after bonus, fees और conversion compare करें। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।",
+          "CSGOBROKER इन्हें <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a> और <a href=\"/freebies/daily-rewards\">daily rewards</a> से अलग रखता है। Selling services के लिए <a href=\"/csgo/sell-skins\">CS2 selling</a> और <a href=\"/rust/sell-skins\">Rust selling</a> देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Common Selling Bonus Types",
+        "items": [
+          {
+            "title": "First-sale percentage",
+            "paragraphs": [
+              "New user first qualifying sale पर extra percentage पाता है, usually maximum cap और restrictions के साथ। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Promo-code selling bonus",
+            "paragraphs": [
+              "Markup sale create करने से पहले code से activate होता है। Verify करें code selling के लिए है, deposit के लिए नहीं। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Temporary improved valuation",
+            "paragraphs": [
+              "Service selected items, games या categories के buyout price limited time के लिए बढ़ा सकती है। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          },
+          {
+            "title": "Game-specific bonus",
+            "paragraphs": [
+              "CS2, Rust, Dota 2 या other games में अलग percentages हो सकती हैं। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Level/status bonus",
+            "paragraphs": [
+              "Returning users higher selling coefficient पा सकते हैं; new accounts में usually immediately available नहीं। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "High-value sale promotion",
+            "paragraphs": [
+              "Extra percentage minimum transaction size require कर सकती है। सिर्फ threshold के लिए unnecessary items add न करें। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Bonus के साथ Sell करने से पहले क्या Compare करें",
+        "intro": "Main metric percentage नहीं, transaction के बाद actual amount received है।",
+        "items": [
+          {
+            "summary": "Base item valuation",
+            "body": "Bonus से पहले price को Steam और third-party markets से compare करें। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।"
+          },
+          {
+            "summary": "Final payout",
+            "body": "Concrete amount after bonus calculate करें और competitiveness देखें। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।"
+          },
+          {
+            "summary": "Maximum bonus",
+            "body": "High-value sale का कुछ हिस्सा cap के बाहर हो सकता है। अगर interface में information clear नहीं है, तो continue करने से पहले complete rules पढ़ें।"
+          },
+          {
+            "summary": "Fees and payout method",
+            "body": "Cards, crypto, wallets और दूसरे methods में fees/conversion अलग हो सकती हैं। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।"
+          },
+          {
+            "summary": "Eligible items",
+            "body": "Rare, cheap या illiquid items excluded हो सकती हैं। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।"
+          },
+          {
+            "summary": "Expiry and activation",
+            "body": "Deadline, promo code और new-user condition sale से पहले check करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Selling Bonuses को कैसे Rate करता है",
+        "intro": "हम markup को final offer का हिस्सा मानते हैं, isolated marketing number नहीं।",
+        "items": [
+          {
+            "summary": "Final payout competitiveness",
+            "body": "Base valuation, bonus और fees combine करके alternatives से compare की जाती हैं।"
+          },
+          {
+            "summary": "Calculation transparency",
+            "body": "Item value, bonus और deductions clear होने चाहिए।"
+          },
+          {
+            "summary": "Restrictions",
+            "body": "Caps, minimums, games, categories, payout methods और expiry शामिल हैं।"
+          },
+          {
+            "summary": "Promo-code reliability",
+            "body": "Code confirmation से पहले active और higher amount visible होना चाहिए।"
+          },
+          {
+            "summary": "Payout speed",
+            "body": "Long verification या withdrawal delay bonus value कम करती है।"
+          },
+          {
+            "summary": "Offer freshness",
+            "body": "Percentages और caps बदलने पर ranking update होती है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Selling Bonuses क्यों बदलती हैं",
+        "paragraphs": [
+          "Services marketing campaigns, item demand और inventory needs के हिसाब से bonuses adjust करती हैं।",
+          "Same percentage पर भी base valuation या market बदलने से real benefit बदलती है।",
+          "Speed priority हो तो <a href=\"/csgo/instant-sell\">CS2 quick selling</a> या <a href=\"/rust/instant-sell\">Rust quick selling</a> compare करें। बाकी promotions <a href=\"/freebies\">bonuses</a> में हैं।"
+        ]
+      },
+      "safety": {
+        "title": "Bonus के साथ Sell करते समय Safety",
+        "intro": "High percentage transaction और Steam Trade Offer check करने की जरूरत खत्म नहीं करती।",
+        "items": [
+          {
+            "summary": "Transfer से पहले amount verify करें",
+            "body": "Bonus confirmation से पहले included होनी चाहिए।"
+          },
+          {
+            "summary": "Steam Trade Offer check करें",
+            "body": "Sender/recipient और सभी items verify करें।"
+          },
+          {
+            "summary": "Official promo code use करें",
+            "body": "Third-party page पर code/password न दें।"
+          },
+          {
+            "summary": "Payout method review करें",
+            "body": "Minimums, fees, conversion और possible identity check देखें।"
+          },
+          {
+            "summary": "Timer की वजह से rush न करें",
+            "body": "Limited promotion poor base price को good नहीं बनाती।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Selling Bonuses के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Skin selling bonus क्या है?",
+            "body": "Qualifying sale payout पर added extra percentage या amount।"
+          },
+          {
+            "summary": "क्या market price पर apply होती है?",
+            "body": "जरूरी नहीं; usually service internal valuation पर।"
+          },
+          {
+            "summary": "Promo code चाहिए?",
+            "body": "Promotion पर depend करता है।"
+          },
+          {
+            "summary": "Multiple times मिल सकती है?",
+            "body": "First-sale bonus आम तौर पर one-time होती है।"
+          },
+          {
+            "summary": "Maximum amount होता है?",
+            "body": "अक्सर हाँ।"
+          },
+          {
+            "summary": "Rust और CS2 दोनों पर काम करती है?",
+            "body": "Site पर depend करता है; percentages अलग हो सकती हैं।"
+          },
+          {
+            "summary": "Good offer कैसे पहचानें?",
+            "body": "Bonus और fees के बाद final payout कई alternatives से compare करें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Base values, bonus percentages, caps, payout methods, codes और availability बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

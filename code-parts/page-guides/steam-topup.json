@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "steam-topup",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Пополнение баланса Steam: способы, комиссии и что проверить перед оплатой",
+        "paragraphs": [
+          "Сервисы пополнения Steam позволяют добавить средства в кошелёк аккаунта через сторонний платёжный интерфейс. Пользователь обычно указывает логин Steam, выбирает сумму и способ оплаты, после чего сервис проводит пополнение или выдаёт цифровой код и показывает статус операции.",
+          "Главное отличие между сервисами — не только комиссия. Важны поддерживаемая валюта аккаунта, минимальная и максимальная сумма, курс конвертации, способ доставки средств, скорость зачисления и то, какие платёжные методы доступны в конкретной стране.",
+          "CSGOBROKER сравнивает такие площадки отдельно от <a href=\"/steam/buy-games\">магазинов игр</a> и <a href=\"/steam/levelup\">сервисов повышения уровня Steam</a>. Если исходные средства находятся в скинах, дополнительно можно сравнить <a href=\"/csgo/sell-skins\">сервисы продажи CS2-скинов</a>, а уже затем выбрать удобный способ пополнения кошелька."
+        ]
+      },
+      "categories": {
+        "title": "Какие способы пополнения Steam встречаются",
+        "items": [
+          {
+            "title": "Пополнение по логину Steam",
+            "paragraphs": [
+              "Пользователь указывает логин аккаунта без передачи пароля и оплачивает выбранную сумму. Сервис проводит операцию на указанный аккаунт; перед оплатой важно проверить правильность логина, регион и валюту."
+            ]
+          },
+          {
+            "title": "Коды пополнения Steam",
+            "paragraphs": [
+              "Площадка продаёт цифровой код на определённый номинал, который пользователь активирует самостоятельно. Перед покупкой нужно проверить региональные ограничения и валюту кода."
+            ]
+          },
+          {
+            "title": "Цифровые подарочные карты",
+            "paragraphs": [
+              "Некоторые магазины продают цифровые подарочные карты Steam. Они могут иметь фиксированные номиналы и ограничения по стране получателя или валюте аккаунта."
+            ]
+          },
+          {
+            "title": "Пополнение банковской картой или локальными платежами",
+            "paragraphs": [
+              "Внешний сервис может принимать карты, быстрые банковские переводы и другие местные способы оплаты. Сравнивайте не только комиссию сервиса, но и возможную комиссию платёжного провайдера."
+            ]
+          },
+          {
+            "title": "Пополнение криптовалютой",
+            "paragraphs": [
+              "Часть площадок принимает криптовалюту и затем зачисляет эквивалент в Steam. Итоговая сумма зависит от курса, сетевой комиссии и внутренней конвертации сервиса."
+            ]
+          },
+          {
+            "title": "Пополнение через продажу или обмен игровых предметов",
+            "paragraphs": [
+              "Некоторые сервисы позволяют сначала обменять или продать игровые предметы, а полученную стоимость направить на Steam-товары или пополнение. В этом случае особенно важна исходная оценка предметов, а не только комиссия за зачисление."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать перед пополнением Steam",
+        "intro": "Два сервиса с одинаковой комиссией могут давать разную итоговую сумму из-за курса, дополнительных сборов и региональных ограничений.",
+        "items": [
+          {
+            "summary": "Итоговая сумма на кошельке",
+            "body": "Смотрите, сколько фактически будет зачислено в Steam после комиссии и конвертации. Полезно сравнивать итоговую сумму для одного и того же платежа, а не только заявленный процент комиссии."
+          },
+          {
+            "summary": "Курс валюты",
+            "body": "Если платёж и кошелёк Steam используют разные валюты, проверьте курс конвертации. Небольшая разница в курсе на крупном пополнении может быть важнее фиксированной комиссии."
+          },
+          {
+            "summary": "Минимум и максимум",
+            "body": "У сервисов могут быть разные пределы одной операции и суточные ограничения. Проверьте их до оплаты, особенно если нужна нестандартная сумма."
+          },
+          {
+            "summary": "Поддерживаемые регионы",
+            "body": "Способ пополнения, код или подарочная карта могут работать только для определённых стран и валют. Неподходящий регион может привести к задержке или невозможности активации."
+          },
+          {
+            "summary": "Скорость зачисления",
+            "body": "Часть операций проходит почти сразу, другие требуют дополнительной обработки. Сервис должен заранее показывать ориентировочный срок и статус платежа."
+          },
+          {
+            "summary": "Возврат и поддержка",
+            "body": "При ошибке логина, отклонённом платеже или задержке должны быть понятны условия возврата, необходимые доказательства и способ связаться с поддержкой."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает сервисы пополнения Steam",
+        "intro": "Мы сравниваем фактическую стоимость пополнения и удобство всей операции, а не только рекламную комиссию.",
+        "items": [
+          {
+            "summary": "Чистая стоимость пополнения",
+            "body": "Считаем разницу между суммой оплаты и тем, сколько пользователь реально получает в кошельке Steam."
+          },
+          {
+            "summary": "Прозрачность курса и комиссии",
+            "body": "До подтверждения платежа должны быть видны комиссия, курс, итоговая сумма и возможные дополнительные сборы."
+          },
+          {
+            "summary": "Способы оплаты",
+            "body": "Учитываем карты, локальные банковские методы, криптовалюты и другие доступные варианты вместе с их ограничениями."
+          },
+          {
+            "summary": "Скорость и стабильность",
+            "body": "Оцениваем фактическое время зачисления, понятность статуса операции и частоту задержек."
+          },
+          {
+            "summary": "Региональная совместимость",
+            "body": "Проверяем, насколько ясно сервис объясняет валюты аккаунта, поддерживаемые страны и ограничения кодов или подарочных карт."
+          },
+          {
+            "summary": "Поддержка проблемных платежей",
+            "body": "Важны порядок обращения, скорость ответа и понятные действия при неправильном логине, задержке или неактивируемом коде."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему комиссии и способы пополнения меняются",
+        "paragraphs": [
+          "Платёжные провайдеры меняют комиссии, доступность карт, банковских методов и криптовалютных каналов. Из-за этого один и тот же сервис может стать выгоднее или дороже без изменения основной механики пополнения.",
+          "Курсы валют и региональные правила Steam также меняют итоговую стоимость. Предложение, выгодное для одного региона, может быть менее подходящим для аккаунта с другой валютой.",
+          "Если цель — купить конкретную игру, иногда полезно сравнить прямую покупку на <a href=\"/steam/buy-games\">сторонних магазинах игр</a> с пополнением Steam и покупкой внутри самого магазина. Для карточек и уровня используйте <a href=\"/steam/levelup\">сервисы повышения уровня</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при пополнении Steam",
+        "intro": "Для обычного пополнения стороннему сервису не нужен пароль Steam или код двухфакторной защиты.",
+        "items": [
+          {
+            "summary": "Проверяйте адрес сайта",
+            "body": "Перед оплатой убедитесь, что открыта официальная страница сервиса, особенно если переход был из рекламы, мессенджера или поисковой выдачи."
+          },
+          {
+            "summary": "Не передавайте пароль Steam",
+            "body": "Для пополнения по логину достаточно идентификатора аккаунта. Пароль, код Steam Guard и резервные коды не должны передаваться сотрудникам или сторонним формам."
+          },
+          {
+            "summary": "Проверяйте логин и регион до оплаты",
+            "body": "Ошибка в логине или неподходящая валюта могут усложнить возврат. Перепроверьте данные до подтверждения платежа."
+          },
+          {
+            "summary": "Не покупайте код без проверки региона",
+            "body": "коды пополнения Steam и подарочные карты могут иметь ограничения. Убедитесь, что продукт совместим с вашим аккаунтом."
+          },
+          {
+            "summary": "Сохраняйте чек и номер операции",
+            "body": "До фактического зачисления сохраните подтверждение оплаты, идентификатор заказа и сумму. Это упростит обращение в поддержку."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о пополнении Steam",
+        "items": [
+          {
+            "summary": "Что такое сервис пополнения Steam?",
+            "body": "Это сторонняя площадка, которая принимает оплату и помогает зачислить средства на кошелёк Steam или продаёт подходящий код/подарочную карту."
+          },
+          {
+            "summary": "Нужно ли передавать пароль?",
+            "body": "Нет. Для пополнения пароль и код Steam Guard не требуются."
+          },
+          {
+            "summary": "Почему сумма в Steam меньше суммы оплаты?",
+            "body": "Разница может складываться из комиссии сервиса, курса валюты, сетевого или платёжного сбора."
+          },
+          {
+            "summary": "Что лучше: прямое пополнение или код пополнения Steam?",
+            "body": "Зависит от региона, доступности номинала, комиссии и совместимости кода с валютой аккаунта."
+          },
+          {
+            "summary": "Можно ли пополнить Steam криптовалютой?",
+            "body": "На некоторых сторонних сервисах — да. Сравнивайте курс, сетевую комиссию и итоговую сумму зачисления."
+          },
+          {
+            "summary": "Можно ли использовать скины для пополнения?",
+            "body": "Некоторые площадки позволяют обменять или продать игровые предметы и затем использовать полученную стоимость. Сравнивайте внутреннюю оценку с рынком."
+          },
+          {
+            "summary": "Что делать, если деньги не пришли?",
+            "body": "Проверьте статус заказа, правильность логина и заявленный срок обработки, затем обратитесь в поддержку с номером операции."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются комиссии, курсы, платёжные методы, региональная доступность, скорость зачисления и качество поддержки."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Steam Wallet Top-Up Services: Methods, Fees, and What to Check Before Paying",
+        "paragraphs": [
+          "Steam top-up services let users add funds to a Steam Wallet through a third-party payment interface. The user normally provides a Steam login, selects an amount and payment method, and the service either processes the wallet funding directly or delivers a digital code with order status.",
+          "The difference between services is not only the stated fee. Account currency, minimum and maximum amounts, conversion rate, delivery method, crediting speed, and payment availability in the user's country all affect the final result.",
+          "CSGOBROKER compares these platforms separately from <a href=\"/steam/buy-games\">game stores</a> and <a href=\"/steam/levelup\">Steam leveling services</a>. If the starting value is held in skins, users can also compare <a href=\"/csgo/sell-skins\">CS2 skin selling services</a> before choosing a wallet-funding method."
+        ]
+      },
+      "categories": {
+        "title": "Common Ways to Top Up Steam",
+        "items": [
+          {
+            "title": "Top-up by Steam login",
+            "paragraphs": [
+              "The user provides the account login without sharing the password and pays the selected amount. Check the login, account region, and currency before confirming."
+            ]
+          },
+          {
+            "title": "Steam Wallet codes",
+            "paragraphs": [
+              "The platform sells a digital code for a fixed denomination that the user redeems manually. Regional restrictions and code currency should be checked before purchase."
+            ]
+          },
+          {
+            "title": "Digital Steam gift cards",
+            "paragraphs": [
+              "Some stores sell digital Steam gift cards with fixed denominations. Eligibility can depend on the recipient's country or wallet currency."
+            ]
+          },
+          {
+            "title": "Bank cards and local payment methods",
+            "paragraphs": [
+              "Third-party services can accept cards, instant bank payments, and local payment systems. Compare service fees together with any provider-side charges."
+            ]
+          },
+          {
+            "title": "Cryptocurrency top-ups",
+            "paragraphs": [
+              "Some platforms accept cryptocurrency and fund the Steam balance in an equivalent amount. The final value depends on exchange rate, network fees, and internal conversion."
+            ]
+          },
+          {
+            "title": "Using game items as source value",
+            "paragraphs": [
+              "Some services let users sell or exchange game items and apply the resulting value toward Steam-related products or wallet funding. The item valuation matters as much as the funding fee."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Before Funding Steam",
+        "intro": "Two services with the same advertised fee can produce different wallet amounts because of exchange rates, extra charges, and regional rules.",
+        "items": [
+          {
+            "summary": "Final wallet amount",
+            "body": "Compare how much actually reaches Steam after fees and conversion. The final credited amount for the same payment is more useful than a standalone percentage."
+          },
+          {
+            "summary": "Exchange rate",
+            "body": "When the payment and Steam Wallet use different currencies, review the conversion rate. On larger top-ups, a small rate difference can outweigh a fixed fee."
+          },
+          {
+            "summary": "Minimum and maximum amounts",
+            "body": "Services can set different transaction limits and daily caps. Check them before payment, especially for unusual amounts."
+          },
+          {
+            "summary": "Supported regions",
+            "body": "A funding method, wallet code, or gift card can be limited to specific countries or currencies. An incompatible region can cause delays or failed redemption."
+          },
+          {
+            "summary": "Crediting speed",
+            "body": "Some operations are near-instant while others require additional processing. The site should show an estimated time and clear order status."
+          },
+          {
+            "summary": "Refunds and support",
+            "body": "If the login is wrong, payment is rejected, or delivery is delayed, refund conditions and the support process should be easy to understand."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Steam Top-Up Services",
+        "intro": "We compare the effective cost and the complete funding experience rather than ranking only the advertised commission.",
+        "items": [
+          {
+            "summary": "Net top-up value",
+            "body": "We compare the payment amount with the value actually credited to the Steam Wallet."
+          },
+          {
+            "summary": "Fee and rate transparency",
+            "body": "Commission, exchange rate, final amount, and extra charges should be visible before payment confirmation."
+          },
+          {
+            "summary": "Payment options",
+            "body": "Cards, local banking methods, cryptocurrency, and other payment channels are evaluated together with their limitations."
+          },
+          {
+            "summary": "Speed and reliability",
+            "body": "We review actual crediting time, order-status clarity, and the frequency of delays."
+          },
+          {
+            "summary": "Regional compatibility",
+            "body": "The service should clearly explain supported account currencies, countries, and restrictions for codes or gift cards."
+          },
+          {
+            "summary": "Problem-payment support",
+            "body": "We consider the claim process and response quality when a login is incorrect, a top-up is delayed, or a code cannot be redeemed."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Fees and Funding Methods Change",
+        "paragraphs": [
+          "Payment providers change card support, banking fees, local methods, and cryptocurrency channels. A service can therefore become cheaper or more expensive even when its basic top-up process stays the same.",
+          "Exchange rates and Steam regional rules also affect the final value. An offer that is efficient in one region may be less suitable for an account using another wallet currency.",
+          "If the goal is one specific game, it can be useful to compare a direct purchase from <a href=\"/steam/buy-games\">third-party game stores</a> with funding Steam and buying inside the store. For profile cards and levels, see <a href=\"/steam/levelup\">Steam leveling services</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Topping Up Steam",
+        "intro": "A normal third-party top-up does not require your Steam password or two-factor authentication code.",
+        "items": [
+          {
+            "summary": "Verify the website address",
+            "body": "Confirm that you are using the service's official domain, especially after following an advertisement, messenger link, or search result."
+          },
+          {
+            "summary": "Never provide your Steam password",
+            "body": "A login identifier is enough for login-based funding. Passwords, Steam Guard codes, and backup codes should not be shared with staff or forms."
+          },
+          {
+            "summary": "Check login and region before paying",
+            "body": "A login typo or incompatible currency can complicate refunds. Review all account details before payment."
+          },
+          {
+            "summary": "Check code region before buying",
+            "body": "Steam Wallet codes and gift cards can carry regional restrictions. Make sure the product is compatible with your account."
+          },
+          {
+            "summary": "Keep the receipt and order number",
+            "body": "Save payment confirmation, order ID, and amount until the balance has actually been credited."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Steam Top-Ups",
+        "items": [
+          {
+            "summary": "What is a Steam top-up service?",
+            "body": "A third-party platform that accepts payment and helps add value to a Steam Wallet or sells a compatible wallet code or gift card."
+          },
+          {
+            "summary": "Do I need to provide my password?",
+            "body": "No. Steam passwords and Steam Guard codes are not required for a normal top-up."
+          },
+          {
+            "summary": "Why is the Steam amount lower than my payment?",
+            "body": "The difference can come from service commission, currency conversion, network fees, or payment-provider charges."
+          },
+          {
+            "summary": "Which is better: direct funding or a Steam Wallet code?",
+            "body": "It depends on region, denomination availability, fees, and code compatibility with the account currency."
+          },
+          {
+            "summary": "Can I top up Steam with cryptocurrency?",
+            "body": "Some third-party services support it. Compare the exchange rate, network fee, and final credited value."
+          },
+          {
+            "summary": "Can skins be used for Steam funding?",
+            "body": "Some platforms let users sell or exchange game items and then apply the value toward Steam products or funding. Compare item valuation with the broader market."
+          },
+          {
+            "summary": "What if the money does not arrive?",
+            "body": "Check order status, login accuracy, and the stated processing time, then contact support with the transaction ID."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Fees, exchange rates, payment methods, regional support, crediting speed, and support quality can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Recarga de saldo Steam: métodos, comisiones y qué comprobar antes de pagar",
+        "paragraphs": [
+          "Los servicios de recarga Steam permiten añadir saldo al monedero mediante una interfaz de pago externa. Normalmente el usuario indica su login de Steam, elige cantidad y método, y el servicio realiza la recarga o entrega un código digital con el estado del pedido.",
+          "La diferencia no está solo en la comisión. Importan moneda de la cuenta, mínimos y máximos, tipo de cambio, método de entrega, velocidad y disponibilidad de pagos en cada país. Además, una comisión baja puede quedar anulada por un tipo de cambio peor que el de otro servicio.",
+          "CSGOBROKER compara estas plataformas por separado de <a href=\"/steam/buy-games\">tiendas de juegos</a> y <a href=\"/steam/levelup\">servicios para subir el nivel Steam</a>. Si el valor está en skins, también puedes comparar <a href=\"/csgo/sell-skins\">servicios para vender skins de CS2</a>."
+        ]
+      },
+      "categories": {
+        "title": "Formas habituales de recargar Steam",
+        "items": [
+          {
+            "title": "Recarga por login de Steam",
+            "paragraphs": [
+              "El usuario indica el login sin compartir contraseña y paga la cantidad. Revisa login, región y moneda antes de confirmar. El servicio no debería pedir la contraseña para realizar este tipo de operación."
+            ]
+          },
+          {
+            "title": "Códigos Steam Wallet",
+            "paragraphs": [
+              "La plataforma vende un código digital de importe fijo para activarlo manualmente. Comprueba región y moneda del código."
+            ]
+          },
+          {
+            "title": "Tarjetas regalo digitales",
+            "paragraphs": [
+              "Algunas tiendas venden tarjetas regalo Steam con importes fijos y posibles restricciones por país o moneda del destinatario."
+            ]
+          },
+          {
+            "title": "Tarjeta bancaria y pagos locales",
+            "paragraphs": [
+              "Los servicios externos pueden aceptar tarjetas, transferencias rápidas y métodos locales. Suma comisiones del sitio y del proveedor."
+            ]
+          },
+          {
+            "title": "Recarga con criptomonedas",
+            "paragraphs": [
+              "Algunas plataformas aceptan cripto y convierten su valor en saldo Steam. El resultado depende del cambio, comisión de red y conversión interna."
+            ]
+          },
+          {
+            "title": "Uso de objetos de juego como valor",
+            "paragraphs": [
+              "Algunos servicios permiten vender o intercambiar objetos y aplicar el valor a productos o saldo Steam. La valoración del objeto es clave."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar antes de recargar Steam",
+        "intro": "Dos servicios con la misma comisión pueden acreditar cantidades distintas por el cambio, cargos adicionales y reglas regionales.",
+        "items": [
+          {
+            "summary": "Cantidad final en el monedero",
+            "body": "Compara cuánto llega realmente a Steam después de comisión y conversión. Una comparación útil usa la misma cantidad de pago y anota el saldo final que recibe la cuenta."
+          },
+          {
+            "summary": "Tipo de cambio",
+            "body": "Si pago y monedero usan monedas diferentes, revisa la tasa aplicada. Una pequeña diferencia puede superar una comisión fija. En cantidades grandes, incluso una diferencia pequeña de cambio puede superar una tarifa fija."
+          },
+          {
+            "summary": "Mínimo y máximo",
+            "body": "Puede haber límites por operación y por día. Revísalos antes de pagar."
+          },
+          {
+            "summary": "Regiones compatibles",
+            "body": "Métodos, códigos y tarjetas pueden estar limitados a países o monedas específicas."
+          },
+          {
+            "summary": "Velocidad de acreditación",
+            "body": "Algunas operaciones son inmediatas y otras requieren procesamiento. El sitio debería mostrar plazo y estado."
+          },
+          {
+            "summary": "Reembolsos y soporte",
+            "body": "Ante login erróneo, pago rechazado o retraso, las reglas y el proceso de soporte deben ser claros."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa las recargas Steam",
+        "intro": "Comparamos el coste efectivo y toda la operación, no solo la comisión publicitaria.",
+        "items": [
+          {
+            "summary": "Valor neto de la recarga",
+            "body": "Comparamos lo pagado con lo que realmente se acredita en Steam."
+          },
+          {
+            "summary": "Transparencia de comisión y cambio",
+            "body": "Comisión, tasa, cantidad final y cargos deben verse antes de confirmar."
+          },
+          {
+            "summary": "Métodos de pago",
+            "body": "Valoramos tarjetas, banca local, cripto y otros canales con sus límites."
+          },
+          {
+            "summary": "Rapidez y estabilidad",
+            "body": "Revisamos tiempo real, estado del pedido y frecuencia de retrasos. También valoramos si el estado permite distinguir claramente un pago pendiente de uno completado."
+          },
+          {
+            "summary": "Compatibilidad regional",
+            "body": "Debe explicarse claramente qué monedas, países, códigos y tarjetas son compatibles."
+          },
+          {
+            "summary": "Soporte en pagos problemáticos",
+            "body": "Valoramos el proceso cuando hay login incorrecto, retraso o código no activable."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las comisiones y métodos",
+        "paragraphs": [
+          "Los proveedores modifican comisiones, tarjetas, banca local y canales cripto. El mismo servicio puede volverse más caro o más barato sin cambiar su proceso básico.",
+          "Los tipos de cambio y reglas regionales de Steam también cambian el resultado. Una oferta útil para una región puede ser peor para otra moneda.",
+          "Si solo quieres un juego concreto, compara la compra directa en <a href=\"/steam/buy-games\">tiendas externas</a> con recargar Steam. Para nivel y cromos usa <a href=\"/steam/levelup\">servicios de nivel Steam</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al recargar Steam",
+        "intro": "Una recarga normal no necesita contraseña Steam ni código de autenticación de dos factores.",
+        "items": [
+          {
+            "summary": "Comprueba el dominio",
+            "body": "Asegúrate de estar en la web oficial, especialmente tras anuncios o enlaces de mensajería."
+          },
+          {
+            "summary": "No entregues la contraseña",
+            "body": "Para recarga por login basta el identificador. No compartas contraseña, Steam Guard ni códigos de recuperación."
+          },
+          {
+            "summary": "Comprueba login y región",
+            "body": "Un error puede complicar el reembolso, así que revisa los datos antes del pago."
+          },
+          {
+            "summary": "Comprueba la región del código",
+            "body": "Códigos y tarjetas Steam pueden tener restricciones regionales."
+          },
+          {
+            "summary": "Guarda recibo y pedido",
+            "body": "Conserva comprobante, identificador y cantidad hasta que el saldo aparezca. Estos datos facilitan una reclamación si el proveedor de pago confirma el cargo pero Steam aún no refleja el saldo."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre recargas Steam",
+        "items": [
+          {
+            "summary": "¿Qué es un servicio de recarga Steam?",
+            "body": "Una plataforma externa que acepta pago y añade valor al monedero o vende un código/tarjeta compatible."
+          },
+          {
+            "summary": "¿Hay que dar la contraseña?",
+            "body": "No. Una recarga normal no necesita contraseña ni Steam Guard."
+          },
+          {
+            "summary": "¿Por qué recibo menos de lo pagado?",
+            "body": "Por comisión, cambio de moneda, red o proveedor de pago."
+          },
+          {
+            "summary": "¿Qué es mejor: recarga directa o código?",
+            "body": "Depende de región, importe, comisión y compatibilidad con la moneda de la cuenta."
+          },
+          {
+            "summary": "¿Se puede recargar con cripto?",
+            "body": "En algunos servicios sí. Compara cambio, comisión de red y cantidad final."
+          },
+          {
+            "summary": "¿Se pueden usar skins?",
+            "body": "Algunas plataformas permiten vender o intercambiar objetos y usar el valor obtenido. Compara la valoración con el mercado."
+          },
+          {
+            "summary": "¿Qué hago si no llega?",
+            "body": "Revisa estado, login y plazo; después contacta con soporte usando el número de operación."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian comisiones, cambio, pagos, regiones, rapidez y soporte."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Recarga de saldo Steam: métodos, taxas e o que verificar antes do pagamento",
+        "paragraphs": [
+          "Serviços de recarga Steam permitem adicionar valor à carteira por uma interface de pagamento externa. Normalmente o usuário informa o login Steam, escolhe valor e método, e o serviço processa a recarga ou entrega um código digital com status do pedido.",
+          "A diferença não é apenas a taxa. Moeda da conta, mínimo e máximo, câmbio, método de entrega, velocidade e meios de pagamento disponíveis no país afetam o resultado. Além disso, uma taxa pequena pode ser anulada por um câmbio pior do que o utilizado por outro serviço.",
+          "A CSGOBROKER compara essas plataformas separadamente de <a href=\"/steam/buy-games\">lojas de jogos</a> e <a href=\"/steam/levelup\">serviços de nível Steam</a>. Se o valor inicial está em skins, também é possível comparar <a href=\"/csgo/sell-skins\">serviços de venda de skins CS2</a>."
+        ]
+      },
+      "categories": {
+        "title": "Formas comuns de recarregar Steam",
+        "items": [
+          {
+            "title": "Recarga pelo login Steam",
+            "paragraphs": [
+              "O usuário informa o login sem compartilhar senha e paga o valor escolhido. Confira login, região e moeda antes de confirmar. Esse método não deve exigir a senha da conta, apenas o identificador necessário para direcionar a recarga."
+            ]
+          },
+          {
+            "title": "Códigos Steam Wallet",
+            "paragraphs": [
+              "A plataforma vende um código digital de valor fixo para ativação manual. Confira região e moeda. Antes de comprar, confirme também se o código pode ser ativado na moeda atual da carteira."
+            ]
+          },
+          {
+            "title": "Cartões-presente digitais",
+            "paragraphs": [
+              "Algumas lojas vendem cartões Steam com valores fixos e possíveis restrições por país ou moeda."
+            ]
+          },
+          {
+            "title": "Cartão bancário e pagamentos locais",
+            "paragraphs": [
+              "Serviços podem aceitar cartões, transferências rápidas e métodos locais. Compare taxas do site e do provedor."
+            ]
+          },
+          {
+            "title": "Recarga com criptomoeda",
+            "paragraphs": [
+              "Algumas plataformas aceitam cripto e convertem para saldo Steam. O resultado depende de câmbio, taxa de rede e conversão interna. Em cripto, a cotação pode mudar entre a criação e a confirmação do pagamento, dependendo do serviço."
+            ]
+          },
+          {
+            "title": "Uso de itens de jogo",
+            "paragraphs": [
+              "Alguns serviços permitem vender ou trocar itens e aplicar o valor a produtos ou saldo Steam. A avaliação dos itens é essencial."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar antes da recarga",
+        "intro": "Dois serviços com a mesma taxa podem entregar valores diferentes por câmbio, cobranças adicionais e regras regionais.",
+        "items": [
+          {
+            "summary": "Valor final na carteira",
+            "body": "Compare quanto realmente chega à Steam depois de taxa e conversão. Uma comparação prática usa o mesmo valor de pagamento e registra quanto efetivamente chega à carteira."
+          },
+          {
+            "summary": "Câmbio",
+            "body": "Se pagamento e carteira usam moedas diferentes, confira a taxa aplicada. Em recargas maiores, uma pequena diferença de câmbio pode pesar mais do que uma tarifa fixa."
+          },
+          {
+            "summary": "Mínimo e máximo",
+            "body": "Podem existir limites por operação e por dia."
+          },
+          {
+            "summary": "Regiões suportadas",
+            "body": "Métodos, códigos e cartões podem funcionar apenas em países ou moedas específicos. Leia qualquer lista de países ou moedas excluídos antes de pagar por um código."
+          },
+          {
+            "summary": "Velocidade",
+            "body": "Algumas operações são quase imediatas e outras passam por processamento. O status deve ser visível. O status deve permitir diferenciar claramente uma operação pendente de uma já concluída."
+          },
+          {
+            "summary": "Reembolso e suporte",
+            "body": "Login errado, pagamento recusado ou atraso devem ter processo claro de suporte e devolução."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia recargas Steam",
+        "intro": "Comparamos o custo efetivo e a operação inteira, não apenas a taxa anunciada.",
+        "items": [
+          {
+            "summary": "Valor líquido",
+            "body": "Comparamos o pagamento com o valor realmente creditado na carteira Steam."
+          },
+          {
+            "summary": "Transparência de taxa e câmbio",
+            "body": "Taxa, conversão, valor final e cobranças extras devem aparecer antes da confirmação. Também verificamos se o valor final é atualizado antes da confirmação quando a cotação muda."
+          },
+          {
+            "summary": "Pagamentos",
+            "body": "Cartões, bancos locais, cripto e outros canais são avaliados com seus limites."
+          },
+          {
+            "summary": "Rapidez e estabilidade",
+            "body": "Analisamos tempo real, clareza do status e frequência de atrasos. A estabilidade importa tanto quanto a velocidade: uma recarga rápida, mas frequentemente atrasada, é menos previsível."
+          },
+          {
+            "summary": "Compatibilidade regional",
+            "body": "O serviço deve explicar moedas, países e limitações de códigos/cartões."
+          },
+          {
+            "summary": "Suporte a problemas",
+            "body": "Avaliamos atendimento para login incorreto, atraso e código que não pode ser ativado. Um bom suporte deve conseguir localizar a operação usando o número do pedido ou comprovante."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que taxas e métodos mudam",
+        "paragraphs": [
+          "Provedores alteram taxas, cartões, bancos locais e canais cripto. O mesmo serviço pode ficar mais caro ou barato sem mudar o processo principal.",
+          "Câmbio e regras regionais da Steam também afetam o valor. Uma oferta boa em uma região pode ser pior em outra moeda.",
+          "Se você quer um jogo específico, compare compra direta em <a href=\"/steam/buy-games\">lojas externas</a> com recarregar Steam. Para nível e cartas veja <a href=\"/steam/levelup\">serviços de nível Steam</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao recarregar Steam",
+        "intro": "Uma recarga normal não precisa da senha Steam ou código de autenticação em dois fatores.",
+        "items": [
+          {
+            "summary": "Confira o endereço",
+            "body": "Use apenas o domínio oficial, principalmente após anúncios ou links de mensagens."
+          },
+          {
+            "summary": "Não forneça a senha",
+            "body": "Para recarga por login basta o identificador. Não compartilhe senha, Steam Guard ou códigos de recuperação."
+          },
+          {
+            "summary": "Confira login e região",
+            "body": "Um erro pode dificultar reembolso; revise os dados antes do pagamento. Confirme os dados diretamente na página de pagamento e evite copiar o login de mensagens de terceiros."
+          },
+          {
+            "summary": "Confira a região do código",
+            "body": "Códigos e cartões Steam podem ter limitações regionais."
+          },
+          {
+            "summary": "Guarde recibo e pedido",
+            "body": "Mantenha comprovante, número do pedido e valor até a recarga aparecer. Esses registros ajudam quando o provedor confirma a cobrança mas o saldo ainda não aparece na Steam."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre recarga Steam",
+        "items": [
+          {
+            "summary": "O que é um serviço de recarga Steam?",
+            "body": "Uma plataforma externa que aceita pagamento e adiciona valor à carteira ou vende código/cartão compatível."
+          },
+          {
+            "summary": "Preciso informar a senha?",
+            "body": "Não. Senha e Steam Guard não são necessários para uma recarga normal."
+          },
+          {
+            "summary": "Por que recebo menos do que paguei?",
+            "body": "Por taxa do serviço, câmbio, rede ou provedor de pagamento."
+          },
+          {
+            "summary": "O que é melhor: recarga direta ou código?",
+            "body": "Depende de região, valores disponíveis, taxas e compatibilidade com a moeda da conta."
+          },
+          {
+            "summary": "Posso recarregar com cripto?",
+            "body": "Em alguns serviços sim. Compare câmbio, taxa de rede e valor final."
+          },
+          {
+            "summary": "Posso usar skins?",
+            "body": "Algumas plataformas permitem vender ou trocar itens e aplicar o valor. Compare a avaliação com o mercado."
+          },
+          {
+            "summary": "O que fazer se não chegar?",
+            "body": "Confira status, login e prazo; depois fale com o suporte usando o número da operação."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Taxas, câmbio, pagamentos, regiões, velocidade e suporte mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Steam Bakiye Yükleme: Yöntemler, Ücretler ve Ödeme Öncesi Kontroller",
+        "paragraphs": [
+          "Steam bakiye yükleme servisleri üçüncü taraf ödeme arayüzü üzerinden Steam Cüzdanına para eklemeyi sağlar. Kullanıcı genellikle Steam giriş adını, tutarı ve ödeme yöntemini belirtir; servis doğrudan yükleme yapar veya dijital kod teslim eder.",
+          "Servisler arasındaki fark yalnız komisyon değildir. Hesap para birimi, minimum ve maksimum tutar, dönüşüm kuru, teslim yöntemi, hız ve ülkedeki ödeme erişimi sonucu değiştirir. Ayrıca düşük komisyon, başka servise göre kötü döviz kuru kullanılıyorsa avantajını kaybedebilir.",
+          "CSGOBROKER bu servisleri <a href=\"/steam/buy-games\">oyun mağazalarından</a> ve <a href=\"/steam/levelup\">Steam seviye servislerinden</a> ayrı karşılaştırır. Başlangıç değeri skinlerdeyse <a href=\"/csgo/sell-skins\">CS2 skin satış servisleri</a> de değerlendirilebilir."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Steam Bakiye Yükleme Yöntemleri",
+        "items": [
+          {
+            "title": "Steam giriş adıyla yükleme",
+            "paragraphs": [
+              "Kullanıcı şifre vermeden giriş adını yazar ve seçilen tutarı öder. Ödeme öncesi giriş adı, bölge ve para birimini kontrol edin. Bu yöntemde hesabın şifresi değil yalnız yüklemenin yönlendirileceği gerekli kullanıcı bilgisi istenmelidir."
+            ]
+          },
+          {
+            "title": "Steam Wallet kodları",
+            "paragraphs": [
+              "Platform sabit değerli dijital kod satar; kullanıcı kendisi etkinleştirir. Bölge ve para birimi kısıtlamalarını inceleyin. Kodu almadan önce mevcut cüzdan para biriminde etkinleştirilebildiğini doğrulayın."
+            ]
+          },
+          {
+            "title": "Dijital hediye kartları",
+            "paragraphs": [
+              "Bazı mağazalar sabit değerli Steam hediye kartları satar. Alıcı ülkesi veya cüzdan para birimi kısıtlanabilir."
+            ]
+          },
+          {
+            "title": "Banka kartı ve yerel ödeme",
+            "paragraphs": [
+              "Servisler kart, hızlı banka transferi ve yerel yöntemler kabul edebilir. Site ve ödeme sağlayıcısı ücretlerini birlikte karşılaştırın."
+            ]
+          },
+          {
+            "title": "Kripto ile yükleme",
+            "paragraphs": [
+              "Bazı platformlar kripto kabul edip karşılığını Steam bakiyesine çevirir. Kur, ağ ücreti ve iç dönüşüm önemlidir. Kripto ödemede kur, sipariş oluşturma ile onay arasında değişebilir."
+            ]
+          },
+          {
+            "title": "Oyun eşyalarını kaynak değer olarak kullanma",
+            "paragraphs": [
+              "Bazı servisler oyun eşyalarını satıp veya değiştirip değerini Steam ürünü ya da bakiye için kullanmaya izin verir. Eşya değerlemesini mutlaka karşılaştırın."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Steam Yükleme Öncesi Neler Karşılaştırılmalı?",
+        "intro": "Aynı komisyon oranına sahip iki servis, kur ve ek ücretler yüzünden farklı sonuç verebilir.",
+        "items": [
+          {
+            "summary": "Cüzdana geçen net tutar",
+            "body": "Ücret ve dönüşüm sonrası Steam'e gerçekten ne kadar geçtiğini karşılaştırın. Pratik karşılaştırmada aynı ödeme tutarı kullanılıp cüzdana geçen net değer kaydedilmelidir."
+          },
+          {
+            "summary": "Döviz kuru",
+            "body": "Ödeme ve cüzdan farklı para birimindeyse uygulanan kuru kontrol edin. Büyük yüklemede küçük kur farkı sabit ücretten daha önemli olabilir."
+          },
+          {
+            "summary": "Minimum ve maksimum",
+            "body": "İşlem ve günlük limitler farklı olabilir."
+          },
+          {
+            "summary": "Desteklenen bölgeler",
+            "body": "Yöntem, kod veya hediye kartı belirli ülke ve para birimlerine bağlı olabilir. Kod almadan önce hariç tutulan ülke ve para birimlerini okuyun."
+          },
+          {
+            "summary": "Yükleme hızı",
+            "body": "Bazı işlemler hemen, bazıları ek işlemden sonra tamamlanır. Tahmini süre ve durum görünmelidir. Özellikle yoğun saatlerde belirtilen süre ile gerçek tamamlanma süresi arasındaki farkı da dikkate alın."
+          },
+          {
+            "summary": "İade ve destek",
+            "body": "Yanlış giriş adı, reddedilen ödeme veya gecikme için açık iade ve destek süreci olmalıdır."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Steam Bakiye Servislerini Nasıl Değerlendirir?",
+        "intro": "Yalnız reklam komisyonunu değil, gerçek maliyet ve tüm ödeme sürecini karşılaştırıyoruz.",
+        "items": [
+          {
+            "summary": "Net yükleme değeri",
+            "body": "Ödenen tutarla Steam Cüzdanına geçen değeri karşılaştırıyoruz."
+          },
+          {
+            "summary": "Ücret ve kur şeffaflığı",
+            "body": "Komisyon, kur, net tutar ve ek ücretler ödeme öncesi görünmelidir."
+          },
+          {
+            "summary": "Ödeme seçenekleri",
+            "body": "Kart, yerel banka, kripto ve diğer yöntemler kısıtlamalarıyla birlikte değerlendirilir."
+          },
+          {
+            "summary": "Hız ve güvenilirlik",
+            "body": "Gerçek süre, sipariş durumu ve gecikme sıklığı incelenir. Sipariş durumu bekleyen işlem ile tamamlanmış yüklemeyi açıkça ayırmalıdır."
+          },
+          {
+            "summary": "Bölgesel uyum",
+            "body": "Hesap para birimleri, ülkeler ve kod/hediye kartı kısıtlamaları açık olmalıdır."
+          },
+          {
+            "summary": "Sorunlu ödeme desteği",
+            "body": "Yanlış giriş, gecikme veya etkinleşmeyen kod için destek kalitesi değerlendirilir. İyi destek sipariş numarası veya ödeme belgesiyle işlemi bulabilmelidir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Ücret ve Yöntemler Neden Değişir?",
+        "paragraphs": [
+          "Ödeme sağlayıcıları kart desteğini, banka ücretlerini, yerel yöntemleri ve kripto kanallarını değiştirir. Bu nedenle aynı servis zamanla daha pahalı veya ucuz olabilir.",
+          "Döviz kurları ve Steam bölgesel kuralları da sonucu etkiler. Bir bölgede avantajlı teklif başka para biriminde daha kötü olabilir.",
+          "Belirli bir oyun almak istiyorsanız <a href=\"/steam/buy-games\">oyun mağazalarından</a> doğrudan alımı Steam'e para yüklemekle karşılaştırın. Kart ve seviye için <a href=\"/steam/levelup\">Steam seviye servislerini</a> kullanın."
+        ]
+      },
+      "safety": {
+        "title": "Steam Yüklemede Güvenlik",
+        "intro": "Normal bakiye yükleme için Steam şifresi veya iki aşamalı güvenlik kodu gerekmez.",
+        "items": [
+          {
+            "summary": "Site adresini kontrol edin",
+            "body": "Özellikle reklam veya mesaj bağlantısından geldiyseniz resmî domaini doğrulayın."
+          },
+          {
+            "summary": "Steam şifresi vermeyin",
+            "body": "Giriş adıyla yükleme için kimlik yeterlidir; Steam Guard veya yedek kod paylaşmayın."
+          },
+          {
+            "summary": "Giriş adı ve bölgeyi kontrol edin",
+            "body": "Yanlış veri iadeyi zorlaştırabilir."
+          },
+          {
+            "summary": "Kod bölgesini kontrol edin",
+            "body": "Steam Wallet kodu ve hediye kartında bölgesel kısıt olabilir."
+          },
+          {
+            "summary": "Makbuz ve sipariş numarasını saklayın",
+            "body": "Bakiye görünene kadar ödeme belgesini ve sipariş kimliğini koruyun. Ödeme sağlayıcısı tahsilatı onayladığı hâlde bakiye görünmüyorsa bu kayıtlar itirazı kolaylaştırır."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Steam Bakiye Yükleme Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Steam bakiye servisi nedir?",
+            "body": "Ödeme alıp Steam Cüzdanına değer ekleyen veya uygun kod/hediye kartı satan üçüncü taraf platformdur."
+          },
+          {
+            "summary": "Şifre vermek gerekir mi?",
+            "body": "Hayır. Normal yükleme için Steam şifresi ve Steam Guard gerekmez."
+          },
+          {
+            "summary": "Neden ödediğimden az geliyor?",
+            "body": "Servis komisyonu, döviz kuru, ağ ücreti veya ödeme sağlayıcısı nedeniyle."
+          },
+          {
+            "summary": "Doğrudan yükleme mi kod mu daha iyi?",
+            "body": "Bölge, tutar, ücret ve hesap para birimi uyumuna bağlıdır."
+          },
+          {
+            "summary": "Kripto ile Steam yüklenebilir mi?",
+            "body": "Bazı servislerde evet. Kur, ağ ücreti ve net değeri karşılaştırın."
+          },
+          {
+            "summary": "Skin kullanılabilir mi?",
+            "body": "Bazı platformlar oyun eşyasını satıp/değiştirip değerini kullanmaya izin verir. Eşya fiyatını piyasa ile karşılaştırın."
+          },
+          {
+            "summary": "Para gelmezse ne yapmalıyım?",
+            "body": "Sipariş durumu, giriş adı ve işlem süresini kontrol edip destekle sipariş numarası üzerinden iletişime geçin."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Ücret, kur, ödeme, bölge, hız ve destek değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Steam Wallet Top-Up: Methods, Fees और Payment से पहले क्या Check करें",
+        "paragraphs": [
+          "Steam top-up services third-party payment interface के जरिए Steam Wallet में funds add करने देती हैं। User आम तौर पर Steam login, amount और payment method देता है; service wallet funding process करती है या digital code deliver करती है।",
+          "Difference सिर्फ stated fee नहीं है। Account currency, minimum/maximum amounts, exchange rate, delivery method, crediting speed और country में payment availability final value को affect करते हैं। Low fee का advantage खराब exchange rate के कारण दूसरे service से कम हो सकता है।",
+          "CSGOBROKER इन platforms को <a href=\"/steam/buy-games\">game stores</a> और <a href=\"/steam/levelup\">Steam leveling services</a> से अलग compare करता है। अगर starting value skins में है, तो <a href=\"/csgo/sell-skins\">CS2 skin selling services</a> भी compare की जा सकती हैं।"
+        ]
+      },
+      "categories": {
+        "title": "Common Steam Top-Up Methods",
+        "items": [
+          {
+            "title": "Steam login से top-up",
+            "paragraphs": [
+              "User password share किए बिना login identifier देता है और selected amount pay करता है। Payment से पहले login, region और currency verify करें। इस method में account password नहीं, सिर्फ funding को सही account तक भेजने के लिए identifier चाहिए।"
+            ]
+          },
+          {
+            "title": "Steam Wallet codes",
+            "paragraphs": [
+              "Platform fixed denomination का digital code बेचती है जिसे user manually redeem करता है। Region और currency restrictions check करें।"
+            ]
+          },
+          {
+            "title": "Digital gift cards",
+            "paragraphs": [
+              "कुछ stores fixed-value Steam gift cards बेचती हैं। Recipient country या wallet currency eligibility पर असर डाल सकती है।"
+            ]
+          },
+          {
+            "title": "Bank cards और local payments",
+            "paragraphs": [
+              "Third-party services cards, instant bank methods और local systems accept कर सकती हैं। Service fee और provider charges दोनों compare करें।"
+            ]
+          },
+          {
+            "title": "Cryptocurrency top-up",
+            "paragraphs": [
+              "कुछ platforms crypto accept करके equivalent Steam balance देती हैं। Exchange rate, network fee और internal conversion final amount बदलते हैं।"
+            ]
+          },
+          {
+            "title": "Game items को source value बनाना",
+            "paragraphs": [
+              "कुछ services game items sell/exchange करके resulting value को Steam products या wallet funding में use करने देती हैं। Item valuation critical है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Steam Fund करने से पहले क्या Compare करें",
+        "intro": "Same advertised fee वाले two services exchange rate, extra charges और regional rules के कारण different wallet amount दे सकते हैं।",
+        "items": [
+          {
+            "summary": "Final wallet amount",
+            "body": "Fees और conversion के बाद Steam में actual credited value compare करें। Useful comparison same payment amount लेकर actual wallet credit record करती है।"
+          },
+          {
+            "summary": "Exchange rate",
+            "body": "Payment और wallet different currencies use करें तो applied rate देखें। Large top-up में small exchange-rate difference fixed fee से ज्यादा impact कर सकती है।"
+          },
+          {
+            "summary": "Minimum और maximum",
+            "body": "Transaction और daily limits अलग हो सकती हैं।"
+          },
+          {
+            "summary": "Supported regions",
+            "body": "Method, wallet code या gift card specific countries/currencies तक limited हो सकती है। Code खरीदने से पहले excluded countries/currencies की list पढ़ें।"
+          },
+          {
+            "summary": "Crediting speed",
+            "body": "कुछ operations near-instant हैं और दूसरी additional processing लेती हैं। Estimated time और status clear होने चाहिए।"
+          },
+          {
+            "summary": "Refunds और support",
+            "body": "Wrong login, rejected payment या delay पर refund conditions और support process clear होना चाहिए।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Steam Top-Up Services को कैसे Rate करता है",
+        "intro": "हम advertised commission की जगह effective cost और complete funding experience compare करते हैं।",
+        "items": [
+          {
+            "summary": "Net top-up value",
+            "body": "Payment amount और Steam Wallet में actual credited value compare होती है।"
+          },
+          {
+            "summary": "Fee और rate transparency",
+            "body": "Commission, exchange rate, final amount और extra charges confirmation से पहले visible होने चाहिए।"
+          },
+          {
+            "summary": "Payment options",
+            "body": "Cards, local banking, crypto और other channels limitations के साथ evaluate होते हैं।"
+          },
+          {
+            "summary": "Speed और reliability",
+            "body": "Actual crediting time, order status clarity और delays review होते हैं। Order status pending payment और completed top-up को clearly distinguish करनी चाहिए।"
+          },
+          {
+            "summary": "Regional compatibility",
+            "body": "Supported account currencies, countries और code/gift-card restrictions clear होने चाहिए।"
+          },
+          {
+            "summary": "Problem-payment support",
+            "body": "Wrong login, delayed top-up या unusable code handle करने की support quality important है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Fees और Funding Methods क्यों बदलते हैं",
+        "paragraphs": [
+          "Payment providers card support, banking fees, local methods और crypto channels बदलते हैं। इसलिए same service basic process same रखते हुए cheaper या more expensive हो सकती है।",
+          "Exchange rates और Steam regional rules final value बदलते हैं। One region में good offer दूसरे wallet currency के लिए कम useful हो सकती है।",
+          "Specific game खरीदना हो तो <a href=\"/steam/buy-games\">third-party game stores</a> से direct purchase को Steam funding से compare करें। Profile cards/levels के लिए <a href=\"/steam/levelup\">Steam leveling services</a> देखें।"
+        ]
+      },
+      "safety": {
+        "title": "Steam Top-Up Safety",
+        "intro": "Normal third-party top-up को Steam password या two-factor code की जरूरत नहीं होती।",
+        "items": [
+          {
+            "summary": "Website address verify करें",
+            "body": "Ads, messenger links या search result के बाद official domain confirm करें।"
+          },
+          {
+            "summary": "Steam password share न करें",
+            "body": "Login-based funding में identifier enough है; Steam Guard और backup codes share न करें।"
+          },
+          {
+            "summary": "Login और region check करें",
+            "body": "Typo या incompatible currency refund complicated कर सकती है।"
+          },
+          {
+            "summary": "Code region check करें",
+            "body": "Steam Wallet codes और gift cards पर regional restrictions हो सकती हैं।"
+          },
+          {
+            "summary": "Receipt और order number रखें",
+            "body": "Balance credit होने तक payment confirmation, order ID और amount save रखें। Payment provider charge confirm करे लेकिन Steam balance न दिखे, तो receipt और order ID support claim में useful हैं।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Steam Top-Up के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Steam top-up service क्या है?",
+            "body": "Third-party platform जो payment लेकर Steam Wallet fund करती है या compatible wallet code/gift card बेचती है।"
+          },
+          {
+            "summary": "क्या password देना जरूरी है?",
+            "body": "नहीं। Normal top-up के लिए Steam password या Steam Guard code required नहीं है।"
+          },
+          {
+            "summary": "Payment से कम amount क्यों credit होती है?",
+            "body": "Service commission, currency conversion, network fee या payment-provider charge के कारण।"
+          },
+          {
+            "summary": "Direct funding या Wallet code कौन बेहतर है?",
+            "body": "Region, denomination, fees और account currency compatibility पर depend करता है।"
+          },
+          {
+            "summary": "क्या crypto से Steam top-up कर सकते हैं?",
+            "body": "कुछ services पर हाँ। Exchange rate, network fee और final credit compare करें।"
+          },
+          {
+            "summary": "क्या skins use कर सकते हैं?",
+            "body": "कुछ platforms game items sell/exchange करके value apply करने देती हैं। Internal valuation market से compare करें।"
+          },
+          {
+            "summary": "Money न आए तो क्या करें?",
+            "body": "Order status, login accuracy और stated processing time check करके transaction ID के साथ support contact करें।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Fees, exchange rates, payment methods, regions, crediting speed और support quality बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

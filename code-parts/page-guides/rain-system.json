@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rain-system",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Система дождей: как работают случайные раздачи бонусов и что сравнивать",
+        "paragraphs": [
+          "Система дождей — это механика, при которой площадка распределяет бонусный пул между пользователями, находящимися в чате или выполняющими условия активности. Награда может приходить в виде внутреннего баланса, криптовалюты, монет сайта или другой доступной валюты.",
+          "Название «дождь» не означает одинаковую механику на всех сайтах. Где-то раздача запускается автоматически по таймеру, где-то её создаёт сама площадка или пользователь, а участие зависит от активности в чате, уровня аккаунта, депозита, ставок или простой авторизации в нужный момент.",
+          "CSGOBROKER сравнивает такие системы отдельно от <a href=\"/freebies/daily-rewards\">ежедневных наград</a>, <a href=\"/freebies/giveaways\">розыгрышей</a> и <a href=\"/freebies/faucet-system\">бесплатных периодических начислений</a>. Главное различие — дождь обычно распределяет общий пул между несколькими пользователями в ограниченный момент времени."
+        ]
+      },
+      "categories": {
+        "title": "Какие системы дождей встречаются",
+        "items": [
+          {
+            "title": "Автоматические раздачи по таймеру",
+            "paragraphs": [
+              "Площадка запускает дождь через заданные интервалы. Пользователь должен находиться онлайн, открыть чат или нажать кнопку участия до окончания короткого окна."
+            ]
+          },
+          {
+            "title": "Раздачи от площадки",
+            "paragraphs": [
+              "Сервис сам создаёт бонусный пул во время акции, события или периода высокой активности. Размер и частота таких раздач могут заметно меняться."
+            ]
+          },
+          {
+            "title": "Раздачи от пользователей",
+            "paragraphs": [
+              "Некоторые сайты позволяют игрокам самим создавать дождь из собственного баланса и распределять его между участниками чата. Такие раздачи не являются гарантированной наградой от площадки."
+            ]
+          },
+          {
+            "title": "Дожди за активность в чате",
+            "paragraphs": [
+              "Участие может зависеть от сообщений, времени в чате или минимальной активности. Проверяйте антиспам-правила: бессмысленные сообщения могут исключать пользователя или привести к ограничению аккаунта."
+            ]
+          },
+          {
+            "title": "Дожди по уровню или обороту",
+            "paragraphs": [
+              "Вероятность участия, размер доли или доступ к отдельным раздачам может зависеть от VIP-уровня, ставок или предыдущей активности."
+            ]
+          },
+          {
+            "title": "Случайное распределение пула",
+            "paragraphs": [
+              "Общая сумма делится не всегда поровну. Площадка может выбирать случайное число победителей или случайный размер награды для каждого участника."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить в системе дождей",
+        "intro": "Большой общий пул выглядит привлекательно, но реальная ценность для одного пользователя зависит от числа участников и правил распределения.",
+        "items": [
+          {
+            "summary": "Кто может участвовать",
+            "body": "Проверьте требования к аккаунту, уровню, депозиту, объёму игры, чату и региону. Открытый чат ещё не означает автоматическое участие."
+          },
+          {
+            "summary": "Как активируется участие",
+            "body": "На одних сайтах достаточно быть онлайн, на других нужно нажать кнопку, написать сообщение или подтвердить участие в течение нескольких секунд."
+          },
+          {
+            "summary": "Как делится общий пул",
+            "body": "Уточните, распределяется ли сумма поровну, случайно или с учётом статуса пользователя. Это сильнее влияет на ожидаемый результат, чем размер общего пула."
+          },
+          {
+            "summary": "Частота раздач",
+            "body": "Автоматический дождь по таймеру проще оценить, чем редкие акции без расписания. Для пользовательских раздач частота вообще зависит от активности сообщества."
+          },
+          {
+            "summary": "Можно ли вывести награду",
+            "body": "Полученные средства могут идти в основной или бонусный баланс, иметь минимальную сумму вывода либо использоваться только внутри площадки."
+          },
+          {
+            "summary": "Есть ли обязательные расходы",
+            "body": "Если для доступа нужен депозит, оборот или ставка, сравните эти затраты с вероятной долей награды и не считайте дождь полностью бесплатным."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает системы дождей",
+        "intro": "Мы оцениваем не сам факт наличия механики, а насколько понятно пользователь может принять участие и что реально получает.",
+        "items": [
+          {
+            "summary": "Прозрачность правил",
+            "body": "Условия входа, длительность окна, способ выбора участников и распределение пула должны быть понятны до начала раздачи."
+          },
+          {
+            "summary": "Регулярность",
+            "body": "Постоянные автоматические раздачи оцениваются отдельно от редких маркетинговых акций, которые могут исчезнуть без расписания."
+          },
+          {
+            "summary": "Доступность для новых пользователей",
+            "body": "Проверяем, нужен ли высокий VIP-уровень, крупный депозит или длительная история активности."
+          },
+          {
+            "summary": "Реальная ценность награды",
+            "body": "Учитываем размер пула вместе с числом участников, способом распределения и типичной суммой, которую получает один пользователь."
+          },
+          {
+            "summary": "Вывод и использование",
+            "body": "Смотрим, в какой баланс зачисляется награда, есть ли отыгрыш, минимальная сумма и ограничения по режимам."
+          },
+          {
+            "summary": "Защита от злоупотреблений и работа чата",
+            "body": "Антиспам и ограничения должны уменьшать автоматические злоупотребления, но не создавать неясные причины для отказа обычным участникам."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему системы дождей меняются",
+        "paragraphs": [
+          "Площадки меняют частоту, размер пула, требования к активности и алгоритм распределения. Система может остаться на сайте, но стать заметно реже или доступной только определённым уровням.",
+          "Активность сообщества также влияет на результат. При большем числе участников средняя доля может снижаться, даже если общий размер дождя не изменился.",
+          "Для более предсказуемых бонусов сравните <a href=\"/freebies/daily-rewards\">ежедневные награды</a>, <a href=\"/freebies/rakeback-system\">возврат части расходов</a> и <a href=\"/freebies/progressive-rewards\">прогрессивные награды</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и разумное участие",
+        "intro": "Дождь — дополнительная случайная награда, а не причина увеличивать ставки или проводить больше времени на площадке.",
+        "items": [
+          {
+            "summary": "Не создавайте оборот только ради доступа",
+            "body": "Если участие требует ставок или депозита, дополнительный расход может оказаться значительно выше ожидаемой награды."
+          },
+          {
+            "summary": "Не спамьте в чате",
+            "body": "Попытка искусственно повысить активность бессмысленными сообщениями может нарушать правила и привести к ограничению участия."
+          },
+          {
+            "summary": "Не доверяйте личным сообщениям о «выигранном дожде»",
+            "body": "Официальная награда начисляется через интерфейс площадки. Не передавайте пароль, код Steam Guard или секретные данные для её получения."
+          },
+          {
+            "summary": "Проверяйте баланс после начисления",
+            "body": "Уточните, куда именно поступили средства и есть ли срок, отыгрыш или минимальная сумма вывода."
+          },
+          {
+            "summary": "Сохраняйте личные лимиты",
+            "body": "Если система связана с азартной площадкой, не меняйте запланированный бюджет ради случайной раздачи и используйте <a href=\"/responsibility\">рекомендации по ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о системе дождей",
+        "items": [
+          {
+            "summary": "Что такое система дождей?",
+            "body": "Это распределение общего бонусного пула между пользователями, которые соответствуют условиям участия в определённый момент."
+          },
+          {
+            "summary": "Нужно ли писать в чат?",
+            "body": "Зависит от площадки. Иногда достаточно быть онлайн, а иногда требуется сообщение, кнопка участия или другая активность."
+          },
+          {
+            "summary": "Награда делится поровну?",
+            "body": "Не всегда. Сумма может распределяться равными долями, случайно или с учётом уровня пользователя."
+          },
+          {
+            "summary": "Как часто проходят дожди?",
+            "body": "На одних сайтах по таймеру, на других только во время акций или когда пользователь создаёт раздачу."
+          },
+          {
+            "summary": "Нужен ли депозит?",
+            "body": "Некоторые системы полностью бесплатны, другие требуют уровень, ставки, оборот или пополнение."
+          },
+          {
+            "summary": "Можно ли вывести полученную награду?",
+            "body": "Зависит от типа баланса и правил. Возможны минимальная сумма, отыгрыш или ограничения использования."
+          },
+          {
+            "summary": "Чем дождь отличается от розыгрыша?",
+            "body": "Дождь обычно быстро распределяет общий пул среди присутствующих пользователей, а <a href=\"/freebies/giveaways\">розыгрыш</a> чаще имеет отдельный период участия и заранее объявленный приз."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются частота, пулы, требования, число участников, правила распределения и условия вывода."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rain Systems: How Random Bonus Drops Work and What to Compare",
+        "paragraphs": [
+          "A rain system distributes a shared bonus pool among users who are present in chat or meet defined activity conditions. The reward can arrive as internal balance, cryptocurrency, site coins, or another currency supported by the platform.",
+          "The word “rain” does not describe one standardized mechanic. Some sites run automatic timed drops, others let the platform or individual users create them, and eligibility can depend on chat activity, account level, deposits, betting activity, or simply being online at the right moment.",
+          "CSGOBROKER evaluates rain systems separately from <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/giveaways\">giveaways</a>, and <a href=\"/freebies/faucet-system\">periodic free claims</a>. The main distinction is that a rain normally divides one pool among several users during a short participation window."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Rain Systems",
+        "items": [
+          {
+            "title": "Automatic timed rains",
+            "paragraphs": [
+              "The platform launches a rain at defined intervals. Users may need to be online, open chat, or press a participation button before a short window closes."
+            ]
+          },
+          {
+            "title": "Platform-funded rains",
+            "paragraphs": [
+              "The service creates the bonus pool during promotions, events, or periods of high activity. Size and frequency can change considerably."
+            ]
+          },
+          {
+            "title": "User-funded rains",
+            "paragraphs": [
+              "Some sites let players create a rain from their own balance and distribute it to chat participants. These are community transfers rather than guaranteed platform rewards."
+            ]
+          },
+          {
+            "title": "Chat-activity rains",
+            "paragraphs": [
+              "Eligibility can depend on messages, time spent in chat, or minimum activity. Anti-spam rules matter because meaningless messages can disqualify a user or restrict the account."
+            ]
+          },
+          {
+            "title": "Level- or turnover-based rains",
+            "paragraphs": [
+              "Access, share size, or eligibility for special drops can depend on VIP level, wagering, or previous activity."
+            ]
+          },
+          {
+            "title": "Random pool distribution",
+            "paragraphs": [
+              "The pool is not always divided equally. A platform may select a random number of winners or assign a random amount to each participant."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check in a Rain System",
+        "intro": "A large total pool can look attractive, but the value to one user depends on participant count and the distribution rules.",
+        "items": [
+          {
+            "summary": "Who is eligible",
+            "body": "Check account, level, deposit, wagering, chat, and regional requirements. Access to chat does not necessarily mean automatic participation."
+          },
+          {
+            "summary": "How participation is activated",
+            "body": "Some sites only require being online; others require a button, a message, or confirmation within a few seconds."
+          },
+          {
+            "summary": "How the pool is divided",
+            "body": "Find out whether rewards are equal, random, or weighted by user status. This often matters more than the headline pool size."
+          },
+          {
+            "summary": "Drop frequency",
+            "body": "Timed automatic rains are easier to evaluate than rare unscheduled events. User-created rains depend entirely on community activity."
+          },
+          {
+            "summary": "Whether rewards are withdrawable",
+            "body": "Funds can enter cash or bonus balance, have a withdrawal minimum, or remain usable only on the platform."
+          },
+          {
+            "summary": "Required spending",
+            "body": "If access requires deposits, turnover, or betting, compare those costs with the likely reward and do not treat the rain as completely free."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rain Systems",
+        "intro": "We evaluate whether users can understand how to join and what they realistically receive rather than simply noting that a rain feature exists.",
+        "items": [
+          {
+            "summary": "Rule transparency",
+            "body": "Eligibility, participation window, participant selection, and pool distribution should be clear before the drop."
+          },
+          {
+            "summary": "Regularity",
+            "body": "Recurring automatic rains are distinguished from occasional marketing events that can disappear without a schedule."
+          },
+          {
+            "summary": "Accessibility for new users",
+            "body": "We check whether high VIP status, a large deposit, or a long activity history is required."
+          },
+          {
+            "summary": "Real reward value",
+            "body": "Pool size is considered together with participant count, distribution method, and the typical amount received by one user."
+          },
+          {
+            "summary": "Use and withdrawal",
+            "body": "We review which balance receives the reward, wagering, minimums, and mode restrictions."
+          },
+          {
+            "summary": "Abuse prevention and chat quality",
+            "body": "Anti-spam measures should reduce automated abuse without creating unclear rejection reasons for normal participants."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rain Systems Change",
+        "paragraphs": [
+          "Platforms change frequency, pool size, activity requirements, and distribution algorithms. The feature can remain available while becoming much rarer or limited to selected account levels.",
+          "Community activity also changes the result. With more participants, the average share can fall even when the total pool remains the same.",
+          "For more predictable rewards, compare <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/rakeback-system\">rakeback</a>, and <a href=\"/freebies/progressive-rewards\">progressive rewards</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Sensible Participation",
+        "intro": "A rain is an additional random reward, not a reason to increase betting or spend more time on the platform.",
+        "items": [
+          {
+            "summary": "Do not generate turnover only for access",
+            "body": "If eligibility requires betting or a deposit, the extra cost can be much higher than the expected reward."
+          },
+          {
+            "summary": "Do not spam chat",
+            "body": "Artificial activity through meaningless messages can violate platform rules and lead to restrictions."
+          },
+          {
+            "summary": "Ignore private messages claiming you won",
+            "body": "Official rewards should be credited through the platform interface. Never send passwords, Steam Guard codes, or secret data to claim them."
+          },
+          {
+            "summary": "Check the balance after crediting",
+            "body": "Confirm where the reward went and whether expiry, wagering, or a withdrawal minimum applies."
+          },
+          {
+            "summary": "Keep personal limits",
+            "body": "On gambling platforms, do not change your planned budget for a random drop and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rain Systems",
+        "items": [
+          {
+            "summary": "What is a rain system?",
+            "body": "A shared bonus pool distributed among users who satisfy participation conditions at a particular moment."
+          },
+          {
+            "summary": "Do I need to write in chat?",
+            "body": "It depends on the platform. Some only require being online; others require a message, button, or another action."
+          },
+          {
+            "summary": "Is the pool divided equally?",
+            "body": "Not always. Rewards can be equal, random, or weighted by user level."
+          },
+          {
+            "summary": "How often do rains happen?",
+            "body": "Some sites use a timer; others run them only during promotions or when a user creates one."
+          },
+          {
+            "summary": "Is a deposit required?",
+            "body": "Some systems are free, while others require level, wagering, turnover, or funding."
+          },
+          {
+            "summary": "Can I withdraw a rain reward?",
+            "body": "It depends on the balance type and rules. Minimums, wagering, or use restrictions can apply."
+          },
+          {
+            "summary": "How is a rain different from a giveaway?",
+            "body": "A rain usually distributes one pool quickly among present users, while a <a href=\"/freebies/giveaways\">giveaway</a> often has a longer entry period and a predefined prize."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Frequency, pools, requirements, participant counts, distribution rules, and withdrawal conditions can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sistemas de lluvia: cómo funcionan las distribuciones aleatorias de bonos",
+        "paragraphs": [
+          "Un sistema de lluvia reparte un fondo de bonos entre usuarios presentes en el chat o que cumplen condiciones de actividad. La recompensa puede ser saldo interno, criptomonedas, monedas del sitio u otra divisa admitida.",
+          "«Lluvia» no describe una mecánica única. Algunos sitios ejecutan repartos automáticos, otros permiten que la plataforma o los usuarios los creen, y la elegibilidad puede depender del chat, nivel, depósitos, apuestas o simplemente estar conectado. Además, una lluvia creada por otro usuario no debe confundirse con una promoción financiada por la propia plataforma.",
+          "CSGOBROKER los analiza por separado de <a href=\"/freebies/daily-rewards\">recompensas diarias</a>, <a href=\"/freebies/giveaways\">sorteos</a> y <a href=\"/freebies/faucet-system\">recompensas periódicas gratuitas</a>. Normalmente una lluvia divide un fondo entre varios usuarios durante una ventana corta."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de sistemas de lluvia",
+        "items": [
+          {
+            "title": "Lluvias automáticas",
+            "paragraphs": [
+              "La plataforma las lanza a intervalos definidos. Puede ser necesario estar conectado, abrir el chat o pulsar un botón antes de que termine el plazo."
+            ]
+          },
+          {
+            "title": "Lluvias financiadas por la plataforma",
+            "paragraphs": [
+              "El servicio crea el fondo durante promociones o eventos. El tamaño y la frecuencia pueden cambiar. Una promoción grande y excepcional no representa necesariamente la frecuencia normal del sistema."
+            ]
+          },
+          {
+            "title": "Lluvias creadas por usuarios",
+            "paragraphs": [
+              "Algunos sitios permiten repartir saldo propio entre participantes del chat. No son una recompensa garantizada de la plataforma."
+            ]
+          },
+          {
+            "title": "Lluvias por actividad en chat",
+            "paragraphs": [
+              "La participación puede depender de mensajes o tiempo activo. Las reglas contra spam son importantes. Enviar mensajes repetitivos para mantener la elegibilidad puede incumplir las normas del chat."
+            ]
+          },
+          {
+            "title": "Lluvias según nivel o volumen",
+            "paragraphs": [
+              "El acceso, la parte del fondo o los repartos especiales pueden depender de VIP, apuestas o actividad previa."
+            ]
+          },
+          {
+            "title": "Distribución aleatoria",
+            "paragraphs": [
+              "El fondo no siempre se divide por igual; puede haber número aleatorio de ganadores o importes diferentes."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar en un sistema de lluvia",
+        "intro": "Un gran fondo total no garantiza gran valor individual: importan participantes y reglas de distribución.",
+        "items": [
+          {
+            "summary": "Quién puede participar",
+            "body": "Revisa cuenta, nivel, depósito, volumen, chat y región. También puede haber requisitos mínimos de antigüedad o verificación que no se ven hasta iniciar sesión."
+          },
+          {
+            "summary": "Cómo se activa la participación",
+            "body": "Puede bastar con estar conectado o ser necesario pulsar un botón, escribir o confirmar en segundos."
+          },
+          {
+            "summary": "Cómo se reparte el fondo",
+            "body": "Comprueba si es igual, aleatorio o ponderado por nivel. Con muchos participantes, una gran cifra total puede traducirse en una cantidad individual pequeña."
+          },
+          {
+            "summary": "Frecuencia",
+            "body": "Las lluvias automáticas son más previsibles que eventos raros o repartos de usuarios."
+          },
+          {
+            "summary": "Si se puede retirar",
+            "body": "La recompensa puede ir a saldo real, promocional o ser solo para uso interno."
+          },
+          {
+            "summary": "Gasto obligatorio",
+            "body": "Si exige depósito o apuestas, compara ese coste con la posible recompensa."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa las lluvias",
+        "intro": "Valoramos si las reglas son comprensibles y qué recibe realmente un participante.",
+        "items": [
+          {
+            "summary": "Transparencia",
+            "body": "Elegibilidad, plazo, selección y reparto deben estar claros."
+          },
+          {
+            "summary": "Regularidad",
+            "body": "Diferenciamos sistemas automáticos de campañas ocasionales."
+          },
+          {
+            "summary": "Accesibilidad",
+            "body": "Revisamos si exige VIP alto, gran depósito o larga actividad."
+          },
+          {
+            "summary": "Valor real",
+            "body": "Consideramos fondo, número de participantes, reparto y cantidad típica individual. Esto permite distinguir un gran fondo publicitario de una recompensa típica realmente recibida."
+          },
+          {
+            "summary": "Uso y retiro",
+            "body": "Analizamos tipo de saldo, requisitos, mínimos y restricciones."
+          },
+          {
+            "summary": "Control de abuso y chat",
+            "body": "Las medidas contra spam deben frenar automatización sin perjudicar injustificadamente a usuarios normales."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las lluvias",
+        "paragraphs": [
+          "Las plataformas modifican frecuencia, fondo, actividad necesaria y algoritmo. La función puede seguir existiendo pero volverse más rara o limitada. Por eso una descripción antigua puede seguir diciendo que existe la función aunque su valor práctico haya cambiado.",
+          "Más participantes pueden reducir la parte media aunque el fondo total no cambie.",
+          "Para recompensas más previsibles consulta <a href=\"/freebies/daily-rewards\">recompensas diarias</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> y <a href=\"/freebies/progressive-rewards\">recompensas progresivas</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y participación razonable",
+        "intro": "Una lluvia es una recompensa aleatoria adicional, no un motivo para apostar más.",
+        "items": [
+          {
+            "summary": "No aumentes el volumen solo para entrar",
+            "body": "El coste extra puede superar ampliamente la recompensa esperada."
+          },
+          {
+            "summary": "No hagas spam",
+            "body": "Mensajes sin sentido pueden incumplir las reglas y limitar la cuenta."
+          },
+          {
+            "summary": "Desconfía de mensajes privados",
+            "body": "La recompensa oficial se acredita en la plataforma; no envíes contraseñas ni códigos. Los enlaces enviados por desconocidos fuera del dominio oficial no forman parte del proceso normal de cobro."
+          },
+          {
+            "summary": "Comprueba el saldo",
+            "body": "Revisa dónde se acreditó y si hay caducidad, requisitos o mínimo."
+          },
+          {
+            "summary": "Mantén límites",
+            "body": "En plataformas de juego no cambies tu presupuesto por una recompensa aleatoria y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre sistemas de lluvia",
+        "items": [
+          {
+            "summary": "¿Qué es una lluvia?",
+            "body": "Un fondo de bonos repartido entre usuarios que cumplen condiciones en un momento concreto."
+          },
+          {
+            "summary": "¿Tengo que escribir en el chat?",
+            "body": "Depende; puede bastar con estar conectado o requerir mensaje, botón u otra acción."
+          },
+          {
+            "summary": "¿Se divide por igual?",
+            "body": "No siempre; puede ser igual, aleatorio o según nivel."
+          },
+          {
+            "summary": "¿Con qué frecuencia ocurre?",
+            "body": "Puede ser por temporizador, durante promociones o cuando un usuario crea la lluvia."
+          },
+          {
+            "summary": "¿Hace falta depósito?",
+            "body": "Algunas son gratuitas y otras exigen nivel, volumen o depósito."
+          },
+          {
+            "summary": "¿Se puede retirar?",
+            "body": "Depende del saldo; pueden existir mínimos, requisitos o restricciones."
+          },
+          {
+            "summary": "¿En qué se diferencia de un sorteo?",
+            "body": "La lluvia reparte rápido entre usuarios presentes; un <a href=\"/freebies/giveaways\">sorteo</a> suele tener periodo de participación y premio definido."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian frecuencia, fondos, requisitos, participantes, reparto y retiro."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sistemas de chuva: como funcionam distribuições aleatórias de bônus",
+        "paragraphs": [
+          "Um sistema de chuva distribui um fundo de bônus entre usuários presentes no chat ou que atendem condições de atividade. A recompensa pode ser saldo interno, criptomoeda, moedas do site ou outra moeda disponível.",
+          "“Chuva” não representa uma mecânica padronizada. Alguns sites fazem distribuições automáticas, outros permitem que a plataforma ou usuários criem a ação, e a elegibilidade pode depender de chat, nível, depósito, apostas ou presença online. Além disso, uma chuva criada por outro usuário não deve ser confundida com uma promoção financiada pelo próprio site.",
+          "A CSGOBROKER compara essas mecânicas separadamente de <a href=\"/freebies/daily-rewards\">recompensas diárias</a>, <a href=\"/freebies/giveaways\">sorteios</a> e <a href=\"/freebies/faucet-system\">recompensas periódicas grátis</a>. Normalmente a chuva divide um fundo entre vários usuários em pouco tempo."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de sistemas de chuva",
+        "items": [
+          {
+            "title": "Chuvas automáticas",
+            "paragraphs": [
+              "A plataforma inicia em intervalos definidos. Pode ser necessário estar online, abrir o chat ou apertar um botão antes do fim. O intervalo também pode seguir horário do servidor, e não necessariamente o relógio local do usuário."
+            ]
+          },
+          {
+            "title": "Chuvas da plataforma",
+            "paragraphs": [
+              "O serviço cria o fundo durante promoções ou eventos. Tamanho e frequência podem variar. Uma distribuição grande e excepcional não representa a frequência normal do recurso."
+            ]
+          },
+          {
+            "title": "Chuvas de usuários",
+            "paragraphs": [
+              "Alguns sites permitem que jogadores usem saldo próprio para criar uma distribuição no chat. Não é recompensa garantida da plataforma."
+            ]
+          },
+          {
+            "title": "Chuvas por atividade no chat",
+            "paragraphs": [
+              "Participação pode depender de mensagens ou tempo ativo. Regras anti-spam precisam ser observadas. Mensagens repetitivas apenas para manter elegibilidade podem violar regras do chat."
+            ]
+          },
+          {
+            "title": "Chuvas por nível ou volume",
+            "paragraphs": [
+              "Acesso, participação ou tamanho da parte pode depender de VIP, apostas ou atividade anterior."
+            ]
+          },
+          {
+            "title": "Distribuição aleatória",
+            "paragraphs": [
+              "O fundo nem sempre é dividido igualmente; pode haver quantidade aleatória de vencedores ou valores diferentes."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar em um sistema de chuva",
+        "intro": "Um fundo grande não garante valor alto por usuário; quantidade de participantes e regra de divisão são decisivas.",
+        "items": [
+          {
+            "summary": "Quem pode participar",
+            "body": "Confira conta, nível, depósito, volume, chat e região. Também podem existir requisitos de idade da conta ou verificação que só aparecem depois do login."
+          },
+          {
+            "summary": "Como ativar a participação",
+            "body": "Pode bastar estar online ou ser necessário botão, mensagem ou confirmação rápida. Uma janela muito curta pode tornar o bônus difícil de aproveitar mesmo quando o sistema é frequente."
+          },
+          {
+            "summary": "Como o fundo é dividido",
+            "body": "Veja se é igual, aleatório ou ponderado por status. Com muitos participantes, um grande valor total pode resultar em parcela individual pequena."
+          },
+          {
+            "summary": "Frequência",
+            "body": "Chuvas automáticas são mais previsíveis do que eventos raros ou distribuições de usuários. Isso ajuda a diferenciar uma mecânica recorrente de uma campanha ocasional."
+          },
+          {
+            "summary": "Possibilidade de saque",
+            "body": "A recompensa pode ir para saldo real, promocional ou apenas uso interno."
+          },
+          {
+            "summary": "Gasto obrigatório",
+            "body": "Se exige depósito ou apostas, compare o custo com a provável recompensa."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sistemas de chuva",
+        "intro": "Avaliamos se a participação é clara e qual valor o usuário realmente recebe.",
+        "items": [
+          {
+            "summary": "Transparência",
+            "body": "Elegibilidade, janela, seleção e distribuição devem ser claras."
+          },
+          {
+            "summary": "Regularidade",
+            "body": "Separamos sistemas automáticos de campanhas ocasionais. A frequência observada ao longo do tempo é mais útil do que um único evento promocional grande."
+          },
+          {
+            "summary": "Acessibilidade",
+            "body": "Verificamos exigência de VIP alto, grande depósito ou longa atividade."
+          },
+          {
+            "summary": "Valor real",
+            "body": "Consideramos fundo, participantes, método de divisão e valor típico individual. Assim distinguimos o tamanho publicitário do fundo do valor típico por participante."
+          },
+          {
+            "summary": "Uso e saque",
+            "body": "Analisamos tipo de saldo, requisitos, mínimos e restrições. Também verificamos se o saldo recebido tem validade ou regras diferentes do saldo principal."
+          },
+          {
+            "summary": "Controle de abuso e chat",
+            "body": "Anti-spam deve reduzir automação sem criar recusas pouco claras para usuários normais."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que os sistemas mudam",
+        "paragraphs": [
+          "Plataformas alteram frequência, fundo, atividade exigida e algoritmo. A função pode continuar existindo e ficar mais rara ou limitada. Uma página antiga pode continuar mencionando a função mesmo quando seu valor prático diminuiu.",
+          "Mais participantes podem reduzir a parcela média mesmo com o mesmo fundo. O número de usuários ativos em diferentes horários também pode alterar muito o resultado individual.",
+          "Para recompensas mais previsíveis veja <a href=\"/freebies/daily-rewards\">recompensas diárias</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> e <a href=\"/freebies/progressive-rewards\">recompensas progressivas</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e participação sensata",
+        "intro": "Chuva é uma recompensa aleatória extra, não motivo para apostar mais ou ficar mais tempo no site.",
+        "items": [
+          {
+            "summary": "Não aumente o volume só para participar",
+            "body": "O gasto adicional pode superar muito a recompensa esperada."
+          },
+          {
+            "summary": "Não faça spam",
+            "body": "Mensagens sem sentido podem violar regras e restringir a conta."
+          },
+          {
+            "summary": "Ignore mensagens privadas sobre prêmio",
+            "body": "A recompensa oficial entra pela interface; não envie senha ou códigos. Links enviados por desconhecidos fora do domínio oficial não fazem parte do processo normal de recebimento."
+          },
+          {
+            "summary": "Confira o saldo",
+            "body": "Veja onde foi creditado e se há validade, requisito ou mínimo."
+          },
+          {
+            "summary": "Mantenha limites",
+            "body": "Em sites de apostas, não altere seu orçamento por uma distribuição aleatória e consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre sistemas de chuva",
+        "items": [
+          {
+            "summary": "O que é sistema de chuva?",
+            "body": "Um fundo de bônus distribuído entre usuários elegíveis em determinado momento."
+          },
+          {
+            "summary": "Preciso escrever no chat?",
+            "body": "Depende; pode bastar estar online ou exigir mensagem, botão ou outra ação."
+          },
+          {
+            "summary": "O fundo é dividido igualmente?",
+            "body": "Nem sempre; pode ser igual, aleatório ou ponderado por nível."
+          },
+          {
+            "summary": "Com que frequência acontece?",
+            "body": "Pode usar temporizador, ocorrer em promoções ou ser criado por usuários."
+          },
+          {
+            "summary": "Precisa de depósito?",
+            "body": "Alguns são grátis e outros exigem nível, volume ou depósito."
+          },
+          {
+            "summary": "Posso sacar a recompensa?",
+            "body": "Depende do saldo; podem existir mínimos ou requisitos."
+          },
+          {
+            "summary": "Qual a diferença para sorteio?",
+            "body": "A chuva distribui rapidamente entre presentes; um <a href=\"/freebies/giveaways\">sorteio</a> normalmente tem período de participação e prêmio definido."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Frequência, fundos, requisitos, participantes, divisão e saque mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Yağmur Sistemi: Rastgele Bonus Dağıtımları Nasıl Çalışır?",
+        "paragraphs": [
+          "Yağmur sistemi, ortak bonus havuzunu sohbette bulunan veya aktivite şartlarını karşılayan kullanıcılar arasında dağıtır. Ödül iç bakiye, kripto para, site coini veya desteklenen başka para birimi olabilir.",
+          "“Yağmur” her sitede aynı mekanik değildir. Bazı siteler zamanlı otomatik dağıtım yapar, bazıları platformun veya kullanıcıların oluşturmasına izin verir; uygunluk sohbet, seviye, yatırma, bahis veya doğru anda çevrimiçi olmaya bağlı olabilir. Başka kullanıcı tarafından oluşturulan yağmur, platformun kendi promosyonu ile aynı şey değildir ve garantili sayılmamalıdır.",
+          "CSGOBROKER bu sistemleri <a href=\"/freebies/daily-rewards\">günlük ödüllerden</a>, <a href=\"/freebies/giveaways\">çekilişlerden</a> ve <a href=\"/freebies/faucet-system\">periyodik ücretsiz ödüllerden</a> ayrı değerlendirir. Yağmur genellikle tek havuzu kısa sürede birkaç kullanıcıya böler."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Yağmur Sistemleri",
+        "items": [
+          {
+            "title": "Otomatik zamanlı dağıtım",
+            "paragraphs": [
+              "Platform belirli aralıkta yağmur başlatır. Kullanıcının çevrimiçi olması, sohbeti açması veya süre bitmeden katılım düğmesine basması gerekebilir."
+            ]
+          },
+          {
+            "title": "Platform tarafından finanse edilen yağmur",
+            "paragraphs": [
+              "Servis promosyon veya etkinlik sırasında havuz oluşturur. Tutar ve sıklık değişebilir. Tek seferlik büyük dağıtım sistemin normal sıklığını temsil etmeyebilir."
+            ]
+          },
+          {
+            "title": "Kullanıcı tarafından oluşturulan yağmur",
+            "paragraphs": [
+              "Bazı siteler oyuncuların kendi bakiyesinden sohbet katılımcılarına dağıtım yapmasına izin verir. Bu platform garantili ödülü değildir."
+            ]
+          },
+          {
+            "title": "Sohbet aktivitesine bağlı yağmur",
+            "paragraphs": [
+              "Katılım mesaj veya aktif süreye bağlı olabilir. Spam kurallarını kontrol edin. Uygun kalmak için tekrarlı anlamsız mesaj göndermek sohbet kurallarını ihlal edebilir."
+            ]
+          },
+          {
+            "title": "Seviye veya hacme bağlı yağmur",
+            "paragraphs": [
+              "Erişim, pay veya özel dağıtımlar VIP, bahis veya geçmiş aktiviteye bağlı olabilir."
+            ]
+          },
+          {
+            "title": "Rastgele dağıtım",
+            "paragraphs": [
+              "Havuz her zaman eşit bölünmez; kazanan sayısı veya kullanıcı başına tutar rastgele olabilir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Yağmur Sisteminde Neler Kontrol Edilmeli?",
+        "intro": "Büyük toplam havuz tek kullanıcı için yüksek değer garanti etmez; katılımcı sayısı ve dağıtım kuralı önemlidir.",
+        "items": [
+          {
+            "summary": "Kimler katılabilir",
+            "body": "Hesap, seviye, yatırma, bahis, sohbet ve bölge şartlarını kontrol edin. Hesap yaşı veya doğrulama gibi ek şartlar yalnız girişten sonra görünebilir."
+          },
+          {
+            "summary": "Katılım nasıl etkinleşir",
+            "body": "Bazı sitelerde çevrimiçi olmak yeterli, bazılarında düğme, mesaj veya hızlı onay gerekir."
+          },
+          {
+            "summary": "Havuz nasıl bölünür",
+            "body": "Eşit, rastgele veya statüye göre ağırlıklı olup olmadığını öğrenin. Katılımcı çoksa büyük toplam havuz kullanıcı başına küçük tutara dönüşebilir."
+          },
+          {
+            "summary": "Sıklık",
+            "body": "Zamanlı otomatik sistemler nadir kampanyalardan daha kolay karşılaştırılır."
+          },
+          {
+            "summary": "Çekilebilirlik",
+            "body": "Ödül nakit veya bonus bakiyeye gidebilir ya da yalnız site içinde kullanılabilir."
+          },
+          {
+            "summary": "Zorunlu harcama",
+            "body": "Yatırma veya bahis gerekiyorsa maliyeti olası payla karşılaştırın."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Yağmur Sistemlerini Nasıl Değerlendirir?",
+        "intro": "Sadece özelliğin varlığına değil, katılımın ne kadar açık olduğuna ve kullanıcının gerçekte ne aldığına bakıyoruz.",
+        "items": [
+          {
+            "summary": "Kural şeffaflığı",
+            "body": "Uygunluk, katılım süresi, seçim ve dağıtım önceden anlaşılır olmalıdır."
+          },
+          {
+            "summary": "Düzenlilik",
+            "body": "Sürekli otomatik dağıtımlar, nadir pazarlama etkinliklerinden ayrılır."
+          },
+          {
+            "summary": "Yeni kullanıcı erişimi",
+            "body": "Yüksek VIP, büyük yatırma veya uzun aktivite geçmişi gerekip gerekmediğini inceliyoruz."
+          },
+          {
+            "summary": "Gerçek ödül değeri",
+            "body": "Havuz, katılımcı sayısı, dağıtım yöntemi ve tipik bireysel tutar birlikte değerlendirilir. Bu yaklaşım reklam edilen toplam havuzu tipik bireysel ödülden ayırır."
+          },
+          {
+            "summary": "Kullanım ve çekim",
+            "body": "Bakiye türü, çevrim, minimum ve mod kısıtlamaları incelenir."
+          },
+          {
+            "summary": "Kötüye kullanım önleme ve sohbet",
+            "body": "Anti-spam otomasyonu azaltmalı ancak normal kullanıcılar için belirsiz reddetme nedenleri oluşturmamalıdır."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Yağmur Sistemleri Neden Değişir?",
+        "paragraphs": [
+          "Platformlar sıklık, havuz, aktivite şartı ve dağıtım algoritmasını değiştirir. Özellik kalabilir ancak daha seyrek veya yalnız belirli seviyelere açık olabilir. Eski açıklama özellik varlığını doğru söyleyip pratik değerini artık yanlış gösterebilir.",
+          "Topluluk aktivitesi sonucu etkiler; katılımcı arttığında toplam havuz aynı kalsa bile ortalama pay düşebilir.",
+          "Daha öngörülebilir bonuslar için <a href=\"/freebies/daily-rewards\">günlük ödülleri</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> ve <a href=\"/freebies/progressive-rewards\">ilerlemeli ödülleri</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Makul Katılım",
+        "intro": "Yağmur ek rastgele ödüldür; daha çok bahis yapmak veya sitede daha uzun kalmak için sebep değildir.",
+        "items": [
+          {
+            "summary": "Erişim için hacmi artırmayın",
+            "body": "Bahis veya yatırma şartı varsa ek maliyet beklenen ödülden yüksek olabilir."
+          },
+          {
+            "summary": "Sohbette spam yapmayın",
+            "body": "Anlamsız mesajlar kuralları ihlal edip hesabı sınırlandırabilir."
+          },
+          {
+            "summary": "Özel mesajlardaki ödül iddialarına güvenmeyin",
+            "body": "Resmî ödül site arayüzünden gelir; şifre veya güvenlik kodu göndermeyin. Resmî alan adı dışındaki yabancı bağlantılar normal ödül alma sürecinin parçası değildir."
+          },
+          {
+            "summary": "Kredi sonrası bakiyeyi kontrol edin",
+            "body": "Ödülün hangi bakiyeye gittiğini ve süre, çevrim veya minimum olup olmadığını öğrenin."
+          },
+          {
+            "summary": "Kişisel limitleri koruyun",
+            "body": "Kumar sitesinde rastgele dağıtım için bütçenizi değiştirmeyin ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Yağmur Sistemi Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Yağmur sistemi nedir?",
+            "body": "Belirli anda şartları karşılayan kullanıcılar arasında ortak bonus havuzunun dağıtılmasıdır."
+          },
+          {
+            "summary": "Sohbete yazmak gerekir mi?",
+            "body": "Siteye bağlıdır; çevrimiçi olmak yeterli olabilir veya mesaj, düğme gibi işlem gerekebilir."
+          },
+          {
+            "summary": "Havuz eşit mi bölünür?",
+            "body": "Her zaman değil; eşit, rastgele veya seviyeye göre olabilir."
+          },
+          {
+            "summary": "Ne kadar sık olur?",
+            "body": "Zamanlayıcıyla, promosyonda veya kullanıcı oluşturduğunda gerçekleşebilir."
+          },
+          {
+            "summary": "Yatırma gerekir mi?",
+            "body": "Bazıları ücretsiz, bazıları seviye, hacim veya yatırma gerektirir."
+          },
+          {
+            "summary": "Ödül çekilebilir mi?",
+            "body": "Bakiye türüne bağlıdır; minimum veya çevrim olabilir."
+          },
+          {
+            "summary": "Çekilişten farkı nedir?",
+            "body": "Yağmur kısa sürede mevcut kullanıcılara havuz dağıtır; <a href=\"/freebies/giveaways\">çekiliş</a> genellikle daha uzun katılım süresine sahiptir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Sıklık, havuz, şart, katılımcı sayısı, dağıtım ve çekim kuralları değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rain Systems: Random Bonus Drops कैसे काम करते हैं",
+        "paragraphs": [
+          "Rain system shared bonus pool को chat में मौजूद या defined activity conditions meet करने वाले users के बीच distribute करती है। Reward internal balance, cryptocurrency, site coins या other supported currency में मिल सकती है।",
+          "“Rain” standardized mechanic नहीं है। कुछ sites timed automatic drops चलाती हैं, कुछ platform या users को create करने देती हैं, और eligibility chat activity, account level, deposits, betting या सही समय online होने पर depend कर सकती है। दूसरे user द्वारा created rain को platform-funded promotion नहीं मानना चाहिए; वह guaranteed platform reward नहीं है।",
+          "CSGOBROKER rain systems को <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/giveaways\">giveaways</a> और <a href=\"/freebies/faucet-system\">periodic free claims</a> से अलग evaluate करता है। Rain आम तौर पर short window में one pool कई users के बीच divide करती है।"
+        ]
+      },
+      "categories": {
+        "title": "Common Rain System Types",
+        "items": [
+          {
+            "title": "Automatic timed rains",
+            "paragraphs": [
+              "Platform defined intervals पर rain शुरू करती है। User को online, chat open या participation button deadline से पहले press करना पड़ सकता है।"
+            ]
+          },
+          {
+            "title": "Platform-funded rains",
+            "paragraphs": [
+              "Service promotion या event के दौरान pool बनाती है। Size और frequency बदल सकती हैं। One large promotional drop normal system frequency को represent नहीं करती।"
+            ]
+          },
+          {
+            "title": "User-funded rains",
+            "paragraphs": [
+              "कुछ sites players को own balance से chat participants के लिए rain create करने देती हैं। यह guaranteed platform reward नहीं है।"
+            ]
+          },
+          {
+            "title": "Chat-activity rains",
+            "paragraphs": [
+              "Eligibility messages या active time पर depend कर सकती है। Anti-spam rules important हैं। Eligibility के लिए repetitive meaningless messages chat rules violate कर सकती हैं।"
+            ]
+          },
+          {
+            "title": "Level/turnover-based rains",
+            "paragraphs": [
+              "Access, share size या special drops VIP, betting या past activity पर depend कर सकती हैं।"
+            ]
+          },
+          {
+            "title": "Random distribution",
+            "paragraphs": [
+              "Pool हमेशा equal divide नहीं होती; winners count या user amount random हो सकती है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rain System में क्या Check करें",
+        "intro": "Large total pool individual user के लिए large reward guarantee नहीं करता; participant count और distribution rules important हैं।",
+        "items": [
+          {
+            "summary": "Who can participate",
+            "body": "Account, level, deposit, wagering, chat और regional requirements check करें। Account age या verification जैसी additional requirements login के बाद दिखाई दे सकती हैं।"
+          },
+          {
+            "summary": "Participation कैसे activate होती है",
+            "body": "कुछ sites पर online होना enough है, दूसरी button, message या quick confirmation मांगती हैं।"
+          },
+          {
+            "summary": "Pool कैसे divide होती है",
+            "body": "Equal, random या user status weighted distribution check करें। Participants ज्यादा हों तो large total pool की individual share काफी छोटी हो सकती है।"
+          },
+          {
+            "summary": "Frequency",
+            "body": "Timed automatic rains rare unscheduled events से ज्यादा predictable हैं।"
+          },
+          {
+            "summary": "Withdrawal possible है या नहीं",
+            "body": "Reward cash/bonus balance में जा सकती है या site-only use हो सकती है।"
+          },
+          {
+            "summary": "Required spending",
+            "body": "Deposit या betting required हो तो cost को likely reward से compare करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rain Systems को कैसे Rate करता है",
+        "intro": "हम सिर्फ feature presence नहीं, clear participation और realistic received value evaluate करते हैं।",
+        "items": [
+          {
+            "summary": "Rule transparency",
+            "body": "Eligibility, window, selection और distribution पहले clear होने चाहिए।"
+          },
+          {
+            "summary": "Regularity",
+            "body": "Recurring automatic rains को occasional marketing events से अलग evaluate किया जाता है।"
+          },
+          {
+            "summary": "New-user accessibility",
+            "body": "High VIP, large deposit या long activity history required है या नहीं, check होता है।"
+          },
+          {
+            "summary": "Real reward value",
+            "body": "Pool size, participant count, distribution और typical individual amount साथ evaluate होते हैं। इससे advertised total pool और typical per-user reward अलग evaluate होते हैं।"
+          },
+          {
+            "summary": "Use and withdrawal",
+            "body": "Balance type, wagering, minimums और mode restrictions review होते हैं।"
+          },
+          {
+            "summary": "Abuse prevention and chat quality",
+            "body": "Anti-spam automation reduce करे लेकिन normal users के लिए unclear rejections न बनाए।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rain Systems क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms frequency, pool size, activity requirements और distribution algorithm बदलती हैं। Feature मौजूद रह सकती है लेकिन rarer या selected levels तक limited हो सकती है। Old description feature मौजूद बताती रह सकती है जबकि practical value काफी बदल चुकी हो।",
+          "Community activity भी result बदलती है; participants बढ़ें तो same pool में average share घट सकती है।",
+          "More predictable rewards के लिए <a href=\"/freebies/daily-rewards\">daily rewards</a>, <a href=\"/freebies/rakeback-system\">rakeback</a> और <a href=\"/freebies/progressive-rewards\">progressive rewards</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Sensible Participation",
+        "intro": "Rain additional random reward है, ज्यादा bet करने या platform पर extra time spend करने की reason नहीं।",
+        "items": [
+          {
+            "summary": "Access के लिए turnover न बढ़ाएँ",
+            "body": "Eligibility betting/deposit require करे तो extra cost expected reward से बहुत ज्यादा हो सकती है।"
+          },
+          {
+            "summary": "Chat spam न करें",
+            "body": "Meaningless messages rules violate करके participation/account restrict कर सकती हैं।"
+          },
+          {
+            "summary": "Private win messages पर trust न करें",
+            "body": "Official reward platform interface से credit होती है; password या security codes share न करें। Official domain के बाहर strangers के links normal claim process का हिस्सा नहीं होते।"
+          },
+          {
+            "summary": "Credit के बाद balance check करें",
+            "body": "Reward कहाँ गई और expiry, wagering या withdrawal minimum है या नहीं, verify करें।"
+          },
+          {
+            "summary": "Personal limits रखें",
+            "body": "Gambling platform पर random drop के लिए planned budget न बदलें और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rain Systems के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rain system क्या है?",
+            "body": "Shared bonus pool जो particular moment पर eligible users के बीच distribute होती है।"
+          },
+          {
+            "summary": "क्या chat में लिखना जरूरी है?",
+            "body": "Platform पर depend करता है; online presence enough हो सकती है या message/button चाहिए।"
+          },
+          {
+            "summary": "क्या pool equally divide होती है?",
+            "body": "हमेशा नहीं; equal, random या level-weighted हो सकती है।"
+          },
+          {
+            "summary": "Rains कितनी frequently होती हैं?",
+            "body": "Timer, promotions या user-created events के अनुसार।"
+          },
+          {
+            "summary": "क्या deposit required है?",
+            "body": "कुछ free हैं, कुछ level, wagering, turnover या funding require करती हैं।"
+          },
+          {
+            "summary": "क्या reward withdraw कर सकते हैं?",
+            "body": "Balance type/rules पर depend करता है; minimums या wagering हो सकती है।"
+          },
+          {
+            "summary": "Rain और giveaway में क्या फर्क है?",
+            "body": "Rain short window में present users को pool distribute करती है; <a href=\"/freebies/giveaways\">giveaway</a> में usually longer entry period और defined prize होता है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Frequency, pools, requirements, participants, distribution और withdrawal rules बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

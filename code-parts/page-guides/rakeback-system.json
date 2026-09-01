@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "rakeback-system",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Рейкбэк: как работает возврат части расходов на игровых и гемблинг-площадках",
+        "paragraphs": [
+          "Рейкбэк — это система возврата части средств, которую площадка рассчитывает на основе активности пользователя: уплаченной комиссии, объёма ставок, игрового оборота или другой внутренней метрики. Возврат может начисляться сразу, ежедневно, еженедельно или после достижения определённого уровня.",
+          "Рекламный процент нельзя сравнивать без понимания базы расчёта. «10% рейкбэка» может означать 10% от комиссии площадки, от условного чистого проигрыша или от другой величины, поэтому две одинаковые цифры способны давать совершенно разный фактический возврат.",
+          "CSGOBROKER сравнивает рейкбэк вместе с формулой, периодом начисления, минимальной суммой и условиями получения. Если награда растёт вместе с уровнем аккаунта, дополнительно полезен раздел <a href=\"/freebies/progressive-rewards\">прогрессивных наград</a>; для разовых акций — <a href=\"/freebies/deposit-bonuses\">бонусы к пополнению</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие системы возврата встречаются",
+        "items": [
+          {
+            "title": "Возврат от комиссии",
+            "paragraphs": [
+              "Площадка возвращает часть комиссии, которую получила с действий пользователя. Такой вариант проще оценить, если комиссия и процент возврата опубликованы отдельно."
+            ]
+          },
+          {
+            "title": "Возврат от игрового оборота",
+            "paragraphs": [
+              "Начисление зависит от общего объёма ставок или другой активности. Высокий оборот не означает высокий чистый возврат, поэтому важно знать точную формулу и ограничения."
+            ]
+          },
+          {
+            "title": "Возврат от чистого результата",
+            "paragraphs": [
+              "Некоторые сервисы считают бонус от проигрыша за период. Здесь особенно важно понимать, какие режимы входят в расчёт и как учитываются выигрыши, отменённые ставки и бонусные средства."
+            ]
+          },
+          {
+            "title": "Мгновенное начисление",
+            "paragraphs": [
+              "Возврат добавляется к балансу практически сразу после подходящей активности. Удобство выше, но формула и минимальный порог всё равно должны быть прозрачными."
+            ]
+          },
+          {
+            "title": "Ежедневный или еженедельный расчёт",
+            "paragraphs": [
+              "Площадка суммирует активность за период и начисляет возврат в установленный день. Проверяйте время расчёта и то, сгорает ли невостребованная награда."
+            ]
+          },
+          {
+            "title": "Рейкбэк по уровню аккаунта",
+            "paragraphs": [
+              "Процент возврата повышается с VIP-уровнем или накопленной активностью. Сравнивать нужно не только максимальный процент, но и условия достижения каждого уровня."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить в системе рейкбэка",
+        "intro": "Самая важная часть предложения — не процент в заголовке, а формула, по которой этот процент превращается в реальный бонус.",
+        "items": [
+          {
+            "summary": "База расчёта",
+            "body": "Уточните, от чего считается процент: комиссии, оборота, чистого проигрыша или собственной метрики сайта. Без этого сравнение процентов некорректно."
+          },
+          {
+            "summary": "Период начисления",
+            "body": "Мгновенный, ежедневный и еженедельный возврат по-разному влияет на доступность средств. Проверьте также время закрытия расчётного периода."
+          },
+          {
+            "summary": "Минимальная сумма",
+            "body": "Некоторые сервисы не начисляют или не позволяют получить слишком маленький возврат. Небольшая активность тогда может вообще не дать бонуса."
+          },
+          {
+            "summary": "Какие режимы учитываются",
+            "body": "Слоты, ставки, кейсы, рулетка и другие режимы могут иметь разный коэффициент участия или полностью исключаться из расчёта."
+          },
+          {
+            "summary": "Влияние бонусных средств",
+            "body": "Проверьте, учитываются ли ставки с бонусного баланса и уменьшают ли другие акции размер рейкбэка. Одновременные бонусы не всегда складываются."
+          },
+          {
+            "summary": "Вывод начисленного возврата",
+            "body": "Рейкбэк может поступать в основной баланс, бонусный баланс или отдельный кошелёк. Условия вывода и возможный отыгрыш нужно смотреть заранее."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает системы рейкбэка",
+        "intro": "Мы стараемся привести разные форматы возврата к понятному сравнению и отделить высокий рекламный процент от реально доступной ценности.",
+        "items": [
+          {
+            "summary": "Прозрачность формулы",
+            "body": "Проверяем, объясняет ли площадка базу расчёта и можно ли самостоятельно оценить ожидаемое начисление."
+          },
+          {
+            "summary": "Фактический процент возврата",
+            "body": "Смотрим на реальный результат формулы при типичной активности, а не только на максимальную цифру для верхнего уровня."
+          },
+          {
+            "summary": "Доступность для обычного пользователя",
+            "body": "Учитываем стартовый уровень, минимальную активность, пороги и необходимость платного VIP-статуса."
+          },
+          {
+            "summary": "Частота и удобство начисления",
+            "body": "Оцениваем периодичность, автоматическое зачисление, необходимость вручную забирать награду и срок её действия."
+          },
+          {
+            "summary": "Совместимость с другими акциями",
+            "body": "Проверяем, можно ли одновременно использовать рейкбэк, промокоды, депозитные бонусы и программу лояльности без потери части преимуществ."
+          },
+          {
+            "summary": "Стабильность правил",
+            "body": "Если формула, уровни или проценты меняются, это влияет на рейтинг даже при сохранении того же рекламного названия."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему условия рейкбэка меняются",
+        "paragraphs": [
+          "Площадки пересматривают комиссии, VIP-уровни, проценты возврата и формулу расчёта. Поэтому старое значение рейкбэка может оставаться в рекламе, хотя фактический возврат уже считается иначе.",
+          "На размер возврата влияют и изменения ассортимента режимов. Новый режим может не участвовать в программе сразу, а старый — получить другой коэффициент расчёта.",
+          "Для других форм долгосрочной лояльности сравните <a href=\"/freebies/progressive-rewards\">прогрессивные награды</a>, <a href=\"/freebies/daily-rewards\">ежедневные награды</a> и общий раздел <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность и контроль расходов",
+        "intro": "Рейкбэк возвращает только часть уже совершённых расходов и не превращает отрицательное математическое ожидание игры в гарантированный доход.",
+        "items": [
+          {
+            "summary": "Не увеличивайте оборот ради возврата",
+            "body": "Дополнительные ставки ради нескольких процентов рейкбэка могут стоить значительно больше самой награды."
+          },
+          {
+            "summary": "Проверяйте формулу, а не только процент",
+            "body": "Высокая цифра от маленькой расчётной базы может давать меньший возврат, чем более низкий процент по прозрачной схеме."
+          },
+          {
+            "summary": "Следите за сроком получения",
+            "body": "Если награду нужно забирать вручную, проверьте, когда она сгорает и можно ли восстановить пропущенное начисление."
+          },
+          {
+            "summary": "Отделяйте бонусный баланс от основного",
+            "body": "Возврат может иметь ограничения по использованию или выводу. Не считайте его эквивалентом свободных средств до проверки правил."
+          },
+          {
+            "summary": "Используйте личные лимиты",
+            "body": "Если рейкбэк связан с азартными режимами, заранее устанавливайте ограничения и используйте <a href=\"/responsibility\">рекомендации по ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о рейкбэке",
+        "items": [
+          {
+            "summary": "Что такое рейкбэк?",
+            "body": "Это возврат части комиссии, оборота, проигрыша или другой расчётной величины в зависимости от правил площадки."
+          },
+          {
+            "summary": "Рейкбэк и кэшбэк — одно и то же?",
+            "body": "Термины часто используют похожим образом, но конкретная формула может отличаться. Всегда смотрите, от какой базы считается возврат."
+          },
+          {
+            "summary": "Почему одинаковые 10% дают разную сумму?",
+            "body": "Потому что сайты могут считать процент от разных величин и применять разные ограничения."
+          },
+          {
+            "summary": "Когда начисляется возврат?",
+            "body": "Мгновенно, ежедневно, еженедельно или по другому расписанию, указанному сервисом."
+          },
+          {
+            "summary": "Нужно ли вручную забирать рейкбэк?",
+            "body": "На некоторых сайтах да, на других он начисляется автоматически. Также может действовать срок получения."
+          },
+          {
+            "summary": "Учитываются ли бонусные ставки?",
+            "body": "Не всегда. Некоторые площадки исключают бонусный баланс или отдельные режимы из расчёта."
+          },
+          {
+            "summary": "Можно ли сразу вывести рейкбэк?",
+            "body": "Зависит от типа баланса и правил. Возможны минимальная сумма, отыгрыш или другие ограничения."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются формулы, проценты, уровни, режимы, периоды начисления, пороги и правила вывода."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Rakeback: How Partial Cost Returns Work on Gaming and Gambling Platforms",
+        "paragraphs": [
+          "Rakeback is a system that returns part of a user's costs based on activity such as platform fees paid, betting volume, gaming turnover, or another internal metric. The reward can be credited instantly, daily, weekly, or after a particular loyalty level is reached.",
+          "A headline percentage cannot be compared without knowing the calculation base. “10% rakeback” can mean 10% of platform fees, a defined net loss, or another value, so identical percentages can produce very different actual rewards.",
+          "CSGOBROKER compares rakeback together with its formula, crediting period, minimum amount, and claim conditions. When rewards grow by account level, also see <a href=\"/freebies/progressive-rewards\">progressive rewards</a>; for one-off funding promotions, compare <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>."
+        ]
+      },
+      "categories": {
+        "title": "Common Rakeback Models",
+        "items": [
+          {
+            "title": "Fee-based rakeback",
+            "paragraphs": [
+              "The platform returns part of the fees generated by the user's activity. This model is easier to evaluate when both the fee and the returned percentage are published."
+            ]
+          },
+          {
+            "title": "Turnover-based return",
+            "paragraphs": [
+              "Credit depends on total betting or activity volume. High turnover does not automatically mean high net value, so the exact formula and exclusions matter."
+            ]
+          },
+          {
+            "title": "Net-loss-based return",
+            "paragraphs": [
+              "Some services calculate the bonus from losses over a defined period. Check which modes count and how wins, cancelled bets, and bonus funds affect the result."
+            ]
+          },
+          {
+            "title": "Instant crediting",
+            "paragraphs": [
+              "The reward is added shortly after qualifying activity. Fast access is convenient, but the formula and minimum threshold still need to be transparent."
+            ]
+          },
+          {
+            "title": "Daily or weekly settlement",
+            "paragraphs": [
+              "Activity is accumulated over a period and the return is credited at a set time. Check the cutoff time and whether unclaimed rewards expire."
+            ]
+          },
+          {
+            "title": "Level-based rakeback",
+            "paragraphs": [
+              "The returned percentage increases with VIP status or accumulated activity. Compare the entry level and progression requirements, not only the maximum percentage."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check in a Rakeback System",
+        "intro": "The key part of the offer is not the percentage in the headline but the formula that turns it into real credited value.",
+        "items": [
+          {
+            "summary": "Calculation base",
+            "body": "Confirm whether the percentage applies to fees, turnover, net loss, or a proprietary site metric. Percentages are not comparable without this information."
+          },
+          {
+            "summary": "Crediting period",
+            "body": "Instant, daily, and weekly models change when funds become available. Also check the exact settlement cutoff."
+          },
+          {
+            "summary": "Minimum amount",
+            "body": "Some services do not credit or allow claims below a threshold, so low activity may generate no usable reward."
+          },
+          {
+            "summary": "Eligible modes",
+            "body": "Slots, betting, cases, roulette, and other modes can contribute at different rates or be excluded."
+          },
+          {
+            "summary": "Effect of bonus funds",
+            "body": "Check whether bonus-balance activity counts and whether other promotions reduce rakeback. Multiple bonuses do not always stack."
+          },
+          {
+            "summary": "Withdrawal of the credited reward",
+            "body": "Rakeback may enter cash balance, bonus balance, or a separate wallet. Withdrawal rules and possible wagering should be reviewed in advance."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Rakeback Systems",
+        "intro": "We normalize different reward models as far as possible and separate a large headline percentage from value an ordinary user can realistically receive.",
+        "items": [
+          {
+            "summary": "Formula transparency",
+            "body": "We check whether the calculation base is explained and whether users can estimate a likely reward themselves."
+          },
+          {
+            "summary": "Effective return",
+            "body": "We look at the practical result of the formula for typical activity rather than only the maximum percentage at the highest tier."
+          },
+          {
+            "summary": "Accessibility",
+            "body": "Starting level, minimum activity, thresholds, and any paid VIP requirement are considered."
+          },
+          {
+            "summary": "Crediting frequency and convenience",
+            "body": "We evaluate schedule, automatic credit, manual claim requirements, and expiry."
+          },
+          {
+            "summary": "Compatibility with other promotions",
+            "body": "We check whether rakeback can be combined with promo codes, deposit bonuses, and loyalty rewards without losing benefits."
+          },
+          {
+            "summary": "Rule stability",
+            "body": "Changes to formulas, tiers, or percentages affect the ranking even when the marketing name remains the same."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Rakeback Terms Change",
+        "paragraphs": [
+          "Platforms revise fees, VIP tiers, return percentages, and calculation formulas. An old rakeback figure can remain visible in promotion material even when actual credit is now calculated differently.",
+          "Changes to game or betting catalogs matter as well. A new mode may not immediately count toward the program, while an older one can receive a different contribution rate.",
+          "For other long-term loyalty formats, compare <a href=\"/freebies/progressive-rewards\">progressive rewards</a>, <a href=\"/freebies/daily-rewards\">daily rewards</a>, and the broader <a href=\"/freebies\">bonuses</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety and Spending Control",
+        "intro": "Rakeback returns only part of spending already generated and does not turn a negative-expectation gambling product into guaranteed income.",
+        "items": [
+          {
+            "summary": "Do not increase turnover just for the return",
+            "body": "Extra betting to earn a few percentage points of rakeback can cost substantially more than the reward itself."
+          },
+          {
+            "summary": "Check the formula, not only the percentage",
+            "body": "A high percentage applied to a small base can produce less value than a lower rate under a transparent model."
+          },
+          {
+            "summary": "Watch claim deadlines",
+            "body": "If the reward must be claimed manually, check when it expires and whether missed credit can be restored."
+          },
+          {
+            "summary": "Separate bonus and cash balances",
+            "body": "Rakeback can carry use or withdrawal restrictions. Do not treat it as unrestricted cash before checking the rules."
+          },
+          {
+            "summary": "Use personal limits",
+            "body": "When rakeback is tied to gambling modes, set limits in advance and use <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Rakeback",
+        "items": [
+          {
+            "summary": "What is rakeback?",
+            "body": "A return of part of fees, turnover, losses, or another calculation base according to the platform's rules."
+          },
+          {
+            "summary": "Are rakeback and cashback the same?",
+            "body": "The terms are often used similarly, but the exact calculation can differ. Always check the base used."
+          },
+          {
+            "summary": "Why do two 10% offers pay different amounts?",
+            "body": "Because sites can apply the percentage to different values and use different exclusions."
+          },
+          {
+            "summary": "When is rakeback credited?",
+            "body": "Instantly, daily, weekly, or according to another schedule defined by the service."
+          },
+          {
+            "summary": "Do I have to claim it manually?",
+            "body": "On some sites yes; on others it is automatic. A claim deadline can also apply."
+          },
+          {
+            "summary": "Does bonus-balance activity count?",
+            "body": "Not always. Some services exclude bonus funds or selected modes from the formula."
+          },
+          {
+            "summary": "Can rakeback be withdrawn immediately?",
+            "body": "It depends on the balance type and rules; minimums, wagering, or other restrictions can apply."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Formulas, percentages, tiers, eligible modes, crediting periods, thresholds, and withdrawal rules can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Rakeback: cómo funciona la devolución parcial de gastos en plataformas de juego",
+        "paragraphs": [
+          "El rakeback devuelve una parte de los costes del usuario según la actividad: comisiones pagadas, volumen de apuestas, movimiento de juego u otra métrica interna. Puede acreditarse al instante, cada día, cada semana o al alcanzar un nivel de fidelidad.",
+          "Un porcentaje no se puede comparar sin conocer la base. «10% de rakeback» puede ser 10% de la comisión, de una pérdida neta definida o de otra cantidad, así que dos cifras iguales pueden producir retornos distintos. También conviene comprobar si el porcentaje anunciado corresponde al nivel inicial o únicamente al estado VIP más alto.",
+          "CSGOBROKER compara fórmula, periodo, mínimo y condiciones. Si la recompensa crece con el nivel, consulta <a href=\"/freebies/progressive-rewards\">recompensas progresivas</a>; para promociones de depósito, <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a>."
+        ]
+      },
+      "categories": {
+        "title": "Modelos habituales de rakeback",
+        "items": [
+          {
+            "title": "Devolución de comisiones",
+            "paragraphs": [
+              "La plataforma devuelve parte de las comisiones generadas por la actividad. Es más fácil valorar cuando comisión y porcentaje están publicados."
+            ]
+          },
+          {
+            "title": "Devolución por volumen",
+            "paragraphs": [
+              "Depende del total apostado o jugado. Un volumen alto no garantiza gran valor neto; importan la fórmula y exclusiones."
+            ]
+          },
+          {
+            "title": "Devolución por pérdida neta",
+            "paragraphs": [
+              "Algunos servicios calculan sobre pérdidas de un periodo. Revisa modos incluidos y cómo afectan ganancias, apuestas anuladas y saldo promocional."
+            ]
+          },
+          {
+            "title": "Acreditación inmediata",
+            "paragraphs": [
+              "El retorno se añade poco después de la actividad válida. La rapidez ayuda, pero fórmula y mínimo deben seguir siendo claros."
+            ]
+          },
+          {
+            "title": "Cálculo diario o semanal",
+            "paragraphs": [
+              "La actividad se acumula y se liquida en un momento concreto. Comprueba hora de corte y si la recompensa no reclamada caduca."
+            ]
+          },
+          {
+            "title": "Rakeback por nivel",
+            "paragraphs": [
+              "El porcentaje aumenta con VIP o actividad acumulada. Compara nivel inicial y requisitos de progreso, no solo el máximo."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar en un sistema de rakeback",
+        "intro": "Lo esencial no es el porcentaje del título sino la fórmula que lo convierte en saldo real.",
+        "items": [
+          {
+            "summary": "Base de cálculo",
+            "body": "Comprueba si se aplica a comisiones, volumen, pérdida neta o una métrica propia."
+          },
+          {
+            "summary": "Periodo de acreditación",
+            "body": "Los modelos instantáneo, diario y semanal cambian cuándo está disponible el saldo; revisa también el cierre del periodo."
+          },
+          {
+            "summary": "Cantidad mínima",
+            "body": "Algunos sitios no acreditan o permiten reclamar por debajo de un mínimo."
+          },
+          {
+            "summary": "Modos válidos",
+            "body": "Slots, apuestas, cajas, ruleta y otros modos pueden contar distinto o quedar excluidos."
+          },
+          {
+            "summary": "Efecto del saldo promocional",
+            "body": "Revisa si la actividad con bonos cuenta y si otras promociones reducen el rakeback. Esto evita asumir que dos promociones se acumulan cuando en realidad una sustituye a la otra."
+          },
+          {
+            "summary": "Retiro de la recompensa",
+            "body": "Puede ir a saldo real, promocional o cartera separada; comprueba retiro y posibles requisitos."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa el rakeback",
+        "intro": "Intentamos comparar formatos diferentes y separar un gran porcentaje publicitario del valor que realmente puede recibir el usuario.",
+        "items": [
+          {
+            "summary": "Transparencia de la fórmula",
+            "body": "Valoramos que la base esté explicada y que pueda estimarse el retorno."
+          },
+          {
+            "summary": "Retorno efectivo",
+            "body": "Analizamos el resultado práctico con actividad normal, no solo el máximo del nivel superior. Una tasa máxima inaccesible para la mayoría de usuarios recibe menos peso que una tasa menor pero aplicable desde niveles bajos."
+          },
+          {
+            "summary": "Accesibilidad",
+            "body": "Incluimos nivel inicial, actividad mínima, umbrales y posibles requisitos VIP de pago."
+          },
+          {
+            "summary": "Frecuencia y facilidad",
+            "body": "Revisamos calendario, acreditación automática, reclamación manual y caducidad."
+          },
+          {
+            "summary": "Compatibilidad con promociones",
+            "body": "Comprobamos si puede combinarse con códigos, bonos de depósito y fidelidad."
+          },
+          {
+            "summary": "Estabilidad de reglas",
+            "body": "Cambios en fórmula, niveles o porcentajes afectan a la valoración."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las condiciones",
+        "paragraphs": [
+          "Las plataformas revisan comisiones, niveles VIP, porcentajes y fórmulas. Una cifra antigua puede seguir en publicidad aunque el cálculo real haya cambiado.",
+          "También cambia la contribución de los modos: uno nuevo puede no contar al principio y uno antiguo recibir otro coeficiente.",
+          "Para otras recompensas de fidelidad consulta <a href=\"/freebies/progressive-rewards\">recompensas progresivas</a>, <a href=\"/freebies/daily-rewards\">recompensas diarias</a> y <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad y control del gasto",
+        "intro": "El rakeback devuelve solo parte de gastos ya generados y no convierte el juego con ventaja de la plataforma en ingresos garantizados.",
+        "items": [
+          {
+            "summary": "No aumentes el volumen solo por el retorno",
+            "body": "Apostar más para conseguir unos puntos de rakeback puede costar mucho más que la recompensa."
+          },
+          {
+            "summary": "Comprueba la fórmula",
+            "body": "Un porcentaje alto sobre una base pequeña puede pagar menos que un porcentaje menor con una base clara."
+          },
+          {
+            "summary": "Vigila la caducidad",
+            "body": "Si hay que reclamar manualmente, revisa cuándo vence y si puede recuperarse una recompensa perdida."
+          },
+          {
+            "summary": "Separa saldo real y promocional",
+            "body": "El retorno puede tener restricciones de uso o retiro."
+          },
+          {
+            "summary": "Utiliza límites",
+            "body": "Si está ligado a juego, establece límites y consulta <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre rakeback",
+        "items": [
+          {
+            "summary": "¿Qué es el rakeback?",
+            "body": "Devolución de parte de comisiones, volumen, pérdidas u otra base según las reglas."
+          },
+          {
+            "summary": "¿Rakeback y cashback son lo mismo?",
+            "body": "Se usan de forma parecida, pero la fórmula puede cambiar; revisa siempre la base."
+          },
+          {
+            "summary": "¿Por qué dos ofertas del 10% pagan distinto?",
+            "body": "Porque aplican el porcentaje a valores diferentes y usan exclusiones distintas."
+          },
+          {
+            "summary": "¿Cuándo se acredita?",
+            "body": "Al instante, cada día, semana o según otro calendario."
+          },
+          {
+            "summary": "¿Hay que reclamarlo manualmente?",
+            "body": "A veces sí y otras es automático; también puede caducar."
+          },
+          {
+            "summary": "¿Cuenta la actividad con bonos?",
+            "body": "No siempre; algunas plataformas excluyen saldo promocional o modos."
+          },
+          {
+            "summary": "¿Se puede retirar inmediatamente?",
+            "body": "Depende del tipo de saldo; pueden existir mínimos o requisitos."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian fórmulas, porcentajes, niveles, modos, periodos, umbrales y retiro."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Rakeback: como funciona a devolução parcial de gastos em plataformas de jogo",
+        "paragraphs": [
+          "Rakeback devolve parte dos custos do usuário conforme atividade, taxas pagas, volume de apostas, movimento de jogo ou outra métrica interna. Pode ser creditado imediatamente, diariamente, semanalmente ou após atingir determinado nível.",
+          "Não dá para comparar uma porcentagem sem saber a base. “10% de rakeback” pode significar 10% da taxa, de uma perda líquida definida ou de outro valor, produzindo resultados bem diferentes. Também é importante saber se a porcentagem anunciada vale desde o nível inicial ou apenas para o VIP máximo.",
+          "A CSGOBROKER compara fórmula, período, mínimo e condições. Para recompensas que crescem com o nível veja <a href=\"/freebies/progressive-rewards\">recompensas progressivas</a>; para depósitos, <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a>."
+        ]
+      },
+      "categories": {
+        "title": "Modelos comuns de rakeback",
+        "items": [
+          {
+            "title": "Devolução de taxas",
+            "paragraphs": [
+              "A plataforma devolve parte das taxas geradas pelo usuário. É mais fácil avaliar quando taxa e percentual estão publicados. Se a taxa da plataforma também muda por modo, o retorno precisa ser calculado usando a taxa realmente aplicada."
+            ]
+          },
+          {
+            "title": "Devolução por volume",
+            "paragraphs": [
+              "O crédito depende do total apostado ou jogado. Volume alto não garante grande retorno líquido; fórmula e exclusões importam."
+            ]
+          },
+          {
+            "title": "Devolução por perda líquida",
+            "paragraphs": [
+              "Alguns serviços calculam sobre perdas do período. Confira modos, ganhos, apostas canceladas e saldo promocional. Uma perda líquida pode ser definida de forma diferente entre sites, por isso a fórmula completa é essencial."
+            ]
+          },
+          {
+            "title": "Crédito imediato",
+            "paragraphs": [
+              "O retorno entra pouco depois da atividade válida. Rapidez ajuda, mas fórmula e mínimo devem ser claros."
+            ]
+          },
+          {
+            "title": "Cálculo diário ou semanal",
+            "paragraphs": [
+              "A atividade é acumulada e paga em data definida. Confira horário de corte e validade do valor não resgatado."
+            ]
+          },
+          {
+            "title": "Rakeback por nível",
+            "paragraphs": [
+              "A porcentagem aumenta com VIP ou atividade acumulada. Compare nível inicial e exigências de progressão."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar no rakeback",
+        "intro": "O ponto central não é a porcentagem anunciada, e sim a fórmula que gera o valor real.",
+        "items": [
+          {
+            "summary": "Base de cálculo",
+            "body": "Veja se a porcentagem usa taxas, volume, perda líquida ou métrica própria. Sem a base, dois percentuais iguais não representam o mesmo benefício."
+          },
+          {
+            "summary": "Período de crédito",
+            "body": "Instantâneo, diário e semanal mudam quando o saldo fica disponível; veja também o fechamento. Também confira o horário exato de fechamento do período, principalmente em sites com usuários de vários fusos."
+          },
+          {
+            "summary": "Valor mínimo",
+            "body": "Alguns sites não creditam ou não permitem resgate abaixo de um limite."
+          },
+          {
+            "summary": "Modos elegíveis",
+            "body": "Slots, apostas, caixas, roleta e outros modos podem contar diferente ou ser excluídos."
+          },
+          {
+            "summary": "Efeito do saldo de bônus",
+            "body": "Confira se atividade com bônus entra no cálculo e se outras promoções reduzem o rakeback. Isso evita presumir que promoções acumulam quando uma pode substituir ou reduzir a outra."
+          },
+          {
+            "summary": "Saque da recompensa",
+            "body": "O valor pode ir para saldo real, promocional ou carteira separada; veja saque e possíveis requisitos."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia rakeback",
+        "intro": "Comparamos formatos diferentes e separamos porcentagem de marketing do valor realmente acessível.",
+        "items": [
+          {
+            "summary": "Transparência da fórmula",
+            "body": "A base deve ser explicada e permitir estimar o retorno."
+          },
+          {
+            "summary": "Retorno efetivo",
+            "body": "Analisamos o resultado prático com atividade comum, não apenas o máximo do nível superior. Uma taxa máxima difícil de atingir recebe menos peso que uma taxa menor disponível desde níveis baixos."
+          },
+          {
+            "summary": "Acessibilidade",
+            "body": "Consideramos nível inicial, atividade mínima, limites e eventual VIP pago."
+          },
+          {
+            "summary": "Frequência e conveniência",
+            "body": "Avaliamos calendário, crédito automático, resgate manual e validade. Também consideramos se o usuário precisa lembrar de resgatar manualmente todos os períodos."
+          },
+          {
+            "summary": "Compatibilidade com promoções",
+            "body": "Verificamos combinação com códigos, bônus de depósito e programas de fidelidade."
+          },
+          {
+            "summary": "Estabilidade das regras",
+            "body": "Mudanças em fórmula, níveis ou percentuais alteram a avaliação."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que as condições mudam",
+        "paragraphs": [
+          "Plataformas revisam taxas, níveis VIP, percentuais e fórmulas. Um número antigo pode permanecer na publicidade mesmo com cálculo diferente. Por isso comparações antigas podem manter a mesma porcentagem e ainda assim deixar de representar o valor real.",
+          "Modos também mudam de contribuição: um recurso novo pode não contar e outro receber coeficiente diferente.",
+          "Para outras formas de fidelidade veja <a href=\"/freebies/progressive-rewards\">recompensas progressivas</a>, <a href=\"/freebies/daily-rewards\">recompensas diárias</a> e <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança e controle de gastos",
+        "intro": "Rakeback devolve apenas parte de gastos já gerados e não transforma uma atividade com vantagem da plataforma em renda garantida.",
+        "items": [
+          {
+            "summary": "Não aumente o volume só pelo retorno",
+            "body": "Apostar mais por alguns pontos de rakeback pode custar muito mais que a recompensa."
+          },
+          {
+            "summary": "Confira a fórmula",
+            "body": "Percentual alto sobre base pequena pode pagar menos que percentual menor em modelo claro. O valor final por unidade de atividade é mais importante que o número isolado no banner."
+          },
+          {
+            "summary": "Observe a validade",
+            "body": "Se o resgate for manual, veja quando vence e se valor perdido pode ser recuperado."
+          },
+          {
+            "summary": "Separe saldo real e promocional",
+            "body": "O retorno pode ter restrições de uso e saque."
+          },
+          {
+            "summary": "Use limites pessoais",
+            "body": "Se ligado a apostas, defina limites e consulte <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre rakeback",
+        "items": [
+          {
+            "summary": "O que é rakeback?",
+            "body": "Devolução de parte de taxas, volume, perdas ou outra base conforme as regras."
+          },
+          {
+            "summary": "Rakeback e cashback são iguais?",
+            "body": "Os termos podem ser próximos, mas a fórmula varia; confira a base."
+          },
+          {
+            "summary": "Por que duas ofertas de 10% pagam diferente?",
+            "body": "Porque aplicam a porcentagem a valores e exclusões diferentes."
+          },
+          {
+            "summary": "Quando é creditado?",
+            "body": "Imediatamente, diariamente, semanalmente ou em outro calendário."
+          },
+          {
+            "summary": "Preciso resgatar manualmente?",
+            "body": "Em alguns sites sim; em outros é automático e pode haver validade."
+          },
+          {
+            "summary": "Atividade com bônus conta?",
+            "body": "Nem sempre; saldo promocional ou modos podem ser excluídos."
+          },
+          {
+            "summary": "Posso sacar imediatamente?",
+            "body": "Depende do saldo; mínimos e requisitos podem existir."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Fórmulas, percentuais, níveis, modos, períodos, limites e saque mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Rakeback: Oyun Platformlarında Harcamaların Bir Kısmı Nasıl Geri Verilir?",
+        "paragraphs": [
+          "Rakeback, kullanıcının ödediği ücret, bahis hacmi, oyun cirosu veya başka bir iç metriğe göre harcamanın bir bölümünü geri veren sistemdir. Ödül anında, günlük, haftalık veya belirli sadakat seviyesinde verilebilir.",
+          "Başlıktaki yüzde, hesaplama tabanı bilinmeden karşılaştırılamaz. “%10 rakeback” site ücretinin, tanımlı net kaybın veya başka bir değerin %10'u olabilir; aynı oran farklı tutar verebilir. Ayrıca reklam edilen oranın başlangıç seviyesinde mi yoksa yalnız en yüksek VIP statüsünde mi geçerli olduğunu kontrol edin.",
+          "CSGOBROKER formül, dönem, minimum ve alma şartlarını birlikte karşılaştırır. Seviye ile büyüyen ödüller için <a href=\"/freebies/progressive-rewards\">ilerlemeli ödüllere</a>, yatırma kampanyaları için <a href=\"/freebies/deposit-bonuses\">yatırma bonuslarına</a> bakın."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Rakeback Modelleri",
+        "items": [
+          {
+            "title": "Ücret bazlı geri dönüş",
+            "paragraphs": [
+              "Platform kullanıcı faaliyetinden aldığı ücretin bir kısmını geri verir. Ücret ve geri dönüş yüzdesi ayrı yayınlanıyorsa değerlendirmek kolaydır."
+            ]
+          },
+          {
+            "title": "Hacim bazlı dönüş",
+            "paragraphs": [
+              "Kredi toplam bahis veya aktivite hacmine bağlıdır. Yüksek hacim yüksek net değer anlamına gelmez; formül ve istisnalar önemlidir."
+            ]
+          },
+          {
+            "title": "Net kayıp bazlı dönüş",
+            "paragraphs": [
+              "Bazı servisler dönem içindeki kayıptan hesaplar. Hangi modların, kazançların, iptallerin ve bonus bakiyesinin hesaba girdiğini kontrol edin. Net kayıp tanımı siteler arasında değişebildiği için tam formül özellikle önemlidir."
+            ]
+          },
+          {
+            "title": "Anında kredi",
+            "paragraphs": [
+              "Ödül uygun aktiviteden kısa süre sonra eklenir. Hız faydalıdır ancak formül ve minimum açık olmalıdır."
+            ]
+          },
+          {
+            "title": "Günlük veya haftalık hesaplama",
+            "paragraphs": [
+              "Aktivite dönem boyunca toplanır ve belirli zamanda ödenir. Kesim saatini ve alınmayan ödülün sona erip ermediğini kontrol edin."
+            ]
+          },
+          {
+            "title": "Seviyeye bağlı rakeback",
+            "paragraphs": [
+              "Yüzde VIP veya birikmiş aktiviteyle yükselir. Yalnız maksimumu değil başlangıç seviyesini ve ilerleme şartlarını karşılaştırın."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rakeback Sisteminde Neler Kontrol Edilmeli?",
+        "intro": "Teklifin ana kısmı reklam yüzdesi değil, bu yüzdeden gerçek bakiyeyi üreten formüldür.",
+        "items": [
+          {
+            "summary": "Hesaplama tabanı",
+            "body": "Yüzdenin ücret, hacim, net kayıp veya site metriğine uygulanıp uygulanmadığını öğrenin."
+          },
+          {
+            "summary": "Kredi dönemi",
+            "body": "Anında, günlük ve haftalık modeller paranın ne zaman erişilebilir olduğunu değiştirir; kapanış saatini de kontrol edin."
+          },
+          {
+            "summary": "Minimum tutar",
+            "body": "Bazı servisler belirli eşiğin altında kredi vermez veya alma izni sunmaz."
+          },
+          {
+            "summary": "Uygun modlar",
+            "body": "Slot, bahis, kasa, rulet ve diğer modlar farklı katkı verebilir veya hariç tutulabilir."
+          },
+          {
+            "summary": "Bonus bakiyesinin etkisi",
+            "body": "Bonusla yapılan aktivitenin sayılıp sayılmadığını ve diğer promosyonların rakeback'i azaltıp azaltmadığını kontrol edin. Böylece iki promosyonun birlikte çalıştığını yanlış varsaymazsınız."
+          },
+          {
+            "summary": "Ödülün çekimi",
+            "body": "Rakeback nakit, bonus veya ayrı cüzdana gidebilir; çekim ve olası çevrim kurallarını önceden okuyun."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rakeback Sistemlerini Nasıl Değerlendirir?",
+        "intro": "Farklı modelleri ortak zeminde karşılaştırıp büyük reklam yüzdesini gerçek kullanıcı değerinden ayırıyoruz.",
+        "items": [
+          {
+            "summary": "Formül şeffaflığı",
+            "body": "Hesaplama tabanı açıklanmalı ve kullanıcı beklenen dönüşü yaklaşık hesaplayabilmelidir."
+          },
+          {
+            "summary": "Gerçek dönüş",
+            "body": "Üst seviyedeki maksimum yerine normal aktivitede formülün pratik sonucuna bakıyoruz. Çoğu kullanıcı için erişilemeyen maksimum oran, düşük seviyeden kullanılabilen daha küçük orandan daha az pratik değer taşır."
+          },
+          {
+            "summary": "Erişilebilirlik",
+            "body": "Başlangıç seviyesi, minimum aktivite, eşikler ve ücretli VIP şartı değerlendirilir."
+          },
+          {
+            "summary": "Sıklık ve kolaylık",
+            "body": "Takvim, otomatik kredi, manuel alma ve süre incelenir."
+          },
+          {
+            "summary": "Diğer promosyonlarla uyum",
+            "body": "Kod, yatırma bonusu ve sadakat ödülleriyle birlikte kullanılıp kullanılamadığı kontrol edilir."
+          },
+          {
+            "summary": "Kural istikrarı",
+            "body": "Formül, seviye veya yüzde değişikliği sıralamayı etkiler."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rakeback Şartları Neden Değişir?",
+        "paragraphs": [
+          "Platformlar ücret, VIP seviyesi, dönüş yüzdesi ve formülü değiştirir. Eski reklam rakamı kalırken gerçek hesaplama farklılaşabilir. Bu nedenle eski karşılaştırma aynı yüzdeyi gösterse bile gerçek değeri yanlış temsil edebilir.",
+          "Oyun ve bahis katalogları da değişir; yeni mod programa hemen girmeyebilir, eski mod farklı katkı alabilir.",
+          "Diğer sadakat seçenekleri için <a href=\"/freebies/progressive-rewards\">ilerlemeli ödülleri</a>, <a href=\"/freebies/daily-rewards\">günlük ödülleri</a> ve <a href=\"/freebies\">bonusları</a> karşılaştırın."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik ve Harcama Kontrolü",
+        "intro": "Rakeback yalnız daha önce oluşmuş harcamanın bir kısmını geri verir ve negatif beklentili kumarı garantili gelire dönüştürmez.",
+        "items": [
+          {
+            "summary": "Sırf dönüş için hacmi artırmayın",
+            "body": "Birkaç puan rakeback için ek bahis yapmak ödülden çok daha pahalı olabilir."
+          },
+          {
+            "summary": "Yüzde yerine formülü kontrol edin",
+            "body": "Küçük tabana uygulanan yüksek yüzde, açık modeldeki düşük orandan az değer verebilir."
+          },
+          {
+            "summary": "Alma süresini izleyin",
+            "body": "Manuel alma gerekiyorsa ne zaman sona erdiğini ve kaçırılan ödülün geri gelip gelmediğini kontrol edin."
+          },
+          {
+            "summary": "Nakit ve bonus bakiyesini ayırın",
+            "body": "Rakeback kullanım veya çekim kısıtlaması taşıyabilir."
+          },
+          {
+            "summary": "Kişisel limit kullanın",
+            "body": "Kumar modlarıyla bağlıysa önceden limit koyun ve <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rakeback Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Rakeback nedir?",
+            "body": "Site kurallarına göre ücret, hacim, kayıp veya başka bir tabanın bir kısmının geri verilmesidir."
+          },
+          {
+            "summary": "Rakeback ve cashback aynı mı?",
+            "body": "Benzer kullanılabilir ancak formül farklı olabilir; hesaplama tabanını kontrol edin."
+          },
+          {
+            "summary": "Aynı %10 neden farklı ödeme verir?",
+            "body": "Siteler yüzdeleri farklı tabanlara uygular ve farklı istisnalar kullanır."
+          },
+          {
+            "summary": "Ne zaman kredilenir?",
+            "body": "Anında, günlük, haftalık veya servisin belirlediği başka zamanda."
+          },
+          {
+            "summary": "Manuel almak gerekir mi?",
+            "body": "Bazı sitelerde evet, bazılarında otomatik; süre de olabilir."
+          },
+          {
+            "summary": "Bonus aktiviteleri sayılır mı?",
+            "body": "Her zaman değil; bonus bakiye veya bazı modlar hariç tutulabilir."
+          },
+          {
+            "summary": "Hemen çekilebilir mi?",
+            "body": "Bakiye türüne bağlıdır; minimum veya çevrim olabilir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Formül, yüzde, seviye, mod, dönem, eşik ve çekim kuralları değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Rakeback: Gaming Platforms पर Partial Cost Return कैसे काम करता है",
+        "paragraphs": [
+          "Rakeback user activity—जैसे paid fees, betting volume, gaming turnover या another internal metric—के आधार पर costs का हिस्सा वापस करता है। Reward instantly, daily, weekly या certain loyalty level पर credit हो सकती है।",
+          "Headline percentage calculation base के बिना compare नहीं की जा सकती। “10% rakeback” platform fee, defined net loss या किसी दूसरे value का 10% हो सकती है, इसलिए same percentage अलग actual reward दे सकती है। यह भी check करें advertised rate starting level पर valid है या सिर्फ highest VIP tier के लिए।",
+          "CSGOBROKER formula, credit period, minimum और claim conditions के साथ rakeback compare करता है। Level-based rewards के लिए <a href=\"/freebies/progressive-rewards\">progressive rewards</a> और funding offers के लिए <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a> देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Common Rakeback Models",
+        "items": [
+          {
+            "title": "Fee-based return",
+            "paragraphs": [
+              "Platform user activity से generated fees का हिस्सा लौटाती है। Fee और return percentage दोनों published हों तो model समझना आसान है।"
+            ]
+          },
+          {
+            "title": "Turnover-based return",
+            "paragraphs": [
+              "Credit total betting/activity volume पर depend करती है। High volume automatically high net value नहीं देता; exact formula और exclusions important हैं।"
+            ]
+          },
+          {
+            "title": "Net-loss-based return",
+            "paragraphs": [
+              "कुछ services defined period की losses से reward calculate करती हैं। Eligible modes, wins, cancelled bets और bonus funds का effect check करें। Net loss की definition sites के बीच अलग हो सकती है, इसलिए complete formula important है।"
+            ]
+          },
+          {
+            "title": "Instant credit",
+            "paragraphs": [
+              "Qualifying activity के shortly after reward balance में आती है। Fast access useful है, लेकिन formula और minimum clear होने चाहिए।"
+            ]
+          },
+          {
+            "title": "Daily या weekly settlement",
+            "paragraphs": [
+              "Activity period में accumulate होती है और set time पर credit होती है। Cutoff time और unclaimed reward expiry देखें।"
+            ]
+          },
+          {
+            "title": "Level-based rakeback",
+            "paragraphs": [
+              "Return percentage VIP status या accumulated activity के साथ बढ़ती है। सिर्फ maximum नहीं, starting tier और progression requirements compare करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Rakeback System में क्या Check करें",
+        "intro": "Offer का main point headline percentage नहीं, वह formula है जो उसे real credited value में बदलता है।",
+        "items": [
+          {
+            "summary": "Calculation base",
+            "body": "Percentage fees, turnover, net loss या proprietary metric पर apply होती है या नहीं, confirm करें।"
+          },
+          {
+            "summary": "Crediting period",
+            "body": "Instant, daily और weekly models funds availability बदलते हैं; settlement cutoff भी देखें।"
+          },
+          {
+            "summary": "Minimum amount",
+            "body": "कुछ services threshold से नीचे credit या claim नहीं देतीं।"
+          },
+          {
+            "summary": "Eligible modes",
+            "body": "Slots, betting, cases, roulette और other modes अलग contribution दे सकते हैं या excluded हो सकते हैं।"
+          },
+          {
+            "summary": "Bonus funds effect",
+            "body": "Bonus-balance activity count करती है या नहीं और other promotions rakeback reduce करती हैं या नहीं, check करें। इससे यह गलत assumption नहीं होता कि दो promotions हमेशा stack होती हैं।"
+          },
+          {
+            "summary": "Withdrawal of reward",
+            "body": "Rakeback cash balance, bonus balance या separate wallet में जा सकती है; withdrawal rules और possible wagering पहले देखें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Rakeback Systems को कैसे Rate करता है",
+        "intro": "हम different models को comparable बनाने और large advertised percentage को realistic user value से अलग करने की कोशिश करते हैं।",
+        "items": [
+          {
+            "summary": "Formula transparency",
+            "body": "Calculation base explained हो और user approximate return estimate कर सके।"
+          },
+          {
+            "summary": "Effective return",
+            "body": "Highest tier maximum की जगह typical activity पर practical result evaluate किया जाता है। Most users के लिए unreachable maximum rate को lower-tier accessible rate से अलग weight दिया जाता है।"
+          },
+          {
+            "summary": "Accessibility",
+            "body": "Starting level, minimum activity, thresholds और paid VIP requirement consider होते हैं।"
+          },
+          {
+            "summary": "Frequency और convenience",
+            "body": "Schedule, automatic credit, manual claim और expiry review किए जाते हैं।"
+          },
+          {
+            "summary": "Other promotions compatibility",
+            "body": "Promo codes, deposit bonuses और loyalty rewards के साथ stacking possible है या नहीं, check होता है।"
+          },
+          {
+            "summary": "Rule stability",
+            "body": "Formula, tiers या percentages change होने पर ranking change होती है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Rakeback Terms क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms fees, VIP tiers, return percentages और formulas revise करती हैं। Old advertising figure दिखाई दे सकती है जबकि actual credit calculation बदल चुकी हो। इसलिए old comparison same percentage दिखाकर भी actual value गलत represent कर सकती है।",
+          "Game/betting catalog changes भी effect करती हैं; new mode तुरंत eligible नहीं हो सकती और old mode का contribution बदल सकता है।",
+          "Long-term rewards के लिए <a href=\"/freebies/progressive-rewards\">progressive rewards</a>, <a href=\"/freebies/daily-rewards\">daily rewards</a> और <a href=\"/freebies\">bonuses</a> compare करें।"
+        ]
+      },
+      "safety": {
+        "title": "Safety और Spending Control",
+        "intro": "Rakeback केवल already generated costs का हिस्सा वापस करती है और gambling को guaranteed income में नहीं बदलती।",
+        "items": [
+          {
+            "summary": "Return के लिए turnover न बढ़ाएँ",
+            "body": "Few percentage points earn करने के लिए extra betting reward से काफी ज्यादा cost कर सकती है।"
+          },
+          {
+            "summary": "Percentage नहीं, formula देखें",
+            "body": "Small base पर high percentage, transparent model के lower rate से कम value दे सकती है।"
+          },
+          {
+            "summary": "Claim deadline देखें",
+            "body": "Manual claim हो तो expiry और missed reward restoration rules check करें।"
+          },
+          {
+            "summary": "Cash और bonus balance अलग समझें",
+            "body": "Rakeback पर use/withdrawal restrictions हो सकती हैं।"
+          },
+          {
+            "summary": "Personal limits रखें",
+            "body": "Gambling modes से जुड़ी होने पर limits set करें और <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Rakeback के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Rakeback क्या है?",
+            "body": "Platform rules के अनुसार fees, turnover, losses या another base का हिस्सा return होना।"
+          },
+          {
+            "summary": "Rakeback और cashback same हैं?",
+            "body": "Terms similar use होते हैं, लेकिन formula अलग हो सकती है; calculation base check करें।"
+          },
+          {
+            "summary": "Same 10% अलग amount क्यों देता है?",
+            "body": "Sites percentage को different bases और exclusions पर apply करती हैं।"
+          },
+          {
+            "summary": "कब credit होती है?",
+            "body": "Instantly, daily, weekly या service schedule के अनुसार।"
+          },
+          {
+            "summary": "क्या manually claim करना पड़ता है?",
+            "body": "कुछ sites पर हाँ, कुछ पर automatic; expiry भी हो सकती है।"
+          },
+          {
+            "summary": "Bonus activity count करती है?",
+            "body": "हमेशा नहीं; bonus funds या selected modes excluded हो सकती हैं।"
+          },
+          {
+            "summary": "क्या तुरंत withdraw कर सकते हैं?",
+            "body": "Balance type और rules पर depend करता है; minimums या wagering हो सकती है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Formulas, percentages, tiers, modes, periods, thresholds और withdrawal rules बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

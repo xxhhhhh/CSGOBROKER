@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "faucet-system",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Бонусные краны: как работают бесплатные начисления без депозита",
+        "paragraphs": [
+          "Бонусный кран — это механика, которая позволяет получать небольшое количество внутренней валюты, криптовалюты или игрового баланса через определённый промежуток времени без обычного пополнения счёта. На игровых и крипто-площадках такая награда чаще всего предназначена для знакомства с интерфейсом или запуска первых бесплатных действий.",
+          "У разных сайтов условия заметно отличаются. Где-то достаточно нажать кнопку раз в несколько минут или часов, а где-то требуется уровень аккаунта, активность, подтверждение профиля или выполнение простого задания. Полученные средства также могут иметь ограничения: минимальный вывод, обязательный оборот или использование только внутри платформы.",
+          "CSGOBROKER сравнивает такие системы отдельно от <a href=\"/freebies/daily-rewards\">ежедневных бонусов</a>. Ежедневная награда обычно выдаётся раз в сутки, а бонусный кран может работать по более короткому таймеру и начислять меньшие суммы несколько раз."
+        ]
+      },
+      "categories": {
+        "title": "Какие варианты бонусных кранов встречаются",
+        "items": [
+          {
+            "title": "Фиксированное начисление по таймеру",
+            "paragraphs": [
+              "Пользователь получает заранее известную небольшую сумму через установленный интервал. Это самый понятный формат, если таймер и размер награды не зависят от скрытых условий."
+            ]
+          },
+          {
+            "title": "Случайная сумма",
+            "paragraphs": [
+              "После каждого получения площадка определяет награду случайно в заданном диапазоне. Для сравнения важны минимальное и максимальное значение, а также вероятность более крупных начислений."
+            ]
+          },
+          {
+            "title": "Награда по уровню аккаунта",
+            "paragraphs": [
+              "Размер бесплатного начисления может расти вместе с уровнем, VIP-статусом или общей активностью. Максимальная рекламная сумма в таком случае обычно недоступна новому пользователю."
+            ]
+          },
+          {
+            "title": "Кран с проверкой активности",
+            "paragraphs": [
+              "Перед получением сервис может требовать сыграть, подтвердить присутствие, решить простую проверку или выполнить небольшое действие, чтобы ограничить автоматическое использование."
+            ]
+          },
+          {
+            "title": "Кран с накопительным балансом",
+            "paragraphs": [
+              "Небольшие начисления складываются во внутренний баланс и становятся полезными только после достижения минимальной суммы для игры или вывода."
+            ]
+          },
+          {
+            "title": "Кран, связанный с другими бонусами",
+            "paragraphs": [
+              "Полученная сумма может использоваться вместе с бесплатными кейсами, ежедневными наградами или другими акциями. Важно понимать, можно ли вывести такой баланс или он предназначен только для внутренних режимов."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать между сайтами с бонусным краном",
+        "intro": "Небольшая бесплатная сумма полезна только тогда, когда её можно получать на понятных условиях и использовать без несоразмерных требований.",
+        "items": [
+          {
+            "summary": "Интервал между начислениями",
+            "body": "Сравните, как часто доступно следующее получение и начинается ли таймер после нажатия или привязан ко времени сервера. Короткий интервал не всегда выгоднее, если сумма заметно меньше."
+          },
+          {
+            "summary": "Размер обычной награды",
+            "body": "Ориентируйтесь на типичное начисление, а не только на максимальное возможное. Для случайной суммы желательно видеть диапазон и правила определения результата."
+          },
+          {
+            "summary": "Требования к аккаунту",
+            "body": "Проверьте минимальный уровень, необходимость регистрации через Steam, подтверждения телефона, предыдущего депозита или другой активности."
+          },
+          {
+            "summary": "Минимум для использования или вывода",
+            "body": "Бесплатные начисления могут быть слишком малы для отдельной ставки или вывода. Смотрите, сколько времени реально потребуется, чтобы накопить полезную сумму."
+          },
+          {
+            "summary": "Ограничения полученного баланса",
+            "body": "Он может быть доступен только для определённых игр, иметь требования по обороту или не выводиться напрямую. Эти условия важнее самого факта бесплатного начисления."
+          },
+          {
+            "summary": "Защита от автоматизации",
+            "body": "Проверка присутствия или простая капча сама по себе нормальна, если не требует подозрительных расширений, загрузки файлов или передачи чувствительных данных."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает бонусные краны",
+        "intro": "Мы сравниваем не только частоту бесплатных начислений, но и то, можно ли превратить их в реально используемый баланс без скрытых расходов.",
+        "items": [
+          {
+            "summary": "Реальная доступность",
+            "body": "Проверяем, может ли новый пользователь получить награду без депозита и каких дополнительных условий требует площадка."
+          },
+          {
+            "summary": "Частота и размер",
+            "body": "Оцениваем интервал вместе с обычным размером начисления, чтобы не переоценивать частые, но практически бесполезные микросуммы."
+          },
+          {
+            "summary": "Условия использования",
+            "body": "Учитываем доступные режимы, минимальную ставку, оборот, срок действия и правила объединения с другими бонусами."
+          },
+          {
+            "summary": "Возможность вывода",
+            "body": "Проверяем, можно ли вывести накопленный баланс, какие действуют минимумы, комиссии и требования к проверке личности."
+          },
+          {
+            "summary": "Прозрачность таймера",
+            "body": "Следующее время получения и причины недоступности должны быть понятны пользователю, а не появляться только после нескольких попыток."
+          },
+          {
+            "summary": "Стабильность механики",
+            "body": "Площадки могут уменьшать сумму, увеличивать интервал или закрывать функцию. CSGOBROKER обновляет рейтинг при таких изменениях."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему условия бонусного крана меняются",
+        "paragraphs": [
+          "Бесплатные начисления напрямую зависят от рекламного бюджета и стратегии площадки. Сервис может уменьшить сумму, изменить таймер, добавить требования к уровню или временно отключить функцию при слишком высокой активности.",
+          "Меняется и практическая ценность награды. Если внутренний баланс используется для игр с другими минимальными ставками или площадка повышает минимальный вывод, прежнее начисление становится менее полезным даже при той же цифре.",
+          "Если нужен бонус с более редким, но обычно более крупным начислением, сравните <a href=\"/freebies/daily-rewards\">ежедневные награды</a>. Другие бесплатные акции доступны в разделе <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании бонусных кранов",
+        "intro": "Бесплатное начисление не требует установки неизвестных программ, передачи паролей или пополнения стороннего кошелька.",
+        "items": [
+          {
+            "summary": "Пользуйтесь только официальным сайтом",
+            "body": "Фишинговые копии могут обещать увеличенную бесплатную сумму. Проверяйте домен перед входом через Steam или другой аккаунт."
+          },
+          {
+            "summary": "Не устанавливайте сомнительные расширения",
+            "body": "Обычная проверка активности работает в браузере. Требование установить неизвестное расширение или исполняемый файл ради бонуса — повод отказаться."
+          },
+          {
+            "summary": "Не передавайте коды защиты",
+            "body": "Для получения небольшой награды не нужен пароль, Steam Guard, секретная фраза кошелька или код двухфакторной защиты."
+          },
+          {
+            "summary": "Проверяйте правила вывода заранее",
+            "body": "Если цель — накопить бесплатный баланс для вывода, сначала посмотрите минимум, комиссии, проверку личности и допустимые страны."
+          },
+          {
+            "summary": "Не превращайте бесплатный бонус в обязательные расходы",
+            "body": "Если для продолжения начинают требоваться депозиты или ставки, оценивайте их отдельно и сохраняйте собственные лимиты."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о бонусных кранах",
+        "items": [
+          {
+            "summary": "Что такое бонусный кран?",
+            "body": "Это функция сайта, которая через заданный интервал бесплатно начисляет небольшую сумму внутренней валюты, криптовалюты или баланса."
+          },
+          {
+            "summary": "Нужно ли вносить депозит?",
+            "body": "Не всегда. Смысл классического бесплатного начисления именно в возможности получить небольшую сумму без обычного пополнения, хотя некоторые сайты вводят дополнительные требования."
+          },
+          {
+            "summary": "Как часто можно получать награду?",
+            "body": "Зависит от площадки: интервал может составлять минуты, часы или более длительный период."
+          },
+          {
+            "summary": "Почему размер награды меняется?",
+            "body": "Он может зависеть от уровня аккаунта, случайного результата, активности пользователя или текущих правил сервиса."
+          },
+          {
+            "summary": "Можно ли вывести бесплатный баланс?",
+            "body": "Иногда да, но часто действует минимальная сумма, оборот или другое ограничение. Проверяйте правила конкретного сайта."
+          },
+          {
+            "summary": "Чем бонусный кран отличается от ежедневной награды?",
+            "body": "Кран обычно даёт небольшие начисления по повторяющемуся таймеру, а <a href=\"/freebies/daily-rewards\">ежедневный бонус</a> чаще доступен один раз в сутки."
+          },
+          {
+            "summary": "Безопасно ли использовать автоматическое получение?",
+            "body": "Если автоматизация запрещена правилами, она может привести к отмене бонуса или блокировке. Используйте только предусмотренную площадкой механику."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются суммы, таймеры, уровни, условия использования, вывод и сама доступность бесплатного начисления."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Bonus Faucets: How Free No-Deposit Claims Work",
+        "paragraphs": [
+          "A bonus faucet is a feature that gives users a small amount of internal currency, cryptocurrency, or gaming balance after a defined interval without a normal deposit. On gaming and crypto platforms, it is usually intended to let users try the interface or access initial low-value activity.",
+          "Conditions vary significantly. Some sites only require pressing a button every few minutes or hours, while others require an account level, activity, profile verification, or a simple anti-bot task. The resulting balance can also have withdrawal minimums, turnover requirements, or on-site-only restrictions.",
+          "CSGOBROKER compares faucets separately from <a href=\"/freebies/daily-rewards\">daily rewards</a>. Daily bonuses are normally available once per day, while a faucet can use a shorter timer and provide smaller claims repeatedly."
+        ]
+      },
+      "categories": {
+        "title": "Common Faucet Formats",
+        "items": [
+          {
+            "title": "Fixed timed claim",
+            "paragraphs": [
+              "A known small amount is available after each interval. This is easy to understand when both timer and amount are clearly stated."
+            ]
+          },
+          {
+            "title": "Random claim amount",
+            "paragraphs": [
+              "Each claim produces a random reward within a range. Compare minimum, maximum, and any published probability for larger amounts."
+            ]
+          },
+          {
+            "title": "Account-level faucet",
+            "paragraphs": [
+              "The free amount can increase with account level, VIP status, or activity. The maximum advertised value may therefore be unavailable to a new user."
+            ]
+          },
+          {
+            "title": "Activity-checked faucet",
+            "paragraphs": [
+              "The site can require a presence check, simple verification, gameplay, or another small action to limit automated claiming."
+            ]
+          },
+          {
+            "title": "Accumulating faucet balance",
+            "paragraphs": [
+              "Small claims build into an internal balance and may become useful only after reaching a minimum amount for play or withdrawal."
+            ]
+          },
+          {
+            "title": "Faucet linked to other bonuses",
+            "paragraphs": [
+              "The balance can interact with free cases, daily rewards, or other promotions. Check whether it is withdrawable or only usable in selected internal modes."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare Between Faucet Sites",
+        "intro": "A small free amount is useful only when it can be claimed under clear conditions and used without disproportionate requirements.",
+        "items": [
+          {
+            "summary": "Claim interval",
+            "body": "Compare how often another claim becomes available and whether the timer starts after claiming or follows server time."
+          },
+          {
+            "summary": "Typical reward size",
+            "body": "Focus on the normal claim rather than the maximum. For random rewards, review the full range and selection rules."
+          },
+          {
+            "summary": "Account requirements",
+            "body": "Check minimum level, Steam sign-in, phone verification, previous deposits, or activity requirements."
+          },
+          {
+            "summary": "Minimum usable or withdrawable balance",
+            "body": "Individual claims can be too small for a bet or payout. Estimate how long reaching a useful threshold realistically takes."
+          },
+          {
+            "summary": "Restrictions on faucet funds",
+            "body": "The balance may work only in certain games, require turnover, or be non-withdrawable. These rules determine practical value."
+          },
+          {
+            "summary": "Anti-automation checks",
+            "body": "A simple captcha or presence check is normal; demands for unknown extensions, executable files, or sensitive data are not."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Bonus Faucets",
+        "intro": "We compare both claim frequency and whether the free balance can become practically usable without hidden spending.",
+        "items": [
+          {
+            "summary": "Real accessibility",
+            "body": "We check whether a new user can claim without depositing and what additional requirements apply."
+          },
+          {
+            "summary": "Frequency and amount",
+            "body": "The timer is evaluated together with the normal claim size so frequent but negligible micro-rewards are not overrated."
+          },
+          {
+            "summary": "Use conditions",
+            "body": "Eligible games, minimum bet, turnover, expiry, and compatibility with other bonuses are considered."
+          },
+          {
+            "summary": "Withdrawal availability",
+            "body": "We review payout minimums, fees, identity checks, and whether accumulated faucet funds can actually be withdrawn."
+          },
+          {
+            "summary": "Timer transparency",
+            "body": "The next claim time and reasons for ineligibility should be visible and understandable."
+          },
+          {
+            "summary": "Mechanic stability",
+            "body": "Sites can reduce amounts, lengthen intervals, or remove the feature. CSGOBROKER updates rankings when this happens."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Faucet Conditions Change",
+        "paragraphs": [
+          "Free claims depend on the platform's promotional budget and strategy. A service can reduce the amount, change the timer, add level requirements, or disable the feature during periods of heavy use.",
+          "Practical value also changes when minimum bets or withdrawal thresholds change. The same faucet amount can become much less useful without changing numerically.",
+          "For a less frequent but often larger bonus, compare <a href=\"/freebies/daily-rewards\">daily rewards</a>. Other free promotions are listed under <a href=\"/freebies\">bonuses</a>."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Using Bonus Faucets",
+        "intro": "A free claim should not require unknown software, account passwords, or a payment to an external wallet.",
+        "items": [
+          {
+            "summary": "Use the official site only",
+            "body": "Phishing copies can advertise increased free claims. Verify the domain before Steam or other account login."
+          },
+          {
+            "summary": "Do not install suspicious extensions",
+            "body": "Normal activity checks work in the browser. Unknown extensions or executable files should not be required."
+          },
+          {
+            "summary": "Never share security codes",
+            "body": "A faucet does not need your password, Steam Guard code, seed phrase, or two-factor code."
+          },
+          {
+            "summary": "Check withdrawal rules first",
+            "body": "If the goal is to accumulate free balance for withdrawal, review minimums, fees, identity checks, and regional availability first."
+          },
+          {
+            "summary": "Keep free rewards separate from spending decisions",
+            "body": "If continued access starts requiring deposits or bets, evaluate those costs independently and maintain personal limits."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Bonus Faucets",
+        "items": [
+          {
+            "summary": "What is a bonus faucet?",
+            "body": "A site feature that periodically gives a small amount of internal currency, cryptocurrency, or balance for free."
+          },
+          {
+            "summary": "Do I need to deposit?",
+            "body": "Not always. A classic faucet is intended to provide a small claim without a normal deposit, although additional eligibility rules can exist."
+          },
+          {
+            "summary": "How often can I claim?",
+            "body": "Depending on the platform, the interval can be minutes, hours, or longer."
+          },
+          {
+            "summary": "Why does the reward amount change?",
+            "body": "It can depend on account level, random selection, user activity, or updated site rules."
+          },
+          {
+            "summary": "Can faucet balance be withdrawn?",
+            "body": "Sometimes, but minimums, turnover, or other restrictions often apply."
+          },
+          {
+            "summary": "How is a faucet different from a daily reward?",
+            "body": "A faucet typically gives small repeated claims on a timer, while a <a href=\"/freebies/daily-rewards\">daily reward</a> is usually available once per day."
+          },
+          {
+            "summary": "Is automated claiming safe?",
+            "body": "If automation violates the site's rules, it can result in cancelled rewards or restrictions. Use only supported mechanics."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Amounts, timers, level requirements, use rules, withdrawals, and feature availability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Grifos de bonos: cómo funcionan las pequeñas recompensas gratuitas sin depósito",
+        "paragraphs": [
+          "Un grifo de bonos es una función que entrega una pequeña cantidad de saldo interno, criptomoneda o moneda de juego tras un intervalo, sin un depósito normal. Suele servir para probar la plataforma o acceder a primeras acciones de bajo valor. Este punto puede cambiar de forma importante el valor real de dos ofertas que a primera vista parecen iguales.",
+          "Las condiciones varían. Algunos sitios solo piden pulsar un botón cada cierto tiempo y otros exigen nivel, actividad, verificación de perfil o una prueba sencilla contra automatización. El saldo puede tener mínimos de retiro, requisitos de volumen o uso solo interno. Conviene comprobarlo antes de comprometer tiempo, objetos o dinero, porque después puede ser difícil modificar la operación.",
+          "CSGOBROKER compara estos sistemas por separado de <a href=\"/freebies/daily-rewards\">recompensas diarias</a>. El grifo puede permitir varias pequeñas reclamaciones con un temporizador más corto."
+        ]
+      },
+      "categories": {
+        "title": "Formatos habituales de grifos",
+        "items": [
+          {
+            "title": "Cantidad fija por temporizador",
+            "paragraphs": [
+              "Se recibe una pequeña suma conocida en cada intervalo. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Cantidad aleatoria",
+            "paragraphs": [
+              "Cada reclamación produce un valor dentro de un rango. Compara mínimos, máximos y probabilidades si se publican. El valor práctico depende de las reglas completas y no solo del nombre o de la cifra destacada en la promoción."
+            ]
+          },
+          {
+            "title": "Recompensa según nivel",
+            "paragraphs": [
+              "La cantidad puede crecer con nivel, estado VIP o actividad; el máximo anunciado puede no estar disponible para nuevos usuarios. Si la plataforma aplica límites adicionales, deben tenerse en cuenta antes de completar la acción requerida."
+            ]
+          },
+          {
+            "title": "Comprobación de actividad",
+            "paragraphs": [
+              "El sitio puede pedir presencia, captcha, juego u otra acción pequeña para limitar automatización. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Saldo acumulativo",
+            "paragraphs": [
+              "Las cantidades pequeñas se acumulan hasta alcanzar un mínimo útil para jugar o retirar. El valor práctico depende de las reglas completas y no solo del nombre o de la cifra destacada en la promoción."
+            ]
+          },
+          {
+            "title": "Integración con otros bonos",
+            "paragraphs": [
+              "El saldo puede combinarse con cajas gratuitas, premios diarios u otras promociones; revisa si se puede retirar. Si la plataforma aplica límites adicionales, deben tenerse en cuenta antes de completar la acción requerida."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar entre sitios",
+        "intro": "Una cantidad pequeña solo es útil si se consigue con reglas claras y sin requisitos desproporcionados.",
+        "items": [
+          {
+            "summary": "Intervalo",
+            "body": "Comprueba frecuencia y cuándo empieza el temporizador. Este punto puede cambiar de forma importante el valor real de dos ofertas que a primera vista parecen iguales."
+          },
+          {
+            "summary": "Cantidad habitual",
+            "body": "Mira el premio normal y no solo el máximo; en aleatorios revisa todo el rango. Conviene comprobarlo antes de comprometer tiempo, objetos o dinero, porque después puede ser difícil modificar la operación."
+          },
+          {
+            "summary": "Requisitos de cuenta",
+            "body": "Nivel, Steam, teléfono, depósitos previos o actividad pueden ser necesarios. Si la información no aparece claramente en la interfaz, es mejor revisar las reglas completas antes de continuar."
+          },
+          {
+            "summary": "Mínimo útil o de retiro",
+            "body": "Calcula cuánto tiempo se necesita para alcanzar una cantidad realmente utilizable. Este punto puede cambiar de forma importante el valor real de dos ofertas que a primera vista parecen iguales."
+          },
+          {
+            "summary": "Restricciones del saldo",
+            "body": "Puede funcionar solo en ciertos juegos, exigir volumen o no ser retirable."
+          },
+          {
+            "summary": "Protección contra automatización",
+            "body": "Captcha simple es normal; extensiones desconocidas, ejecutables o datos sensibles no."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los grifos de bonos",
+        "intro": "Comparamos frecuencia y posibilidad real de usar el saldo sin gastos ocultos.",
+        "items": [
+          {
+            "summary": "Accesibilidad real",
+            "body": "Comprobamos si un usuario nuevo puede reclamar sin depósito."
+          },
+          {
+            "summary": "Frecuencia y cantidad",
+            "body": "Evaluamos el temporizador junto al premio típico."
+          },
+          {
+            "summary": "Condiciones de uso",
+            "body": "Incluimos juegos válidos, apuesta mínima, volumen, caducidad y combinación con otros bonos."
+          },
+          {
+            "summary": "Retiro",
+            "body": "Revisamos mínimos, comisiones, identidad y si el saldo acumulado puede retirarse."
+          },
+          {
+            "summary": "Transparencia del temporizador",
+            "body": "La próxima reclamación y motivos de bloqueo deben ser claros."
+          },
+          {
+            "summary": "Estabilidad",
+            "body": "Actualizamos cuando se reduce la cantidad, aumenta el intervalo o desaparece la función."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las condiciones",
+        "paragraphs": [
+          "Las recompensas gratuitas dependen del presupuesto promocional. El sitio puede reducir cantidad, cambiar temporizador, añadir nivel o desactivar temporalmente.",
+          "El valor práctico cambia también si suben apuestas mínimas o mínimos de retiro.",
+          "Para un premio menos frecuente y normalmente mayor, compara <a href=\"/freebies/daily-rewards\">recompensas diarias</a>. Otras promociones están en <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad",
+        "intro": "Una recompensa gratuita no debería requerir software desconocido, contraseñas ni pagos a una cartera externa.",
+        "items": [
+          {
+            "summary": "Usa solo el sitio oficial",
+            "body": "Verifica el dominio antes de entrar con Steam."
+          },
+          {
+            "summary": "No instales extensiones sospechosas",
+            "body": "Una comprobación normal funciona en el navegador."
+          },
+          {
+            "summary": "No compartas códigos",
+            "body": "No se necesita contraseña, Steam Guard, frase semilla ni código de dos factores."
+          },
+          {
+            "summary": "Comprueba el retiro primero",
+            "body": "Revisa mínimo, comisiones, identidad y países."
+          },
+          {
+            "summary": "Separa el bono de tus gastos",
+            "body": "Si después se exigen depósitos o apuestas, evalúalos por separado."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre grifos de bonos",
+        "items": [
+          {
+            "summary": "¿Qué es un grifo de bonos?",
+            "body": "Una función que entrega periódicamente una pequeña cantidad gratuita de saldo o cripto."
+          },
+          {
+            "summary": "¿Necesito depositar?",
+            "body": "No siempre; el formato clásico funciona sin depósito normal."
+          },
+          {
+            "summary": "¿Cada cuánto se puede reclamar?",
+            "body": "Puede ser cada minutos, horas o un periodo mayor."
+          },
+          {
+            "summary": "¿Por qué cambia la cantidad?",
+            "body": "Puede depender de nivel, azar, actividad o reglas actualizadas."
+          },
+          {
+            "summary": "¿Se puede retirar?",
+            "body": "A veces, con mínimos, volumen u otras condiciones."
+          },
+          {
+            "summary": "¿Qué diferencia hay con una recompensa diaria?",
+            "body": "El grifo suele permitir reclamaciones pequeñas repetidas; la <a href=\"/freebies/daily-rewards\">recompensa diaria</a> suele ser una vez al día."
+          },
+          {
+            "summary": "¿Es seguro automatizarlo?",
+            "body": "Si está prohibido, puede causar cancelación o bloqueo."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian cantidades, temporizadores, requisitos, uso, retiro y disponibilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Torneiras de bônus: como funcionam pequenas recompensas grátis sem depósito",
+        "paragraphs": [
+          "Uma torneira de bônus entrega pequena quantidade de saldo interno, criptomoeda ou moeda de jogo após um intervalo sem depósito normal. Geralmente serve para testar a plataforma ou iniciar atividades de baixo valor. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista.",
+          "As condições variam: botão periódico, nível, atividade, verificação de perfil ou prova simples contra automação. O saldo pode ter mínimo de saque, requisito de volume ou uso apenas interno. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação.",
+          "A CSGOBROKER compara esse sistema separadamente de <a href=\"/freebies/daily-rewards\">recompensas diárias</a>. A torneira pode usar intervalo menor e várias pequenas liberações."
+        ]
+      },
+      "categories": {
+        "title": "Formatos comuns",
+        "items": [
+          {
+            "title": "Valor fixo por temporizador",
+            "paragraphs": [
+              "Pequena quantia conhecida em cada intervalo. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Valor aleatório",
+            "paragraphs": [
+              "Cada resgate gera valor dentro de uma faixa. Compare mínimo, máximo e probabilidades. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Recompensa por nível",
+            "paragraphs": [
+              "Pode aumentar com nível, VIP ou atividade; o máximo anunciado pode não valer para novos usuários. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          },
+          {
+            "title": "Verificação de atividade",
+            "paragraphs": [
+              "Pode exigir presença, captcha, jogo ou ação simples contra automação. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Saldo acumulativo",
+            "paragraphs": [
+              "Pequenos valores acumulam até atingir mínimo útil para jogo ou saque. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Ligação com outros bônus",
+            "paragraphs": [
+              "Pode interagir com caixas grátis ou recompensas diárias; confira se é sacável. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar entre sites",
+        "intro": "Pequena recompensa só é útil com regras claras e sem exigências desproporcionais.",
+        "items": [
+          {
+            "summary": "Intervalo",
+            "body": "Veja frequência e quando o temporizador inicia. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Valor típico",
+            "body": "Compare o resgate comum, não apenas o máximo. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação."
+          },
+          {
+            "summary": "Requisitos",
+            "body": "Nível, Steam, telefone, depósito anterior ou atividade podem ser exigidos. Se a informação não estiver clara na interface, leia as regras completas antes de continuar."
+          },
+          {
+            "summary": "Mínimo útil ou de saque",
+            "body": "Estime quanto tempo leva para acumular valor utilizável. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Restrições do saldo",
+            "body": "Pode servir apenas em certos jogos, exigir volume ou não permitir saque. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação."
+          },
+          {
+            "summary": "Proteção contra automação",
+            "body": "Captcha simples é normal; extensões desconhecidas ou dados sensíveis não. Se a informação não estiver clara na interface, leia as regras completas antes de continuar."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia torneiras de bônus",
+        "intro": "Comparamos frequência e utilidade real sem gastos escondidos.",
+        "items": [
+          {
+            "summary": "Acesso real",
+            "body": "Verificamos se novo usuário pode resgatar sem depósito. Também verificamos se essa informação aparece para o usuário antes da ação e não apenas depois."
+          },
+          {
+            "summary": "Frequência e valor",
+            "body": "Temporizador é analisado junto com o valor normal. Esse critério é analisado junto com custos, restrições e possibilidade real de usar ou sacar a recompensa."
+          },
+          {
+            "summary": "Uso",
+            "body": "Jogos, mínimo, volume, validade e combinação com bônus entram na análise. Uma mudança importante nesse ponto pode alterar a posição do site mesmo quando a promoção principal continua igual."
+          },
+          {
+            "summary": "Saque",
+            "body": "Vemos mínimo, taxas, identidade e possibilidade real de saque. Também verificamos se essa informação aparece para o usuário antes da ação e não apenas depois."
+          },
+          {
+            "summary": "Temporizador claro",
+            "body": "Próximo resgate e motivo de indisponibilidade devem ser visíveis. Esse critério é analisado junto com custos, restrições e possibilidade real de usar ou sacar a recompensa."
+          },
+          {
+            "summary": "Estabilidade",
+            "body": "Atualizamos quando valor, intervalo ou disponibilidade mudam. Uma mudança importante nesse ponto pode alterar a posição do site mesmo quando a promoção principal continua igual."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que as condições mudam",
+        "paragraphs": [
+          "Recompensas gratuitas dependem do orçamento promocional; valor, temporizador e nível podem mudar ou a função pode ser suspensa.",
+          "O valor prático também cai se aumentam aposta mínima ou mínimo de saque.",
+          "Para prêmio menos frequente e normalmente maior, compare <a href=\"/freebies/daily-rewards\">recompensas diárias</a>. Outras promoções estão em <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança",
+        "intro": "Recompensa grátis não deve exigir software desconhecido, senha ou pagamento externo.",
+        "items": [
+          {
+            "summary": "Use o site oficial",
+            "body": "Confira o domínio antes do login Steam."
+          },
+          {
+            "summary": "Não instale extensões suspeitas",
+            "body": "Verificação normal funciona no navegador."
+          },
+          {
+            "summary": "Não compartilhe códigos",
+            "body": "Senha, Steam Guard, frase-semente e dois fatores não são necessários."
+          },
+          {
+            "summary": "Confira saque primeiro",
+            "body": "Veja mínimo, taxas, identidade e regiões."
+          },
+          {
+            "summary": "Separe bônus de gastos",
+            "body": "Se depois houver depósitos ou apostas, avalie esses custos separadamente."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes",
+        "items": [
+          {
+            "summary": "O que é torneira de bônus?",
+            "body": "Função que libera periodicamente pequena quantidade grátis de saldo ou cripto."
+          },
+          {
+            "summary": "Preciso depositar?",
+            "body": "Nem sempre; a forma clássica funciona sem depósito normal."
+          },
+          {
+            "summary": "Com que frequência posso resgatar?",
+            "body": "Pode ser minutos, horas ou mais."
+          },
+          {
+            "summary": "Por que o valor muda?",
+            "body": "Nível, sorte, atividade ou regras podem alterar."
+          },
+          {
+            "summary": "Posso sacar?",
+            "body": "Às vezes, com mínimo, volume ou outras restrições."
+          },
+          {
+            "summary": "Qual a diferença para recompensa diária?",
+            "body": "A torneira costuma dar pequenas liberações repetidas; a <a href=\"/freebies/daily-rewards\">recompensa diária</a> normalmente é uma vez ao dia."
+          },
+          {
+            "summary": "Automação é segura?",
+            "body": "Se proibida, pode cancelar bônus ou limitar a conta."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Valores, temporizadores, requisitos, uso, saque e disponibilidade mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Bonus Muslukları: Yatırmasız Küçük Ücretsiz Ödüller Nasıl Çalışır?",
+        "paragraphs": [
+          "Bonus musluğu, normal yatırma olmadan belirli aralıkta küçük iç bakiye, kripto veya oyun parası veren özelliktir. Genellikle platformu denemek veya ilk düşük değerli aktiviteyi başlatmak için kullanılır. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir.",
+          "Şartlar değişir: yalnız butona basmak yeterli olabilir veya seviye, aktivite, profil doğrulama ya da basit bot kontrolü istenebilir. Bakiye minimum çekim, hacim veya yalnız site içi kullanım kuralına sahip olabilir. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir.",
+          "CSGOBROKER bu sistemi <a href=\"/freebies/daily-rewards\">günlük ödüllerden</a> ayrı karşılaştırır. Musluk daha kısa timerla daha küçük tutarları tekrar tekrar verebilir."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Bonus Musluğu Türleri",
+        "items": [
+          {
+            "title": "Sabit zamanlı ödül",
+            "paragraphs": [
+              "Her aralıkta bilinen küçük tutar verilir. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Rastgele tutar",
+            "paragraphs": [
+              "Her alım belirli aralıkta rastgele ödül verir; minimum, maksimum ve olasılıkları karşılaştırın. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Seviyeye bağlı musluk",
+            "paragraphs": [
+              "Tutar seviye, VIP veya aktiviteyle artabilir; reklam edilen maksimum yeni kullanıcıya açık olmayabilir. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          },
+          {
+            "title": "Aktivite kontrolü",
+            "paragraphs": [
+              "Site otomasyonu azaltmak için varlık doğrulaması, captcha, oyun veya küçük görev isteyebilir. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Biriken bakiye",
+            "paragraphs": [
+              "Küçük tutarlar oyun veya çekim minimumuna ulaşana kadar birikir. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Diğer bonuslarla bağlantı",
+            "paragraphs": [
+              "Bakiye ücretsiz kasa veya günlük ödülle kullanılabilir; çekilebilir olup olmadığını kontrol edin. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Siteler Arasında Neler Karşılaştırılmalı?",
+        "intro": "Küçük ücretsiz tutar ancak açık şartlarla ve orantısız gereksinim olmadan kullanılabiliyorsa değerlidir.",
+        "items": [
+          {
+            "summary": "Alım aralığı",
+            "body": "Ne sıklıkla alınabildiğini ve timerın ne zaman başladığını karşılaştırın. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir."
+          },
+          {
+            "summary": "Tipik ödül",
+            "body": "Maksimum yerine normal tutara odaklanın. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir."
+          },
+          {
+            "summary": "Hesap şartları",
+            "body": "Seviye, Steam, telefon, önceki yatırma veya aktivite gerekebilir. Bilgi arayüzde açık değilse devam etmeden önce tam kuralları okuyun."
+          },
+          {
+            "summary": "Kullanım/çekim minimumu",
+            "body": "Gerçekten kullanılabilir tutara ulaşmanın ne kadar sürdüğünü hesaplayın. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir."
+          },
+          {
+            "summary": "Bakiye kısıtlamaları",
+            "body": "Yalnız belirli oyunlarda kullanılabilir, hacim isteyebilir veya çekilemeyebilir. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir."
+          },
+          {
+            "summary": "Otomasyon kontrolü",
+            "body": "Basit captcha normaldir; bilinmeyen eklenti, dosya veya gizli veri talebi değildir. Bilgi arayüzde açık değilse devam etmeden önce tam kuralları okuyun."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Bonus Musluklarını Nasıl Değerlendirir?",
+        "intro": "Alım sıklığını ve ücretsiz bakiyenin gizli harcama olmadan işe yarayıp yaramadığını birlikte değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Gerçek erişim",
+            "body": "Yeni kullanıcının yatırmadan alıp alamadığını kontrol ediyoruz. Bu bilginin kullanıcıya işlemden önce açıkça gösterilip gösterilmediğini de değerlendiriyoruz."
+          },
+          {
+            "summary": "Sıklık ve tutar",
+            "body": "Timer ile normal ödül birlikte değerlendirilir. Kriter; maliyet, kısıtlama ve ödülü gerçekten kullanma veya çekme imkânıyla birlikte ele alınır."
+          },
+          {
+            "summary": "Kullanım şartları",
+            "body": "Oyun, minimum bahis, hacim, süre ve diğer bonuslarla ilişki dikkate alınır. Bu alandaki önemli değişiklik, ana kampanyanın adı aynı kalsa bile sitenin sıralamasını etkileyebilir."
+          },
+          {
+            "summary": "Çekim",
+            "body": "Minimum, ücret, kimlik ve gerçek çekim imkânı incelenir. Bu bilginin kullanıcıya işlemden önce açıkça gösterilip gösterilmediğini de değerlendiriyoruz."
+          },
+          {
+            "summary": "Timer şeffaflığı",
+            "body": "Sonraki alım zamanı ve neden kullanılamadığı açık olmalıdır. Kriter; maliyet, kısıtlama ve ödülü gerçekten kullanma veya çekme imkânıyla birlikte ele alınır."
+          },
+          {
+            "summary": "İstikrar",
+            "body": "Tutar azalır, aralık uzar veya özellik kalkarsa sıralama güncellenir. Bu alandaki önemli değişiklik, ana kampanyanın adı aynı kalsa bile sitenin sıralamasını etkileyebilir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Şartlar Neden Değişir?",
+        "paragraphs": [
+          "Ücretsiz ödüller promosyon bütçesine bağlıdır; tutar, timer, seviye şartı değişebilir veya özellik geçici kapanabilir.",
+          "Minimum bahis veya çekim yükselirse aynı tutarın pratik değeri azalır.",
+          "Daha seyrek ama genellikle büyük ödül için <a href=\"/freebies/daily-rewards\">günlük ödülleri</a> karşılaştırın. Diğer kampanyalar <a href=\"/freebies\">bonuslarda</a>."
+        ]
+      },
+      "safety": {
+        "title": "Güvenlik",
+        "intro": "Ücretsiz ödül bilinmeyen yazılım, şifre veya dış cüzdana ödeme gerektirmemelidir.",
+        "items": [
+          {
+            "summary": "Yalnız resmî siteyi kullanın",
+            "body": "Steam girişinden önce domaini kontrol edin."
+          },
+          {
+            "summary": "Şüpheli eklenti kurmayın",
+            "body": "Normal kontrol tarayıcıda çalışır."
+          },
+          {
+            "summary": "Güvenlik kodu paylaşmayın",
+            "body": "Şifre, Steam Guard, seed phrase veya iki aşamalı kod gerekmez."
+          },
+          {
+            "summary": "Çekimi önce kontrol edin",
+            "body": "Minimum, ücret, kimlik ve bölgeyi inceleyin."
+          },
+          {
+            "summary": "Ücretsiz bonusu harcama kararıyla karıştırmayın",
+            "body": "Sonradan yatırma veya bahis istenirse maliyeti ayrı değerlendirin."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Bonus musluğu nedir?",
+            "body": "Belirli aralıkta küçük ücretsiz bakiye veya kripto veren site özelliğidir."
+          },
+          {
+            "summary": "Yatırma gerekir mi?",
+            "body": "Her zaman değil; klasik format normal yatırma olmadan çalışır."
+          },
+          {
+            "summary": "Ne kadar sık alınır?",
+            "body": "Dakika, saat veya daha uzun olabilir."
+          },
+          {
+            "summary": "Tutar neden değişir?",
+            "body": "Seviye, rastgele sonuç, aktivite veya kurallar etkileyebilir."
+          },
+          {
+            "summary": "Çekilebilir mi?",
+            "body": "Bazen; minimum, hacim veya başka kısıtlamalar olabilir."
+          },
+          {
+            "summary": "Günlük ödülden farkı nedir?",
+            "body": "Musluk küçük tekrar eden alımlar verir; <a href=\"/freebies/daily-rewards\">günlük ödül</a> genellikle günde bir kezdir."
+          },
+          {
+            "summary": "Otomatik alma güvenli mi?",
+            "body": "Kurallara aykırıysa bonus iptali veya kısıtlama olabilir."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Tutar, timer, seviye, kullanım, çekim ve erişim değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Bonus Faucets: बिना Deposit के Small Free Claims कैसे काम करती हैं",
+        "paragraphs": [
+          "Bonus faucet ऐसा feature है जो normal deposit के बिना defined interval पर small internal currency, cryptocurrency या gaming balance देती है। इसका use platform try करने या initial low-value activity के लिए होता है। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।",
+          "Conditions अलग हो सकती हैं: simple claim button, account level, activity, profile verification या anti-bot check। Resulting balance पर withdrawal minimum, turnover या site-only restriction हो सकती है। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।",
+          "CSGOBROKER faucets को <a href=\"/freebies/daily-rewards\">daily rewards</a> से अलग compare करता है। Faucet shorter timer पर smaller repeated claims दे सकती है।"
+        ]
+      },
+      "categories": {
+        "title": "Common Faucet Formats",
+        "items": [
+          {
+            "title": "Fixed timed claim",
+            "paragraphs": [
+              "हर interval पर known small amount मिलती है। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Random claim amount",
+            "paragraphs": [
+              "हर claim range के अंदर random reward देती है; minimum, maximum और probabilities देखें। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Account-level faucet",
+            "paragraphs": [
+              "Reward level, VIP या activity से बढ़ सकती है; advertised maximum new user के लिए available नहीं हो सकती। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          },
+          {
+            "title": "Activity-checked faucet",
+            "paragraphs": [
+              "Presence check, captcha, gameplay या small action automation limit करने के लिए require हो सकती है। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Accumulating balance",
+            "paragraphs": [
+              "Small claims accumulate होकर usable play या withdrawal minimum तक पहुँचती हैं। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Faucet linked to other bonuses",
+            "paragraphs": [
+              "Balance free cases या daily rewards के साथ use हो सकती है; withdrawability check करें। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Faucet Sites में क्या Compare करें",
+        "intro": "Small free amount तभी useful है जब conditions clear हों और disproportionate requirements न हों।",
+        "items": [
+          {
+            "summary": "Claim interval",
+            "body": "Next claim frequency और timer start rule compare करें। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।"
+          },
+          {
+            "summary": "Typical reward size",
+            "body": "Maximum के बजाय normal claim amount देखें। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।"
+          },
+          {
+            "summary": "Account requirements",
+            "body": "Level, Steam login, phone, previous deposit या activity required हो सकती है। अगर interface में information clear नहीं है, तो continue करने से पहले complete rules पढ़ें।"
+          },
+          {
+            "summary": "Usable/withdrawable minimum",
+            "body": "Estimate करें useful amount accumulate होने में कितना time लगेगा। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।"
+          },
+          {
+            "summary": "Balance restrictions",
+            "body": "Certain games, turnover या non-withdrawable rules हो सकती हैं। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।"
+          },
+          {
+            "summary": "Anti-automation checks",
+            "body": "Simple captcha normal है; unknown extension, executable या sensitive data demand नहीं। अगर interface में information clear नहीं है, तो continue करने से पहले complete rules पढ़ें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Bonus Faucets को कैसे Rate करता है",
+        "intro": "हम claim frequency और free balance की practical usability दोनों compare करते हैं।",
+        "items": [
+          {
+            "summary": "Real accessibility",
+            "body": "New user बिना deposit claim कर सकता है या नहीं, check किया जाता है। हम यह भी देखते हैं कि यह information action से पहले user को clearly दिखाई देती है या नहीं।"
+          },
+          {
+            "summary": "Frequency and amount",
+            "body": "Timer को typical claim size के साथ evaluate किया जाता है। इस criterion को cost, restrictions और reward को वास्तव में use या withdraw करने की possibility के साथ evaluate किया जाता है।"
+          },
+          {
+            "summary": "Use conditions",
+            "body": "Eligible games, minimum bet, turnover, expiry और other bonuses relation शामिल हैं।"
+          },
+          {
+            "summary": "Withdrawal availability",
+            "body": "Minimums, fees, identity checks और actual payout possibility review होती है।"
+          },
+          {
+            "summary": "Timer transparency",
+            "body": "Next claim time और ineligibility reason clear होने चाहिए।"
+          },
+          {
+            "summary": "Mechanic stability",
+            "body": "Amount, interval या feature availability बदलने पर ranking update होती है।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Faucet Conditions क्यों बदलती हैं",
+        "paragraphs": [
+          "Free claims promotional budget पर depend करती हैं; amount reduce, timer change, level requirement add या feature temporarily disable हो सकती है।",
+          "Minimum bet या withdrawal threshold बढ़ने से same faucet amount कम useful हो सकती है।",
+          "Less frequent लेकिन larger reward के लिए <a href=\"/freebies/daily-rewards\">daily rewards</a> compare करें। बाकी offers <a href=\"/freebies\">bonuses</a> में हैं।"
+        ]
+      },
+      "safety": {
+        "title": "Faucet Safety",
+        "intro": "Free claim को unknown software, password या external wallet payment require नहीं करनी चाहिए।",
+        "items": [
+          {
+            "summary": "Official site use करें",
+            "body": "Steam या other login से पहले domain verify करें।"
+          },
+          {
+            "summary": "Suspicious extensions install न करें",
+            "body": "Normal check browser में work करती है।"
+          },
+          {
+            "summary": "Security codes share न करें",
+            "body": "Password, Steam Guard, seed phrase या two-factor code required नहीं।"
+          },
+          {
+            "summary": "Withdrawal rules पहले check करें",
+            "body": "Minimums, fees, identity और regions देखें।"
+          },
+          {
+            "summary": "Free reward को spending decision से अलग रखें",
+            "body": "अगर बाद में deposits या bets required हों तो cost separately evaluate करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Bonus Faucets के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Bonus faucet क्या है?",
+            "body": "Site feature जो periodically small free internal balance या crypto देती है।"
+          },
+          {
+            "summary": "Deposit जरूरी है?",
+            "body": "हमेशा नहीं; classic faucet normal deposit के बिना claim देती है।"
+          },
+          {
+            "summary": "कितनी बार claim कर सकते हैं?",
+            "body": "Minutes, hours या longer interval हो सकता है।"
+          },
+          {
+            "summary": "Reward amount क्यों बदलती है?",
+            "body": "Level, random selection, activity या updated rules कारण हो सकते हैं।"
+          },
+          {
+            "summary": "क्या balance withdraw कर सकते हैं?",
+            "body": "कभी-कभी, लेकिन minimums, turnover या other restrictions हो सकती हैं।"
+          },
+          {
+            "summary": "Daily reward से क्या फर्क है?",
+            "body": "Faucet small repeated claims देती है; <a href=\"/freebies/daily-rewards\">daily reward</a> usually once per day होती है।"
+          },
+          {
+            "summary": "Automated claiming safe है?",
+            "body": "Rules prohibit करें तो reward cancellation या restriction हो सकती है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Amounts, timers, levels, use rules, withdrawals और availability बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

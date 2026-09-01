@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "daily-rewards",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Ежедневные бонусы: как работают награды за вход, задания и активность",
+        "paragraphs": [
+          "Ежедневные награды — это бонусы, которые можно получать через заданный интервал времени: за вход в аккаунт, нажатие кнопки, выполнение короткого задания, участие в ежедневной серии или достижение определённого уровня активности.",
+          "На сайтах CS2, Rust и крипто-казино формат сильно различается. Где-то пользователь получает фиксированную небольшую сумму, где-то открывает бесплатный кейс или колесо, а на других площадках ценность награды зависит от уровня аккаунта, предыдущих депозитов или серии ежедневных входов.",
+          "CSGOBROKER сравнивает не только максимальную награду, но и реальную частоту получения, требования, ограничения вывода и вероятность пропустить серию. Для пополнений есть отдельный раздел <a href=\"/freebies/deposit-bonuses\">бонусов к пополнению</a>, а для бесплатных розыгрышей — <a href=\"/freebies/giveaways\">розыгрыши</a>."
+        ]
+      },
+      "categories": {
+        "title": "Какие ежедневные награды встречаются",
+        "items": [
+          {
+            "title": "Фиксированный ежедневный бонус",
+            "paragraphs": [
+              "Пользователь получает заранее известную сумму или количество монет раз в день. Это самый простой формат для сравнения, но размер может зависеть от уровня аккаунта."
+            ]
+          },
+          {
+            "title": "Ежедневный бесплатный кейс",
+            "paragraphs": [
+              "Площадка разрешает открыть специальный кейс без отдельной оплаты. Смотрите не только на самый дорогой возможный предмет, но и на вероятность обычных результатов и условия вывода."
+            ]
+          },
+          {
+            "title": "Колесо или случайная награда",
+            "paragraphs": [
+              "Ежедневная попытка даёт случайный приз из набора. Полезно проверить диапазон наград, опубликованные вероятности и возможность получить приз без дополнительного депозита."
+            ]
+          },
+          {
+            "title": "Серия ежедневных входов",
+            "paragraphs": [
+              "Размер награды увеличивается за несколько дней подряд. Пропуск может сбросить прогресс, поэтому оценивайте серию по реальному графику, а не по максимальному призу последнего дня."
+            ]
+          },
+          {
+            "title": "Награда за ежедневное задание",
+            "paragraphs": [
+              "Для получения бонуса нужно выполнить небольшую активность: сыграть, сделать ставку, открыть кейс или выполнить другое условие. Важно учитывать стоимость самого действия."
+            ]
+          },
+          {
+            "title": "Награда по уровню или статусу",
+            "paragraphs": [
+              "уровень аккаунта, опыт аккаунта или предыдущая активность могут менять размер ежедневного бонуса. Высокая награда для верхнего уровня не является типичной для нового пользователя."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что сравнивать у ежедневных бонусов",
+        "intro": "Стабильность и доступность небольшой награды часто важнее единичного большого значения в рекламном блоке.",
+        "items": [
+          {
+            "summary": "Реальная частота получения",
+            "body": "Уточните, считается ли интервал календарным днём, 24 часами с прошлого получения или отдельным таймером площадки. От этого зависит удобство ежедневного использования."
+          },
+          {
+            "summary": "Требования к аккаунту",
+            "body": "Проверьте, нужен ли депозит, уровень, объём игры, подтверждение телефона или другой статус. «Ежедневный» не всегда означает доступный каждому пользователю."
+          },
+          {
+            "summary": "Размер и диапазон награды",
+            "body": "Если результат случайный, сравнивайте не максимальный приз, а весь диапазон и типичные значения. Для фиксированной награды учитывайте возможную зависимость от уровня."
+          },
+          {
+            "summary": "Серия и правила пропуска",
+            "body": "Узнайте, сохраняется ли прогресс после пропущенного дня и через сколько времени серия сбрасывается. Это особенно важно для награды, растущей к концу недели."
+          },
+          {
+            "summary": "Можно ли вывести награду",
+            "body": "Бонус может сразу поступать в основной баланс, иметь отдельный отыгрыш или использоваться только внутри сайта. Условия вывода должны быть понятны заранее."
+          },
+          {
+            "summary": "Стоимость обязательного действия",
+            "body": "Если для получения награды требуется ставка или открытие платного режима, сравните стоимость действия с ожидаемой ценностью самого бонуса."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает ежедневные награды",
+        "intro": "Мы смотрим, насколько бонус доступен обычному пользователю и соответствует ли фактическая механика рекламному описанию.",
+        "items": [
+          {
+            "summary": "Доступность без крупных расходов",
+            "body": "Высоко оцениваются бонусы, для которых не требуется постоянно увеличивать депозит или оборот ради небольшой ежедневной награды."
+          },
+          {
+            "summary": "Понятность таймера",
+            "body": "Проверяем, ясно ли показано время до следующего получения и не меняются ли правила интервала без предупреждения."
+          },
+          {
+            "summary": "Прозрачность случайных наград",
+            "body": "Для кейсов и колёс важны полный список возможных призов и опубликованные вероятности, если площадка их предоставляет."
+          },
+          {
+            "summary": "Условия использования и вывода",
+            "body": "Учитываем отыгрыш, минимальные суммы, ограничение режимов, срок действия и возможность вывести полученную награду."
+          },
+          {
+            "summary": "Стабильность серии",
+            "body": "Проверяем, как работают ежедневные серии, что происходит при пропуске и насколько реально получить заявленный максимальный приз."
+          },
+          {
+            "summary": "Актуальность и поддержка",
+            "body": "Если площадка меняет награды, уровни или условия, это должно отражаться в интерфейсе и рейтинге CSGOBROKER."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему ежедневные бонусы меняются",
+        "paragraphs": [
+          "Площадки меняют таблицы наград, уровни аккаунта, бесплатные кейсы, количество монет и правила серии. Иногда механика остаётся ежедневной, но фактическая ценность бонуса заметно снижается или растёт.",
+          "Случайные награды зависят и от набора доступных призов. Если в бесплатном кейсе меняется состав предметов или их внутренняя оценка, меняется и ценность ежедневного открытия.",
+          "Другие виды акций собраны отдельно: <a href=\"/freebies/deposit-bonuses\">бонусы к пополнению</a>, <a href=\"/freebies/giveaways\">розыгрыши</a>, <a href=\"/freebies/bonuses-to-sale\">бонусы к продаже</a> и общий раздел <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при использовании ежедневных бонусов",
+        "intro": "Бесплатная награда не должна превращаться в причину ежедневно тратить больше, чем стоит сам бонус.",
+        "items": [
+          {
+            "summary": "Не делайте обязательный депозит ради мелкой награды",
+            "body": "Если условия требуют регулярного пополнения или большого оборота, сравните эти расходы с реальной ценностью бонуса."
+          },
+          {
+            "summary": "Проверяйте условия серии",
+            "body": "Не ориентируйтесь только на последний день календаря. Посмотрите, что нужно сделать каждый день и что происходит после пропуска."
+          },
+          {
+            "summary": "Не передавайте данные для «получения бонуса»",
+            "body": "Обычная ежедневная награда не требует отправлять пароль Steam, код двухфакторной защиты или секретные данные сотруднику площадки."
+          },
+          {
+            "summary": "Проверяйте вывод",
+            "body": "Если бонус выдаётся скином или внутренним балансом, заранее уточните минимальную сумму, наличие предмета и дополнительные ограничения."
+          },
+          {
+            "summary": "Сохраняйте лимиты",
+            "body": "Ежедневная механика специально стимулирует возвращаться чаще. Если она связана с азартной игрой, используйте лимиты и рекомендации по <a href=\"/responsibility\">ответственной игре</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о ежедневных бонусах",
+        "items": [
+          {
+            "summary": "Что такое ежедневный бонус?",
+            "body": "Это награда, которую сервис позволяет получать через установленный ежедневный интервал при выполнении указанных условий."
+          },
+          {
+            "summary": "Нужно ли пополнять баланс каждый день?",
+            "body": "Не всегда. На одних площадках бонус бесплатный, на других его размер или доступность связаны с депозитом, оборотом или уровнем."
+          },
+          {
+            "summary": "Что такое серия ежедневных входов?",
+            "body": "Механика, где награда растёт за последовательное получение в течение нескольких дней и может сброситься после пропуска."
+          },
+          {
+            "summary": "Почему таймер показывает не новый календарный день?",
+            "body": "Некоторые сервисы используют 24 часа с прошлого получения или собственное время сервера, а не смену даты у пользователя."
+          },
+          {
+            "summary": "Можно ли вывести ежедневную награду?",
+            "body": "Зависит от площадки. Она может поступать в основной баланс, требовать отыгрыша или быть доступной только для использования на сайте."
+          },
+          {
+            "summary": "Как сравнивать бесплатные кейсы?",
+            "body": "Смотрите на полный набор результатов, вероятность выпадения, внутреннюю цену предметов и правила вывода, а не только на самый дорогой приз."
+          },
+          {
+            "summary": "Стоит ли выполнять платное действие ради ежедневного бонуса?",
+            "body": "Только если вы и без бонуса собирались это делать и стоимость не превышает реальную ценность награды."
+          },
+          {
+            "summary": "Почему рейтинг CSGOBROKER меняется?",
+            "body": "Меняются суммы, серии, таймеры, требования, состав бесплатных кейсов, правила вывода и доступность бонусов."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Daily Rewards: How Login Bonuses, Missions, and Activity Rewards Work",
+        "paragraphs": [
+          "Daily rewards are bonuses available after a defined interval, such as logging into an account, pressing a claim button, completing a short mission, maintaining a login streak, or reaching an activity threshold.",
+          "On CS2, Rust, and crypto gambling sites, the format varies widely. One platform may give a fixed small amount, another a free case or wheel spin, while other services scale the reward by account level, previous deposits, or consecutive daily claims.",
+          "CSGOBROKER compares realistic claim frequency, eligibility, withdrawal restrictions, and streak rules rather than only the largest advertised reward. For deposit promotions see <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>; for prize draws see <a href=\"/freebies/giveaways\">giveaways</a>."
+        ]
+      },
+      "categories": {
+        "title": "Common Types of Daily Rewards",
+        "items": [
+          {
+            "title": "Fixed daily reward",
+            "paragraphs": [
+              "A known amount or number of coins is available once per day. This is easy to compare, although the value can still depend on account level."
+            ]
+          },
+          {
+            "title": "Daily free case",
+            "paragraphs": [
+              "The site allows one opening without a separate payment. Compare the complete outcome range, not only the most expensive possible item, and check withdrawal rules."
+            ]
+          },
+          {
+            "title": "Wheel or random reward",
+            "paragraphs": [
+              "A daily claim produces a random prize. Review the reward range, published probabilities where available, and whether a deposit is required."
+            ]
+          },
+          {
+            "title": "Login streak",
+            "paragraphs": [
+              "Rewards increase across consecutive days. Missing a day can reset progress, so judge the streak by a realistic schedule rather than the final-day headline prize."
+            ]
+          },
+          {
+            "title": "Daily mission reward",
+            "paragraphs": [
+              "A small activity such as playing, betting, or opening a mode is required before claiming. Include the cost of that activity when comparing value."
+            ]
+          },
+          {
+            "title": "Level- or status-based reward",
+            "paragraphs": [
+              "VIP level, account experience, or prior activity can change the amount. A top-tier daily reward is not representative for a new user."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Compare in Daily Rewards",
+        "intro": "Consistency and accessibility of a small reward can matter more than one large promotional number.",
+        "items": [
+          {
+            "summary": "Actual claim frequency",
+            "body": "Check whether the interval follows the calendar day, 24 hours from the previous claim, or a platform-specific timer."
+          },
+          {
+            "summary": "Account requirements",
+            "body": "Verify deposit, level, play-volume, phone verification, or other requirements. “Daily” does not necessarily mean available to everyone."
+          },
+          {
+            "summary": "Reward amount and range",
+            "body": "For random rewards, compare the full range and typical outcomes rather than the maximum. For fixed rewards, note any level scaling."
+          },
+          {
+            "summary": "Streak and missed-day rules",
+            "body": "Find out whether progress survives a missed day and when the streak resets, especially when later days carry larger rewards."
+          },
+          {
+            "summary": "Withdrawal availability",
+            "body": "A reward may enter cash balance, require wagering, or be usable only on the site. Withdrawal rules should be clear before claiming."
+          },
+          {
+            "summary": "Cost of required activity",
+            "body": "If a paid bet or case opening is required, compare that cost with the expected value of the reward itself."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Daily Rewards",
+        "intro": "We focus on whether an ordinary user can actually claim the reward under the conditions advertised.",
+        "items": [
+          {
+            "summary": "Accessibility without large spending",
+            "body": "Rewards are stronger when users do not need to continually raise deposits or turnover to receive a small daily benefit."
+          },
+          {
+            "summary": "Clear timer",
+            "body": "We check whether time to the next claim is visible and whether interval rules stay consistent."
+          },
+          {
+            "summary": "Transparency of random rewards",
+            "body": "For wheels and free cases, the possible prize pool and published probabilities matter."
+          },
+          {
+            "summary": "Use and withdrawal rules",
+            "body": "Wagering, minimums, eligible modes, expiry, and withdrawal availability are included."
+          },
+          {
+            "summary": "Streak reliability",
+            "body": "We review how streaks work, what happens after a missed day, and how realistic the advertised maximum is."
+          },
+          {
+            "summary": "Updates and support",
+            "body": "Changes to amounts, levels, and eligibility should be reflected clearly and are incorporated into CSGOBROKER rankings."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Daily Rewards Change",
+        "paragraphs": [
+          "Platforms change reward tables, VIP tiers, free cases, coin amounts, and streak rules. The feature can remain “daily” while its actual value changes materially.",
+          "Random rewards also depend on the available prize pool. Changing items or internal valuations in a free case changes the value of the daily claim.",
+          "Other promotion types are separated into <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>, <a href=\"/freebies/giveaways\">giveaways</a>, <a href=\"/freebies/bonuses-to-sale\">selling bonuses</a>, and the main <a href=\"/freebies\">bonuses</a> section."
+        ]
+      },
+      "safety": {
+        "title": "Safety When Using Daily Rewards",
+        "intro": "A free daily reward should not become a reason to spend more every day than the reward is worth.",
+        "items": [
+          {
+            "summary": "Do not deposit just for a small reward",
+            "body": "If eligibility requires regular deposits or high turnover, compare those costs with the actual reward value."
+          },
+          {
+            "summary": "Check streak conditions",
+            "body": "Do not judge the promotion only by the last day. Review what must be done every day and what happens after a missed claim."
+          },
+          {
+            "summary": "Do not share private account data",
+            "body": "A normal daily reward does not require sending a Steam password, two-factor code, or other secret information to staff."
+          },
+          {
+            "summary": "Check withdrawal rules",
+            "body": "For item or internal-balance rewards, review minimums, item availability, and restrictions in advance."
+          },
+          {
+            "summary": "Keep personal limits",
+            "body": "Daily mechanics encourage frequent return. When tied to gambling, use limits and <a href=\"/responsibility\">responsible gambling</a> resources."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Daily Rewards",
+        "items": [
+          {
+            "summary": "What is a daily reward?",
+            "body": "A bonus available after a defined daily interval when the stated conditions are met."
+          },
+          {
+            "summary": "Do I have to deposit every day?",
+            "body": "Not always. Some rewards are free, while others depend on deposits, turnover, or account level."
+          },
+          {
+            "summary": "What is a login streak?",
+            "body": "A sequence where rewards increase over consecutive claims and may reset after a missed day."
+          },
+          {
+            "summary": "Why does the timer not reset at midnight?",
+            "body": "Some services use 24 hours from the last claim or server time rather than the user's calendar day."
+          },
+          {
+            "summary": "Can I withdraw a daily reward?",
+            "body": "It depends on the platform. It may enter cash balance, require wagering, or remain usable only on-site."
+          },
+          {
+            "summary": "How should free cases be compared?",
+            "body": "Review the full outcome pool, probabilities, internal item values, and withdrawal rules rather than only the top prize."
+          },
+          {
+            "summary": "Should I complete a paid action just for the reward?",
+            "body": "Only if you already intended to do the action and its cost does not exceed the realistic reward value."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Amounts, streaks, timers, requirements, case pools, withdrawal rules, and availability can all change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Recompensas diarias: cómo funcionan los bonos por acceso, misiones y actividad",
+        "paragraphs": [
+          "Las recompensas diarias son bonos disponibles tras un intervalo definido: iniciar sesión, pulsar un botón, completar una misión corta, mantener una serie de accesos o alcanzar un nivel de actividad. Este punto puede cambiar de forma importante el valor real de dos ofertas que a primera vista parecen iguales.",
+          "En sitios de CS2, Rust y cripto el formato cambia mucho. Una plataforma puede dar una cantidad fija, otra una caja gratuita o giro, y otras ajustar el premio según nivel, depósitos anteriores o días consecutivos. Conviene comprobarlo antes de comprometer tiempo, objetos o dinero, porque después puede ser difícil modificar la operación.",
+          "CSGOBROKER compara frecuencia real, requisitos, retiro y reglas de la serie, no solo el premio máximo. Para depósitos consulta <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a> y para sorteos <a href=\"/freebies/giveaways\">sorteos</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos habituales de recompensas diarias",
+        "items": [
+          {
+            "title": "Recompensa fija diaria",
+            "paragraphs": [
+              "Cantidad conocida o monedas una vez al día. Es fácil de comparar, aunque puede depender del nivel. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Caja gratuita diaria",
+            "paragraphs": [
+              "Una apertura sin pago adicional. Compara todos los resultados, no solo el objeto más caro, y revisa el retiro. El valor práctico depende de las reglas completas y no solo del nombre o de la cifra destacada en la promoción."
+            ]
+          },
+          {
+            "title": "Rueda o premio aleatorio",
+            "paragraphs": [
+              "La reclamación diaria entrega un premio aleatorio. Revisa rango, probabilidades publicadas y necesidad de depósito."
+            ]
+          },
+          {
+            "title": "Serie de accesos",
+            "paragraphs": [
+              "El premio aumenta durante días consecutivos. Perder un día puede reiniciar el progreso."
+            ]
+          },
+          {
+            "title": "Misión diaria",
+            "paragraphs": [
+              "Es necesario jugar, apostar o realizar una pequeña acción. Incluye el coste de esa acción al valorar el bono."
+            ]
+          },
+          {
+            "title": "Premio según nivel o estado",
+            "paragraphs": [
+              "VIP, experiencia o actividad previa pueden cambiar la cantidad. El premio del nivel máximo no representa a un usuario nuevo."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comparar en las recompensas diarias",
+        "intro": "La estabilidad y accesibilidad de un premio pequeño pueden importar más que una cifra publicitaria aislada.",
+        "items": [
+          {
+            "summary": "Frecuencia real",
+            "body": "Comprueba si se basa en día natural, 24 horas desde la última reclamación o temporizador propio."
+          },
+          {
+            "summary": "Requisitos de cuenta",
+            "body": "Revisa depósito, nivel, volumen, teléfono u otros requisitos. «Diario» no significa necesariamente disponible para todos."
+          },
+          {
+            "summary": "Cantidad y rango",
+            "body": "En premios aleatorios compara todo el rango y resultados típicos; en premios fijos, posibles diferencias por nivel."
+          },
+          {
+            "summary": "Serie y días perdidos",
+            "body": "Comprueba si el progreso se conserva y cuándo se reinicia, especialmente si los últimos días pagan más."
+          },
+          {
+            "summary": "Posibilidad de retiro",
+            "body": "Puede ir a saldo real, exigir requisitos o ser utilizable solo dentro del sitio."
+          },
+          {
+            "summary": "Coste de la acción",
+            "body": "Si exige una apuesta o apertura pagada, compara ese coste con el valor esperado del bono."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa las recompensas diarias",
+        "intro": "Analizamos si un usuario normal puede obtener realmente el premio bajo las condiciones anunciadas.",
+        "items": [
+          {
+            "summary": "Accesibilidad sin grandes gastos",
+            "body": "Valoramos mejor los bonos que no exigen aumentar continuamente depósitos o volumen."
+          },
+          {
+            "summary": "Temporizador claro",
+            "body": "Comprobamos si el tiempo restante es visible y las reglas son consistentes."
+          },
+          {
+            "summary": "Transparencia de premios aleatorios",
+            "body": "En ruedas y cajas importan el conjunto completo y las probabilidades publicadas."
+          },
+          {
+            "summary": "Uso y retiro",
+            "body": "Incluimos requisitos, mínimos, modos válidos, caducidad y posibilidad de retirar."
+          },
+          {
+            "summary": "Fiabilidad de la serie",
+            "body": "Revisamos reinicios, días perdidos y si el máximo anunciado es realista."
+          },
+          {
+            "summary": "Actualización y soporte",
+            "body": "Los cambios deben reflejarse claramente y se incorporan a la valoración de CSGOBROKER."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian las recompensas diarias",
+        "paragraphs": [
+          "Las plataformas cambian tablas, niveles VIP, cajas gratuitas, monedas y reglas de la serie. El sistema puede seguir siendo diario pero cambiar mucho de valor.",
+          "Los premios aleatorios dependen también del conjunto disponible. Cambiar objetos o valoraciones internas modifica el valor de la reclamación.",
+          "Otros tipos están en <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a>, <a href=\"/freebies/giveaways\">sorteos</a>, <a href=\"/freebies/bonuses-to-sale\">bonos por venta</a> y <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad al usar recompensas diarias",
+        "intro": "Un premio gratuito no debería convertirse en motivo para gastar cada día más de lo que vale.",
+        "items": [
+          {
+            "summary": "No deposites solo por un premio pequeño",
+            "body": "Si exige depósitos regulares o mucho volumen, compara ese coste con el valor real."
+          },
+          {
+            "summary": "Comprueba las reglas de la serie",
+            "body": "No mires solo el último día; revisa qué hay que hacer a diario y qué ocurre si faltas."
+          },
+          {
+            "summary": "No compartas datos privados",
+            "body": "Un bono normal no necesita contraseña de Steam, código de dos factores u otros datos secretos."
+          },
+          {
+            "summary": "Comprueba el retiro",
+            "body": "Para skins o saldo interno revisa mínimos, disponibilidad y restricciones."
+          },
+          {
+            "summary": "Mantén límites personales",
+            "body": "Las mecánicas diarias fomentan volver con frecuencia. Si hay juego, usa límites y <a href=\"/responsibility\">juego responsable</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre recompensas diarias",
+        "items": [
+          {
+            "summary": "¿Qué es una recompensa diaria?",
+            "body": "Un bono disponible tras un intervalo diario cuando se cumplen sus condiciones."
+          },
+          {
+            "summary": "¿Tengo que depositar cada día?",
+            "body": "No siempre. Algunos son gratuitos y otros dependen de depósito, volumen o nivel."
+          },
+          {
+            "summary": "¿Qué es una serie de accesos?",
+            "body": "Una secuencia donde el premio aumenta y puede reiniciarse tras faltar un día."
+          },
+          {
+            "summary": "¿Por qué no se reinicia a medianoche?",
+            "body": "Algunos sitios usan 24 horas desde la última reclamación o la hora del servidor."
+          },
+          {
+            "summary": "¿Puedo retirar la recompensa?",
+            "body": "Depende del sitio; puede ir a saldo real, exigir requisitos o ser solo para uso interno."
+          },
+          {
+            "summary": "¿Cómo comparar cajas gratuitas?",
+            "body": "Mira todos los resultados, probabilidades, valoraciones internas y retiro."
+          },
+          {
+            "summary": "¿Conviene hacer una acción pagada solo por el bono?",
+            "body": "Solo si ya pensabas hacerla y su coste no supera el valor realista del premio."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Cambian cantidades, series, temporizadores, requisitos, cajas, retiro y disponibilidad."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Recompensas diárias: como funcionam bônus de login, missões e atividade",
+        "paragraphs": [
+          "Recompensas diárias são bônus disponíveis após um intervalo: login, botão de resgate, missão curta, sequência de dias ou nível de atividade. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista.",
+          "Em sites de CS2, Rust e cripto o formato varia muito. Um serviço pode dar valor fixo, outro caixa grátis ou giro, e outros ajustar o prêmio por nível, depósitos anteriores ou dias consecutivos. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação.",
+          "A CSGOBROKER compara frequência real, requisitos, saque e regras da sequência, não apenas o maior prêmio. Para depósitos veja <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a>; para sorteios, <a href=\"/freebies/giveaways\">sorteios</a>."
+        ]
+      },
+      "categories": {
+        "title": "Tipos comuns de recompensas diárias",
+        "items": [
+          {
+            "title": "Recompensa fixa diária",
+            "paragraphs": [
+              "Valor conhecido ou moedas uma vez por dia. É fácil comparar, embora possa variar por nível. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Caixa grátis diária",
+            "paragraphs": [
+              "Uma abertura sem pagamento adicional. Compare todos os resultados e regras de saque, não apenas o item mais caro. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Roda ou prêmio aleatório",
+            "paragraphs": [
+              "O resgate diário entrega prêmio aleatório. Veja faixa, probabilidades e se exige depósito. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          },
+          {
+            "title": "Sequência de login",
+            "paragraphs": [
+              "O prêmio cresce com dias consecutivos. Perder um dia pode reiniciar o progresso. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Missão diária",
+            "paragraphs": [
+              "Pode exigir jogar, apostar ou realizar pequena ação. Inclua o custo da ação ao avaliar o bônus. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Prêmio por nível ou status",
+            "paragraphs": [
+              "VIP, experiência ou atividade anterior podem alterar a recompensa. O valor máximo não representa um novo usuário. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que comparar em recompensas diárias",
+        "intro": "Consistência e acesso a uma recompensa pequena podem importar mais que um valor promocional isolado.",
+        "items": [
+          {
+            "summary": "Frequência real",
+            "body": "Veja se é por dia do calendário, 24 horas desde o último resgate ou temporizador próprio. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Requisitos da conta",
+            "body": "Confira depósito, nível, volume, telefone ou outras condições. “Diário” não significa disponível para todos."
+          },
+          {
+            "summary": "Valor e faixa",
+            "body": "Em prêmio aleatório compare toda a faixa e resultados típicos; em fixo, possíveis diferenças por nível."
+          },
+          {
+            "summary": "Sequência e dias perdidos",
+            "body": "Veja se o progresso é mantido e quando reinicia."
+          },
+          {
+            "summary": "Possibilidade de saque",
+            "body": "Pode entrar em saldo real, exigir requisito ou ser apenas para uso interno."
+          },
+          {
+            "summary": "Custo da ação",
+            "body": "Se exige aposta ou abertura paga, compare esse custo com o valor esperado do bônus."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia recompensas diárias",
+        "intro": "Avaliamos se um usuário comum consegue realmente resgatar o prêmio nas condições anunciadas.",
+        "items": [
+          {
+            "summary": "Acesso sem grandes gastos",
+            "body": "Valorizamos bônus que não exigem elevar continuamente depósito ou volume."
+          },
+          {
+            "summary": "Temporizador claro",
+            "body": "Verificamos se o tempo restante está visível e as regras são consistentes."
+          },
+          {
+            "summary": "Transparência aleatória",
+            "body": "Em rodas e caixas importam o conjunto completo e probabilidades publicadas."
+          },
+          {
+            "summary": "Uso e saque",
+            "body": "Consideramos requisitos, mínimos, modos, validade e possibilidade de saque."
+          },
+          {
+            "summary": "Confiabilidade da sequência",
+            "body": "Analisamos reinício, faltas e realismo do prêmio máximo."
+          },
+          {
+            "summary": "Atualização e suporte",
+            "body": "Mudanças devem aparecer claramente e entram no ranking da CSGOBROKER."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que recompensas diárias mudam",
+        "paragraphs": [
+          "Plataformas mudam tabelas, níveis VIP, caixas grátis, moedas e regras da sequência. O recurso pode continuar diário e mudar bastante de valor.",
+          "Prêmios aleatórios também dependem do conjunto disponível; alterar itens ou avaliação interna muda o valor.",
+          "Outros tipos estão em <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a>, <a href=\"/freebies/giveaways\">sorteios</a>, <a href=\"/freebies/bonuses-to-sale\">bônus de venda</a> e <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança ao usar recompensas diárias",
+        "intro": "Uma recompensa gratuita não deve virar motivo para gastar diariamente mais do que ela vale.",
+        "items": [
+          {
+            "summary": "Não deposite só por prêmio pequeno",
+            "body": "Se exige depósitos frequentes ou grande volume, compare o custo com o valor real."
+          },
+          {
+            "summary": "Confira a sequência",
+            "body": "Não olhe só o último dia; veja o que precisa ser feito diariamente e o que acontece ao faltar."
+          },
+          {
+            "summary": "Não compartilhe dados privados",
+            "body": "Bônus normal não exige senha Steam, código de dois fatores ou dados secretos."
+          },
+          {
+            "summary": "Confira saque",
+            "body": "Para skins ou saldo interno, veja mínimos, disponibilidade e restrições."
+          },
+          {
+            "summary": "Mantenha limites",
+            "body": "Mecânicas diárias incentivam retorno frequente. Se houver apostas, use limites e <a href=\"/responsibility\">jogo responsável</a>."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre recompensas diárias",
+        "items": [
+          {
+            "summary": "O que é recompensa diária?",
+            "body": "Bônus disponível após um intervalo diário quando as condições são atendidas."
+          },
+          {
+            "summary": "Preciso depositar todo dia?",
+            "body": "Nem sempre. Alguns são grátis e outros dependem de depósito, volume ou nível."
+          },
+          {
+            "summary": "O que é sequência de login?",
+            "body": "Sistema em que o prêmio aumenta por dias consecutivos e pode reiniciar após uma falta."
+          },
+          {
+            "summary": "Por que não reinicia à meia-noite?",
+            "body": "Alguns sites usam 24 horas desde o último resgate ou horário do servidor."
+          },
+          {
+            "summary": "Posso sacar a recompensa?",
+            "body": "Depende; pode entrar em saldo real, exigir condições ou servir apenas para uso interno."
+          },
+          {
+            "summary": "Como comparar caixas grátis?",
+            "body": "Veja todos os resultados, probabilidades, valores internos e regras de saque."
+          },
+          {
+            "summary": "Vale fazer ação paga só pelo bônus?",
+            "body": "Apenas se você já faria e o custo não superar o valor realista do prêmio."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Valores, sequências, temporizadores, requisitos, caixas, saque e disponibilidade mudam."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "Günlük Ödüller: Giriş Bonusları, Görevler ve Aktivite Ödülleri Nasıl Çalışır?",
+        "paragraphs": [
+          "Günlük ödüller hesaba giriş, butona basma, kısa görev, giriş serisi veya aktivite seviyesi gibi şartlarla belirli aralıkta alınan bonuslardır. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir.",
+          "CS2, Rust ve kripto sitelerinde format çok değişir. Bir platform sabit küçük tutar verir, diğeri ücretsiz kasa veya çark sunar; bazıları ödülü hesap seviyesi, eski yatırmalar veya ardışık günlere göre artırır. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir.",
+          "CSGOBROKER yalnız en yüksek ödülü değil gerçek sıklığı, şartları, çekim kısıtlamalarını ve seri kurallarını karşılaştırır. Yatırma kampanyaları için <a href=\"/freebies/deposit-bonuses\">yatırma bonuslarına</a>, çekilişler için <a href=\"/freebies/giveaways\">çekilişlere</a> bakın."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Günlük Ödül Türleri",
+        "items": [
+          {
+            "title": "Sabit günlük ödül",
+            "paragraphs": [
+              "Günde bir kez bilinen tutar veya coin verilir. Karşılaştırması kolaydır ancak hesap seviyesine göre değişebilir. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Günlük ücretsiz kasa",
+            "paragraphs": [
+              "Ek ödeme olmadan bir kasa açılır. En pahalı eşya yerine tüm sonuçları ve çekim kurallarını karşılaştırın. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Çark veya rastgele ödül",
+            "paragraphs": [
+              "Günlük deneme rastgele ödül verir. Ödül aralığını, yayınlanan olasılıkları ve yatırma gereksinimini kontrol edin. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          },
+          {
+            "title": "Giriş serisi",
+            "paragraphs": [
+              "Ardışık günlerde ödül büyür. Bir günü kaçırmak ilerlemeyi sıfırlayabilir. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Günlük görev",
+            "paragraphs": [
+              "Oynamak, bahis yapmak veya başka küçük aktivite gerekebilir. Bonusu değerlendirirken işlemin maliyetini de ekleyin. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Seviye veya statü ödülü",
+            "paragraphs": [
+              "VIP, deneyim veya önceki aktivite tutarı değiştirebilir. Üst seviye ödülü yeni kullanıcı için tipik değildir. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Günlük Ödüllerde Neler Karşılaştırılmalı?",
+        "intro": "Küçük bir ödülün düzenli ve kolay alınması tek büyük reklam rakamından daha önemli olabilir.",
+        "items": [
+          {
+            "summary": "Gerçek sıklık",
+            "body": "Takvim günü, son alımdan 24 saat veya platform zamanlayıcısı kullanılıp kullanılmadığını kontrol edin."
+          },
+          {
+            "summary": "Hesap şartları",
+            "body": "Yatırma, seviye, oyun hacmi, telefon doğrulama veya başka şartları inceleyin."
+          },
+          {
+            "summary": "Tutar ve aralık",
+            "body": "Rastgele ödülde tüm aralığı ve tipik sonuçları; sabit ödülde seviye farklarını değerlendirin."
+          },
+          {
+            "summary": "Seri ve kaçırılan gün",
+            "body": "İlerlemenin korunup korunmadığını ve ne zaman sıfırlandığını öğrenin."
+          },
+          {
+            "summary": "Çekilebilirlik",
+            "body": "Ödül nakit bakiyeye girebilir, çevrim gerektirebilir veya yalnız site içinde kullanılabilir."
+          },
+          {
+            "summary": "Zorunlu aktivite maliyeti",
+            "body": "Ücretli bahis veya kasa gerekiyorsa maliyeti beklenen ödülle karşılaştırın."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Günlük Ödülleri Nasıl Değerlendirir?",
+        "intro": "Normal kullanıcının reklam edilen koşullarda gerçekten ödül alıp alamadığını değerlendiriyoruz.",
+        "items": [
+          {
+            "summary": "Büyük harcama olmadan erişim",
+            "body": "Küçük günlük ödül için sürekli daha fazla yatırma veya hacim gerektirmeyen bonuslar daha değerlidir."
+          },
+          {
+            "summary": "Açık zamanlayıcı",
+            "body": "Bir sonraki alıma kalan sürenin görünür ve kuralın tutarlı olup olmadığını kontrol ediyoruz."
+          },
+          {
+            "summary": "Rastgele ödül şeffaflığı",
+            "body": "Çark ve kasalarda tüm ödül havuzu ve yayınlanan olasılıklar önemlidir."
+          },
+          {
+            "summary": "Kullanım ve çekim",
+            "body": "Çevrim, minimum, geçerli mod, süre ve çekim şartları değerlendirilir."
+          },
+          {
+            "summary": "Seri güvenilirliği",
+            "body": "Kaçırılan gün, sıfırlama ve maksimum ödülün gerçekçiliği incelenir."
+          },
+          {
+            "summary": "Güncellik ve destek",
+            "body": "Tutar veya şart değişiklikleri açıkça gösterilmeli ve CSGOBROKER sıralamasına yansıtılmalıdır."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Günlük Ödüller Neden Değişir?",
+        "paragraphs": [
+          "Platformlar ödül tablolarını, VIP seviyelerini, ücretsiz kasaları, coin miktarını ve seri kurallarını değiştirir. Özellik günlük kalırken değeri ciddi değişebilir.",
+          "Rastgele ödülün değeri havuza bağlıdır. Ücretsiz kasadaki eşya veya iç fiyat değişimi günlük ödülü de değiştirir.",
+          "Diğer kampanyalar <a href=\"/freebies/deposit-bonuses\">yatırma bonusları</a>, <a href=\"/freebies/giveaways\">çekilişler</a>, <a href=\"/freebies/bonuses-to-sale\">satış bonusları</a> ve <a href=\"/freebies\">bonuslar</a> bölümündedir."
+        ]
+      },
+      "safety": {
+        "title": "Günlük Ödüllerde Güvenlik",
+        "intro": "Ücretsiz günlük ödül, değerinden daha fazla harcama yapma nedeni olmamalıdır.",
+        "items": [
+          {
+            "summary": "Küçük ödül için yatırma yapmayın",
+            "body": "Düzenli yatırma veya yüksek hacim gerekiyorsa maliyeti gerçek ödülle karşılaştırın."
+          },
+          {
+            "summary": "Seri kurallarını kontrol edin",
+            "body": "Yalnız son güne bakmayın; her gün gerekeni ve kaçırınca ne olduğunu inceleyin."
+          },
+          {
+            "summary": "Gizli bilgi paylaşmayın",
+            "body": "Normal günlük bonus Steam şifresi, iki aşamalı kod veya gizli veri istemez."
+          },
+          {
+            "summary": "Çekimi kontrol edin",
+            "body": "Skin veya iç bakiye için minimum, bulunabilirlik ve kısıtlamaları önceden inceleyin."
+          },
+          {
+            "summary": "Limitleri koruyun",
+            "body": "Günlük mekanikler sık geri dönüşü teşvik eder. Kumarla ilişkiliyse <a href=\"/responsibility\">sorumlu oyun</a> kaynaklarını kullanın."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Günlük Ödüller Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Günlük ödül nedir?",
+            "body": "Belirli günlük aralıkta şartlar sağlanınca alınabilen bonustur."
+          },
+          {
+            "summary": "Her gün yatırma gerekir mi?",
+            "body": "Her zaman değil. Bazıları ücretsiz, bazıları yatırma, hacim veya seviyeye bağlıdır."
+          },
+          {
+            "summary": "Giriş serisi nedir?",
+            "body": "Ardışık günlerde ödülün arttığı ve gün kaçırınca sıfırlanabilen sistemdir."
+          },
+          {
+            "summary": "Zamanlayıcı neden gece yarısında sıfırlanmıyor?",
+            "body": "Bazı siteler son alımdan 24 saat veya sunucu saatini kullanır."
+          },
+          {
+            "summary": "Günlük ödülü çekebilir miyim?",
+            "body": "Siteye bağlıdır; nakit bakiyeye girebilir, çevrim isteyebilir veya yalnız içeride kullanılabilir."
+          },
+          {
+            "summary": "Ücretsiz kasalar nasıl karşılaştırılır?",
+            "body": "Tüm sonuçlara, olasılıklara, iç eşya fiyatına ve çekim kurallarına bakın."
+          },
+          {
+            "summary": "Sadece bonus için ücretli aktivite yapmalı mıyım?",
+            "body": "Yalnız zaten yapmayı planlıyorsanız ve maliyet ödülün gerçek değerini aşmıyorsa."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Tutar, seri, zamanlayıcı, şart, kasa havuzu, çekim ve erişim değişebilir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "Daily Rewards: Login Bonuses, Missions और Activity Rewards कैसे काम करती हैं",
+        "paragraphs": [
+          "Daily rewards defined interval के बाद मिलने वाले bonuses हैं, जैसे account login, claim button, short mission, login streak या activity threshold complete करना। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।",
+          "CS2, Rust और crypto sites पर format काफी अलग होती है। एक platform fixed small amount देती है, दूसरी free case या wheel spin, जबकि कुछ sites account level, previous deposits या consecutive claims के अनुसार reward scale करती हैं। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।",
+          "CSGOBROKER सिर्फ largest reward नहीं, actual frequency, eligibility, withdrawal restrictions और streak rules compare करता है। Deposit promotions के लिए <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a> और prize draws के लिए <a href=\"/freebies/giveaways\">giveaways</a> देखें।"
+        ]
+      },
+      "categories": {
+        "title": "Common Daily Reward Types",
+        "items": [
+          {
+            "title": "Fixed daily reward",
+            "paragraphs": [
+              "Known amount या coins once per day मिलते हैं। Compare करना आसान है, though value account level पर depend कर सकती है। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Daily free case",
+            "paragraphs": [
+              "Extra payment के बिना एक opening मिलती है। सिर्फ expensive item नहीं, complete outcomes और withdrawal rules compare करें। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Wheel या random reward",
+            "paragraphs": [
+              "Daily claim random prize देती है। Reward range, published probabilities और deposit requirement check करें। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          },
+          {
+            "title": "Login streak",
+            "paragraphs": [
+              "Consecutive days पर reward बढ़ती है। One missed day progress reset कर सकता है। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Daily mission reward",
+            "paragraphs": [
+              "Play, bet या small action required हो सकती है। Bonus value में उस action का cost भी include करें।"
+            ]
+          },
+          {
+            "title": "Level/status reward",
+            "paragraphs": [
+              "VIP, experience या previous activity amount बदल सकती है। Top-tier reward new user के लिए typical नहीं है।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Daily Rewards में क्या Compare करें",
+        "intro": "Small reward की consistency और accessibility एक बड़े promotional number से ज्यादा useful हो सकती है।",
+        "items": [
+          {
+            "summary": "Actual claim frequency",
+            "body": "Calendar day, last claim से 24 hours या platform-specific timer use होता है या नहीं, check करें।"
+          },
+          {
+            "summary": "Account requirements",
+            "body": "Deposit, level, play volume, phone verification या दूसरी conditions verify करें।"
+          },
+          {
+            "summary": "Reward amount and range",
+            "body": "Random rewards में full range और typical outcomes compare करें; fixed rewards में level scaling देखें।"
+          },
+          {
+            "summary": "Streak and missed-day rules",
+            "body": "Progress missed day पर survive करती है या reset, और कब reset होती है, check करें।"
+          },
+          {
+            "summary": "Withdrawal availability",
+            "body": "Reward cash balance में जा सकती है, wagering require कर सकती है या site-only हो सकती है।"
+          },
+          {
+            "summary": "Required activity cost",
+            "body": "Paid bet या case opening required हो तो उसका cost expected reward से compare करें।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Daily Rewards को कैसे Rate करता है",
+        "intro": "हम देखते हैं कि ordinary user advertised conditions के तहत reward वास्तव में claim कर सकता है या नहीं।",
+        "items": [
+          {
+            "summary": "Access without large spending",
+            "body": "Small reward के लिए लगातार deposit या turnover बढ़ाना required न हो तो offer ज्यादा useful है।"
+          },
+          {
+            "summary": "Clear timer",
+            "body": "Next claim time visible और interval rules consistent हैं या नहीं, check किया जाता है।"
+          },
+          {
+            "summary": "Random reward transparency",
+            "body": "Wheels और free cases में complete prize pool और published probabilities important हैं।"
+          },
+          {
+            "summary": "Use and withdrawal rules",
+            "body": "Wagering, minimums, eligible modes, expiry और withdrawal availability शामिल हैं।"
+          },
+          {
+            "summary": "Streak reliability",
+            "body": "Missed day, reset behavior और maximum reward की realism review की जाती है।"
+          },
+          {
+            "summary": "Updates and support",
+            "body": "Amount, level और eligibility changes clear होने चाहिए और CSGOBROKER ranking में reflect होते हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Daily Rewards क्यों बदलती हैं",
+        "paragraphs": [
+          "Platforms reward tables, VIP tiers, free cases, coin amounts और streak rules बदलती हैं। Feature daily रह सकती है लेकिन actual value बदल सकती है।",
+          "Random rewards available prize pool पर भी depend करती हैं। Free case items या internal values बदलने से daily claim value बदलती है।",
+          "Other promotion types <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>, <a href=\"/freebies/giveaways\">giveaways</a>, <a href=\"/freebies/bonuses-to-sale\">selling bonuses</a> और <a href=\"/freebies\">bonuses</a> section में हैं।"
+        ]
+      },
+      "safety": {
+        "title": "Daily Rewards Use करते समय Safety",
+        "intro": "Free daily reward आपको reward से ज्यादा रोज spend करने की वजह नहीं बननी चाहिए।",
+        "items": [
+          {
+            "summary": "Small reward के लिए deposit न करें",
+            "body": "Regular deposits या high turnover required हो तो cost को actual reward value से compare करें।"
+          },
+          {
+            "summary": "Streak rules check करें",
+            "body": "सिर्फ final day prize न देखें; daily requirements और missed day effect देखें।"
+          },
+          {
+            "summary": "Private data share न करें",
+            "body": "Normal daily bonus को Steam password, two-factor code या secret data staff को भेजने की जरूरत नहीं होती।"
+          },
+          {
+            "summary": "Withdrawal check करें",
+            "body": "Skin या internal balance rewards के लिए minimums, availability और restrictions पहले देखें।"
+          },
+          {
+            "summary": "Personal limits रखें",
+            "body": "Daily mechanics frequent return encourage करती हैं। Gambling-related होने पर <a href=\"/responsibility\">responsible gambling</a> resources use करें।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Daily Rewards के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Daily reward क्या है?",
+            "body": "Defined daily interval के बाद conditions meet होने पर available bonus।"
+          },
+          {
+            "summary": "क्या हर दिन deposit करना पड़ता है?",
+            "body": "हमेशा नहीं। कुछ free हैं, कुछ deposit, turnover या level पर depend करती हैं।"
+          },
+          {
+            "summary": "Login streak क्या है?",
+            "body": "Consecutive claims पर reward बढ़ने वाली sequence जो missed day के बाद reset हो सकती है।"
+          },
+          {
+            "summary": "Timer midnight पर reset क्यों नहीं होती?",
+            "body": "कुछ services last claim से 24 hours या server time use करती हैं।"
+          },
+          {
+            "summary": "क्या daily reward withdraw कर सकते हैं?",
+            "body": "Platform पर depend करता है; cash balance, wagering या site-only use हो सकती है।"
+          },
+          {
+            "summary": "Free cases कैसे compare करें?",
+            "body": "Complete outcomes, probabilities, internal item values और withdrawal rules देखें।"
+          },
+          {
+            "summary": "क्या सिर्फ reward के लिए paid action करनी चाहिए?",
+            "body": "Only if आप वह action वैसे भी करने वाले थे और cost reward value से अधिक नहीं है।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Amounts, streaks, timers, requirements, case pools, withdrawal और availability बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}

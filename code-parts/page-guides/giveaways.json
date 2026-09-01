@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "page": "giveaways",
+  "languages": {
+    "ru": {
+      "intro": {
+        "title": "Розыгрыши на сайтах CS2, Rust и крипто: как сравнивать бесплатные акции",
+        "paragraphs": [
+          "Розыгрыши — это акции, в которых площадка распределяет скины, внутриигровые предметы, баланс, подарочные карты, криптовалюту или другие призы между участниками. Участие может быть полностью бесплатным или требовать выполнения простого условия: входа в аккаунт, подписки, использования промокода, активности на сайте или наличия определённого статуса.",
+          "Главный приз сам по себе мало говорит о ценности акции. Для сравнения важны количество победителей, число участников, способ выбора победителя, частота розыгрышей и то, можно ли получить приз без дополнительного депозита или выполнения платных действий.",
+          "CSGOBROKER отдельно собирает такие предложения, чтобы их не смешивать с <a href=\"/freebies/daily-rewards\">ежедневными наградами</a> и <a href=\"/freebies/deposit-bonuses\">бонусами к пополнению</a>. Розыгрыш предполагает распределение ограниченного числа призов между участниками, а не гарантированное начисление каждому."
+        ]
+      },
+      "categories": {
+        "title": "Какие розыгрыши встречаются",
+        "items": [
+          {
+            "title": "Автоматический розыгрыш среди участников",
+            "paragraphs": [
+              "Пользователь выполняет условие участия, после чего победители выбираются из общего списка. Проверьте количество призовых мест и момент, когда список участников закрывается."
+            ]
+          },
+          {
+            "title": "Розыгрыш скинов и игровых предметов",
+            "paragraphs": [
+              "Призом могут быть предметы CS2, Rust или других игр. Важно проверить, передаётся ли конкретный предмет через Steam и есть ли ограничения по его получению."
+            ]
+          },
+          {
+            "title": "Розыгрыш внутреннего баланса",
+            "paragraphs": [
+              "Победителю начисляют средства внутри платформы. Такой приз нельзя автоматически считать эквивалентом денег: проверьте, можно ли его вывести и нужны ли дополнительные условия."
+            ]
+          },
+          {
+            "title": "Социальные розыгрыши",
+            "paragraphs": [
+              "Участие может требовать подписку, комментарий, репост или действие в социальной сети. Проверяйте официальный аккаунт площадки и избегайте копий, которые запрашивают пароль или перевод средств."
+            ]
+          },
+          {
+            "title": "Розыгрыши для активных пользователей",
+            "paragraphs": [
+              "Количество билетов или шанс участия может зависеть от ставок, торговли, депозитов или другой активности. В таком случае розыгрыш уже нельзя считать полностью бесплатным."
+            ]
+          },
+          {
+            "title": "Сезонные и событийные акции",
+            "paragraphs": [
+              "Крупные розыгрыши часто привязаны к турнирам, праздникам или обновлениям сайта. Они могут иметь короткий срок регистрации и отдельные правила получения приза."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Что проверить перед участием",
+        "intro": "Чем дороже главный приз, тем важнее смотреть на механику участия, а не только на рекламный баннер.",
+        "items": [
+          {
+            "summary": "Количество победителей и призов",
+            "body": "Один крупный приз и десятки небольших наград создают другую структуру акции, чем один победитель. Проверьте полный призовой фонд."
+          },
+          {
+            "summary": "Как выдаются билеты",
+            "body": "Билет может начисляться бесплатно, за ежедневный вход, промокод, депозит или определённую активность. Сравнивайте стоимость получения дополнительного шанса."
+          },
+          {
+            "summary": "Способ выбора победителя",
+            "body": "Желательно, чтобы площадка заранее описывала дату, правила и способ определения победителя, а после завершения публиковала результат."
+          },
+          {
+            "summary": "Сроки участия и получения приза",
+            "body": "Проверьте время окончания регистрации и сколько дней даётся победителю на подтверждение. Неполученный вовремя приз может быть передан другому участнику."
+          },
+          {
+            "summary": "Условия вывода",
+            "body": "Скин, баланс или криптовалюта могут иметь разные правила получения. Уточните минимальный вывод, проверку личности и необходимость дополнительного оборота."
+          },
+          {
+            "summary": "Региональные и возрастные ограничения",
+            "body": "Некоторые акции доступны не во всех странах или только совершеннолетним пользователям. Эти ограничения лучше проверять до выполнения условий."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Как CSGOBROKER оценивает розыгрыши",
+        "intro": "Мы отделяем понятную акцию с прозрачными правилами от рекламного обещания, где получить приз на практике сложно.",
+        "items": [
+          {
+            "summary": "Прозрачность участия",
+            "body": "До регистрации должно быть понятно, какие действия нужны, сколько билетов они дают и какие пользователи допускаются."
+          },
+          {
+            "summary": "Призовой фонд",
+            "body": "Учитываем не только главный приз, но и количество победителей, распределение стоимости между местами и реальную возможность получить приз."
+          },
+          {
+            "summary": "Стоимость участия",
+            "body": "Бесплатные действия и условия, требующие депозита или оборота, оцениваются отдельно. Платная активность не должна маскироваться под бесплатный розыгрыш."
+          },
+          {
+            "summary": "Публикация результатов",
+            "body": "Важно, чтобы после завершения площадка показывала победителей или другой проверяемый результат и не переносила сроки без объяснения."
+          },
+          {
+            "summary": "Получение выигрыша",
+            "body": "Проверяем, как долго выдаётся приз, какие данные требуются и не появляются ли дополнительные финансовые условия после победы."
+          },
+          {
+            "summary": "Регулярность и актуальность",
+            "body": "Учитываем частоту розыгрышей и обновляем информацию, когда акция заканчивается, меняются призы или условия участия."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Почему розыгрыши и их условия меняются",
+        "paragraphs": [
+          "Розыгрыши часто являются временными маркетинговыми акциями. Площадки меняют призы, число билетов, требования, сроки и каналы участия в зависимости от сезона и рекламной кампании.",
+          "Чем больше участников, тем ниже вероятность выиграть при одинаковом количестве билетов. Поэтому старая акция с тем же призом и новая акция могут отличаться по реальной конкурентности даже при похожих правилах.",
+          "Если нужен гарантированный небольшой бонус вместо случайного победителя, сравните <a href=\"/freebies/daily-rewards\">ежедневные награды</a>. Все основные типы акций собраны в разделе <a href=\"/freebies\">бонусов</a>."
+        ]
+      },
+      "safety": {
+        "title": "Безопасность при участии в розыгрышах",
+        "intro": "Поддельные сообщения о выигрыше — один из самых частых способов фишинга вокруг розыгрышей.",
+        "items": [
+          {
+            "summary": "Проверяйте официальный источник",
+            "body": "Участвуйте через сайт или официальный аккаунт площадки. Не переходите по сообщениям от пользователей с похожим именем без дополнительной проверки."
+          },
+          {
+            "summary": "Не платите за получение приза",
+            "body": "Если после «победы» вас просят сделать перевод, внести депозит или оплатить комиссию на сторонний кошелёк, это серьёзный признак мошенничества."
+          },
+          {
+            "summary": "Не передавайте пароль и коды",
+            "body": "Для выдачи приза не требуется отправлять пароль Steam, код Steam Guard, секретную фразу кошелька или код двухфакторной защиты."
+          },
+          {
+            "summary": "Проверяйте предложение обмена Steam",
+            "body": "Если выигран скин, внимательно сверяйте отправителя и предмет перед подтверждением обмена."
+          },
+          {
+            "summary": "Не увеличивайте расходы ради дополнительных билетов",
+            "body": "Если билеты начисляются за депозит или ставки, заранее ограничьте бюджет. Дополнительные шансы не гарантируют победу."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Частые вопросы о розыгрышах",
+        "items": [
+          {
+            "summary": "Что такое розыгрыш на игровом сайте?",
+            "body": "Это акция, где ограниченное число призов распределяется между участниками по заранее объявленным правилам."
+          },
+          {
+            "summary": "Всегда ли участие бесплатное?",
+            "body": "Нет. Некоторые акции требуют только регистрацию или промокод, другие начисляют билеты за депозит, ставки или другую активность."
+          },
+          {
+            "summary": "Как понять шанс на победу?",
+            "body": "Если известны число ваших билетов и общее количество билетов, можно оценить вероятность. Без количества участников точный шанс обычно неизвестен."
+          },
+          {
+            "summary": "Можно ли выиграть скин Rust или CS2?",
+            "body": "Да, некоторые площадки разыгрывают игровые предметы. Перед участием проверьте способ передачи и наличие ограничений Steam."
+          },
+          {
+            "summary": "Что такое билет розыгрыша?",
+            "body": "Это единица участия. Один пользователь может иметь один или несколько билетов в зависимости от правил акции."
+          },
+          {
+            "summary": "Как узнать победителя?",
+            "body": "Надёжная площадка обычно публикует результат на странице акции, в истории или официальных каналах."
+          },
+          {
+            "summary": "Нужно ли проходить проверку личности после победы?",
+            "body": "Иногда да, особенно для денежных или криптовалютных призов. Требования должны быть указаны в правилах."
+          },
+          {
+            "summary": "Почему рейтинг розыгрышей CSGOBROKER меняется?",
+            "body": "Акции заканчиваются, запускаются новые, меняются призы, сроки, требования, число победителей и способы получения."
+          }
+        ]
+      }
+    },
+    "en": {
+      "intro": {
+        "title": "Giveaways on CS2, Rust, and Crypto Sites: How to Compare Free Prize Draws",
+        "paragraphs": [
+          "Giveaways are promotions where platforms distribute skins, in-game items, balance, gift cards, cryptocurrency, or other prizes among participants. Entry can be free or require a simple condition such as signing in, using a promo code, following an official account, or completing platform activity.",
+          "The headline prize alone says little about value. Compare the number of winners, participant pool, winner-selection method, frequency, and whether entry requires deposits or paid activity.",
+          "CSGOBROKER lists these promotions separately from <a href=\"/freebies/daily-rewards\">daily rewards</a> and <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a>. A giveaway distributes a limited prize pool rather than guaranteeing a reward to every eligible user."
+        ]
+      },
+      "categories": {
+        "title": "Common Giveaway Formats",
+        "items": [
+          {
+            "title": "Automatic draw among entrants",
+            "paragraphs": [
+              "Users complete the entry condition and winners are selected from the final pool. Check prize positions and the exact entry cutoff."
+            ]
+          },
+          {
+            "title": "Skin and item giveaways",
+            "paragraphs": [
+              "Prizes can include CS2, Rust, or other game items. Verify whether the exact item is delivered through Steam and whether trade restrictions apply."
+            ]
+          },
+          {
+            "title": "Internal balance giveaways",
+            "paragraphs": [
+              "The winner receives platform balance. Do not assume this equals cash: check withdrawal availability and any additional conditions."
+            ]
+          },
+          {
+            "title": "Social-media giveaways",
+            "paragraphs": [
+              "Entry can require following, commenting, or reposting. Verify the official account and avoid copies that ask for passwords or payments."
+            ]
+          },
+          {
+            "title": "Activity-based giveaways",
+            "paragraphs": [
+              "Tickets or eligibility may depend on deposits, betting, trading, or other activity. Such promotions are not fully free."
+            ]
+          },
+          {
+            "title": "Seasonal and event giveaways",
+            "paragraphs": [
+              "Large draws are often linked to tournaments, holidays, or platform updates and can have short registration windows and special claim rules."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "What to Check Before Entering",
+        "intro": "The more valuable the top prize, the more important it is to understand the entry mechanics rather than only the banner.",
+        "items": [
+          {
+            "summary": "Number of winners and prizes",
+            "body": "One large prize plus many smaller prizes has a different structure from one winner. Review the complete prize pool."
+          },
+          {
+            "summary": "How tickets are earned",
+            "body": "Tickets can be free or linked to login, codes, deposits, or activity. Compare the cost of earning additional entries."
+          },
+          {
+            "summary": "Winner-selection method",
+            "body": "The site should describe the date, rules, and selection method in advance and publish a result afterward."
+          },
+          {
+            "summary": "Entry and claim deadlines",
+            "body": "Check when registration closes and how long winners have to claim. Unclaimed prizes can sometimes be reassigned."
+          },
+          {
+            "summary": "Withdrawal conditions",
+            "body": "Skins, balance, and crypto can have different claim rules, minimums, identity checks, or turnover requirements."
+          },
+          {
+            "summary": "Regional and age restrictions",
+            "body": "Some promotions are unavailable in certain countries or restricted to adults. Verify eligibility before completing conditions."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "How CSGOBROKER Rates Giveaways",
+        "intro": "We distinguish transparent promotions from marketing claims where receiving a prize is difficult in practice.",
+        "items": [
+          {
+            "summary": "Entry transparency",
+            "body": "Required actions, ticket value, and eligibility should be clear before joining."
+          },
+          {
+            "summary": "Prize pool",
+            "body": "We consider the top prize, number of winners, distribution across positions, and practical claimability."
+          },
+          {
+            "summary": "Cost of entry",
+            "body": "Free entry and deposit- or turnover-based entry are evaluated separately. Paid activity should not be presented as completely free."
+          },
+          {
+            "summary": "Published results",
+            "body": "After closing, the platform should show winners or another verifiable outcome and explain any delay."
+          },
+          {
+            "summary": "Prize delivery",
+            "body": "We review timing, required information, and whether unexpected financial conditions appear after a win."
+          },
+          {
+            "summary": "Frequency and freshness",
+            "body": "We track how often giveaways run and update listings when promotions end or rules change."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Why Giveaways Change",
+        "paragraphs": [
+          "Giveaways are often temporary marketing campaigns, so prizes, ticket rules, deadlines, and entry channels change with seasons and promotions.",
+          "With the same prize pool, more entrants reduce an individual's chance of winning. A newer version of a similar giveaway can therefore be much more competitive.",
+          "If you prefer a guaranteed small reward rather than a random winner, compare <a href=\"/freebies/daily-rewards\">daily rewards</a>. Other promotion types are in <a href=\"/freebies\">bonuses</a>."
+        ]
+      },
+      "safety": {
+        "title": "Giveaway Safety",
+        "intro": "Fake winner messages are a common phishing method around online giveaways.",
+        "items": [
+          {
+            "summary": "Use the official source",
+            "body": "Enter through the platform site or verified official account. Do not trust lookalike usernames without checking."
+          },
+          {
+            "summary": "Do not pay to receive a prize",
+            "body": "Requests for transfers, deposits, or fees to an external wallet after a supposed win are a major warning sign."
+          },
+          {
+            "summary": "Never share passwords or security codes",
+            "body": "Prize delivery does not require your Steam password, Steam Guard code, seed phrase, or two-factor code."
+          },
+          {
+            "summary": "Verify Steam Trade Offers",
+            "body": "For skin prizes, check the sender and exact item before accepting."
+          },
+          {
+            "summary": "Do not overspend for extra tickets",
+            "body": "If tickets come from deposits or bets, set a budget first. Additional entries do not guarantee a win."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About Giveaways",
+        "items": [
+          {
+            "summary": "What is a gaming-site giveaway?",
+            "body": "A promotion where a limited number of prizes are distributed among entrants under predefined rules."
+          },
+          {
+            "summary": "Is entry always free?",
+            "body": "No. Some require only registration or a code, while others issue tickets for deposits, bets, or activity."
+          },
+          {
+            "summary": "How can I estimate my chance of winning?",
+            "body": "If your ticket count and the total ticket count are known, the probability can be estimated. Without the total pool, the exact chance is unknown."
+          },
+          {
+            "summary": "Can I win a Rust or CS2 skin?",
+            "body": "Yes, some platforms give away game items. Check delivery method and Steam restrictions."
+          },
+          {
+            "summary": "What is a giveaway ticket?",
+            "body": "A unit of entry. One user may have one or multiple tickets depending on the rules."
+          },
+          {
+            "summary": "How are winners announced?",
+            "body": "Reliable platforms normally publish results on the promotion page, history, or official channels."
+          },
+          {
+            "summary": "Can identity verification be required after winning?",
+            "body": "Sometimes, especially for cash or crypto prizes. The requirement should be stated in the rules."
+          },
+          {
+            "summary": "Why does the CSGOBROKER ranking change?",
+            "body": "Promotions end, new ones launch, and prizes, deadlines, eligibility, winner counts, and claim methods change."
+          }
+        ]
+      }
+    },
+    "es": {
+      "intro": {
+        "title": "Sorteos en sitios de CS2, Rust y cripto: cómo comparar promociones gratuitas",
+        "paragraphs": [
+          "Los sorteos reparten skins, objetos, saldo, tarjetas regalo, criptomonedas u otros premios entre participantes. La entrada puede ser gratuita o exigir acceso, código, seguimiento de una cuenta oficial o actividad en la plataforma. Este punto puede cambiar de forma importante el valor real de dos ofertas que a primera vista parecen iguales.",
+          "El premio principal no basta para valorar la promoción. Compara número de ganadores, participantes, forma de selección, frecuencia y si se necesitan depósitos o acciones pagadas. Conviene comprobarlo antes de comprometer tiempo, objetos o dinero, porque después puede ser difícil modificar la operación.",
+          "CSGOBROKER separa estos sorteos de <a href=\"/freebies/daily-rewards\">recompensas diarias</a> y <a href=\"/freebies/deposit-bonuses\">bonos de depósito</a>, porque aquí el premio se reparte entre un número limitado de participantes."
+        ]
+      },
+      "categories": {
+        "title": "Formatos habituales de sorteos",
+        "items": [
+          {
+            "title": "Sorteo automático",
+            "paragraphs": [
+              "Los usuarios cumplen la condición y los ganadores se eligen entre la lista final. Comprueba plazas premiadas y cierre de participación. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Sorteos de skins y objetos",
+            "paragraphs": [
+              "El premio puede ser un objeto de CS2, Rust u otro juego. Revisa entrega por Steam y posibles restricciones. El valor práctico depende de las reglas completas y no solo del nombre o de la cifra destacada en la promoción."
+            ]
+          },
+          {
+            "title": "Sorteos de saldo interno",
+            "paragraphs": [
+              "El ganador recibe saldo de la plataforma. Comprueba si puede retirarse y si existen condiciones adicionales. Si la plataforma aplica límites adicionales, deben tenerse en cuenta antes de completar la acción requerida."
+            ]
+          },
+          {
+            "title": "Sorteos en redes sociales",
+            "paragraphs": [
+              "Pueden exigir seguir, comentar o compartir. Verifica siempre la cuenta oficial y evita copias que pidan contraseñas o pagos. Antes de usar este formato, conviene comprobar también si las condiciones cambian según país, nivel de cuenta o método de pago."
+            ]
+          },
+          {
+            "title": "Sorteos por actividad",
+            "paragraphs": [
+              "Los tickets pueden depender de depósitos, apuestas, comercio u otra actividad, por lo que no son completamente gratuitos. El valor práctico depende de las reglas completas y no solo del nombre o de la cifra destacada en la promoción."
+            ]
+          },
+          {
+            "title": "Sorteos estacionales",
+            "paragraphs": [
+              "Suelen estar ligados a torneos, fiestas o actualizaciones y tener plazos cortos y reglas especiales para reclamar."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Qué comprobar antes de participar",
+        "intro": "Cuanto mayor sea el premio, más importante es entender la mecánica completa.",
+        "items": [
+          {
+            "summary": "Número de ganadores y premios",
+            "body": "Revisa todo el fondo de premios y no solo el primer puesto."
+          },
+          {
+            "summary": "Cómo se consiguen tickets",
+            "body": "Pueden ser gratis o venir de códigos, depósitos o actividad. Compara el coste de conseguir entradas adicionales."
+          },
+          {
+            "summary": "Método de selección",
+            "body": "La fecha, reglas y método deberían publicarse antes y el resultado después."
+          },
+          {
+            "summary": "Plazos",
+            "body": "Comprueba cierre de participación y tiempo disponible para reclamar el premio."
+          },
+          {
+            "summary": "Condiciones de retiro",
+            "body": "Skins, saldo y cripto pueden tener mínimos, verificación o requisitos diferentes."
+          },
+          {
+            "summary": "Restricciones regionales y de edad",
+            "body": "Algunas promociones no están disponibles en todos los países o solo para adultos."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Cómo CSGOBROKER evalúa los sorteos",
+        "intro": "Distinguimos promociones transparentes de promesas publicitarias difíciles de cobrar.",
+        "items": [
+          {
+            "summary": "Transparencia",
+            "body": "Acciones, tickets y elegibilidad deben estar claros antes de participar."
+          },
+          {
+            "summary": "Fondo de premios",
+            "body": "Valoramos premio principal, ganadores, distribución y posibilidad real de recibirlo."
+          },
+          {
+            "summary": "Coste de entrada",
+            "body": "Entrada gratuita y entrada basada en depósitos o volumen se valoran por separado."
+          },
+          {
+            "summary": "Publicación de resultados",
+            "body": "La plataforma debería mostrar ganadores o resultado verificable y explicar retrasos."
+          },
+          {
+            "summary": "Entrega del premio",
+            "body": "Revisamos plazo, datos exigidos y posibles condiciones financieras inesperadas."
+          },
+          {
+            "summary": "Frecuencia y actualidad",
+            "body": "Actualizamos la lista cuando terminan promociones o cambian sus reglas."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por qué cambian los sorteos",
+        "paragraphs": [
+          "Son campañas temporales y cambian premios, tickets, plazos y canales según temporada y marketing.",
+          "Con el mismo premio, más participantes reducen la probabilidad individual, por lo que dos ediciones similares pueden ser muy distintas.",
+          "Si prefieres una recompensa pequeña garantizada, compara <a href=\"/freebies/daily-rewards\">recompensas diarias</a>. Otros tipos están en <a href=\"/freebies\">bonos</a>."
+        ]
+      },
+      "safety": {
+        "title": "Seguridad en sorteos",
+        "intro": "Los mensajes falsos de ganador son una forma frecuente de phishing.",
+        "items": [
+          {
+            "summary": "Usa la fuente oficial",
+            "body": "Participa desde el sitio o cuenta oficial verificada."
+          },
+          {
+            "summary": "No pagues para recibir un premio",
+            "body": "Solicitudes de transferencia, depósito o comisión externa son una señal de alerta."
+          },
+          {
+            "summary": "No compartas contraseñas ni códigos",
+            "body": "La entrega no requiere contraseña Steam, Steam Guard, frase semilla o código de dos factores."
+          },
+          {
+            "summary": "Verifica ofertas de Steam",
+            "body": "Para skins, comprueba remitente y objeto exacto."
+          },
+          {
+            "summary": "No gastes de más por tickets",
+            "body": "Si se obtienen con depósitos o apuestas, fija un presupuesto. Más tickets no garantizan ganar."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Preguntas frecuentes sobre sorteos",
+        "items": [
+          {
+            "summary": "¿Qué es un sorteo en un sitio de juegos?",
+            "body": "Una promoción donde un número limitado de premios se distribuye entre participantes según reglas previas."
+          },
+          {
+            "summary": "¿La entrada siempre es gratuita?",
+            "body": "No. Puede requerir registro, código, depósito, apuesta o actividad."
+          },
+          {
+            "summary": "¿Cómo estimo mi probabilidad?",
+            "body": "Si se conocen tus tickets y el total, puede estimarse; sin el total no se conoce con precisión."
+          },
+          {
+            "summary": "¿Puedo ganar una skin de Rust o CS2?",
+            "body": "Sí. Comprueba entrega y restricciones de Steam."
+          },
+          {
+            "summary": "¿Qué es un ticket?",
+            "body": "Una unidad de participación; un usuario puede tener varias."
+          },
+          {
+            "summary": "¿Cómo se anuncian ganadores?",
+            "body": "Normalmente en la página de la promoción, historial o canales oficiales."
+          },
+          {
+            "summary": "¿Puede pedirse verificación de identidad?",
+            "body": "Sí, especialmente para dinero o cripto, si las reglas lo indican."
+          },
+          {
+            "summary": "¿Por qué cambia el ranking de CSGOBROKER?",
+            "body": "Terminan campañas, aparecen nuevas y cambian premios, plazos, requisitos y entrega."
+          }
+        ]
+      }
+    },
+    "pt": {
+      "intro": {
+        "title": "Sorteios em sites de CS2, Rust e cripto: como comparar promoções gratuitas",
+        "paragraphs": [
+          "Sorteios distribuem skins, itens, saldo, cartões-presente, criptomoedas ou outros prêmios entre participantes. A entrada pode ser grátis ou exigir login, código, seguir conta oficial ou atividade. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista.",
+          "O prêmio principal não basta para avaliar a promoção. Compare número de vencedores, participantes, método de seleção, frequência e necessidade de depósito ou ação paga. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação.",
+          "A CSGOBROKER separa sorteios de <a href=\"/freebies/daily-rewards\">recompensas diárias</a> e <a href=\"/freebies/deposit-bonuses\">bônus de depósito</a>, pois aqui um conjunto limitado de prêmios é dividido entre participantes."
+        ]
+      },
+      "categories": {
+        "title": "Formatos comuns de sorteios",
+        "items": [
+          {
+            "title": "Sorteio automático",
+            "paragraphs": [
+              "Usuários cumprem a condição e vencedores são escolhidos da lista final. Confira posições premiadas e horário de encerramento. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Sorteios de skins e itens",
+            "paragraphs": [
+              "O prêmio pode ser item de CS2, Rust ou outro jogo. Verifique entrega pela Steam e restrições. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Sorteios de saldo interno",
+            "paragraphs": [
+              "O vencedor recebe saldo da plataforma. Confira se é sacável e se existem condições adicionais. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          },
+          {
+            "title": "Sorteios em redes sociais",
+            "paragraphs": [
+              "Podem exigir seguir, comentar ou compartilhar. Confirme a conta oficial e evite cópias que peçam senha ou pagamento. Antes de usar esse formato, confira também se as condições mudam por país, nível da conta ou método de pagamento."
+            ]
+          },
+          {
+            "title": "Sorteios por atividade",
+            "paragraphs": [
+              "Tickets podem depender de depósito, aposta, negociação ou atividade, então não são totalmente grátis. O valor prático depende das regras completas e não apenas do nome ou do número destacado na promoção."
+            ]
+          },
+          {
+            "title": "Sorteios sazonais",
+            "paragraphs": [
+              "Ligados a torneios, feriados ou atualizações, com prazo curto e regras específicas de resgate. Se houver limites adicionais, eles precisam ser considerados antes de concluir a ação exigida."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "O que verificar antes de participar",
+        "intro": "Quanto maior o prêmio, mais importante é entender toda a mecânica.",
+        "items": [
+          {
+            "summary": "Número de vencedores e prêmios",
+            "body": "Veja o fundo completo e não apenas o primeiro prêmio. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Como tickets são obtidos",
+            "body": "Podem ser grátis ou vir de código, depósito ou atividade. Compare o custo de entradas extras. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação."
+          },
+          {
+            "summary": "Método de seleção",
+            "body": "Data, regras e método devem ser publicados antes, com resultado depois. Se a informação não estiver clara na interface, leia as regras completas antes de continuar."
+          },
+          {
+            "summary": "Prazos",
+            "body": "Confira fim da inscrição e prazo para resgatar. Esse ponto pode mudar bastante o valor real de duas ofertas que parecem iguais à primeira vista."
+          },
+          {
+            "summary": "Condições de saque",
+            "body": "Skins, saldo e cripto podem ter mínimos, verificação ou requisitos diferentes. Vale conferir antes de comprometer tempo, itens ou dinheiro, pois depois pode ser difícil alterar a operação."
+          },
+          {
+            "summary": "Restrições regionais e de idade",
+            "body": "Algumas promoções não estão disponíveis em todos os países ou são só para adultos."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "Como a CSGOBROKER avalia sorteios",
+        "intro": "Separamos promoções transparentes de promessas difíceis de receber.",
+        "items": [
+          {
+            "summary": "Transparência",
+            "body": "Ações, tickets e elegibilidade devem estar claros."
+          },
+          {
+            "summary": "Fundo de prêmios",
+            "body": "Consideramos prêmio principal, vencedores, distribuição e possibilidade real de resgate."
+          },
+          {
+            "summary": "Custo de entrada",
+            "body": "Entrada grátis e baseada em depósito ou volume são avaliadas separadamente."
+          },
+          {
+            "summary": "Resultados publicados",
+            "body": "A plataforma deve mostrar vencedores ou resultado verificável."
+          },
+          {
+            "summary": "Entrega do prêmio",
+            "body": "Analisamos prazo, dados exigidos e condições financeiras inesperadas."
+          },
+          {
+            "summary": "Frequência e atualidade",
+            "body": "Atualizamos quando promoções terminam ou mudam."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Por que sorteios mudam",
+        "paragraphs": [
+          "São campanhas temporárias; prêmios, tickets, prazos e canais mudam com a temporada.",
+          "Mais participantes reduzem a chance individual mesmo com o mesmo prêmio.",
+          "Para recompensa pequena garantida, compare <a href=\"/freebies/daily-rewards\">recompensas diárias</a>. Outros tipos estão em <a href=\"/freebies\">bônus</a>."
+        ]
+      },
+      "safety": {
+        "title": "Segurança em sorteios",
+        "intro": "Mensagens falsas de vencedor são um método comum de phishing.",
+        "items": [
+          {
+            "summary": "Use a fonte oficial",
+            "body": "Participe pelo site ou conta oficial verificada."
+          },
+          {
+            "summary": "Não pague para receber prêmio",
+            "body": "Pedidos de transferência, depósito ou taxa externa são sinal de alerta."
+          },
+          {
+            "summary": "Não compartilhe senhas ou códigos",
+            "body": "Entrega não exige senha Steam, Steam Guard, frase-semente ou código de dois fatores."
+          },
+          {
+            "summary": "Verifique ofertas Steam",
+            "body": "Para skins, confira remetente e item exato."
+          },
+          {
+            "summary": "Não gaste demais por tickets",
+            "body": "Se vierem de depósitos ou apostas, defina orçamento. Mais tickets não garantem vitória."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Perguntas frequentes sobre sorteios",
+        "items": [
+          {
+            "summary": "O que é um sorteio em site de jogos?",
+            "body": "Promoção em que número limitado de prêmios é distribuído entre participantes por regras definidas."
+          },
+          {
+            "summary": "A entrada é sempre grátis?",
+            "body": "Não. Pode exigir registro, código, depósito, aposta ou atividade."
+          },
+          {
+            "summary": "Como estimar minha chance?",
+            "body": "Se seus tickets e o total forem conhecidos, é possível estimar; sem o total, não."
+          },
+          {
+            "summary": "Posso ganhar skin de Rust ou CS2?",
+            "body": "Sim. Confira entrega e restrições Steam."
+          },
+          {
+            "summary": "O que é um ticket?",
+            "body": "Uma unidade de participação; um usuário pode ter várias."
+          },
+          {
+            "summary": "Como os vencedores são anunciados?",
+            "body": "Normalmente na página, histórico ou canais oficiais."
+          },
+          {
+            "summary": "Pode haver verificação de identidade?",
+            "body": "Sim, especialmente para dinheiro ou cripto, se previsto nas regras."
+          },
+          {
+            "summary": "Por que o ranking da CSGOBROKER muda?",
+            "body": "Campanhas acabam, novas surgem e mudam prêmios, prazos, requisitos e entrega."
+          }
+        ]
+      }
+    },
+    "tr": {
+      "intro": {
+        "title": "CS2, Rust ve Kripto Sitelerinde Çekilişler: Ücretsiz Kampanyalar Nasıl Karşılaştırılır?",
+        "paragraphs": [
+          "Çekilişler skin, oyun eşyası, bakiye, hediye kartı, kripto veya başka ödülleri katılımcılar arasında dağıtan kampanyalardır. Katılım ücretsiz olabilir veya giriş, kod, resmî hesabı takip etme ya da aktivite gerektirebilir. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir.",
+          "Ana ödül tek başına yeterli değildir. Kazanan sayısını, katılımcı havuzunu, seçim yöntemini, sıklığı ve yatırma ya da ücretli aktivite gerekip gerekmediğini karşılaştırın. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir.",
+          "CSGOBROKER çekilişleri <a href=\"/freebies/daily-rewards\">günlük ödüllerden</a> ve <a href=\"/freebies/deposit-bonuses\">yatırma bonuslarından</a> ayrı listeler; çünkü sınırlı ödül havuzu katılımcılar arasında dağıtılır."
+        ]
+      },
+      "categories": {
+        "title": "Yaygın Çekiliş Formatları",
+        "items": [
+          {
+            "title": "Otomatik çekiliş",
+            "paragraphs": [
+              "Kullanıcı şartı tamamlar ve kazananlar son listeden seçilir. Ödüllü sıra sayısını ve kapanış zamanını kontrol edin. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Skin ve eşya çekilişleri",
+            "paragraphs": [
+              "CS2, Rust veya başka oyun eşyaları ödül olabilir. Steam teslimatı ve kısıtlamaları kontrol edin. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "İç bakiye çekilişleri",
+            "paragraphs": [
+              "Kazanana platform bakiyesi verilir. Bunun nakde eşit olduğunu varsaymayın; çekim ve ek şartları inceleyin. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          },
+          {
+            "title": "Sosyal medya çekilişleri",
+            "paragraphs": [
+              "Takip, yorum veya paylaşım isteyebilir. Resmî hesabı doğrulayın ve parola ya da ödeme isteyen kopyalardan kaçının. Bu formatı kullanmadan önce şartların ülke, hesap seviyesi veya ödeme yöntemine göre değişip değişmediğini de kontrol edin."
+            ]
+          },
+          {
+            "title": "Aktiviteye bağlı çekilişler",
+            "paragraphs": [
+              "Biletler yatırma, bahis, ticaret veya başka aktiviteye bağlı olabilir; böylece tamamen ücretsiz değildir. Pratik değer yalnız kampanya adından veya öne çıkarılan rakamdan değil, tüm kurallardan etkilenir."
+            ]
+          },
+          {
+            "title": "Sezonluk çekilişler",
+            "paragraphs": [
+              "Turnuva, tatil veya güncellemeye bağlı büyük kampanyalar kısa kayıt süresi ve özel ödül alma kuralları taşıyabilir. Ek limitler varsa gerekli işlemi tamamlamadan önce bunları hesaba katmak gerekir."
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Katılmadan Önce Neler Kontrol Edilmeli?",
+        "intro": "Ana ödül büyüdükçe yalnız reklama değil, katılım mekaniğine bakmak daha önemlidir.",
+        "items": [
+          {
+            "summary": "Kazanan ve ödül sayısı",
+            "body": "Tüm ödül havuzunu inceleyin, yalnız birinci ödüle bakmayın. Bu ayrıntı, ilk bakışta aynı görünen iki teklifin gerçek değerini ciddi biçimde değiştirebilir."
+          },
+          {
+            "summary": "Bilet nasıl kazanılıyor?",
+            "body": "Ücretsiz, giriş, kod, yatırma veya aktiviteyle verilebilir. Ek biletin maliyetini karşılaştırın. Zaman, eşya veya para ayırmadan önce kontrol etmek önemlidir; işlemden sonra şartları değiştirmek mümkün olmayabilir."
+          },
+          {
+            "summary": "Kazanan seçim yöntemi",
+            "body": "Tarih, kurallar ve yöntem önceden açıklanmalı, sonuç sonradan yayınlanmalıdır."
+          },
+          {
+            "summary": "Katılım ve ödül alma süresi",
+            "body": "Kayıt kapanışını ve kazananın ödülü ne kadar sürede alması gerektiğini kontrol edin."
+          },
+          {
+            "summary": "Çekim şartları",
+            "body": "Skin, bakiye ve kripto için farklı minimum, kimlik doğrulama veya hacim şartı olabilir."
+          },
+          {
+            "summary": "Bölge ve yaş kısıtlamaları",
+            "body": "Bazı kampanyalar belirli ülkelerde yoktur veya yalnız yetişkinlere açıktır."
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Çekilişleri Nasıl Değerlendirir?",
+        "intro": "Şeffaf kampanyaları, pratikte ödül almanın zor olduğu reklam vaatlerinden ayırıyoruz.",
+        "items": [
+          {
+            "summary": "Katılım şeffaflığı",
+            "body": "Gerekli işlemler, biletler ve uygunluk önceden açık olmalıdır."
+          },
+          {
+            "summary": "Ödül havuzu",
+            "body": "Ana ödül, kazanan sayısı, dağılım ve gerçek teslim imkânı değerlendirilir."
+          },
+          {
+            "summary": "Katılım maliyeti",
+            "body": "Ücretsiz giriş ile yatırma/hacme bağlı giriş ayrı değerlendirilir."
+          },
+          {
+            "summary": "Sonuçların yayınlanması",
+            "body": "Platform kazananları veya doğrulanabilir sonucu göstermelidir."
+          },
+          {
+            "summary": "Ödül teslimatı",
+            "body": "Süre, gerekli bilgiler ve sonradan çıkan finansal şartlar incelenir."
+          },
+          {
+            "summary": "Sıklık ve güncellik",
+            "body": "Kampanya bitince veya kural değişince liste güncellenir."
+          }
+        ]
+      },
+      "updates": {
+        "title": "Çekilişler Neden Değişir?",
+        "paragraphs": [
+          "Çekilişler çoğunlukla geçici pazarlama kampanyalarıdır; ödül, bilet, süre ve katılım kanalı değişir.",
+          "Aynı ödül havuzunda daha fazla katılımcı bireysel kazanma şansını azaltır.",
+          "Garanti küçük ödül istiyorsanız <a href=\"/freebies/daily-rewards\">günlük ödülleri</a> karşılaştırın. Diğer kampanyalar <a href=\"/freebies\">bonuslar</a> bölümündedir."
+        ]
+      },
+      "safety": {
+        "title": "Çekilişlerde Güvenlik",
+        "intro": "Sahte kazanan mesajları çekiliş çevresindeki yaygın phishing yöntemidir.",
+        "items": [
+          {
+            "summary": "Resmî kaynağı kullanın",
+            "body": "Site veya doğrulanmış resmî hesap üzerinden katılın."
+          },
+          {
+            "summary": "Ödül almak için ödeme yapmayın",
+            "body": "Sözde kazanç sonrası transfer, yatırma veya dış cüzdana ücret istenmesi ciddi uyarıdır."
+          },
+          {
+            "summary": "Şifre ve kod paylaşmayın",
+            "body": "Ödül için Steam şifresi, Steam Guard, seed phrase veya iki aşamalı kod gerekmez."
+          },
+          {
+            "summary": "Steam takas teklifini doğrulayın",
+            "body": "Skin ödülünde göndereni ve eşyayı kontrol edin."
+          },
+          {
+            "summary": "Ek bilet için fazla harcamayın",
+            "body": "Bilet yatırma veya bahisten geliyorsa bütçe koyun. Daha fazla bilet kazanmayı garanti etmez."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Çekilişler Hakkında Sık Sorulan Sorular",
+        "items": [
+          {
+            "summary": "Oyun sitesi çekilişi nedir?",
+            "body": "Sınırlı sayıda ödülün önceden açıklanan kurallarla katılımcılar arasında dağıtıldığı kampanyadır."
+          },
+          {
+            "summary": "Katılım her zaman ücretsiz mi?",
+            "body": "Hayır. Kayıt, kod, yatırma, bahis veya aktivite gerekebilir."
+          },
+          {
+            "summary": "Kazanma şansımı nasıl hesaplarım?",
+            "body": "Bilet sayınız ve toplam bilet biliniyorsa yaklaşık olasılık hesaplanabilir."
+          },
+          {
+            "summary": "Rust veya CS2 skini kazanabilir miyim?",
+            "body": "Evet. Teslimat yöntemini ve Steam kısıtlamalarını kontrol edin."
+          },
+          {
+            "summary": "Çekiliş bileti nedir?",
+            "body": "Katılım birimidir; kullanıcı birden fazla bilete sahip olabilir."
+          },
+          {
+            "summary": "Kazanan nasıl duyurulur?",
+            "body": "Genellikle kampanya sayfası, geçmiş veya resmî kanallarda."
+          },
+          {
+            "summary": "Kimlik doğrulama gerekebilir mi?",
+            "body": "Evet, özellikle para veya kripto ödülünde kurallar gerektiriyorsa."
+          },
+          {
+            "summary": "CSGOBROKER sıralaması neden değişir?",
+            "body": "Kampanyalar biter, yenileri başlar ve ödül, süre, şart, kazanan sayısı ve teslimat değişir."
+          }
+        ]
+      }
+    },
+    "hi": {
+      "intro": {
+        "title": "CS2, Rust और Crypto Sites पर Giveaways: Free Prize Draws कैसे Compare करें",
+        "paragraphs": [
+          "Giveaways promotions हैं जहाँ skins, game items, balance, gift cards, cryptocurrency या दूसरे prizes participants में distribute होते हैं। Entry free हो सकती है या login, promo code, official account follow या platform activity require कर सकती है। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।",
+          "Headline prize alone value नहीं बताती। Winners की संख्या, participant pool, selection method, frequency और deposit/paid activity requirement compare करें। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।",
+          "CSGOBROKER इन्हें <a href=\"/freebies/daily-rewards\">daily rewards</a> और <a href=\"/freebies/deposit-bonuses\">deposit bonuses</a> से अलग रखता है, क्योंकि giveaway limited prize pool participants में distribute करती है।"
+        ]
+      },
+      "categories": {
+        "title": "Common Giveaway Formats",
+        "items": [
+          {
+            "title": "Automatic draw",
+            "paragraphs": [
+              "User entry condition complete करता है और winners final pool से चुने जाते हैं। Prize positions और entry cutoff check करें। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Skin and item giveaways",
+            "paragraphs": [
+              "CS2, Rust या दूसरे game items prize हो सकते हैं। Steam delivery और restrictions verify करें। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Internal balance giveaways",
+            "paragraphs": [
+              "Winner को platform balance मिलता है। इसे cash equivalent न मानें; withdrawal और extra conditions check करें। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          },
+          {
+            "title": "Social-media giveaways",
+            "paragraphs": [
+              "Follow, comment या repost require हो सकता है। Official account verify करें और password/payment मांगने वाली copies से बचें। इस format को use करने से पहले यह भी check करें कि conditions country, account level या payment method के अनुसार बदलती हैं या नहीं।"
+            ]
+          },
+          {
+            "title": "Activity-based giveaways",
+            "paragraphs": [
+              "Tickets deposits, betting, trading या activity पर depend कर सकती हैं; ऐसी promotions fully free नहीं हैं। Practical value सिर्फ promotion name या highlighted number से नहीं, complete rules से तय होती है।"
+            ]
+          },
+          {
+            "title": "Seasonal giveaways",
+            "paragraphs": [
+              "Tournaments, holidays या updates से linked draws short registration और special claim rules रख सकती हैं। अगर additional limits हैं, तो required action complete करने से पहले उन्हें भी comparison में include करें।"
+            ]
+          }
+        ]
+      },
+      "chooser": {
+        "title": "Enter करने से पहले क्या Check करें",
+        "intro": "Top prize जितनी valuable हो, entry mechanics उतनी carefully समझनी चाहिए।",
+        "items": [
+          {
+            "summary": "Winners और prizes की संख्या",
+            "body": "Complete prize pool देखें, सिर्फ first prize नहीं। यह detail दो offers की actual value को काफी बदल सकती है, भले वे पहली नजर में समान दिखें।"
+          },
+          {
+            "summary": "Tickets कैसे मिलती हैं",
+            "body": "Free, login, code, deposit या activity से मिल सकती हैं। Extra entries का cost compare करें। Time, items या money commit करने से पहले इसे check करना बेहतर है, क्योंकि बाद में transaction बदलना संभव नहीं हो सकता।"
+          },
+          {
+            "summary": "Winner selection method",
+            "body": "Date, rules और method पहले explain होने चाहिए और result बाद में publish होना चाहिए।"
+          },
+          {
+            "summary": "Entry और claim deadlines",
+            "body": "Registration close और winner claim period check करें।"
+          },
+          {
+            "summary": "Withdrawal conditions",
+            "body": "Skins, balance और crypto में अलग minimums, identity checks या turnover हो सकते हैं।"
+          },
+          {
+            "summary": "Regional और age restrictions",
+            "body": "कुछ promotions certain countries में unavailable या adults-only होती हैं।"
+          }
+        ]
+      },
+      "methodology": {
+        "title": "CSGOBROKER Giveaways को कैसे Rate करता है",
+        "intro": "हम transparent promotions को ऐसी marketing claims से अलग करते हैं जहाँ prize practically receive करना मुश्किल हो।",
+        "items": [
+          {
+            "summary": "Entry transparency",
+            "body": "Required actions, ticket value और eligibility clear होनी चाहिए।"
+          },
+          {
+            "summary": "Prize pool",
+            "body": "Top prize, winners, distribution और actual claimability consider की जाती है।"
+          },
+          {
+            "summary": "Entry cost",
+            "body": "Free entry और deposit/turnover-based entry separately evaluate होती है।"
+          },
+          {
+            "summary": "Published results",
+            "body": "Platform winners या verifiable outcome show करे।"
+          },
+          {
+            "summary": "Prize delivery",
+            "body": "Timing, required data और unexpected financial conditions review होती हैं।"
+          },
+          {
+            "summary": "Frequency and freshness",
+            "body": "Promotions end या rules change होने पर listings update की जाती हैं।"
+          }
+        ]
+      },
+      "updates": {
+        "title": "Giveaways क्यों बदलती हैं",
+        "paragraphs": [
+          "Giveaways temporary marketing campaigns होती हैं, इसलिए prizes, tickets, deadlines और entry channels बदलते हैं।",
+          "Same prize pool में ज्यादा entrants individual chance कम करते हैं।",
+          "Guaranteed small reward चाहिए तो <a href=\"/freebies/daily-rewards\">daily rewards</a> compare करें। बाकी types <a href=\"/freebies\">bonuses</a> में हैं।"
+        ]
+      },
+      "safety": {
+        "title": "Giveaway Safety",
+        "intro": "Fake winner messages giveaways के आसपास common phishing method हैं।",
+        "items": [
+          {
+            "summary": "Official source use करें",
+            "body": "Platform site या verified official account से ही enter करें।"
+          },
+          {
+            "summary": "Prize receive करने के लिए pay न करें",
+            "body": "Supposed win के बाद transfer, deposit या external fee request major warning sign है।"
+          },
+          {
+            "summary": "Passwords या codes share न करें",
+            "body": "Steam password, Steam Guard, seed phrase या two-factor code prize delivery के लिए नहीं चाहिए।"
+          },
+          {
+            "summary": "Steam Trade Offer verify करें",
+            "body": "Skin prize में sender और exact item check करें।"
+          },
+          {
+            "summary": "Extra tickets के लिए overspend न करें",
+            "body": "Tickets deposit या bets से मिलती हों तो budget set करें; more tickets win guarantee नहीं करतीं।"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Giveaways के बारे में FAQ",
+        "items": [
+          {
+            "summary": "Gaming-site giveaway क्या है?",
+            "body": "Promotion जिसमें limited prizes predefined rules के तहत participants में distribute होते हैं।"
+          },
+          {
+            "summary": "क्या entry हमेशा free है?",
+            "body": "नहीं। Registration, code, deposit, bet या activity required हो सकती है।"
+          },
+          {
+            "summary": "Winning chance कैसे estimate करें?",
+            "body": "अगर आपकी tickets और total tickets known हैं तो probability estimate की जा सकती है।"
+          },
+          {
+            "summary": "क्या Rust या CS2 skin जीत सकते हैं?",
+            "body": "हाँ। Delivery method और Steam restrictions check करें।"
+          },
+          {
+            "summary": "Giveaway ticket क्या है?",
+            "body": "Entry unit; एक user के पास multiple tickets हो सकती हैं।"
+          },
+          {
+            "summary": "Winners कैसे announce होते हैं?",
+            "body": "Usually promotion page, history या official channels पर।"
+          },
+          {
+            "summary": "Identity verification required हो सकती है?",
+            "body": "हाँ, especially cash या crypto prizes में अगर rules में लिखा हो।"
+          },
+          {
+            "summary": "CSGOBROKER ranking क्यों बदलती है?",
+            "body": "Promotions end/start होती हैं और prizes, deadlines, requirements, winners और claim methods बदलते हैं।"
+          }
+        ]
+      }
+    }
+  }
+}
