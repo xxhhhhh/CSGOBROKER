@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/eaa62bd7-bf8d-43a1-8d85-ff029c0ade9b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-30T10:02:59.768Z",
+  "updatedAt": "2026-09-01T09:26:08.065Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 136,
-  "totalItemsGrouped": 136,
+  "totalItemsRaw": 144,
+  "totalItemsGrouped": 142,
   "items": [
     {
       "assetid": "51285565317",
@@ -1518,6 +1518,78 @@
       "name": "Zeus x27 | Olympus",
       "market_hash_name": "Zeus x27 | Olympus (Field-Tested)",
       "type": "Classified Equipment",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53581323503",
+      "classid": "7993037476",
+      "instanceid": "7100887108",
+      "amount": 1,
+      "name": "USP-S | Monster Mashup",
+      "market_hash_name": "USP-S | Monster Mashup (Minimal Wear)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53555147328",
+      "classid": "7993036056",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Galil AR | Eco",
+      "market_hash_name": "Galil AR | Eco (Minimal Wear)",
+      "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -3529,6 +3601,42 @@
       ]
     },
     {
+      "assetid": "53555148210",
+      "classid": "7993036171",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "FAMAS | Meow 36",
+      "market_hash_name": "FAMAS | Meow 36 (Well-Worn)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50246734475",
       "classid": "7993037396",
       "instanceid": "188530139",
@@ -4157,6 +4265,39 @@
       ]
     },
     {
+      "assetid": "53581323504",
+      "classid": "7545315231",
+      "instanceid": "0",
+      "amount": 3,
+      "name": "Charm | Lil' Goop",
+      "market_hash_name": "Charm | Lil' Goop",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53581323504",
+        "53555157975",
+        "53555148211"
+      ]
+    },
+    {
       "assetid": "52671839680",
       "classid": "8491178312",
       "instanceid": "143865972",
@@ -4201,6 +4342,42 @@
       ],
       "assetids": [
         "52671839680"
+      ]
+    },
+    {
+      "assetid": "53554995389",
+      "classid": "188534044",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "P250 | Nuclear Threat",
+      "market_hash_name": "P250 | Nuclear Threat (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -4470,7 +4647,7 @@
     {
       "assetid": "50595169360",
       "classid": "7993044325",
-      "instanceid": "7642501850",
+      "instanceid": "7585452597",
       "amount": 1,
       "name": "StatTrak™ AWP | Containment Breach",
       "market_hash_name": "StatTrak™ AWP | Containment Breach (Field-Tested)",
@@ -4559,6 +4736,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53554865726",
+      "classid": "5835568404",
+      "instanceid": "7583412707",
+      "amount": 1,
+      "name": "C4 Explosive",
+      "market_hash_name": "C4 Explosive",
+      "type": "Stock C4",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {

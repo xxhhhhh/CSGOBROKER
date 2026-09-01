@@ -7,16 +7,18 @@
   "name": "João Pfeffer",
   "nationality": "Brazil",
   "born": "26.02.2005",
+  "isContentCreator": false,
   "twitch": "|team_history=",
   "faceit": "https://faceitdb.com/profile/faceit/45cd23f1-9213-4d93-87b9-26b4bf8720c4",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-11T08:17:09.687Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 400,
-  "totalItemsGrouped": 337,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-01T09:00:35.824Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 399,
+  "totalItemsGrouped": 336,
   "items": [
     {
       "assetid": "51885674983",
@@ -34,42 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51885680133",
-      "classid": "7622289306",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Kukri Knife",
-      "market_hash_name": "★ Kukri Knife",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -10794,7 +10760,7 @@
     {
       "assetid": "51850933700",
       "classid": "7993039095",
-      "instanceid": "8530110210",
+      "instanceid": "8716636109",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Allure",
       "market_hash_name": "StatTrak™ MAC-10 | Allure (Minimal Wear)",

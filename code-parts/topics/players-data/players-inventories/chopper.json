@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/aef79440-d49d-414e-9303-9725b8d448d8",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-30T09:46:09.535Z",
+  "updatedAt": "2026-09-01T09:09:15.595Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 344,
-  "totalItemsGrouped": 130,
+  "totalItemsRaw": 347,
+  "totalItemsGrouped": 137,
   "items": [
     {
       "assetid": "51834650682",
@@ -126,7 +126,7 @@
       "assetid": "49604481675",
       "classid": "7729078027",
       "instanceid": "143865972",
-      "amount": 183,
+      "amount": 179,
       "name": "Budapest 2025 Legends Autograph Capsule",
       "market_hash_name": "Budapest 2025 Legends Autograph Capsule",
       "type": "Base Grade Container",
@@ -237,15 +237,12 @@
         "49584016629",
         "49584016628",
         "49584016627",
-        "49584016626",
         "49584016625",
         "49584016624",
         "49584016623",
         "49584016622",
         "49584016621",
         "49584016620",
-        "49584014311",
-        "49584014310",
         "49584014309",
         "49584014308",
         "49584014307",
@@ -258,7 +255,6 @@
         "49584014300",
         "49584014299",
         "49584014298",
-        "49584014297",
         "49584014296",
         "49584014295",
         "49584014294",
@@ -399,7 +395,7 @@
       "assetid": "43422115568",
       "classid": "6449437750",
       "instanceid": "143865972",
-      "amount": 16,
+      "amount": 14,
       "name": "Shanghai 2024 Champions Autograph Capsule",
       "market_hash_name": "Shanghai 2024 Champions Autograph Capsule",
       "type": "Base Grade Container",
@@ -431,18 +427,44 @@
         "43422115567",
         "43422115566",
         "43422115565",
-        "43422115564",
         "43422115563",
         "43422115562",
         "43422115561",
         "43422115560",
         "43422115559",
         "43422115558",
-        "43422115557",
         "43422115556",
         "43422115555",
         "43422115554",
         "43422115553"
+      ]
+    },
+    {
+      "assetid": "13724479680",
+      "classid": "2521767801",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Spectrum 2 Case",
+      "market_hash_name": "Spectrum 2 Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
       ]
     },
     {
@@ -2434,14 +2456,14 @@
       ]
     },
     {
-      "assetid": "47786340923",
-      "classid": "7729094542",
+      "assetid": "53579615364",
+      "classid": "7729093007",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "Sticker | MATYS | Budapest 2025",
-      "market_hash_name": "Sticker | MATYS | Budapest 2025",
+      "name": "Sticker | kyxsan | Budapest 2025",
+      "market_hash_name": "Sticker | kyxsan | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B53F2426B4B63487B4F294E434B5BF107234B3B43CF839246",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888903181A888A08BB88CEA8D8088986AC3E088F880465A2438",
       "tags": [
         {
           "category": "Type",
@@ -2477,6 +2499,101 @@
         }
       ],
       "assetids": [
+        "53579615364"
+      ]
+    },
+    {
+      "assetid": "53579621145",
+      "classid": "6449443441",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | magixx (Champion) | Shanghai 2024",
+      "market_hash_name": "Sticker | magixx (Champion) | Shanghai 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E0F0E849F9D0F0D8F3C0F492F5F8F0E029B298F080F8B677DD63",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53579621145"
+      ]
+    },
+    {
+      "assetid": "53579614016",
+      "classid": "7729094542",
+      "instanceid": "188530139",
+      "amount": 2,
+      "name": "Sticker | MATYS | Budapest 2025",
+      "market_hash_name": "Sticker | MATYS | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F2E2F2EA4BFBD2F2DAF1C2F690F7FAF2E248BE9AF282FA2C76B7B5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53579614016",
         "47786340923"
       ]
     },
@@ -2913,14 +3030,14 @@
       ]
     },
     {
-      "assetid": "48350309649",
+      "assetid": "53579617565",
       "classid": "7729109331",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | Spinx | Budapest 2025",
       "market_hash_name": "Sticker | Spinx | Budapest 2025",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F5E5F5ED4CFCD5F5DDF6C5F197F0FDF5E57BB99DF585FD41559C89",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205F4F5F47E6567F5F775C6F5B3D5A575F4FD113375F2F577ED28DAE",
       "tags": [
         {
           "category": "Type",
@@ -2956,6 +3073,7 @@
         }
       ],
       "assetids": [
+        "53579617565",
         "48350309649"
       ]
     },
@@ -3051,6 +3169,53 @@
       ],
       "assetids": [
         "47980692715"
+      ]
+    },
+    {
+      "assetid": "53579612542",
+      "classid": "7729095086",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | TeSeS | Budapest 2025",
+      "market_hash_name": "Sticker | TeSeS | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404140CAD1D34143C17241076111C1404FA5F7C14641C165C4BEA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53579612542"
       ]
     },
     {
@@ -3193,6 +3358,53 @@
       "assetids": [
         "49604458637",
         "47786345394"
+      ]
+    },
+    {
+      "assetid": "53579619762",
+      "classid": "6449443077",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | zont1x (Champion) | Shanghai 2024",
+      "market_hash_name": "Sticker | zont1x (Champion) | Shanghai 2024",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205E4E5E46E7577E5E765D6E5A3C5B565E4EBB1C365E2E567A62F24B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53579619762"
       ]
     },
     {
@@ -4425,6 +4637,58 @@
       ]
     },
     {
+      "assetid": "11182806096",
+      "classid": "7993044769",
+      "instanceid": "7630498178",
+      "amount": 1,
+      "name": "Souvenir Dual Berettas | Colony",
+      "market_hash_name": "Souvenir Dual Berettas | Colony (Minimal Wear)",
+      "type": "Souvenir Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40725314561",
       "classid": "7993036805",
       "instanceid": "6434591417",
@@ -4612,6 +4876,58 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "10952105603",
+      "classid": "7993036198",
+      "instanceid": "7628509180",
+      "amount": 1,
+      "name": "Souvenir MP9 | Storm",
+      "market_hash_name": "Souvenir MP9 | Storm (Field-Tested)",
+      "type": "Souvenir Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
