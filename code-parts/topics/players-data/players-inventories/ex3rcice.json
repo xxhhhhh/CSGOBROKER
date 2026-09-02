@@ -7,16 +7,18 @@
   "name": "Pierre Bulinge",
   "nationality": "France",
   "born": "04.02.2000",
+  "isContentCreator": false,
   "twitch": "ex3rcice",
   "faceit": "https://faceitdb.com/profile/faceit/7e8fcc67-e4ac-43df-95b4-c51fba75e9b0",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-15T03:51:33.623Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 281,
-  "totalItemsGrouped": 153,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-02T07:51:23.050Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 282,
+  "totalItemsGrouped": 154,
   "items": [
     {
       "assetid": "49922355280",
@@ -53,6 +55,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53453773231",
+      "classid": "7993045263",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Flip Knife | Gamma Doppler",
+      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E6F64955397621E7FE1FE5C65DE2CEE0D6E5DE78664305E5A6C78E66E496EEB2E5D105",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.014236478135,
+      "seed": 33,
+      "phase": "Phase 3"
     },
     {
       "assetid": "47403263241",
@@ -5252,7 +5289,7 @@
     {
       "assetid": "49153037772",
       "classid": "7993044425",
-      "instanceid": "8789086443",
+      "instanceid": "8818394261",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Red Laminate",
       "market_hash_name": "StatTrak™ AK-47 | Red Laminate (Minimal Wear)",
@@ -5368,7 +5405,7 @@
     {
       "assetid": "41068229463",
       "classid": "7993039145",
-      "instanceid": "8778690212",
+      "instanceid": "8818394266",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Desolate Space",
       "market_hash_name": "StatTrak™ M4A4 | Desolate Space (Field-Tested)",
@@ -5416,7 +5453,7 @@
     {
       "assetid": "41067818214",
       "classid": "7993041520",
-      "instanceid": "8789086445",
+      "instanceid": "8818394267",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Code Red",
       "market_hash_name": "StatTrak™ Desert Eagle | Code Red (Field-Tested)",
@@ -5464,7 +5501,7 @@
     {
       "assetid": "48000277525",
       "classid": "7993041773",
-      "instanceid": "8789086444",
+      "instanceid": "8818394262",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -5552,7 +5589,7 @@
     {
       "assetid": "47759482510",
       "classid": "7993043248",
-      "instanceid": "8787089964",
+      "instanceid": "8818394263",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",
