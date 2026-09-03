@@ -12,42 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/ab2bf7fd-7997-4a7a-9c94-6b7d52ffd200",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-31T09:33:46.903Z",
+  "updatedAt": "2026-09-03T08:00:10.642Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 26,
-  "totalItemsGrouped": 26,
+  "totalItemsRaw": 30,
+  "totalItemsGrouped": 30,
   "items": [
-    {
-      "assetid": "53141129818",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "52696151564",
       "classid": "5710094579",
@@ -72,42 +44,6 @@
         },
         {
           "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53421952570",
-      "classid": "7993039825",
-      "instanceid": "6276338029",
-      "amount": 1,
-      "name": "AK-47 | Vulcan",
-      "market_hash_name": "AK-47 | Vulcan (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -372,13 +308,193 @@
       ]
     },
     {
-      "assetid": "53309320669",
-      "classid": "7993042277",
-      "instanceid": "6276688400",
+      "assetid": "52095617473",
+      "classid": "7993035801",
+      "instanceid": "8528230630",
       "amount": 1,
-      "name": "Souvenir AWP | Pink DDPAT",
-      "market_hash_name": "Souvenir AWP | Pink DDPAT (Field-Tested)",
-      "type": "Souvenir Restricted Sniper Rifle",
+      "name": "Five-SeveN | Sky Blue",
+      "market_hash_name": "Five-SeveN | Sky Blue (Factory New)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51019292667",
+      "classid": "7993036732",
+      "instanceid": "6280682904",
+      "amount": 1,
+      "name": "AK-47 | Midnight Laminate",
+      "market_hash_name": "AK-47 | Midnight Laminate (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45319781916",
+      "classid": "7993036293",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Galil AR | Control",
+      "market_hash_name": "Galil AR | Control (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "49680797860",
+      "classid": "7993037154",
+      "instanceid": "8084431468",
+      "amount": 1,
+      "name": "Souvenir Dual Berettas | Sweet Little Angels",
+      "market_hash_name": "Souvenir Dual Berettas | Sweet Little Angels (Field-Tested)",
+      "type": "Souvenir Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "44318094868",
+      "classid": "7993048928",
+      "instanceid": "7177694521",
+      "amount": 1,
+      "name": "Souvenir P90 | ScaraB Rush",
+      "market_hash_name": "Souvenir P90 | ScaraB Rush (Well-Worn)",
+      "type": "Souvenir Restricted SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -415,6 +531,78 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45319735779",
+      "classid": "7993035753",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ Galil AR | Control",
+      "market_hash_name": "StatTrak™ Galil AR | Control (Minimal Wear)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "45163042680",
+      "classid": "7993037251",
+      "instanceid": "188531245",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Etch Lord",
+      "market_hash_name": "StatTrak™ M4A4 | Etch Lord (Field-Tested)",
+      "type": "StatTrak™ Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

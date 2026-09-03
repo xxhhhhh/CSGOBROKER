@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/591e26a3-eb86-4d4c-afa8-b5754455dc03",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-01T08:22:22.251Z",
+  "updatedAt": "2026-09-03T07:49:10.030Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 65,
-  "totalItemsGrouped": 65,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 66,
   "items": [
     {
       "assetid": "52764648048",
@@ -123,12 +123,12 @@
       ]
     },
     {
-      "assetid": "24829196611",
-      "classid": "7993040636",
-      "instanceid": "188530139",
+      "assetid": "38603211489",
+      "classid": "7993039328",
+      "instanceid": "6286482902",
       "amount": 1,
-      "name": "Five-SeveN | Fairy Tale",
-      "market_hash_name": "Five-SeveN | Fairy Tale (Factory New)",
+      "name": "Glock-18 | Twilight Galaxy",
+      "market_hash_name": "Glock-18 | Twilight Galaxy (Factory New)",
       "type": "Classified Pistol",
       "inspectLink": "",
       "tags": [
@@ -155,41 +155,21 @@
         {
           "category": "Exterior",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "21685832337",
-      "classid": "7993036113",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Muertos",
-      "market_hash_name": "P250 | Muertos (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
+        },
         {
-          "category": "Type",
+          "category": "Tournament",
           "name": ""
         },
         {
-          "category": "Weapon",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "ItemSet",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -455,6 +435,78 @@
       ]
     },
     {
+      "assetid": "45635385114",
+      "classid": "202170645",
+      "instanceid": "6279121457",
+      "amount": 1,
+      "name": "Desert Eagle | Golden Koi",
+      "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "38796613905",
+      "classid": "7993040456",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Five-SeveN | Angry Mob",
+      "market_hash_name": "Five-SeveN | Angry Mob (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53054621150",
       "classid": "7993051188",
       "instanceid": "8716699269",
@@ -499,12 +551,12 @@
       ]
     },
     {
-      "assetid": "53551547958",
-      "classid": "7993036534",
-      "instanceid": "519977179",
+      "assetid": "42534970004",
+      "classid": "7993036156",
+      "instanceid": "6894553097",
       "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "name": "M4A1-S | Cyrex",
+      "market_hash_name": "M4A1-S | Cyrex (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -530,6 +582,26 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1657,6 +1729,50 @@
       ]
     },
     {
+      "assetid": "35881348899",
+      "classid": "7993040786",
+      "instanceid": "6286482907",
+      "amount": 1,
+      "name": "P250 | Digital Architect",
+      "market_hash_name": "P250 | Digital Architect (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52971662699",
       "classid": "7993043336",
       "instanceid": "519977179",
@@ -1865,48 +1981,12 @@
       ]
     },
     {
-      "assetid": "53040254945",
-      "classid": "7993038472",
-      "instanceid": "6448600693",
+      "assetid": "45635311656",
+      "classid": "7993045027",
+      "instanceid": "8824192599",
       "amount": 1,
-      "name": "StatTrak™ USP-S | Orion",
-      "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
-      "type": "StatTrak™ Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "43600181829",
-      "classid": "7993046239",
-      "instanceid": "480123390",
-      "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Ocean Drive",
-      "market_hash_name": "StatTrak™ Desert Eagle | Ocean Drive (Minimal Wear)",
+      "name": "StatTrak™ USP-S | Kill Confirmed",
+      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
       "type": "StatTrak™ Covert Pistol",
       "inspectLink": "",
       "tags": [
@@ -1933,13 +2013,21 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
       "assetid": "34616426284",
       "classid": "5001787061",
-      "instanceid": "1342042668",
+      "instanceid": "1351954215",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
