@@ -331,18 +331,17 @@ function upsertCoreSeoHeadTags(html, canonicalHref, lang) {
   const eol = detectEol(inner);
   let lines = inner.split(/\r?\n/);
 
-  // Удаляем старые canonical/googlebot/og:url/og:locale,
+  // Удаляем старые canonical/og:url/og:locale,
   // чтобы не появлялись дубли.
   const removeRes = [
     /^\s*<link\b[^>]*\brel\s*=\s*["']canonical["'][^>]*\/?>\s*$/i,
-    /^\s*<meta\b[^>]*\bname\s*=\s*["']?\s*googlebot\s*["']?[^>]*\/?>\s*$/i,
     /^\s*<meta\b[^>]*\bproperty\s*=\s*["']og:url["'][^>]*\/?>\s*$/i,
     /^\s*<meta\b[^>]*\bproperty\s*=\s*["']og:locale["'][^>]*\/?>\s*$/i,
   ];
 
   lines = lines.filter((line) => !removeRes.some((re) => re.test(line)));
 
-  // Вставка canonical/googlebot рядом с SEO-метами.
+  // Вставка canonical рядом с SEO-метами.
   const seoAnchorIdx = findEarliestIndex(lines, [
     /^\s*<meta\b[^>]*\bname\s*=\s*["']?\s*description\b/i,
     /^\s*<meta\b[^>]*\bname\s*=\s*["']?\s*robots\b/i,
@@ -369,26 +368,6 @@ function upsertCoreSeoHeadTags(html, canonicalHref, lang) {
   );
 
   const canonicalLineIdx = baseInsertIdx;
-
-  // Вставляем точный тег Googlebot сразу после robots.
-  // Если robots отсутствует — сразу после canonical.
-  const robotsIdx = findFirstIndex(
-    lines,
-    /^\s*<meta\b[^>]*\bname\s*=\s*["']?\s*robots\b/i,
-  );
-
-  const gbInsertIdx = robotsIdx !== -1 ? robotsIdx + 1 : canonicalLineIdx + 1;
-
-  const indentGb =
-    gbInsertIdx >= 0 && gbInsertIdx < lines.length
-      ? getLineIndent(lines[gbInsertIdx], indentSeo)
-      : indentSeo;
-
-  lines.splice(
-    gbInsertIdx,
-    0,
-    `${indentGb}<meta name="googlebot" content="noindex">`,
-  );
 
   // OG-блок: og:url + og:locale рядом с остальными OG.
   const ogTypeIdx = findFirstIndex(
