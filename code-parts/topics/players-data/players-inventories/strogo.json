@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-02T07:36:31.831Z",
+  "updatedAt": "2026-09-04T07:43:13.693Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 136,
-  "totalItemsGrouped": 134,
+  "totalItemsRaw": 137,
+  "totalItemsGrouped": 135,
   "items": [
     {
       "assetid": "53263908820",
@@ -1404,7 +1404,7 @@
       ]
     },
     {
-      "assetid": "53272932903",
+      "assetid": "53272932901",
       "classid": "1989314587",
       "instanceid": "302028390",
       "amount": 3,
@@ -1431,9 +1431,9 @@
         }
       ],
       "assetids": [
+        "53272932901",
         "53272932903",
-        "53272932902",
-        "53272932901"
+        "53272932902"
       ]
     },
     {
@@ -4087,9 +4087,53 @@
       ]
     },
     {
+      "assetid": "53482350343",
+      "classid": "7993074744",
+      "instanceid": "6277812643",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Fire Serpent",
+      "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Battle-Scarred)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "30901947563",
       "classid": "7993043106",
-      "instanceid": "6290708278",
+      "instanceid": "6343969635",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chatterbox",
       "market_hash_name": "StatTrak™ Galil AR | Chatterbox (Well-Worn)",

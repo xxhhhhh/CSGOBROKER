@@ -7,25 +7,27 @@
   "name": "Karim Miftakhov",
   "nationality": "Russia",
   "born": "10.12.2004",
+  "isContentCreator": false,
   "twitch": "relaxxxie",
   "faceit": "https://faceitdb.com/profile/faceit/e01b53f7-5f95-4a14-8de2-7093932e6c43",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-08T04:54:46.389Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 77,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-04T08:28:03.421Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 75,
+  "totalItemsGrouped": 75,
   "items": [
     {
-      "assetid": "50651744832",
-      "classid": "5710094579",
-      "instanceid": "302028390",
+      "assetid": "53245786057",
+      "classid": "7993038269",
+      "instanceid": "188534043",
       "amount": 1,
-      "name": "Kilowatt Case",
-      "market_hash_name": "Kilowatt Case",
-      "type": "Base Grade Container",
+      "name": "★ StatTrak™ Karambit | Marble Fade",
+      "market_hash_name": "★ StatTrak™ Karambit | Marble Fade (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
       "inspectLink": "",
       "tags": [
         {
@@ -33,7 +35,15 @@
           "name": ""
         },
         {
-          "category": "ItemSet",
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -42,6 +52,10 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -137,6 +151,37 @@
       ]
     },
     {
+      "assetid": "53488404981",
+      "classid": "1989273689",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Keep the Change (Battle Green)",
+      "market_hash_name": "Graffiti | Keep the Change (Battle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C3D3CB16D9F3D3FBD2E3D7B1D4DBD3C376DEE3D4BBD3A3CBBB17BBDA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53488404981"
+      ]
+    },
+    {
       "assetid": "49033259593",
       "classid": "1989274070",
       "instanceid": "302028390",
@@ -227,37 +272,6 @@
       ],
       "assetids": [
         "45356552130"
-      ]
-    },
-    {
-      "assetid": "50843495458",
-      "classid": "1989278748",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Keep the Change (Battle Green)",
-      "market_hash_name": "Sealed Graffiti | Keep the Change (Battle Green)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBCACB468A68CAC84AD9CA8CEABA4ACBC09A19CABC4ACDCB48A104F7F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50843495458"
       ]
     },
     {
@@ -363,6 +377,42 @@
       "market_hash_name": "P250 | Boreal Forest (Field-Tested)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A77B7C243011B6AF9397FA9FB687B38F41523943B4F708B1DF92C7AF628378A2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53511434677",
+      "classid": "7993035582",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Copper Oxide",
+      "market_hash_name": "P250 | Copper Oxide (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1183,50 +1233,6 @@
       ]
     },
     {
-      "assetid": "52573489869",
-      "classid": "7993039825",
-      "instanceid": "6294727055",
-      "amount": 1,
-      "name": "AK-47 | Vulcan",
-      "market_hash_name": "AK-47 | Vulcan (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "39677093754",
       "classid": "2750358421",
       "instanceid": "188530139",
@@ -1555,53 +1561,6 @@
       ],
       "assetids": [
         "45432338624"
-      ]
-    },
-    {
-      "assetid": "45437669830",
-      "classid": "5862370049",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | w0nderful (Champion) | Copenhagen 2024",
-      "market_hash_name": "Sticker | w0nderful (Champion) | Copenhagen 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207E6E7E66C7775E7E567D4E7A1C7B767E6EBD43167E0E7659802320",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "45437669830"
       ]
     },
     {
@@ -2524,54 +2483,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52614236060",
-      "classid": "7993042347",
-      "instanceid": "8741738673",
-      "amount": 1,
-      "name": "StatTrak™ M4A4 | Neo-Noir",
-      "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]

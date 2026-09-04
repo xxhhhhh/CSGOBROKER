@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a44d401-6f83-40b2-8cdf-c764813abbd6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-03T07:51:14.172Z",
+  "updatedAt": "2026-09-04T07:49:53.097Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 78,
-  "totalItemsGrouped": 78,
+  "totalItemsRaw": 80,
+  "totalItemsGrouped": 80,
   "items": [
+    {
+      "assetid": "53478567269",
+      "classid": "7993045582",
+      "instanceid": "8791626238",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D98A7B5E1BA7C65817E5DE27E557B4D7E45E1A68E9C7E3DAF7F15610D7593AB8172",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.011531259865,
+      "seed": 338,
+      "phase": "Ruby"
+    },
     {
       "assetid": "49073170455",
       "classid": "7993044566",
@@ -1666,6 +1701,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53478302609",
+      "classid": "7993038412",
+      "instanceid": "8812527193",
+      "amount": 1,
+      "name": "USP-S | Guardian",
+      "market_hash_name": "USP-S | Guardian (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

@@ -7,56 +7,19 @@
   "name": "Joshua Ohm",
   "nationality": "United States",
   "born": "31.05.1999",
+  "isContentCreator": false,
   "twitch": "oSeecs",
   "faceit": "https://faceitdb.com/profile/faceit/faf7743e-7e28-4426-ac67-1dba6bbaccd1",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-19T04:15:00.613Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-04T08:13:13.703Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 974,
   "totalItemsGrouped": 934,
   "items": [
-    {
-      "assetid": "50593230858",
-      "classid": "7993040883",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E2F268023F5E5EE3FA61E6C27DE1CAE4D2E1DA14067902E1A257E18A62E092EA071EE562",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.00823651813,
-      "seed": 437,
-      "phase": "Ruby"
-    },
     {
       "assetid": "47190102177",
       "classid": "7622289306",
@@ -3451,6 +3414,42 @@
       "name": "M249 | Sage Camo",
       "market_hash_name": "M249 | Sage Camo (Factory New)",
       "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53595595601",
+      "classid": "7993037061",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Plum Netting",
+      "market_hash_name": "P250 | Plum Netting (Factory New)",
+      "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -30420,7 +30419,7 @@
     {
       "assetid": "32268641399",
       "classid": "7993040462",
-      "instanceid": "482929573",
+      "instanceid": "480982227",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Code Red",
       "market_hash_name": "StatTrak™ Desert Eagle | Code Red (Minimal Wear)",
@@ -30492,7 +30491,7 @@
     {
       "assetid": "32268716062",
       "classid": "7993041773",
-      "instanceid": "1221285845",
+      "instanceid": "965611306",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
