@@ -7,16 +7,18 @@
   "name": "Yang Yi",
   "nationality": "China",
   "born": "23.07.2001",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/775f4105-de70-4d88-ae5d-5ffff72d7bba",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-12T05:06:16.275Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 52,
-  "totalItemsGrouped": 47,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-06T07:55:49.306Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 55,
+  "totalItemsGrouped": 50,
   "items": [
     {
       "assetid": "53079530482",
@@ -83,33 +85,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "51877992791",
-      "classid": "7729086074",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker Slab",
-      "market_hash_name": "Sticker Slab",
-      "type": "Base Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2029392931893609290128192D4129592BAABA5A47",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51877992791"
       ]
     },
     {
@@ -237,9 +212,9 @@
       ]
     },
     {
-      "assetid": "52423542719",
+      "assetid": "53357346431",
       "classid": "7993037248",
-      "instanceid": "8582839364",
+      "instanceid": "8544480919",
       "amount": 1,
       "name": "M4A1-S | Hot Rod",
       "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
@@ -382,6 +357,76 @@
           "category": "ProPlayer",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53283863930",
+      "classid": "7729388313",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | kyousuke (Gold) | Budapest 2025",
+      "market_hash_name": "Sticker Slab | kyousuke (Gold) | Budapest 2025",
+      "type": "Customized Extraordinary Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2079697961B2735979517F497111790979DB787E7179695C199832FFBA3DA9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53283863930"
+      ]
+    },
+    {
+      "assetid": "53357378360",
+      "classid": "7729128754",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | Tyloo (Holo) | Stockholm 2021",
+      "market_hash_name": "Sticker Slab | Tyloo (Holo) | Stockholm 2021",
+      "type": "Customized Remarkable Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206B7B6B73A0614B6B436F5B63036B1B6BC96A6C636B7B4E0BF44C040C1573",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53357378360"
       ]
     },
     {
@@ -1154,6 +1199,37 @@
       ]
     },
     {
+      "assetid": "44417302555",
+      "classid": "6216381451",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Taste Buddy (Holo)",
+      "market_hash_name": "Sticker | Taste Buddy (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2070607068C97950705874407412757870609C4D187000670603AB38",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "44417302555"
+      ]
+    },
+    {
       "assetid": "42031752420",
       "classid": "188530424",
       "instanceid": "6276526479",
@@ -1412,7 +1488,7 @@
     {
       "assetid": "42105359000",
       "classid": "7993045315",
-      "instanceid": "481036571",
+      "instanceid": "480198090",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",
@@ -1448,7 +1524,7 @@
     {
       "assetid": "46164091486",
       "classid": "7993044752",
-      "instanceid": "3742722314",
+      "instanceid": "4039126945",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Factory New)",
@@ -1532,7 +1608,7 @@
     {
       "assetid": "37331653972",
       "classid": "7993040023",
-      "instanceid": "8562222866",
+      "instanceid": "8797458649",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Minimal Wear)",
@@ -1632,7 +1708,7 @@
     {
       "assetid": "39635804520",
       "classid": "7993038470",
-      "instanceid": "8752864531",
+      "instanceid": "8840622227",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Magnesium",
       "market_hash_name": "StatTrak™ M4A4 | Magnesium (Well-Worn)",
@@ -1725,6 +1801,38 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53357383542",
+      "classid": "5835568404",
+      "instanceid": "8521449588",
+      "amount": 1,
+      "name": "C4 Explosive",
+      "market_hash_name": "C4 Explosive",
+      "type": "Stock C4",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

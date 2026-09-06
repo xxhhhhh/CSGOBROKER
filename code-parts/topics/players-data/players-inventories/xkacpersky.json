@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-01T08:43:42.936Z",
+  "updatedAt": "2026-09-06T08:02:12.699Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 79,
-  "totalItemsGrouped": 78,
+  "totalItemsRaw": 87,
+  "totalItemsGrouped": 86,
   "items": [
     {
       "assetid": "51378486572",
@@ -197,6 +197,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53510759566",
+      "classid": "4418618853",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Snakebite Case",
+      "market_hash_name": "Snakebite Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1023,6 +1051,122 @@
       ]
     },
     {
+      "assetid": "53509683152",
+      "classid": "7993038293",
+      "instanceid": "6276343595",
+      "amount": 1,
+      "name": "Desert Eagle | Code Red",
+      "market_hash_name": "Desert Eagle | Code Red (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53510220400",
+      "classid": "7993035509",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Desert Eagle | Printstream",
+      "market_hash_name": "Desert Eagle | Printstream (Minimal Wear)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53509691624",
+      "classid": "8247051250",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Glock-18 | Fully Tuned",
+      "market_hash_name": "Glock-18 | Fully Tuned (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48143062367",
       "classid": "7993041214",
       "instanceid": "7795523032",
@@ -1123,6 +1267,86 @@
       ]
     },
     {
+      "assetid": "53510103238",
+      "classid": "7993036525",
+      "instanceid": "6276298917",
+      "amount": 1,
+      "name": "AK-47 | Asiimov",
+      "market_hash_name": "AK-47 | Asiimov (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53509657313",
+      "classid": "7993037109",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | The Oligarch",
+      "market_hash_name": "AK-47 | The Oligarch (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51967831843",
       "classid": "7993036534",
       "instanceid": "519977179",
@@ -1130,6 +1354,78 @@
       "name": "M4A1-S | Fade",
       "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53509681968",
+      "classid": "7993037825",
+      "instanceid": "6294731695",
+      "amount": 1,
+      "name": "M4A4 | Neo-Noir",
+      "market_hash_name": "M4A4 | Neo-Noir (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53509680812",
+      "classid": "7993035515",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AWP | Printstream",
+      "market_hash_name": "AWP | Printstream (Field-Tested)",
+      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {

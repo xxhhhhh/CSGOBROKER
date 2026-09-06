@@ -7,17 +7,90 @@
   "name": "Epitácio Melo",
   "nationality": "Brazil",
   "born": "24.01.1995",
+  "isContentCreator": false,
   "twitch": "tacocs",
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-24T04:48:44.610Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 72,
-  "totalItemsGrouped": 72,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-06T08:32:24.894Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 93,
+  "totalItemsGrouped": 93,
   "items": [
+    {
+      "assetid": "53480803433",
+      "classid": "7993039715",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Bayonet | Doppler",
+      "market_hash_name": "★ Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEB12632A663CFAE30FF8DB58F8D3FDCBF8C3794C761DF8BB63FE93EF8BFFC345F2EF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.023847345263,
+      "seed": 664,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "53480700079",
+      "classid": "7993036616",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Bowie Knife | Marble Fade",
+      "market_hash_name": "★ Bowie Knife | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "51006192748",
       "classid": "7993042582",
@@ -97,6 +170,78 @@
       "amount": 1,
       "name": "★ Classic Knife | Fade",
       "market_hash_name": "★ Classic Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53480661148",
+      "classid": "7993045291",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Lore",
+      "market_hash_name": "★ Huntsman Knife | Lore (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53483707843",
+      "classid": "7993036813",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Night",
+      "market_hash_name": "★ Huntsman Knife | Night (Battle-Scarred)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -265,6 +410,42 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "53480846480",
+      "classid": "7993039900",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Stiletto Knife | Tiger Tooth",
+      "market_hash_name": "★ Stiletto Knife | Tiger Tooth (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51006356570",
       "classid": "7993042573",
       "instanceid": "480085569",
@@ -304,6 +485,73 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "53480699426",
+      "classid": "7993046244",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Ursus Knife | Doppler",
+      "market_hash_name": "★ Ursus Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA185670277DBBA23DBE9A19B992BC8AB9827376215FB9FA34BBD299CAB2DABD33C2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.020373480394,
+      "seed": 142,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "53480662047",
+      "classid": "7993038111",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | Imperial Plaid",
+      "market_hash_name": "★ Driver Gloves | Imperial Plaid (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49630542938",
       "classid": "7993037118",
       "instanceid": "480085569",
@@ -332,6 +580,53 @@
       ]
     },
     {
+      "assetid": "53480797970",
+      "classid": "7993041496",
+      "instanceid": "902658099",
+      "amount": 1,
+      "name": "★ StatTrak™ Bowie Knife | Gamma Doppler",
+      "market_hash_name": "★ StatTrak™ Bowie Knife | Gamma Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208A9A18645A174D8B92088EAA308EA28CBA89B2641A246F89CA788BC28ADA8AE29FFA8E4E78B311",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.020939078182,
+      "seed": 242,
+      "phase": "Phase 2"
+    },
+    {
       "assetid": "31829650333",
       "classid": "7993048569",
       "instanceid": "188535291",
@@ -347,6 +642,50 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53480663016",
+      "classid": "7993054341",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "★ StatTrak™ Kukri Knife | Slaughter",
+      "market_hash_name": "★ StatTrak™ Kukri Knife | Slaughter (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -456,6 +795,78 @@
       ]
     },
     {
+      "assetid": "53483707297",
+      "classid": "7993047456",
+      "instanceid": "902658099",
+      "amount": 1,
+      "name": "★ StatTrak™ Shadow Daggers | Lore",
+      "market_hash_name": "★ StatTrak™ Shadow Daggers | Lore (Battle-Scarred)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53595109842",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53394615723",
       "classid": "1989271528",
       "instanceid": "302028390",
@@ -484,6 +895,37 @@
       ],
       "assetids": [
         "53394615723"
+      ]
+    },
+    {
+      "assetid": "53646787451",
+      "classid": "1989321871",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eco (Desert Amber)",
+      "market_hash_name": "Sealed Graffiti | Eco (Desert Amber)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5B4B538F416B4B634A7B4F294C434B5BEC467B4E234B3B53D368C773",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53646787451"
       ]
     },
     {
@@ -545,6 +987,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53495085400",
+      "classid": "7993035557",
+      "instanceid": "6276326717",
+      "amount": 1,
+      "name": "AK-47 | Point Disarray",
+      "market_hash_name": "AK-47 | Point Disarray (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1700,6 +2186,78 @@
       ]
     },
     {
+      "assetid": "53518177016",
+      "classid": "8637416980",
+      "instanceid": "8799011319",
+      "amount": 1,
+      "name": "MP9 | Spy Prototype",
+      "market_hash_name": "MP9 | Spy Prototype (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53517319978",
+      "classid": "8637417452",
+      "instanceid": "8798927082",
+      "amount": 1,
+      "name": "CZ75-Auto | Hydraulics",
+      "market_hash_name": "CZ75-Auto | Hydraulics (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49840529381",
       "classid": "188530424",
       "instanceid": "8187754333",
@@ -1747,6 +2305,214 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53480848026",
+      "classid": "188530425",
+      "instanceid": "8449439569",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53518219661",
+      "classid": "8637413404",
+      "instanceid": "8799011319",
+      "amount": 1,
+      "name": "Glock-18 | Ifrit Lattice",
+      "market_hash_name": "Glock-18 | Ifrit Lattice (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53518161035",
+      "classid": "8637412909",
+      "instanceid": "8799009206",
+      "amount": 1,
+      "name": "P250 | Lotus Imprint",
+      "market_hash_name": "P250 | Lotus Imprint (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53518174731",
+      "classid": "8637414428",
+      "instanceid": "8799011319",
+      "amount": 1,
+      "name": "AWP | Black Box",
+      "market_hash_name": "AWP | Black Box (Field-Tested)",
+      "type": "Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53517331768",
+      "classid": "8637418041",
+      "instanceid": "8798927082",
+      "amount": 1,
+      "name": "AWP | Black Box",
+      "market_hash_name": "AWP | Black Box (Minimal Wear)",
+      "type": "Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -2010,7 +2776,7 @@
     {
       "assetid": "33296469568",
       "classid": "7993039759",
-      "instanceid": "8813745910",
+      "instanceid": "8842892412",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
@@ -2116,9 +2882,53 @@
       ]
     },
     {
+      "assetid": "53495092222",
+      "classid": "7993040025",
+      "instanceid": "6277676336",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | 龍王 (Dragon King)",
+      "market_hash_name": "StatTrak™ M4A4 | 龍王 (Dragon King) (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "8814457481",
+      "instanceid": "8842892413",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -2170,7 +2980,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "8814560958",
+      "instanceid": "8842892411",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -2222,7 +3032,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "8814560957",
+      "instanceid": "8842892410",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",
