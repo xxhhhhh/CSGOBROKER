@@ -19584,12 +19584,14 @@ a[href*="/?aff="][target="_blank"] {
     mask-composite: exclude;
 
     pointer-events: none;
+    opacity: .5;
 }
 
 .radar-smoke-icon:hover:before,
 .radar-smoke-icon.active:before,
 .radar-smoke-icon.show:before {
     filter: grayscale(0);
+    opacity: 1;
     animation: spin 5s linear infinite;
 }
 
