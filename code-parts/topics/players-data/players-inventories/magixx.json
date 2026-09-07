@@ -12,16 +12,44 @@
   "faceit": "https://faceitdb.com/profile/faceit/1ace868a-d60c-46b8-a61e-f51d40d0305b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-31T06:10:27.599Z",
+  "updatedAt": "2026-09-07T07:53:29.989Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 409,
-  "totalItemsGrouped": 409,
+  "totalItemsRaw": 411,
+  "totalItemsGrouped": 411,
   "items": [
     {
       "assetid": "52742861274",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53666350651",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -1628,6 +1656,42 @@
       "market_hash_name": "UMP-45 | Motorized (Minimal Wear)",
       "type": "Mil-Spec Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D4C4081B240168D5CCCCF443DDFCD7E4D0EC1A745A39D7942BD2BC55D6A4DCE11FF0B7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53666350652",
+      "classid": "7993038273",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AWP | Arsenic Spill",
+      "market_hash_name": "AWP | Arsenic Spill (Field-Tested)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
