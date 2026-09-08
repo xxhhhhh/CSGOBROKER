@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/898780b2-bf70-4c28-8e0d-b9600be8397e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-07T08:02:10.943Z",
+  "updatedAt": "2026-09-08T07:56:02.492Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 75,
-  "totalItemsGrouped": 75,
+  "totalItemsRaw": 77,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "53442292467",
@@ -129,45 +129,6 @@
       "float": 0.025303129107,
       "seed": 251,
       "phase": "Sapphire"
-    },
-    {
-      "assetid": "53542694849",
-      "classid": "7993042567",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Skeleton Knife | Doppler",
-      "market_hash_name": "★ Skeleton Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205545948AC7EE92544DD85175CA567D5365566DF2C6B2B35615B7523D6B2551B42CD493",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.026585413143,
-      "seed": 994,
-      "phase": "Ruby"
     },
     {
       "assetid": "53336499875",
@@ -733,6 +694,42 @@
       ]
     },
     {
+      "assetid": "53542513375",
+      "classid": "7993039930",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "FAMAS | Waters of Nephthys",
+      "market_hash_name": "FAMAS | Waters of Nephthys (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53201668446",
       "classid": "7993038185",
       "instanceid": "8765613062",
@@ -1055,6 +1052,42 @@
       "amount": 1,
       "name": "AK-47 | Wild Lotus",
       "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53538452947",
+      "classid": "7993037027",
+      "instanceid": "6276311393",
+      "amount": 1,
+      "name": "AK-47 | X-Ray",
+      "market_hash_name": "AK-47 | X-Ray (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -2387,6 +2420,50 @@
       ]
     },
     {
+      "assetid": "53542615521",
+      "classid": "7993036554",
+      "instanceid": "7766529466",
+      "amount": 1,
+      "name": "MP7 | Fade",
+      "market_hash_name": "MP7 | Fade (Factory New)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52313655138",
       "classid": "8560705078",
       "instanceid": "8592613122",
@@ -2589,7 +2666,7 @@
     {
       "assetid": "51831459379",
       "classid": "7993035946",
-      "instanceid": "8803967394",
+      "instanceid": "8884335966",
       "amount": 1,
       "name": "StatTrak™ MP7 | Smoking Kills",
       "market_hash_name": "StatTrak™ MP7 | Smoking Kills (Factory New)",
