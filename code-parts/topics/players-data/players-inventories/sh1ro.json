@@ -12,14 +12,50 @@
   "faceit": "https://faceitdb.com/profile/faceit/168530f8-107a-4e0a-b641-655d2f1594de",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-29T09:43:05.832Z",
+  "updatedAt": "2026-09-09T07:51:58.030Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 172,
-  "totalItemsGrouped": 167,
+  "totalItemsRaw": 178,
+  "totalItemsGrouped": 173,
   "items": [
+    {
+      "assetid": "53555892426",
+      "classid": "7993042413",
+      "instanceid": "8806495245",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Crimson Web",
+      "market_hash_name": "★ Butterfly Knife | Crimson Web (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "53120612505",
       "classid": "7993042582",
@@ -55,6 +91,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53557733359",
+      "classid": "7993043455",
+      "instanceid": "8806972150",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205343BC9CFB9194524BA85073EB577B5563506BC8ABEEBB5013683BF552235B72BFBF89",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.035030465573,
+      "seed": 59,
+      "phase": "Emerald"
     },
     {
       "assetid": "53264922647",
@@ -122,42 +193,6 @@
       "float": 0.008138111793,
       "seed": 711,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "53068939291",
-      "classid": "7993037832",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Skeleton Knife | Fade",
-      "market_hash_name": "★ Skeleton Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "53386210850",
@@ -261,6 +296,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Amphibious",
       "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53557733360",
+      "classid": "7993042207",
+      "instanceid": "8806972910",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1900,6 +1963,42 @@
       ]
     },
     {
+      "assetid": "53556597254",
+      "classid": "259106102",
+      "instanceid": "8806679490",
+      "amount": 1,
+      "name": "M4A1-S | Guardian",
+      "market_hash_name": "M4A1-S | Guardian (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "36247664412",
       "classid": "7993037248",
       "instanceid": "480085569",
@@ -2019,6 +2118,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53556590614",
+      "classid": "259074725",
+      "instanceid": "8806679569",
+      "amount": 1,
+      "name": "AWP | Redline",
+      "market_hash_name": "AWP | Redline (Minimal Wear)",
+      "type": "Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4632,6 +4767,42 @@
       ]
     },
     {
+      "assetid": "53556591624",
+      "classid": "188530293",
+      "instanceid": "8806679490",
+      "amount": 1,
+      "name": "Glock-18 | Dragon Tattoo",
+      "market_hash_name": "Glock-18 | Dragon Tattoo (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "37867616304",
       "classid": "188530425",
       "instanceid": "6286547758",
@@ -4640,6 +4811,42 @@
       "market_hash_name": "Glock-18 | Fade (Factory New)",
       "type": "Restricted Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201D0DADEDCA95901C05193D3B35192D1925E9ABF9F91E5DEB1E7F14151D0D3D387B7B9B227F19151C0D387F14151F0D3C387B7B9B227F19151E0D3575176D1D899CE1AB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53556595560",
+      "classid": "188530185",
+      "instanceid": "8806680801",
+      "amount": 1,
+      "name": "Tec-9 | Nuclear Threat",
+      "market_hash_name": "Tec-9 | Nuclear Threat (Minimal Wear)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
