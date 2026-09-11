@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-10T08:36:43.251Z",
+  "updatedAt": "2026-09-11T08:30:21.918Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 50,
-  "totalItemsGrouped": 46,
+  "totalItemsRaw": 55,
+  "totalItemsGrouped": 51,
   "items": [
+    {
+      "assetid": "53580282585",
+      "classid": "7993038920",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717DEF28FCAC0061FFB0427A4042F0137043FCEC1CBE60447E3026F1C770F09665D0D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.010933705606,
+      "seed": 740,
+      "phase": "Phase 2"
+    },
     {
       "assetid": "53322034081",
       "classid": "8247053652",
@@ -189,6 +224,42 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53580956967",
+      "classid": "8637415269",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A4 | Falak",
+      "market_hash_name": "M4A4 | Falak (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1073,6 +1144,30 @@
       ]
     },
     {
+      "assetid": "53580284426",
+      "classid": "2750358584",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Death Sentence Pin",
+      "market_hash_name": "Death Sentence Pin",
+      "type": "High Grade Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201C0C1C04F2333C1C341F2C18741C6C14CD729292",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33543450895",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1152,7 +1247,7 @@
     {
       "assetid": "53570443931",
       "classid": "7993039198",
-      "instanceid": "188530980",
+      "instanceid": "188533386",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Mirror Mosaic",
       "market_hash_name": "StatTrak™ Glock-18 | Mirror Mosaic (Field-Tested)",
@@ -1188,7 +1283,7 @@
     {
       "assetid": "53570365088",
       "classid": "7993045101",
-      "instanceid": "188530722",
+      "instanceid": "188531557",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Cracked Opal",
       "market_hash_name": "StatTrak™ Tec-9 | Cracked Opal (Factory New)",
@@ -1222,9 +1317,45 @@
       ]
     },
     {
+      "assetid": "53580695999",
+      "classid": "7993045180",
+      "instanceid": "188536825",
+      "amount": 1,
+      "name": "StatTrak™ Five-SeveN | Hybrid",
+      "market_hash_name": "StatTrak™ Five-SeveN | Hybrid (Factory New)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51711048505",
       "classid": "7993042258",
-      "instanceid": "8963666830",
+      "instanceid": "8980970401",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",
@@ -1300,10 +1431,46 @@
     {
       "assetid": "53570411072",
       "classid": "7993040946",
-      "instanceid": "902748563",
+      "instanceid": "902709503",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Saibā Oni",
       "market_hash_name": "StatTrak™ MAC-10 | Saibā Oni (Field-Tested)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53580567821",
+      "classid": "7993041844",
+      "instanceid": "903229325",
+      "amount": 1,
+      "name": "StatTrak™ MP9 | Mount Fuji",
+      "market_hash_name": "StatTrak™ MP9 | Mount Fuji (Minimal Wear)",
       "type": "StatTrak™ Restricted SMG",
       "inspectLink": "",
       "tags": [
