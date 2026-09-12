@@ -12,21 +12,21 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-11T07:45:44.822Z",
+  "updatedAt": "2026-09-12T07:41:14.281Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 167,
-  "totalItemsGrouped": 165,
+  "totalItemsRaw": 169,
+  "totalItemsGrouped": 167,
   "items": [
     {
-      "assetid": "53263908820",
-      "classid": "7993042976",
+      "assetid": "53589290052",
+      "classid": "7993049545",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Bayonet | Autotronic",
-      "market_hash_name": "★ Bayonet | Autotronic (Battle-Scarred)",
+      "name": "★ Bayonet | Stained",
+      "market_hash_name": "★ Bayonet | Stained (Battle-Scarred)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -87,45 +87,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "53375339398",
-      "classid": "7993041986",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBB2D3C07406DAAB328AF8B41AF83AD9BA8931D1C0143A8EB7FADC38CDBA31615CF61",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.033839903772,
-      "seed": 852,
-      "phase": "Phase 2"
     },
     {
       "assetid": "41342802236",
@@ -731,6 +692,34 @@
       ]
     },
     {
+      "assetid": "53590114558",
+      "classid": "7993044824",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Lunar Weave",
+      "market_hash_name": "★ Driver Gloves | Lunar Weave (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53285315658",
       "classid": "7993039230",
       "instanceid": "188530139",
@@ -821,6 +810,34 @@
       "amount": 1,
       "name": "★ Moto Gloves | Cool Mint",
       "market_hash_name": "★ Moto Gloves | Cool Mint (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53590076660",
+      "classid": "7993039224",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Moto Gloves | Smoke Out",
+      "market_hash_name": "★ Moto Gloves | Smoke Out (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -989,34 +1006,6 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Lime Polycam",
       "market_hash_name": "★ Specialist Gloves | Lime Polycam (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53142167690",
-      "classid": "7993035843",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Mogul",
-      "market_hash_name": "★ Specialist Gloves | Mogul (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -2276,6 +2265,54 @@
       ]
     },
     {
+      "assetid": "53589288412",
+      "classid": "7993045224",
+      "instanceid": "6318049610",
+      "amount": 1,
+      "name": "M4A1-S | Master Piece",
+      "market_hash_name": "M4A1-S | Master Piece (Battle-Scarred)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53557778528",
       "classid": "7993038708",
       "instanceid": "480085569",
@@ -2603,6 +2640,42 @@
       ]
     },
     {
+      "assetid": "53589287761",
+      "classid": "7993035495",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AK-47 | Bloodsport",
+      "market_hash_name": "AK-47 | Bloodsport (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53357302158",
       "classid": "8637416238",
       "instanceid": "480085569",
@@ -2807,54 +2880,6 @@
       ]
     },
     {
-      "assetid": "53142088644",
-      "classid": "7993044081",
-      "instanceid": "7864656982",
-      "amount": 1,
-      "name": "M4A1-S | Printstream",
-      "market_hash_name": "M4A1-S | Printstream (Well-Worn)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "31535479971",
       "classid": "7993041783",
       "instanceid": "6276832993",
@@ -2894,42 +2919,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53445945045",
-      "classid": "7993037085",
-      "instanceid": "6276455514",
-      "amount": 1,
-      "name": "AWP | Asiimov",
-      "market_hash_name": "AWP | Asiimov (Field-Tested)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4786,6 +4775,42 @@
       ]
     },
     {
+      "assetid": "53589287349",
+      "classid": "7993046254",
+      "instanceid": "8760824920",
+      "amount": 1,
+      "name": "StatTrak™ Desert Eagle | Printstream",
+      "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Well-Worn)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53180057987",
       "classid": "7993044477",
       "instanceid": "7624830599",
@@ -4918,9 +4943,53 @@
       ]
     },
     {
+      "assetid": "53589286799",
+      "classid": "7993042967",
+      "instanceid": "7181316485",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | Asiimov",
+      "market_hash_name": "StatTrak™ M4A4 | Asiimov (Battle-Scarred)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53541569595",
       "classid": "7993042986",
-      "instanceid": "902688403",
+      "instanceid": "902709465",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Buzz Kill",
       "market_hash_name": "StatTrak™ M4A4 | Buzz Kill (Field-Tested)",

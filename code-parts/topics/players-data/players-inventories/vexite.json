@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4cbb1255-b9bc-4ce1-88dc-937a67d6fc8d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-07T08:42:22.705Z",
+  "updatedAt": "2026-09-12T08:28:43.077Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 423,
-  "totalItemsGrouped": 272,
+  "totalItemsRaw": 426,
+  "totalItemsGrouped": 275,
   "items": [
     {
       "assetid": "41987463847",
@@ -94,6 +94,45 @@
       "float": 0.033742547035,
       "seed": 963,
       "phase": "Phase 2"
+    },
+    {
+      "assetid": "47304265815",
+      "classid": "7993040380",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Huntsman Knife | Gamma Doppler",
+      "market_hash_name": "★ Huntsman Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BDAD6A1D0A210DBCA540BE9D01B995BB8DBE8554710655BEFD6DBED5BCCDB9663C7D00",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034887704998,
+      "seed": 464,
+      "phase": "Phase 4"
     },
     {
       "assetid": "49394612913",
@@ -613,6 +652,46 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "41782495750",
+      "classid": "306788415",
+      "instanceid": "188530329",
+      "amount": 1,
+      "name": "★ StatTrak™ Bayonet",
+      "market_hash_name": "★ StatTrak™ Bayonet",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -8365,7 +8444,7 @@
     {
       "assetid": "53520396007",
       "classid": "7993037525",
-      "instanceid": "8798760578",
+      "instanceid": "8664400577",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -8437,7 +8516,7 @@
     {
       "assetid": "52768642779",
       "classid": "8247137616",
-      "instanceid": "8971784167",
+      "instanceid": "8993513740",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -8605,7 +8684,7 @@
     {
       "assetid": "45283971842",
       "classid": "7993039416",
-      "instanceid": "8971188337",
+      "instanceid": "8993513741",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Minimal Wear)",
@@ -9235,6 +9314,54 @@
       ]
     },
     {
+      "assetid": "53585803692",
+      "classid": "7993036750",
+      "instanceid": "8992561702",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Vulcan",
+      "market_hash_name": "StatTrak™ AK-47 | Vulcan (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "34850883843",
       "classid": "7993042967",
       "instanceid": "8830985720",
@@ -9333,7 +9460,7 @@
     {
       "assetid": "53637501997",
       "classid": "7993042380",
-      "instanceid": "8919375151",
+      "instanceid": "8993513739",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Battle-Scarred)",
@@ -9877,7 +10004,7 @@
     {
       "assetid": "42569867478",
       "classid": "7993042252",
-      "instanceid": "6899879818",
+      "instanceid": "6553057757",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Heat",
       "market_hash_name": "StatTrak™ MAC-10 | Heat (Minimal Wear)",
@@ -9913,7 +10040,7 @@
     {
       "assetid": "26231870981",
       "classid": "7993037726",
-      "instanceid": "480259105",
+      "instanceid": "480109154",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Fever Dream",
       "market_hash_name": "StatTrak™ SSG 08 | Fever Dream (Factory New)",
