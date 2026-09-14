@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/6417459b-053f-40d0-b2f5-8a26e7f05750",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-10T08:24:05.425Z",
+  "updatedAt": "2026-09-14T09:05:54.532Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 48,
-  "totalItemsGrouped": 48,
+  "totalItemsRaw": 50,
+  "totalItemsGrouped": 50,
   "items": [
     {
       "assetid": "53255292175",
@@ -89,41 +89,6 @@
       ]
     },
     {
-      "assetid": "53571671219",
-      "classid": "7993041228",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4CEFF5A7949B5D44A75F7CE058745A6C5F648B96AD805F1CAC59347C2C58B1926622",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.004772822838,
-      "seed": 752,
-      "phase": "Phase 4"
-    },
-    {
       "assetid": "53328922609",
       "classid": "7993040327",
       "instanceid": "480085569",
@@ -161,6 +126,34 @@
       "float": 0.028543371707,
       "seed": 266,
       "phase": "Phase 2"
+    },
+    {
+      "assetid": "53610193536",
+      "classid": "7993037104",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Nocts",
+      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "47350635927",
@@ -288,74 +281,6 @@
       ]
     },
     {
-      "assetid": "53571671218",
-      "classid": "7993036958",
-      "instanceid": "8353836907",
-      "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53013292817",
       "classid": "8637420575",
       "instanceid": "519977179",
@@ -387,6 +312,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53621333624",
+      "classid": "7993036534",
+      "instanceid": "7755493096",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1229,6 +1202,114 @@
       ]
     },
     {
+      "assetid": "53622192846",
+      "classid": "7993042644",
+      "instanceid": "7628450144",
+      "amount": 1,
+      "name": "Souvenir MP9 | Hot Rod",
+      "market_hash_name": "Souvenir MP9 | Hot Rod (Factory New)",
+      "type": "Souvenir Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53621661149",
+      "classid": "7993043569",
+      "instanceid": "9006798778",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Serum",
+      "market_hash_name": "StatTrak™ USP-S | Serum (Factory New)",
+      "type": "StatTrak™ Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49126897433",
       "classid": "7993038803",
       "instanceid": "188534015",
@@ -1395,7 +1476,7 @@
     {
       "assetid": "51595136526",
       "classid": "7993044513",
-      "instanceid": "8972947066",
+      "instanceid": "8994885348",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Field-Tested)",
@@ -1443,7 +1524,7 @@
     {
       "assetid": "51134146301",
       "classid": "7993040447",
-      "instanceid": "188560604",
+      "instanceid": "188530972",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -1479,7 +1560,7 @@
     {
       "assetid": "53088580877",
       "classid": "7993039158",
-      "instanceid": "8823789575",
+      "instanceid": "8994885346",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/765d2b9b-ea6e-4b67-bfb5-3d76d74ab95b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-12T08:24:07.483Z",
+  "updatedAt": "2026-09-14T09:16:40.621Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 211,
-  "totalItemsGrouped": 210,
+  "totalItemsRaw": 210,
+  "totalItemsGrouped": 209,
   "items": [
     {
       "assetid": "28610988669",
@@ -36,6 +36,42 @@
         },
         {
           "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53617261229",
+      "classid": "7622291209",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Paracord Knife",
+      "market_hash_name": "★ Paracord Knife",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -147,7 +183,7 @@
     {
       "assetid": "53469250580",
       "classid": "7993043794",
-      "instanceid": "188540573",
+      "instanceid": "188530914",
       "amount": 1,
       "name": "★ StatTrak™ Karambit | Autotronic",
       "market_hash_name": "★ StatTrak™ Karambit | Autotronic (Field-Tested)",
@@ -1342,42 +1378,6 @@
       "market_hash_name": "Tec-9 | Army Mesh (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A4416C7A2502B5ACAA9446B59CB584B08C742B7058B7F443B6DC61B5C4AC79AC5518",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "22141237429",
-      "classid": "7993037481",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AUG | Surveillance",
-      "market_hash_name": "AUG | Surveillance (Factory New)",
-      "type": "Consumer Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAF0A4E5E02EDA7B79F5CB897BE8FBB87784E7C55BCFF93D7A8CFA8CBB70CED",
       "tags": [
         {
           "category": "Type",
@@ -3764,42 +3764,6 @@
       ]
     },
     {
-      "assetid": "23305905533",
-      "classid": "7993035572",
-      "instanceid": "6276494077",
-      "amount": 1,
-      "name": "AK-47 | Elite Build",
-      "market_hash_name": "AK-47 | Elite Build (Minimal Wear)",
-      "type": "Mil-Spec Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4CA196D3B50A445B7CFA5F745F6C5864FEB181B25F1CB5593E59545F4CC77A34DE5D2C54EE811891",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52896876874",
       "classid": "8637411915",
       "instanceid": "519977179",
@@ -4382,45 +4346,9 @@
       ]
     },
     {
-      "assetid": "23219097170",
-      "classid": "241707023",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "M4A1-S | Nitro",
-      "market_hash_name": "M4A1-S | Nitro (Minimal Wear)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20504082CC8DEF06486C70AE517854605468C0C7BCBF5310C55238C25120488118BE24",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53595229149",
       "classid": "241707023",
-      "instanceid": "8819143119",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "M4A1-S | Nitro",
       "market_hash_name": "M4A1-S | Nitro (Minimal Wear)",
@@ -4526,14 +4454,14 @@
       ]
     },
     {
-      "assetid": "49559423339",
-      "classid": "7993037872",
-      "instanceid": "519977179",
+      "assetid": "53633706010",
+      "classid": "7993041301",
+      "instanceid": "8836888469",
       "amount": 1,
-      "name": "UMP-45 | Crimson Foil",
-      "market_hash_name": "UMP-45 | Crimson Foil (Field-Tested)",
+      "name": "MP5-SD | Agent",
+      "market_hash_name": "MP5-SD | Agent (Factory New)",
       "type": "Restricted SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828D3AADBF78039202018A43B103C083C009AF7BDCB3B78E73F50E739482FBB80CBEE",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4562,14 +4490,14 @@
       ]
     },
     {
-      "assetid": "45470656181",
-      "classid": "7993039404",
-      "instanceid": "480085569",
+      "assetid": "49559423339",
+      "classid": "7993037872",
+      "instanceid": "519977179",
       "amount": 1,
-      "name": "SSG 08 | Parallax",
-      "market_hash_name": "SSG 08 | Parallax (Field-Tested)",
-      "type": "Restricted Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209383265E1F213A928BBBB34E94BB97A397AB516B486290D31C95FBB1E3972F390D33",
+      "name": "UMP-45 | Crimson Foil",
+      "market_hash_name": "UMP-45 | Crimson Foil (Field-Tested)",
+      "type": "Restricted SMG",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828D3AADBF78039202018A43B103C083C009AF7BDCB3B78E73F50E739482FBB80CBEE",
       "tags": [
         {
           "category": "Type",
@@ -7334,7 +7262,7 @@
     {
       "assetid": "46124931077",
       "classid": "7993035642",
-      "instanceid": "494967132",
+      "instanceid": "496909221",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Ice Coaled",
       "market_hash_name": "StatTrak™ AK-47 | Ice Coaled (Minimal Wear)",
@@ -7422,7 +7350,7 @@
     {
       "assetid": "28273394475",
       "classid": "7993037213",
-      "instanceid": "906214429",
+      "instanceid": "926811608",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Nightwish",
       "market_hash_name": "StatTrak™ AK-47 | Nightwish (Minimal Wear)",
@@ -7494,7 +7422,7 @@
     {
       "assetid": "46124929017",
       "classid": "7993041650",
-      "instanceid": "480912437",
+      "instanceid": "480988817",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Mecha Industries",
       "market_hash_name": "StatTrak™ M4A1-S | Mecha Industries (Minimal Wear)",
@@ -7708,6 +7636,42 @@
       ]
     },
     {
+      "assetid": "53633402650",
+      "classid": "7993038196",
+      "instanceid": "8836755404",
+      "amount": 1,
+      "name": "StatTrak™ Dual Berettas | Hydro Strike",
+      "market_hash_name": "StatTrak™ Dual Berettas | Hydro Strike (Field-Tested)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "25581344115",
       "classid": "7993045427",
       "instanceid": "7755660204",
@@ -7758,7 +7722,7 @@
     {
       "assetid": "23305898755",
       "classid": "7993042258",
-      "instanceid": "8989894031",
+      "instanceid": "8999588674",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",

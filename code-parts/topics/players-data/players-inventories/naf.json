@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2be516fe-04e8-4a75-a854-16ecc75382b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-10T08:11:09.618Z",
+  "updatedAt": "2026-09-14T08:52:45.594Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
   "totalItemsRaw": 154,
-  "totalItemsGrouped": 138,
+  "totalItemsGrouped": 139,
   "items": [
     {
       "assetid": "46272799799",
@@ -882,7 +882,42 @@
       ]
     },
     {
-      "assetid": "53555270168",
+      "assetid": "53759177156",
+      "classid": "7733404721",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | NAF | Atlanta 2017",
+      "market_hash_name": "Sticker Slab | NAF | Atlanta 2017",
+      "type": "Customized High Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A7B7A7BF6CAD87A78FA497AFCFA7D7A705A6A0AFA7B782C713A965C2596F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53759177156"
+      ]
+    },
+    {
+      "assetid": "53555270239",
       "classid": "5327978594",
       "instanceid": "188530139",
       "amount": 8,
@@ -925,14 +960,61 @@
         }
       ],
       "assetids": [
+        "53555270239",
         "53555270168",
         "53555270162",
         "53555270155",
         "53555270151",
         "53555270147",
         "53555270093",
-        "53555270064",
-        "53555270239"
+        "53555270064"
+      ]
+    },
+    {
+      "assetid": "53065484289",
+      "classid": "5051655748",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | NAF (Holo) | Rio 2022",
+      "market_hash_name": "Sticker | NAF (Holo) | Rio 2022",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200414041CBD0D24042C01340066010C0414C8346C04740C4B92721D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53065484289"
       ]
     },
     {
@@ -1971,7 +2053,7 @@
       "assetid": "53555259748",
       "classid": "7104685164",
       "instanceid": "188530139",
-      "amount": 5,
+      "amount": 4,
       "name": "Sticker | NAF (Gold) | Austin 2025",
       "market_hash_name": "Sticker | NAF (Gold) | Austin 2025",
       "type": "Extraordinary Sticker",
@@ -2014,7 +2096,6 @@
         "53555259748",
         "53555259729",
         "53555259715",
-        "53555259689",
         "51307562492"
       ]
     },
@@ -2498,37 +2579,6 @@
       ]
     },
     {
-      "assetid": "46123386780",
-      "classid": "6216372939",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Lil' Teacup",
-      "market_hash_name": "Charm | Lil' Teacup",
-      "type": "Remarkable Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "46123386780"
-      ]
-    },
-    {
       "assetid": "8638436952",
       "classid": "1989325699",
       "instanceid": "188530139",
@@ -2561,6 +2611,53 @@
       ],
       "assetids": [
         "8638436952"
+      ]
+    },
+    {
+      "assetid": "39484219486",
+      "classid": "2658262739",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | ScreaM (Foil) | Boston 2018",
+      "market_hash_name": "Sticker | ScreaM (Foil) | Boston 2018",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2049594951F0406949614D794D2B4C414959FD5F2149394150EFCD95",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "39484219486"
       ]
     },
     {
@@ -4282,7 +4379,7 @@
     {
       "assetid": "51572798367",
       "classid": "7993043980",
-      "instanceid": "6371810257",
+      "instanceid": "6321819816",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fairy Tale",
       "market_hash_name": "StatTrak™ Five-SeveN | Fairy Tale (Minimal Wear)",
@@ -4374,7 +4471,7 @@
     {
       "assetid": "53335685718",
       "classid": "7993047873",
-      "instanceid": "7618655273",
+      "instanceid": "7607505306",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -4446,7 +4543,7 @@
     {
       "assetid": "53486774735",
       "classid": "7993044134",
-      "instanceid": "8991797516",
+      "instanceid": "9000219307",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Bullet Queen",
       "market_hash_name": "StatTrak™ Glock-18 | Bullet Queen (Minimal Wear)",
@@ -4576,54 +4673,6 @@
       ]
     },
     {
-      "assetid": "53521697791",
-      "classid": "7993036750",
-      "instanceid": "8848689230",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Vulcan",
-      "market_hash_name": "StatTrak™ AK-47 | Vulcan (Minimal Wear)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51054808771",
       "classid": "7993041046",
       "instanceid": "8770135927",
@@ -4698,7 +4747,7 @@
     {
       "assetid": "52849444677",
       "classid": "7993037107",
-      "instanceid": "8991797517",
+      "instanceid": "9000219308",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Temukau",
       "market_hash_name": "StatTrak™ M4A4 | Temukau (Minimal Wear)",
@@ -5005,7 +5054,7 @@
     {
       "assetid": "39086300324",
       "classid": "7993037355",
-      "instanceid": "902893664",
+      "instanceid": "902778844",
       "amount": 1,
       "name": "StatTrak™ SG 553 | Darkwing",
       "market_hash_name": "StatTrak™ SG 553 | Darkwing (Field-Tested)",
