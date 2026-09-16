@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/16415504-b381-41e4-b257-b083b97c3dd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-05T08:10:21.441Z",
+  "updatedAt": "2026-09-16T09:02:30.067Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 949,
-  "totalItemsGrouped": 427,
+  "totalItemsRaw": 950,
+  "totalItemsGrouped": 428,
   "items": [
     {
       "assetid": "50848446305",
@@ -7812,7 +7812,7 @@
       ]
     },
     {
-      "assetid": "53649133734",
+      "assetid": "53649129061",
       "classid": "7729091236",
       "instanceid": "188530139",
       "amount": 3,
@@ -7851,9 +7851,9 @@
         }
       ],
       "assetids": [
+        "53649129061",
         "53649133734",
-        "53649131272",
-        "53649129061"
+        "53649131272"
       ]
     },
     {
@@ -11094,6 +11094,42 @@
       "amount": 1,
       "name": "Tec-9 | Slag",
       "market_hash_name": "Tec-9 | Slag (Well-Worn)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53662331925",
+      "classid": "8246892803",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "USP-S | Silent Shot",
+      "market_hash_name": "USP-S | Silent Shot (Minimal Wear)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
