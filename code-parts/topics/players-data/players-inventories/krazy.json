@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-14T09:16:39.410Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 144,
-  "totalItemsGrouped": 127,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-17T09:05:11.116Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 146,
+  "totalItemsGrouped": 129,
   "items": [
     {
       "assetid": "52751666727",
@@ -53,6 +55,45 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53670697102",
+      "classid": "7993041986",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F2E27C43650A35F3EA71F6D218F6DAF4C2F1CA61477D15F1B21AF69AE982FA53EED76F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.027814185247,
+      "seed": 616,
+      "phase": "Phase 2"
     },
     {
       "assetid": "51122398704",
@@ -1480,6 +1521,37 @@
       ],
       "assetids": [
         "42786243846"
+      ]
+    },
+    {
+      "assetid": "53786932079",
+      "classid": "6216349665",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Lil' Crass",
+      "market_hash_name": "Charm | Lil' Crass",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53786932079"
       ]
     },
     {
@@ -3841,9 +3913,9 @@
       ]
     },
     {
-      "assetid": "53749648970",
+      "assetid": "53786932078",
       "classid": "7993045315",
-      "instanceid": "9009701507",
+      "instanceid": "6309787183",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",

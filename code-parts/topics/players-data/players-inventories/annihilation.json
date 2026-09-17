@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/44850e33-c35e-4cc0-a386-ef946502a3ae",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-14T09:42:33.967Z",
+  "updatedAt": "2026-09-17T09:30:20.764Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 100,
-  "totalItemsGrouped": 83,
+  "totalItemsRaw": 102,
+  "totalItemsGrouped": 85,
   "items": [
     {
       "assetid": "53637962705",
@@ -78,6 +78,34 @@
     },
     {
       "assetid": "53525015431",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53796355358",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2235,6 +2263,42 @@
       ]
     },
     {
+      "assetid": "53796355359",
+      "classid": "7993037282",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Tiger Tear",
+      "market_hash_name": "SSG 08 | Tiger Tear (Field-Tested)",
+      "type": "Industrial Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53220930921",
       "classid": "7993115746",
       "instanceid": "302028390",
@@ -2876,7 +2940,7 @@
     {
       "assetid": "27242331446",
       "classid": "7993041410",
-      "instanceid": "1417504302",
+      "instanceid": "1463449175",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",
