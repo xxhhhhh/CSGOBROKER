@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/97f7d868-7221-46eb-a250-38ffaf1cc5c1",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-12T08:00:37.537Z",
+  "updatedAt": "2026-09-18T08:17:59.444Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 299,
+  "totalItemsRaw": 300,
   "totalItemsGrouped": 261,
   "items": [
     {
@@ -2084,41 +2084,6 @@
       ]
     },
     {
-      "assetid": "51811052446",
-      "classid": "3600644172",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Graffiti | Choke (Bazooka Pink)",
-      "market_hash_name": "Graffiti | Choke (Bazooka Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C9D9C9D10CC3E9C9E1C8F9CDABCEC1C9D953D6F9D9A1C9B9DE4ED297E9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        },
-        {
-          "category": "SprayCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51811052446"
-      ]
-    },
-    {
       "assetid": "50504175068",
       "classid": "1989275269",
       "instanceid": "302028390",
@@ -2324,7 +2289,7 @@
       "assetid": "46388123288",
       "classid": "1989274221",
       "instanceid": "302028390",
-      "amount": 1,
+      "amount": 2,
       "name": "Sealed Graffiti | 8-Ball (Battle Green)",
       "market_hash_name": "Sealed Graffiti | 8-Ball (Battle Green)",
       "type": "Base Grade Graffiti",
@@ -2348,7 +2313,8 @@
         }
       ],
       "assetids": [
-        "46388123288"
+        "46388123288",
+        "53820503688"
       ]
     },
     {
@@ -2986,6 +2952,42 @@
       ],
       "assetids": [
         "50813153307"
+      ]
+    },
+    {
+      "assetid": "53820503687",
+      "classid": "7993036408",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "CZ75-Auto | Pink Pearl",
+      "market_hash_name": "CZ75-Auto | Pink Pearl (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {

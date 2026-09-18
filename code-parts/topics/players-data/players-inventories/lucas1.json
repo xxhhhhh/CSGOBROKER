@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/01f4b994-de2d-4edd-91d1-117cbc52785a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-10T08:53:42.758Z",
+  "updatedAt": "2026-09-18T08:58:42.768Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 148,
-  "totalItemsGrouped": 145,
+  "totalItemsRaw": 150,
+  "totalItemsGrouped": 147,
   "items": [
     {
       "assetid": "50460416592",
@@ -434,6 +434,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53825262348",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1836,6 +1864,42 @@
       "amount": 1,
       "name": "P90 | Desert Halftone",
       "market_hash_name": "P90 | Desert Halftone (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53825262349",
+      "classid": "7993062177",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "PP-Bizon | Bizoom",
+      "market_hash_name": "PP-Bizon | Bizoom (Field-Tested)",
       "type": "Consumer Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -4408,7 +4472,7 @@
     {
       "assetid": "23238617076",
       "classid": "7993046722",
-      "instanceid": "9016484582",
+      "instanceid": "9020017854",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Wasteland Rebel",
       "market_hash_name": "StatTrak™ AK-47 | Wasteland Rebel (Minimal Wear)",
@@ -5008,7 +5072,7 @@
     {
       "assetid": "19560356266",
       "classid": "7993037237",
-      "instanceid": "9016484583",
+      "instanceid": "9020017855",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Field-Tested)",
