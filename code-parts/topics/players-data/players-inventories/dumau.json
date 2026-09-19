@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9ffb20d8-d103-42f8-b31c-4537e7586fe4",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-18T08:11:22.842Z",
+  "updatedAt": "2026-09-19T08:01:24.541Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 419,
-  "totalItemsGrouped": 307,
+  "totalItemsRaw": 425,
+  "totalItemsGrouped": 313,
   "items": [
     {
       "assetid": "53479072334",
@@ -54,6 +54,66 @@
       "float": 0.018434334546,
       "seed": 336,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "53687525590",
+      "classid": "7993042847",
+      "instanceid": "8929765612",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Autotronic",
+      "market_hash_name": "★ M9 Bayonet | Autotronic (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53687525592",
+      "classid": "7993044084",
+      "instanceid": "8929765612",
+      "amount": 1,
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "47700491105",
@@ -779,6 +839,42 @@
       ]
     },
     {
+      "assetid": "53687525589",
+      "classid": "8637415269",
+      "instanceid": "8929766826",
+      "amount": 1,
+      "name": "M4A4 | Falak",
+      "market_hash_name": "M4A4 | Falak (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "39842723063",
       "classid": "7993037978",
       "instanceid": "6282630177",
@@ -1270,6 +1366,50 @@
       ]
     },
     {
+      "assetid": "53687525587",
+      "classid": "7993039825",
+      "instanceid": "9012707149",
+      "amount": 1,
+      "name": "AK-47 | Vulcan",
+      "market_hash_name": "AK-47 | Vulcan (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "21421007299",
       "classid": "7993039226",
       "instanceid": "6276370516",
@@ -1453,6 +1593,74 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53687525588",
+      "classid": "7993043651",
+      "instanceid": "9012707148",
+      "amount": 1,
+      "name": "AWP | Oni Taiji",
+      "market_hash_name": "AWP | Oni Taiji (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -8085,6 +8293,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53687525591",
+      "classid": "7993038625",
+      "instanceid": "9012707147",
+      "amount": 1,
+      "name": "Souvenir Desert Eagle | Fennec Fox",
+      "market_hash_name": "Souvenir Desert Eagle | Fennec Fox (Minimal Wear)",
+      "type": "Souvenir Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
