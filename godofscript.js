@@ -188,82 +188,82 @@ function showCopied(copyButton) {
       });
   });
 
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+  // const themeToggleBtn = document.getElementById('theme-toggle');
+  // const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-  const savedTheme =
-    (StorageHelper.getJSON('theme_settings') || {}).theme ||
-    localStorage.getItem('theme');
+  // const savedTheme =
+  //   (StorageHelper.getJSON('theme_settings') || {}).theme ||
+  //   localStorage.getItem('theme');
 
-  const systemPrefersLight =
-    window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: light)').matches;
+  // const systemPrefersLight =
+  //   window.matchMedia &&
+  //   window.matchMedia('(prefers-color-scheme: light)').matches;
 
-  let currentTheme =
-    savedTheme ||
-    (systemPrefersLight ? 'light' : 'dark');
+  // let currentTheme =
+  //   savedTheme ||
+  //   (systemPrefersLight ? 'light' : 'dark');
 
-  syncThemeUI(currentTheme);
+  // syncThemeUI(currentTheme);
 
-  function disableTransitionsForOneSecond() {
-    const html = document.documentElement;
+  // function disableTransitionsForOneSecond() {
+  //   const html = document.documentElement;
 
-    html.classList.add('transitions-disabled');
+  //   html.classList.add('transitions-disabled');
 
-    setTimeout(() => {
-      html.classList.remove('transitions-disabled');
-    }, 300);
-  }
+  //   setTimeout(() => {
+  //     html.classList.remove('transitions-disabled');
+  //   }, 300);
+  // }
 
-  function applyTheme(theme, isManualSwitch = false) {
-    currentTheme = theme;
+  // function applyTheme(theme, isManualSwitch = false) {
+  //   currentTheme = theme;
 
-    if (isManualSwitch) {
-      disableTransitionsForOneSecond();
-    }
+  //   if (isManualSwitch) {
+  //     disableTransitionsForOneSecond();
+  //   }
 
-    document.documentElement.setAttribute('data-theme', theme);
+  //   document.documentElement.setAttribute('data-theme', theme);
 
-    StorageHelper.setJSON('theme_settings', {
-      ...(StorageHelper.getJSON('theme_settings') || {}),
-      theme
-    });
+  //   StorageHelper.setJSON('theme_settings', {
+  //     ...(StorageHelper.getJSON('theme_settings') || {}),
+  //     theme
+  //   });
 
-    localStorage.setItem('theme', theme);
+  //   localStorage.setItem('theme', theme);
 
-    const link = document.getElementById('theme-style');
+  //   const link = document.getElementById('theme-style');
 
-    if (theme === 'light') {
-      if (link) {
-        link.href = '/style_light.css';
-        link.disabled = false;
-      }
-    } else {
-      if (link) {
-        link.disabled = true;
-        link.href = '';
-      }
-    }
+  //   if (theme === 'light') {
+  //     if (link) {
+  //       link.href = '/style_light.css';
+  //       link.disabled = false;
+  //     }
+  //   } else {
+  //     if (link) {
+  //       link.disabled = true;
+  //       link.href = '';
+  //     }
+  //   }
 
-    syncThemeUI(theme);
-  }
+  //   syncThemeUI(theme);
+  // }
 
-  function syncThemeUI(theme) {
-    if (!themeIcon) return;
+  // function syncThemeUI(theme) {
+  //   if (!themeIcon) return;
 
-    if (theme === 'light') {
-      themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
-    } else {
-      themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
-    }
-  }
+  //   if (theme === 'light') {
+  //     themeIcon.classList.replace('lightbulb-off', 'lightbulb-on');
+  //   } else {
+  //     themeIcon.classList.replace('lightbulb-on', 'lightbulb-off');
+  //   }
+  // }
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme, true);
-    });
-  }
+  // if (themeToggleBtn) {
+  //   themeToggleBtn.addEventListener('click', () => {
+  //     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  //     applyTheme(newTheme, true);
+  //   });
+  // }
 
 
   const sitesList = document.querySelector('.boxes-holder');

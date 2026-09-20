@@ -17,39 +17,9 @@
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/TTNormsPro.css">
-    <script>
-    (function () {
-      try {
-        var settings = JSON.parse(localStorage.getItem('theme_settings') || '{}');
-        var theme = settings.theme || localStorage.getItem('theme') || 'dark';
-
-        document.documentElement.setAttribute('data-theme', theme);
-
-        window.__theme = theme;
-      } catch (e) {
-        window.__theme = 'dark';
-      }
-    })();
-    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css">
     <link rel="alternate" hreflang="en" href="https://csgobroker.cc/topic/sticker-crafts/mac-10-saw-edition">
     <link rel="alternate" hreflang="ru" href="https://csgobroker.cc/ru/topic/sticker-crafts/mac-10-saw-edition">
-    <script>
-    (function () {
-      var link = document.createElement('link');
-      link.id = 'theme-style';
-      link.rel = 'stylesheet';
-
-      if (window.__theme === 'light') {
-        link.href = '/style_light.css';
-      } else {
-        link.href = '';
-        link.disabled = true;
-      }
-
-      document.head.appendChild(link);
-    })();
-    </script>
     <meta name="description" content="Научитесь создавать MAC-10 | SAW edition с помощью нашего пошагового руководства. Используйте наклейки и MAC-10 | Candy Apple, чтобы создать свой собственный шедевр.">
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <meta property="og:type" content="article">

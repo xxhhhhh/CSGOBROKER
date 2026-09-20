@@ -17,20 +17,6 @@
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/TTNormsPro.css">
-    <script>
-    (function () {
-      try {
-        var settings = JSON.parse(localStorage.getItem('theme_settings') || '{}');
-        var theme = settings.theme || localStorage.getItem('theme') || 'dark';
-
-        document.documentElement.setAttribute('data-theme', theme);
-
-        window.__theme = theme;
-      } catch (e) {
-        window.__theme = 'dark';
-      }
-    })();
-    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css">
     <link rel="alternate" hreflang="en" href="https://csgobroker.cc/newest">
     <link rel="alternate" hreflang="ru" href="https://csgobroker.cc/ru/newest">
@@ -38,22 +24,6 @@
     <link rel="alternate" hreflang="es" href="https://csgobroker.cc/es/newest">
     <link rel="alternate" hreflang="hi" href="https://csgobroker.cc/hi/newest">
     <link rel="alternate" hreflang="tr" href="https://csgobroker.cc/tr/newest">
-    <script>
-    (function () {
-      var link = document.createElement('link');
-      link.id = 'theme-style';
-      link.rel = 'stylesheet';
-
-      if (window.__theme === 'light') {
-        link.href = '/style_light.css';
-      } else {
-        link.href = '';
-        link.disabled = true;
-      }
-
-      document.head.appendChild(link);
-    })();
-    </script>
     <meta name="description" content="क्या आप २०२३ के लिए सबसे नई सीएस 2 और सीएस:जीओ जुआ वेबसाइटें खोज रहे हैं? हमारा निष्पक्ष संग्रह प्रमुख विकल्पों के साथ संतुलित आलोचनाएँ और मूल्यांकन शामिल करता है।">
     <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
     <meta property="og:type" content="website">

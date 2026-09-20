@@ -18,39 +18,9 @@
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/TTNormsPro.css">
-    <script>
-    (function () {
-      try {
-        var settings = JSON.parse(localStorage.getItem('theme_settings') || '{}');
-        var theme = settings.theme || localStorage.getItem('theme') || 'dark';
-
-        document.documentElement.setAttribute('data-theme', theme);
-
-        window.__theme = theme;
-      } catch (e) {
-        window.__theme = 'dark';
-      }
-    })();
-    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css">
     <link rel="alternate" hreflang="en" href="https://csgobroker.cc/topic/players/inventories/try">
     <link rel="alternate" hreflang="ru" href="https://csgobroker.cc/ru/topic/players/inventories/try">
-    <script>
-    (function () {
-      var link = document.createElement('link');
-      link.id = 'theme-style';
-      link.rel = 'stylesheet';
-
-      if (window.__theme === 'light') {
-        link.href = '/style_light.css';
-      } else {
-        link.href = '';
-        link.disabled = true;
-      }
-
-      document.head.appendChild(link);
-    })();
-    </script>
     <meta content="Смотрите полный Steam инвентарь try в CS2 — все скины, ножи и перчатки, используемые про-игроком. Узнайте цены, редкость и самые дорогие предметы в его коллекции." name="description">
     <meta content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" property="robots">
     <meta content="article" property="og:type">

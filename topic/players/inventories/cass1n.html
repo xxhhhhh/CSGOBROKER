@@ -18,39 +18,9 @@
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Medium.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/TTNormsPro/TTNormsPro-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/TTNormsPro.css">
-    <script>
-    (function () {
-      try {
-        var settings = JSON.parse(localStorage.getItem('theme_settings') || '{}');
-        var theme = settings.theme || localStorage.getItem('theme') || 'dark';
-
-        document.documentElement.setAttribute('data-theme', theme);
-
-        window.__theme = theme;
-      } catch (e) {
-        window.__theme = 'dark';
-      }
-    })();
-    </script>
     <link id="main-style" rel="stylesheet" href="/style_main.css">
     <link rel="alternate" hreflang="en" href="https://csgobroker.cc/topic/players/inventories/cass1n">
     <link rel="alternate" hreflang="ru" href="https://csgobroker.cc/ru/topic/players/inventories/cass1n">
-    <script>
-    (function () {
-      var link = document.createElement('link');
-      link.id = 'theme-style';
-      link.rel = 'stylesheet';
-
-      if (window.__theme === 'light') {
-        link.href = '/style_light.css';
-      } else {
-        link.href = '';
-        link.disabled = true;
-      }
-
-      document.head.appendChild(link);
-    })();
-    </script>
     <meta content="Explore cass1n's full Steam inventory in CS2 — all skins, knives, and gloves used by the pro player. Check prices, rarity, and the most valuable items in the loadout." name="description">
     <meta content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" property="robots">
     <meta content="article" property="og:type">
