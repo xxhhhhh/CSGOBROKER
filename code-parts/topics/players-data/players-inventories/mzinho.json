@@ -7,16 +7,18 @@
   "name": "Ayush Batbold",
   "nationality": "Mongolia",
   "born": "28.06.2007",
+  "isContentCreator": false,
   "twitch": "mzinhocsgo",
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-08T07:58:05.008Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 122,
-  "totalItemsGrouped": 121,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-21T08:43:25.413Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 132,
+  "totalItemsGrouped": 129,
   "items": [
     {
       "assetid": "52771687343",
@@ -92,6 +94,101 @@
       "float": 0.016093283892,
       "seed": 123,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "53718328597",
+      "classid": "7993043717",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Flip Knife | Doppler",
+      "market_hash_name": "★ Flip Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4CC996AED2945D44A55F7CFF5F745A6C5F64E89BDCB55F1CB25A341E2C584BE2755C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.039096549153,
+      "seed": 878,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "53577390570",
+      "classid": "7993037250",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Marble Fade",
+      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53577242314",
+      "classid": "8247419295",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "53476883923",
@@ -1296,6 +1393,62 @@
       ]
     },
     {
+      "assetid": "53552085838",
+      "classid": "7993037085",
+      "instanceid": "8791797383",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42053497216",
       "classid": "6360322264",
       "instanceid": "188530139",
@@ -2398,10 +2551,72 @@
       ]
     },
     {
+      "assetid": "53625022128",
+      "classid": "8620778772",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Boner Snap",
+      "market_hash_name": "Sticker | Boner Snap",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737273F9E2E07270F24172345222F273798704F27572F2E40B271",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53625022128"
+      ]
+    },
+    {
+      "assetid": "53625021217",
+      "classid": "8620778773",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Censored",
+      "market_hash_name": "Sticker | Censored",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204252425AFB4B62426A41724620474A425282152A42324A841E0A85",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53625021217"
+      ]
+    },
+    {
       "assetid": "53481554709",
       "classid": "8620778778",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 3,
       "name": "Sticker | High Five!",
       "market_hash_name": "Sticker | High Five!",
       "type": "High Grade Sticker",
@@ -2425,7 +2640,9 @@
         }
       ],
       "assetids": [
-        "53481554709"
+        "53481554709",
+        "53625034476",
+        "53625030741"
       ]
     },
     {
@@ -2474,6 +2691,37 @@
       "assetids": [
         "52254573577",
         "52254573576"
+      ]
+    },
+    {
+      "assetid": "53625028125",
+      "classid": "8620778781",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Radiograph",
+      "market_hash_name": "Sticker | Radiograph",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2011011109A8183111391221157314191101D9467911611948CA57B2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53625028125"
       ]
     },
     {
@@ -2536,6 +2784,37 @@
       ],
       "assetids": [
         "53366112486"
+      ]
+    },
+    {
+      "assetid": "53625019870",
+      "classid": "8620778786",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | ZZZAP!",
+      "market_hash_name": "Sticker | ZZZAP!",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209D8D9D852494BD9DB59EAD99FF98959D8D50CAF59DED955EC532B4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53625019870"
       ]
     },
     {
@@ -3663,7 +3942,7 @@
     {
       "assetid": "50315460054",
       "classid": "8246999731",
-      "instanceid": "188530601",
+      "instanceid": "188538279",
       "amount": 1,
       "name": "StatTrak™ P250 | Kintsugi",
       "market_hash_name": "StatTrak™ P250 | Kintsugi (Well-Worn)",
@@ -3699,7 +3978,7 @@
     {
       "assetid": "51487010820",
       "classid": "7993047873",
-      "instanceid": "188536489",
+      "instanceid": "188536825",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -3735,7 +4014,7 @@
     {
       "assetid": "51383555734",
       "classid": "7993044130",
-      "instanceid": "903127750",
+      "instanceid": "908260043",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Cyber Security",
       "market_hash_name": "StatTrak™ M4A4 | Cyber Security (Factory New)",
@@ -3807,7 +4086,7 @@
     {
       "assetid": "50315509894",
       "classid": "8247059305",
-      "instanceid": "188560661",
+      "instanceid": "188530601",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",
