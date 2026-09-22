@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/6417459b-053f-40d0-b2f5-8a26e7f05750",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-19T08:20:48.780Z",
+  "updatedAt": "2026-09-22T08:46:38.771Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 52,
-  "totalItemsGrouped": 52,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 49,
   "items": [
     {
       "assetid": "53682073813",
@@ -96,38 +96,6 @@
       ]
     },
     {
-      "assetid": "50931483918",
-      "classid": "7993041881",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Damascus Steel",
-      "market_hash_name": "★ Karambit | Damascus Steel (Well-Worn)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53691470734",
       "classid": "7993040914",
       "instanceid": "188530139",
@@ -161,45 +129,6 @@
       "float": 0.035909339786,
       "seed": 438,
       "phase": "Phase 1"
-    },
-    {
-      "assetid": "53328922609",
-      "classid": "7993040327",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Shadow Daggers | Gamma Doppler",
-      "market_hash_name": "★ Shadow Daggers | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D637495D1300C7DE42C2E67CC2EEC0F6C5FE0C616121C5864CC4AED0B6C2B6FB7053",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.028543371707,
-      "seed": 266,
-      "phase": "Phase 2"
     },
     {
       "assetid": "53610193536",
@@ -1245,6 +1174,37 @@
       ]
     },
     {
+      "assetid": "53869269517",
+      "classid": "6216347003",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Die-cast AK",
+      "market_hash_name": "Charm | Die-cast AK",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53869269517"
+      ]
+    },
+    {
       "assetid": "51835413006",
       "classid": "188530161",
       "instanceid": "8521955025",
@@ -1512,110 +1472,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53088587171",
-      "classid": "7993039416",
-      "instanceid": "9026720071",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Printstream",
-      "market_hash_name": "StatTrak™ USP-S | Printstream (Minimal Wear)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51595136526",
-      "classid": "7993044513",
-      "instanceid": "8994885348",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Bloodsport",
-      "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Field-Tested)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
