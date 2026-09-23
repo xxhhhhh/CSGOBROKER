@@ -527,16 +527,17 @@ nav .pages {
 } */
 
 .rec-box .content-buttons {
+    width: 70%;
     margin-top: 2px;
     height: 0;
     overflow: hidden;
     transition: all .2s ease-in-out;
     opacity: 0;
-    margin-left: -10px;
+    margin-left: -3px;
 }
 
 .rec-box:hover .content-buttons {
-    height: 38px;
+    height: 30px;
     transform: unset;
     opacity: 1;
 }
@@ -2954,6 +2955,7 @@ border-radius: 5px 5px 5px var(--minor-border);
     border-radius: 5px;
     user-select: none;
     transition: all .15s ease-in-out;
+    background: var(--cb-surface-soft);
 }
 
 .box-skins-list.sort-to-highest .skin .skin-price-info,
@@ -2987,10 +2989,10 @@ border-radius: 5px 5px 5px var(--minor-border);
     justify-content: center;
     left: 8px;
     bottom: 8px;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--main-border);
-    background-color: var(--cb-surface-soft);
+    background-color: var(--cb-surface);
     cursor: pointer;
     z-index: 101;
 }
@@ -4546,6 +4548,15 @@ h3 {
 
 .instruction.double li {
     width: 100%;
+}
+
+.boxreview:has(.notmain) .instruction.double {
+    border-right: unset;
+}
+
+.boxreview:has(.notmain) .instruction.notmain {
+    border-left: unset;
+    border-right: 1px solid var(--cb-border);
 }
 
 .instruction.double {
@@ -6711,7 +6722,7 @@ nav img {
 .box.main .logobg {
     height: auto;
     margin-bottom: 51px;
-    background: unset;
+    background: linear-gradient(145deg, #10131a 0%, #0b0e13 100%);
     z-index: 3;
 }
 
@@ -14670,7 +14681,8 @@ header {
     .smallreview, 
     .instruction,
     .mirror-redirect,
-    .ratingsumm {
+    .ratingsumm,
+    .boxreview:has(.notmain) .instruction.notmain {
         background: unset;
         border: unset;
     }
