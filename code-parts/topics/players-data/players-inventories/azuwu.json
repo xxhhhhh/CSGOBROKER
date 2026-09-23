@@ -7,14 +7,16 @@
   "name": "Oscar Bell",
   "nationality": "United Kingdom",
   "born": "05.11.2003",
+  "isContentCreator": false,
   "twitch": "azuwucs",
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-21T08:51:55.768Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-23T08:34:52.147Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 213,
   "totalItemsGrouped": 212,
   "items": [
@@ -117,6 +119,45 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53755185230",
+      "classid": "7993041806",
+      "instanceid": "8998262664",
+      "amount": 1,
+      "name": "★ Skeleton Knife | Doppler",
+      "market_hash_name": "★ Skeleton Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E43A6448543CF5EC79F0D451F7DCF2C4F7CC24084312F7B43DF39C2BF584FCDFD03734",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.025145679712,
+      "seed": 969,
+      "phase": "Phase 4"
     },
     {
       "assetid": "53247284617",
@@ -2701,42 +2742,6 @@
       "market_hash_name": "AK-47 | Neon Rider (Minimal Wear)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207565ED92E6C7EF746D7255B6705D7345714DB4A990997635DD711D54057D4FC937F9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48532792989",
-      "classid": "7993038767",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AK-47 | The Empress",
-      "market_hash_name": "AK-47 | The Empress (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202636BBEBB8C092273E210685230E2016221E968DE8D22566B0244E8027562ECF542741",
       "tags": [
         {
           "category": "Type",

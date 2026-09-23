@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-22T08:14:55.885Z",
+  "updatedAt": "2026-09-23T08:16:54.736Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 232,
-  "totalItemsGrouped": 230,
+  "totalItemsRaw": 233,
+  "totalItemsGrouped": 231,
   "items": [
     {
       "assetid": "53589290052",
@@ -126,6 +126,81 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53751876444",
+      "classid": "7993044376",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53752580538",
+      "classid": "7993040835",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2095852F06080A5D948D1691B52C91BD93A596AD06762B7196D53097FDEDE59D66884892",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.017540728673,
+      "seed": 293,
+      "phase": "Phase 1"
     },
     {
       "assetid": "41342802236",
@@ -550,7 +625,7 @@
     {
       "assetid": "53743064918",
       "classid": "7993040008",
-      "instanceid": "8990146242",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ M9 Bayonet | Fade",
       "market_hash_name": "★ M9 Bayonet | Fade (Factory New)",
@@ -1122,7 +1197,7 @@
     {
       "assetid": "53743064452",
       "classid": "7993045247",
-      "instanceid": "8990143881",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Stiletto Knife | Doppler",
       "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
@@ -3215,7 +3290,7 @@
     {
       "assetid": "53743162228",
       "classid": "7993148424",
-      "instanceid": "9022909528",
+      "instanceid": "8748487842",
       "amount": 1,
       "name": "Negev | Mjölnir",
       "market_hash_name": "Negev | Mjölnir (Field-Tested)",
@@ -3747,7 +3822,7 @@
     {
       "assetid": "53743034360",
       "classid": "7993037754",
-      "instanceid": "8990371667",
+      "instanceid": "6276325269",
       "amount": 1,
       "name": "M4A4 | Poseidon",
       "market_hash_name": "M4A4 | Poseidon (Factory New)",
@@ -4630,7 +4705,7 @@
     {
       "assetid": "53742927316",
       "classid": "7993041168",
-      "instanceid": "8990146242",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "AWP | Desert Hydra",
       "market_hash_name": "AWP | Desert Hydra (Factory New)",
@@ -5680,49 +5755,6 @@
       ]
     },
     {
-      "assetid": "31244818050",
-      "classid": "5327976433",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | MOUZ (Gold) | Paris 2023",
-      "market_hash_name": "Sticker | MOUZ (Gold) | Paris 2023",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B7A7B7AF0EBE97B79FB187B3D5B2BFB7A71483DFB7C7BF366409A5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "31244818050"
-      ]
-    },
-    {
       "assetid": "51776343495",
       "classid": "2750357614",
       "instanceid": "188530139",
@@ -5806,37 +5838,6 @@
       ],
       "assetids": [
         "33543416475"
-      ]
-    },
-    {
-      "assetid": "51292610161",
-      "classid": "7545311982",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Skelly Stabby",
-      "market_hash_name": "Sticker | Skelly Stabby",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A6B6A6BE1FAF86A68EA596A2C4A3AEA6B653EFCEA6D6B10A162D68",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "51292610161"
       ]
     },
     {
@@ -6663,6 +6664,62 @@
       ]
     },
     {
+      "assetid": "53755926914",
+      "classid": "7993039502",
+      "instanceid": "7803088698",
+      "amount": 1,
+      "name": "Souvenir M4A1-S | Knight",
+      "market_hash_name": "Souvenir M4A1-S | Knight (Factory New)",
+      "type": "Souvenir Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44316506846",
       "classid": "7993035573",
       "instanceid": "7177694324",
@@ -6969,7 +7026,7 @@
     {
       "assetid": "30901947563",
       "classid": "7993043106",
-      "instanceid": "6317689338",
+      "instanceid": "6434265005",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chatterbox",
       "market_hash_name": "StatTrak™ Galil AR | Chatterbox (Well-Worn)",
@@ -7655,9 +7712,9 @@
       ]
     },
     {
-      "assetid": "40386489730",
+      "assetid": "53881129601",
       "classid": "5835568404",
-      "instanceid": "6276300991",
+      "instanceid": "9036073392",
       "amount": 1,
       "name": "C4 Explosive",
       "market_hash_name": "C4 Explosive",
@@ -7682,6 +7739,14 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
