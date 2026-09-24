@@ -12,18 +12,18 @@
   "faceit": "https://www.faceit.com/players/skywhywalker",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-23T08:17:15.720Z",
+  "updatedAt": "2026-09-24T08:10:19.773Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 160,
-  "totalItemsGrouped": 102,
+  "totalItemsRaw": 161,
+  "totalItemsGrouped": 103,
   "items": [
     {
       "assetid": "53756785243",
       "classid": "7993063969",
-      "instanceid": "8999456900",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Butterfly Knife | Night",
       "market_hash_name": "★ Butterfly Knife | Night (Factory New)",
@@ -95,7 +95,7 @@
     {
       "assetid": "53757529652",
       "classid": "7993044391",
-      "instanceid": "8999887488",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Flip Knife | Doppler",
       "market_hash_name": "★ Flip Knife | Doppler (Factory New)",
@@ -130,7 +130,7 @@
     {
       "assetid": "53757257732",
       "classid": "7993042312",
-      "instanceid": "8999708520",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Flip Knife | Gamma Doppler",
       "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
@@ -232,7 +232,7 @@
     {
       "assetid": "53751285699",
       "classid": "7993040841",
-      "instanceid": "8996043185",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Doppler",
       "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
@@ -306,7 +306,7 @@
     {
       "assetid": "53757402912",
       "classid": "8247249534",
-      "instanceid": "8999887488",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Specialist Gloves | Lime Polycam",
       "market_hash_name": "★ Specialist Gloves | Lime Polycam (Minimal Wear)",
@@ -799,7 +799,7 @@
     {
       "assetid": "53756707470",
       "classid": "7993036867",
-      "instanceid": "9026828732",
+      "instanceid": "6276316056",
       "amount": 1,
       "name": "AK-47 | Frontside Misty",
       "market_hash_name": "AK-47 | Frontside Misty (Field-Tested)",
@@ -997,6 +997,42 @@
       "market_hash_name": "P90 | Cold Blooded (Factory New)",
       "type": "Classified SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202A3AA88DE3C54532390A69022F1A2E12AD838CC2296AF029422B5A223C1D0070",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53888626315",
+      "classid": "7993036148",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "G3SG1 | Red Jasper",
+      "market_hash_name": "G3SG1 | Red Jasper (Factory New)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2118,7 +2154,7 @@
       ]
     },
     {
-      "assetid": "52409358793",
+      "assetid": "52409358829",
       "classid": "1999682799",
       "instanceid": "188530139",
       "amount": 10,
@@ -2149,6 +2185,7 @@
         }
       ],
       "assetids": [
+        "52409358829",
         "52409358793",
         "52409358786",
         "52409358783",
@@ -2157,8 +2194,7 @@
         "52409352650",
         "52409375645",
         "52409375621",
-        "52409358834",
-        "52409358829"
+        "52409358834"
       ]
     },
     {
@@ -2361,7 +2397,7 @@
     {
       "assetid": "53757025202",
       "classid": "7993040501",
-      "instanceid": "8999708540",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Glock-18 | Glockingbird",
       "market_hash_name": "Glock-18 | Glockingbird (Factory New)",
@@ -2677,7 +2713,7 @@
     {
       "assetid": "53757086328",
       "classid": "7993039467",
-      "instanceid": "9026987663",
+      "instanceid": "6277282276",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Conspiracy",
       "market_hash_name": "StatTrak™ Desert Eagle | Conspiracy (Factory New)",
@@ -2929,7 +2965,7 @@
     {
       "assetid": "29724782067",
       "classid": "7993043001",
-      "instanceid": "9034343764",
+      "instanceid": "9037198763",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Golden Koi",
       "market_hash_name": "StatTrak™ Desert Eagle | Golden Koi (Factory New)",
@@ -3117,7 +3153,7 @@
     {
       "assetid": "43883195965",
       "classid": "7993042053",
-      "instanceid": "9034343760",
+      "instanceid": "9037198760",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -3381,7 +3417,7 @@
     {
       "assetid": "41937404927",
       "classid": "7993039009",
-      "instanceid": "9034343761",
+      "instanceid": "9037198762",
       "amount": 1,
       "name": "StatTrak™ AWP | Lightning Strike",
       "market_hash_name": "StatTrak™ AWP | Lightning Strike (Factory New)",
