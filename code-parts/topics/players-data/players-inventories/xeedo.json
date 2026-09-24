@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/220685cd-1a18-4402-a9a9-ac240313cabd",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-21T09:20:23.277Z",
+  "updatedAt": "2026-09-24T08:52:11.624Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 60,
-  "totalItemsGrouped": 59,
+  "totalItemsRaw": 61,
+  "totalItemsGrouped": 60,
   "items": [
     {
       "assetid": "53052608136",
@@ -200,6 +200,34 @@
       ]
     },
     {
+      "assetid": "53893298722",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53456713682",
       "classid": "5189384637",
       "instanceid": "302028390",
@@ -225,6 +253,37 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53893304824",
+      "classid": "1989274648",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Quickdraw (Princess Pink)",
+      "market_hash_name": "Graffiti | Quickdraw (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F9E9F12CE3C9E9C1E8D9ED8BEEE1E9F95AE4D9F881E999F1BA394C06",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53893304824"
       ]
     },
     {
@@ -391,7 +450,7 @@
     {
       "assetid": "53731653272",
       "classid": "7993064806",
-      "instanceid": "8983831920",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Nova | Currents",
       "market_hash_name": "Nova | Currents (Field-Tested)",
@@ -427,7 +486,7 @@
     {
       "assetid": "53731653273",
       "classid": "7993036261",
-      "instanceid": "8983831920",
+      "instanceid": "302028390",
       "amount": 1,
       "name": "Sawed-Off | Runoff",
       "market_hash_name": "Sawed-Off | Runoff (Field-Tested)",
@@ -1817,7 +1876,7 @@
     {
       "assetid": "50001195146",
       "classid": "7993044696",
-      "instanceid": "903922363",
+      "instanceid": "905813738",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Factory New)",
@@ -1889,7 +1948,7 @@
     {
       "assetid": "53193963771",
       "classid": "7993042891",
-      "instanceid": "188530914",
+      "instanceid": "188530766",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Bloodshot",
       "market_hash_name": "StatTrak™ SSG 08 | Bloodshot (Field-Tested)",
@@ -1918,50 +1977,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49371171041",
-      "classid": "7993043001",
-      "instanceid": "9028232194",
-      "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Golden Koi",
-      "market_hash_name": "StatTrak™ Desert Eagle | Golden Koi (Factory New)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204656A7D7C7B0F1475E4766FF476E40764F7EBFAFD8AE45069E440E4616C24B24424E4456012E63364ED1DCDAC7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]

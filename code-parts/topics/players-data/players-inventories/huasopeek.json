@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-16T08:31:10.592Z",
+  "updatedAt": "2026-09-24T08:24:57.939Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 128,
-  "totalItemsGrouped": 78,
+  "totalItemsRaw": 124,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "53181977891",
@@ -1226,14 +1226,14 @@
       ]
     },
     {
-      "assetid": "53073372008",
+      "assetid": "53073372006",
       "classid": "8711943279",
       "instanceid": "143865972",
-      "amount": 9,
+      "amount": 6,
       "name": "Sticker | HUASOPEEK (Holo, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | HUASOPEEK (Holo, Ranked) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E6F6E6FE5FEFC6E6CEE3D6E284E3EEE6F652BC8EE696E44BD7F30A",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2050405048E9597050785560543255585040E40A385020526516C376",
       "tags": [
         {
           "category": "Type",
@@ -1269,15 +1269,12 @@
         }
       ],
       "assetids": [
-        "53073372008",
-        "53073372007",
         "53073372006",
         "53073372005",
         "53073372004",
         "53073372003",
         "53073372002",
-        "53073372001",
-        "53073372000"
+        "53073372001"
       ]
     },
     {
@@ -1647,14 +1644,14 @@
       ]
     },
     {
-      "assetid": "53073305766",
+      "assetid": "53073305764",
       "classid": "8711957877",
       "instanceid": "143865972",
-      "amount": 8,
+      "amount": 6,
       "name": "Sticker | HUASOPEEK (Gold, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | HUASOPEEK (Gold, Ranked) | Cologne 2026",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E4F4EC4DFDD4F4DCF2C4F096F1FCF4E441AE9CF484F6C32907B1",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204A5A4A52F3436A4A624C7A4E284F424A5AFF10224A3A48A5C36877",
       "tags": [
         {
           "category": "Type",
@@ -1690,8 +1687,6 @@
         }
       ],
       "assetids": [
-        "53073305766",
-        "53073305765",
         "53073305764",
         "53073305762",
         "53073305760",
@@ -2652,7 +2647,7 @@
     {
       "assetid": "51866948260",
       "classid": "7993040447",
-      "instanceid": "902719081",
+      "instanceid": "902798076",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -2688,7 +2683,7 @@
     {
       "assetid": "40283627198",
       "classid": "7993044416",
-      "instanceid": "9033021802",
+      "instanceid": "9038826296",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Minimal Wear)",
@@ -2772,7 +2767,7 @@
     {
       "assetid": "45386962485",
       "classid": "7993039491",
-      "instanceid": "188530170",
+      "instanceid": "188530306",
       "amount": 1,
       "name": "StatTrak™ Nova | Rising Sun",
       "market_hash_name": "StatTrak™ Nova | Rising Sun (Battle-Scarred)",
@@ -2844,7 +2839,7 @@
     {
       "assetid": "45119594105",
       "classid": "7993038081",
-      "instanceid": "188564787",
+      "instanceid": "188531205",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Battle-Scarred)",
@@ -2945,6 +2940,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53892760629",
+      "classid": "5835568404",
+      "instanceid": "9037742162",
+      "amount": 1,
+      "name": "C4 Explosive",
+      "market_hash_name": "C4 Explosive",
+      "type": "Stock C4",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

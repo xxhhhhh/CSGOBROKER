@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-07T07:53:31.980Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 344,
-  "totalItemsGrouped": 121,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-24T08:08:15.612Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 348,
+  "totalItemsGrouped": 125,
   "items": [
     {
       "assetid": "53060974247",
@@ -95,6 +97,45 @@
       "float": 0.023546772078,
       "seed": 841,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "53733431599",
+      "classid": "7993040007",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C37C615F451BD2CB50D7F36BD7FBD5E3D0EB383F1A3AD0935DD5BB23D2A3DB41B69CAB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.043569963425,
+      "seed": 782,
+      "phase": "Emerald"
     },
     {
       "assetid": "52854086964",
@@ -206,45 +247,6 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "53110688400",
-      "classid": "7993042405",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Stiletto Knife | Doppler",
-      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203F2FAFAAACD2FA3E27B53B1FA03C17390F3C07BBE79ED73C7FDE3D572F4F370F80E217",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.033306136727,
-      "seed": 353,
-      "phase": "Ruby"
-    },
-    {
       "assetid": "51242768874",
       "classid": "8247419295",
       "instanceid": "188530139",
@@ -307,6 +309,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53754611125",
+      "classid": "7993044914",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -469,12 +499,12 @@
       ]
     },
     {
-      "assetid": "52942743400",
-      "classid": "7993036899",
+      "assetid": "53275915834",
+      "classid": "7993044084",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Pandora's Box",
-      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -497,12 +527,12 @@
       ]
     },
     {
-      "assetid": "53275915834",
-      "classid": "7993044084",
+      "assetid": "53624466928",
+      "classid": "8246944780",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Slingshot",
-      "market_hash_name": "★ Sport Gloves | Slingshot (Minimal Wear)",
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1021,6 +1051,42 @@
       ]
     },
     {
+      "assetid": "53757635362",
+      "classid": "7993036003",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Grey Smoke",
+      "market_hash_name": "SSG 08 | Grey Smoke (Factory New)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49922032047",
       "classid": "202170645",
       "instanceid": "8196271081",
@@ -1169,6 +1235,42 @@
       "market_hash_name": "AK-47 | Inheritance (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BFAF265918742ABEA7B89F2CB697B98FBB872B30094DBCFF75B8D7B9CFBB62F61BAB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53638653244",
+      "classid": "7993042471",
+      "instanceid": "6306113436",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3031,6 +3133,74 @@
       ]
     },
     {
+      "assetid": "53741811948",
+      "classid": "7993038580",
+      "instanceid": "7780958351",
+      "amount": 1,
+      "name": "USP-S | Stainless",
+      "market_hash_name": "USP-S | Stainless (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40012549660",
       "classid": "7993036700",
       "instanceid": "188530139",
@@ -3247,6 +3417,42 @@
       "amount": 1,
       "name": "Desert Eagle | Blaze",
       "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53741176135",
+      "classid": "7993040404",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Desert Eagle | Sunset Storm 弐",
+      "market_hash_name": "Desert Eagle | Sunset Storm 弐 (Factory New)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
@@ -3596,58 +3802,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53177444303",
-      "classid": "7993039502",
-      "instanceid": "6284429625",
-      "amount": 1,
-      "name": "Souvenir M4A1-S | Knight",
-      "market_hash_name": "Souvenir M4A1-S | Knight (Factory New)",
-      "type": "Souvenir Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -4347,7 +4501,7 @@
     {
       "assetid": "53020027539",
       "classid": "7993045027",
-      "instanceid": "6875659725",
+      "instanceid": "8663899139",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d9ad02f9-e534-43f7-9208-32028036b7b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-22T08:21:31.878Z",
+  "updatedAt": "2026-09-24T08:14:34.806Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 39,
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 41,
   "items": [
     {
       "assetid": "50192745817",
@@ -58,6 +58,69 @@
       "float": 0.02629462257,
       "seed": 286,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "53753750596",
+      "classid": "7993042978",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D6020E22590EC7DE3DC5E659C5EEC0F6C5FE4F61012FC586CAAE0AC7B6C2DD2C4B6F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.043414626271,
+      "seed": 12,
+      "phase": "Ruby"
+    },
+    {
+      "assetid": "50059431111",
+      "classid": "7993041878",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "48734696175",
@@ -1087,7 +1150,7 @@
     {
       "assetid": "36606653137",
       "classid": "7993035700",
-      "instanceid": "480096844",
+      "instanceid": "480103838",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Crimson Tsunami",
       "market_hash_name": "StatTrak™ Galil AR | Crimson Tsunami (Minimal Wear)",
@@ -1121,9 +1184,9 @@
       ]
     },
     {
-      "assetid": "43350190354",
+      "assetid": "53890404395",
       "classid": "5835568404",
-      "instanceid": "6276300843",
+      "instanceid": "9037485349",
       "amount": 1,
       "name": "C4 Explosive",
       "market_hash_name": "C4 Explosive",
@@ -1148,6 +1211,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

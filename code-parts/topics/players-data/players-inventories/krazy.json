@@ -7,53 +7,19 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-21T09:18:18.848Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 147,
-  "totalItemsGrouped": 130,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-23T09:00:03.114Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 144,
+  "totalItemsGrouped": 127,
   "items": [
-    {
-      "assetid": "52751666727",
-      "classid": "7993037140",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Bright Water",
-      "market_hash_name": "★ Butterfly Knife | Bright Water (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "53670697102",
       "classid": "7993041986",
@@ -1115,48 +1081,12 @@
       ]
     },
     {
-      "assetid": "50316171180",
+      "assetid": "53873299234",
       "classid": "7993036534",
-      "instanceid": "519977179",
+      "instanceid": "6276324850",
       "amount": 1,
       "name": "M4A1-S | Fade",
       "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A1B10D0E6E191AA0B99D8138A889A791A59936167943A2E156A5C938A0D1B68D14A2AB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53663608193",
-      "classid": "7993035490",
-      "instanceid": "6276312782",
-      "amount": 1,
-      "name": "M4A4 | The Emperor",
-      "market_hash_name": "M4A4 | The Emperor (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -1182,14 +1112,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1543,37 +1465,6 @@
       ],
       "assetids": [
         "42786243846"
-      ]
-    },
-    {
-      "assetid": "53786932079",
-      "classid": "6216349665",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Lil' Crass",
-      "market_hash_name": "Charm | Lil' Crass",
-      "type": "High Grade Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53786932079"
       ]
     },
     {

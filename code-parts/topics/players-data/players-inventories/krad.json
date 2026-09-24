@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1bcffdd-7eeb-4744-b8d6-a582dcfb1670",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-24T04:55:02.946Z",
+  "updatedAt": "2026-09-24T09:07:15.397Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 343,
-  "totalItemsGrouped": 155,
+  "totalItemsRaw": 345,
+  "totalItemsGrouped": 157,
   "items": [
     {
       "assetid": "46164620753",
@@ -507,6 +507,34 @@
     },
     {
       "assetid": "40687051140",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53891881239",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -1068,6 +1096,37 @@
       ],
       "assetids": [
         "25856017368"
+      ]
+    },
+    {
+      "assetid": "53891881240",
+      "classid": "1989288098",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Heart (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Heart (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202D3D2D35E9270D2D052C1D294F2A252D3D95201D3C452D5D35366E1CC3",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53891881240"
       ]
     },
     {
@@ -5105,7 +5164,7 @@
     {
       "assetid": "29047097081",
       "classid": "7993041333",
-      "instanceid": "481186517",
+      "instanceid": "480321677",
       "amount": 1,
       "name": "StatTrak™ MP9 | Food Chain",
       "market_hash_name": "StatTrak™ MP9 | Food Chain (Field-Tested)",
