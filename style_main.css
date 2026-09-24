@@ -49,7 +49,6 @@
     --minor-border: 12px;
 
     --cb-bg: #090b10;
-    --cb-surface: #11141b;
     --cb-surface-raised: #171b24;
     --cb-surface-soft: #0e1117;
     --cb-border: rgba(255, 255, 255, .075);
@@ -1150,6 +1149,7 @@ nav .pages {
     justify-content: center;
     backdrop-filter: blur(2px);
     transform: translateY(10px);
+    visibility: hidden;
 }
 
 .menu-holder.active {
@@ -1157,6 +1157,7 @@ nav .pages {
     user-select: auto;
     pointer-events: all;
     transform: unset;
+    visibility: visible;
     /* height: 100%;
     width: 100%; */
 }
@@ -2992,7 +2993,7 @@ border-radius: 5px 5px 5px var(--minor-border);
     width: 36px;
     height: 36px;
     border-radius: var(--main-border);
-    background-color: var(--cb-surface);
+    background-color: var(--darkgray);
     cursor: pointer;
     z-index: 101;
 }
@@ -3549,14 +3550,12 @@ h3 {
     width: 100%;
     position: relative;
     height: auto;
-    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     align-content: flex-start;
     padding: 30px;
-    background: var(--darkgray);
     border-radius: var(--main-border);
     margin-top: 8px;
 }
@@ -6527,7 +6526,7 @@ nav img {
 .box-skins-nav,
 .topic-nav-box {
     border-color: var(--cb-border);
-    background-color: var(--cb-surface);
+    background-color: var(--darkgray);
     box-shadow: none;
 }
 
@@ -6702,8 +6701,6 @@ nav img {
     background: linear-gradient(180deg, var(--darkgray) 0%, rgb(13 13 13) 100%);
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .1);
     /* background: rgba(0, 0, 0, .2);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
     filter: drop-shadow(0 1px 1px var(--darkgray)) blur(0); */
     transition: all .15s ease-in-out, overflow .15s .15s ease-in-out;
     overflow: hidden;
@@ -6715,8 +6712,6 @@ nav img {
     border-radius: var(--main-border);
     height: 160px;
     background: var(--darkgray);
-    backdrop-filter: unset;
-    -webkit-backdrop-filter: unset;
 }
 
 .box.main .logobg {
@@ -7002,7 +6997,7 @@ nav img {
     border: 1px solid var(--cb-border);
     background:
         radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .035), transparent 42%),
-        var(--cb-surface);
+        var(--darkgray);
     box-shadow: none;
 }
 
@@ -7302,7 +7297,6 @@ nav img:active,
 
     border-radius: 10px;
     border: 1px solid var(--cb-border);
-    backdrop-filter: blur(8px);
     color: var(--white-soft);
     z-index: 11;
 }
@@ -7381,7 +7375,6 @@ nav img:active,
     border-radius: 10px;
     background: rgba(9, 11, 16, .72);
     box-shadow: none;
-    backdrop-filter: blur(8px);
 }
 
 .main-page .box .logobg .route {
@@ -7416,7 +7409,6 @@ nav img:active,
     width: 34px;
     height: 34px;
     cursor: help;
-    backdrop-filter: blur(8px);
     z-index: 2;
 }
 
@@ -8813,7 +8805,6 @@ header .singlemod-box .singlemod-select img {
     width: 100%;
     background-color: rgba(0, 0, 0, .8);
     z-index: 1000;
-    backdrop-filter: blur(3px);
     height: 0%;
     opacity: 0;
     visibility: hidden;
@@ -10449,7 +10440,7 @@ ul .big-category.active .submenu2 {
 .slider-container,
 .screens {
     border: 1px solid var(--cb-border);
-    background: var(--cb-surface);
+    background: var(--darkgray);
     box-shadow: none;
 }
 
@@ -11450,7 +11441,6 @@ div#results {
     border: 1px solid var(--cb-border);
     border-radius: 10px;
     background: rgba(9, 11, 16, .72);
-    backdrop-filter: blur(8px);
 }
 
 .newest-boxes .rating-case-single {
@@ -12718,8 +12708,6 @@ header {
     overflow: hidden;
     cursor: pointer;
     transition: all .15s ease-in-out;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
     background: rgba(0, 0, 0, .2);
     z-index: 1;
 
@@ -16774,8 +16762,6 @@ header {
         filter: none;
         flex-grow: 1;
         background: linear-gradient(180deg, var(--darkgray) 0%, var(--darkygray) 100%);
-        backdrop-filter: unset;
-       -webkit-backdrop-filter: unset;
     }
 
     nav #pagename {
