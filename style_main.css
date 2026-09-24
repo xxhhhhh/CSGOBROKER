@@ -3841,7 +3841,6 @@ h3 {
 
 .shortinfo .features {
     padding: 0 9px;
-    background-color: var(--darkgray);
     border-radius: var(--main-border);
     display: flex;
 }
@@ -4109,7 +4108,7 @@ h3 {
     height: 40px;
     padding: 0 20px;
     border-radius: var(--main-border);
-    background: var(--darkygray);
+    background: var(--cb-surface-soft);
     user-select: none;
     font-size: 16px;
     font-weight: 600;
@@ -4237,7 +4236,6 @@ h3 {
 
 .boxreview .smallreview.criteria,
 .smallreview.criteria {
-    background: var(--darkgray);
     width: 45%;
     margin: 0 auto;
     padding: 25px;
@@ -5065,7 +5063,6 @@ nav img {
 .category-selector .category-box {
     position: relative;
     width: 100%;
-    width: calc(100% - 4px);
     height: 54px;
     border: 1px solid var(--cb-border);
     scroll-snap-align: start;
@@ -6997,7 +6994,7 @@ nav img {
     border: 1px solid var(--cb-border);
     background:
         radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .035), transparent 42%),
-        var(--darkgray);
+        var(--cb-surface-soft);
     box-shadow: none;
 }
 
@@ -7033,7 +7030,7 @@ nav img {
     margin-top: 5px;
 }
 
-.sitealternates .site-reward::before {
+/* .sitealternates .site-reward::before {
     content: "";
     position: absolute;
     top: 0;
@@ -7044,7 +7041,7 @@ nav img {
     border-radius: var(--main-border);
     background: var(--darkgray);
     z-index: 1;
-}
+} */
 
 .boxes-holder .box:hover,
 .boxes-holder.main-page .box:hover,
@@ -10440,7 +10437,7 @@ ul .big-category.active .submenu2 {
 .slider-container,
 .screens {
     border: 1px solid var(--cb-border);
-    background: var(--darkgray);
+    background: var(--cb-surface-soft);
     box-shadow: none;
 }
 
@@ -12545,7 +12542,7 @@ div#results {
 }
 
 .main-infobox-content-block {
-    background-color: var(--darkgray);
+    background-color: var(--cb-surface-soft);
     position: relative;
     border-radius: var(--main-border);
     margin: 8px;
@@ -14549,7 +14546,6 @@ header {
 .editorial-note {
     width: 100%;
     height: 80px;
-    background: var(--darkgray);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
