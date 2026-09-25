@@ -11433,7 +11433,6 @@ div#results {
     bottom: 12px;
     left: 12px;
     height: 28px;
-    min-width: 58px;
     padding: 0 10px;
     border: 1px solid var(--cb-border);
     border-radius: 10px;
@@ -13393,14 +13392,6 @@ header {
 
 .main-page .content h2:has(.boxtitle) {
     margin-top: 13px;
-}
-
-.main-page .rating-case-single,
-.main-page .box:hover .rating-case-single {
-    transform: translateY(0);
-    padding-bottom: unset;
-    background: unset;
-    left: 0;
 }
 
 .payments-button {
