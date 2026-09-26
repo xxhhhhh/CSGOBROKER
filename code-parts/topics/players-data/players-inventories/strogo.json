@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-25T08:31:42.633Z",
+  "updatedAt": "2026-09-26T08:18:42.515Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 237,
-  "totalItemsGrouped": 235,
+  "totalItemsRaw": 238,
+  "totalItemsGrouped": 236,
   "items": [
     {
       "assetid": "53589290052",
@@ -859,42 +859,6 @@
       ]
     },
     {
-      "assetid": "53263897985",
-      "classid": "7993043184",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Nomad Knife | Stained",
-      "market_hash_name": "★ Nomad Knife | Stained (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53657354506",
       "classid": "7993041335",
       "instanceid": "480085569",
@@ -1193,6 +1157,42 @@
       "float": 0.024771880358,
       "seed": 916,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "53787278209",
+      "classid": "7993078607",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Stiletto Knife | Tiger Tooth",
+      "market_hash_name": "★ Stiletto Knife | Tiger Tooth (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "53644525898",
@@ -2182,6 +2182,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53787272112",
+      "classid": "8247703130",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Well-Worn)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
