@@ -8542,6 +8542,7 @@ header .singlemod-box .singlemod-select img {
 
 .singlemod-box.active .singlemod-select img {
     filter: grayscale(0);
+    opacity: 1;
 }
 
 .singlemod-box.active {
