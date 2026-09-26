@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/skywhywalker",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-25T08:34:15.606Z",
+  "updatedAt": "2026-09-26T08:21:10.011Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 168,
-  "totalItemsGrouped": 110,
+  "totalItemsRaw": 173,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "41297126646",
@@ -237,6 +237,41 @@
       "phase": "Black Pearl"
     },
     {
+      "assetid": "49121205513",
+      "classid": "7993043455",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBE2714465018AFB655AD8E16AA86A89EAD965314304FADEEFCC62EACDEA6037C9982",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.010230419226,
+      "seed": 82,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "52195721219",
       "classid": "7993048578",
       "instanceid": "188530139",
@@ -336,9 +371,44 @@
       "phase": "Black Pearl"
     },
     {
+      "assetid": "48898630145",
+      "classid": "7993044870",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5ECF8A99DAF84F56B24D6EF64A66487E4D76FFF1C6A64D0EE84B264F3E4A711CDDF2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.03176850453,
+      "seed": 678,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "53778969915",
       "classid": "7993040441",
-      "instanceid": "9010513620",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
@@ -1268,6 +1338,53 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "35460473378",
+      "classid": "7993039096",
+      "instanceid": "6276346944",
+      "amount": 1,
+      "name": "Glock-18 | Gamma Doppler",
+      "market_hash_name": "Glock-18 | Gamma Doppler (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207565D7B19AF9F1746D7155AA7D5D7345714DF8E7FE9E76358F7317707D7565DD5217707D7465DD5217707D7765DD5217707D7665DD521D740571AE52631D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ],
+      "float": 0.055367518216,
+      "seed": 890,
+      "phase": "Emerald"
     },
     {
       "assetid": "47860853079",
@@ -2588,6 +2705,54 @@
       ]
     },
     {
+      "assetid": "35473869112",
+      "classid": "7993040607",
+      "instanceid": "6311788088",
+      "amount": 1,
+      "name": "Desert Eagle | Emerald Jörmungandr",
+      "market_hash_name": "Desert Eagle | Emerald Jörmungandr (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45968239787",
       "classid": "188530425",
       "instanceid": "7432678515",
@@ -3526,7 +3691,7 @@
     {
       "assetid": "51474309058",
       "classid": "7993041807",
-      "instanceid": "8813368576",
+      "instanceid": "9044132651",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
@@ -3654,7 +3819,7 @@
     {
       "assetid": "41937404927",
       "classid": "7993039009",
-      "instanceid": "9040798731",
+      "instanceid": "9043977567",
       "amount": 1,
       "name": "StatTrak™ AWP | Lightning Strike",
       "market_hash_name": "StatTrak™ AWP | Lightning Strike (Factory New)",
@@ -4087,6 +4252,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "35459997609",
+      "classid": "7993042943",
+      "instanceid": "9043977568",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Overgrowth",
+      "market_hash_name": "StatTrak™ USP-S | Overgrowth (Minimal Wear)",
+      "type": "StatTrak™ Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
