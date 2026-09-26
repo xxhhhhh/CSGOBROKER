@@ -5310,6 +5310,7 @@ nav img {
     flex-grow: unset;
     height: 45px;
     width: 45px;
+    min-width: 45px;
 }
 
 .topic-filter .singlemod-box:hover {
