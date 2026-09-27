@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3119c6de-c32b-4989-88d6-c9a7d81599d0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-17T08:45:51.777Z",
+  "updatedAt": "2026-09-27T09:19:19.708Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 271,
-  "totalItemsGrouped": 192,
+  "totalItemsRaw": 273,
+  "totalItemsGrouped": 194,
   "items": [
     {
       "assetid": "47455261111",
@@ -53,17 +53,25 @@
       ]
     },
     {
-      "assetid": "45670448636",
-      "classid": "7993043528",
+      "assetid": "53806754088",
+      "classid": "7993042582",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Driver Gloves | Imperial Plaid",
-      "market_hash_name": "★ Driver Gloves | Imperial Plaid (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204F5FB3B4E1DEE54E57E8686FF50167497F4C77F6D6EDB64C0F814C27743F47D8F3A719",
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -319,6 +327,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53810659706",
+      "classid": "7993036710",
+      "instanceid": "9016986853",
+      "amount": 1,
+      "name": "Dual Berettas | Melondrama",
+      "market_hash_name": "Dual Berettas | Melondrama (Well-Worn)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -7182,6 +7226,42 @@
       "market_hash_name": "M4A1-S | Emphorosaur-S (Field-Tested)",
       "type": "Restricted Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%209C8C721106022C9D84A0BC5B95B498AC98A44B062B6D9FDC019EF48DEC98EA1C504C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53810672143",
+      "classid": "8637418431",
+      "instanceid": "9016986610",
+      "amount": 1,
+      "name": "Nova | Smart Gun",
+      "market_hash_name": "Nova | Smart Gun (Minimal Wear)",
+      "type": "Restricted Shotgun",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
