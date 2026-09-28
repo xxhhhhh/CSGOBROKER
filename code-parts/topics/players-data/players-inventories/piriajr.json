@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3119c6de-c32b-4989-88d6-c9a7d81599d0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-27T09:19:19.708Z",
+  "updatedAt": "2026-09-28T09:44:18.821Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 273,
-  "totalItemsGrouped": 194,
+  "totalItemsRaw": 275,
+  "totalItemsGrouped": 196,
   "items": [
     {
       "assetid": "47455261111",
@@ -675,6 +675,30 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53824237850",
+      "classid": "1778516611",
+      "instanceid": "9019651303",
+      "amount": 1,
+      "name": "Mirage Pin",
+      "market_hash_name": "Mirage Pin",
+      "type": "Exotic Collectible",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209B8B9B834CB4BB9BB39EAB9FF39BEB9330E797F5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -6578,6 +6602,42 @@
       "name": "M4A4 | Steel Work",
       "market_hash_name": "M4A4 | Steel Work (Minimal Wear)",
       "type": "Industrial Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53824794083",
+      "classid": "8637409677",
+      "instanceid": "9019791479",
+      "amount": 1,
+      "name": "XM1014 | Black Site",
+      "market_hash_name": "XM1014 | Black Site (Field-Tested)",
+      "type": "Industrial Grade Shotgun",
       "inspectLink": "",
       "tags": [
         {

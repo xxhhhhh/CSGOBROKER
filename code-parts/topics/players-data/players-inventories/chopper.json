@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/aef79440-d49d-414e-9303-9725b8d448d8",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-23T09:08:35.216Z",
+  "updatedAt": "2026-09-28T10:12:11.901Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 355,
-  "totalItemsGrouped": 145,
+  "totalItemsRaw": 357,
+  "totalItemsGrouped": 147,
   "items": [
     {
       "assetid": "51834650682",
@@ -126,7 +126,7 @@
       "assetid": "49604481675",
       "classid": "7729078027",
       "instanceid": "143865972",
-      "amount": 179,
+      "amount": 178,
       "name": "Budapest 2025 Legends Autograph Capsule",
       "market_hash_name": "Budapest 2025 Legends Autograph Capsule",
       "type": "Base Grade Container",
@@ -166,7 +166,6 @@
         "49604481661",
         "49604481660",
         "49604481659",
-        "49604481658",
         "49604481657",
         "49604481656",
         "49584029496",
@@ -392,10 +391,38 @@
       ]
     },
     {
+      "assetid": "53955674983",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43422115568",
       "classid": "6449437750",
       "instanceid": "143865972",
-      "amount": 14,
+      "amount": 13,
       "name": "Shanghai 2024 Champions Autograph Capsule",
       "market_hash_name": "Shanghai 2024 Champions Autograph Capsule",
       "type": "Base Grade Container",
@@ -433,7 +460,6 @@
         "43422115560",
         "43422115559",
         "43422115558",
-        "43422115556",
         "43422115555",
         "43422115554",
         "43422115553"
@@ -620,6 +646,33 @@
       ],
       "assetids": [
         "49495641993"
+      ]
+    },
+    {
+      "assetid": "53955674984",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53955674984"
       ]
     },
     {
@@ -2568,7 +2621,7 @@
       "assetid": "53579621145",
       "classid": "6449443441",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | magixx (Champion) | Shanghai 2024",
       "market_hash_name": "Sticker | magixx (Champion) | Shanghai 2024",
       "type": "High Grade Sticker",
@@ -2608,7 +2661,8 @@
         }
       ],
       "assetids": [
-        "53579621145"
+        "53579621145",
+        "53955020186"
       ]
     },
     {
@@ -3190,7 +3244,7 @@
       "assetid": "47980692715",
       "classid": "7729101116",
       "instanceid": "188530139",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | Techno4K | Budapest 2025",
       "market_hash_name": "Sticker | Techno4K | Budapest 2025",
       "type": "High Grade Sticker",
@@ -3230,7 +3284,8 @@
         }
       ],
       "assetids": [
-        "47980692715"
+        "47980692715",
+        "53955017561"
       ]
     },
     {
@@ -5325,7 +5380,7 @@
     {
       "assetid": "18174854446",
       "classid": "7993040284",
-      "instanceid": "1928752463",
+      "instanceid": "1975333066",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Minimal Wear)",
@@ -5361,7 +5416,7 @@
     {
       "assetid": "53489811434",
       "classid": "7993044196",
-      "instanceid": "9046706370",
+      "instanceid": "9051118872",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Neon Rider",
       "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Factory New)",
@@ -5417,7 +5472,7 @@
     {
       "assetid": "27813215647",
       "classid": "7993044178",
-      "instanceid": "482379712",
+      "instanceid": "481756763",
       "amount": 1,
       "name": "StatTrak™ M4A4 | The Emperor",
       "market_hash_name": "StatTrak™ M4A4 | The Emperor (Minimal Wear)",
@@ -5453,7 +5508,7 @@
     {
       "assetid": "28913538625",
       "classid": "7993039891",
-      "instanceid": "480103246",
+      "instanceid": "480101837",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Fubar",
       "market_hash_name": "StatTrak™ Tec-9 | Fubar (Battle-Scarred)",
@@ -5609,7 +5664,7 @@
     {
       "assetid": "53556462394",
       "classid": "7993044759",
-      "instanceid": "9044349222",
+      "instanceid": "9051118871",
       "amount": 1,
       "name": "StatTrak™ MP9 | Mount Fuji",
       "market_hash_name": "StatTrak™ MP9 | Mount Fuji (Factory New)",
