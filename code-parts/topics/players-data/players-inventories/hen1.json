@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c6154c13-83dd-4d8d-997c-e8bbb8ae5199",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-08-15T04:15:22.697Z",
+  "updatedAt": "2026-09-29T10:06:29.862Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 108,
-  "totalItemsGrouped": 88,
+  "totalItemsRaw": 110,
+  "totalItemsGrouped": 90,
   "items": [
     {
       "assetid": "47565749468",
@@ -308,6 +308,34 @@
       ]
     },
     {
+      "assetid": "53964953750",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43519914608",
       "classid": "4901046679",
       "instanceid": "302028390",
@@ -507,6 +535,37 @@
       ],
       "assetids": [
         "51321084857"
+      ]
+    },
+    {
+      "assetid": "53964953751",
+      "classid": "1989283736",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | QQ (Blood Red)",
+      "market_hash_name": "Sealed Graffiti | QQ (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C9D9C9D10DC3E9C9E1C8F9CDABCEC1C9D963C4F9CBA1C9B9D1480648B6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53964953751"
       ]
     },
     {
@@ -2808,7 +2867,7 @@
     {
       "assetid": "42996142838",
       "classid": "7993045267",
-      "instanceid": "9016953540",
+      "instanceid": "9053879402",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Factory New)",

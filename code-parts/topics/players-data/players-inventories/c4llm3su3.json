@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c42c7477-0d5f-4deb-b5a5-a61178e7e5ab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-28T10:05:56.593Z",
+  "updatedAt": "2026-09-29T10:12:53.401Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 756,
-  "totalItemsGrouped": 726,
+  "totalItemsRaw": 759,
+  "totalItemsGrouped": 729,
   "items": [
     {
       "assetid": "49070151012",
@@ -532,6 +532,34 @@
       "amount": 1,
       "name": "Kilowatt Case",
       "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53962309169",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -2429,6 +2457,37 @@
       ],
       "assetids": [
         "15587959527"
+      ]
+    },
+    {
+      "assetid": "53962309170",
+      "classid": "1989293262",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | 8-Ball (Desert Amber)",
+      "market_hash_name": "Sealed Graffiti | 8-Ball (Desert Amber)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D6C6DE02CCE6C6EEC7F6C2A4C1CEC6D67FCBF6C3AEC6B6DE6D6D8FD6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53962309170"
       ]
     },
     {
@@ -24525,7 +24584,7 @@
     {
       "assetid": "48285704580",
       "classid": "7993044207",
-      "instanceid": "9050370237",
+      "instanceid": "9053127951",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Minimal Wear)",
@@ -24687,9 +24746,57 @@
       ]
     },
     {
+      "assetid": "53949492156",
+      "classid": "7993039741",
+      "instanceid": "9054878916",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Inheritance",
+      "market_hash_name": "StatTrak™ AK-47 | Inheritance (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44098931527",
       "classid": "7993043676",
-      "instanceid": "9052184652",
+      "instanceid": "9054878918",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",
@@ -24872,7 +24979,7 @@
     {
       "assetid": "21412971262",
       "classid": "2076474638",
-      "instanceid": "480269398",
+      "instanceid": "480109382",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Neck Deep, Life's Not Out To Get You",
       "market_hash_name": "StatTrak™ Music Kit | Neck Deep, Life's Not Out To Get You",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4f57a883-03fe-4747-bfdb-459aa007c4f3",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-28T09:18:30.077Z",
+  "updatedAt": "2026-09-29T09:25:38.789Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 77,
+  "totalItemsRaw": 79,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "52408492864",
@@ -116,6 +116,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53966295037",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -652,6 +680,42 @@
       "market_hash_name": "Five-SeveN | Coolant (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBE793E6F6C31AFB6AD8E3EA886AF9EAA967F335B40ADEE40A8C68DDEB6A16CC006",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53966295038",
+      "classid": "7993063478",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Byproduct",
+      "market_hash_name": "FAMAS | Byproduct (Field-Tested)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

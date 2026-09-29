@@ -12,23 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/c365e0fe-ae29-41d7-b331-ed8904e32d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-26T08:18:41.436Z",
+  "updatedAt": "2026-09-29T09:28:00.038Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 35,
-  "totalItemsGrouped": 34,
+  "totalItemsRaw": 39,
+  "totalItemsGrouped": 38,
   "items": [
     {
-      "assetid": "44285316166",
-      "classid": "7993039594",
+      "assetid": "53014686470",
+      "classid": "7993040007",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Classic Knife | Fade",
-      "market_hash_name": "★ Classic Knife | Fade (Factory New)",
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203323B5E59C8CF6322BB037138B371B3503300BF6F5AFD430734E5B3B433B65EBC0AB",
       "tags": [
         {
           "category": "Type",
@@ -54,15 +54,18 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.028215060011,
+      "seed": 125,
+      "phase": "Emerald"
     },
     {
-      "assetid": "46467863838",
-      "classid": "7993038043",
-      "instanceid": "188530139",
+      "assetid": "52709662833",
+      "classid": "7993042207",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -113,13 +116,13 @@
       ]
     },
     {
-      "assetid": "50749654996",
-      "classid": "8247101744",
-      "instanceid": "188530139",
+      "assetid": "53423579210",
+      "classid": "8247060188",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Factory New)",
-      "type": "Covert Pistol",
+      "name": "P250 | Kintsugi",
+      "market_hash_name": "P250 | Kintsugi (Factory New)",
+      "type": "Classified Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -149,12 +152,56 @@
       ]
     },
     {
-      "assetid": "53143742863",
-      "classid": "7993038695",
-      "instanceid": "6276505205",
+      "assetid": "39152793822",
+      "classid": "202170645",
+      "instanceid": "6288102677",
       "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Minimal Wear)",
+      "name": "Desert Eagle | Golden Koi",
+      "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "41687717941",
+      "classid": "7993042471",
+      "instanceid": "7776785576",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Field-Tested)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -180,6 +227,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -832,12 +891,84 @@
       ]
     },
     {
-      "assetid": "34570598697",
-      "classid": "7993039242",
+      "assetid": "48642006172",
+      "classid": "241608185",
+      "instanceid": "6276586489",
+      "amount": 1,
+      "name": "MP9 | Hot Rod",
+      "market_hash_name": "MP9 | Hot Rod (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53014686471",
+      "classid": "7993044046",
       "instanceid": "480085569",
       "amount": 1,
-      "name": "Galil AR | Phoenix Blacklight",
-      "market_hash_name": "Galil AR | Phoenix Blacklight (Factory New)",
+      "name": "Five-SeveN | Neon Kimono",
+      "market_hash_name": "Five-SeveN | Neon Kimono (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "40899412110",
+      "classid": "201934448",
+      "instanceid": "6276337475",
+      "amount": 1,
+      "name": "M4A1-S | Bright Water",
+      "market_hash_name": "M4A1-S | Bright Water (Minimal Wear)",
       "type": "Restricted Rifle",
       "inspectLink": "",
       "tags": [
@@ -868,13 +999,73 @@
       ]
     },
     {
-      "assetid": "44534138867",
-      "classid": "7993043043",
-      "instanceid": "8278130165",
+      "assetid": "53014686472",
+      "classid": "8528552358",
+      "instanceid": "8678376758",
       "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Kumicho Dragon",
-      "market_hash_name": "StatTrak™ Desert Eagle | Kumicho Dragon (Minimal Wear)",
-      "type": "StatTrak™ Classified Pistol",
+      "name": "Souvenir M4A4 | Howl",
+      "market_hash_name": "Souvenir M4A4 | Howl (Factory New)",
+      "type": "Souvenir Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "27408333902",
+      "classid": "7993045974",
+      "instanceid": "7628575103",
+      "amount": 1,
+      "name": "Souvenir Tec-9 | Brass",
+      "market_hash_name": "Souvenir Tec-9 | Brass (Field-Tested)",
+      "type": "Souvenir Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -910,19 +1101,23 @@
           "name": ""
         },
         {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
           "category": "ProPlayer",
           "name": ""
         }
       ]
     },
     {
-      "assetid": "52468507872",
-      "classid": "7993042053",
-      "instanceid": "905081632",
+      "assetid": "18694600037",
+      "classid": "7993040848",
+      "instanceid": "9041688546",
       "amount": 1,
-      "name": "StatTrak™ AK-47 | Inheritance",
-      "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
+      "name": "StatTrak™ Galil AR | Eco",
+      "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
+      "type": "StatTrak™ Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -947,6 +1142,14 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

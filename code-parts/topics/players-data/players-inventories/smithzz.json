@@ -7,16 +7,18 @@
   "name": "Edouard Dubourdeaux",
   "nationality": "France",
   "born": "17.12.1988",
+  "isContentCreator": false,
   "twitch": "smithzz",
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-21T09:33:28.139Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 364,
-  "totalItemsGrouped": 340,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-09-29T10:27:40.839Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 361,
+  "totalItemsGrouped": 337,
   "items": [
     {
       "assetid": "48699702436",
@@ -852,62 +854,6 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52903112534",
-      "classid": "7488632023",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Genesis Terminal",
-      "market_hash_name": "Sealed Genesis Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53049872581",
-      "classid": "7488632023",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Genesis Terminal",
-      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -3792,6 +3738,50 @@
       ]
     },
     {
+      "assetid": "53823669190",
+      "classid": "7993035525",
+      "instanceid": "6279527098",
+      "amount": 1,
+      "name": "Desert Eagle | Mecha Industries",
+      "market_hash_name": "Desert Eagle | Mecha Industries (Minimal Wear)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48493299500",
       "classid": "7993039810",
       "instanceid": "188530139",
@@ -6202,37 +6192,6 @@
       ]
     },
     {
-      "assetid": "53527973205",
-      "classid": "7545310510",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Charm | Lil' Zen",
-      "market_hash_name": "Charm | Lil' Zen",
-      "type": "High Grade Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53527973205"
-      ]
-    },
-    {
       "assetid": "14792368040",
       "classid": "2992163492",
       "instanceid": "143865972",
@@ -6538,53 +6497,6 @@
       ],
       "assetids": [
         "17567193086"
-      ]
-    },
-    {
-      "assetid": "52515982619",
-      "classid": "6276631277",
-      "instanceid": "6276301614",
-      "amount": 1,
-      "name": "Sticker | SmithZz | Atlanta 2017",
-      "market_hash_name": "Sticker | SmithZz | Atlanta 2017",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEBFBE342F2DBFBD3F8CBFF99FEF3FBEB24F493FB8BF3B5B8906A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52515982619"
       ]
     },
     {
@@ -9326,14 +9238,14 @@
       ]
     },
     {
-      "assetid": "49283780805",
+      "assetid": "53876833799",
       "classid": "7993043892",
-      "instanceid": "519977179",
+      "instanceid": "9053817788",
       "amount": 1,
       "name": "M4A4 | Polysoup",
       "market_hash_name": "M4A4 | Polysoup (Well-Worn)",
       "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F92C4842255EE8F1F9C903EFC1EDD9EDD10679561FEAA9E68169EB99FE0055CA1D",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -9357,6 +9269,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -11260,7 +11184,7 @@
     {
       "assetid": "14792369647",
       "classid": "7993038472",
-      "instanceid": "9030056931",
+      "instanceid": "9054298725",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -11392,7 +11316,7 @@
     {
       "assetid": "16869421905",
       "classid": "7993041049",
-      "instanceid": "188538823",
+      "instanceid": "188531500",
       "amount": 1,
       "name": "StatTrak™ MP7 | Nemesis",
       "market_hash_name": "StatTrak™ MP7 | Nemesis (Field-Tested)",
@@ -11428,7 +11352,7 @@
     {
       "assetid": "6697239145",
       "classid": "7993046715",
-      "instanceid": "9006063947",
+      "instanceid": "9053817794",
       "amount": 1,
       "name": "StatTrak™ SCAR-20 | Cyrex",
       "market_hash_name": "StatTrak™ SCAR-20 | Cyrex (Factory New)",
@@ -11532,7 +11456,7 @@
     {
       "assetid": "49426880521",
       "classid": "7993036413",
-      "instanceid": "9030056930",
+      "instanceid": "9053817791",
       "amount": 1,
       "name": "StatTrak™ AWP | Printstream",
       "market_hash_name": "StatTrak™ AWP | Printstream (Field-Tested)",
@@ -11580,7 +11504,7 @@
     {
       "assetid": "52515987412",
       "classid": "7993043564",
-      "instanceid": "9030056928",
+      "instanceid": "9054298724",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Blood in the Water",
       "market_hash_name": "StatTrak™ SSG 08 | Blood in the Water (Minimal Wear)",
@@ -11764,7 +11688,7 @@
     {
       "assetid": "49109005897",
       "classid": "7993039612",
-      "instanceid": "188532426",
+      "instanceid": "188532451",
       "amount": 1,
       "name": "StatTrak™ MP5-SD | Necro Jr.",
       "market_hash_name": "StatTrak™ MP5-SD | Necro Jr. (Well-Worn)",
@@ -12068,7 +11992,7 @@
     {
       "assetid": "14792372310",
       "classid": "7993041152",
-      "instanceid": "9019521745",
+      "instanceid": "9053817792",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Minimal Wear)",

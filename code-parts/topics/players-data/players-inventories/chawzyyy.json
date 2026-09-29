@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/1f7567a1-d4a8-422a-ac06-8cd8e62feb93",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-07-16T06:46:17.873Z",
+  "updatedAt": "2026-09-29T10:36:11.804Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 480,
-  "totalItemsGrouped": 400,
+  "totalItemsRaw": 482,
+  "totalItemsGrouped": 402,
   "items": [
     {
       "assetid": "44891138218",
@@ -1674,6 +1674,34 @@
     },
     {
       "assetid": "49093722387",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53963716786",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -10498,6 +10526,42 @@
       "amount": 1,
       "name": "Galil AR | Sage Spray",
       "market_hash_name": "Galil AR | Sage Spray (Minimal Wear)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53963716787",
+      "classid": "7993074689",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SG 553 | Safari Print",
+      "market_hash_name": "SG 553 | Safari Print (Battle-Scarred)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "",
       "tags": [
