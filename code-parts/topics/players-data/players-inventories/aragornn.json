@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/36bc4b9f-ba4d-468e-bcb6-36a22126fba5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-22T08:57:14.868Z",
+  "updatedAt": "2026-10-01T10:30:47.448Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 53,
-  "totalItemsGrouped": 53,
+  "totalItemsRaw": 55,
+  "totalItemsGrouped": 55,
   "items": [
     {
       "assetid": "53463771755",
@@ -83,6 +83,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53991251052",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -377,6 +405,42 @@
       "amount": 1,
       "name": "MP9 | Pine",
       "market_hash_name": "MP9 | Pine (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53991251053",
+      "classid": "7993036083",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Pine",
+      "market_hash_name": "MP9 | Pine (Minimal Wear)",
       "type": "Consumer Grade SMG",
       "inspectLink": "",
       "tags": [

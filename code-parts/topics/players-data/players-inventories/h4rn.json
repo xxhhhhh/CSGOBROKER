@@ -12,14 +12,46 @@
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-30T10:22:34.633Z",
+  "updatedAt": "2026-10-01T10:51:45.954Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 229,
-  "totalItemsGrouped": 146,
+  "totalItemsRaw": 232,
+  "totalItemsGrouped": 149,
   "items": [
+    {
+      "assetid": "53854351273",
+      "classid": "7993039819",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Tiger Tooth",
+      "market_hash_name": "★ M9 Bayonet | Tiger Tooth (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "53151968119",
       "classid": "7993043606",
@@ -811,6 +843,42 @@
       ]
     },
     {
+      "assetid": "53859268616",
+      "classid": "7993067604",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "M249 | Sleet",
+      "market_hash_name": "M249 | Sleet (Minimal Wear)",
+      "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51276340837",
       "classid": "7993036408",
       "instanceid": "302028390",
@@ -1015,9 +1083,9 @@
       ]
     },
     {
-      "assetid": "53590011020",
+      "assetid": "53983043734",
       "classid": "7993036142",
-      "instanceid": "7730638451",
+      "instanceid": "6317206736",
       "amount": 1,
       "name": "AWP | Wildfire",
       "market_hash_name": "AWP | Wildfire (Minimal Wear)",
@@ -2916,6 +2984,37 @@
       ],
       "assetids": [
         "47301728156"
+      ]
+    },
+    {
+      "assetid": "53983043735",
+      "classid": "6216346414",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Whittle Knife",
+      "market_hash_name": "Charm | Whittle Knife",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53983043735"
       ]
     },
     {
@@ -4895,7 +4994,7 @@
     {
       "assetid": "46841752076",
       "classid": "7993041406",
-      "instanceid": "6279693083",
+      "instanceid": "6347595801",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Field-Tested)",
@@ -5099,7 +5198,7 @@
     {
       "assetid": "48009104867",
       "classid": "7993042047",
-      "instanceid": "9048063858",
+      "instanceid": "9059314477",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Jambiya",
       "market_hash_name": "StatTrak™ Tec-9 | Jambiya (Field-Tested)",
@@ -5403,7 +5502,7 @@
     {
       "assetid": "52048946311",
       "classid": "7993041474",
-      "instanceid": "9054429925",
+      "instanceid": "9058416848",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Signal",
       "market_hash_name": "StatTrak™ Galil AR | Signal (Factory New)",
@@ -5455,7 +5554,7 @@
     {
       "assetid": "51518622731",
       "classid": "7993037251",
-      "instanceid": "9055996895",
+      "instanceid": "9059314476",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Etch Lord",
       "market_hash_name": "StatTrak™ M4A4 | Etch Lord (Field-Tested)",
@@ -5535,7 +5634,7 @@
     {
       "assetid": "50835878857",
       "classid": "8246991029",
-      "instanceid": "188535898",
+      "instanceid": "188535088",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Field-Tested)",
