@@ -7,16 +7,18 @@
   "name": "Oscar Bell",
   "nationality": "United Kingdom",
   "born": "05.11.2003",
+  "isContentCreator": false,
   "twitch": "azuwucs",
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-25T08:49:12.986Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 215,
-  "totalItemsGrouped": 214,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-02T09:41:50.767Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 218,
+  "totalItemsGrouped": 217,
   "items": [
     {
       "assetid": "53079948282",
@@ -38,6 +40,73 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53814934945",
+      "classid": "7993036088",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201707B6ECEDABDF160FEC1437B2143F1127142F99A5D7FD1457797F8016671FC85B1339",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.050805144012,
+      "seed": 110,
+      "phase": "Phase 4"
+    },
+    {
+      "assetid": "53822866245",
+      "classid": "7993042523",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Fade",
+      "market_hash_name": "★ Karambit | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -93,38 +162,6 @@
       "amount": 1,
       "name": "★ M9 Bayonet | Night",
       "market_hash_name": "★ M9 Bayonet | Night (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53657483400",
-      "classid": "7993039819",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Tiger Tooth",
-      "market_hash_name": "★ M9 Bayonet | Tiger Tooth (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -330,12 +367,68 @@
       ]
     },
     {
+      "assetid": "53822866246",
+      "classid": "7993040558",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52996894157",
       "classid": "7993039047",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53847577882",
+      "classid": "8247408161",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -4137,49 +4230,6 @@
       ]
     },
     {
-      "assetid": "49426778284",
-      "classid": "5799819950",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Complexity Gaming | Copenhagen 2024",
-      "market_hash_name": "Sticker | Complexity Gaming | Copenhagen 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C3D3C3DB7ACAE3C3EBC0F3C7A1C6CBC3D331FBABC3B3CBB508CDD6",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "49426778284"
-      ]
-    },
-    {
       "assetid": "48844140206",
       "classid": "5327976193",
       "instanceid": "188530139",
@@ -7042,6 +7092,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53866284508",
+      "classid": "7993046581",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A4 | Red DDPAT",
+      "market_hash_name": "M4A4 | Red DDPAT (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
