@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-02T09:20:28.218Z",
+  "updatedAt": "2026-10-03T08:52:12.561Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 200,
-  "totalItemsGrouped": 198,
+  "totalItemsRaw": 202,
+  "totalItemsGrouped": 200,
   "items": [
     {
       "assetid": "53589290052",
@@ -1634,34 +1634,6 @@
       "amount": 1,
       "name": "★ Hand Wraps | Cobalt Skulls",
       "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53285315658",
-      "classid": "7993039230",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Hand Wraps | Leather",
-      "market_hash_name": "★ Hand Wraps | Leather (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -3900,42 +3872,6 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "53199226891",
-      "classid": "7993037960",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | Asiimov",
-      "market_hash_name": "AK-47 | Asiimov (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53357302158",
       "classid": "8637416238",
       "instanceid": "480085569",
@@ -5529,6 +5465,78 @@
       ]
     },
     {
+      "assetid": "53880519295",
+      "classid": "7993038443",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Negev | Wall Bang",
+      "market_hash_name": "Negev | Wall Bang (Well-Worn)",
+      "type": "Industrial Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53880915550",
+      "classid": "7993036565",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Desert Eagle | Tilted",
+      "market_hash_name": "Desert Eagle | Tilted (Field-Tested)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51182021734",
       "classid": "7993037143",
       "instanceid": "519977179",
@@ -6067,6 +6075,106 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53880674257",
+      "classid": "7993036949",
+      "instanceid": "6276317586",
+      "amount": 1,
+      "name": "Souvenir MAG-7 | Navy Sheen",
+      "market_hash_name": "Souvenir MAG-7 | Navy Sheen (Field-Tested)",
+      "type": "Souvenir Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53878800626",
+      "classid": "7993050357",
+      "instanceid": "8803555410",
+      "amount": 1,
+      "name": "Souvenir AWP | Dragon Lore",
+      "market_hash_name": "Souvenir AWP | Dragon Lore (Field-Tested)",
+      "type": "Souvenir Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
