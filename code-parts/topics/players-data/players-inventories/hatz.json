@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/daed0b59-b3f3-4c4d-812f-f57d57e60f05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-21T09:41:50.265Z",
+  "updatedAt": "2026-10-04T10:25:26.682Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 941,
-  "totalItemsGrouped": 451,
+  "totalItemsRaw": 943,
+  "totalItemsGrouped": 453,
   "items": [
     {
       "assetid": "49114016190",
@@ -114,6 +114,34 @@
     },
     {
       "assetid": "49291732014",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54034323113",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -2085,6 +2113,37 @@
       ],
       "assetids": [
         "9321046765"
+      ]
+    },
+    {
+      "assetid": "54034323553",
+      "classid": "1989322475",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Take Flight (Violent Violet)",
+      "market_hash_name": "Sealed Graffiti | Take Flight (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E5F5E5FD21EFC5E5CDE4D5E187E2EDE5F52DE8D5EB8DE595FDEEBE39E5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54034323553"
       ]
     },
     {
@@ -17349,7 +17408,7 @@
     {
       "assetid": "27820764377",
       "classid": "7993039574",
-      "instanceid": "480087831",
+      "instanceid": "188650701",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Destroyer",
       "market_hash_name": "StatTrak™ Galil AR | Destroyer (Battle-Scarred)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f2fa001a-13ca-4a80-9873-04146a07cc8a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:44:33.102Z",
+  "updatedAt": "2026-10-04T10:10:33.937Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 115,
-  "totalItemsGrouped": 113,
+  "totalItemsRaw": 117,
+  "totalItemsGrouped": 115,
   "items": [
     {
       "assetid": "53688015603",
@@ -99,38 +99,6 @@
       "amount": 1,
       "name": "★ Flip Knife | Tiger Tooth",
       "market_hash_name": "★ Flip Knife | Tiger Tooth (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53793530213",
-      "classid": "7993064456",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Gut Knife | Safari Mesh",
-      "market_hash_name": "★ Gut Knife | Safari Mesh (Well-Worn)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -282,6 +250,34 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53903918069",
+      "classid": "7993047163",
+      "instanceid": "9039159668",
+      "amount": 1,
+      "name": "★ Driver Gloves | King Snake",
+      "market_hash_name": "★ Driver Gloves | King Snake (Factory New)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -1626,42 +1622,6 @@
       ]
     },
     {
-      "assetid": "53610520629",
-      "classid": "7993036730",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Printstream",
-      "market_hash_name": "AWP | Printstream (Battle-Scarred)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53610521081",
       "classid": "7993036730",
       "instanceid": "188530139",
@@ -2478,6 +2438,37 @@
       ]
     },
     {
+      "assetid": "53903214567",
+      "classid": "8637414735",
+      "instanceid": "9039017831",
+      "amount": 1,
+      "name": "Sticker | Blaze Breeze",
+      "market_hash_name": "Sticker | Blaze Breeze",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A0B0A0B819A980A088A390A4C2A5A8A0B045F0C8A0D0B72AA342B0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53903214567"
+      ]
+    },
+    {
       "assetid": "24995802224",
       "classid": "1225722137",
       "instanceid": "143865972",
@@ -2741,7 +2732,7 @@
     {
       "assetid": "53879629884",
       "classid": "7993036082",
-      "instanceid": "9035638484",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "P2000 | Lifted Spirits",
       "market_hash_name": "P2000 | Lifted Spirits (Field-Tested)",
@@ -2775,9 +2766,45 @@
       ]
     },
     {
+      "assetid": "53900909092",
+      "classid": "7993038230",
+      "instanceid": "9038714628",
+      "amount": 1,
+      "name": "Galil AR | Metallic Squeezer",
+      "market_hash_name": "Galil AR | Metallic Squeezer (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53879629342",
       "classid": "7993036079",
-      "instanceid": "9035638484",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "MAG-7 | Foresight",
       "market_hash_name": "MAG-7 | Foresight (Factory New)",
@@ -2885,7 +2912,7 @@
     {
       "assetid": "53879630679",
       "classid": "7993036688",
-      "instanceid": "9035638484",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "SCAR-20 | Poultrygeist",
       "market_hash_name": "SCAR-20 | Poultrygeist (Field-Tested)",
@@ -3738,6 +3765,42 @@
       "name": "StatTrak™ UMP-45 | Briefing",
       "market_hash_name": "StatTrak™ UMP-45 | Briefing (Battle-Scarred)",
       "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53900722504",
+      "classid": "7993040870",
+      "instanceid": "9038532971",
+      "amount": 1,
+      "name": "StatTrak™ SCAR-20 | Fragments",
+      "market_hash_name": "StatTrak™ SCAR-20 | Fragments (Factory New)",
+      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
