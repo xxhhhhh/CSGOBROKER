@@ -224,7 +224,7 @@ function addQueryTagToHref(href, key, value){
   const path = qIdx >= 0 ? base.slice(0, qIdx) : base;
   const qs   = qIdx >= 0 ? base.slice(qIdx + 1) : "";
 
-  // уже есть такой ключ? — не дублируем
+  // уже есть такой ключ? - не дублируем
   const hasKey = new RegExp(`(?:^|&)${key}=`, "i").test(qs);
   if (hasKey) return href;
 
@@ -1152,14 +1152,14 @@ function translateModsBoxTitles(inner, lang){
     }
 
     if (!title) {
-      // Нечего переводить — двигаемся к следующему .singlemod-box
+      // Нечего переводить - двигаемся к следующему .singlemod-box
       pos = block.closeEnd;
       continue;
     }
 
     const translated = mbxTranslateLabel(title, L);
     if (!translated || translated === title) {
-      // Перевода нет или он совпадает — ничего не меняем
+      // Перевода нет или он совпадает - ничего не меняем
       pos = block.closeEnd;
       continue;
     }
@@ -1167,7 +1167,7 @@ function translateModsBoxTitles(inner, lang){
     // 3) Обновляем / добавляем data-title в открывающем div
     const newOpenTag = upsertAttr(openTag, "data-title", translated);
 
-    // 4) Если есть <span> — заменяем его текст
+    // 4) Если есть <span> - заменяем его текст
     const newBody = body.replace(
       /(<span\b[^>]*>)([\s\S]*?)(<\/span>)/i,
       (_m, sOpen, _txt, sClose) => sOpen + translated + sClose
@@ -1314,7 +1314,7 @@ function translateReviewButtonsSpans(inner, lang){
       const label = getReviewButtonLabel(lang, type);
       if (!label) return full; // нецелевой язык
 
-      // Уже локализовано? — оставляем
+      // Уже локализовано? - оставляем
       if (textify(innerHtml) === normalizeText(label)) return full;
 
       // Вкладываем ровно один <span>...</span>
@@ -1391,7 +1391,7 @@ function translateReviewButtonsSpans(inner, lang){
         out = translateReviewButtonsSpans(out, lang);
       }
 
-      // главная — доп. специфичные блоки (main-mode selection, навигация)
+      // главная - доп. специфичные блоки (main-mode selection, навигация)
       if (isLocalizedHome(rel)){
         out = localizeMainModeSelection(out, lang);   // только href, кроме .topics
         out = localizeBoxesHolderNameNav(out, lang);  // моды + More

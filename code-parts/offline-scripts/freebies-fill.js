@@ -296,7 +296,7 @@ function ensureBestInBox(boxHtml, bestText, nl) {
   const logobg = findFirstByClass(masked, "logobg");
   if (!logobg) return boxHtml;
 
-  // Уже есть .best? — выходим
+  // Уже есть .best? - выходим
   const innerMasked = maskSegments(boxHtml.slice(logobg.openEnd, logobg.closeStart));
   const hasBest = /<div\b[^>]*\bclass\s*=\s*["'][^"']*\bbest\b[^"']*["'][^>]*>/i.test(innerMasked);
   if (hasBest) return boxHtml;
@@ -315,7 +315,7 @@ function ensureBestInBox(boxHtml, bestText, nl) {
     return before + bestLine + after; // ...</a>\n  <div class="best">..</div>\n  <div class="main-mode">..
   }
 
-  // Если .main-mode нет — вставляем перед закрывающим </div> .logobg
+  // Если .main-mode нет - вставляем перед закрывающим </div> .logobg
   const insertPos   = trimWhitespaceBefore(boxHtml, logobg.closeStart, logobg.openEnd);
   const baseIndent  = getIndentBefore(boxHtml, logobg.closeStart, nl);
   const childIndent = baseIndent + "  ";

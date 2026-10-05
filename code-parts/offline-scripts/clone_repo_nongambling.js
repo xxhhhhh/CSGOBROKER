@@ -655,10 +655,10 @@ function normalizeSourceBoxForHome(block) {
     return `class=${q}${classes.join(' ')}${q}`;
   });
 
-  // На некоторых листингах могут быть data-title/data-* для фильтров — на главной не нужны.
+  // На некоторых листингах могут быть data-title/data-* для фильтров - на главной не нужны.
   out = out.replace(/\sdata-[\w-]+\s*=\s*(["'])[\s\S]*?\1/gi, '');
 
-  // Если в карточке есть кнопка Mirrors — убираем.
+  // Если в карточке есть кнопка Mirrors - убираем.
   out = out.replace(/<a\b[^>]*class\s*=\s*(["'])[^"']*\bmirror-visit\b[^"']*\1[\s\S]*?<\/a>\s*/gi, '');
 
   return out.trim();

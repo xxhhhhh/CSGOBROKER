@@ -1,4 +1,4 @@
-// injectjson2.js — фикс бесконечного перезаписывания dateModified и корректный canonical для index.*
+// injectjson2.js - фикс бесконечного перезаписывания dateModified и корректный canonical для index.*
 // Path canonicalization: homepage => https://csgobroker.cc (no trailing slash)
 
 const fs = require('fs');
@@ -456,7 +456,7 @@ function injectSchema(filePath) {
 
   if (sameWithoutDM) {
     // Если schema совпадает, обновляем dateModified ТОЛЬКО когда изменилось «значимое» содержимое страницы.
-    // Иначе (технические правки в <head>) — ничего не делаем.
+    // Иначе (технические правки в <head>) - ничего не делаем.
     const existingHash = (matchHtml && matchHtml.match(/\bdata-content-hash=(["'])(.*?)\1/i) || [])[2] || null;
 
     if (existingHash && existingHash === meaningfulHash) {

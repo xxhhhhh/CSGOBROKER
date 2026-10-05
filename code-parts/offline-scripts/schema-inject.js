@@ -978,7 +978,7 @@ function chooseFilesToProcess() {
   if (MODE_FULL) return listTrackedHtmlFiles();
   // default fast mode:
   const dirty = listDirtyHtmlFiles();
-  return dirty.length ? dirty : []; // если нет изменений — вообще ничего не делаем
+  return dirty.length ? dirty : []; // если нет изменений - вообще ничего не делаем
 }
 
 // ---------------- RUN ----------------

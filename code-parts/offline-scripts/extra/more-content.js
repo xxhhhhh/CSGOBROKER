@@ -181,7 +181,7 @@ function updateHtmlInsideBoxesHolder(html, targets, currentCat, lang, newline, n
 
   const blocks = findAllBlocks(innerMasked, "more-content");
 
-  // Если один блок — сверяем семантику и пропускаем при полном совпадении
+  // Если один блок - сверяем семантику и пропускаем при полном совпадении
   if (blocks.length === 1) {
     const b = blocks[0];
     const existing = inner.slice(b.openStart, b.closeEnd);
@@ -433,7 +433,7 @@ function buildBlockString(targets, currentCat, lang, nl, indent) {
   return lines.join(nl);
 }
 
-// Важно: не трогаем амперсанды в документе — экранируем только то, что генерируем сами.
+// Важно: не трогаем амперсанды в документе - экранируем только то, что генерируем сами.
 function escapeHtml(s = "") { return s.replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function escapeAttr(s = "") { return escapeHtml(s).replace(/'/g,"&#39;"); }
 

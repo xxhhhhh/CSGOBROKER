@@ -7,7 +7,7 @@
  *
  * Правки:
  *   1) FIX: ключи больше не сводятся к /reviews/*.
- *   2) "icon" для /reviews/* и /mirrors/*, приоритет — пользовательский.
+ *   2) "icon" для /reviews/* и /mirrors/*, приоритет - пользовательский.
  *   3) noindex: исключаем ключ, если у любой версии страницы есть meta robots noindex;
  *      вклад из noindex-страниц игнорируется.
  *   4) ❗️og НЕ заполняем из og:site_name; en/ru приоритетнее og.
@@ -451,7 +451,7 @@ function buildSearchConfigAndTranslations() {
     // keywords
     merged.keywords = cleanKeywords(merged.keywords || []);
 
-    // icon для /reviews/* и /mirrors/*; приоритет — base.icon
+    // icon для /reviews/* и /mirrors/*; приоритет - base.icon
     const needsIcon = /^\/(?:reviews|mirrors)\/[^/]+$/.test(k);
     if (needsIcon) {
       const baseIcon = (base && typeof base.icon === 'string') ? base.icon.trim() : '';

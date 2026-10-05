@@ -1543,7 +1543,7 @@ boxes.forEach((box) => {
   const h2 = box.querySelector('.content h2:first-child');
   if (!h2) return;
 
-  // Если в h2 уже есть ссылка — выходим, чтобы не делать вложенные <a>
+  // Если в h2 уже есть ссылка - выходим, чтобы не делать вложенные <a>
   if (h2.querySelector('a')) return;
 
   const a = document.createElement('a');
@@ -2164,7 +2164,7 @@ $(function () {
           $boxesHolder.append($importedContent);
         }
 
-        // Если внутри импортированного блока есть .main-mode-selection — инициализируем её
+        // Если внутри импортированного блока есть .main-mode-selection - инициализируем её
         const $slider = $importedContent.filter('.main-mode-selection').length
           ? $importedContent.filter('.main-mode-selection')
           : $importedContent.find('.main-mode-selection');
@@ -2841,12 +2841,12 @@ function saveToCache(key, data) {
   if (!header) return;
 
   const cfg = {
-    upVelocityReveal: 0.6,   // px/ms — "резкость" апа (≈600 px/s)
-    upDeltaReveal: 80,       // px — альт. порог рывка вверх
-    ignoreDelta: 2,          // px — игнор шума
-    minLockMs: 400,          // ms — защита от мгновенного скрытия
+    upVelocityReveal: 0.6,   // px/ms - "резкость" апа (≈600 px/s)
+    upDeltaReveal: 80,       // px - альт. порог рывка вверх
+    ignoreDelta: 2,          // px - игнор шума
+    minLockMs: 400,          // ms - защита от мгновенного скрытия
     hideAfter: () => headerH + 12,
-    scrollHiddenAfter: 100   // px — когда включать "долгую" скрытность
+    scrollHiddenAfter: 100   // px - когда включать "долгую" скрытность
   };
 
   let headerH = header.offsetHeight;

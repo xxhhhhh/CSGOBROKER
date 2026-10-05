@@ -38,10 +38,10 @@ function fail(msg, code = 1) {
 
 const args = parseArgs(process.argv);
 
-// Входной JSON (по умолчанию — из корня репо)
+// Входной JSON (по умолчанию - из корня репо)
 const inPath = path.resolve(process.cwd(), args.in ?? "code-parts/sites-links.json");
 
-// Куда писать (по умолчанию — рядом с репо в links-bulk.json, либо системный tmp)
+// Куда писать (по умолчанию - рядом с репо в links-bulk.json, либо системный tmp)
 const defaultOut = path.resolve(process.cwd(), "links-bulk.json");
 let outPath = args.out
   ? path.resolve(process.cwd(), args.out)

@@ -2549,7 +2549,7 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
           return isManagedDesktopTopicNavPanel(panelInner);
         });
 
-        // 2a) Если managed-панелей несколько — оставляем первую, остальные удаляем
+        // 2a) Если managed-панелей несколько - оставляем первую, остальные удаляем
         if (managedPanels.length > 1){
           const dupRanges = managedPanels.slice(1).map(panel => ({
             start: panel.openStart,
@@ -2585,7 +2585,7 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
             return isManagedDesktopTopicNavPanel(panelInner);
           });
 
-          // 2b) Если панели нет — вставляем первой
+          // 2b) Если панели нет - вставляем первой
           if (!currentManaged){
             const openEnd = container.openEnd;
             const closeStart = container.closeStart;
@@ -2609,7 +2609,7 @@ async function processTopicNavStaticFill({ root, file, html, verbose }){
               }
             }
           } else {
-            // 2c) Панель уже есть — сравниваем и заменяем только если отличается
+            // 2c) Панель уже есть - сравниваем и заменяем только если отличается
             const currentHtml = out.slice(currentManaged.openStart, currentManaged.closeEnd);
 
             if (
@@ -3358,7 +3358,7 @@ function getTopicBackHref(urlPath){
   if (!p.startsWith(base)) return null;
   if (p === base) return null;
 
-  // более специфичные правила — выше
+  // более специфичные правила - выше
   if (new RegExp(`^${base}/items-type/[^/]+$`, "i").test(p)) {
     return `${base}/items`;
   }
@@ -3493,7 +3493,7 @@ async function processTopicHeaderBackButton({ root, file, html, verbose }){
 
   let replacementInner = "";
 
-  // если для страницы кнопка не нужна — просто удаляем старую, если была
+  // если для страницы кнопка не нужна - просто удаляем старую, если была
   if (!href) {
     replacementInner = cleanedInner
       ? (nl + cleanedInner.replace(/^\r?\n+/, ""))

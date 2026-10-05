@@ -285,7 +285,7 @@ function detectEol(s) {
 
 function detectHeadIndent(headInner) {
   // Берём отступ с первой нормальной строки
-  // внутри <head> — meta/link/script.
+  // внутри <head> - meta/link/script.
   const m = headInner.match(/(?:^|\r?\n)([ \t]+)<(?:meta|link|script)\b/i);
 
   return m ? m[1] : "    ";
@@ -819,7 +819,7 @@ function main() {
     }
   }
 
-  // Step 2: buckets — только индексируемые.
+  // Step 2: buckets - только индексируемые.
   const buckets = {
     main_en: [],
     main_ru: [],
@@ -917,7 +917,7 @@ function main() {
     return changed;
   }
 
-  // Корень — старое поведение.
+  // Корень - старое поведение.
   let changedSitemaps = 0;
 
   changedSitemaps += writeBucketSitemaps("", BASE_ORIGIN);

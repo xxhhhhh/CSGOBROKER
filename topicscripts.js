@@ -2716,7 +2716,7 @@ function findMatches(name, priceData, skinEl = null) {
             if (aPrice !== bPrice) return aPrice - bPrice;
           }
 
-          // одинаковые цены — сохраняем исходный порядок
+          // одинаковые цены - сохраняем исходный порядок
           const aIndex = Number(a.getAttribute("data-sort-origin")) || 0;
           const bIndex = Number(b.getAttribute("data-sort-origin")) || 0;
           return aIndex - bIndex;
@@ -4567,11 +4567,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         /*
-         * offsetParent — реальный родитель, относительно которого
+         * offsetParent - реальный родитель, относительно которого
          * работают position:absolute, top и left.
          *
          * Для radar-pos-spot это обычно radar-grenades-pos-list,
-         * а для smoke — map-radar.
+         * а для smoke - map-radar.
          */
         const parent = element.offsetParent;
 
@@ -4726,7 +4726,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const playerBox = showcaseLine.querySelector(".topic-box.player-box[data-home-player-box]");
 
-  // player-box на главной /topic — это div, поэтому href у него быть не должно.
+  // player-box на главной /topic - это div, поэтому href у него быть не должно.
   // Удаляем его и из уже сгенерированного HTML старой версии генератора.
   if (playerBox) {
     playerBox.removeAttribute("href");

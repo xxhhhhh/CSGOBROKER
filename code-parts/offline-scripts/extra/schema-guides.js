@@ -285,7 +285,7 @@ function injectSchemaForGuide(htmlPath, slug) {
   const currentBlock = existing ? existing[1].trim() : '';
   const isSame = stripDateModified(currentBlock) === newJsonClean;
 
-  // Если schema совпадает, а менялись только технические штуки — dateModified не трогаем.
+  // Если schema совпадает, а менялись только технические штуки - dateModified не трогаем.
   const existingHash = existing ? ((existing[0].match(/\bdata-content-hash=(['\"])(.*?)\1/i) || [])[2] || null) : null;
   if (isSame && existingHash && existingHash === meaningfulHash) return;
   if (isSame && !existingHash) return; // старые страницы без хэша тоже не «освежаем»

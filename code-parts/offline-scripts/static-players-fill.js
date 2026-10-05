@@ -1112,17 +1112,17 @@ function buildPlayerMetaTitle(player, lang = "ru"){
 
   if (lang === "en") {
     if (isContentCreator) {
-      return `${displayName} CS2 Inventory (Steam) — All Skins, Knives & Prices`;
+      return `${displayName} CS2 Inventory (Steam) - All Skins, Knives & Prices`;
     }
 
-    return `${displayName} CS2 Inventory (Steam) — All Skins, Knives & Prices`;
+    return `${displayName} CS2 Inventory (Steam) - All Skins, Knives & Prices`;
   }
 
   if (isContentCreator) {
-    return `Инвентарь ${displayName} в CS2 (Steam) — Все Скины, Ножи и Цены`;
+    return `Инвентарь ${displayName} в CS2 (Steam) - Все Скины, Ножи и Цены`;
   }
 
-  return `Инвентарь ${displayName} в CS2 (Steam) — Все Скины, Ножи и Цены`;
+  return `Инвентарь ${displayName} в CS2 (Steam) - Все Скины, Ножи и Цены`;
 }
 
 function buildPlayerMetaDescription(player, lang = "ru"){
@@ -1131,17 +1131,17 @@ function buildPlayerMetaDescription(player, lang = "ru"){
 
   if (lang === "en") {
     if (isContentCreator) {
-      return `Explore ${displayName}'s full Steam inventory in CS2 — all skins, knives, and gloves. Check prices, rarity, and the most expensive items in the collection.`;
+      return `Explore ${displayName}'s full Steam inventory in CS2 - all skins, knives, and gloves. Check prices, rarity, and the most expensive items in the collection.`;
     }
 
-    return `Explore ${displayName}'s full Steam inventory in CS2 — all skins, knives, and gloves used by the pro player. Check prices, rarity, and the most valuable items in the loadout.`;
+    return `Explore ${displayName}'s full Steam inventory in CS2 - all skins, knives, and gloves used by the pro player. Check prices, rarity, and the most valuable items in the loadout.`;
   }
 
   if (isContentCreator) {
-    return `Полный Steam инвентарь ${displayName} в CS2 — все скины, ножи и перчатки стримера. Узнайте цены, редкость и самые дорогие предметы коллекции.`;
+    return `Полный Steam инвентарь ${displayName} в CS2 - все скины, ножи и перчатки стримера. Узнайте цены, редкость и самые дорогие предметы коллекции.`;
   }
 
-  return `Смотрите полный Steam инвентарь ${displayName} в CS2 — все скины, ножи и перчатки, используемые про-игроком. Узнайте цены, редкость и самые дорогие предметы в его коллекции.`;
+  return `Смотрите полный Steam инвентарь ${displayName} в CS2 - все скины, ножи и перчатки, используемые про-игроком. Узнайте цены, редкость и самые дорогие предметы в его коллекции.`;
 }
 
 
@@ -1529,7 +1529,7 @@ async function buildResolvedInventoryEntries(root, items){
       if (existing) {
         existing.amount += amount;
 
-        // если у старой записи не было картинки/класса, а у новой есть — дотягиваем
+        // если у старой записи не было картинки/класса, а у новой есть - дотягиваем
         if (!existing.renderData?.skinData?.image && renderData?.skinData?.image) {
           existing.renderData.skinData.image = renderData.skinData.image;
         }
@@ -2652,7 +2652,7 @@ async function generatePlayerPagesForVersion({
       currentUpdatedAt &&
       existingUpdatedAt !== currentUpdatedAt;
 
-    // если html не изменился и marker менять не нужно — вообще ничего не трогаем
+    // если html не изменился и marker менять не нужно - вообще ничего не трогаем
     if (existsAlready && !force) {
       if (
         normalizedPrevHtml === normalizedHtmlWithoutMarker &&

@@ -63,10 +63,10 @@ function stripKnownLangPrefix(href){
   return (rebuilt === "/" ? "/" : rebuilt) + (tail || "");
 }
 
-/** Обеспечить нужный языковой префикс; для en — префикс убираем */
+/** Обеспечить нужный языковой префикс; для en - префикс убираем */
 function ensureLangPrefixFor(href, lang){
   const L = String(lang || "en").toLowerCase();
-  if (L === "en") return stripKnownLangPrefix(href); // en — без тегов
+  if (L === "en") return stripKnownLangPrefix(href); // en - без тегов
 
   if (!href) return href;
   if (isExternal(href) || href.startsWith("#")) return href;
@@ -82,12 +82,12 @@ function ensureLangPrefixFor(href, lang){
   return (rebuilt === "/" ? "/" : rebuilt) + (tail || "");
 }
 
-/** Similar: всегда язык, КРОМЕ en (у en — без префикса) */
+/** Similar: всегда язык, КРОМЕ en (у en - без префикса) */
 function withLangForSimilar(href, lang){
   return ensureLangPrefixFor(href, lang);
 }
 
-/** Review: язык только для ru|tr|es; иначе (включая en) — без префикса */
+/** Review: язык только для ru|tr|es; иначе (включая en) - без префикса */
 function withLangForReview(href, lang){
   const L = String(lang || "en").toLowerCase();
   return REVIEW_PREFIX_LANGS.has(L)
@@ -439,7 +439,7 @@ function upsertBonusesBlockInBoxHtml(boxHtml, data, siteKey, lang, reviewSetting
   const primaryCodeName = entries[0]?.[0] || "";
   const primaryBound = (bindingMap && bindingMap[primaryCodeName]) ? String(bindingMap[primaryCodeName]) : "default-bonus";
 
-  // берём best (если внутри wrapper — именно внутренний)
+  // берём best (если внутри wrapper - именно внутренний)
   let bestHtmlRaw = boxHtml.slice(best.openStart, best.closeEnd);
   if (wrapper){
     const wrapperHtml = boxHtml.slice(wrapper.openStart, wrapper.closeEnd);
@@ -525,7 +525,7 @@ function joinBeforeCloseKeepIndent(before, block, after, nl){
   // слева оставляем не больше одной пустой строки
   const left = rstripBlankLinesToOne(before, nl);
 
-  // справа убираем вообще всё ведущее пустое/пробельное — дадим своё \n + indent
+  // справа убираем вообще всё ведущее пустое/пробельное - дадим своё \n + indent
   const afterClean = after.replace(/^\s+/, "");
 
   return left + block + nl + indent + afterClean;
@@ -719,7 +719,7 @@ function upsertModsBoxesFromJSON(originalHtml, urlPath, lang, nl, modsData){
   if (shouldInsertHomeSkins && modsData["csgo-skins"]){
     const boxId = "csgo-skins";
 
-    // если уже есть такой data-box-id — заменим
+    // если уже есть такой data-box-id - заменим
     // (htmlBox построим ниже уже с корректным отступом)
     const probeIndent = indentBefore(out, regionStart, nl) + "  ";
     let htmlBox = mbxRenderBox(boxId, modsData[boxId], urlPath, lang, probeIndent, nl);
@@ -739,7 +739,7 @@ function upsertModsBoxesFromJSON(originalHtml, urlPath, lang, nl, modsData){
           const after  = inner.slice(mms.closeEnd);
           inner = joinBlocksNoBlank(before, htmlBox, after, nl);
         } else {
-          // fallback — просто в конец, с базовым отступом региона
+          // fallback - просто в конец, с базовым отступом региона
           const fallbackIndent = indentBefore(out, regionStart, nl) + "  ";
           htmlBox = mbxRenderBox(boxId, modsData[boxId], urlPath, lang, fallbackIndent, nl);
           inner = joinBlocksNoBlank(inner, htmlBox, "", nl);
@@ -765,7 +765,7 @@ function upsertModsBoxesFromJSON(originalHtml, urlPath, lang, nl, modsData){
     const htmlBox = mbxRenderBox(boxId, data, urlPath, lang, indent, nl);
     if (!htmlBox) continue;
 
-    // если уже есть — заменить; иначе PREPEND (как в client-side)
+    // если уже есть - заменить; иначе PREPEND (как в client-side)
     const rep = mbxReplaceExistingModsBox(inner, innerMasked, boxId, htmlBox, nl);
     if (rep.changed){
       inner = rep.html; innerMasked = maskSegments(inner);
@@ -811,7 +811,7 @@ function mbxReplaceExistingModsBox(inner, innerMasked, boxId, htmlBox, nl){
 }
 
 /* ========================================================================== */
-/* =================== ДАЛЕЕ — существующая логика проекта =================== */
+/* =================== ДАЛЕЕ - существующая логика проекта =================== */
 /* ========================================================================== */
 
 function buttonSpanLabel(lang = "en", type = "review") {
@@ -1307,16 +1307,16 @@ function computeVisitHref(urlPath, lang, baseKey, data = {}) {
 
   // 3) язык (как раньше)
   if (L !== "ru") {
-    // если есть link-en — используем goKey -en (генератор его сделает)
+    // если есть link-en - используем goKey -en (генератор его сделает)
     if (has("link-en")) return toGoHref(`${base}-en`);
   }
 
   // 4) базовый go
-  // (если link отсутствует, но есть link-en — генератор всё равно сделал base -> link-en,
+  // (если link отсутствует, но есть link-en - генератор всё равно сделал base -> link-en,
   //  так что /go/<base> будет работать)
   if (has("link") || has("link-en")) return toGoHref(base);
 
-  // fallback — если данных нет
+  // fallback - если данных нет
   return "#";
 }
 
@@ -1395,7 +1395,7 @@ function upsertEditorialNoteInBoxreview(html, boxreview, lang, nl, data, urlPath
   const content = removeNestedBoxreview(inner);
   const masked = maskSegments(content);
 
-  // ✅ если editorial-note уже есть — ничего не трогаем
+  // ✅ если editorial-note уже есть - ничего не трогаем
   if (findFirstByClass(masked, "editorial-note")) {
     return html;
   }
@@ -1609,7 +1609,7 @@ function catTranslateText(plain, lang, translationsForLang){
   const txt = String(plain || "").trim();
   if (!txt) return txt;
 
-  // как в client: tr — через toLocaleLowerCase + fallback
+  // как в client: tr - через toLocaleLowerCase + fallback
   if (L === "tr") {
     const key = txt.toLocaleLowerCase("tr-TR");
     return translationsForLang[key] ?? translationsForLang[txt] ?? txt;
@@ -1629,7 +1629,7 @@ function catLocalizeHref(href, lang){
   const { base, tail } = splitHrefParts(String(href));
   const cleanBase = stripKnownLangPrefix(base);
 
-  // ✅ Wiki/topic: префикс только для ru, для остальных языков — без префикса
+  // ✅ Wiki/topic: префикс только для ru, для остальных языков - без префикса
   if (/^\/topic(?:\/|$)/i.test(cleanBase)) {
     const L = String(lang || "en").toLowerCase();
     const localized = (L === "ru")
@@ -1791,7 +1791,7 @@ function catIs404Page(urlPath){
     .toLowerCase();
 
   // fileToUrlPath для 404.html даст "/404"
-  // но на всякий — поддержим и "/404.html"
+  // но на всякий - поддержим и "/404.html"
   return p === "/404" || p === "/404.html";
 }
 
@@ -1867,7 +1867,7 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
 
   const selectors = findAllDivByClass(masked, "category-selector");
 
-  // 1) Если selector уже есть — пересобираем под текущий тип страницы
+  // 1) Если selector уже есть - пересобираем под текущий тип страницы
   if (selectors.length){
     let shift = 0;
 
@@ -1900,7 +1900,7 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
     return out;
   }
 
-  // 2) Если selector нет — решаем, надо ли автодобавлять
+  // 2) Если selector нет - решаем, надо ли автодобавлять
   if (!catShouldAutoInsert(urlPath, builder)) return out;
 
   const m2 = maskSegments(out);
@@ -1912,7 +1912,7 @@ function upsertCategoryImportOffline(html, urlPath, lang, nl, builder, contents,
 
   const isReviewLike = /\/(reviews|mirrors)\//.test(String(urlPath || ""));
 
-  // NEW: reviews/mirrors — всегда внутрь .sitepage
+  // NEW: reviews/mirrors - всегда внутрь .sitepage
   if (isReviewLike && sitepage) {
     insertPos = sitepage.openEnd;
     indent = indentBefore(out, sitepage.openStart, nl) + "  ";
@@ -2108,7 +2108,7 @@ function upsertSiteCodes(html, data, nl) {
       continue;
     }
 
-    // определяем N из code-N (если нет — считаем N=1)
+    // определяем N из code-N (если нет - считаем N=1)
     let n = 1;
     for (const c of classes) {
       const m = /^code-(\d+)$/.exec(c);
@@ -2152,7 +2152,7 @@ function getPromoBaseCode(data){
   const base = pick("code");
   if (base) return base;
 
-  // если вдруг "code" не задан, но задан "code-2/3..." — пусть хотя бы что-то покажем
+  // если вдруг "code" не задан, но задан "code-2/3..." - пусть хотя бы что-то покажем
   for (let i = 2; i <= 10; i++){
     const v = pick(`code-${i}`);
     if (v) return v;
@@ -3448,7 +3448,7 @@ function ensureMainBoxLiverating(html, ratings, nl){
     const lm = maskSegments(logSeg);
     const rating = findFirstByClass(lm, "rating");
 
-    // --- FIX 1: если rating уже есть — заменяем с нормальным lineStart/indent ---
+    // --- FIX 1: если rating уже есть - заменяем с нормальным lineStart/indent ---
     if (rating){
       const ls = logSeg.lastIndexOf(nl, rating.openStart - 1);
       const lineStart = (ls === -1) ? 0 : (ls + nl.length);
@@ -3464,7 +3464,7 @@ function ensureMainBoxLiverating(html, ratings, nl){
       return out;
     }
 
-    // --- FIX 2: если rating нет — вставляем после </a>, но indent берём с ЛИНИИ <a> ---
+    // --- FIX 2: если rating нет - вставляем после </a>, но indent берём с ЛИНИИ <a> ---
     const aMatch = /<a\b[^>]*>[\s\S]*?<\/a>/i.exec(logSeg);
     const insPos = aMatch ? (aMatch.index + aMatch[0].length) : 0;
 
@@ -3616,7 +3616,7 @@ async function detectAvailableLangs(root){
       if (!e.isDirectory()) continue;
       const name = e.name.toLowerCase();
       if (!/^[a-z]{2,3}(?:-[a-z]{2,3})?$/.test(name)) continue;
-      // наличие index.html в папке — бонус; но достаточно папки
+      // наличие index.html в папке - бонус; но достаточно папки
       langs.add(name);
     }
   } catch {}
