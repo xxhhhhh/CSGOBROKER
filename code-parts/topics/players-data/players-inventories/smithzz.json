@@ -7,16 +7,18 @@
   "name": "Edouard Dubourdeaux",
   "nationality": "France",
   "born": "17.12.1988",
+  "isContentCreator": false,
   "twitch": "smithzz",
   "faceit": "https://faceitdb.com/profile/faceit/5a4e258d-c912-46b6-94f1-984d59150f82",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-29T10:27:40.839Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 361,
-  "totalItemsGrouped": 337,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-05T10:59:23.531Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 359,
+  "totalItemsGrouped": 335,
   "items": [
     {
       "assetid": "48699702436",
@@ -54,50 +56,14 @@
       "phase": "Phase 1"
     },
     {
-      "assetid": "53680988004",
-      "classid": "7993036736",
-      "instanceid": "188530139",
+      "assetid": "53859576952",
+      "classid": "7993035749",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Skeleton Knife | Crimson Web",
-      "market_hash_name": "★ Skeleton Knife | Crimson Web (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48699702438",
-      "classid": "7993038502",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Hand Wraps | Cobalt Skulls",
-      "market_hash_name": "★ Hand Wraps | Cobalt Skulls (Field-Tested)",
+      "name": "★ Specialist Gloves | Fade",
+      "market_hash_name": "★ Specialist Gloves | Fade (Field-Tested)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209787316E7E2222968F3FB0B752D9BF91A794AF6235606294D793FFB5E79F3E147503",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3731,50 +3697,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53823669190",
-      "classid": "7993035525",
-      "instanceid": "6279527098",
-      "amount": 1,
-      "name": "Desert Eagle | Mecha Industries",
-      "market_hash_name": "Desert Eagle | Mecha Industries (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -11454,7 +11376,7 @@
     {
       "assetid": "49426880521",
       "classid": "7993036413",
-      "instanceid": "9053817791",
+      "instanceid": "9070101375",
       "amount": 1,
       "name": "StatTrak™ AWP | Printstream",
       "market_hash_name": "StatTrak™ AWP | Printstream (Field-Tested)",
@@ -11502,7 +11424,7 @@
     {
       "assetid": "52515987412",
       "classid": "7993043564",
-      "instanceid": "9054298724",
+      "instanceid": "9070101374",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Blood in the Water",
       "market_hash_name": "StatTrak™ SSG 08 | Blood in the Water (Minimal Wear)",

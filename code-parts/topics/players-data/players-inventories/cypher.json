@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/910dbae1-76ed-4b6d-bcb8-252bca459687",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-15T09:14:35.744Z",
+  "updatedAt": "2026-10-05T10:50:57.799Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 475,
-  "totalItemsGrouped": 308,
+  "totalItemsRaw": 477,
+  "totalItemsGrouped": 310,
   "items": [
     {
       "assetid": "52834606467",
@@ -298,6 +298,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54044934343",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -647,6 +675,37 @@
       ],
       "assetids": [
         "17275791926"
+      ]
+    },
+    {
+      "assetid": "54044934344",
+      "classid": "1989295883",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Death Sentence (Violent Violet)",
+      "market_hash_name": "Sealed Graffiti | Death Sentence (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C0D0C0D804CAE0C0E8C1F0C4A2C7C8C0D062CDF0CEA8C0B0D8477F7CEA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54044934344"
       ]
     },
     {

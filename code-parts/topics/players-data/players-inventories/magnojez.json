@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:16:38.974Z",
+  "updatedAt": "2026-10-05T10:23:18.206Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -55,45 +55,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "53875488843",
-      "classid": "7993040007",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F12A110B3829E0F962E5C159E5C9E7D1E2D947181509E2A15DE689A091E5541BB1C8",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.038387916982,
-      "seed": 956,
-      "phase": "Emerald"
     },
     {
       "assetid": "53808925157",
@@ -163,6 +124,34 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "53918914700",
+      "classid": "7993041878",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53865035284",
       "classid": "7993037311",
       "instanceid": "480085569",
@@ -216,41 +205,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "23827811686",
-      "classid": "3600658821",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Graffiti | Broken Heart (SWAT Blue)",
-      "market_hash_name": "Graffiti | Broken Heart (SWAT Blue)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206777677FA26D47674F66576305606F6777F278576A0F671770B4EAF1BE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        },
-        {
-          "category": "SprayCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "23827811686"
       ]
     },
     {
@@ -2123,6 +2077,50 @@
       ]
     },
     {
+      "assetid": "53918914701",
+      "classid": "188530424",
+      "instanceid": "6295341905",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49637329220",
       "classid": "7993038304",
       "instanceid": "519977179",
@@ -2520,7 +2518,7 @@
     {
       "assetid": "53845362997",
       "classid": "7993048056",
-      "instanceid": "9067319516",
+      "instanceid": "6385785929",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Howl",
       "market_hash_name": "StatTrak™ M4A4 | Howl (Factory New)",
@@ -2679,7 +2677,7 @@
     {
       "assetid": "53801124139",
       "classid": "7993036125",
-      "instanceid": "188532426",
+      "instanceid": "188532451",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Sakkaku",
       "market_hash_name": "StatTrak™ MAC-10 | Sakkaku (Field-Tested)",

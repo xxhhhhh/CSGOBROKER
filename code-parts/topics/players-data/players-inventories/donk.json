@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-24T08:08:15.612Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 348,
-  "totalItemsGrouped": 125,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-05T09:59:48.338Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 347,
+  "totalItemsGrouped": 124,
   "items": [
     {
       "assetid": "53060974247",
@@ -307,34 +309,6 @@
       "amount": 1,
       "name": "★ Driver Gloves | King Snake",
       "market_hash_name": "★ Driver Gloves | King Snake (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53754611125",
-      "classid": "7993044914",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -3131,9 +3105,9 @@
       ]
     },
     {
-      "assetid": "53741811948",
+      "assetid": "53944185182",
       "classid": "7993038580",
-      "instanceid": "7780958351",
+      "instanceid": "6279834656",
       "amount": 1,
       "name": "USP-S | Stainless",
       "market_hash_name": "USP-S | Stainless (Minimal Wear)",
@@ -3170,14 +3144,6 @@
         },
         {
           "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -4335,7 +4301,7 @@
     {
       "assetid": "53012889002",
       "classid": "7993043193",
-      "instanceid": "907054918",
+      "instanceid": "903614271",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Cobalt Disruption",
       "market_hash_name": "StatTrak™ Desert Eagle | Cobalt Disruption (Factory New)",
@@ -4499,7 +4465,7 @@
     {
       "assetid": "53020027539",
       "classid": "7993045027",
-      "instanceid": "8663899139",
+      "instanceid": "9069655569",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -4535,7 +4501,7 @@
     {
       "assetid": "42657088883",
       "classid": "7993040686",
-      "instanceid": "480119553",
+      "instanceid": "480088975",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Factory New)",
@@ -4623,7 +4589,7 @@
     {
       "assetid": "43981133575",
       "classid": "7993043676",
-      "instanceid": "8734248199",
+      "instanceid": "9065686804",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",
