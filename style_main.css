@@ -16398,6 +16398,10 @@ header,
         height: 162px;
     }
 
+    .nondef .spaceblock {
+        height: 153px;
+    }
+
     .category-selector .category-box,
     .category-selector .category-box.wiki {
         margin: 8px 4px 0 4px !important;
