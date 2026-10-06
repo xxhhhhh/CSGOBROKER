@@ -12,46 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T09:59:51.696Z",
+  "updatedAt": "2026-10-06T09:47:10.165Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 169,
-  "totalItemsGrouped": 168,
+  "totalItemsRaw": 164,
+  "totalItemsGrouped": 163,
   "items": [
-    {
-      "assetid": "53589290052",
-      "classid": "7993049545",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Bayonet | Stained",
-      "market_hash_name": "★ Bayonet | Stained (Battle-Scarred)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "51394919949",
       "classid": "7993042413",
@@ -87,6 +55,45 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53924508289",
+      "classid": "7993038333",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3620679122BE2FB60E7C341E0CBE5D3E0DB14692E0BE0A343E78B5BE293EB84720CFD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.035954918712,
+      "seed": 544,
+      "phase": "Phase 1"
     },
     {
       "assetid": "53751876444",
@@ -419,42 +426,6 @@
       "phase": "Phase 3"
     },
     {
-      "assetid": "53644535864",
-      "classid": "7993046968",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Huntsman Knife | Scorched",
-      "market_hash_name": "★ Huntsman Knife | Scorched (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53390196237",
       "classid": "7993036088",
       "instanceid": "480085569",
@@ -488,38 +459,6 @@
       "float": 0.032448004931,
       "seed": 213,
       "phase": "Phase 4"
-    },
-    {
-      "assetid": "53657332093",
-      "classid": "7993052924",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Freehand",
-      "market_hash_name": "★ Karambit | Freehand (Well-Worn)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "53371304957",
@@ -654,6 +593,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53924533568",
+      "classid": "7993047888",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F1214B7D1029E0F91DE2C15BE5C9E7D1E2D9780A630CE2A123E089AA91E99B9B2B11",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.078471370041,
+      "seed": 194,
+      "phase": "Phase 2"
     },
     {
       "assetid": "53669866690",
@@ -1241,42 +1215,6 @@
       "phase": "Phase 1"
     },
     {
-      "assetid": "53627313384",
-      "classid": "7993044902",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Ursus Knife | Case Hardened",
-      "market_hash_name": "★ Ursus Knife | Case Hardened (Well-Worn)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53199265716",
       "classid": "7993035787",
       "instanceid": "480085569",
@@ -1311,34 +1249,6 @@
       "amount": 1,
       "name": "★ Driver Gloves | Convoy",
       "market_hash_name": "★ Driver Gloves | Convoy (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53541935904",
-      "classid": "7993042300",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Driver Gloves | Lunar Weave",
-      "market_hash_name": "★ Driver Gloves | Lunar Weave (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -2197,99 +2107,12 @@
       ]
     },
     {
-      "assetid": "54005793718",
-      "classid": "7993143691",
-      "instanceid": "902658099",
-      "amount": 1,
-      "name": "★ StatTrak™ Gut Knife | Doppler",
-      "market_hash_name": "★ StatTrak™ Gut Knife | Doppler (Factory New)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200818BE8FF49FC10910F20B28A80B200E380B30CDB989E20B48FD0D400858086047780C36F0FD02",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.046959657222,
-      "seed": 757,
-      "phase": "Sapphire"
-    },
-    {
       "assetid": "53711518540",
       "classid": "7993048520",
       "instanceid": "188530170",
       "amount": 1,
       "name": "★ StatTrak™ Huntsman Knife | Autotronic",
       "market_hash_name": "★ StatTrak™ Huntsman Knife | Autotronic (Well-Worn)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53642693666",
-      "classid": "7993071502",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "★ StatTrak™ Huntsman Knife | Stained",
-      "market_hash_name": "★ StatTrak™ Huntsman Knife | Stained (Minimal Wear)",
       "type": "★ StatTrak™ Covert Knife",
       "inspectLink": "",
       "tags": [

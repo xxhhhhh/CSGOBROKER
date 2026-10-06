@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/MegaRush--",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T11:07:53.015Z",
+  "updatedAt": "2026-10-06T10:54:53.546Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 162,
-  "totalItemsGrouped": 161,
+  "totalItemsRaw": 169,
+  "totalItemsGrouped": 166,
   "items": [
     {
       "assetid": "53869244380",
@@ -56,14 +56,14 @@
       "phase": "Black Pearl"
     },
     {
-      "assetid": "53034209368",
-      "classid": "7993040883",
-      "instanceid": "188530139",
+      "assetid": "53932881306",
+      "classid": "7993040170",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "name": "★ Paracord Knife | Tiger Tooth",
+      "market_hash_name": "★ Paracord Knife | Tiger Tooth (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206979B1C9BEA1AC6871EA6D49F66A416F596A51CCDDF9806A29A06F0163196186775421",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -89,23 +89,28 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.040063995868,
-      "seed": 841,
-      "phase": "Ruby"
+      ]
     },
     {
-      "assetid": "53679846605",
-      "classid": "7993043849",
+      "assetid": "53932880472",
+      "classid": "7993043401",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
+      "name": "★ Skeleton Knife | Damascus Steel",
+      "market_hash_name": "★ Skeleton Knife | Damascus Steel (Minimal Wear)",
+      "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -1809,78 +1814,6 @@
       ]
     },
     {
-      "assetid": "53918804906",
-      "classid": "7993043505",
-      "instanceid": "9042291516",
-      "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53742566224",
-      "classid": "7993036896",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AWP | Dragon Lore",
-      "market_hash_name": "AWP | Dragon Lore (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53735342628",
       "classid": "7993039273",
       "instanceid": "480085569",
@@ -2054,6 +1987,37 @@
       ]
     },
     {
+      "assetid": "53924942253",
+      "classid": "7545314292",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Hands Off (Foil)",
+      "market_hash_name": "Sticker | Hands Off (Foil)",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E8E963787AE8EA68BBE8AEC8B868E9E0CC4E68EFE99A652F94F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924942253"
+      ]
+    },
+    {
       "assetid": "53034649099",
       "classid": "8491251253",
       "instanceid": "143865972",
@@ -2192,6 +2156,37 @@
       ],
       "assetids": [
         "53034665960"
+      ]
+    },
+    {
+      "assetid": "53924945357",
+      "classid": "8637417462",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Sniper Ahead (Foil)",
+      "market_hash_name": "Sticker | Sniper Ahead (Foil)",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2068786870D1614868406D586C0A6D60687894380068187FCC7410C9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924945357"
       ]
     },
     {
@@ -3168,6 +3163,69 @@
       ]
     },
     {
+      "assetid": "53924957851",
+      "classid": "7545311983",
+      "instanceid": "519977179",
+      "amount": 2,
+      "name": "Sticker | Candy Apples",
+      "market_hash_name": "Sticker | Candy Apples",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EDF6F46664E65566204636E66768D2F0E661671E5ECEED9",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924957851",
+        "53924961155"
+      ]
+    },
+    {
+      "assetid": "53924959187",
+      "classid": "7545314144",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Cubix Connexion",
+      "market_hash_name": "Sticker | Cubix Connexion",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F1E1F1E948F8D1F1D9F2C1F593F4F9F1E11DB899F181E65BB50250",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924959187"
+      ]
+    },
+    {
       "assetid": "53390631339",
       "classid": "7729102320",
       "instanceid": "188530139",
@@ -3423,6 +3481,100 @@
       ],
       "assetids": [
         "53390629505"
+      ]
+    },
+    {
+      "assetid": "53924960586",
+      "classid": "7545312652",
+      "instanceid": "519977179",
+      "amount": 2,
+      "name": "Sticker | Pop Pup",
+      "market_hash_name": "Sticker | Pop Pup",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564EEF5F76567E55665234535E5646A41F3E562641AB14B6DC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924960586",
+        "53924956801"
+      ]
+    },
+    {
+      "assetid": "53924955211",
+      "classid": "7545312260",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | POTS",
+      "market_hash_name": "Sticker | POTS",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201404140CAD1D34143C17241076111C1404E75D7C1464033350D91A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924955211"
+      ]
+    },
+    {
+      "assetid": "53924954364",
+      "classid": "7545311981",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Vice Cursor",
+      "market_hash_name": "Sticker | Vice Cursor",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204F5F4F57F6466F4F674C7F4B2D4A474F5FB906274F3F585A24055D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924954364"
       ]
     },
     {
@@ -3898,7 +4050,7 @@
     {
       "assetid": "53923788647",
       "classid": "7993036466",
-      "instanceid": "9043543671",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "P2000 | Lifted Spirits",
       "market_hash_name": "P2000 | Lifted Spirits (Minimal Wear)",
@@ -4032,6 +4184,37 @@
       ],
       "assetids": [
         "52533145227"
+      ]
+    },
+    {
+      "assetid": "53924955801",
+      "classid": "7545312800",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Cutie (Holo)",
+      "market_hash_name": "Sticker | Cutie (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A4B4A4BC1DAD84A48CA094A0C6A1ACA4B458EDCCA4D4B3DE4201A5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53924955801"
       ]
     },
     {
@@ -4214,42 +4397,6 @@
       "amount": 1,
       "name": "Desert Eagle | Blaze",
       "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53786436635",
-      "classid": "7993041116",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Desert Eagle | Heirloom",
-      "market_hash_name": "Desert Eagle | Heirloom (Field-Tested)",
       "type": "Restricted Pistol",
       "inspectLink": "",
       "tags": [
