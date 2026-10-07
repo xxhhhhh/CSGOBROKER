@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/77a0ca34-3de2-45be-86ec-3efe375d4ff2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-27T09:23:33.519Z",
+  "updatedAt": "2026-10-07T10:13:52.939Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 120,
-  "totalItemsGrouped": 91,
+  "totalItemsRaw": 121,
+  "totalItemsGrouped": 92,
   "items": [
     {
       "assetid": "41204122947",
@@ -98,34 +98,6 @@
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52577277303",
-      "classid": "7993038043",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Vice",
-      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -233,6 +205,34 @@
     },
     {
       "assetid": "50388544184",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54063502914",
       "classid": "5189384637",
       "instanceid": "302028390",
       "amount": 1,
@@ -827,6 +827,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54063502915",
+      "classid": "7993035505",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dual Berettas | BorDeux",
+      "market_hash_name": "Dual Berettas | BorDeux (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

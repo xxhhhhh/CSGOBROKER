@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e5b855bd-3dbc-4928-a216-241d615b431b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:10:00.524Z",
+  "updatedAt": "2026-10-07T10:03:02.031Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 47,
-  "totalItemsGrouped": 47,
+  "totalItemsRaw": 49,
+  "totalItemsGrouped": 49,
   "items": [
     {
       "assetid": "49295437759",
@@ -421,6 +421,30 @@
       "amount": 1,
       "name": "10 Year Birthday Coin",
       "market_hash_name": "10 Year Birthday Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54071014010",
+      "classid": "3117298605",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "10 Year Veteran Coin",
+      "market_hash_name": "10 Year Veteran Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1224,6 +1248,70 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53938053909",
+      "classid": "188530424",
+      "instanceid": "7772504752",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

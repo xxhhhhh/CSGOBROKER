@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4053b992-4f7e-4073-a503-934ae63de9f6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-05T07:44:41.843Z",
+  "updatedAt": "2026-10-07T10:07:18.493Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 57,
-  "totalItemsGrouped": 55,
+  "totalItemsRaw": 59,
+  "totalItemsGrouped": 57,
   "items": [
     {
       "assetid": "50417130641",
@@ -114,6 +114,65 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54059762949",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54059762950",
+      "classid": "1989283331",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Death Sentence (Monster Purple)",
+      "market_hash_name": "Sealed Graffiti | Death Sentence (Monster Purple)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201B0B1B03DF113B1B331A2B1F791C131B0BB9162B14731B6B03910035C1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54059762950"
       ]
     },
     {
@@ -1675,7 +1734,7 @@
     {
       "assetid": "42804867439",
       "classid": "7993043335",
-      "instanceid": "9074007861",
+      "instanceid": "9076090683",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Hypnotic",
       "market_hash_name": "StatTrak™ Desert Eagle | Hypnotic (Factory New)",
