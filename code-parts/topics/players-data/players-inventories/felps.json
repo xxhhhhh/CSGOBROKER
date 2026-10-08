@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4613e6a8-e551-4e48-bb6c-f7d6569ce45d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T10:40:21.266Z",
+  "updatedAt": "2026-10-08T10:37:04.269Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 109,
-  "totalItemsGrouped": 85,
+  "totalItemsRaw": 136,
+  "totalItemsGrouped": 92,
   "items": [
     {
       "assetid": "26666963680",
@@ -177,6 +177,37 @@
       ],
       "assetids": [
         "18294112516"
+      ]
+    },
+    {
+      "assetid": "53956307275",
+      "classid": "1989282644",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Karambit (Tiger Orange)",
+      "market_hash_name": "Sealed Graffiti | Karambit (Tiger Orange)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6B7B63BF715B7B537A4B7F197C737B6BC6764B78137B0B63F320E92A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53956307275"
       ]
     },
     {
@@ -1514,14 +1545,14 @@
       ]
     },
     {
-      "assetid": "48292703867",
-      "classid": "6360350671",
-      "instanceid": "188530139",
+      "assetid": "53957180708",
+      "classid": "8491531172",
+      "instanceid": "143865972",
       "amount": 1,
-      "name": "Sticker | felps (Gold) | Shanghai 2024",
-      "market_hash_name": "Sticker | felps (Gold) | Shanghai 2024",
+      "name": "Sticker | felps (Gold) | Cologne 2026",
+      "market_hash_name": "Sticker | felps (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1F0F17B6062F0F27093F0B6D0A070F1FC74D670F7F07E8D83FD1",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AEB5B72527A54625630575A52429B043A5222507EB2A8C0",
       "tags": [
         {
           "category": "Type",
@@ -1557,6 +1588,150 @@
         }
       ],
       "assetids": [
+        "53957180708"
+      ]
+    },
+    {
+      "assetid": "53957179626",
+      "classid": "5799821072",
+      "instanceid": "188530139",
+      "amount": 2,
+      "name": "Sticker | felps (Gold) | Copenhagen 2024",
+      "market_hash_name": "Sticker | felps (Gold) | Copenhagen 2024",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ABBBABB312A28BAB83AD9BAFC9AEA3ABBB0597C3ABDBA33EC2181B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53957179626",
+        "53956018175"
+      ]
+    },
+    {
+      "assetid": "53957181757",
+      "classid": "5327988137",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | felps (Gold) | Paris 2023",
+      "market_hash_name": "Sticker | felps (Gold) | Paris 2023",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E8E963787AE8EA688BE8AEC8B868E9E06B6E68EFE869FADD272",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53957181757"
+      ]
+    },
+    {
+      "assetid": "53957178118",
+      "classid": "6360350671",
+      "instanceid": "188530139",
+      "amount": 3,
+      "name": "Sticker | felps (Gold) | Shanghai 2024",
+      "market_hash_name": "Sticker | felps (Gold) | Shanghai 2024",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203929392180301939113F093D5B3C313929F17B51394931492DB9ED",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53957178118",
+        "53957176095",
         "48292703867"
       ]
     },
@@ -1666,6 +1841,53 @@
       ]
     },
     {
+      "assetid": "53957189547",
+      "classid": "2658260182",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | felps | Boston 2018",
+      "market_hash_name": "Sticker | felps | Boston 2018",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202C3C2C3495250C2C042F1C284E29242C3CFE38442C5C2475CCDAA8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53957189547"
+      ]
+    },
+    {
       "assetid": "16686866090",
       "classid": "3186045355",
       "instanceid": "188530139",
@@ -1734,6 +1956,53 @@
         "16635134086",
         "16635133929",
         "16635133825"
+      ]
+    },
+    {
+      "assetid": "53957191627",
+      "classid": "2416964040",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | felps | Krakow 2017",
+      "market_hash_name": "Sticker | felps | Krakow 2017",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200616061EBF0F26062E05360264030E061691176E06760E939DD58A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53957191627"
       ]
     },
     {
@@ -2852,6 +3121,54 @@
       ],
       "assetids": [
         "53921021280"
+      ]
+    },
+    {
+      "assetid": "53957431694",
+      "classid": "4966008797",
+      "instanceid": "188530139",
+      "amount": 18,
+      "name": "Sticker | Zeusception (Holo)",
+      "market_hash_name": "Sticker | Zeusception (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C30043056313C34248E1A5C34443C9D714CA6",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53957431694",
+        "53957431690",
+        "53957431656",
+        "53957431655",
+        "53957431654",
+        "53957431649",
+        "53957431648",
+        "53957431639",
+        "53957431634",
+        "53957431631",
+        "53957429947",
+        "53957429941",
+        "53957429939",
+        "53957426812",
+        "53957426811",
+        "53957426802",
+        "53957426799",
+        "53957431704"
       ]
     },
     {

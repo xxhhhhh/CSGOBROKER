@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-06T10:42:03.531Z",
+  "updatedAt": "2026-10-08T10:51:51.878Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 66,
-  "totalItemsGrouped": 66,
+  "totalItemsRaw": 64,
+  "totalItemsGrouped": 64,
   "items": [
     {
       "assetid": "51006192748",
@@ -57,12 +57,12 @@
       ]
     },
     {
-      "assetid": "49822782314",
-      "classid": "7993097009",
-      "instanceid": "480085569",
+      "assetid": "25069575036",
+      "classid": "7993108655",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Classic Knife | Crimson Web",
-      "market_hash_name": "★ Classic Knife | Crimson Web (Factory New)",
+      "name": "★ Karambit | Crimson Web",
+      "market_hash_name": "★ Karambit | Crimson Web (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -72,10 +72,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -143,6 +139,50 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "7020355888",
+      "classid": "7993046671",
+      "instanceid": "480090514",
+      "amount": 1,
+      "name": "★ StatTrak™ Shadow Daggers | Crimson Web",
+      "market_hash_name": "★ StatTrak™ Shadow Daggers | Crimson Web (Field-Tested)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -417,42 +457,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "33296474038",
-      "classid": "7993037829",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Wildfire",
-      "market_hash_name": "AWP | Wildfire (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1672,54 +1676,6 @@
       ]
     },
     {
-      "assetid": "15516424830",
-      "classid": "7993044974",
-      "instanceid": "8132960149",
-      "amount": 1,
-      "name": "Souvenir MP9 | Setting Sun",
-      "market_hash_name": "Souvenir MP9 | Setting Sun (Minimal Wear)",
-      "type": "Souvenir Mil-Spec Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D9C9276D3E3FE0C1FBF929DBF1DAE9D5E17D7E3F36DA9919DABBCDD1D9C974DBC4D9D9D9D9FCD9D959E6F4D9D9D9D9BBCDD1D8C910DBC4D9D9D9D9FCD9D959E6F4D9D9D9D9BBCDD1DBC96CDBC4D9D9D9D9FCD9D959E6F4D9D9D9D9BBD0D1DAC9FBFCBFBF5FE6B1D8A9D1AAF28569",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "6521122150",
       "classid": "7993048224",
       "instanceid": "7628551881",
@@ -1774,7 +1730,7 @@
     {
       "assetid": "33296469568",
       "classid": "7993039759",
-      "instanceid": "9077088693",
+      "instanceid": "9080284386",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Factory New)",
@@ -1820,69 +1776,9 @@
       ]
     },
     {
-      "assetid": "6936704029",
-      "classid": "7993037966",
-      "instanceid": "8774504010",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Redline",
-      "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "9076998519",
+      "instanceid": "9080104000",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -1934,7 +1830,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "9076761866",
+      "instanceid": "9080193913",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -1986,7 +1882,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "9077088692",
+      "instanceid": "9080284385",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",

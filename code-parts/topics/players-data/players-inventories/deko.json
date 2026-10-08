@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f133beae-a158-4fd2-a991-76c1769c0ab5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-06T09:49:12.662Z",
+  "updatedAt": "2026-10-08T09:58:32.628Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 77,
+  "totalItemsRaw": 79,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "53440362642",
@@ -656,6 +656,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54081179282",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1359,6 +1387,42 @@
       "market_hash_name": "SG 553 | Night Camo (Minimal Wear)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D8125A2E3757C9D0EFE83EC1E0C9F8CCF007501D24CB887EC9A0EBB8D0393B0704",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54081179283",
+      "classid": "7993061652",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "PP-Bizon | Thermal Currents",
+      "market_hash_name": "PP-Bizon | Thermal Currents (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

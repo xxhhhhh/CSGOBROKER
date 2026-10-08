@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1bcffdd-7eeb-4744-b8d6-a582dcfb1670",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-29T10:29:47.766Z",
+  "updatedAt": "2026-10-08T10:58:13.179Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 345,
-  "totalItemsGrouped": 157,
+  "totalItemsRaw": 346,
+  "totalItemsGrouped": 158,
   "items": [
     {
       "assetid": "46164620753",
@@ -371,6 +371,34 @@
     },
     {
       "assetid": "50458402782",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54075121419",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -1992,6 +2020,42 @@
       ]
     },
     {
+      "assetid": "54075121420",
+      "classid": "7993036981",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MAG-7 | Copper Oxide",
+      "market_hash_name": "MAG-7 | Copper Oxide (Minimal Wear)",
+      "type": "Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "24216752656",
       "classid": "241591764",
       "instanceid": "302028390",
@@ -2247,42 +2311,6 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "50274034802",
-      "classid": "7993036573",
-      "instanceid": "7583370974",
-      "amount": 1,
-      "name": "AK-47 | The Oligarch",
-      "market_hash_name": "AK-47 | The Oligarch (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2ECCF6FD9A853F26391EF63416380E3A0689AD90CE3D7EB63A568F3F4E369C3F29363E2E130396AC767E7BD0F5E90073B2B8637E6EADE23D03254738",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50274058436",
       "classid": "7993036976",
       "instanceid": "6276334575",
@@ -2454,6 +2482,37 @@
       ],
       "assetids": [
         "30236113925"
+      ]
+    },
+    {
+      "assetid": "54090624072",
+      "classid": "7545318571",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Lil' Eldritch",
+      "market_hash_name": "Charm | Lil' Eldritch",
+      "type": "Extraordinary Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54090624072"
       ]
     },
     {
@@ -4343,54 +4402,6 @@
       ]
     },
     {
-      "assetid": "41929895994",
-      "classid": "7993041978",
-      "instanceid": "6755002360",
-      "amount": 1,
-      "name": "Souvenir Desert Eagle | Fennec Fox",
-      "market_hash_name": "Souvenir Desert Eagle | Fennec Fox (Field-Tested)",
-      "type": "Souvenir Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200C1CB6ECD195900D140D2CF00924093C003499DEC5F80F4CA30A6E18040D1CE82F210C0C4CCD313706E0B2490CF72130648C0E7C04C71AC4BF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "23791679216",
       "classid": "7993037153",
       "instanceid": "6277076111",
@@ -5133,7 +5144,7 @@
     {
       "assetid": "29047097081",
       "classid": "7993041333",
-      "instanceid": "480674719",
+      "instanceid": "480296892",
       "amount": 1,
       "name": "StatTrak™ MP9 | Food Chain",
       "market_hash_name": "StatTrak™ MP9 | Food Chain (Field-Tested)",
