@@ -7,16 +7,18 @@
   "name": "Nils Smidebrant",
   "nationality": "Sweden",
   "born": "24.09.2002",
+  "isContentCreator": false,
   "twitch": "phzy1",
   "faceit": "https://faceitdb.com/profile/faceit/0411cac3-a510-4af0-96d1-b032a4e766ac",
-  "isContentCreator": false,
-  "updatedAt": "2026-08-15T03:45:18.181Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 245,
-  "totalItemsGrouped": 202,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-09T10:08:46.678Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 220,
+  "totalItemsGrouped": 192,
   "items": [
     {
       "assetid": "51169818262",
@@ -58,7 +60,39 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "53040526382",
+      "assetid": "53586572464",
+      "classid": "7993037250",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Marble Fade",
+      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53955534802",
       "classid": "8246989043",
       "instanceid": "188530139",
       "amount": 1,
@@ -114,14 +148,14 @@
       ]
     },
     {
-      "assetid": "50715070254",
+      "assetid": "53677221188",
       "classid": "8247168486",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Ultra Violent",
       "market_hash_name": "★ Sport Gloves | Ultra Violent (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646F8C8BCA0EA574EF07176D45D7E5066556EBFBCE0A6551693503E1A265E67DCAFA9",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -345,42 +379,6 @@
       ]
     },
     {
-      "assetid": "50713912776",
-      "classid": "7993041263",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Five-SeveN | Fairy Tale",
-      "market_hash_name": "Five-SeveN | Fairy Tale (Minimal Wear)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7AA2A1C99CD66B72694AB96D426F5A6E52B0F9FE85692A8F6E025D1A62A9ECEF2A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51063288991",
       "classid": "7993035507",
       "instanceid": "188530139",
@@ -593,42 +591,6 @@
       ]
     },
     {
-      "assetid": "53177397216",
-      "classid": "8637411223",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A4 | Falak",
-      "market_hash_name": "M4A4 | Falak (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50410628822",
       "classid": "7993037072",
       "instanceid": "188530139",
@@ -717,6 +679,42 @@
       "market_hash_name": "SSG 08 | Turbo Peek (Minimal Wear)",
       "type": "Classified Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E87D5E450244F9E0D0D835F0D0FDC8FCC07E073108FBB80AFC90AF88FCB9F22DC0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53896447725",
+      "classid": "7993036408",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "CZ75-Auto | Pink Pearl",
+      "market_hash_name": "CZ75-Auto | Pink Pearl (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -861,6 +859,42 @@
       ]
     },
     {
+      "assetid": "54079654764",
+      "classid": "7993036590",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Galil AR | Grey Smoke",
+      "market_hash_name": "Galil AR | Grey Smoke (Factory New)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "44876961821",
       "classid": "7993037833",
       "instanceid": "302028390",
@@ -976,42 +1010,6 @@
       "name": "SSG 08 | Green Ceramic",
       "market_hash_name": "SSG 08 | Green Ceramic (Field-Tested)",
       "type": "Consumer Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50418638002",
-      "classid": "7993035509",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Desert Eagle | Printstream",
-      "market_hash_name": "Desert Eagle | Printstream (Minimal Wear)",
-      "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -1165,42 +1163,6 @@
       "market_hash_name": "M4A4 | In Living Color (Minimal Wear)",
       "type": "Covert Rifle",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50713386264",
-      "classid": "7993036796",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A4 | Temukau",
-      "market_hash_name": "M4A4 | Temukau (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204151D9FBC2B7FD405951618D486947714579CCE4EEAD420181472975314958F18B15",
       "tags": [
         {
           "category": "Type",
@@ -2125,14 +2087,45 @@
       ]
     },
     {
-      "assetid": "53084559605",
-      "classid": "8711945737",
-      "instanceid": "143865972",
-      "amount": 7,
-      "name": "Sticker | phzy (Holo, Ranked) | Cologne 2026",
-      "market_hash_name": "Sticker | phzy (Holo, Ranked) | Cologne 2026",
+      "assetid": "50202459775",
+      "classid": "7545319375",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Queen Ava (Foil)",
+      "market_hash_name": "Sticker | Queen Ava (Foil)",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202131213998280121092411254324292131C1784921512397D7B168",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBEAEB617A78EAE86AB9EAACCABA6AEBE2AE4C6AEDEB9F849672C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "50202459775"
+      ]
+    },
+    {
+      "assetid": "40608454861",
+      "classid": "6360333386",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | s-chilla (Holo) | Shanghai 2024",
+      "market_hash_name": "Sticker | s-chilla (Holo) | Shanghai 2024",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A0B0A809B990B098B580B4D2B5B8B0A023F2D8B0C0B8FD1578A7",
       "tags": [
         {
           "category": "Type",
@@ -2168,13 +2161,7 @@
         }
       ],
       "assetids": [
-        "53084559605",
-        "53084559604",
-        "53084559603",
-        "53084559602",
-        "53084559601",
-        "53084559600",
-        "53084559599"
+        "40608454861"
       ]
     },
     {
@@ -2484,7 +2471,7 @@
     {
       "assetid": "51828868275",
       "classid": "8564022767",
-      "instanceid": "8490789248",
+      "instanceid": "8490796689",
       "amount": 1,
       "name": "Cologne 2026 Gold Coin",
       "market_hash_name": "Cologne 2026 Gold Coin",
@@ -2917,14 +2904,14 @@
       ]
     },
     {
-      "assetid": "53084559595",
-      "classid": "8711989756",
-      "instanceid": "143865972",
-      "amount": 2,
-      "name": "Sticker | phzy (Gold, Ranked) | Cologne 2026",
-      "market_hash_name": "Sticker | phzy (Gold, Ranked) | Cologne 2026",
+      "assetid": "48941338479",
+      "classid": "4638751863",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | device (Gold) | Stockholm 2021",
+      "market_hash_name": "Sticker | device (Gold) | Stockholm 2021",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D2C2D2CA6BDBF2D2FAD4E2D6B0D7DAD2C2338BBAD2A2D0929128E6",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F9E9F9E140F0D9F9D1FFC9FD9BFCF1F9E908D191F989F18C74E372",
       "tags": [
         {
           "category": "Type",
@@ -2960,8 +2947,7 @@
         }
       ],
       "assetids": [
-        "53084559595",
-        "53084559594"
+        "48941338479"
       ]
     },
     {
@@ -4019,13 +4005,13 @@
       ]
     },
     {
-      "assetid": "53177392983",
-      "classid": "7993038746",
-      "instanceid": "302028390",
+      "assetid": "53887987244",
+      "classid": "8637409503",
+      "instanceid": "519977179",
       "amount": 1,
-      "name": "Negev | Sour Grapes",
-      "market_hash_name": "Negev | Sour Grapes (Factory New)",
-      "type": "Industrial Grade Machinegun",
+      "name": "Dual Berettas | Mystic Conjunction",
+      "market_hash_name": "Dual Berettas | Mystic Conjunction (Field-Tested)",
+      "type": "Industrial Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -4163,42 +4149,6 @@
       ]
     },
     {
-      "assetid": "53095131720",
-      "classid": "8637410991",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Nova | Morning Sun",
-      "market_hash_name": "Nova | Morning Sun (Minimal Wear)",
-      "type": "Industrial Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "50827502329",
       "classid": "7993037207",
       "instanceid": "302028390",
@@ -4206,258 +4156,6 @@
       "name": "XM1014 | Gum Wall Camo",
       "market_hash_name": "XM1014 | Gum Wall Camo (Factory New)",
       "type": "Industrial Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53113501377",
-      "classid": "8637411889",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "MP9 | Dune Asp",
-      "market_hash_name": "MP9 | Dune Asp (Field-Tested)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53060304645",
-      "classid": "8637410424",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "PP-Bizon | Traitor",
-      "market_hash_name": "PP-Bizon | Traitor (Well-Worn)",
-      "type": "Industrial Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52826424458",
-      "classid": "7993036465",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Dual Berettas | Hideout",
-      "market_hash_name": "Dual Berettas | Hideout (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53177395060",
-      "classid": "7993036189",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P250 | Re.built",
-      "market_hash_name": "P250 | Re.built (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52838180251",
-      "classid": "8637410990",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Tec-9 | Sultan",
-      "market_hash_name": "Tec-9 | Sultan (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52822113328",
-      "classid": "8637412501",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Tec-9 | Sultan",
-      "market_hash_name": "Tec-9 | Sultan (Well-Worn)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53056998419",
-      "classid": "7993036215",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "USP-S | Tropical Breeze",
-      "market_hash_name": "USP-S | Tropical Breeze (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -4538,78 +4236,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53057547041",
-      "classid": "8637410986",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Sawed-Off | Lunar Wyrm",
-      "market_hash_name": "Sawed-Off | Lunar Wyrm (Well-Worn)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53057002288",
-      "classid": "8637410988",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "MAC-10 | Arabesque Mosaic",
-      "market_hash_name": "MAC-10 | Arabesque Mosaic (Field-Tested)",
-      "type": "Mil-Spec Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4900,61 +4526,6 @@
       ]
     },
     {
-      "assetid": "53084569945",
-      "classid": "8711951590",
-      "instanceid": "143865972",
-      "amount": 9,
-      "name": "Sticker | phzy (Foil, Ranked) | Cologne 2026",
-      "market_hash_name": "Sticker | phzy (Foil, Ranked) | Cologne 2026",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2018081800A1113818301C281C7A1D101808C7417018681A380BC349",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53084569945",
-        "53084569944",
-        "53084569943",
-        "53084569942",
-        "53084569941",
-        "53084569940",
-        "53084569939",
-        "53084569938",
-        "53084569937"
-      ]
-    },
-    {
       "assetid": "40608450681",
       "classid": "6360306937",
       "instanceid": "188530139",
@@ -5170,14 +4741,14 @@
       ]
     },
     {
-      "assetid": "36790399134",
+      "assetid": "53797539738",
       "classid": "7993037520",
       "instanceid": "6276303569",
       "amount": 1,
       "name": "P250 | X-Ray",
       "market_hash_name": "P250 | X-Ray (Factory New)",
       "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4BC5BAD8DCD25A437F7B26735F6B5F63B2B781BD581BCA58395E535B4BD17E395E535A4BD17E395E53594BD17E395E53584BD17E335A2B532A2F564A",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5924,7 +5495,7 @@
     {
       "assetid": "50985121109",
       "classid": "7993044196",
-      "instanceid": "8774125463",
+      "instanceid": "9083595657",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Neon Rider",
       "market_hash_name": "StatTrak™ AK-47 | Neon Rider (Factory New)",
@@ -6004,7 +5575,7 @@
     {
       "assetid": "32940743309",
       "classid": "7993038050",
-      "instanceid": "6448270423",
+      "instanceid": "7547665218",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Magnesium",
       "market_hash_name": "StatTrak™ M4A4 | Magnesium (Minimal Wear)",
@@ -6046,9 +5617,45 @@
       ]
     },
     {
+      "assetid": "53298336073",
+      "classid": "7993039612",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ MP5-SD | Necro Jr.",
+      "market_hash_name": "StatTrak™ MP5-SD | Necro Jr. (Well-Worn)",
+      "type": "StatTrak™ Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50713100789",
       "classid": "7993041475",
-      "instanceid": "6306208381",
+      "instanceid": "6361794434",
       "amount": 1,
       "name": "StatTrak™ CZ75-Auto | Tacticat",
       "market_hash_name": "StatTrak™ CZ75-Auto | Tacticat (Factory New)",

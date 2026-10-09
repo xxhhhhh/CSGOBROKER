@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/27d1a137-8bf2-4b21-844e-ff2b7131ae74",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:14:23.388Z",
+  "updatedAt": "2026-10-09T10:21:44.036Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 178,
-  "totalItemsGrouped": 147,
+  "totalItemsRaw": 181,
+  "totalItemsGrouped": 148,
   "items": [
     {
       "assetid": "53538502514",
@@ -1681,6 +1681,42 @@
       ]
     },
     {
+      "assetid": "53964721335",
+      "classid": "7993043227",
+      "instanceid": "9053556772",
+      "amount": 1,
+      "name": "M4A1-S | Welcome to the Jungle",
+      "market_hash_name": "M4A1-S | Welcome to the Jungle (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "25503200767",
       "classid": "259328171",
       "instanceid": "6281410944",
@@ -2859,14 +2895,14 @@
       ]
     },
     {
-      "assetid": "53877010242",
+      "assetid": "53964667151",
       "classid": "8711983802",
-      "instanceid": "143865972",
-      "amount": 1,
+      "instanceid": "9053556644",
+      "amount": 3,
       "name": "Sticker | M80 (Gold, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | M80 (Gold, Ranked) | Cologne 2026",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2001110119B8082101290731056304090111A55969017103464F9F1F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205C4C5C44E5557C5C745A6C583E59545C4CF804345C2C5EBA98A799",
       "tags": [
         {
           "category": "Type",
@@ -2898,6 +2934,8 @@
         }
       ],
       "assetids": [
+        "53964667151",
+        "53964667150",
         "53877010242"
       ]
     },
@@ -3245,7 +3283,7 @@
       ]
     },
     {
-      "assetid": "53282867638",
+      "assetid": "53282867640",
       "classid": "8490998386",
       "instanceid": "143865972",
       "amount": 4,
@@ -3288,10 +3326,10 @@
         }
       ],
       "assetids": [
-        "53282867638",
-        "52019842351",
         "53282867640",
-        "53282867639"
+        "53282867639",
+        "53282867638",
+        "52019842351"
       ]
     },
     {

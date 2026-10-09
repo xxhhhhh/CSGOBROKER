@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a20678de-0c2d-4a9f-bf8e-3c856bceab45",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-06T09:51:24.471Z",
+  "updatedAt": "2026-10-09T10:04:25.000Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 166,
-  "totalItemsGrouped": 162,
+  "totalItemsRaw": 168,
+  "totalItemsGrouped": 164,
   "items": [
     {
       "assetid": "39467466041",
@@ -341,6 +341,34 @@
       ]
     },
     {
+      "assetid": "54100211126",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52911652188",
       "classid": "1989274652",
       "instanceid": "302028390",
@@ -617,6 +645,37 @@
       ],
       "assetids": [
         "42947583173"
+      ]
+    },
+    {
+      "assetid": "54100211127",
+      "classid": "1989303507",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | QQ (Shark White)",
+      "market_hash_name": "Sealed Graffiti | QQ (Shark White)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524A965872527A53625630555A5242F85F62413A52224AB69E56AE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54100211127"
       ]
     },
     {
@@ -5013,7 +5072,7 @@
     {
       "assetid": "29467889493",
       "classid": "7993043481",
-      "instanceid": "6323215560",
+      "instanceid": "6307228221",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Factory New)",
