@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c534cae2-d0aa-4c67-a2c0-29ecf0532ad5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-01T08:24:23.520Z",
+  "updatedAt": "2026-10-10T09:29:54.717Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 96,
-  "totalItemsGrouped": 92,
+  "totalItemsRaw": 98,
+  "totalItemsGrouped": 94,
   "items": [
     {
       "assetid": "53254226705",
@@ -100,6 +100,34 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54106476861",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -782,6 +810,42 @@
       "market_hash_name": "R8 Revolver | Bone Mask (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2044549AABA3EB725C04645F6C4574407CA2DE86B44704A6432CC745345C20196309",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54106478276",
+      "classid": "7993065983",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "R8 Revolver | Mauve Aside",
+      "market_hash_name": "R8 Revolver | Mauve Aside (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3128,7 +3192,7 @@
     {
       "assetid": "53254226703",
       "classid": "8246953982",
-      "instanceid": "480085839",
+      "instanceid": "480085768",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Crane Flight",
       "market_hash_name": "StatTrak™ AK-47 | Crane Flight (Well-Worn)",

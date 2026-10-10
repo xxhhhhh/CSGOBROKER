@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/93306681-bce6-4369-8c41-e0bdba2597ed",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-09T10:04:22.458Z",
+  "updatedAt": "2026-10-10T09:27:50.886Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 476,
-  "totalItemsGrouped": 361,
+  "totalItemsRaw": 477,
+  "totalItemsGrouped": 362,
   "items": [
     {
       "assetid": "48153083732",
@@ -414,7 +414,7 @@
     {
       "assetid": "53969002027",
       "classid": "7993044870",
-      "instanceid": "9054783064",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
@@ -894,14 +894,38 @@
       ]
     },
     {
-      "assetid": "48758095405",
+      "assetid": "53969398537",
+      "classid": "191923205",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Name Tag",
+      "market_hash_name": "Name Tag",
+      "type": "Base Grade Tag",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C4D4C4DC74CDE4C4ECC5F4C0ACC4B4C6845FA0AA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53485644728",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 3,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205646564E807076567E5766523E56264E45E21B58",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
       "tags": [
         {
           "category": "Type",
@@ -917,9 +941,9 @@
         }
       ],
       "assetids": [
+        "53485644728",
         "48758095405",
-        "39988021106",
-        "53485644728"
+        "39988021106"
       ]
     },
     {
@@ -11991,7 +12015,7 @@
     {
       "assetid": "39934640202",
       "classid": "7993038472",
-      "instanceid": "9082367281",
+      "instanceid": "9084840196",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -12223,7 +12247,7 @@
     {
       "assetid": "18890412378",
       "classid": "7993040529",
-      "instanceid": "480088831",
+      "instanceid": "480088261",
       "amount": 1,
       "name": "StatTrak™ MP5-SD | Phosphor",
       "market_hash_name": "StatTrak™ MP5-SD | Phosphor (Minimal Wear)",
