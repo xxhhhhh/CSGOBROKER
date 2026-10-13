@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2a82893f-3a7e-4458-9141-0b19673fa049",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-08T10:41:20.194Z",
+  "updatedAt": "2026-10-13T10:50:13.016Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 225,
-  "totalItemsGrouped": 213,
+  "totalItemsRaw": 227,
+  "totalItemsGrouped": 215,
   "items": [
     {
       "assetid": "48793189529",
@@ -238,6 +238,34 @@
       "amount": 1,
       "name": "Fever Case",
       "market_hash_name": "Fever Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54141703213",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -3802,7 +3830,7 @@
       ]
     },
     {
-      "assetid": "53959804424",
+      "assetid": "53959804425",
       "classid": "8490923123",
       "instanceid": "143865972",
       "amount": 3,
@@ -3845,9 +3873,9 @@
         }
       ],
       "assetids": [
+        "53959804425",
         "53959804424",
-        "53959804423",
-        "53959804425"
+        "53959804423"
       ]
     },
     {
@@ -3893,6 +3921,42 @@
       "amount": 1,
       "name": "Five-SeveN | Orange Peel",
       "market_hash_name": "Five-SeveN | Orange Peel (Battle-Scarred)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54141703214",
+      "classid": "7993035801",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Five-SeveN | Sky Blue",
+      "market_hash_name": "Five-SeveN | Sky Blue (Factory New)",
       "type": "Industrial Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -6750,7 +6814,7 @@
     {
       "assetid": "51901486195",
       "classid": "7993041807",
-      "instanceid": "7354658261",
+      "instanceid": "8376562911",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
@@ -7166,7 +7230,7 @@
     {
       "assetid": "45878462212",
       "classid": "7993044423",
-      "instanceid": "922677142",
+      "instanceid": "915765556",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Minimal Wear)",
