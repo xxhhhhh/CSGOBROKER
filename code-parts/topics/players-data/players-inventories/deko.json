@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f133beae-a158-4fd2-a991-76c1769c0ab5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-13T10:07:40.080Z",
+  "updatedAt": "2026-10-14T08:25:50.332Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 79,
-  "totalItemsGrouped": 79,
+  "totalItemsRaw": 72,
+  "totalItemsGrouped": 72,
   "items": [
     {
       "assetid": "53440362642",
@@ -295,42 +295,6 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "53422969934",
-      "classid": "7993045614",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Nomad Knife | Blue Steel",
-      "market_hash_name": "★ Nomad Knife | Blue Steel (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53455781422",
       "classid": "7993041784",
       "instanceid": "188530139",
@@ -406,6 +370,45 @@
       "phase": "Black Pearl"
     },
     {
+      "assetid": "54032005924",
+      "classid": "7993042405",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Stiletto Knife | Doppler",
+      "market_hash_name": "★ Stiletto Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A4B400521F006DA5BC2EA0843BA78CA294A79C7A641742A7E448A7CCEFD4AC763601F4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.025009330362,
+      "seed": 492,
+      "phase": "Ruby"
+    },
+    {
       "assetid": "53504828575",
       "classid": "7993046920",
       "instanceid": "188530139",
@@ -442,34 +445,6 @@
       ]
     },
     {
-      "assetid": "53504926660",
-      "classid": "7993045264",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Moto Gloves | Smoke Out",
-      "market_hash_name": "★ Moto Gloves | Smoke Out (Well-Worn)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49681160795",
       "classid": "7993043849",
       "instanceid": "480085569",
@@ -478,34 +453,6 @@
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C2D219762B4B7BC3DA68E5E2738CEAC4F2C1FA372F1032C1826FC3AAE0B2C6201B9E43",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54024634793",
-      "classid": "8247099469",
-      "instanceid": "9064996827",
-      "amount": 1,
-      "name": "★ Sport Gloves | Frosty",
-      "market_hash_name": "★ Sport Gloves | Frosty (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1443,14 +1390,14 @@
       ]
     },
     {
-      "assetid": "50943968131",
-      "classid": "8246922509",
-      "instanceid": "188530139",
+      "assetid": "54032005925",
+      "classid": "8637465451",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Minimal Wear)",
+      "name": "Glock-18 | Ghost Protocol",
+      "market_hash_name": "Glock-18 | Ghost Protocol (Factory New)",
       "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAA393D475907BBA2BE9A37B192BC8ABE821D411657B9FA72B9D2F5CAB2DBADC4A6",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1515,164 +1462,12 @@
       ]
     },
     {
-      "assetid": "53166330430",
-      "classid": "7993037658",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "USP-S | The Traitor",
-      "market_hash_name": "USP-S | The Traitor (Minimal Wear)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53917626350",
-      "classid": "7993038767",
-      "instanceid": "7108086798",
-      "amount": 1,
-      "name": "AK-47 | The Empress",
-      "market_hash_name": "AK-47 | The Empress (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "54028047623",
       "classid": "7993051188",
-      "instanceid": "9065769688",
+      "instanceid": "519977179",
       "amount": 1,
       "name": "AK-47 | Wild Lotus",
       "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53336384380",
-      "classid": "7993043394",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | X-Ray",
-      "market_hash_name": "AK-47 | X-Ray (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53440413870",
-      "classid": "7993042492",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A1-S | Welcome to the Jungle",
-      "market_hash_name": "M4A1-S | Welcome to the Jungle (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -1711,42 +1506,6 @@
       "market_hash_name": "AWP | Dragon Lore (Factory New)",
       "type": "Covert Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCC2A080E1064DDC4D5FC04DEF4DAECD8E46E6E1237DF9C11DABED8D4DFCCF9B4C4ACC4B2520676",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53763952549",
-      "classid": "7993039913",
-      "instanceid": "6284183651",
-      "amount": 1,
-      "name": "AWP | Fade",
-      "market_hash_name": "AWP | Fade (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
