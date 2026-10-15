@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e2fdb138-737f-4f85-ae5e-7a746f73cd99",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-18T07:56:28.632Z",
+  "updatedAt": "2026-10-14T08:21:02.761Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 242,
-  "totalItemsGrouped": 233,
+  "totalItemsRaw": 243,
+  "totalItemsGrouped": 234,
   "items": [
     {
       "assetid": "49061986505",
@@ -36,42 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53415981684",
-      "classid": "7993042582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Fade",
-      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -203,7 +167,7 @@
     {
       "assetid": "53436833100",
       "classid": "7993045332",
-      "instanceid": "188531884",
+      "instanceid": "188531599",
       "amount": 1,
       "name": "★ StatTrak™ Karambit | Gamma Doppler",
       "market_hash_name": "★ StatTrak™ Karambit | Gamma Doppler (Factory New)",
@@ -241,6 +205,53 @@
       ],
       "float": 0.032933056355,
       "seed": 735,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "54035125652",
+      "classid": "7993048825",
+      "instanceid": "188530326",
+      "amount": 1,
+      "name": "★ StatTrak™ Skeleton Knife | Doppler",
+      "market_hash_name": "★ StatTrak™ Skeleton Knife | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CEDE5A65346B07CFD643CAEE6DCDE6C8FECDF646170926CD8E35CF86CE9ECAA6FDBEC67992037C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.035625964403,
+      "seed": 251,
       "phase": "Phase 2"
     },
     {
@@ -4378,6 +4389,53 @@
       ]
     },
     {
+      "assetid": "53954882847",
+      "classid": "8711974455",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | Tauson (Gold, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | Tauson (Gold, Ranked) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2048584850F1416848604E784C2A4D404858F6122048384A068ACD1B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53954882847"
+      ]
+    },
+    {
       "assetid": "27659834938",
       "classid": "4975155074",
       "instanceid": "188530139",
@@ -7734,7 +7792,7 @@
     {
       "assetid": "27774692254",
       "classid": "7993041740",
-      "instanceid": "480096523",
+      "instanceid": "480112707",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Minimal Wear)",
@@ -7806,7 +7864,7 @@
     {
       "assetid": "47473213125",
       "classid": "7993038613",
-      "instanceid": "188586121",
+      "instanceid": "188557865",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Ice Cap",
       "market_hash_name": "StatTrak™ Tec-9 | Ice Cap (Field-Tested)",
@@ -7878,7 +7936,7 @@
     {
       "assetid": "40618393899",
       "classid": "7993042691",
-      "instanceid": "188733407",
+      "instanceid": "480086264",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Crypsis",
       "market_hash_name": "StatTrak™ FAMAS | Crypsis (Minimal Wear)",

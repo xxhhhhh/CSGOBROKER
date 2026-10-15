@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5c8ae60b-45a1-4991-8b6c-8e8adb2c9fc1",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:38:00.688Z",
+  "updatedAt": "2026-10-15T08:44:50.099Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 702,
-  "totalItemsGrouped": 272,
+  "totalItemsRaw": 714,
+  "totalItemsGrouped": 274,
   "items": [
     {
       "assetid": "51437160079",
@@ -143,6 +143,34 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54049090297",
+      "classid": "7993039230",
+      "instanceid": "9071704341",
+      "amount": 1,
+      "name": "★ Hand Wraps | Leather",
+      "market_hash_name": "★ Hand Wraps | Leather (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -2927,30 +2955,6 @@
       ]
     },
     {
-      "assetid": "43706969825",
-      "classid": "914869806",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "StatTrak™ Swap Tool",
-      "market_hash_name": "StatTrak™ Swap Tool",
-      "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205B4B5B43F7517B5B735A6B5F335B2B597CB9F975",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "37027644309",
       "classid": "7993039377",
       "instanceid": "6276551046",
@@ -4590,6 +4594,55 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53936523300",
+      "classid": "8711968515",
+      "instanceid": "143865972",
+      "amount": 3,
+      "name": "Sticker | z4KR (Gold, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | z4KR (Gold, Ranked) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209C8C9C842595BC9CB49AAC98FE99949C8C62C7F49CEC9E8D12A096",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53936523300",
+        "53936523299",
+        "53936523298"
       ]
     },
     {
@@ -8370,6 +8423,61 @@
       ]
     },
     {
+      "assetid": "53936526861",
+      "classid": "8490971641",
+      "instanceid": "143865972",
+      "amount": 9,
+      "name": "Sticker | z4KR (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | z4KR (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E0F0E0F859E9C0E0C8E4D0E482E5E8E0F00FB688E090E200EEA553",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53936526861",
+        "53936526860",
+        "53936526859",
+        "53936526858",
+        "53936526857",
+        "53936526856",
+        "53936526855",
+        "53936526854",
+        "53936526853"
+      ]
+    },
+    {
       "assetid": "43995184106",
       "classid": "5799819856",
       "instanceid": "188530139",
@@ -9071,7 +9179,7 @@
     {
       "assetid": "49888564578",
       "classid": "7993039467",
-      "instanceid": "9071991838",
+      "instanceid": "9100168490",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Conspiracy",
       "market_hash_name": "StatTrak™ Desert Eagle | Conspiracy (Factory New)",
@@ -9119,7 +9227,7 @@
     {
       "assetid": "37081153801",
       "classid": "7993043266",
-      "instanceid": "9071569876",
+      "instanceid": "9101330611",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Minimal Wear)",
@@ -9275,7 +9383,7 @@
     {
       "assetid": "16418284830",
       "classid": "7993045262",
-      "instanceid": "480124372",
+      "instanceid": "480096839",
       "amount": 1,
       "name": "StatTrak™ P250 | See Ya Later",
       "market_hash_name": "StatTrak™ P250 | See Ya Later (Factory New)",
@@ -9311,7 +9419,7 @@
     {
       "assetid": "49888590193",
       "classid": "7993042872",
-      "instanceid": "9071991837",
+      "instanceid": "9101330608",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -9367,7 +9475,7 @@
     {
       "assetid": "44003955132",
       "classid": "7993042053",
-      "instanceid": "9071991839",
+      "instanceid": "9101330609",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Inheritance",
       "market_hash_name": "StatTrak™ AK-47 | Inheritance (Factory New)",
@@ -9449,9 +9557,9 @@
       ]
     },
     {
-      "assetid": "53951944386",
+      "assetid": "54159220776",
       "classid": "7993040263",
-      "instanceid": "9072065551",
+      "instanceid": "8506451090",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Field-Tested)",
@@ -9497,9 +9605,9 @@
       ]
     },
     {
-      "assetid": "53951944387",
+      "assetid": "54159220775",
       "classid": "7993039362",
-      "instanceid": "7508174840",
+      "instanceid": "9101330606",
       "amount": 1,
       "name": "StatTrak™ AWP | Printstream",
       "market_hash_name": "StatTrak™ AWP | Printstream (Factory New)",
@@ -9547,7 +9655,7 @@
     {
       "assetid": "18837961724",
       "classid": "7993045900",
-      "instanceid": "947126762",
+      "instanceid": "956615328",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Blood in the Water",
       "market_hash_name": "StatTrak™ SSG 08 | Blood in the Water (Factory New)",
@@ -9610,7 +9718,7 @@
     {
       "assetid": "19038235442",
       "classid": "2076474638",
-      "instanceid": "480086950",
+      "instanceid": "480093413",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Neck Deep, Life's Not Out To Get You",
       "market_hash_name": "StatTrak™ Music Kit | Neck Deep, Life's Not Out To Get You",

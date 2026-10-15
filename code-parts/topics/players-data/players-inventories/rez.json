@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/86a88e1b-4b9a-4cc0-908f-0ab2dd73268a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T09:57:43.452Z",
+  "updatedAt": "2026-10-13T10:02:54.723Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 473,
-  "totalItemsGrouped": 440,
+  "totalItemsRaw": 470,
+  "totalItemsGrouped": 442,
   "items": [
     {
       "assetid": "42038255766",
@@ -994,6 +994,34 @@
     },
     {
       "assetid": "45888704112",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54144853466",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -8620,14 +8648,14 @@
       ]
     },
     {
-      "assetid": "51829004438",
+      "assetid": "51829004436",
       "classid": "8490840481",
       "instanceid": "143865972",
-      "amount": 4,
+      "amount": 1,
       "name": "Sticker | REZ | Cologne 2026",
       "market_hash_name": "Sticker | REZ | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201C0C1C04A5153C1C341F2C187E19141C0CF648741C6C1E5CD82519",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2001110119B8082101290231056304090111EB55690171030E67608F",
       "tags": [
         {
           "category": "Type",
@@ -8663,10 +8691,7 @@
         }
       ],
       "assetids": [
-        "51829004438",
-        "51829004437",
-        "51829004436",
-        "51829004435"
+        "51829004436"
       ]
     },
     {
@@ -9332,6 +9357,42 @@
       "market_hash_name": "MP7 | Astrolabe (Minimal Wear)",
       "type": "Industrial Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2EB18E99C8943F261F1E9239163C0E3A06EA98F6CE3D7EE43A56CA3F4E2993CE7471",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54144853467",
+      "classid": "7993060420",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP7 | Coral Paisley",
+      "market_hash_name": "MP7 | Coral Paisley (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -11354,14 +11415,14 @@
       ]
     },
     {
-      "assetid": "51829004441",
+      "assetid": "53954564589",
       "classid": "8490840483",
       "instanceid": "143865972",
-      "amount": 3,
+      "amount": 1,
       "name": "Sticker | REZ (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | REZ (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209383938B2A9AB393BB97A397F1969B938378C7FB93E391F09CAE7D",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E6F6E6FE5FEFC6E6CEE2D6E284E3EEE6F60DB28EE696E475984551",
       "tags": [
         {
           "category": "Type",
@@ -11397,9 +11458,7 @@
         }
       ],
       "assetids": [
-        "51829004441",
-        "51829004440",
-        "51829004439"
+        "53954564589"
       ]
     },
     {
@@ -14071,7 +14130,7 @@
     {
       "assetid": "15474345050",
       "classid": "7993042369",
-      "instanceid": "9069738266",
+      "instanceid": "9083936482",
       "amount": 1,
       "name": "StatTrak™ AUG | Stymphalian",
       "market_hash_name": "StatTrak™ AUG | Stymphalian (Minimal Wear)",
@@ -14155,7 +14214,7 @@
     {
       "assetid": "16231708876",
       "classid": "7993036615",
-      "instanceid": "188530810",
+      "instanceid": "480086721",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Flame Test",
       "market_hash_name": "StatTrak™ Five-SeveN | Flame Test (Field-Tested)",

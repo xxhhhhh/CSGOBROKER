@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/81c00116-0f95-4fb5-9e22-e1132f38ebab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T10:34:04.360Z",
+  "updatedAt": "2026-10-15T08:34:13.567Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 97,
-  "totalItemsGrouped": 95,
+  "totalItemsRaw": 107,
+  "totalItemsGrouped": 105,
   "items": [
     {
       "assetid": "52462525459",
@@ -27,6 +27,77 @@
       "amount": 1,
       "name": "★ Butterfly Knife | Fade",
       "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54028860455",
+      "classid": "7993041144",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204F5FE8B7B4ED864E57B44C6FF44B67497F4C778FC6B8AF4C0F9649277A3F47A8224270",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.009629428387,
+      "seed": 857,
+      "phase": "Phase 3"
+    },
+    {
+      "assetid": "53953787100",
+      "classid": "7993038418",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Kukri Knife | Case Hardened",
+      "market_hash_name": "★ Kukri Knife | Case Hardened (Field-Tested)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -135,17 +206,25 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "53340009497",
-      "classid": "7993037136",
+      "assetid": "53953787101",
+      "classid": "7993044068",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Driver Gloves | King Snake",
-      "market_hash_name": "★ Driver Gloves | King Snake (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
+      "name": "★ Nomad Knife | Doppler",
+      "market_hash_name": "★ Nomad Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E02D19650F38F1E879F4D050F3D8F6C0F3C803386015F3B009F398C980F80C0CE3C5",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -160,7 +239,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.020036911592,
+      "seed": 505,
+      "phase": "Sapphire"
     },
     {
       "assetid": "50103756084",
@@ -199,6 +281,34 @@
       "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB41241B575FDAC37DFCFB6E95F3DDEBD8E34207692FD89BBCB3CEABD300E08F4F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54043662070",
+      "classid": "8246944780",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -378,6 +488,138 @@
       ]
     },
     {
+      "assetid": "53953787098",
+      "classid": "7993037579",
+      "instanceid": "6276562404",
+      "amount": 1,
+      "name": "P250 | Asiimov",
+      "market_hash_name": "P250 | Asiimov (Field-Tested)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53953787099",
+      "classid": "7993036791",
+      "instanceid": "6276439280",
+      "amount": 1,
+      "name": "FAMAS | Mecha Industries",
+      "market_hash_name": "FAMAS | Mecha Industries (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54015207706",
+      "classid": "7993036056",
+      "instanceid": "6276841262",
+      "amount": 1,
+      "name": "Galil AR | Eco",
+      "market_hash_name": "Galil AR | Eco (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53753370343",
       "classid": "7993038185",
       "instanceid": "6287123143",
@@ -421,6 +663,50 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54030482692",
+      "classid": "7993037836",
+      "instanceid": "6276713023",
+      "amount": 1,
+      "name": "M4A4 | Desolate Space",
+      "market_hash_name": "M4A4 | Desolate Space (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         },
         {
@@ -650,50 +936,6 @@
       ]
     },
     {
-      "assetid": "53743446201",
-      "classid": "8637416238",
-      "instanceid": "6555628074",
-      "amount": 1,
-      "name": "AK-47 | Consequence of the Jinn",
-      "market_hash_name": "AK-47 | Consequence of the Jinn (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52955634288",
       "classid": "7993047485",
       "instanceid": "7755435054",
@@ -769,6 +1011,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53953787102",
+      "classid": "7993036534",
+      "instanceid": "6276772001",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1959,6 +2245,42 @@
       ]
     },
     {
+      "assetid": "53953787097",
+      "classid": "7993037843",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MAC-10 | Fade",
+      "market_hash_name": "MAC-10 | Fade (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "23178326872",
       "classid": "7993036651",
       "instanceid": "188530139",
@@ -2194,6 +2516,70 @@
       ]
     },
     {
+      "assetid": "53953787095",
+      "classid": "241604430",
+      "instanceid": "7755435061",
+      "amount": 1,
+      "name": "Tec-9 | Red Quartz",
+      "market_hash_name": "Tec-9 | Red Quartz (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "40455274656",
       "classid": "7993038208",
       "instanceid": "519977179",
@@ -2417,6 +2803,58 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53953787096",
+      "classid": "7993044386",
+      "instanceid": "7628562881",
+      "amount": 1,
+      "name": "Souvenir CZ75-Auto | Chalice",
+      "market_hash_name": "Souvenir CZ75-Auto | Chalice (Factory New)",
+      "type": "Souvenir Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2648,7 +3086,7 @@
     {
       "assetid": "43587293120",
       "classid": "7993041773",
-      "instanceid": "1095883975",
+      "instanceid": "1113184236",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",

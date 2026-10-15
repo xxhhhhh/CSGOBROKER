@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/ae6f1503-1de9-4b9b-9a29-f1b9de916870",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T10:08:25.949Z",
+  "updatedAt": "2026-10-09T10:08:56.947Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 87,
-  "totalItemsGrouped": 87,
+  "totalItemsRaw": 92,
+  "totalItemsGrouped": 91,
   "items": [
     {
       "assetid": "53014483240",
@@ -87,41 +87,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "50319416755",
-      "classid": "7993043455",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204D5DFEF6D8F7F64C55B64E6DF549654B7D4E75A0CFA2AD4E0D3825653D45822E2DC1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.009506565519,
-      "seed": 117,
-      "phase": "Emerald"
     },
     {
       "assetid": "53909187240",
@@ -373,6 +338,49 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53962032094",
+      "classid": "7993043109",
+      "instanceid": "188530611",
+      "amount": 1,
+      "name": "★ StatTrak™ M9 Bayonet | Doppler",
+      "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201B0BC59C9698D21A03E7183B8418331D2B1823AE98F6F8185B6C531B4B1773236B13CE46FEBB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.015335489996,
+      "seed": 119,
+      "phase": "Ruby"
     },
     {
       "assetid": "51160981472",
@@ -881,6 +889,53 @@
       ],
       "assetids": [
         "48024977899"
+      ]
+    },
+    {
+      "assetid": "53936425854",
+      "classid": "8711924962",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | donk (Holo, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | donk (Holo, Ranked) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208696869E3F8FA686AE83B682E4838E869657DFEE86F6842F351F2D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53936425854"
       ]
     },
     {
@@ -1549,6 +1604,101 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53936432612",
+      "classid": "8712126931",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | jabbi (Gold, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | jabbi (Gold, Ranked) | Cologne 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20908090882999B090B896A094F29598908077C9F890E092D4235998",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53936432612",
+        "53936432611"
+      ]
+    },
+    {
+      "assetid": "47780455605",
+      "classid": "7729122915",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | MAJ3R (Gold) | Budapest 2025",
+      "market_hash_name": "Sticker | MAJ3R (Gold) | Budapest 2025",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F5E5F5ED4CFCD5F5DDF3C5F197F0FDF5E528B99DF585FD3A3282C5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "47780455605"
       ]
     },
     {
@@ -2392,7 +2542,7 @@
     {
       "assetid": "54028393925",
       "classid": "7993038472",
-      "instanceid": "9070570961",
+      "instanceid": "9097832721",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -2460,7 +2610,7 @@
     {
       "assetid": "52752754981",
       "classid": "7993038769",
-      "instanceid": "9056197746",
+      "instanceid": "9102047495",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Minimal Wear)",
@@ -2574,9 +2724,57 @@
       ]
     },
     {
+      "assetid": "53936435897",
+      "classid": "7993036413",
+      "instanceid": "9081654938",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Printstream",
+      "market_hash_name": "StatTrak™ AWP | Printstream (Field-Tested)",
+      "type": "StatTrak™ Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53014490492",
       "classid": "7993039316",
-      "instanceid": "188532375",
+      "instanceid": "188533629",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Rocket Pop",
       "market_hash_name": "StatTrak™ Galil AR | Rocket Pop (Factory New)",
@@ -2802,9 +3000,9 @@
       ]
     },
     {
-      "assetid": "39827801140",
+      "assetid": "54062989993",
       "classid": "5835568404",
-      "instanceid": "6276306484",
+      "instanceid": "9076032771",
       "amount": 1,
       "name": "C4 Explosive",
       "market_hash_name": "C4 Explosive",
@@ -2829,6 +3027,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

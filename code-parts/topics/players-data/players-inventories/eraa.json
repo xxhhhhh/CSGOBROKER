@@ -7,18 +7,16 @@
   "name": "Sean Knutsson",
   "nationality": "Sweden",
   "born": "12.08.2001",
-  "isContentCreator": false,
   "twitch": "eraab0b",
   "faceit": "https://faceitdb.com/profile/faceit/aa479f4d-cefa-4bee-a1fa-8d2c9ed5d092",
-  "appid": 730,
-  "contextid": "2",
-  "updatedAt": "2026-10-05T10:23:19.618Z",
-  "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
-  "totalItemsRaw": 82,
-  "totalItemsGrouped": 81,
+  "isContentCreator": false,
+  "updatedAt": "2026-10-08T10:19:55.860Z",
+  "fetchOk": false,
+  "fetchStatus": 403,
+  "fetchError": "Inventory is private or unavailable",
+  "inventoryVisible": false,
+  "totalItemsRaw": 80,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "52658881615",
@@ -90,41 +88,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "53485110510",
-      "classid": "7993036088",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202D3DC3A4F5B2EA2C35D62E0D882E052B1D2E15D8FBC1F22E6D962A453F5D25C2B993C7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.007665092591,
-      "seed": 955,
-      "phase": "Phase 4"
     },
     {
       "assetid": "53682094613",
@@ -223,6 +186,34 @@
       ]
     },
     {
+      "assetid": "53927676356",
+      "classid": "7993036899",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48790133896",
       "classid": "7993042027",
       "instanceid": "188530139",
@@ -253,7 +244,7 @@
     {
       "assetid": "53094206449",
       "classid": "7993039794",
-      "instanceid": "188532426",
+      "instanceid": "188532451",
       "amount": 1,
       "name": "★ StatTrak™ Butterfly Knife | Marble Fade",
       "market_hash_name": "★ StatTrak™ Butterfly Knife | Marble Fade (Factory New)",
@@ -773,50 +764,6 @@
       ]
     },
     {
-      "assetid": "53818556936",
-      "classid": "7993036942",
-      "instanceid": "6276579539",
-      "amount": 1,
-      "name": "USP-S | Printstream",
-      "market_hash_name": "USP-S | Printstream (Factory New)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53614749374",
       "classid": "202111975",
       "instanceid": "6367616677",
@@ -892,50 +839,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53914916978",
-      "classid": "7993035494",
-      "instanceid": "9061368071",
-      "amount": 1,
-      "name": "M4A1-S | Printstream",
-      "market_hash_name": "M4A1-S | Printstream (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2044,7 +1947,7 @@
     {
       "assetid": "51049023471",
       "classid": "7993039979",
-      "instanceid": "6302309049",
+      "instanceid": "6320708790",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Shinobu",
       "market_hash_name": "StatTrak™ Glock-18 | Shinobu (Well-Worn)",
@@ -2224,7 +2127,7 @@
     {
       "assetid": "52938656309",
       "classid": "8247005394",
-      "instanceid": "7631019082",
+      "instanceid": "7613540660",
       "amount": 1,
       "name": "StatTrak™ AWP | Queen's Gambit",
       "market_hash_name": "StatTrak™ AWP | Queen's Gambit (Minimal Wear)",
@@ -2323,7 +2226,7 @@
     {
       "assetid": "30578072671",
       "classid": "7993039475",
-      "instanceid": "6289554900",
+      "instanceid": "6277308416",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Capillary",
       "market_hash_name": "StatTrak™ Five-SeveN | Capillary (Minimal Wear)",
@@ -2771,7 +2674,7 @@
     {
       "assetid": "40978426762",
       "classid": "7993039060",
-      "instanceid": "7181629874",
+      "instanceid": "9079498747",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Re-Entry",
       "market_hash_name": "StatTrak™ Tec-9 | Re-Entry (Field-Tested)",
@@ -2815,7 +2718,7 @@
     {
       "assetid": "44260801730",
       "classid": "7993039771",
-      "instanceid": "9018604781",
+      "instanceid": "9079498746",
       "amount": 1,
       "name": "StatTrak™ USP-S | Ticket to Hell",
       "market_hash_name": "StatTrak™ USP-S | Ticket to Hell (Factory New)",
@@ -3047,7 +2950,7 @@
     {
       "assetid": "22621438904",
       "classid": "7993038202",
-      "instanceid": "8304000841",
+      "instanceid": "6552937071",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Factory New)",

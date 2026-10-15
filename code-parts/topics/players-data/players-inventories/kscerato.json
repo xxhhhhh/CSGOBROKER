@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c365e0fe-ae29-41d7-b331-ed8904e32d2b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-30T09:18:17.245Z",
+  "updatedAt": "2026-10-13T10:05:36.753Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 40,
-  "totalItemsGrouped": 39,
+  "totalItemsRaw": 38,
+  "totalItemsGrouped": 37,
   "items": [
     {
       "assetid": "53014686470",
@@ -57,6 +57,41 @@
       ],
       "float": 0.028215060011,
       "seed": 125,
+      "phase": "Emerald"
+    },
+    {
+      "assetid": "53971392169",
+      "classid": "7993044870",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7AC3C7A2EDA36B7296694AD26E426C5A69528195EB82692AF56F024B1A6239C88348",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.031371992081,
+      "seed": 671,
       "phase": "Emerald"
     },
     {
@@ -147,13 +182,13 @@
       ]
     },
     {
-      "assetid": "39152793822",
-      "classid": "202170645",
-      "instanceid": "6288102677",
+      "assetid": "53971392171",
+      "classid": "7993037248",
+      "instanceid": "9042696162",
       "amount": 1,
-      "name": "Desert Eagle | Golden Koi",
-      "market_hash_name": "Desert Eagle | Golden Koi (Factory New)",
-      "type": "Covert Pistol",
+      "name": "M4A1-S | Hot Rod",
+      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
+      "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -191,13 +226,57 @@
       ]
     },
     {
-      "assetid": "50749654996",
-      "classid": "8247101744",
-      "instanceid": "188530139",
+      "assetid": "53971392170",
+      "classid": "8637428032",
+      "instanceid": "9029518188",
       "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Factory New)",
-      "type": "Covert Pistol",
+      "name": "AK-47 | Consequence of the Jinn",
+      "market_hash_name": "AK-47 | Consequence of the Jinn (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "46467863828",
+      "classid": "7993037614",
+      "instanceid": "6276301669",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Battle-Scarred)",
+      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -874,13 +953,13 @@
       ]
     },
     {
-      "assetid": "48642006172",
-      "classid": "241608185",
-      "instanceid": "6276586489",
+      "assetid": "39461217121",
+      "classid": "241580826",
+      "instanceid": "6345360371",
       "amount": 1,
-      "name": "MP9 | Hot Rod",
-      "market_hash_name": "MP9 | Hot Rod (Factory New)",
-      "type": "Mil-Spec Grade SMG",
+      "name": "Glock-18 | Candy Apple",
+      "market_hash_name": "Glock-18 | Candy Apple (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -906,77 +985,25 @@
         {
           "category": "Exterior",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "44608363187",
-      "classid": "7993038304",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Dual Berettas | Sweet Little Angels",
-      "market_hash_name": "Dual Berettas | Sweet Little Angels (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
+        },
         {
-          "category": "Type",
+          "category": "Tournament",
           "name": ""
         },
         {
-          "category": "Weapon",
+          "category": "Tournament",
           "name": ""
         },
         {
-          "category": "ItemSet",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "Quality",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53014686471",
-      "classid": "7993044046",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Five-SeveN | Neon Kimono",
-      "market_hash_name": "Five-SeveN | Neon Kimono (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1042,13 +1069,13 @@
       ]
     },
     {
-      "assetid": "27408333902",
-      "classid": "7993045974",
-      "instanceid": "7628575103",
+      "assetid": "44345001612",
+      "classid": "7993038824",
+      "instanceid": "9098257013",
       "amount": 1,
-      "name": "Souvenir Tec-9 | Brass",
-      "market_hash_name": "Souvenir Tec-9 | Brass (Field-Tested)",
-      "type": "Souvenir Mil-Spec Grade Pistol",
+      "name": "StatTrak™ Tec-9 | Isaac",
+      "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -1081,110 +1108,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "18694600037",
-      "classid": "7993040848",
-      "instanceid": "8295517259",
-      "amount": 1,
-      "name": "StatTrak™ Galil AR | Eco",
-      "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
-      "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51764827425",
-      "classid": "7993042570",
-      "instanceid": "9067367757",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Kill Confirmed",
-      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {

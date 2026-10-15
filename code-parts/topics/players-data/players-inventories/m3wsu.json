@@ -12,23 +12,23 @@
   "faceit": "https://faceitdb.com/profile/faceit/0372e659-5677-4481-aff7-496d2596e5cf",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-04T10:08:25.950Z",
+  "updatedAt": "2026-10-15T08:49:03.102Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 795,
-  "totalItemsGrouped": 557,
+  "totalItemsRaw": 793,
+  "totalItemsGrouped": 555,
   "items": [
     {
-      "assetid": "53867091670",
-      "classid": "7993047043",
-      "instanceid": "188530139",
+      "assetid": "53961936732",
+      "classid": "7993040883",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Butterfly Knife | Doppler",
       "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208191572C6B544980990285A16885A987B182B9435D256482C10982E90183F189E63A6D5F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202232FEBCA5A1EB233AA12602BD210A2412211AF6DEB4C62162EE254AA220522606A4C1BC",
       "tags": [
         {
           "category": "Type",
@@ -55,9 +55,9 @@
           "name": ""
         }
       ],
-      "float": 0.020651940256,
-      "seed": 392,
-      "phase": "Black Pearl"
+      "float": 0.016326107085,
+      "seed": 972,
+      "phase": "Ruby"
     },
     {
       "assetid": "52380597759",
@@ -133,6 +133,45 @@
       "float": 0.06968562305,
       "seed": 815,
       "phase": "Phase 3"
+    },
+    {
+      "assetid": "54013933648",
+      "classid": "7993040007",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207F6FAF8F93E4B67E67FC7B5FC77B57794F7C47B088B79E7C3F827A17F87E0F7B0BD0A821",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.010878517292,
+      "seed": 765,
+      "phase": "Emerald"
     },
     {
       "assetid": "49729511155",
@@ -406,41 +445,6 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "53550718490",
-      "classid": "7993040914",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2096860C2A6A2851978E6A95B63495BE90A695AE4B09277E95D60092FE1694E6927ECD1F48",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.03425585106,
-      "seed": 534,
-      "phase": "Phase 1"
-    },
-    {
       "assetid": "52128437588",
       "classid": "7993040008",
       "instanceid": "480085569",
@@ -471,41 +475,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "51969758893",
-      "classid": "7993040441",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B8A81515367579B9A044BB9802BC90BE88BB800A3D1451BBF811B9D038BAC8BCC16D5426",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.041750617325,
-      "seed": 169,
-      "phase": "Phase 2"
     },
     {
       "assetid": "52149417199",
@@ -545,78 +514,6 @@
       "float": 0.032679393888,
       "seed": 348,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "53187891003",
-      "classid": "7993038874",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Paracord Knife | Rust Coat",
-      "market_hash_name": "★ Paracord Knife | Rust Coat (Battle-Scarred)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53187892378",
-      "classid": "7993038874",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Paracord Knife | Rust Coat",
-      "market_hash_name": "★ Paracord Knife | Rust Coat (Battle-Scarred)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "49219374948",
@@ -10508,9 +10405,9 @@
       ]
     },
     {
-      "assetid": "53873578675",
+      "assetid": "54090056359",
       "classid": "7993036601",
-      "instanceid": "6276299646",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "M4A4 | Howl",
       "market_hash_name": "M4A4 | Howl (Factory New)",
@@ -11191,6 +11088,42 @@
       ]
     },
     {
+      "assetid": "54134361088",
+      "classid": "7993051188",
+      "instanceid": "6276300776",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "52925763301",
       "classid": "7993043394",
       "instanceid": "6276311393",
@@ -11462,6 +11395,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53939942121",
+      "classid": "7993044593",
+      "instanceid": "6283515132",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -18932,54 +18909,6 @@
       ]
     },
     {
-      "assetid": "50828769010",
-      "classid": "7993044748",
-      "instanceid": "6279588823",
-      "amount": 1,
-      "name": "Souvenir AK-47 | Gold Arabesque",
-      "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Battle-Scarred)",
-      "type": "Souvenir Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242A0BFD7FFEF534A5572CB557A54625E6A85BCECAB5112C4553AD250225AF053455A5242586FC2015813179EC36B6D1F51C0581202F4D951592DA9ED",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53872793409",
       "classid": "7993045333",
       "instanceid": "7641791701",
@@ -19218,7 +19147,7 @@
     {
       "assetid": "48731477883",
       "classid": "7993044642",
-      "instanceid": "903947285",
+      "instanceid": "903830332",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Factory New)",
@@ -19326,7 +19255,7 @@
     {
       "assetid": "38805962525",
       "classid": "7993044012",
-      "instanceid": "902847886",
+      "instanceid": "904221232",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Commemoration",
       "market_hash_name": "StatTrak™ FAMAS | Commemoration (Field-Tested)",

@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/9ffb20d8-d103-42f8-b31c-4537e7586fe4",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T10:12:36.803Z",
+  "updatedAt": "2026-10-13T10:18:27.457Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 425,
-  "totalItemsGrouped": 314,
+  "totalItemsRaw": 429,
+  "totalItemsGrouped": 318,
   "items": [
+    {
+      "assetid": "54008370209",
+      "classid": "7993043455",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208797262F1E1E4E869F7C84A73F83AF81B784BF1D005B6384C75785EF0685F78F424A9999",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.018434334546,
+      "seed": 336,
+      "phase": "Emerald"
+    },
     {
       "assetid": "53687525590",
       "classid": "7993042847",
@@ -78,6 +113,37 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54145659620",
+      "classid": "1989271717",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Tilt (Brick Red)",
+      "market_hash_name": "Graffiti | Tilt (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECEDEC61BD4FEDEF6DFEEDABCD9D6DECE76D3EEDFB6DEAEC63C52354C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54145659620"
       ]
     },
     {
@@ -326,37 +392,6 @@
       ],
       "assetids": [
         "38903735945"
-      ]
-    },
-    {
-      "assetid": "53870447785",
-      "classid": "1989304997",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Tilt (Brick Red)",
-      "market_hash_name": "Sealed Graffiti | Tilt (Brick Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202D3D2D35E9270D2D052C1D294F2A252D3D85201D2C452D5D35EE4FE192",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53870447785"
       ]
     },
     {
@@ -2842,6 +2877,37 @@
       ]
     },
     {
+      "assetid": "54007765543",
+      "classid": "7545311092",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Whittle Guy",
+      "market_hash_name": "Charm | Whittle Guy",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54007765543"
+      ]
+    },
+    {
       "assetid": "39827206026",
       "classid": "6216346414",
       "instanceid": "519977179",
@@ -5307,6 +5373,37 @@
       ]
     },
     {
+      "assetid": "53964563230",
+      "classid": "7545310457",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Sent With Love",
+      "market_hash_name": "Sticker | Sent With Love",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2019091901A0103919311A291D7B1C111909ED507119690EAE9034B0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53964563230"
+      ]
+    },
+    {
       "assetid": "47765082033",
       "classid": "7729094821",
       "instanceid": "188530139",
@@ -6197,6 +6294,42 @@
       "amount": 1,
       "name": "MP5-SD | Neon Squeezer",
       "market_hash_name": "MP5-SD | Neon Squeezer (Battle-Scarred)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53964561434",
+      "classid": "7993036050",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "P90 | Wash me",
+      "market_hash_name": "P90 | Wash me (Field-Tested)",
       "type": "Industrial Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -12412,7 +12545,7 @@
     {
       "assetid": "18662583604",
       "classid": "7993042985",
-      "instanceid": "480132841",
+      "instanceid": "480094023",
       "amount": 1,
       "name": "StatTrak™ P250 | Muertos",
       "market_hash_name": "StatTrak™ P250 | Muertos (Field-Tested)",
@@ -12448,7 +12581,7 @@
     {
       "assetid": "43750522386",
       "classid": "7993045267",
-      "instanceid": "8942481443",
+      "instanceid": "9089317548",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Factory New)",
@@ -12496,7 +12629,7 @@
     {
       "assetid": "52191672347",
       "classid": "8247164066",
-      "instanceid": "9071098797",
+      "instanceid": "9102511787",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Minimal Wear)",
@@ -12544,7 +12677,7 @@
     {
       "assetid": "36877795651",
       "classid": "7993042201",
-      "instanceid": "9056891348",
+      "instanceid": "9095673946",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Well-Worn)",
@@ -12810,7 +12943,7 @@
     {
       "assetid": "40011910471",
       "classid": "7993040548",
-      "instanceid": "6299634050",
+      "instanceid": "6286683821",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Hydro Strike",
       "market_hash_name": "StatTrak™ Dual Berettas | Hydro Strike (Factory New)",

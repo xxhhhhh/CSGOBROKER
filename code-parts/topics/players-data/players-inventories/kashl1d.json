@@ -12,50 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/2a82893f-3a7e-4458-9141-0b19673fa049",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-05T10:44:36.963Z",
+  "updatedAt": "2026-10-13T10:50:13.016Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 225,
+  "totalItemsRaw": 227,
   "totalItemsGrouped": 215,
   "items": [
-    {
-      "assetid": "52366958210",
-      "classid": "7993040030",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Crimson Web",
-      "market_hash_name": "★ Butterfly Knife | Crimson Web (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "48793189529",
       "classid": "7993040869",
@@ -184,34 +148,6 @@
       ]
     },
     {
-      "assetid": "49595945919",
-      "classid": "7993037104",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53731557558",
       "classid": "6918191812",
       "instanceid": "519977179",
@@ -241,34 +177,6 @@
     },
     {
       "assetid": "53731557559",
-      "classid": "6918191812",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Fever Case",
-      "market_hash_name": "Fever Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53731557560",
       "classid": "6918191812",
       "instanceid": "519977179",
       "amount": 1,
@@ -330,6 +238,34 @@
       "amount": 1,
       "name": "Fever Case",
       "market_hash_name": "Fever Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54141703213",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -3894,6 +3830,55 @@
       ]
     },
     {
+      "assetid": "53959804425",
+      "classid": "8490923123",
+      "instanceid": "143865972",
+      "amount": 3,
+      "name": "Sticker | w0nderful | Cologne 2026",
+      "market_hash_name": "Sticker | w0nderful | Cologne 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203525352D8C3C15351D36053157303D35258F675D3545373BC4E10B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53959804425",
+        "53959804424",
+        "53959804423"
+      ]
+    },
+    {
       "assetid": "53900308275",
       "classid": "7993036703",
       "instanceid": "519977179",
@@ -3936,6 +3921,42 @@
       "amount": 1,
       "name": "Five-SeveN | Orange Peel",
       "market_hash_name": "Five-SeveN | Orange Peel (Battle-Scarred)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54141703214",
+      "classid": "7993035801",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Five-SeveN | Sky Blue",
+      "market_hash_name": "Five-SeveN | Sky Blue (Factory New)",
       "type": "Industrial Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -6793,7 +6814,7 @@
     {
       "assetid": "51901486195",
       "classid": "7993041807",
-      "instanceid": "8026241197",
+      "instanceid": "7375522668",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Minimal Wear)",
@@ -7101,7 +7122,7 @@
     {
       "assetid": "32525746780",
       "classid": "7993038824",
-      "instanceid": "480088571",
+      "instanceid": "480107034",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",
@@ -7173,7 +7194,7 @@
     {
       "assetid": "51472198657",
       "classid": "7993038086",
-      "instanceid": "188530305",
+      "instanceid": "188530326",
       "amount": 1,
       "name": "StatTrak™ MP5-SD | Necro Jr.",
       "market_hash_name": "StatTrak™ MP5-SD | Necro Jr. (Minimal Wear)",
@@ -7209,7 +7230,7 @@
     {
       "assetid": "45878462212",
       "classid": "7993044423",
-      "instanceid": "925355643",
+      "instanceid": "913138048",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Crimson Web",
       "market_hash_name": "StatTrak™ Desert Eagle | Crimson Web (Minimal Wear)",

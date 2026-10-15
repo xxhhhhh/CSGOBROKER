@@ -7,19 +7,56 @@
   "name": "Liam Tügel",
   "nationality": "Sweden",
   "born": "30.05.2009",
-  "isContentCreator": false,
   "twitch": "mail09cs",
   "faceit": "https://faceitdb.com/profile/faceit/7dbf107a-1199-4932-823e-e38ccc46288e",
-  "appid": 730,
-  "contextid": "2",
-  "updatedAt": "2026-10-05T10:23:21.398Z",
-  "inventoryVisible": true,
-  "fetchOk": true,
-  "fetchStatus": 200,
-  "fetchError": "",
-  "totalItemsRaw": 199,
-  "totalItemsGrouped": 189,
+  "isContentCreator": false,
+  "updatedAt": "2026-10-14T08:46:57.189Z",
+  "fetchOk": false,
+  "fetchStatus": 403,
+  "fetchError": "Inventory is private or unavailable",
+  "inventoryVisible": false,
+  "totalItemsRaw": 201,
+  "totalItemsGrouped": 191,
   "items": [
+    {
+      "assetid": "53999948352",
+      "classid": "7993040524",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208F9F4F2B181A468E970C8BAF648BA789BF8CB76116776A8CCF558BE787FF8B5AC7F576",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.02319952473,
+      "seed": 602,
+      "phase": "Sapphire"
+    },
     {
       "assetid": "52756503113",
       "classid": "7993041446",
@@ -54,41 +91,6 @@
       "float": 0.017249664292,
       "seed": 19,
       "phase": "Phase 1"
-    },
-    {
-      "assetid": "53822065625",
-      "classid": "7993045582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6AA3EDD4BAB27B6286795AE579527C4A7942ACE1D49A793A8279122A0A72E548D389",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.008517703041,
-      "seed": 504,
-      "phase": "Ruby"
     },
     {
       "assetid": "52150546999",
@@ -1080,9 +1082,9 @@
       ]
     },
     {
-      "assetid": "52159519685",
+      "assetid": "54085604036",
       "classid": "7993038185",
-      "instanceid": "8537164454",
+      "instanceid": "6276645576",
       "amount": 1,
       "name": "M4A1-S | Blue Phosphor",
       "market_hash_name": "M4A1-S | Blue Phosphor (Factory New)",
@@ -1118,19 +1120,7 @@
           "name": ""
         },
         {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {
@@ -1263,6 +1253,42 @@
       "name": "M249 | Sleet",
       "market_hash_name": "M249 | Sleet (Field-Tested)",
       "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54003006738",
+      "classid": "7993059686",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "CZ75-Auto | Honey Paisley",
+      "market_hash_name": "CZ75-Auto | Honey Paisley (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -1982,82 +2008,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53822065624",
-      "classid": "7993043505",
-      "instanceid": "7763083238",
-      "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -3147,6 +3097,37 @@
       ]
     },
     {
+      "assetid": "54150627280",
+      "classid": "6216349665",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Lil' Crass",
+      "market_hash_name": "Charm | Lil' Crass",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54150627280"
+      ]
+    },
+    {
       "assetid": "48337957777",
       "classid": "2521818047",
       "instanceid": "188530139",
@@ -3366,6 +3347,53 @@
       ],
       "assetids": [
         "52170045311"
+      ]
+    },
+    {
+      "assetid": "49266027848",
+      "classid": "7729111076",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | donk | Budapest 2025",
+      "market_hash_name": "Sticker | donk | Budapest 2025",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206F7F6F77D6664F6F476C5F6B0D6A676F7FF123076F1F6773409A9B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "49266027848"
       ]
     },
     {
@@ -4682,9 +4710,9 @@
       ]
     },
     {
-      "assetid": "51957395711",
+      "assetid": "54150622261",
       "classid": "7993037344",
-      "instanceid": "8509814223",
+      "instanceid": "7961148687",
       "amount": 1,
       "name": "AK-47 | Wintergreen",
       "market_hash_name": "AK-47 | Wintergreen (Minimal Wear)",
@@ -4721,14 +4749,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {
@@ -5629,9 +5649,9 @@
       ]
     },
     {
-      "assetid": "51980743846",
+      "assetid": "54150627279",
       "classid": "7993038310",
-      "instanceid": "8512794989",
+      "instanceid": "9098048339",
       "amount": 1,
       "name": "AK-47 | Midnight Laminate",
       "market_hash_name": "AK-47 | Midnight Laminate (Minimal Wear)",
@@ -5668,18 +5688,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {
@@ -6423,7 +6431,7 @@
     {
       "assetid": "46234751427",
       "classid": "7993040935",
-      "instanceid": "9063784712",
+      "instanceid": "9099252355",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Battle-Scarred)",
@@ -6467,7 +6475,7 @@
     {
       "assetid": "51356706580",
       "classid": "7993038991",
-      "instanceid": "903536200",
+      "instanceid": "904325288",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Decimator",
       "market_hash_name": "StatTrak™ M4A1-S | Decimator (Factory New)",
@@ -6503,7 +6511,7 @@
     {
       "assetid": "52819933083",
       "classid": "7993043170",
-      "instanceid": "188532616",
+      "instanceid": "188532451",
       "amount": 1,
       "name": "StatTrak™ MP7 | Smoking Kills",
       "market_hash_name": "StatTrak™ MP7 | Smoking Kills (Minimal Wear)",
@@ -6591,7 +6599,7 @@
     {
       "assetid": "51838521519",
       "classid": "7993038902",
-      "instanceid": "638583256",
+      "instanceid": "811100138",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Field-Tested)",
@@ -6625,9 +6633,53 @@
       ]
     },
     {
+      "assetid": "54049790930",
+      "classid": "7993043891",
+      "instanceid": "7584630241",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Vulcan",
+      "market_hash_name": "StatTrak™ AK-47 | Vulcan (Factory New)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53870987029",
       "classid": "7993044091",
-      "instanceid": "7809375500",
+      "instanceid": "7909547795",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Field-Tested)",
@@ -6663,7 +6715,7 @@
     {
       "assetid": "52773226016",
       "classid": "7993043538",
-      "instanceid": "9070858810",
+      "instanceid": "9098048340",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Full Throttle",
       "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Factory New)",
@@ -6707,7 +6759,7 @@
     {
       "assetid": "31198384506",
       "classid": "7993037550",
-      "instanceid": "188668062",
+      "instanceid": "480086258",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Field-Tested)",
@@ -6743,7 +6795,7 @@
     {
       "assetid": "6068340640",
       "classid": "7993038122",
-      "instanceid": "480262894",
+      "instanceid": "480423704",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Field-Tested)",
@@ -6772,54 +6824,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53701736756",
-      "classid": "7993040818",
-      "instanceid": "9063162427",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Stainless",
-      "market_hash_name": "StatTrak™ USP-S | Stainless (Factory New)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -6863,7 +6867,7 @@
     {
       "assetid": "52773226013",
       "classid": "7993039768",
-      "instanceid": "902795763",
+      "instanceid": "902705615",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",

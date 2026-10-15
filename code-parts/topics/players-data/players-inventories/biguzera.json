@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/1ae572e3-0bbd-45fa-8dfc-5547c3509723",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-09-22T08:38:17.386Z",
+  "updatedAt": "2026-10-10T09:46:43.103Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 96,
-  "totalItemsGrouped": 88,
+  "totalItemsRaw": 99,
+  "totalItemsGrouped": 87,
   "items": [
     {
       "assetid": "43239832983",
@@ -90,7 +90,7 @@
     {
       "assetid": "47400990592",
       "classid": "7993060505",
-      "instanceid": "188530483",
+      "instanceid": "188532702",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Gamma Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Gamma Doppler (Factory New)",
@@ -129,37 +129,6 @@
       "float": 0.020983278751,
       "seed": 755,
       "phase": "Phase 2"
-    },
-    {
-      "assetid": "50999838868",
-      "classid": "1989271353",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | X-Axes (Desert Amber)",
-      "market_hash_name": "Graffiti | X-Axes (Desert Amber)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CEDECED60BC4EECEE6CFFECAACC9C6CEDE6FC3FECBA6CEBED6590C0341",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "50999838868"
-      ]
     },
     {
       "assetid": "51500609258",
@@ -799,7 +768,7 @@
       "assetid": "53105704078",
       "classid": "8491272998",
       "instanceid": "143865972",
-      "amount": 2,
+      "amount": 3,
       "name": "Sticker | biguzera (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | biguzera (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
@@ -840,7 +809,8 @@
       ],
       "assetids": [
         "53105704078",
-        "51829895532"
+        "51829895532",
+        "53941012172"
       ]
     },
     {
@@ -2018,14 +1988,14 @@
       ]
     },
     {
-      "assetid": "53105704079",
+      "assetid": "53941012169",
       "classid": "8490904493",
       "instanceid": "143865972",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker | biguzera | Cologne 2026",
       "market_hash_name": "Sticker | biguzera | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203727372F8E3E17371F34073355323F37279D635F37473553C3C9D7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FDEDFDE544F4DDFDD5FECDF99FF8F5FDED57A995FD8DFF1AC81828",
       "tags": [
         {
           "category": "Type",
@@ -2061,6 +2031,7 @@
         }
       ],
       "assetids": [
+        "53941012169",
         "53105704079"
       ]
     },
@@ -2513,14 +2484,14 @@
       ]
     },
     {
-      "assetid": "51829895530",
+      "assetid": "53941012171",
       "classid": "8491273001",
       "instanceid": "143865972",
-      "amount": 1,
+      "amount": 3,
       "name": "Sticker | biguzera (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | biguzera (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C0D0C0D879C9E0C0E8C4F0C4A2C5C8C0D06B94A8C0B0C21405C525",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCACBCA405B59CBC94B88CB8DEB9B4BCAC17E8D4BCCCBEF625BAD6",
       "tags": [
         {
           "category": "Type",
@@ -2556,6 +2527,8 @@
         }
       ],
       "assetids": [
+        "53941012171",
+        "53941012170",
         "51829895530"
       ]
     },
@@ -3285,7 +3258,7 @@
     {
       "assetid": "47412072702",
       "classid": "7993042876",
-      "instanceid": "188548256",
+      "instanceid": "188558496",
       "amount": 1,
       "name": "StatTrak™ MP9 | Food Chain",
       "market_hash_name": "StatTrak™ MP9 | Food Chain (Minimal Wear)",

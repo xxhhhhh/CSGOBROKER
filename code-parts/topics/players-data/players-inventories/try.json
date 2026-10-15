@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/1830d4f8-a243-47d8-b8b8-943f7170b163",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:20:53.398Z",
+  "updatedAt": "2026-10-14T08:51:07.683Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 375,
-  "totalItemsGrouped": 374,
+  "totalItemsRaw": 383,
+  "totalItemsGrouped": 382,
   "items": [
     {
       "assetid": "53866042938",
@@ -60,6 +60,41 @@
       "phase": "Sapphire"
     },
     {
+      "assetid": "53965589171",
+      "classid": "7993042978",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EBFB587E0D6F22EAF310E8CB74E8C3EDDBE8D30E581F0EE8AB0DE883AD9BE3527E55F4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.023083636537,
+      "seed": 486,
+      "phase": "Ruby"
+    },
+    {
       "assetid": "53814980723",
       "classid": "7993044870",
       "instanceid": "188530139",
@@ -93,34 +128,6 @@
       "float": 0.013607431203,
       "seed": 569,
       "phase": "Emerald"
-    },
-    {
-      "assetid": "52280013356",
-      "classid": "8247002078",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Driver Gloves | Brocade Crane",
-      "market_hash_name": "★ Driver Gloves | Brocade Crane (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "53479072332",
@@ -207,12 +214,40 @@
       ]
     },
     {
-      "assetid": "53814980722",
-      "classid": "7993040299",
+      "assetid": "53965587795",
+      "classid": "7993037755",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
+      "name": "★ Specialist Gloves | Marble Fade",
+      "market_hash_name": "★ Specialist Gloves | Marble Fade (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53965587794",
+      "classid": "7993038043",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -683,6 +718,34 @@
       ]
     },
     {
+      "assetid": "54148911114",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43738080415",
       "classid": "1989271854",
       "instanceid": "302028390",
@@ -711,6 +774,37 @@
       ],
       "assetids": [
         "43738080415"
+      ]
+    },
+    {
+      "assetid": "54064904369",
+      "classid": "1989295883",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Death Sentence (Violent Violet)",
+      "market_hash_name": "Sealed Graffiti | Death Sentence (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C0D0C0D804CAE0C0E8C1F0C4A2C7C8C0D062CDF0CEA8C0B0D8477F7CEA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54064904369"
       ]
     },
     {
@@ -2247,6 +2341,42 @@
       ]
     },
     {
+      "assetid": "54148911115",
+      "classid": "7993036705",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P90 | Blue Tac",
+      "market_hash_name": "P90 | Blue Tac (Minimal Wear)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45964724440",
       "classid": "7993036585",
       "instanceid": "302028390",
@@ -2846,6 +2976,118 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54017625973",
+      "classid": "7993037085",
+      "instanceid": "9095025348",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Field-Tested)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53929510269",
+      "classid": "7993041168",
+      "instanceid": "7755457538",
+      "amount": 1,
+      "name": "AWP | Desert Hydra",
+      "market_hash_name": "AWP | Desert Hydra (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -9156,6 +9398,53 @@
       ]
     },
     {
+      "assetid": "53954036311",
+      "classid": "8711930712",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | FalleN (Foil, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | FalleN (Foil, Ranked) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454445CFD4D64446C40744026414C4454E21D2C443446C2327055",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53954036311"
+      ]
+    },
+    {
       "assetid": "45500461503",
       "classid": "7104658924",
       "instanceid": "188530139",
@@ -9777,6 +10066,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53965206916",
+      "classid": "7993142987",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "AK-47 | Breakthrough",
+      "market_hash_name": "AK-47 | Breakthrough (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -12708,7 +13033,7 @@
     {
       "assetid": "46235807539",
       "classid": "7993040284",
-      "instanceid": "480100820",
+      "instanceid": "480091634",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Minimal Wear)",
@@ -12780,7 +13105,7 @@
     {
       "assetid": "51414714962",
       "classid": "7993040297",
-      "instanceid": "9032414366",
+      "instanceid": "9097213019",
       "amount": 1,
       "name": "StatTrak™ AWP | Graphite",
       "market_hash_name": "StatTrak™ AWP | Graphite (Factory New)",
@@ -12836,7 +13161,7 @@
     {
       "assetid": "53867531560",
       "classid": "8247137616",
-      "instanceid": "7762495902",
+      "instanceid": "7631350836",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -12872,7 +13197,7 @@
     {
       "assetid": "49571276163",
       "classid": "7993041773",
-      "instanceid": "9071960247",
+      "instanceid": "9101702269",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -13604,7 +13929,7 @@
     {
       "assetid": "50557077319",
       "classid": "8247025056",
-      "instanceid": "188643448",
+      "instanceid": "188530144",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Well-Worn)",
