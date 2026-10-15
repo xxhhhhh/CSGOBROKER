@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9a5ff08b-4b66-4797-998b-d78713979945",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-12T11:05:52.844Z",
+  "updatedAt": "2026-10-15T08:53:18.010Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 112,
-  "totalItemsGrouped": 110,
+  "totalItemsRaw": 115,
+  "totalItemsGrouped": 113,
   "items": [
     {
       "assetid": "43280548952",
@@ -408,6 +408,34 @@
       "amount": 1,
       "name": "Fever Case",
       "market_hash_name": "Fever Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54047016411",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -3116,6 +3144,42 @@
       ]
     },
     {
+      "assetid": "54047016412",
+      "classid": "8246963891",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP9 | Urban Sovereign",
+      "market_hash_name": "MP9 | Urban Sovereign (Well-Worn)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "35580363803",
       "classid": "7993041788",
       "instanceid": "480085569",
@@ -3632,6 +3696,42 @@
       "market_hash_name": "StatTrak™ MAC-10 | Saibā Oni (Minimal Wear)",
       "type": "StatTrak™ Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20524297C1C880C4534A43722C7A56625B6A9098E0A25112D4551A5202523A28225A73E208D1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54044047581",
+      "classid": "7993037113",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ MP5-SD | Agent",
+      "market_hash_name": "StatTrak™ MP5-SD | Agent (Minimal Wear)",
+      "type": "StatTrak™ Restricted SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
