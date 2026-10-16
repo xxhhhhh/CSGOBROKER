@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/2aa89fae-a656-4663-a139-3d4665dee951",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-15T08:34:14.030Z",
+  "updatedAt": "2026-10-16T08:29:49.509Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -20,34 +20,6 @@
   "totalItemsRaw": 42,
   "totalItemsGrouped": 42,
   "items": [
-    {
-      "assetid": "52768155144",
-      "classid": "8246944780",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Ultra Violent",
-      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "53835647509",
       "classid": "5710094579",
@@ -102,6 +74,61 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54183665933",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54183665934",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54183665934"
       ]
     },
     {
@@ -432,42 +459,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52768155141",
-      "classid": "7993036534",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A1-S | Fade",
-      "market_hash_name": "M4A1-S | Fade (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]

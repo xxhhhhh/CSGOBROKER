@@ -7,56 +7,19 @@
   "name": "Liam Tügel",
   "nationality": "Sweden",
   "born": "30.05.2009",
+  "isContentCreator": false,
   "twitch": "mail09cs",
   "faceit": "https://faceitdb.com/profile/faceit/7dbf107a-1199-4932-823e-e38ccc46288e",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-14T08:46:57.189Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 201,
-  "totalItemsGrouped": 191,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-16T08:18:50.351Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 197,
+  "totalItemsGrouped": 187,
   "items": [
-    {
-      "assetid": "53999948352",
-      "classid": "7993040524",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208F9F4F2B181A468E970C8BAF648BA789BF8CB76116776A8CCF558BE787FF8B5AC7F576",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.02319952473,
-      "seed": 602,
-      "phase": "Sapphire"
-    },
     {
       "assetid": "52756503113",
       "classid": "7993041446",
@@ -194,34 +157,6 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Kimono",
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53438745218",
-      "classid": "7993042207",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -874,50 +809,6 @@
       ]
     },
     {
-      "assetid": "52608181379",
-      "classid": "7993042330",
-      "instanceid": "8033596513",
-      "amount": 1,
-      "name": "AK-47 | Hydroponic",
-      "market_hash_name": "AK-47 | Hydroponic (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53458648327",
       "classid": "7993036958",
       "instanceid": "8785631843",
@@ -1125,42 +1016,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53688087590",
-      "classid": "7993037248",
-      "instanceid": "6276334575",
-      "amount": 1,
-      "name": "M4A1-S | Hot Rod",
-      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -6547,7 +6402,7 @@
     {
       "assetid": "35749895747",
       "classid": "7993045362",
-      "instanceid": "9069920636",
+      "instanceid": "9102397588",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Big Iron",
       "market_hash_name": "StatTrak™ SSG 08 | Big Iron (Field-Tested)",
@@ -6679,7 +6534,7 @@
     {
       "assetid": "53870987029",
       "classid": "7993044091",
-      "instanceid": "7909547795",
+      "instanceid": "7911631845",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Field-Tested)",
@@ -6715,7 +6570,7 @@
     {
       "assetid": "52773226016",
       "classid": "7993043538",
-      "instanceid": "9098048340",
+      "instanceid": "9102397585",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Full Throttle",
       "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Factory New)",
@@ -6795,7 +6650,7 @@
     {
       "assetid": "6068340640",
       "classid": "7993038122",
-      "instanceid": "480423704",
+      "instanceid": "480134499",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Field-Tested)",
@@ -6867,7 +6722,7 @@
     {
       "assetid": "52773226013",
       "classid": "7993039768",
-      "instanceid": "902705615",
+      "instanceid": "903263340",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Dragon Tattoo",
       "market_hash_name": "StatTrak™ Glock-18 | Dragon Tattoo (Factory New)",
