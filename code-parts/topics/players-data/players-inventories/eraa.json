@@ -7,16 +7,18 @@
   "name": "Sean Knutsson",
   "nationality": "Sweden",
   "born": "12.08.2001",
+  "isContentCreator": false,
   "twitch": "eraab0b",
   "faceit": "https://faceitdb.com/profile/faceit/aa479f4d-cefa-4bee-a1fa-8d2c9ed5d092",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-08T10:19:55.860Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 80,
-  "totalItemsGrouped": 79,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-17T07:55:28.894Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 78,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "52658881615",
@@ -105,42 +107,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53868118722",
-      "classid": "7993038728",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Stiletto Knife | Marble Fade",
-      "market_hash_name": "★ Stiletto Knife | Marble Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -759,50 +725,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53614749374",
-      "classid": "202111975",
-      "instanceid": "6367616677",
-      "amount": 1,
-      "name": "AK-47 | Fire Serpent",
-      "market_hash_name": "AK-47 | Fire Serpent (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1947,7 +1869,7 @@
     {
       "assetid": "51049023471",
       "classid": "7993039979",
-      "instanceid": "6320708790",
+      "instanceid": "6314043475",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Shinobu",
       "market_hash_name": "StatTrak™ Glock-18 | Shinobu (Well-Worn)",
@@ -1983,7 +1905,7 @@
     {
       "assetid": "45197063641",
       "classid": "7993039812",
-      "instanceid": "9066592474",
+      "instanceid": "9107572988",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Battle-Scarred)",
@@ -2027,7 +1949,7 @@
     {
       "assetid": "38386976540",
       "classid": "7993044408",
-      "instanceid": "8822506157",
+      "instanceid": "9107572993",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Field-Tested)",
@@ -2127,7 +2049,7 @@
     {
       "assetid": "52938656309",
       "classid": "8247005394",
-      "instanceid": "7613540660",
+      "instanceid": "7625039164",
       "amount": 1,
       "name": "StatTrak™ AWP | Queen's Gambit",
       "market_hash_name": "StatTrak™ AWP | Queen's Gambit (Minimal Wear)",
@@ -2226,7 +2148,7 @@
     {
       "assetid": "30578072671",
       "classid": "7993039475",
-      "instanceid": "6277308416",
+      "instanceid": "6281072207",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Capillary",
       "market_hash_name": "StatTrak™ Five-SeveN | Capillary (Minimal Wear)",
@@ -2674,7 +2596,7 @@
     {
       "assetid": "40978426762",
       "classid": "7993039060",
-      "instanceid": "9079498747",
+      "instanceid": "9102272678",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Re-Entry",
       "market_hash_name": "StatTrak™ Tec-9 | Re-Entry (Field-Tested)",
@@ -2718,7 +2640,7 @@
     {
       "assetid": "44260801730",
       "classid": "7993039771",
-      "instanceid": "9079498746",
+      "instanceid": "9107572990",
       "amount": 1,
       "name": "StatTrak™ USP-S | Ticket to Hell",
       "market_hash_name": "StatTrak™ USP-S | Ticket to Hell (Factory New)",
@@ -2950,7 +2872,7 @@
     {
       "assetid": "22621438904",
       "classid": "7993038202",
-      "instanceid": "6552937071",
+      "instanceid": "6919744211",
       "amount": 1,
       "name": "StatTrak™ MP9 | Ruby Poison Dart",
       "market_hash_name": "StatTrak™ MP9 | Ruby Poison Dart (Factory New)",

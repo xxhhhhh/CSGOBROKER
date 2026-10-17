@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-09T09:59:59.324Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 345,
-  "totalItemsGrouped": 122,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-17T07:31:39.789Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 78,
+  "totalItemsGrouped": 78,
   "items": [
     {
       "assetid": "53060974247",
@@ -171,6 +173,41 @@
       "phase": "Phase 4"
     },
     {
+      "assetid": "54045907226",
+      "classid": "7993043455",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2096860C241A3D5F978E6D95B62E92BE90A695AE6D326D7F95D61C94FE4F97E692A95F7648",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.046587448567,
+      "seed": 266,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "45587465948",
       "classid": "7993045582",
       "instanceid": "188530139",
@@ -245,6 +282,45 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "54060396265",
+      "classid": "7993042573",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Talon Knife | Doppler",
+      "market_hash_name": "★ Talon Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205E4EB783DEEC975F46D55A7EC15D76586E5D66CDAEF5B45D1EA15D366F2E5A3BE9ED73",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.049552988261,
+      "seed": 511,
+      "phase": "Ruby"
+    },
+    {
       "assetid": "46676632859",
       "classid": "7993037136",
       "instanceid": "188530139",
@@ -301,14 +377,14 @@
       ]
     },
     {
-      "assetid": "49589049889",
-      "classid": "7993040145",
-      "instanceid": "480085569",
+      "assetid": "54046016489",
+      "classid": "8248423622",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Emerald Web",
-      "market_hash_name": "★ Specialist Gloves | Emerald Web (Field-Tested)",
+      "name": "★ Driver Gloves | Wave Chaser",
+      "market_hash_name": "★ Driver Gloves | Wave Chaser (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FAEA5B4E092742FBE250DDDA48B4D2FCCAF9C2316D7A0FF9BA13FB9220FB8AFEA83D4824",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -765,78 +841,6 @@
       ]
     },
     {
-      "assetid": "41570548086",
-      "classid": "7993036773",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A4 | Tooth Fairy",
-      "market_hash_name": "M4A4 | Tooth Fairy (Field-Tested)",
-      "type": "Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B1A14743015F2BB0A9A1917AB699B481B58951445A45B2F168B2D9ADC1B91E3DD7AD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51623667346",
-      "classid": "7993037061",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "P250 | Plum Netting",
-      "market_hash_name": "P250 | Plum Netting (Factory New)",
-      "type": "Consumer Grade Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "36403365445",
       "classid": "7993037937",
       "instanceid": "7033999127",
@@ -905,42 +909,6 @@
       "market_hash_name": "SSG 08 | Blue Spruce (Field-Tested)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A7B7421F10672FA6BF8F87C78FA697A39F33281155A4E779A1CF95D7BF4A1EEBB2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53757635362",
-      "classid": "7993036003",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "SSG 08 | Grey Smoke",
-      "market_hash_name": "SSG 08 | Grey Smoke (Factory New)",
-      "type": "Consumer Grade Sniper Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1430,97 +1398,6 @@
       ]
     },
     {
-      "assetid": "43422125650",
-      "classid": "6449447801",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | chopper (Holo, Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | chopper (Holo, Champion) | Shanghai 2024",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BAAABAA203B39ABA92BF8ABED8BFB2BAAA6DF8D2BACAB23F073576",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "43422125650"
-      ]
-    },
-    {
-      "assetid": "42189397995",
-      "classid": "5799822090",
-      "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | Team Spirit (Holo) | Copenhagen 2024",
-      "market_hash_name": "Sticker | Team Spirit (Holo) | Copenhagen 2024",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206777677FDE6E47674F62576305626F67778F5F0F67176F2E540C92",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "42189397995",
-        "38080103338"
-      ]
-    },
-    {
       "assetid": "42657088884",
       "classid": "6216487158",
       "instanceid": "0",
@@ -1923,54 +1800,6 @@
       ]
     },
     {
-      "assetid": "40963653014",
-      "classid": "1988135456",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Phoenix Pin",
-      "market_hash_name": "Phoenix Pin",
-      "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D0C0D0C833FFF0D0F8D3E0D4B8D0A0D879DF4D1E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "41560215208",
-      "classid": "2750357614",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Welcome to the Clutch Pin",
-      "market_hash_name": "Welcome to the Clutch Pin",
-      "type": "High Grade Collectible",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ECFCECF401C3CCECC4EFDCE884EC9CE4712CA1B0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46385030574",
       "classid": "3640809609",
       "instanceid": "143865972",
@@ -2022,996 +1851,6 @@
       ],
       "assetids": [
         "33567612959"
-      ]
-    },
-    {
-      "assetid": "45146394809",
-      "classid": "6449443747",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | chopper (Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | chopper (Champion) | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20918191892898B191B992A195F39499918144D3F991E1996883FEC7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "45146394809"
-      ]
-    },
-    {
-      "assetid": "48710896437",
-      "classid": "6449443157",
-      "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | donk (Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | donk (Champion) | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7A6A72D3634A6A42695A6E086F626A7AB728026A1A62FC73D742",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "48710896437",
-        "43422125081"
-      ]
-    },
-    {
-      "assetid": "44193455557",
-      "classid": "7104648303",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Jee | Austin 2025",
-      "market_hash_name": "Sticker | Jee | Austin 2025",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E9E862797BE9EB69DAE9AFC9B969E8E29D6F69EEE964D5F25A0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "44193455557"
-      ]
-    },
-    {
-      "assetid": "44938179708",
-      "classid": "6449443441",
-      "instanceid": "188530139",
-      "amount": 13,
-      "name": "Sticker | magixx (Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | magixx (Champion) | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C37043056313C3424ED765C34443C2E5211CE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "44938179708",
-        "43422126680",
-        "42673965810",
-        "42673965798",
-        "42673965783",
-        "42673965774",
-        "42673965762",
-        "42673965742",
-        "42673965717",
-        "42673965709",
-        "42673965687",
-        "42673965683",
-        "42673965626"
-      ]
-    },
-    {
-      "assetid": "53285576976",
-      "classid": "8490800356",
-      "instanceid": "143865972",
-      "amount": 96,
-      "name": "Sticker | Magnojez | Cologne 2026",
-      "market_hash_name": "Sticker | Magnojez | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7C7DF7ECEE7C7EFC4F7C3A5C2CFC7D77592AFC7B7C58EFAF049",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53285576976",
-        "53285576975",
-        "53285576974",
-        "53285576973",
-        "53285576972",
-        "53285576971",
-        "53285576970",
-        "53285576969",
-        "53285576968",
-        "53285576967",
-        "53285576966",
-        "53285576965",
-        "53285576964",
-        "53285576963",
-        "53285576962",
-        "53285576961",
-        "53285576960",
-        "53285576959",
-        "53285576958",
-        "53285576957",
-        "53285576956",
-        "53285576955",
-        "53285576954",
-        "53285576953",
-        "53285576952",
-        "53285576951",
-        "53285576950",
-        "53285576949",
-        "53285576948",
-        "53285576947",
-        "53285576946",
-        "53285576945",
-        "53285576944",
-        "53285576943",
-        "53285576942",
-        "53285576941",
-        "53285576940",
-        "53285576939",
-        "53285576938",
-        "53285576937",
-        "53285576936",
-        "53285576935",
-        "53285576934",
-        "53285576933",
-        "53285576932",
-        "53285576931",
-        "53285576930",
-        "53285576929",
-        "53285576928",
-        "53285576927",
-        "53285576926",
-        "53285576925",
-        "53285576924",
-        "53285576923",
-        "53285576922",
-        "53285576921",
-        "53285576920",
-        "53285576919",
-        "53285576918",
-        "53285576917",
-        "53285576916",
-        "53285576915",
-        "53285576914",
-        "53285576913",
-        "53285576912",
-        "53285576911",
-        "53285576910",
-        "53285576909",
-        "53285576908",
-        "53285576907",
-        "53285576906",
-        "53285576905",
-        "53285576904",
-        "53285576903",
-        "53285576902",
-        "53285576901",
-        "53285576900",
-        "53285576899",
-        "53285576898",
-        "53285576897",
-        "53285576896",
-        "53285576895",
-        "53285576894",
-        "53285576893",
-        "53285576892",
-        "53285576891",
-        "53285576890",
-        "53285576889",
-        "53285576888",
-        "53285576887",
-        "53285576886",
-        "53285576885",
-        "53285576884",
-        "53285576883",
-        "53285576882",
-        "53285576881"
-      ]
-    },
-    {
-      "assetid": "48421949790",
-      "classid": "5327976163",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | rallen | Paris 2023",
-      "market_hash_name": "Sticker | rallen | Paris 2023",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200E1E0E16B7072E0E260D3E0A6C0B060E1EC33B660E7E0672D90B93",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "48421949790"
-      ]
-    },
-    {
-      "assetid": "52321849679",
-      "classid": "6360320880",
-      "instanceid": "188530139",
-      "amount": 11,
-      "name": "Sticker | s-chilla | Shanghai 2024",
-      "market_hash_name": "Sticker | s-chilla | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20819181993888A181A982B185E38489819110C3E981F1893C954F15",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52321849679",
-        "52321849678",
-        "52321849677",
-        "52321849676",
-        "52321849675",
-        "52321849674",
-        "52321849673",
-        "52321849672",
-        "52321849671",
-        "52321849670",
-        "52253060889"
-      ]
-    },
-    {
-      "assetid": "45146394801",
-      "classid": "6449444385",
-      "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | sh1ro (Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | sh1ro (Champion) | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2041514159F8486141694271452344494151A00329413149157F4EB2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "45146394801",
-        "42673965637"
-      ]
-    },
-    {
-      "assetid": "40210824767",
-      "classid": "5199656181",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Sting Like A Butterfly",
-      "market_hash_name": "Sticker | Sting Like A Butterfly",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201606160EAF1F36163E15261274131E1606AB257E16661EE1C22912",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "40210824767"
-      ]
-    },
-    {
-      "assetid": "40955043600",
-      "classid": "6216349769",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Taste Bud",
-      "market_hash_name": "Sticker | Taste Bud",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202737273F9E2E07270F24172345222F2737CF1A4F275730EC5E7D13",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "40955043600"
-      ]
-    },
-    {
-      "assetid": "44558981746",
-      "classid": "4302203171",
-      "instanceid": "188530139",
-      "amount": 103,
-      "name": "Sticker | TYLOO | 2020 RMR",
-      "market_hash_name": "Sticker | TYLOO | 2020 RMR",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEEFEE647F7DEFED6FDCEFA9CFBF6FEEE47DB96FE8EF6584FFE4C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "44558981746",
-        "42422951626",
-        "42422951609",
-        "42422951595",
-        "42422951578",
-        "42422951565",
-        "42422951551",
-        "42422951544",
-        "42422951536",
-        "42422951531",
-        "42422951516",
-        "42422951512",
-        "42422951501",
-        "42422951493",
-        "42422951483",
-        "42422951474",
-        "42422951459",
-        "42422951443",
-        "42422951420",
-        "42422951406",
-        "42422951378",
-        "42422951373",
-        "42422951362",
-        "42422951355",
-        "42422951343",
-        "42422951326",
-        "42422951316",
-        "42422951292",
-        "42422951278",
-        "42422951265",
-        "42422951251",
-        "42422951229",
-        "42422951205",
-        "42422951196",
-        "42422951184",
-        "42422951176",
-        "42422951158",
-        "42422951140",
-        "42422951127",
-        "42422951109",
-        "42422951089",
-        "42422594640",
-        "42422594634",
-        "42422594613",
-        "42422594583",
-        "42422594573",
-        "42422594561",
-        "42422594558",
-        "42422594543",
-        "42422594504",
-        "42422594478",
-        "42422594454",
-        "42422594447",
-        "42422594429",
-        "42422594419",
-        "42422594410",
-        "42422594372",
-        "42422594363",
-        "42422594354",
-        "42422594338",
-        "42422594336",
-        "42421105261",
-        "42421105252",
-        "42421105246",
-        "42421105238",
-        "42421105226",
-        "42421105219",
-        "42421105213",
-        "42421105195",
-        "42421105183",
-        "42421105176",
-        "42421105170",
-        "42421105159",
-        "42421105149",
-        "42421105137",
-        "42421105127",
-        "42421105087",
-        "42421105079",
-        "42421105075",
-        "42421105070",
-        "42421105057",
-        "42421105047",
-        "42421105021",
-        "42421105018",
-        "42421105014",
-        "42421104987",
-        "42421104981",
-        "42421104978",
-        "42421104972",
-        "42421104962",
-        "42421104954",
-        "42421104943",
-        "42421104928",
-        "42421104922",
-        "42421104915",
-        "42421104910",
-        "42421104818",
-        "42421104800",
-        "42421104793",
-        "42421104783",
-        "42421104759",
-        "42421104752",
-        "42421104724"
-      ]
-    },
-    {
-      "assetid": "45146394794",
-      "classid": "6449443077",
-      "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | zont1x (Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | zont1x (Champion) | Shanghai 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A0B0A809B990B098B380B4D2B5B8B0A055F2D8B0C0B8C4BD8AE9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "45146394794",
-        "43422123906"
-      ]
-    },
-    {
-      "assetid": "46617934228",
-      "classid": "7993035991",
-      "instanceid": "6276363954",
-      "amount": 1,
-      "name": "Glock-18 | High Beam",
-      "market_hash_name": "Glock-18 | High Beam (Factory New)",
-      "type": "Industrial Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209A8A0E690E4F379B829EBA059CB298AA9EA22A750F7299DA2A9EF89F929A8A33BFF89F929B8A33BFF89F92988A33BFF89F92998A33BFF22D9BEA820F8BAA0A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "44810879250",
-      "classid": "7993035630",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AK-47 | Olive Polycam",
-      "market_hash_name": "AK-47 | Olive Polycam (Field-Tested)",
-      "type": "Industrial Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204353D1C1FCB4E5425B4463D84A6B4173477BA28EF9B14003D8402B6233542DA04BE3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49487080530",
-      "classid": "241585251",
-      "instanceid": "6277366399",
-      "amount": 1,
-      "name": "Glock-18 | Candy Apple",
-      "market_hash_name": "Glock-18 | Candy Apple (Minimal Wear)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A06268131D08B1A8B490B398B380B4885E365A5DB3F013B3D2A4B8B3A033AE9DB0B018718D078E150EF5F876C40ED2A4B8B3A00C989DB0B070718DD4B6230EF5F61CDA0ED2A4B8B3A06BAC9DB0B018718D0E9C3A0EF54466CD0ED2A4B8B3A05C9C9DB0B018718D28EDCC0EF5C4C1C20ED2A4B8B0A0178A9DB0B070708D993BAE0EF578C0180CD8BFC0A85CF4D5BD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45146394785",
-      "classid": "7993039045",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Winterized",
-      "market_hash_name": "Glock-18 | Winterized (Field-Tested)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1FAEAEB298A70E170B2F8906270C3F0B37C9C9F5FA0C4FF20B67C00E7F07D523B1C4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "35281909281",
-      "classid": "7993035560",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "P2000 | Gnarled",
-      "market_hash_name": "P2000 | Gnarled (Well-Worn)",
-      "type": "Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204959E8A595FECA48516969894E614A794D71F7A2C2BE4A099B4B214039413F29C771",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
       ]
     },
     {
@@ -3075,42 +1914,6 @@
       ]
     },
     {
-      "assetid": "40012549660",
-      "classid": "7993036700",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "MAG-7 | Foresight",
-      "market_hash_name": "MAG-7 | Foresight (Minimal Wear)",
-      "type": "Mil-Spec Grade Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FDED6161417A68FCE5E6DD11F5D5FECDF9C501695A10FEBD09F895C88DF57E6A81C5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "41418000682",
       "classid": "241608185",
       "instanceid": "6276620147",
@@ -3152,84 +1955,6 @@
           "category": "TournamentTeam",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "41916270596",
-      "classid": "6216346340",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sticker | Boom Blast (Glitter)",
-      "market_hash_name": "Sticker | Boom Blast (Glitter)",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202E3E2E3697270E2E062A1E2A4C2B262E3EF513462E5E390E5B289D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "41916270596"
-      ]
-    },
-    {
-      "assetid": "42673965619",
-      "classid": "6449447144",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | sh1ro (Glitter, Champion) | Shanghai 2024",
-      "market_hash_name": "Sticker | sh1ro (Glitter, Champion) | Shanghai 2024",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DDCDDDC564D4FDDDF5D9EDD9BFD8D5DDCD3F9FB5DDADD50FA529BB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "42673965619"
       ]
     },
     {
@@ -3429,42 +2154,6 @@
       ]
     },
     {
-      "assetid": "33688504923",
-      "classid": "7993036754",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "P2000 | Acid Etched",
-      "market_hash_name": "P2000 | Acid Etched (Field-Tested)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBF743B5810D2B78F8F18A887AB9FAB9726710E5DACEF1DA8C7ABDFAB677F21A5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "40825842533",
       "classid": "7993035629",
       "instanceid": "480085569",
@@ -3473,42 +2162,6 @@
       "market_hash_name": "AK-47 | Slate (Field-Tested)",
       "type": "Restricted Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6B9EADD8F0E37A637C5BF073537F4B7F43EDF4CD89783B3513380B7F1A2011C4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50292438513",
-      "classid": "8246907253",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A1-S | Electrum",
-      "market_hash_name": "M4A1-S | Electrum (Minimal Wear)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1FFEE4A9A2B40E17332F9604270B3F0B378EE2FCE00C4F840D67E00E7F0714BB2EF8",
       "tags": [
         {
           "category": "Type",
@@ -3573,78 +2226,6 @@
       ]
     },
     {
-      "assetid": "36208987474",
-      "classid": "7993036442",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "MAC-10 | Sakkaku",
-      "market_hash_name": "MAC-10 | Sakkaku (Well-Worn)",
-      "type": "Restricted SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20574785CDB2A6D1564F46779A5E7F5367536F92F4D8A05417C0503F45275F0D4542A3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50292494475",
-      "classid": "8246896504",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "MP7 | Amberline",
-      "market_hash_name": "MP7 | Amberline (Field-Tested)",
-      "type": "Restricted SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20091982A8A3A4B2081128299502210D390D31CBC4C9FC0A49F80B61EA08790D637381C1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "37272535041",
       "classid": "7993037326",
       "instanceid": "302028390",
@@ -3681,390 +2262,6 @@
       ]
     },
     {
-      "assetid": "42491767782",
-      "classid": "7993036161",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir R8 Revolver | Desert Brush",
-      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Field-Tested)",
-      "type": "Souvenir Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A3B3457470063DA2BBE3833FA48BA293AF9B49365052A0E31EA2C1A6ABA2B3789DC1A6ABA0B339AEC1A6ABA1B32C9DC1A6ABA7B3249DCB13A2D3ABC6E201C7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42674001559",
-      "classid": "7993038892",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir R8 Revolver | Desert Brush",
-      "market_hash_name": "Souvenir R8 Revolver | Desert Brush (Minimal Wear)",
-      "type": "Souvenir Consumer Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200E1E99A3C8F2900F164E2E9209260F3E0236DCA5CAFE0D4E8C0B6C0B060F1ED5306C0B060D1E94036C0B060E1E81306C0B060C1E893066C20F7E063FC8E707",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42673995471",
-      "classid": "7993036805",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir SG 553 | Bleached",
-      "market_hash_name": "Souvenir SG 553 | Bleached (Field-Tested)",
-      "type": "Souvenir Consumer Grade Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6BB486BE87E57A635C5BDD7C537A4B774393DFFE88783B9A78197E73786BA045197E737B6BE176197E73796BF445197E737A6BFC4513B07A0B737DB94C03",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42493086656",
-      "classid": "7993036910",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir Sawed-Off | Parched",
-      "market_hash_name": "Souvenir Sawed-Off | Parched (Field-Tested)",
-      "type": "Souvenir Consumer Grade Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCC1C4B787A42DDC4C1FC2CDAF4DDECD0E40603032FDF9C7ADABED9D4DCCC07E2BED9D4DDCC46D1BED9D4DECC53E2BED9D4D8CC5BE2B46EDDACD41FFF0CBB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42491770688",
-      "classid": "7993035646",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir MP7 | Prey",
-      "market_hash_name": "Souvenir MP7 | Prey (Field-Tested)",
-      "type": "Souvenir Consumer Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717C7E9D4A299061F2627A0002F06370B3FDC998BF50447B90065020F0717DC3965020F06179D0A65020F0217883965020F031780396FB606770FC5282041",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42491773667",
-      "classid": "7993036114",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir P90 | Desert DDPAT",
-      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
-      "type": "Souvenir Consumer Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209585761041300B948D86B50892BD94A599AD6E487F6796D55D90F7909D91854EABF7909D97850F98F7909D95851AABF7909D948512ABFDFDE59DF9A91DAD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42674000728",
-      "classid": "7993036114",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir P90 | Desert DDPAT",
-      "market_hash_name": "Souvenir P90 | Desert DDPAT (Field-Tested)",
-      "type": "Souvenir Consumer Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203121E997F7CDAF30292211AC361930013D09EFEAEDC0327191325334393321EA0F5334393021AB3C5334393121BE0F5334393521B60F59FC304139D63E57F7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42493088057",
-      "classid": "7993035639",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir P90 | Desert DDPAT",
-      "market_hash_name": "Souvenir P90 | Desert DDPAT (Minimal Wear)",
-      "type": "Souvenir Consumer Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2035258C979193AB342D2615A8321D3405390D91FCBAD83675E03457303D3525EE0B57303D3425AF3857303D3725BA0B57303D3125B20B5D8634453DB5822DC4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45622265284",
       "classid": "7993046554",
       "instanceid": "6478103416",
@@ -4073,102 +2270,6 @@
       "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Field-Tested)",
       "type": "Souvenir Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2049598DC2FBB3E048514E69D04E614F794571EDC486BC4A09BD482B4C414B5992772B4C414A59D3442B4C414959C6772B4C414859CE77212F3941A64BB951",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42493088634",
-      "classid": "7993039755",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir M249 | Midnight Palm",
-      "market_hash_name": "Souvenir M249 | Midnight Palm (Well-Worn)",
-      "type": "Souvenir Industrial Grade Machinegun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20796983DFDDDFE778617759DC7E517B497541CDB9838F7A39721B7C717B69A2471B7C717969E3741B7C717869F6471B7C717A69FE4711CD780971A640EBB9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42497833533",
-      "classid": "7993037730",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir MP9 | Old Roots",
-      "market_hash_name": "Souvenir MP9 | Old Roots (Field-Tested)",
-      "type": "Souvenir Industrial Grade SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CCDC7138096452CDD4EEEC6FCBE4CEFCC0F41235543FCF8C22CFAEC9C4CDDC17F2AEC9C4CFDC56C1AEC9C4CCDC43F2AEC9C4CEDC4BF2A479CDBCC4B6DC9DE9",
       "tags": [
         {
           "category": "Type",
@@ -4247,7 +2348,7 @@
     {
       "assetid": "48176198164",
       "classid": "7993038472",
-      "instanceid": "9090821539",
+      "instanceid": "9109384645",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Factory New)",
@@ -4445,61 +2546,9 @@
       ]
     },
     {
-      "assetid": "45158988492",
-      "classid": "7993041410",
-      "instanceid": "8355399827",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Bloodsport",
-      "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E8340D456550F9E0FFD807FCD0FEC8F1C075377311FBB800FDB0F8A870F09AFCF0F8E8C29AFCF0F9E8C29AFCF0FAE8C29AFCF0FBE8C29AE1F0F9E80DD1E5CBCBCBC7D5F8F8B8B8C504C01444BD9C3868C5902CF988F049EB99DA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "43981133575",
       "classid": "7993043676",
-      "instanceid": "9090821540",
+      "instanceid": "9109384646",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Factory New)",
@@ -4536,42 +2585,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50551313144",
-      "classid": "7993044744",
-      "instanceid": "6277263555",
-      "amount": 1,
-      "name": "StatTrak™ M4A1-S | Vaporwave",
-      "market_hash_name": "StatTrak™ M4A1-S | Vaporwave (Factory New)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB237E047367DAC3E7FBB1F3DDEBD2E30B0C7B30D89B11DC93DB8BC3B328DAABD379DACCD3DBCBC7E6EA4B2C9A9E08E2FAE4961E3C7C9B8B193BD943773A13",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4709,42 +2722,6 @@
       ]
     },
     {
-      "assetid": "34399214960",
-      "classid": "7993036609",
-      "instanceid": "6327109274",
-      "amount": 1,
-      "name": "StatTrak™ Desert Eagle | Oxide Blaze",
-      "market_hash_name": "StatTrak™ Desert Eagle | Oxide Blaze (Minimal Wear)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202B3BDB91C2B9AB2A332A0BAE2E03281B2213FD8DF8C4286BD829632B7B2C492E23293BA20243235B23753DBE32",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "36741404107",
       "classid": "7993040543",
       "instanceid": "8830736546",
@@ -4796,78 +2773,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50292213436",
-      "classid": "8246968260",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Silent Shot",
-      "market_hash_name": "StatTrak™ USP-S | Silent Shot (Well-Worn)",
-      "type": "StatTrak™ Mil-Spec Grade Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCF6352467264DEC7E2FF48D4F7DCEFD6E72C3C3529DC9F40D897DF8FDFB734DEAFD72BDC4F63",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "42673983231",
-      "classid": "7993038959",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ SSG 08 | Mainframe 001",
-      "market_hash_name": "StatTrak™ SSG 08 | Mainframe 001 (Battle-Scarred)",
-      "type": "StatTrak™ Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2095856A0850690B948DBDB55292BD96A59CAD6B63336F96D51E97DD95C595FD2F94E59D543A68A5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]

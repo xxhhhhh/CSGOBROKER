@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d9ad02f9-e534-43f7-9208-32028036b7b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-16T08:01:50.580Z",
+  "updatedAt": "2026-10-17T07:38:14.050Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 41,
-  "totalItemsGrouped": 40,
+  "totalItemsRaw": 42,
+  "totalItemsGrouped": 41,
   "items": [
     {
       "assetid": "50192745817",
@@ -57,41 +57,6 @@
       ],
       "float": 0.02629462257,
       "seed": 286,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "53753750596",
-      "classid": "7993042978",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C6D6020E22590EC7DE3DC5E659C5EEC0F6C5FE4F61012FC586CAAE0AC7B6C2DD2C4B6F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.043414626271,
-      "seed": 12,
       "phase": "Ruby"
     },
     {
@@ -159,6 +124,42 @@
       "market_hash_name": "P250 | Muertos (Factory New)",
       "type": "Classified Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%206979B5B5CAA4D568714D49FD6A416C596D51A0EEA8836A29B36B017A196D62EE2D7D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50508127369",
+      "classid": "7993037606",
+      "instanceid": "6276340031",
+      "amount": 1,
+      "name": "AK-47 | Redline",
+      "market_hash_name": "AK-47 | Redline (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1093,6 +1094,54 @@
       ]
     },
     {
+      "assetid": "50929720047",
+      "classid": "7993046554",
+      "instanceid": "7190706279",
+      "amount": 1,
+      "name": "Souvenir AK-47 | Gold Arabesque",
+      "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Field-Tested)",
+      "type": "Souvenir Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "30217028308",
       "classid": "4597434498",
       "instanceid": "1375457715",
@@ -1122,7 +1171,7 @@
     {
       "assetid": "36606653137",
       "classid": "7993035700",
-      "instanceid": "480172227",
+      "instanceid": "480100115",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Crimson Tsunami",
       "market_hash_name": "StatTrak™ Galil AR | Crimson Tsunami (Minimal Wear)",
