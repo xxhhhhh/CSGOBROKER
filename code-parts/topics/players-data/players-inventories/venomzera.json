@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/6417459b-053f-40d0-b2f5-8a26e7f05750",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-03T09:25:11.839Z",
+  "updatedAt": "2026-10-18T08:19:37.498Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 46,
+  "totalItemsRaw": 49,
   "totalItemsGrouped": 46,
   "items": [
     {
@@ -72,34 +72,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53784359156",
-      "classid": "8247053652",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Specialist Gloves | Pillow Punchers",
-      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
           "name": ""
         },
         {
@@ -275,9 +247,9 @@
       ]
     },
     {
-      "assetid": "53999479501",
+      "assetid": "54206386508",
       "classid": "201966840",
-      "instanceid": "6317037551",
+      "instanceid": "9110677620",
       "amount": 1,
       "name": "AK-47 | Fire Serpent",
       "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
@@ -306,6 +278,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1056,14 +1040,62 @@
       ]
     },
     {
-      "assetid": "53878358607",
-      "classid": "6216347003",
-      "instanceid": "0",
+      "assetid": "54206428450",
+      "classid": "7993038580",
+      "instanceid": "9110677619",
       "amount": 1,
-      "name": "Charm | Die-cast AK",
-      "market_hash_name": "Charm | Die-cast AK",
-      "type": "Remarkable Charm",
+      "name": "USP-S | Stainless",
+      "market_hash_name": "USP-S | Stainless (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52076267162",
+      "classid": "8490857690",
+      "instanceid": "143865972",
+      "amount": 4,
+      "name": "Sticker | venomzera (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | venomzera (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD776C6EFCFE7CBFFCBADCAC7CFDF249AA7CFBFCDCE6BFEE6",
       "tags": [
         {
           "category": "Type",
@@ -1078,12 +1110,31 @@
           "name": ""
         },
         {
-          "category": "KeychainCapsule",
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
           "name": ""
         }
       ],
       "assetids": [
-        "53878358607"
+        "52076267162",
+        "52076267161",
+        "52076267160",
+        "52076267159"
       ]
     },
     {
@@ -1143,9 +1194,9 @@
       ]
     },
     {
-      "assetid": "53870589707",
+      "assetid": "54206391243",
       "classid": "7993036294",
-      "instanceid": "480085569",
+      "instanceid": "6276340031",
       "amount": 1,
       "name": "Tec-9 | Whiteout",
       "market_hash_name": "Tec-9 | Whiteout (Minimal Wear)",
@@ -1181,7 +1232,7 @@
     {
       "assetid": "49126897433",
       "classid": "7993038803",
-      "instanceid": "188733407",
+      "instanceid": "188609195",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Minimal Wear)",
@@ -1217,7 +1268,7 @@
     {
       "assetid": "52076179163",
       "classid": "7993037525",
-      "instanceid": "9107560398",
+      "instanceid": "9112216173",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -1289,7 +1340,7 @@
     {
       "assetid": "51134146301",
       "classid": "7993040447",
-      "instanceid": "188530144",
+      "instanceid": "188532418",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Bad Trip",
       "market_hash_name": "StatTrak™ FAMAS | Bad Trip (Field-Tested)",
@@ -1325,7 +1376,7 @@
     {
       "assetid": "53088580877",
       "classid": "7993039158",
-      "instanceid": "9108826695",
+      "instanceid": "9112216172",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Field-Tested)",

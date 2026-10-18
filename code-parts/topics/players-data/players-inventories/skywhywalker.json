@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/skywhywalker",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-17T07:33:55.102Z",
+  "updatedAt": "2026-10-18T07:49:07.822Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 416,
-  "totalItemsGrouped": 357,
+  "totalItemsRaw": 418,
+  "totalItemsGrouped": 359,
   "items": [
     {
       "assetid": "31828282508",
@@ -3051,6 +3051,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Superconductor",
       "market_hash_name": "★ Sport Gloves | Superconductor (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54079298335",
+      "classid": "8269159777",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Factory New)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -6148,6 +6176,50 @@
       ]
     },
     {
+      "assetid": "54211935395",
+      "classid": "7993043505",
+      "instanceid": "9112853140",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54024225185",
       "classid": "7993042471",
       "instanceid": "8783259362",
@@ -6184,9 +6256,9 @@
       ]
     },
     {
-      "assetid": "47545154294",
+      "assetid": "54211931642",
       "classid": "7993051188",
-      "instanceid": "7725163706",
+      "instanceid": "9111958476",
       "amount": 1,
       "name": "AK-47 | Wild Lotus",
       "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
@@ -6808,6 +6880,42 @@
       ]
     },
     {
+      "assetid": "54087778651",
+      "classid": "7993039273",
+      "instanceid": "9103082176",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47780717440",
       "classid": "7993051280",
       "instanceid": "7774395148",
@@ -7209,41 +7317,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "47780664913",
-      "classid": "7729127990",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Sticker Slab | LGB eSports (Holo) | Katowice 2015",
-      "market_hash_name": "Sticker Slab | LGB eSports (Holo) | Katowice 2015",
-      "type": "Customized Remarkable Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2031213129FA3B1131193501395931413193303639312114518E33B3C294F1",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "47780664913"
       ]
     },
     {
@@ -9637,49 +9710,6 @@
         "43882167811",
         "43882167601",
         "43882167301"
-      ]
-    },
-    {
-      "assetid": "54066107114",
-      "classid": "846292914",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | LGB eSports (Holo) | Katowice 2015",
-      "market_hash_name": "Sticker | LGB eSports (Holo) | Katowice 2015",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F1F07A6163F1F371B2F1B7D1A171F0FA01D771F6F17FB1B485E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54066107114"
       ]
     },
     {
@@ -12687,9 +12717,57 @@
       ]
     },
     {
+      "assetid": "54084860392",
+      "classid": "7993044761",
+      "instanceid": "8614958314",
+      "amount": 1,
+      "name": "StatTrak™ M4A4 | The Emperor",
+      "market_hash_name": "StatTrak™ M4A4 | The Emperor (Factory New)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42052048031",
       "classid": "7993040767",
-      "instanceid": "6300830284",
+      "instanceid": "6358689024",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Neon Rider",
       "market_hash_name": "StatTrak™ MAC-10 | Neon Rider (Factory New)",
@@ -12977,7 +13055,7 @@
     {
       "assetid": "45812834666",
       "classid": "7993044609",
-      "instanceid": "6404898601",
+      "instanceid": "6329133767",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Dragonfire",
       "market_hash_name": "StatTrak™ SSG 08 | Dragonfire (Minimal Wear)",
@@ -13021,7 +13099,7 @@
     {
       "assetid": "40078034208",
       "classid": "7993038994",
-      "instanceid": "9105154480",
+      "instanceid": "9113049532",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Kami",
       "market_hash_name": "StatTrak™ Five-SeveN | Kami (Factory New)",

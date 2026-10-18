@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-10-17T08:42:38.424Z",
+  "updatedAt": "2026-10-18T08:58:16.855Z",
   "count": 358,
-  "successCount": 311,
-  "failedCount": 47,
+  "successCount": 308,
+  "failedCount": 50,
   "players": [
     {
       "nickname": "7Kick",
@@ -28,10 +28,10 @@
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/910.json",
       "updatedAt": "2026-10-15T08:08:33.682Z",
-      "inventoryVisible": true,
-      "fetchOk": true,
-      "fetchStatus": 200,
-      "fetchError": "",
+      "inventoryVisible": false,
+      "fetchOk": false,
+      "fetchStatus": 403,
+      "fetchError": "Steam profile is private (private)",
       "totalItemsGrouped": 49
     },
     {
@@ -252,12 +252,12 @@
       "team": "",
       "isContentCreator": true,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/anomaly.json",
-      "updatedAt": "2026-10-17T07:34:00.771Z",
+      "updatedAt": "2026-10-18T07:49:32.940Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 192
+      "totalItemsGrouped": 234
     },
     {
       "nickname": "apEX",
@@ -342,12 +342,12 @@
       "team": "",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/attacker.json",
-      "updatedAt": "2026-10-10T10:14:28.647Z",
+      "updatedAt": "2026-10-18T08:38:51.749Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 152
+      "totalItemsGrouped": 150
     },
     {
       "nickname": "Aunkere",
@@ -402,12 +402,12 @@
       "team": "Monte",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/azuwu.json",
-      "updatedAt": "2026-10-17T07:51:15.493Z",
+      "updatedAt": "2026-10-18T08:06:38.216Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 215
+      "totalItemsGrouped": 212
     },
     {
       "nickname": "b0RUP",
@@ -417,12 +417,12 @@
       "team": "Free Agent",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/b0rup.json",
-      "updatedAt": "2026-10-14T09:25:21.808Z",
+      "updatedAt": "2026-10-18T08:47:37.801Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 800
+      "totalItemsGrouped": 802
     },
     {
       "nickname": "b1t",
@@ -762,7 +762,7 @@
       "team": "Lynn Vision Gaming",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/c4llm3su3.json",
-      "updatedAt": "2026-10-10T10:10:13.464Z",
+      "updatedAt": "2026-10-18T08:34:27.223Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
@@ -957,12 +957,12 @@
       "team": "Free Agent",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/coldzera.json",
-      "updatedAt": "2026-10-13T11:00:58.736Z",
+      "updatedAt": "2026-10-18T08:43:12.252Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 160
+      "totalItemsGrouped": 161
     },
     {
       "nickname": "cptkurtka023",
@@ -1182,12 +1182,12 @@
       "team": "100 Thieves",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/device.json",
-      "updatedAt": "2026-10-17T08:10:37.362Z",
+      "updatedAt": "2026-10-18T08:24:00.895Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 106
+      "totalItemsGrouped": 107
     },
     {
       "nickname": "dex",
@@ -1272,12 +1272,12 @@
       "team": "Team Spirit",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/donk.json",
-      "updatedAt": "2026-10-17T07:31:39.789Z",
+      "updatedAt": "2026-10-18T07:46:47.104Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 78
+      "totalItemsGrouped": 76
     },
     {
       "nickname": "dukefissura",
@@ -1422,12 +1422,12 @@
       "team": "Alliance",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/eraa.json",
-      "updatedAt": "2026-10-17T07:55:28.894Z",
+      "updatedAt": "2026-10-18T08:11:00.461Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 77
+      "totalItemsGrouped": 76
     },
     {
       "nickname": "es3tag",
@@ -1572,7 +1572,7 @@
       "team": "Gaimin Gladiators",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/felps.json",
-      "updatedAt": "2026-10-17T08:12:44.021Z",
+      "updatedAt": "2026-10-18T08:28:08.374Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
@@ -1782,12 +1782,12 @@
       "team": "Free Agent",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/h4rn.json",
-      "updatedAt": "2026-10-17T08:38:13.964Z",
+      "updatedAt": "2026-10-18T08:51:50.937Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 135
+      "totalItemsGrouped": 136
     },
     {
       "nickname": "hAdji",
@@ -1917,12 +1917,12 @@
       "team": "9z Team",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/huasopeek.json",
-      "updatedAt": "2026-10-10T09:40:22.563Z",
+      "updatedAt": "2026-10-18T08:04:31.855Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 85
+      "totalItemsGrouped": 86
     },
     {
       "nickname": "huNter-",
@@ -2022,12 +2022,12 @@
       "team": "Free Agent",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/interz.json",
-      "updatedAt": "2026-10-08T10:51:56.038Z",
+      "updatedAt": "2026-10-18T08:43:23.963Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 246
+      "totalItemsGrouped": 249
     },
     {
       "nickname": "ISSAA",
@@ -2247,12 +2247,12 @@
       "team": "Team Liquid",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/jorko.json",
-      "updatedAt": "2026-10-17T08:06:27.733Z",
+      "updatedAt": "2026-10-18T08:21:43.315Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 105
+      "totalItemsGrouped": 104
     },
     {
       "nickname": "JOTA",
@@ -2367,12 +2367,12 @@
       "team": "K27",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/kashl1d.json",
-      "updatedAt": "2026-10-17T08:16:59.954Z",
+      "updatedAt": "2026-10-18T08:32:23.148Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 217
+      "totalItemsGrouped": 220
     },
     {
       "nickname": "kaze",
@@ -2397,12 +2397,12 @@
       "team": "WW Team",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/kelien.json",
-      "updatedAt": "2026-10-16T08:45:08.450Z",
+      "updatedAt": "2026-10-18T08:36:36.458Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 315
+      "totalItemsGrouped": 316
     },
     {
       "nickname": "KENSi",
@@ -2457,12 +2457,12 @@
       "team": "MIBR",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/kl1m.json",
-      "updatedAt": "2026-10-11T10:12:34.927Z",
+      "updatedAt": "2026-10-18T08:19:37.975Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 36
+      "totalItemsGrouped": 39
     },
     {
       "nickname": "koala",
@@ -2592,12 +2592,12 @@
       "team": "FURIA",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/kscerato.json",
-      "updatedAt": "2026-10-16T07:54:11.036Z",
+      "updatedAt": "2026-10-18T07:46:49.521Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 42
+      "totalItemsGrouped": 43
     },
     {
       "nickname": "Kvem",
@@ -2667,7 +2667,7 @@
       "team": "Legacy",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/latto.json",
-      "updatedAt": "2026-10-17T07:44:50.369Z",
+      "updatedAt": "2026-10-18T08:00:22.132Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
@@ -2727,7 +2727,7 @@
       "team": "MIBR",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/lnz.json",
-      "updatedAt": "2026-10-11T10:12:32.565Z",
+      "updatedAt": "2026-10-18T08:19:35.886Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
@@ -2847,12 +2847,12 @@
       "team": "WW Team",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/m3wsu.json",
-      "updatedAt": "2026-10-16T08:45:09.196Z",
+      "updatedAt": "2026-10-18T08:36:46.418Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 556
+      "totalItemsGrouped": 557
     },
     {
       "nickname": "Magisk",
@@ -2892,12 +2892,12 @@
       "team": "BetBoom Team",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/magnojez.json",
-      "updatedAt": "2026-10-17T07:55:27.841Z",
+      "updatedAt": "2026-10-18T08:10:59.160Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 76
+      "totalItemsGrouped": 77
     },
     {
       "nickname": "MaiL09",
@@ -2922,12 +2922,12 @@
       "team": "Aurora Gaming",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/maj3r.json",
-      "updatedAt": "2026-10-10T09:29:54.717Z",
+      "updatedAt": "2026-10-18T07:53:51.882Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 94
+      "totalItemsGrouped": 93
     },
     {
       "nickname": "Maka",
@@ -3027,12 +3027,12 @@
       "team": "FOKUS",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/matheos.json",
-      "updatedAt": "2026-10-16T08:29:49.509Z",
+      "updatedAt": "2026-10-18T08:21:43.752Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 42
+      "totalItemsGrouped": 43
     },
     {
       "nickname": "max",
@@ -3087,12 +3087,12 @@
       "team": "",
       "isContentCreator": true,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/megarush.json",
-      "updatedAt": "2026-10-16T09:04:31.661Z",
+      "updatedAt": "2026-10-18T08:56:01.956Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 156
+      "totalItemsGrouped": 157
     },
     {
       "nickname": "Mercury",
@@ -3297,12 +3297,12 @@
       "team": "HOTU",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/n0rb3r7.json",
-      "updatedAt": "2026-10-17T08:02:13.835Z",
+      "updatedAt": "2026-10-18T08:17:32.281Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 47
+      "totalItemsGrouped": 48
     },
     {
       "nickname": "n1ssim",
@@ -3417,12 +3417,12 @@
       "team": "Passion UA",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/nicx.json",
-      "updatedAt": "2026-10-17T07:59:52.100Z",
+      "updatedAt": "2026-10-18T08:15:22.656Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 91
+      "totalItemsGrouped": 93
     },
     {
       "nickname": "NiKo",
@@ -3537,12 +3537,12 @@
       "team": "B8",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/npl.json",
-      "updatedAt": "2026-10-15T08:16:59.324Z",
+      "updatedAt": "2026-10-18T08:04:32.808Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 50
+      "totalItemsGrouped": 51
     },
     {
       "nickname": "ohnePixel",
@@ -3597,12 +3597,12 @@
       "team": "Free Agent",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/oskar.json",
-      "updatedAt": "2026-10-17T08:29:48.072Z",
+      "updatedAt": "2026-10-18T08:45:28.120Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 434
+      "totalItemsGrouped": 435
     },
     {
       "nickname": "ottoNd",
@@ -3627,12 +3627,12 @@
       "team": "Virtus.pro",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/perfecto.json",
-      "updatedAt": "2026-10-17T08:25:36.524Z",
+      "updatedAt": "2026-10-18T08:41:08.201Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 123
+      "totalItemsGrouped": 125
     },
     {
       "nickname": "phzy",
@@ -3642,12 +3642,12 @@
       "team": "Astralis",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/phzy.json",
-      "updatedAt": "2026-10-09T10:08:46.678Z",
+      "updatedAt": "2026-10-18T07:56:10.984Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 192
+      "totalItemsGrouped": 195
     },
     {
       "nickname": "piriajr",
@@ -3732,12 +3732,12 @@
       "team": "G2 Esports",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/r1nkle.json",
-      "updatedAt": "2026-10-16T08:21:11.595Z",
+      "updatedAt": "2026-10-18T08:13:15.989Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 129
+      "totalItemsGrouped": 128
     },
     {
       "nickname": "raalz",
@@ -3777,12 +3777,12 @@
       "team": "Monte",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/rainwaker.json",
-      "updatedAt": "2026-10-14T08:40:38.946Z",
+      "updatedAt": "2026-10-18T08:04:34.848Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 549
+      "totalItemsGrouped": 551
     },
     {
       "nickname": "rallen",
@@ -3912,12 +3912,12 @@
       "team": "Team Vitality",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/ropz.json",
-      "updatedAt": "2026-10-08T09:53:19.075Z",
+      "updatedAt": "2026-10-18T07:44:05.619Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 68
+      "totalItemsGrouped": 66
     },
     {
       "nickname": "RUSH",
@@ -4242,12 +4242,12 @@
       "team": "",
       "isContentCreator": true,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/skywhywalker.json",
-      "updatedAt": "2026-10-17T07:33:55.102Z",
+      "updatedAt": "2026-10-18T07:49:07.822Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 357
+      "totalItemsGrouped": 359
     },
     {
       "nickname": "slaxz-",
@@ -4557,12 +4557,12 @@
       "team": "WW Team",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/strogo.json",
-      "updatedAt": "2026-10-17T07:31:53.182Z",
+      "updatedAt": "2026-10-18T07:47:06.463Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 163
+      "totalItemsGrouped": 171
     },
     {
       "nickname": "STYKO",
@@ -4572,12 +4572,12 @@
       "team": "Free Agent",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/styko.json",
-      "updatedAt": "2026-10-11T10:38:06.557Z",
+      "updatedAt": "2026-10-18T08:45:29.674Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 82
+      "totalItemsGrouped": 80
     },
     {
       "nickname": "sugaR",
@@ -4677,12 +4677,12 @@
       "team": "GamerLegion",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/tauson.json",
-      "updatedAt": "2026-10-16T07:51:20.833Z",
+      "updatedAt": "2026-10-18T07:44:10.000Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 235
+      "totalItemsGrouped": 237
     },
     {
       "nickname": "Techno",
@@ -4722,12 +4722,12 @@
       "team": "BESTIA",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/timo.json",
-      "updatedAt": "2026-10-16T08:27:45.056Z",
+      "updatedAt": "2026-10-18T08:19:40.036Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 43
+      "totalItemsGrouped": 38
     },
     {
       "nickname": "tN1R",
@@ -4798,10 +4798,10 @@
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/try.json",
       "updatedAt": "2026-10-17T07:59:50.366Z",
-      "inventoryVisible": true,
-      "fetchOk": true,
-      "fetchStatus": 200,
-      "fetchError": "",
+      "inventoryVisible": false,
+      "fetchOk": false,
+      "fetchStatus": 403,
+      "fetchError": "Inventory is private or unavailable",
       "totalItemsGrouped": 384
     },
     {
@@ -4887,7 +4887,7 @@
       "team": "MIBR",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/venomzera.json",
-      "updatedAt": "2026-10-03T09:25:11.839Z",
+      "updatedAt": "2026-10-18T08:19:37.498Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
@@ -4902,12 +4902,12 @@
       "team": "FlyQuest",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/vexite.json",
-      "updatedAt": "2026-10-16T08:43:01.787Z",
+      "updatedAt": "2026-10-18T08:34:31.055Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 277
+      "totalItemsGrouped": 278
     },
     {
       "nickname": "VINI",
@@ -4992,12 +4992,12 @@
       "team": "Aurora Gaming",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/wicadia.json",
-      "updatedAt": "2026-10-16T08:01:39.445Z",
+      "updatedAt": "2026-10-18T07:53:54.309Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 75
+      "totalItemsGrouped": 76
     },
     {
       "nickname": "Woro2k",
@@ -5037,12 +5037,12 @@
       "team": "K27",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/x5g7v.json",
-      "updatedAt": "2026-10-17T08:16:58.027Z",
+      "updatedAt": "2026-10-18T08:32:21.796Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 424
+      "totalItemsGrouped": 426
     },
     {
       "nickname": "Xant3r",
@@ -5083,10 +5083,10 @@
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/xeedo.json",
       "updatedAt": "2026-10-16T08:40:41.816Z",
-      "inventoryVisible": true,
-      "fetchOk": true,
-      "fetchStatus": 200,
-      "fetchError": "",
+      "inventoryVisible": false,
+      "fetchOk": false,
+      "fetchStatus": 403,
+      "fetchError": "Steam profile is private (private)",
       "totalItemsGrouped": 61
     },
     {
@@ -5097,12 +5097,12 @@
       "team": "MOUZ",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/xertion.json",
-      "updatedAt": "2026-10-17T07:36:03.810Z",
+      "updatedAt": "2026-10-18T07:51:45.555Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 61
+      "totalItemsGrouped": 62
     },
     {
       "nickname": "xfl0ud",
@@ -5127,12 +5127,12 @@
       "team": "PARIVISION",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/xielo.json",
-      "updatedAt": "2026-10-17T07:38:14.050Z",
+      "updatedAt": "2026-10-18T07:53:56.165Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 41
+      "totalItemsGrouped": 39
     },
     {
       "nickname": "XigN",
@@ -5352,12 +5352,12 @@
       "team": "PARIVISION",
       "isContentCreator": false,
       "inventoryJson": "/code-parts/topics/players-data/players-inventories/zweih.json",
-      "updatedAt": "2026-10-17T07:40:15.837Z",
+      "updatedAt": "2026-10-18T07:56:07.313Z",
       "inventoryVisible": true,
       "fetchOk": true,
       "fetchStatus": 200,
       "fetchError": "",
-      "totalItemsGrouped": 64
+      "totalItemsGrouped": 66
     },
     {
       "nickname": "ZywOo",

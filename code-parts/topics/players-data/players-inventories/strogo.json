@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9c3e501d-132c-42c8-b808-7641acfdc0ef",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-17T07:31:53.182Z",
+  "updatedAt": "2026-10-18T07:47:06.463Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 164,
-  "totalItemsGrouped": 163,
+  "totalItemsRaw": 172,
+  "totalItemsGrouped": 171,
   "items": [
     {
       "assetid": "53938345772",
@@ -168,6 +168,45 @@
       ],
       "float": 0.035032015294,
       "seed": 53,
+      "phase": "Phase 4"
+    },
+    {
+      "assetid": "54075563245",
+      "classid": "7993041288",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200A1AE7B394B3C30B12890E2AAF09220C3A0932DDD981E3094AC10962137A0246D1EDE0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.039773788303,
+      "seed": 459,
       "phase": "Phase 4"
     },
     {
@@ -600,6 +639,41 @@
       "float": 0.030404085293,
       "seed": 895,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "54075524828",
+      "classid": "7993038920",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CADA1647567303CBD236C9EA69C9E2CCFAC9F256686620C98A42CFA2EABAC21D8C23E8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.049576863647,
+      "seed": 648,
+      "phase": "Phase 2"
     },
     {
       "assetid": "53743064918",
@@ -2305,6 +2379,118 @@
       ]
     },
     {
+      "assetid": "31661267685",
+      "classid": "2948874694",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Horizon Case",
+      "market_hash_name": "Horizon Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31661267688",
+      "classid": "2948874694",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Horizon Case",
+      "market_hash_name": "Horizon Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31661585695",
+      "classid": "2948874694",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Horizon Case",
+      "market_hash_name": "Horizon Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31661585743",
+      "classid": "2948874694",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Horizon Case",
+      "market_hash_name": "Horizon Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43288069483",
       "classid": "1989275027",
       "instanceid": "302028390",
@@ -3364,6 +3550,54 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54075480602",
+      "classid": "7993043505",
+      "instanceid": "7755762244",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -4570,6 +4804,37 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "39987376618",
+      "classid": "6216397197",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Ruby Stream (Lenticular)",
+      "market_hash_name": "Sticker | Ruby Stream (Lenticular)",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209B8B9B832292BB9BB39DAB9FF99E939B8B6EA6F39BEB8C9BC29560",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "39987376618"
       ]
     },
     {
