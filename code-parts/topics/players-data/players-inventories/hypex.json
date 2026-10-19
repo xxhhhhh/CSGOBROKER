@@ -12,14 +12,49 @@
   "faceit": "https://faceitdb.com/profile/faceit/4f57a883-03fe-4747-bfdb-459aa007c4f3",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-16T07:51:21.833Z",
+  "updatedAt": "2026-10-19T08:26:28.704Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 98,
-  "totalItemsGrouped": 79,
+  "totalItemsRaw": 85,
+  "totalItemsGrouped": 78,
   "items": [
+    {
+      "assetid": "54094984215",
+      "classid": "7993037924",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208696116E39444F879E7D85A63C82AE80B685BE2F7D086185C61C81EEE2F68EB853735B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.027800397947,
+      "seed": 922,
+      "phase": "Phase 2"
+    },
     {
       "assetid": "47334375110",
       "classid": "7993038979",
@@ -80,34 +115,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53966295037",
-      "classid": "5189384637",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
           "name": ""
         }
       ]
@@ -377,9 +384,9 @@
       ]
     },
     {
-      "assetid": "51840160189",
+      "assetid": "54220336032",
       "classid": "7993035557",
-      "instanceid": "8524034533",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "AK-47 | Point Disarray",
       "market_hash_name": "AK-47 | Point Disarray (Minimal Wear)",
@@ -408,18 +415,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -1714,62 +1709,6 @@
       ]
     },
     {
-      "assetid": "53937208369",
-      "classid": "8490957601",
-      "instanceid": "143865972",
-      "amount": 10,
-      "name": "Sticker | hypex | Cologne 2026",
-      "market_hash_name": "Sticker | hypex | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206E7E6E76D7674E6E466D5E6A0C6B666E7E983A066E1E6C121BCAA0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53937208369",
-        "53937208368",
-        "53937208367",
-        "53937208366",
-        "53937208365",
-        "53937208364",
-        "53937208363",
-        "53937208362",
-        "53937208361",
-        "53937208360"
-      ]
-    },
-    {
       "assetid": "52228481173",
       "classid": "7993035591",
       "instanceid": "302028390",
@@ -2136,10 +2075,10 @@
       ]
     },
     {
-      "assetid": "53937208359",
+      "assetid": "53937208356",
       "classid": "8490810094",
       "instanceid": "143865972",
-      "amount": 11,
+      "amount": 8,
       "name": "Sticker | hypex (Foil) | Cologne 2026",
       "market_hash_name": "Sticker | hypex (Foil) | Cologne 2026",
       "type": "Remarkable Sticker",
@@ -2179,9 +2118,6 @@
         }
       ],
       "assetids": [
-        "53937208359",
-        "53937208358",
-        "53937208357",
         "53937208356",
         "53937208355",
         "53937208354",
