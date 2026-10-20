@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/dcc5bb48-c74c-413e-9773-20d3294dcbb0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-17T07:57:47.013Z",
+  "updatedAt": "2026-10-20T08:36:33.355Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 80,
-  "totalItemsGrouped": 79,
+  "totalItemsRaw": 82,
+  "totalItemsGrouped": 81,
   "items": [
     {
       "assetid": "53776833884",
@@ -186,6 +186,34 @@
       "float": 0.011211834848,
       "seed": 797,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "54232285380",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "38301758308",
@@ -680,6 +708,42 @@
       "market_hash_name": "MP7 | Forest DDPAT (Well-Worn)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202030E6E8FE8D48380100250821102418F4A5BCD6236069482F50380D88E313",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54232285381",
+      "classid": "7993038623",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP7 | Short Ochre",
+      "market_hash_name": "MP7 | Short Ochre (Factory New)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2796,7 +2860,7 @@
     {
       "assetid": "30311109001",
       "classid": "7993043179",
-      "instanceid": "480086347",
+      "instanceid": "480097477",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Buddy",
       "market_hash_name": "StatTrak™ Five-SeveN | Buddy (Field-Tested)",
