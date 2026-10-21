@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-20T09:06:17.584Z",
+  "updatedAt": "2026-10-21T09:11:58.263Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 69,
+  "totalItemsRaw": 74,
+  "totalItemsGrouped": 73,
   "items": [
     {
       "assetid": "51006192748",
@@ -40,6 +40,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54114859734",
+      "classid": "7993037046",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Flip Knife | Ultraviolet",
+      "market_hash_name": "★ Flip Knife | Ultraviolet (Minimal Wear)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -195,6 +227,34 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "9889361932",
+      "classid": "7993044435",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Bloodhound Gloves | Charred",
+      "market_hash_name": "★ Bloodhound Gloves | Charred (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54114804917",
       "classid": "7993044894",
       "instanceid": "188530139",
@@ -206,6 +266,46 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "31829650333",
+      "classid": "7993048569",
+      "instanceid": "188535291",
+      "amount": 1,
+      "name": "★ StatTrak™ Flip Knife | Fade",
+      "market_hash_name": "★ StatTrak™ Flip Knife | Fade (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -372,7 +472,7 @@
       "assetid": "49625802302",
       "classid": "6195246388",
       "instanceid": "302028390",
-      "amount": 1,
+      "amount": 2,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
@@ -392,7 +492,8 @@
         }
       ],
       "assetids": [
-        "49625802302"
+        "49625802302",
+        "54243377604"
       ]
     },
     {
@@ -1649,6 +1750,53 @@
       ]
     },
     {
+      "assetid": "16524079703",
+      "classid": "3485689312",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | TACO (Foil) | Berlin 2019",
+      "market_hash_name": "Sticker | TACO (Foil) | Berlin 2019",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5E4E56F7476E4E664A7E4A2C4B464E5E966E264E3E4619AD84BD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "16524079703"
+      ]
+    },
+    {
       "assetid": "49840529381",
       "classid": "188530424",
       "instanceid": "8187754333",
@@ -1959,7 +2107,7 @@
     {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "9118769014",
+      "instanceid": "9121373675",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -2011,7 +2159,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "9118819352",
+      "instanceid": "9121373674",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -2063,7 +2211,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "9118819351",
+      "instanceid": "9121373673",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",

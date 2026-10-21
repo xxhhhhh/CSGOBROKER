@@ -7,26 +7,28 @@
   "name": "Yang Yi",
   "nationality": "China",
   "born": "23.07.2001",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/775f4105-de70-4d88-ae5d-5ffff72d7bba",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-06T07:55:49.306Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 55,
-  "totalItemsGrouped": 50,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-21T08:35:55.885Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 57,
+  "totalItemsGrouped": 52,
   "items": [
     {
-      "assetid": "53079530482",
-      "classid": "7993040524",
+      "assetid": "53880354379",
+      "classid": "7993042912",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FBEB094C5E253EFAE378FFDB10FFD3FDCBF8C35461201FF8BB51FA93F48BF3987DC425",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208292496E115E4A839A7981A22281AA84B281BA103E086A81C25E87EA98F28A36349C06",
       "tags": [
         {
           "category": "Type",
@@ -34,10 +36,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -53,9 +51,37 @@
           "name": ""
         }
       ],
-      "float": 0.018408386037,
-      "seed": 170,
+      "float": 0.031889028847,
+      "seed": 732,
       "phase": "Sapphire"
+    },
+    {
+      "assetid": "53569634863",
+      "classid": "7993043849",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "41217834373",
@@ -355,6 +381,41 @@
           "category": "ProPlayer",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54128455882",
+      "classid": "7735849949",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | advent (Gold) | Katowice 2019",
+      "market_hash_name": "Sticker Slab | advent (Gold) | Katowice 2019",
+      "type": "Customized Extraordinary Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207666766EBD7C56765E70467E1E760676D477717E76665316B768D43E793E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54128455882"
       ]
     },
     {
@@ -1300,9 +1361,9 @@
       ]
     },
     {
-      "assetid": "51811760469",
+      "assetid": "54128455881",
       "classid": "188530425",
-      "instanceid": "8491894773",
+      "instanceid": "6281559217",
       "amount": 1,
       "name": "Glock-18 | Fade",
       "market_hash_name": "Glock-18 | Fade (Factory New)",
@@ -1486,7 +1547,7 @@
     {
       "assetid": "42105359000",
       "classid": "7993045315",
-      "instanceid": "480198090",
+      "instanceid": "481141558",
       "amount": 1,
       "name": "StatTrak™ USP-S | The Traitor",
       "market_hash_name": "StatTrak™ USP-S | The Traitor (Minimal Wear)",
@@ -1522,7 +1583,7 @@
     {
       "assetid": "46164091486",
       "classid": "7993044752",
-      "instanceid": "3444216102",
+      "instanceid": "3149162740",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Factory New)",
@@ -1558,7 +1619,7 @@
     {
       "assetid": "46364355398",
       "classid": "7993039753",
-      "instanceid": "8526853361",
+      "instanceid": "9055664964",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Empress",
       "market_hash_name": "StatTrak™ AK-47 | The Empress (Minimal Wear)",
@@ -1606,7 +1667,7 @@
     {
       "assetid": "37331653972",
       "classid": "7993040023",
-      "instanceid": "8797458649",
+      "instanceid": "9000304505",
       "amount": 1,
       "name": "StatTrak™ P250 | Valence",
       "market_hash_name": "StatTrak™ P250 | Valence (Minimal Wear)",
@@ -1706,7 +1767,7 @@
     {
       "assetid": "39635804520",
       "classid": "7993038470",
-      "instanceid": "8840622227",
+      "instanceid": "9120095651",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Magnesium",
       "market_hash_name": "StatTrak™ M4A4 | Magnesium (Well-Worn)",
@@ -1758,7 +1819,7 @@
     {
       "assetid": "39635800439",
       "classid": "7993036112",
-      "instanceid": "6280357517",
+      "instanceid": "6356415669",
       "amount": 1,
       "name": "StatTrak™ P90 | Grim",
       "market_hash_name": "StatTrak™ P90 | Grim (Minimal Wear)",

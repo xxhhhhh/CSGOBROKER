@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4613e6a8-e551-4e48-bb6c-f7d6569ce45d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-20T08:51:16.461Z",
+  "updatedAt": "2026-10-21T08:57:02.093Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 88,
-  "totalItemsGrouped": 43,
+  "totalItemsRaw": 81,
+  "totalItemsGrouped": 40,
   "items": [
     {
       "assetid": "26666963680",
@@ -83,30 +83,6 @@
       ]
     },
     {
-      "assetid": "54078624879",
-      "classid": "191923205",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Name Tag",
-      "market_hash_name": "Name Tag",
-      "type": "Base Grade Tag",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C4D4C4DC74CDE4C4ECC5F4C0ACC4B4C6845FA0AA",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "12300129363",
       "classid": "241583890",
       "instanceid": "302028390",
@@ -140,68 +116,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "54072770654",
-      "classid": "3574238937",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Dragon Lore (Foil)",
-      "market_hash_name": "Sticker | Dragon Lore (Foil)",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203222322A8B3B12321A37023650373A322298115A32423A97CDB442",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54072770654"
-      ]
-    },
-    {
-      "assetid": "54064619789",
-      "classid": "8620778807",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Radiograph (Foil)",
-      "market_hash_name": "Sticker | Radiograph (Foil)",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F9E9F9E140F0D9F9D1FCC9FD9BFCF1F9E926AE91F989F1C6873C9B",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54064619789"
       ]
     },
     {
@@ -600,6 +514,49 @@
       ]
     },
     {
+      "assetid": "54123227329",
+      "classid": "4302204590",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Boom (Gold) | 2020 RMR",
+      "market_hash_name": "Sticker | Boom (Gold) | 2020 RMR",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209686968E2F9FB696BE90A692F4939E968622B3FE96E69E424B994F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54123227329"
+      ]
+    },
+    {
       "assetid": "54053830609",
       "classid": "2659616062",
       "instanceid": "188530139",
@@ -650,7 +607,7 @@
       "assetid": "54036699370",
       "classid": "8491531172",
       "instanceid": "143865972",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | felps (Gold) | Cologne 2026",
       "market_hash_name": "Sticker | felps (Gold) | Cologne 2026",
       "type": "Extraordinary Sticker",
@@ -690,8 +647,7 @@
         }
       ],
       "assetids": [
-        "54036699370",
-        "54009766588"
+        "54036699370"
       ]
     },
     {
@@ -840,7 +796,7 @@
       "assetid": "53957178118",
       "classid": "6360350671",
       "instanceid": "188530139",
-      "amount": 3,
+      "amount": 1,
       "name": "Sticker | felps (Gold) | Shanghai 2024",
       "market_hash_name": "Sticker | felps (Gold) | Shanghai 2024",
       "type": "Extraordinary Sticker",
@@ -880,9 +836,7 @@
         }
       ],
       "assetids": [
-        "53957178118",
-        "53957176095",
-        "48292703867"
+        "53957178118"
       ]
     },
     {
@@ -971,49 +925,6 @@
         "54064596395",
         "54064595903",
         "54064595901"
-      ]
-    },
-    {
-      "assetid": "54064621898",
-      "classid": "5799821416",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Lynn Vision (Gold) | Copenhagen 2024",
-      "market_hash_name": "Sticker | Lynn Vision (Gold) | Copenhagen 2024",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B0A0B0A809B990B098B680B4D2B5B8B0A00589D8B0C0B85D689A95",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54064621898"
       ]
     },
     {
@@ -1134,10 +1045,10 @@
       ]
     },
     {
-      "assetid": "54054567785",
+      "assetid": "54054567781",
       "classid": "6216348687",
       "instanceid": "519977179",
-      "amount": 5,
+      "amount": 4,
       "name": "Sticker | Bolt Charge",
       "market_hash_name": "Sticker | Bolt Charge",
       "type": "High Grade Sticker",
@@ -1161,7 +1072,6 @@
         }
       ],
       "assetids": [
-        "54054567785",
         "54054567781",
         "54054567778",
         "54054567775",
@@ -1534,17 +1444,21 @@
       ]
     },
     {
-      "assetid": "54064620837",
-      "classid": "4614639246",
-      "instanceid": "188530139",
+      "assetid": "54241350589",
+      "classid": "5835584431",
+      "instanceid": "9120828842",
       "amount": 1,
-      "name": "Sticker | GODSENT (Holo) | Stockholm 2021",
-      "market_hash_name": "Sticker | GODSENT (Holo) | Stockholm 2021",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2061716179D8684161496551650364696171CA4609611169C5AEA58F",
+      "name": "USP-S",
+      "market_hash_name": "USP-S",
+      "type": "Stock Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -1556,7 +1470,11 @@
           "name": ""
         },
         {
-          "category": "StickerCategory",
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -1568,12 +1486,13 @@
           "name": ""
         },
         {
-          "category": "StickerCapsule",
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
-      ],
-      "assetids": [
-        "54064620837"
       ]
     }
   ]
