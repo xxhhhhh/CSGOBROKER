@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/skywhywalker",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-21T08:18:43.222Z",
+  "updatedAt": "2026-10-22T08:20:01.802Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 435,
-  "totalItemsGrouped": 376,
+  "totalItemsRaw": 436,
+  "totalItemsGrouped": 377,
   "items": [
     {
       "assetid": "31828282508",
@@ -1423,6 +1423,38 @@
       ]
     },
     {
+      "assetid": "54137785832",
+      "classid": "7993042523",
+      "instanceid": "9092967116",
+      "amount": 1,
+      "name": "★ Karambit | Fade",
+      "market_hash_name": "★ Karambit | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48970803146",
       "classid": "7993041446",
       "instanceid": "188530139",
@@ -1493,14 +1525,14 @@
       "phase": "Emerald"
     },
     {
-      "assetid": "52195721219",
-      "classid": "7993048578",
-      "instanceid": "188530139",
+      "assetid": "54137786143",
+      "classid": "7993037924",
+      "instanceid": "9092968054",
       "amount": 1,
-      "name": "★ Karambit | Night",
-      "market_hash_name": "★ Karambit | Night (Minimal Wear)",
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206979F6F79DBFA06871926A49D36D416F596A51DAD98B8E6A295201DD68196D3AF08C94",
       "tags": [
         {
           "category": "Type",
@@ -1522,15 +1554,18 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.030346011743,
+      "seed": 59,
+      "phase": "Phase 2"
     },
     {
-      "assetid": "53774594563",
-      "classid": "7993036994",
-      "instanceid": "480085569",
+      "assetid": "52195721219",
+      "classid": "7993048578",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Karambit | Tiger Tooth",
-      "market_hash_name": "★ Karambit | Tiger Tooth (Factory New)",
+      "name": "★ Karambit | Night",
+      "market_hash_name": "★ Karambit | Night (Minimal Wear)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -1894,38 +1929,6 @@
       "float": 0.075702682137,
       "seed": 483,
       "phase": "Ruby"
-    },
-    {
-      "assetid": "53370348653",
-      "classid": "7993040008",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Fade",
-      "market_hash_name": "★ M9 Bayonet | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "48898630145",
@@ -3639,50 +3642,6 @@
       ]
     },
     {
-      "assetid": "42874422334",
-      "classid": "7993048699",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "★ StatTrak™ Huntsman Knife | Marble Fade",
-      "market_hash_name": "★ StatTrak™ Huntsman Knife | Marble Fade (Factory New)",
-      "type": "★ StatTrak™ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53911582705",
       "classid": "7488632023",
       "instanceid": "302028390",
@@ -4091,6 +4050,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54137457889",
+      "classid": "8637422827",
+      "instanceid": "9092848455",
+      "amount": 1,
+      "name": "Desert Eagle | Eastern Enigma",
+      "market_hash_name": "Desert Eagle | Eastern Enigma (Factory New)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -6377,6 +6372,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54227691536",
+      "classid": "7993041257",
+      "instanceid": "6282608393",
+      "amount": 1,
+      "name": "AK-47 | Gold Arabesque",
+      "market_hash_name": "AK-47 | Gold Arabesque (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -13416,7 +13459,7 @@
     {
       "assetid": "42052048031",
       "classid": "7993040767",
-      "instanceid": "8194409128",
+      "instanceid": "6359042645",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Neon Rider",
       "market_hash_name": "StatTrak™ MAC-10 | Neon Rider (Factory New)",
