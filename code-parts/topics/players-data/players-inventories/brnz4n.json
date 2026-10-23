@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/c0a979a3-7128-4a06-ba7a-8d6f7e8fbd2f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-06T10:18:48.404Z",
+  "updatedAt": "2026-10-23T08:47:33.391Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 80,
-  "totalItemsGrouped": 67,
+  "totalItemsRaw": 82,
+  "totalItemsGrouped": 69,
   "items": [
     {
       "assetid": "52570206236",
@@ -146,6 +146,34 @@
     },
     {
       "assetid": "53880258732",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54278617333",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -602,6 +630,42 @@
       "amount": 1,
       "name": "CZ75-Auto | Honey Paisley",
       "market_hash_name": "CZ75-Auto | Honey Paisley (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54278617334",
+      "classid": "7993036481",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Copper Oxide",
+      "market_hash_name": "P250 | Copper Oxide (Field-Tested)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -2080,7 +2144,7 @@
     {
       "assetid": "53114102215",
       "classid": "7993043266",
-      "instanceid": "9124713232",
+      "instanceid": "9127453690",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Water Elemental",
       "market_hash_name": "StatTrak™ Glock-18 | Water Elemental (Minimal Wear)",
@@ -2172,7 +2236,7 @@
     {
       "assetid": "51837786161",
       "classid": "7993037525",
-      "instanceid": "548719444",
+      "instanceid": "539220700",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -2208,7 +2272,7 @@
     {
       "assetid": "51912539090",
       "classid": "7993042570",
-      "instanceid": "9124713233",
+      "instanceid": "9127442803",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",
@@ -2396,7 +2460,7 @@
     {
       "assetid": "49870261420",
       "classid": "7993043604",
-      "instanceid": "6482268335",
+      "instanceid": "6363436105",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Pulse",
       "market_hash_name": "StatTrak™ FAMAS | Pulse (Factory New)",

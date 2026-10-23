@@ -12,14 +12,53 @@
   "faceit": "https://faceitdb.com/profile/faceit/aef79440-d49d-414e-9303-9725b8d448d8",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-22T09:08:59.612Z",
+  "updatedAt": "2026-10-23T09:07:24.016Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 314,
-  "totalItemsGrouped": 103,
+  "totalItemsRaw": 317,
+  "totalItemsGrouped": 105,
   "items": [
+    {
+      "assetid": "54141943097",
+      "classid": "7993040883",
+      "instanceid": "9094445651",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2025359CDFD4FDEC243DA62105BA260D2315261D9EB7C5C72665BE264D7A552137163793",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.013185794465,
+      "seed": 411,
+      "phase": "Ruby"
+    },
     {
       "assetid": "51834650682",
       "classid": "7993040869",
@@ -1730,9 +1769,9 @@
       ]
     },
     {
-      "assetid": "54131499138",
+      "assetid": "54131889060",
       "classid": "7545312148",
-      "instanceid": "9090734695",
+      "instanceid": "9090926093",
       "amount": 2,
       "name": "Charm | Lil' Baller",
       "market_hash_name": "Charm | Lil' Baller",
@@ -1757,8 +1796,8 @@
         }
       ],
       "assetids": [
-        "54131499138",
-        "54131889060"
+        "54131889060",
+        "54131499138"
       ]
     },
     {
@@ -1793,6 +1832,38 @@
       ]
     },
     {
+      "assetid": "54140957755",
+      "classid": "7545310506",
+      "instanceid": "9094113771",
+      "amount": 2,
+      "name": "Charm | Lil' Curse",
+      "market_hash_name": "Charm | Lil' Curse",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54140957755",
+        "54140959515"
+      ]
+    },
+    {
       "assetid": "54131888376",
       "classid": "7545312021",
       "instanceid": "9090926093",
@@ -1824,9 +1895,9 @@
       ]
     },
     {
-      "assetid": "54131498309",
+      "assetid": "54131889689",
       "classid": "7545309815",
-      "instanceid": "9090734695",
+      "instanceid": "9090926093",
       "amount": 3,
       "name": "Charm | Lil' Vino",
       "market_hash_name": "Charm | Lil' Vino",
@@ -1851,9 +1922,9 @@
         }
       ],
       "assetids": [
+        "54131889689",
         "54131498309",
-        "54131496865",
-        "54131889689"
+        "54131496865"
       ]
     },
     {

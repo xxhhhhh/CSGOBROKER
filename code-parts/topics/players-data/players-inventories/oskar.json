@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/en/players/oskar",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-20T09:08:27.628Z",
+  "updatedAt": "2026-10-23T09:14:03.530Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 505,
-  "totalItemsGrouped": 446,
+  "totalItemsRaw": 500,
+  "totalItemsGrouped": 441,
   "items": [
     {
       "assetid": "53637391196",
@@ -1289,6 +1289,41 @@
       ]
     },
     {
+      "assetid": "54268538244",
+      "classid": "3600657885",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Graffiti | OMG (Brick Red)",
+      "market_hash_name": "Graffiti | OMG (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203F2F3F27FA351F3F173E0F3B5D38373F2F96200F3E573F4F28A3A64C5D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        },
+        {
+          "category": "SprayCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54268538244"
+      ]
+    },
+    {
       "assetid": "30737628105",
       "classid": "1989291926",
       "instanceid": "302028390",
@@ -1472,41 +1507,6 @@
       ],
       "assetids": [
         "30847270849"
-      ]
-    },
-    {
-      "assetid": "53441352258",
-      "classid": "3608085035",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "Sealed Graffiti | OMG (Brick Red)",
-      "market_hash_name": "Sealed Graffiti | OMG (Brick Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DACADAC21ED0FADAF2DBEADEB8DDD2DACA73C5EADBB2DAAACDC486BB9D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        },
-        {
-          "category": "SprayCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53441352258"
       ]
     },
     {
@@ -2407,12 +2407,12 @@
       ]
     },
     {
-      "assetid": "53441350303",
-      "classid": "7993066513",
+      "assetid": "54268048552",
+      "classid": "7993037766",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "M249 | Sleet",
-      "market_hash_name": "M249 | Sleet (Field-Tested)",
+      "name": "M249 | Sage Camo",
+      "market_hash_name": "M249 | Sage Camo (Minimal Wear)",
       "type": "Consumer Grade Machinegun",
       "inspectLink": "",
       "tags": [
@@ -2443,14 +2443,14 @@
       ]
     },
     {
-      "assetid": "46338377074",
-      "classid": "7993037028",
+      "assetid": "53441350303",
+      "classid": "7993066513",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "Negev | Raw Ceramic",
-      "market_hash_name": "Negev | Raw Ceramic (Factory New)",
+      "name": "M249 | Sleet",
+      "market_hash_name": "M249 | Sleet (Field-Tested)",
       "type": "Consumer Grade Machinegun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203222C0B8DCFD9E332A2E12A6381A3302360A96A9DFD93172CC345AD933422AEF51CCB0",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2803,114 +2803,6 @@
       ]
     },
     {
-      "assetid": "51195831480",
-      "classid": "7993036205",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Galil AR | Grey Smoke",
-      "market_hash_name": "Galil AR | Grey Smoke (Field-Tested)",
-      "type": "Consumer Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53914610512",
-      "classid": "7993036205",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Galil AR | Grey Smoke",
-      "market_hash_name": "Galil AR | Grey Smoke (Field-Tested)",
-      "type": "Consumer Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53441350297",
-      "classid": "7993060524",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "SG 553 | Safari Print",
-      "market_hash_name": "SG 553 | Safari Print (Field-Tested)",
-      "type": "Consumer Grade Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "42204639652",
       "classid": "7993035611",
       "instanceid": "302028390",
@@ -3127,78 +3019,6 @@
       ]
     },
     {
-      "assetid": "53276115633",
-      "classid": "7993035737",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "MP5-SD | Lime Hex",
-      "market_hash_name": "MP5-SD | Lime Hex (Well-Worn)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51595805214",
-      "classid": "7993060666",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "MP9 | Bee-Tron",
-      "market_hash_name": "MP9 | Bee-Tron (Minimal Wear)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "48793565178",
       "classid": "7993035538",
       "instanceid": "302028390",
@@ -3207,42 +3027,6 @@
       "market_hash_name": "MP9 | Buff Blue (Field-Tested)",
       "type": "Consumer Grade SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E40E1B3E1641F5ECD6D40AFDDCF5C4F0CC7C555805F7B43BF59C51F584ECFBBDDB60",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53475064362",
-      "classid": "7993035538",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "MP9 | Buff Blue",
-      "market_hash_name": "MP9 | Buff Blue (Field-Tested)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3487,42 +3271,6 @@
       ]
     },
     {
-      "assetid": "51708822563",
-      "classid": "7993061170",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "PP-Bizon | Thermal Currents",
-      "market_hash_name": "PP-Bizon | Thermal Currents (Minimal Wear)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46084660795",
       "classid": "7993035681",
       "instanceid": "302028390",
@@ -3601,42 +3349,6 @@
       "amount": 1,
       "name": "PP-Bizon | Wood Block Camo",
       "market_hash_name": "PP-Bizon | Wood Block Camo (Minimal Wear)",
-      "type": "Consumer Grade SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54080804661",
-      "classid": "7993036931",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "UMP-45 | Green Swirl",
-      "market_hash_name": "UMP-45 | Green Swirl (Field-Tested)",
       "type": "Consumer Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -8394,6 +8106,42 @@
       ]
     },
     {
+      "assetid": "54268056012",
+      "classid": "7993059284",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Tec-9 | Banana Leaf",
+      "market_hash_name": "Tec-9 | Banana Leaf (Field-Tested)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53627704774",
       "classid": "8637411352",
       "instanceid": "519977179",
@@ -9044,6 +8792,42 @@
       "amount": 1,
       "name": "MAC-10 | Acid Hex",
       "market_hash_name": "MAC-10 | Acid Hex (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54143234821",
+      "classid": "8637415597",
+      "instanceid": "9094804828",
+      "amount": 1,
+      "name": "MAC-10 | Video Cam",
+      "market_hash_name": "MAC-10 | Video Cam (Battle-Scarred)",
       "type": "Industrial Grade SMG",
       "inspectLink": "",
       "tags": [
@@ -10613,6 +10397,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54142970265",
+      "classid": "8637411915",
+      "instanceid": "9094804828",
+      "amount": 1,
+      "name": "M4A4 | Dark Operative",
+      "market_hash_name": "M4A4 | Dark Operative (Well-Worn)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
