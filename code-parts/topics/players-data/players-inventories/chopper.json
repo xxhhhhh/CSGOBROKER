@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/aef79440-d49d-414e-9303-9725b8d448d8",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-24T08:44:01.087Z",
+  "updatedAt": "2026-10-25T08:58:04.756Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 343,
-  "totalItemsGrouped": 129,
+  "totalItemsRaw": 346,
+  "totalItemsGrouped": 130,
   "items": [
     {
       "assetid": "54141943097",
@@ -2525,9 +2525,9 @@
       ]
     },
     {
-      "assetid": "54131493793",
+      "assetid": "54151389336",
       "classid": "6216348608",
-      "instanceid": "9090734695",
+      "instanceid": "9098056112",
       "amount": 2,
       "name": "Charm | Big Kev",
       "market_hash_name": "Charm | Big Kev",
@@ -2552,8 +2552,39 @@
         }
       ],
       "assetids": [
-        "54131493793",
-        "54151389336"
+        "54151389336",
+        "54131493793"
+      ]
+    },
+    {
+      "assetid": "54170528760",
+      "classid": "7545312020",
+      "instanceid": "9101703019",
+      "amount": 1,
+      "name": "Charm | Dead Weight",
+      "market_hash_name": "Charm | Dead Weight",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54170528760"
       ]
     },
     {
@@ -2655,7 +2686,7 @@
       "assetid": "54140959515",
       "classid": "7545310506",
       "instanceid": "9094113771",
-      "amount": 2,
+      "amount": 4,
       "name": "Charm | Lil' Curse",
       "market_hash_name": "Charm | Lil' Curse",
       "type": "High Grade Charm",
@@ -2680,7 +2711,9 @@
       ],
       "assetids": [
         "54140959515",
-        "54140957755"
+        "54140957755",
+        "54170531192",
+        "54170526827"
       ]
     },
     {
