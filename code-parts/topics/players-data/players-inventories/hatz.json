@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/daed0b59-b3f3-4c4d-812f-f57d57e60f05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-04T10:25:26.682Z",
+  "updatedAt": "2026-10-27T09:44:50.047Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 943,
-  "totalItemsGrouped": 453,
+  "totalItemsRaw": 945,
+  "totalItemsGrouped": 455,
   "items": [
     {
       "assetid": "49114016190",
@@ -142,6 +142,34 @@
     },
     {
       "assetid": "54034323113",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54316639733",
       "classid": "4717330486",
       "instanceid": "302028390",
       "amount": 1,
@@ -1930,6 +1958,37 @@
       ]
     },
     {
+      "assetid": "54316639922",
+      "classid": "1989290381",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Rage Mode (SWAT Blue)",
+      "market_hash_name": "Sealed Graffiti | Rage Mode (SWAT Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202F3F2F37EB250F2F072E1F2B4D28272F3F81221F22472F5F37733F1843",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54316639922"
+      ]
+    },
+    {
       "assetid": "33246947281",
       "classid": "1989279657",
       "instanceid": "302028390",
@@ -2271,14 +2330,14 @@
       ]
     },
     {
-      "assetid": "40418913937",
+      "assetid": "52640983180",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 3,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
       "tags": [
         {
           "category": "Type",
@@ -2294,9 +2353,9 @@
         }
       ],
       "assetids": [
+        "52640983180",
         "40418913937",
-        "40200280970",
-        "52640983180"
+        "40200280970"
       ]
     },
     {
@@ -17408,7 +17467,7 @@
     {
       "assetid": "27820764377",
       "classid": "7993039574",
-      "instanceid": "480088974",
+      "instanceid": "480085837",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Destroyer",
       "market_hash_name": "StatTrak™ Galil AR | Destroyer (Battle-Scarred)",
