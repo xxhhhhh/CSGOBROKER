@@ -7,16 +7,18 @@
   "name": "Adones Nobre",
   "nationality": "Portugal",
   "born": "29.12.2003",
+  "isContentCreator": false,
   "twitch": "",
   "faceit": "https://faceitdb.com/profile/faceit/94f5114b-b7b9-445f-be26-1a60f54d22de",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-26T09:13:33.704Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 150,
-  "totalItemsGrouped": 133,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-10-28T10:01:57.277Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 149,
+  "totalItemsGrouped": 132,
   "items": [
     {
       "assetid": "53970110275",
@@ -4021,53 +4023,9 @@
       ]
     },
     {
-      "assetid": "54055633155",
-      "classid": "7993036555",
-      "instanceid": "9123239891",
-      "amount": 1,
-      "name": "StatTrak™ AK-47 | Inheritance",
-      "market_hash_name": "StatTrak™ AK-47 | Inheritance (Field-Tested)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "54178994211",
       "classid": "7993039884",
-      "instanceid": "903234501",
+      "instanceid": "902885403",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Steel Disruption",
       "market_hash_name": "StatTrak™ Glock-18 | Steel Disruption (Factory New)",

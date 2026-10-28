@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/daed0b59-b3f3-4c4d-812f-f57d57e60f05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-27T09:44:50.047Z",
+  "updatedAt": "2026-10-28T10:23:27.629Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 945,
-  "totalItemsGrouped": 455,
+  "totalItemsRaw": 947,
+  "totalItemsGrouped": 457,
   "items": [
     {
       "assetid": "49114016190",
@@ -450,6 +450,34 @@
     },
     {
       "assetid": "51634429866",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54333974058",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2356,6 +2384,42 @@
         "52640983180",
         "40418913937",
         "40200280970"
+      ]
+    },
+    {
+      "assetid": "54333974059",
+      "classid": "7993035850",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Negev | Raw Ceramic",
+      "market_hash_name": "Negev | Raw Ceramic (Minimal Wear)",
+      "type": "Consumer Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
       ]
     },
     {
@@ -17467,7 +17531,7 @@
     {
       "assetid": "27820764377",
       "classid": "7993039574",
-      "instanceid": "480085837",
+      "instanceid": "480088337",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Destroyer",
       "market_hash_name": "StatTrak™ Galil AR | Destroyer (Battle-Scarred)",
