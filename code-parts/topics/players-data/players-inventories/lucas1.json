@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/01f4b994-de2d-4edd-91d1-117cbc52785a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-21T09:18:19.002Z",
+  "updatedAt": "2026-10-29T10:20:37.731Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 152,
-  "totalItemsGrouped": 149,
+  "totalItemsRaw": 153,
+  "totalItemsGrouped": 150,
   "items": [
     {
       "assetid": "50460416592",
@@ -540,17 +540,21 @@
       ]
     },
     {
-      "assetid": "53712822893",
-      "classid": "1989275168",
+      "assetid": "54351099373",
+      "classid": "7488632023",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "Graffiti | Karambit (Monarch Blue)",
-      "market_hash_name": "Graffiti | Karambit (Monarch Blue)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2040504058854A6040684170442247484050FD4D704C28403058705ECB50",
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -560,14 +564,7 @@
         {
           "category": "Rarity",
           "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
         }
-      ],
-      "assetids": [
-        "53712822893"
       ]
     },
     {
@@ -1792,6 +1789,42 @@
       "name": "XM1014 | Canvas Cloud",
       "market_hash_name": "XM1014 | Canvas Cloud (Field-Tested)",
       "type": "Consumer Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54351099374",
+      "classid": "7993036141",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MAC-10 | Bronzer",
+      "market_hash_name": "MAC-10 | Bronzer (Minimal Wear)",
+      "type": "Consumer Grade SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -4543,7 +4576,7 @@
     {
       "assetid": "23238617076",
       "classid": "7993046722",
-      "instanceid": "9144332076",
+      "instanceid": "9147675951",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Wasteland Rebel",
       "market_hash_name": "StatTrak™ AK-47 | Wasteland Rebel (Minimal Wear)",
@@ -4715,7 +4748,7 @@
     {
       "assetid": "10809594750",
       "classid": "7993041524",
-      "instanceid": "188764489",
+      "instanceid": "188698083",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Capillary",
       "market_hash_name": "StatTrak™ Five-SeveN | Capillary (Field-Tested)",
@@ -4871,7 +4904,7 @@
     {
       "assetid": "44409734655",
       "classid": "7993043723",
-      "instanceid": "188545324",
+      "instanceid": "188575814",
       "amount": 1,
       "name": "StatTrak™ P250 | Verdigris",
       "market_hash_name": "StatTrak™ P250 | Verdigris (Factory New)",
@@ -5143,7 +5176,7 @@
     {
       "assetid": "19560356266",
       "classid": "7993037237",
-      "instanceid": "9144332077",
+      "instanceid": "9147675952",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Field-Tested)",

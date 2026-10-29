@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f133beae-a158-4fd2-a991-76c1769c0ab5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-28T09:19:40.485Z",
+  "updatedAt": "2026-10-29T09:20:36.514Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 75,
-  "totalItemsGrouped": 75,
+  "totalItemsRaw": 77,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "53440362642",
@@ -575,6 +575,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54346496667",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1433,6 +1461,42 @@
       "market_hash_name": "SG 553 | Night Camo (Minimal Wear)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D8125A2E3757C9D0EFE83EC1E0C9F8CCF007501D24CB887EC9A0EBB8D0393B0704",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54346496668",
+      "classid": "7993036281",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Pine",
+      "market_hash_name": "MP9 | Pine (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
