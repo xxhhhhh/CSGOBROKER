@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/e50676d1-ea6c-4876-893f-53aac4b6dc6f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-29T09:59:06.394Z",
+  "updatedAt": "2026-10-30T10:14:39.469Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 184,
+  "totalItemsRaw": 188,
   "totalItemsGrouped": 126,
   "items": [
     {
@@ -1339,8 +1339,8 @@
     {
       "assetid": "54226430478",
       "classid": "5327982186",
-      "instanceid": "9116030399",
-      "amount": 2,
+      "instanceid": "188530139",
+      "amount": 4,
       "name": "Sticker | NEKiZ (Holo) | Paris 2023",
       "market_hash_name": "Sticker | NEKiZ (Holo) | Paris 2023",
       "type": "Exotic Sticker",
@@ -1381,7 +1381,9 @@
       ],
       "assetids": [
         "54226430478",
-        "30146598899"
+        "54228821282",
+        "30146598899",
+        "54228821281"
       ]
     },
     {
@@ -2009,14 +2011,14 @@
       ]
     },
     {
-      "assetid": "41729705352",
+      "assetid": "54228582256",
       "classid": "5327981801",
       "instanceid": "188530139",
-      "amount": 7,
+      "amount": 9,
       "name": "Sticker | NEKiZ (Gold) | Paris 2023",
       "market_hash_name": "Sticker | NEKiZ (Gold) | Paris 2023",
       "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2070607068C9795070587640741275787060B84618700078306967F7",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208292829A3B8BA282AA84B286E0878A82924AB4EA82F28AF93356B6",
       "tags": [
         {
           "category": "Type",
@@ -2052,13 +2054,15 @@
         }
       ],
       "assetids": [
+        "54228582256",
         "41729705352",
         "41729686435",
         "41729683089",
         "41729676434",
         "41729675367",
         "41729674093",
-        "41729671694"
+        "41729671694",
+        "54228582257"
       ]
     },
     {
@@ -4640,7 +4644,7 @@
     {
       "assetid": "53483071632",
       "classid": "7993042356",
-      "instanceid": "9144628842",
+      "instanceid": "9150120767",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Hellfire",
       "market_hash_name": "StatTrak™ M4A4 | Hellfire (Field-Tested)",
@@ -4688,7 +4692,7 @@
     {
       "assetid": "53072218184",
       "classid": "7993037525",
-      "instanceid": "9146748033",
+      "instanceid": "9150120768",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -4772,7 +4776,7 @@
     {
       "assetid": "53974393343",
       "classid": "8246977153",
-      "instanceid": "9146748032",
+      "instanceid": "9150120766",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Electrum",
       "market_hash_name": "StatTrak™ M4A1-S | Electrum (Factory New)",
