@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/8235d0e7-a5ba-47a0-998e-80f64c5a3bdf",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-25T08:06:33.471Z",
+  "updatedAt": "2026-10-31T09:16:20.058Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 87,
-  "totalItemsGrouped": 85,
+  "totalItemsRaw": 89,
+  "totalItemsGrouped": 87,
   "items": [
     {
       "assetid": "54167422855",
@@ -274,6 +274,37 @@
       ],
       "assetids": [
         "44683199954"
+      ]
+    },
+    {
+      "assetid": "54239590791",
+      "classid": "1989296003",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Quickdraw (Blood Red)",
+      "market_hash_name": "Sealed Graffiti | Quickdraw (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECEDEC61AD4FEDEF6DFEEDABCD9D6DECE6DD3EEDCB6DEAEC64A5103D7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54239590791"
       ]
     },
     {
@@ -1056,6 +1087,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54241975639",
+      "classid": "7993039273",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
