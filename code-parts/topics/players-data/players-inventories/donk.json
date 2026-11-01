@@ -7,16 +7,18 @@
   "name": "Danil Kryshkovets",
   "nationality": "Russia",
   "born": "25.01.2007",
+  "isContentCreator": false,
   "twitch": "donk1437",
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-29T09:18:30.990Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 80,
-  "totalItemsGrouped": 80,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-01T10:02:34.413Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 81,
+  "totalItemsGrouped": 81,
   "items": [
     {
       "assetid": "53499722651",
@@ -1363,6 +1365,42 @@
       ]
     },
     {
+      "assetid": "54238061020",
+      "classid": "7993039670",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AWP | The Prince",
+      "market_hash_name": "AWP | The Prince (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49442313207",
       "classid": "7729369258",
       "instanceid": "0",
@@ -2630,7 +2668,7 @@
     {
       "assetid": "42657088883",
       "classid": "7993040686",
-      "instanceid": "480102443",
+      "instanceid": "188625696",
       "amount": 1,
       "name": "StatTrak™ USP-S | Printstream",
       "market_hash_name": "StatTrak™ USP-S | Printstream (Factory New)",

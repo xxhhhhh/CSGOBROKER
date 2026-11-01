@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-31T09:41:54.618Z",
+  "updatedAt": "2026-11-01T10:28:03.701Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 102,
-  "totalItemsGrouped": 94,
+  "totalItemsRaw": 104,
+  "totalItemsGrouped": 96,
   "items": [
     {
       "assetid": "53521660797",
@@ -63,6 +63,42 @@
       "amount": 1,
       "name": "★ Kukri Knife | Fade",
       "market_hash_name": "★ Kukri Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54262416856",
+      "classid": "7622292638",
+      "instanceid": "9123816975",
+      "amount": 1,
+      "name": "★ Stiletto Knife",
+      "market_hash_name": "★ Stiletto Knife",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -1454,6 +1490,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54261790987",
+      "classid": "7993037128",
+      "instanceid": "9147071470",
+      "amount": 1,
+      "name": "M4A1-S | Vaporwave",
+      "market_hash_name": "M4A1-S | Vaporwave (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
