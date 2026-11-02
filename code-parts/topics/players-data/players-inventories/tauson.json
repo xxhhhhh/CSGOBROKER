@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e2fdb138-737f-4f85-ae5e-7a746f73cd99",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-01T10:00:30.611Z",
+  "updatedAt": "2026-11-02T10:28:56.423Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 243,
-  "totalItemsGrouped": 234,
+  "totalItemsRaw": 244,
+  "totalItemsGrouped": 235,
   "items": [
     {
       "assetid": "49061986505",
@@ -29,38 +29,6 @@
       "market_hash_name": "★ Bayonet | Night (Field-Tested)",
       "type": "★ Covert Knife",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%2052429BD398B0E4534AA651727A7A5462516A99BF8EA65112DD503A8A53225A523D2798",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54077420265",
-      "classid": "7993045955",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Marble Fade",
-      "market_hash_name": "★ M9 Bayonet | Marble Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2323,6 +2291,34 @@
       ]
     },
     {
+      "assetid": "54400066586",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "24821766602",
       "classid": "4418618853",
       "instanceid": "0",
@@ -3366,6 +3362,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54400066587",
+      "classid": "7993036408",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "CZ75-Auto | Pink Pearl",
+      "market_hash_name": "CZ75-Auto | Pink Pearl (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

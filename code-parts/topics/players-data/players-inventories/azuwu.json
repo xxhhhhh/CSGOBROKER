@@ -7,52 +7,19 @@
   "name": "Oscar Bell",
   "nationality": "United Kingdom",
   "born": "05.11.2003",
+  "isContentCreator": false,
   "twitch": "azuwucs",
   "faceit": "https://faceitdb.com/profile/faceit/004181c4-494a-44a6-be60-3c80264e84aa",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-28T09:36:25.562Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 221,
-  "totalItemsGrouped": 220,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-02T10:50:56.160Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 220,
+  "totalItemsGrouped": 219,
   "items": [
-    {
-      "assetid": "53814934945",
-      "classid": "7993036088",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201707B6ECEDABDF160FEC1437B2143F1127142F99A5D7FD1457797F8016671FC85B1339",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.050805144012,
-      "seed": 110,
-      "phase": "Phase 4"
-    },
     {
       "assetid": "54058536136",
       "classid": "7993037250",
@@ -60,38 +27,6 @@
       "amount": 1,
       "name": "★ Karambit | Marble Fade",
       "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54113976287",
-      "classid": "7993039819",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Tiger Tooth",
-      "market_hash_name": "★ M9 Bayonet | Tiger Tooth (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -258,6 +193,34 @@
       "amount": 1,
       "name": "★ Driver Gloves | Snow Leopard",
       "market_hash_name": "★ Driver Gloves | Snow Leopard (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54266969487",
+      "classid": "8247289618",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Driver Gloves | Wave Chaser",
+      "market_hash_name": "★ Driver Gloves | Wave Chaser (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [

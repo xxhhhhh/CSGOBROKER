@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e50676d1-ea6c-4876-893f-53aac4b6dc6f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-30T10:14:39.469Z",
+  "updatedAt": "2026-11-02T11:12:11.097Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 188,
-  "totalItemsGrouped": 126,
+  "totalItemsRaw": 190,
+  "totalItemsGrouped": 128,
   "items": [
     {
       "assetid": "53793998743",
@@ -474,6 +474,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54273850431",
+      "classid": "7993035953",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Ice Coaled",
+      "market_hash_name": "AK-47 | Ice Coaled (Field-Tested)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -1337,14 +1373,14 @@
       ]
     },
     {
-      "assetid": "54226430478",
+      "assetid": "54228821281",
       "classid": "5327982186",
       "instanceid": "188530139",
       "amount": 4,
       "name": "Sticker | NEKiZ (Holo) | Paris 2023",
       "market_hash_name": "Sticker | NEKiZ (Holo) | Paris 2023",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204252425AFB4B62426A47724620474A425285742A42324A2B6F2BEC",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCCDCC465D5FCDCF4D9ECD8BED9D4DCCC1BEAB4DCACD456B669E2",
       "tags": [
         {
           "category": "Type",
@@ -1380,10 +1416,10 @@
         }
       ],
       "assetids": [
+        "54228821281",
         "54226430478",
-        "54228821282",
         "30146598899",
-        "54228821281"
+        "54228821282"
       ]
     },
     {
@@ -2011,7 +2047,54 @@
       ]
     },
     {
-      "assetid": "54228582256",
+      "assetid": "54275927340",
+      "classid": "5799823541",
+      "instanceid": "9126657670",
+      "amount": 1,
+      "name": "Sticker | NEKiZ (Gold) | Copenhagen 2024",
+      "market_hash_name": "Sticker | NEKiZ (Gold) | Copenhagen 2024",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208A9A8A923383AA8AA28CBA8EE88F828A9A14B7E28AFA82403ACB9D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54275927340"
+      ]
+    },
+    {
+      "assetid": "54228582257",
       "classid": "5327981801",
       "instanceid": "188530139",
       "amount": 9,
@@ -2054,6 +2137,7 @@
         }
       ],
       "assetids": [
+        "54228582257",
         "54228582256",
         "41729705352",
         "41729686435",
@@ -2061,8 +2145,7 @@
         "41729676434",
         "41729675367",
         "41729674093",
-        "41729671694",
-        "54228582257"
+        "41729671694"
       ]
     },
     {
@@ -4644,7 +4727,7 @@
     {
       "assetid": "53483071632",
       "classid": "7993042356",
-      "instanceid": "9152143234",
+      "instanceid": "9159221124",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Hellfire",
       "market_hash_name": "StatTrak™ M4A4 | Hellfire (Field-Tested)",
@@ -4776,7 +4859,7 @@
     {
       "assetid": "53974393343",
       "classid": "8246977153",
-      "instanceid": "9156676729",
+      "instanceid": "9159221123",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Electrum",
       "market_hash_name": "StatTrak™ M4A1-S | Electrum (Factory New)",
