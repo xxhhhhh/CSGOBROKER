@@ -7,16 +7,18 @@
   "name": "Rodion Smyk",
   "nationality": "Ukraine",
   "born": "20.11.2000",
+  "isContentCreator": false,
   "twitch": "fearCS2",
   "faceit": "https://faceitdb.com/profile/faceit/0d8fe352-26b7-4ec7-af94-1e26d326a16d",
-  "isContentCreator": false,
-  "updatedAt": "2026-05-30T07:03:31.178Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 54,
-  "totalItemsGrouped": 54,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-03T11:04:11.849Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 53,
+  "totalItemsGrouped": 53,
   "items": [
     {
       "assetid": "51643884674",
@@ -38,38 +40,6 @@
         },
         {
           "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "41286480711",
-      "classid": "7993045028",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Case Hardened",
-      "market_hash_name": "★ Karambit | Case Hardened (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -1223,11 +1193,11 @@
     },
     {
       "assetid": "51835386301",
-      "classid": "8490781882",
-      "instanceid": "8490787549",
+      "classid": "8564022767",
+      "instanceid": "8490781883",
       "amount": 1,
-      "name": "Cologne 2026 Coin",
-      "market_hash_name": "Cologne 2026 Coin",
+      "name": "Cologne 2026 Gold Coin",
+      "market_hash_name": "Cologne 2026 Gold Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1922,7 +1892,7 @@
     {
       "assetid": "38851605866",
       "classid": "7993041406",
-      "instanceid": "188587020",
+      "instanceid": "188568319",
       "amount": 1,
       "name": "StatTrak™ P250 | Asiimov",
       "market_hash_name": "StatTrak™ P250 | Asiimov (Field-Tested)",
@@ -1958,7 +1928,7 @@
     {
       "assetid": "46108875693",
       "classid": "7993040767",
-      "instanceid": "8520136830",
+      "instanceid": "9161209779",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Neon Rider",
       "market_hash_name": "StatTrak™ MAC-10 | Neon Rider (Factory New)",

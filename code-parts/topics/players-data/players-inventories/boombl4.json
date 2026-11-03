@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/498f0855-a1ab-4be3-b21d-3fc5d70fc441",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-24T08:14:43.807Z",
+  "updatedAt": "2026-11-03T10:49:23.008Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 261,
-  "totalItemsGrouped": 206,
+  "totalItemsRaw": 265,
+  "totalItemsGrouped": 210,
   "items": [
     {
       "assetid": "48689644446",
@@ -352,14 +352,14 @@
       ]
     },
     {
-      "assetid": "50257512953",
+      "assetid": "54287289370",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 10,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
       "tags": [
         {
           "category": "Type",
@@ -375,6 +375,7 @@
         }
       ],
       "assetids": [
+        "54287289370",
         "50257512953",
         "46807402434",
         "41004460806",
@@ -383,8 +384,7 @@
         "40235009373",
         "40130640631",
         "40057468093",
-        "39905788266",
-        "54287289370"
+        "39905788266"
       ]
     },
     {
@@ -839,6 +839,42 @@
       "name": "M4A4 | Neo-Noir",
       "market_hash_name": "M4A4 | Neo-Noir (Minimal Wear)",
       "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54287642917",
+      "classid": "7993037085",
+      "instanceid": "6276320953",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Field-Tested)",
+      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -6110,6 +6146,42 @@
       ]
     },
     {
+      "assetid": "54287635910",
+      "classid": "7993037843",
+      "instanceid": "9163517437",
+      "amount": 1,
+      "name": "MAC-10 | Fade",
+      "market_hash_name": "MAC-10 | Fade (Factory New)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43578649383",
       "classid": "7993037677",
       "instanceid": "188530139",
@@ -6332,6 +6404,42 @@
       "amount": 1,
       "name": "SSG 08 | Abyss",
       "market_hash_name": "SSG 08 | Abyss (Factory New)",
+      "type": "Mil-Spec Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54287577913",
+      "classid": "7993039495",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "SSG 08 | Dezastre",
+      "market_hash_name": "SSG 08 | Dezastre (Factory New)",
       "type": "Mil-Spec Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
@@ -6799,6 +6907,37 @@
       "assetids": [
         "44188358014",
         "44188342602"
+      ]
+    },
+    {
+      "assetid": "54287597303",
+      "classid": "5721066197",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | Try Hard (Holo)",
+      "market_hash_name": "Sticker | Try Hard (Holo)",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E8E963787AE8EA68ABE8AEC8B868E9E41B6E68EFE86583AF2ED",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54287597303"
       ]
     },
     {
