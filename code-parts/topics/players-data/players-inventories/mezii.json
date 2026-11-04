@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/58f68286-29eb-4108-97e5-2d8d96c65e05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-17T07:28:40.302Z",
+  "updatedAt": "2026-11-04T10:22:34.657Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 292,
-  "totalItemsGrouped": 276,
+  "totalItemsRaw": 296,
+  "totalItemsGrouped": 280,
   "items": [
     {
       "assetid": "48234567480",
@@ -60,6 +60,38 @@
       "phase": "Sapphire"
     },
     {
+      "assetid": "54298953185",
+      "classid": "7993041586",
+      "instanceid": "9133098147",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Bright Water",
+      "market_hash_name": "★ M9 Bayonet | Bright Water (Field-Tested)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47681168624",
       "classid": "7993045582",
       "instanceid": "188530139",
@@ -93,6 +125,41 @@
       "float": 0.009305502288,
       "seed": 614,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "54298953184",
+      "classid": "7993044870",
+      "instanceid": "9133098147",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20726292F993D1B8736A8E7152CA765A7442714AE9E3D298713280701A3B027A99F4FBAC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.048836331815,
+      "seed": 370,
+      "phase": "Emerald"
     },
     {
       "assetid": "47681168620",
@@ -520,6 +587,41 @@
       ],
       "assetids": [
         "16078181206"
+      ]
+    },
+    {
+      "assetid": "54298953182",
+      "classid": "3608086005",
+      "instanceid": "9133098145",
+      "amount": 1,
+      "name": "Sealed Graffiti | 1G (Tiger Orange)",
+      "market_hash_name": "Sealed Graffiti | 1G (Tiger Orange)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D3C3D3CB17D9F3D3FBD2E3D7B1D4DBD3C35CCCE3D0BBD3A3C4E956A65C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        },
+        {
+          "category": "SprayCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54298953182"
       ]
     },
     {
@@ -1058,6 +1160,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54298953183",
+      "classid": "7993038225",
+      "instanceid": "9155353059",
+      "amount": 1,
+      "name": "AK-47 | Hydroponic",
+      "market_hash_name": "AK-47 | Hydroponic (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

@@ -7,14 +7,16 @@
   "name": "Ayush Batbold",
   "nationality": "Mongolia",
   "born": "28.06.2007",
+  "isContentCreator": false,
   "twitch": "mzinhocsgo",
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-16T08:03:54.254Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-04T10:33:30.635Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 113,
   "totalItemsGrouped": 110,
   "items": [
@@ -53,6 +55,45 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "53845816077",
+      "classid": "7993040147",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Falchion Knife | Gamma Doppler",
+      "market_hash_name": "★ Falchion Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B2A23F5465797AB3AA32B6920AB69AB482B18A24080B5BB1F244B3DAF1C2B67B432825",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.042569242418,
+      "seed": 246,
+      "phase": "Emerald"
     },
     {
       "assetid": "53960342917",
@@ -1065,42 +1106,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54051481037",
-      "classid": "7993037248",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "M4A1-S | Hot Rod",
-      "market_hash_name": "M4A1-S | Hot Rod (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -3397,7 +3402,7 @@
     {
       "assetid": "51487010820",
       "classid": "7993047873",
-      "instanceid": "188530472",
+      "instanceid": "188531205",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -3433,7 +3438,7 @@
     {
       "assetid": "51383555734",
       "classid": "7993044130",
-      "instanceid": "907413042",
+      "instanceid": "906872613",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Cyber Security",
       "market_hash_name": "StatTrak™ M4A4 | Cyber Security (Factory New)",
@@ -3469,7 +3474,7 @@
     {
       "assetid": "52150283995",
       "classid": "7993044241",
-      "instanceid": "6493767624",
+      "instanceid": "6526218347",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Leet Museo",
       "market_hash_name": "StatTrak™ AK-47 | Leet Museo (Minimal Wear)",
@@ -3541,7 +3546,7 @@
     {
       "assetid": "50315509894",
       "classid": "8247059305",
-      "instanceid": "188546607",
+      "instanceid": "188535898",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/7afa70ed-066f-4336-adf7-03890d8e22b1",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-02T10:42:23.632Z",
+  "updatedAt": "2026-11-04T10:35:38.638Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 95,
-  "totalItemsGrouped": 58,
+  "totalItemsRaw": 90,
+  "totalItemsGrouped": 59,
   "items": [
     {
       "assetid": "52479135285",
@@ -362,6 +362,42 @@
       "amount": 1,
       "name": "P250 | Sleet",
       "market_hash_name": "P250 | Sleet (Field-Tested)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54416542071",
+      "classid": "7993036469",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "R8 Revolver | Cobalt Grip",
+      "market_hash_name": "R8 Revolver | Cobalt Grip (Field-Tested)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -1166,14 +1202,14 @@
       ]
     },
     {
-      "assetid": "51987303838",
+      "assetid": "51987246878",
       "classid": "8490933014",
       "instanceid": "143865972",
-      "amount": 37,
+      "amount": 31,
       "name": "Sticker | lauNX | Cologne 2026",
       "market_hash_name": "Sticker | lauNX | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888903181A888A08BB88CEA8D80889842DBE088F88AC7A863BA",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838283091210828002B182C4A2D202838E27B4028582AF744E872",
       "tags": [
         {
           "category": "Type",
@@ -1209,13 +1245,7 @@
         }
       ],
       "assetids": [
-        "51987303838",
-        "51987303837",
-        "51987303835",
-        "51987303834",
-        "51987303833",
         "51987246878",
-        "51987246877",
         "51987246875",
         "51987246874",
         "51987246873",
@@ -1857,9 +1887,9 @@
       ]
     },
     {
-      "assetid": "53903203883",
+      "assetid": "54416557788",
       "classid": "8246900129",
-      "instanceid": "188530139",
+      "instanceid": "8576819568",
       "amount": 1,
       "name": "Desert Eagle | Firebreathing",
       "market_hash_name": "Desert Eagle | Firebreathing (Well-Worn)",
@@ -1888,6 +1918,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

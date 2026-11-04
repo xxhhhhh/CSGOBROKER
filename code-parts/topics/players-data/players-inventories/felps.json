@@ -7,16 +7,18 @@
   "name": "João Cabral",
   "nationality": "Brazil",
   "born": "16.12.1996",
+  "isContentCreator": false,
   "twitch": "fpsfelps",
   "faceit": "https://faceitdb.com/profile/faceit/4613e6a8-e551-4e48-bb6c-f7d6569ce45d",
-  "isContentCreator": false,
-  "updatedAt": "2026-11-02T11:12:10.557Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 75,
-  "totalItemsGrouped": 39,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-04T11:05:11.616Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 71,
+  "totalItemsGrouped": 38,
   "items": [
     {
       "assetid": "26666963680",
@@ -620,57 +622,10 @@
       ]
     },
     {
-      "assetid": "53957181757",
-      "classid": "5327988137",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | felps (Gold) | Paris 2023",
-      "market_hash_name": "Sticker | felps (Gold) | Paris 2023",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E8E963787AE8EA688BE8AEC8B868E9E06B6E68EFE869FADD272",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53957181757"
-      ]
-    },
-    {
-      "assetid": "54319260195",
+      "assetid": "53957178118",
       "classid": "6360350671",
       "instanceid": "188530139",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | felps (Gold) | Shanghai 2024",
       "market_hash_name": "Sticker | felps (Gold) | Shanghai 2024",
       "type": "Extraordinary Sticker",
@@ -710,7 +665,6 @@
         }
       ],
       "assetids": [
-        "54319260195",
         "53957178118"
       ]
     },
@@ -718,7 +672,7 @@
       "assetid": "54064596395",
       "classid": "5799820819",
       "instanceid": "188530139",
-      "amount": 3,
+      "amount": 2,
       "name": "Sticker | Imperial Esports (Gold) | Copenhagen 2024",
       "market_hash_name": "Sticker | Imperial Esports (Gold) | Copenhagen 2024",
       "type": "Extraordinary Sticker",
@@ -755,7 +709,6 @@
       ],
       "assetids": [
         "54064596395",
-        "54064595903",
         "54064595901"
       ]
     },
@@ -788,6 +741,37 @@
       ],
       "assetids": [
         "54239133251"
+      ]
+    },
+    {
+      "assetid": "54406122572",
+      "classid": "7545310511",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Splatter Cat",
+      "market_hash_name": "Charm | Splatter Cat",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54406122572"
       ]
     },
     {
@@ -1077,10 +1061,10 @@
       ]
     },
     {
-      "assetid": "54046769383",
+      "assetid": "54036987249",
       "classid": "2658254940",
       "instanceid": "143865972",
-      "amount": 4,
+      "amount": 3,
       "name": "Sticker | SK Gaming | Boston 2018",
       "market_hash_name": "Sticker | SK Gaming | Boston 2018",
       "type": "High Grade Sticker",
@@ -1116,7 +1100,6 @@
         }
       ],
       "assetids": [
-        "54046769383",
         "54036987249",
         "54036986851",
         "54036986457"
@@ -1286,65 +1269,13 @@
       ]
     },
     {
-      "assetid": "54373612202",
-      "classid": "7993037585",
-      "instanceid": "9152117108",
+      "assetid": "54290252437",
+      "classid": "7993036294",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "Five-SeveN | Heat Treated",
-      "market_hash_name": "Five-SeveN | Heat Treated (Field-Tested)",
+      "name": "Tec-9 | Whiteout",
+      "market_hash_name": "Tec-9 | Whiteout (Minimal Wear)",
       "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54174861600",
-      "classid": "7993045308",
-      "instanceid": "188535291",
-      "amount": 1,
-      "name": "StatTrak™ MP9 | Dart",
-      "market_hash_name": "StatTrak™ MP9 | Dart (Factory New)",
-      "type": "StatTrak™ Mil-Spec Grade SMG",
       "inspectLink": "",
       "tags": [
         {
