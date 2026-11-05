@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/daed0b59-b3f3-4c4d-812f-f57d57e60f05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-31T10:21:42.673Z",
+  "updatedAt": "2026-11-05T11:25:19.249Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 946,
-  "totalItemsGrouped": 456,
+  "totalItemsRaw": 948,
+  "totalItemsGrouped": 458,
   "items": [
     {
       "assetid": "30187844474",
@@ -979,6 +979,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54423721856",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -2465,6 +2493,42 @@
       "amount": 1,
       "name": "AUG | Sweeper",
       "market_hash_name": "AUG | Sweeper (Field-Tested)",
+      "type": "Consumer Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54423722603",
+      "classid": "7993063478",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Byproduct",
+      "market_hash_name": "FAMAS | Byproduct (Field-Tested)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "",
       "tags": [
@@ -17495,7 +17559,7 @@
     {
       "assetid": "27820764377",
       "classid": "7993039574",
-      "instanceid": "188769370",
+      "instanceid": "188628044",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Destroyer",
       "market_hash_name": "StatTrak™ Galil AR | Destroyer (Battle-Scarred)",

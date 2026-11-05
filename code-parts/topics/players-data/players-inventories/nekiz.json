@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e50676d1-ea6c-4876-893f-53aac4b6dc6f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-04T11:05:12.737Z",
+  "updatedAt": "2026-11-05T10:59:40.398Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 189,
-  "totalItemsGrouped": 127,
+  "totalItemsRaw": 130,
+  "totalItemsGrouped": 123,
   "items": [
     {
       "assetid": "53793998743",
@@ -138,6 +138,34 @@
     },
     {
       "assetid": "47559035832",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54432607545",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -345,6 +373,37 @@
       ],
       "assetids": [
         "54172362857"
+      ]
+    },
+    {
+      "assetid": "54432607546",
+      "classid": "1989279192",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | X-Knives (Violent Violet)",
+      "market_hash_name": "Sealed Graffiti | X-Knives (Violent Violet)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206272627AA66842624A63526600656A6272DC6F526C0A62127ACF69924E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54432607546"
       ]
     },
     {
@@ -1237,59 +1296,6 @@
       ]
     },
     {
-      "assetid": "52263385023",
-      "classid": "8491250811",
-      "instanceid": "143865972",
-      "amount": 7,
-      "name": "Sticker | NEKiZ (Holo) | Cologne 2026",
-      "market_hash_name": "Sticker | NEKiZ (Holo) | Cologne 2026",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E8F8E041F1D8F8D0FDC8FC9AFDF0F8E834AE90F888FAF4D2D197",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52263385023",
-        "52263385022",
-        "51972912395",
-        "51840036668",
-        "51840036666",
-        "51840036665",
-        "51840036664"
-      ]
-    },
-    {
       "assetid": "36563483155",
       "classid": "5799820944",
       "instanceid": "188530139",
@@ -1337,10 +1343,10 @@
       ]
     },
     {
-      "assetid": "54226430478",
+      "assetid": "30146598899",
       "classid": "5327982186",
       "instanceid": "188530139",
-      "amount": 4,
+      "amount": 1,
       "name": "Sticker | NEKiZ (Holo) | Paris 2023",
       "market_hash_name": "Sticker | NEKiZ (Holo) | Paris 2023",
       "type": "Exotic Sticker",
@@ -1380,10 +1386,7 @@
         }
       ],
       "assetids": [
-        "54226430478",
-        "30146598899",
-        "54228821282",
-        "54228821281"
+        "30146598899"
       ]
     },
     {
@@ -1963,105 +1966,10 @@
       ]
     },
     {
-      "assetid": "52263385024",
-      "classid": "8491287097",
-      "instanceid": "143865972",
-      "amount": 2,
-      "name": "Sticker | NEKiZ (Gold) | Cologne 2026",
-      "market_hash_name": "Sticker | NEKiZ (Gold) | Cologne 2026",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2071617169C8785171597741751374797161BC27197101735E50559A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52263385024",
-        "51840036661"
-      ]
-    },
-    {
-      "assetid": "54275927340",
-      "classid": "5799823541",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | NEKiZ (Gold) | Copenhagen 2024",
-      "market_hash_name": "Sticker | NEKiZ (Gold) | Copenhagen 2024",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208A9A8A923383AA8AA28CBA8EE88F828A9A14B7E28AFA82403ACB9D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54275927340"
-      ]
-    },
-    {
-      "assetid": "54228582257",
+      "assetid": "41729705352",
       "classid": "5327981801",
       "instanceid": "188530139",
-      "amount": 9,
+      "amount": 7,
       "name": "Sticker | NEKiZ (Gold) | Paris 2023",
       "market_hash_name": "Sticker | NEKiZ (Gold) | Paris 2023",
       "type": "Extraordinary Sticker",
@@ -2101,8 +2009,6 @@
         }
       ],
       "assetids": [
-        "54228582257",
-        "54228582256",
         "41729705352",
         "41729686435",
         "41729683089",
@@ -2499,49 +2405,6 @@
       ]
     },
     {
-      "assetid": "44922665602",
-      "classid": "5799819860",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | Legacy | Copenhagen 2024",
-      "market_hash_name": "Sticker | Legacy | Copenhagen 2024",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204D5D4D55F4446D4D654E7D492F48454D5DE374254D3D45F6E3CD58",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "44922665602"
-      ]
-    },
-    {
       "assetid": "44075480546",
       "classid": "7104647948",
       "instanceid": "188530139",
@@ -2587,79 +2450,6 @@
       "assetids": [
         "44075480546",
         "44075429695"
-      ]
-    },
-    {
-      "assetid": "52802843551",
-      "classid": "8491216172",
-      "instanceid": "143865972",
-      "amount": 27,
-      "name": "Sticker | NEKiZ | Cologne 2026",
-      "market_hash_name": "Sticker | NEKiZ | Cologne 2026",
-      "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205D4D5D45E4547D5D755E6D593F58555D4D970B355D2D5FEEA9A89E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52802843551",
-        "52802843550",
-        "52802843549",
-        "52802843548",
-        "52802843547",
-        "52802843546",
-        "52802843545",
-        "52802843544",
-        "52802843543",
-        "52802843542",
-        "52263385015",
-        "52263385014",
-        "52263385013",
-        "52263385012",
-        "52263385011",
-        "52263385010",
-        "52263385009",
-        "52263385008",
-        "52263385007",
-        "52263385006",
-        "51972925471",
-        "51972925470",
-        "51972925469",
-        "51972925468",
-        "51972925467",
-        "51840036659",
-        "51840036658"
       ]
     },
     {
@@ -3735,70 +3525,6 @@
       ]
     },
     {
-      "assetid": "52802843561",
-      "classid": "8491421132",
-      "instanceid": "143865972",
-      "amount": 18,
-      "name": "Sticker | NEKiZ (Foil) | Cologne 2026",
-      "market_hash_name": "Sticker | NEKiZ (Foil) | Cologne 2026",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C7D7C7DF7ECEE7C7EFC3F7C3A5C2CFC7D70C91AFC7B7C5B50072AE",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52802843561",
-        "52802843560",
-        "52802843559",
-        "52802843558",
-        "52802843557",
-        "52802843556",
-        "52802843555",
-        "52802843554",
-        "52802843553",
-        "52802843552",
-        "52263385021",
-        "52263385020",
-        "52263385019",
-        "52263385018",
-        "52263385017",
-        "52263385016",
-        "51840036663",
-        "51840036662"
-      ]
-    },
-    {
       "assetid": "44075441463",
       "classid": "7104677416",
       "instanceid": "188530139",
@@ -4691,7 +4417,7 @@
     {
       "assetid": "53483071632",
       "classid": "7993042356",
-      "instanceid": "9167280464",
+      "instanceid": "9170897654",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Hellfire",
       "market_hash_name": "StatTrak™ M4A4 | Hellfire (Field-Tested)",
@@ -4739,7 +4465,7 @@
     {
       "assetid": "53072218184",
       "classid": "7993037525",
-      "instanceid": "9166818748",
+      "instanceid": "9170505419",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Printstream",
       "market_hash_name": "StatTrak™ Desert Eagle | Printstream (Field-Tested)",
@@ -4823,7 +4549,7 @@
     {
       "assetid": "53974393343",
       "classid": "8246977153",
-      "instanceid": "9167280463",
+      "instanceid": "9170897653",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Electrum",
       "market_hash_name": "StatTrak™ M4A1-S | Electrum (Factory New)",
@@ -4871,7 +4597,7 @@
     {
       "assetid": "43307847859",
       "classid": "7993045461",
-      "instanceid": "6491322320",
+      "instanceid": "6359153496",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Malachite",
       "market_hash_name": "StatTrak™ MAC-10 | Malachite (Factory New)",

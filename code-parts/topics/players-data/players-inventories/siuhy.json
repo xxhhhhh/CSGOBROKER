@@ -7,89 +7,19 @@
   "name": "Kamil Szkaradek",
   "nationality": "Poland",
   "born": "26.08.2002",
+  "isContentCreator": false,
   "twitch": "siuhy",
   "faceit": "https://faceitdb.com/profile/faceit/12f88420-2da0-497e-92bd-8270d246b428",
-  "isContentCreator": false,
-  "updatedAt": "2026-04-22T12:48:15.339Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 29,
-  "totalItemsGrouped": 29,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-05T10:40:23.106Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 32,
+  "totalItemsGrouped": 32,
   "items": [
-    {
-      "assetid": "47338726126",
-      "classid": "7993039401",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Bowie Knife | Black Laminate",
-      "market_hash_name": "★ Bowie Knife | Black Laminate (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2060708EA58ECCD06178E26440B5684866506358EEFFAD916320BE61087A106468AA0A25",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49874235338",
-      "classid": "7993040251",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Bright Water",
-      "market_hash_name": "★ Butterfly Knife | Bright Water (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204353899CB2A6FA425BC0476380476B4573407B839BF1AB4003F4412B40334761C3B171",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "47338848121",
       "classid": "7993037250",
@@ -183,6 +113,34 @@
       ]
     },
     {
+      "assetid": "53894231873",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50678248922",
       "classid": "7993035659",
       "instanceid": "188530139",
@@ -263,6 +221,42 @@
       "market_hash_name": "M4A1-S | Stratosphere (Minimal Wear)",
       "type": "Classified Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203828EED499E28439200418F831103D083C00AEAC99D53B78A73E502848204555C778",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53894239802",
+      "classid": "7993037513",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MP9 | Pine",
+      "market_hash_name": "MP9 | Pine (Factory New)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -789,6 +783,114 @@
       ]
     },
     {
+      "assetid": "54195084766",
+      "classid": "8637410991",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Nova | Morning Sun",
+      "market_hash_name": "Nova | Morning Sun (Minimal Wear)",
+      "type": "Industrial Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54195081584",
+      "classid": "8637410424",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "PP-Bizon | Traitor",
+      "market_hash_name": "PP-Bizon | Traitor (Well-Worn)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54195085624",
+      "classid": "8637410423",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "SCAR-20 | Sirocco Script",
+      "market_hash_name": "SCAR-20 | Sirocco Script (Minimal Wear)",
+      "type": "Industrial Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50653254423",
       "classid": "8246892803",
       "instanceid": "188530139",
@@ -863,7 +965,7 @@
     {
       "assetid": "50653231070",
       "classid": "8246999731",
-      "instanceid": "188532466",
+      "instanceid": "188532616",
       "amount": 1,
       "name": "StatTrak™ P250 | Kintsugi",
       "market_hash_name": "StatTrak™ P250 | Kintsugi (Well-Worn)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e1c8511d-52b8-4c21-a781-1157d201a9f6",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-03T10:49:19.661Z",
+  "updatedAt": "2026-11-05T10:40:24.461Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 166,
-  "totalItemsGrouped": 159,
+  "totalItemsRaw": 168,
+  "totalItemsGrouped": 161,
   "items": [
     {
       "assetid": "43636339776",
@@ -204,6 +204,34 @@
     },
     {
       "assetid": "54406516130",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54438900024",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2093,6 +2121,42 @@
       "market_hash_name": "XM1014 | Hieroglyph (Well-Worn)",
       "type": "Consumer Grade Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%207868A99DF0F80A6061589E715079487C40C7C1CF8E7B3881791073087079895DD0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54438900025",
+      "classid": "7993036572",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MAC-10 | Bronzer",
+      "market_hash_name": "MAC-10 | Bronzer (Field-Tested)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5190,7 +5254,7 @@
     {
       "assetid": "44981756102",
       "classid": "7993044408",
-      "instanceid": "9166954628",
+      "instanceid": "9171866976",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Case Hardened",
       "market_hash_name": "StatTrak™ AK-47 | Case Hardened (Field-Tested)",
@@ -5246,7 +5310,7 @@
     {
       "assetid": "51917625785",
       "classid": "7993040646",
-      "instanceid": "9166954627",
+      "instanceid": "9171866975",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Well-Worn)",
@@ -5414,7 +5478,7 @@
     {
       "assetid": "28391452351",
       "classid": "7993042519",
-      "instanceid": "9166954629",
+      "instanceid": "9171866977",
       "amount": 1,
       "name": "StatTrak™ USP-S | Blueprint",
       "market_hash_name": "StatTrak™ USP-S | Blueprint (Minimal Wear)",
@@ -5586,7 +5650,7 @@
     {
       "assetid": "4782984825",
       "classid": "7993038697",
-      "instanceid": "9163815033",
+      "instanceid": "9171866978",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Grinder",
       "market_hash_name": "StatTrak™ Glock-18 | Grinder (Factory New)",

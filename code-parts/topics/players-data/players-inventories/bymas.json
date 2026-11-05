@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/93d9c1d3-b266-4119-9333-aaaf99f2afde",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-04T10:41:57.268Z",
+  "updatedAt": "2026-11-05T10:36:05.655Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 117,
+  "totalItemsRaw": 115,
   "totalItemsGrouped": 76,
   "items": [
     {
@@ -292,6 +292,34 @@
       ]
     },
     {
+      "assetid": "54434666187",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "43028478494",
       "classid": "4901046679",
       "instanceid": "302028390",
@@ -528,6 +556,42 @@
       "market_hash_name": "SSG 08 | Turbo Peek (Factory New)",
       "type": "Classified Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%201B0BE2A5A7B46B03333BD613331E2B1F23F6F7ACF7185B9B1A73036B13C5A49B99",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54434666188",
+      "classid": "7993066343",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dual Berettas | Silver Pour",
+      "market_hash_name": "Dual Berettas | Silver Pour (Minimal Wear)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -932,14 +996,14 @@
       ]
     },
     {
-      "assetid": "23627871481",
+      "assetid": "23627871441",
       "classid": "1835727981",
       "instanceid": "188530139",
-      "amount": 4,
+      "amount": 3,
       "name": "Sticker | mousesports (Foil) | Cologne 2016",
       "market_hash_name": "Sticker | mousesports (Foil) | Cologne 2016",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205242524AEB5B72527A57625630575A5242ED583A52225AD17AA719",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454445CFD4D64446C41744026414C4454FB4E2C44344C1DDE8CB5",
       "tags": [
         {
           "category": "Type",
@@ -971,53 +1035,9 @@
         }
       ],
       "assetids": [
-        "23627871481",
         "23627871441",
         "23612515694",
         "23578110336"
-      ]
-    },
-    {
-      "assetid": "23613634873",
-      "classid": "1626193407",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | mousesports (Foil) | MLG Columbus 2016",
-      "market_hash_name": "Sticker | mousesports (Foil) | MLG Columbus 2016",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201F0F1F07A6163F1F371A2F1B7D1A171F0F9617771F6F17424133E3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "23613634873"
       ]
     },
     {
@@ -1147,6 +1167,30 @@
       "amount": 1,
       "name": "2023 Service Medal",
       "market_hash_name": "2023 Service Medal",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54440194198",
+      "classid": "7917182209",
+      "instanceid": "9170953665",
+      "amount": 1,
+      "name": "2026 Service Medal",
+      "market_hash_name": "2026 Service Medal",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -2172,49 +2216,6 @@
       ]
     },
     {
-      "assetid": "23612691309",
-      "classid": "2658263800",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sticker | mousesports (Holo) | Boston 2018",
-      "market_hash_name": "Sticker | mousesports (Holo) | Boston 2018",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209787978F2E9EB797BF93A793F5929F97872284FF97E79FCB8465F0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "23612691309"
-      ]
-    },
-    {
       "assetid": "23613200974",
       "classid": "2416965797",
       "instanceid": "188530139",
@@ -2255,50 +2256,6 @@
       ],
       "assetids": [
         "23613200974"
-      ]
-    },
-    {
-      "assetid": "23612695767",
-      "classid": "1626193359",
-      "instanceid": "188530139",
-      "amount": 2,
-      "name": "Sticker | mousesports (Holo) | MLG Columbus 2016",
-      "market_hash_name": "Sticker | mousesports (Holo) | MLG Columbus 2016",
-      "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209D8D9D852494BD9DB599AD99FF98959D8D1595F59DED955C1EDDF7",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "23612695767",
-        "23612560407"
       ]
     },
     {
