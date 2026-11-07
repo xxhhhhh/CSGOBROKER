@@ -7,16 +7,18 @@
   "name": "Ayush Batbold",
   "nationality": "Mongolia",
   "born": "28.06.2007",
+  "isContentCreator": false,
   "twitch": "mzinhocsgo",
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
-  "isContentCreator": false,
-  "updatedAt": "2026-11-04T10:33:30.635Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Steam profile is private (private)",
-  "inventoryVisible": false,
-  "totalItemsRaw": 113,
-  "totalItemsGrouped": 110,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-07T09:45:26.562Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 114,
+  "totalItemsGrouped": 111,
   "items": [
     {
       "assetid": "52771687343",
@@ -1104,6 +1106,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54310418642",
+      "classid": "7993038185",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A1-S | Blue Phosphor",
+      "market_hash_name": "M4A1-S | Blue Phosphor (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
