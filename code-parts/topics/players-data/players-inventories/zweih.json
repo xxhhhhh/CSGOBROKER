@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/898780b2-bf70-4c28-8e0d-b9600be8397e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-07T09:45:25.114Z",
+  "updatedAt": "2026-11-09T11:02:05.201Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 67,
-  "totalItemsGrouped": 67,
+  "totalItemsRaw": 59,
+  "totalItemsGrouped": 59,
   "items": [
     {
       "assetid": "53442292467",
@@ -55,41 +55,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "54321834300",
-      "classid": "7993042978",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A9B9157B7C0763A8B152AA8936AA81AF99AA914309474DAAE934A8C185D9A14B8BBDC2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.018989760429,
-      "seed": 157,
-      "phase": "Ruby"
     },
     {
       "assetid": "54277533656",
@@ -161,6 +126,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Kimono",
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54366893054",
+      "classid": "8247668937",
+      "instanceid": "9150307863",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -490,78 +483,6 @@
       ]
     },
     {
-      "assetid": "53381188010",
-      "classid": "8637425289",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "USP-S | Spiral Glitch",
-      "market_hash_name": "USP-S | Spiral Glitch (Factory New)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53533634934",
-      "classid": "7993037606",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53542513375",
       "classid": "7993039930",
       "instanceid": "188530139",
@@ -645,42 +566,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54195267485",
-      "classid": "7993036329",
-      "instanceid": "6282114602",
-      "amount": 1,
-      "name": "M4A1-S | Nightmare",
-      "market_hash_name": "M4A1-S | Nightmare (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
           "name": ""
         }
       ]
@@ -842,42 +727,6 @@
       ]
     },
     {
-      "assetid": "50295470839",
-      "classid": "8247051250",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Field-Tested)",
-      "type": "Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFD1A18324356ECF5E9CD60E6C5EBDDE9D513084A1CEEAD04EE85EC9DE502342575",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53065257185",
       "classid": "7993043505",
       "instanceid": "8297369271",
@@ -993,58 +842,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54241415461",
-      "classid": "7993039273",
-      "instanceid": "8784447183",
-      "amount": 1,
-      "name": "AWP | Gungnir",
-      "market_hash_name": "AWP | Gungnir (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1833,42 +1630,6 @@
       ]
     },
     {
-      "assetid": "53557176125",
-      "classid": "7993036836",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "AWP | Capillary",
-      "market_hash_name": "AWP | Capillary (Field-Tested)",
-      "type": "Mil-Spec Grade Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51858228628",
       "classid": "1989325699",
       "instanceid": "188530139",
@@ -1996,84 +1757,12 @@
       ]
     },
     {
-      "assetid": "53532669455",
-      "classid": "7993130794",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "USP-S | Sleeping Potion",
-      "market_hash_name": "USP-S | Sleeping Potion (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "54108889543",
       "classid": "8637421655",
       "instanceid": "519977179",
       "amount": 1,
       "name": "AUG | Lapis Lazuli",
       "market_hash_name": "AUG | Lapis Lazuli (Factory New)",
-      "type": "Restricted Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51055311497",
-      "classid": "259075402",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "FAMAS | Pulse",
-      "market_hash_name": "FAMAS | Pulse (Minimal Wear)",
       "type": "Restricted Rifle",
       "inspectLink": "",
       "tags": [

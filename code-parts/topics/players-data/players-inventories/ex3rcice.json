@@ -7,16 +7,18 @@
   "name": "Pierre Bulinge",
   "nationality": "France",
   "born": "04.02.2000",
+  "isContentCreator": false,
   "twitch": "ex3rcice",
   "faceit": "https://faceitdb.com/profile/faceit/7e8fcc67-e4ac-43df-95b4-c51fba75e9b0",
-  "isContentCreator": false,
-  "updatedAt": "2026-09-02T07:51:23.050Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 282,
-  "totalItemsGrouped": 154,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-09T11:08:34.423Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 284,
+  "totalItemsGrouped": 161,
   "items": [
     {
       "assetid": "49922355280",
@@ -53,41 +55,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "53453773231",
-      "classid": "7993045263",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Flip Knife | Gamma Doppler",
-      "market_hash_name": "★ Flip Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E6F64955397621E7FE1FE5C65DE2CEE0D6E5DE78664305E5A6C78E66E496EEB2E5D105",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.014236478135,
-      "seed": 33,
-      "phase": "Phase 3"
     },
     {
       "assetid": "47403263241",
@@ -438,14 +405,14 @@
       ]
     },
     {
-      "assetid": "48000194696",
+      "assetid": "53969440471",
       "classid": "7729086074",
       "instanceid": "143865972",
-      "amount": 13,
+      "amount": 12,
       "name": "Sticker Slab",
       "market_hash_name": "Sticker Slab",
       "type": "Base Grade Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208393839B239CA383AB82B387EB83F381C095A25F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2061716179C17E4161496051650961116365B7F7BD",
       "tags": [
         {
           "category": "Type",
@@ -461,14 +428,13 @@
         }
       ],
       "assetids": [
-        "48000194696",
+        "53969440471",
+        "53969440470",
         "48000194694",
         "48000194693",
         "48000194692",
         "48000194691",
-        "48000194690",
         "48000194689",
-        "48000194688",
         "48000194687",
         "48000194686",
         "48000194684",
@@ -1476,14 +1442,14 @@
       ]
     },
     {
-      "assetid": "47759370369",
-      "classid": "7993039166",
-      "instanceid": "7772410943",
+      "assetid": "53714228383",
+      "classid": "7993036456",
+      "instanceid": "519977179",
       "amount": 1,
-      "name": "MAG-7 | Justice",
-      "market_hash_name": "MAG-7 | Justice (Minimal Wear)",
-      "type": "Classified Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202030A1F198D59121383B009427082510241890A1ACCF2360CF22483F5028822136282030051DFD149DE065CAC7291F6D194D046140FE6586617A17",
+      "name": "M4A1-S | Solitude",
+      "market_hash_name": "M4A1-S | Solitude (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1507,6 +1473,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53969498533",
+      "classid": "7993039166",
+      "instanceid": "9093893163",
+      "amount": 1,
+      "name": "MAG-7 | Justice",
+      "market_hash_name": "MAG-7 | Justice (Minimal Wear)",
+      "type": "Classified Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2172,14 +2182,14 @@
       ]
     },
     {
-      "assetid": "48102124182",
+      "assetid": "53969446820",
       "classid": "7993036534",
-      "instanceid": "7821738130",
+      "instanceid": "9093893166",
       "amount": 1,
       "name": "M4A1-S | Fade",
       "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204F5FD99ABFD7FC4E57736FD64667497F4B77A2CDDDAB4C0F1A2D4A474E5FCB0F2D4A474F5F910A2D40474D5FD602724FE72CF50A4F8D77F3270E3F58ED4E59474F5F6A7216C383700AE3A9E671024169B60F2FD702ED2E9E7D",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2344,14 +2354,14 @@
       ]
     },
     {
-      "assetid": "47759699684",
+      "assetid": "53969496445",
       "classid": "7993037085",
-      "instanceid": "7772410942",
+      "instanceid": "9093893165",
       "amount": 1,
       "name": "AWP | Asiimov",
       "market_hash_name": "AWP | Asiimov (Field-Tested)",
       "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E7A43526B2F9F8697BE099CB698AE9AA6222A7E6C9DDE269CFC9B969D8E1ADEFC91969E8E40DBA396556123DBA2E63823F6F5EE9A3C9F88969E8EBBA35CD4B4DEDBF417ADA1D3CF97A7DFFE40DB71A3ADF6",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -2396,14 +2406,14 @@
       ]
     },
     {
-      "assetid": "48000294320",
-      "classid": "7729227296",
+      "assetid": "53969503885",
+      "classid": "7731362663",
       "instanceid": "0",
-      "amount": 5,
-      "name": "Sticker Slab | Ex3rcice (Gold) | Austin 2025",
-      "market_hash_name": "Sticker Slab | Ex3rcice (Gold) | Austin 2025",
-      "type": "Customized Extraordinary Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205949594192537959715F695131592959FB585E5159497C39871CA7005FB9",
+      "amount": 3,
+      "name": "Sticker Slab | Ex3rcice (Holo) | Budapest 2025",
+      "market_hash_name": "Sticker Slab | Ex3rcice (Holo) | Budapest 2025",
+      "type": "Customized Exotic Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201D0D1D05D6173D1D35182D15751D6D1DBF1C1A151D0D387D8550A10D163D",
       "tags": [
         {
           "category": "Type",
@@ -2427,46 +2437,49 @@
         }
       ],
       "assetids": [
+        "53969503885",
+        "53969499133",
+        "53969441184"
+      ]
+    },
+    {
+      "assetid": "53969494385",
+      "classid": "7729227296",
+      "instanceid": "0",
+      "amount": 6,
+      "name": "Sticker Slab | Ex3rcice (Gold) | Austin 2025",
+      "market_hash_name": "Sticker Slab | Ex3rcice (Gold) | Austin 2025",
+      "type": "Customized Extraordinary Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2069796971A2634969416F596101691969CB686E6169794C09B72C34E90C21",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53969494385",
         "48000294320",
         "48000279192",
         "48000253573",
         "48000241592",
         "48000229185"
-      ]
-    },
-    {
-      "assetid": "48000206009",
-      "classid": "7730050331",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Sticker Slab | Ex3rcice (Gold) | Shanghai 2024",
-      "market_hash_name": "Sticker Slab | Ex3rcice (Gold) | Shanghai 2024",
-      "type": "Customized Extraordinary Charm",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209787978F5C9DB797BF91A79FFF97E7973596909F9787B2F713D7C1A98477",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "48000206009"
       ]
     },
     {
@@ -2533,14 +2546,14 @@
       ]
     },
     {
-      "assetid": "51878517298",
+      "assetid": "53944740367",
       "classid": "8491303290",
       "instanceid": "143865972",
-      "amount": 5,
+      "amount": 9,
       "name": "Sticker | afro (Holo) | Cologne 2026",
       "market_hash_name": "Sticker | afro (Holo) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20889888903181A888A08DB88CEA8D80889840DCE088F88A3BB5EBE1",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454445CFD4D64446C41744026414C44548C102C44344698DFDBCE",
       "tags": [
         {
           "category": "Type",
@@ -2576,6 +2589,10 @@
         }
       ],
       "assetids": [
+        "53944740367",
+        "53944740366",
+        "53944740365",
+        "53944740364",
         "51878517298",
         "51878517297",
         "51878517296",
@@ -2631,56 +2648,6 @@
         "44274809960",
         "44274809937",
         "44274809923"
-      ]
-    },
-    {
-      "assetid": "48070778604",
-      "classid": "7729119141",
-      "instanceid": "188530139",
-      "amount": 4,
-      "name": "Sticker | Ex3rcice (Holo) | Budapest 2025",
-      "market_hash_name": "Sticker | Ex3rcice (Holo) | Budapest 2025",
-      "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65C4745D7D55784D791F78757D6DE530157D0D759BF30BB3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "48070778604",
-        "48070778580",
-        "48017574427",
-        "48017390533"
       ]
     },
     {
@@ -3016,7 +2983,7 @@
     {
       "assetid": "51878507550",
       "classid": "8490781882",
-      "instanceid": "8490792496",
+      "instanceid": "8490785265",
       "amount": 1,
       "name": "Cologne 2026 Coin",
       "market_hash_name": "Cologne 2026 Coin",
@@ -3388,7 +3355,7 @@
       "assetid": "47772298592",
       "classid": "7104840520",
       "instanceid": "188530139",
-      "amount": 12,
+      "amount": 10,
       "name": "Sticker | Ex3rcice (Gold) | Austin 2025",
       "market_hash_name": "Sticker | Ex3rcice (Gold) | Austin 2025",
       "type": "Extraordinary Sticker",
@@ -3433,12 +3400,10 @@
         "46187765697",
         "46177727816",
         "46177722878",
-        "46177722813",
         "46177722794",
         "45089284991",
         "45089284965",
         "45089284955",
-        "45089284939",
         "45089284919"
       ]
     },
@@ -3446,7 +3411,7 @@
       "assetid": "42689243095",
       "classid": "6360355760",
       "instanceid": "188530139",
-      "amount": 22,
+      "amount": 21,
       "name": "Sticker | Ex3rcice (Gold) | Shanghai 2024",
       "market_hash_name": "Sticker | Ex3rcice (Gold) | Shanghai 2024",
       "type": "Extraordinary Sticker",
@@ -3505,7 +3470,6 @@
         "42656267596",
         "42656267585",
         "42656267571",
-        "42656267566",
         "42656267560",
         "41242768037"
       ]
@@ -4122,7 +4086,7 @@
       "assetid": "49584298785",
       "classid": "7729094733",
       "instanceid": "188530139",
-      "amount": 24,
+      "amount": 21,
       "name": "Sticker | Ex3rcice | Budapest 2025",
       "market_hash_name": "Sticker | Ex3rcice | Budapest 2025",
       "type": "High Grade Sticker",
@@ -4164,8 +4128,6 @@
       "assetids": [
         "49584298785",
         "49584298782",
-        "49584298767",
-        "49584298724",
         "49584298704",
         "49584298703",
         "49584298630",
@@ -4182,7 +4144,6 @@
         "47972495046",
         "47972495039",
         "47972494967",
-        "47972494958",
         "47972494943",
         "47972494937",
         "47972494918"
@@ -4283,6 +4244,114 @@
       ]
     },
     {
+      "assetid": "53951676619",
+      "classid": "8637410422",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Dual Berettas | Mystic Conjunction",
+      "market_hash_name": "Dual Berettas | Mystic Conjunction (Minimal Wear)",
+      "type": "Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54271788982",
+      "classid": "8637410858",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Nova | Morning Sun",
+      "market_hash_name": "Nova | Morning Sun (Field-Tested)",
+      "type": "Industrial Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54271786759",
+      "classid": "8637413675",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Nova | Morning Sun",
+      "market_hash_name": "Nova | Morning Sun (Well-Worn)",
+      "type": "Industrial Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "49584310333",
       "classid": "7993074335",
       "instanceid": "7837077723",
@@ -4326,6 +4395,186 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54271785847",
+      "classid": "8637410420",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MP9 | Dune Asp",
+      "market_hash_name": "MP9 | Dune Asp (Battle-Scarred)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53951677485",
+      "classid": "8637411889",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MP9 | Dune Asp",
+      "market_hash_name": "MP9 | Dune Asp (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54271787735",
+      "classid": "8637411908",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MP9 | Dune Asp",
+      "market_hash_name": "MP9 | Dune Asp (Minimal Wear)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54271784755",
+      "classid": "8637410226",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "PP-Bizon | Traitor",
+      "market_hash_name": "PP-Bizon | Traitor (Field-Tested)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53951678211",
+      "classid": "8637411714",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "PP-Bizon | Traitor",
+      "market_hash_name": "PP-Bizon | Traitor (Minimal Wear)",
+      "type": "Industrial Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4550,6 +4799,42 @@
       ]
     },
     {
+      "assetid": "54271789925",
+      "classid": "8637410988",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MAC-10 | Arabesque Mosaic",
+      "market_hash_name": "MAC-10 | Arabesque Mosaic (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "39783842355",
       "classid": "241585241",
       "instanceid": "480085687",
@@ -4691,7 +4976,7 @@
       "assetid": "47972505642",
       "classid": "7729127856",
       "instanceid": "188530139",
-      "amount": 12,
+      "amount": 10,
       "name": "Sticker | Ex3rcice (Embroidered) | Budapest 2025",
       "market_hash_name": "Sticker | Ex3rcice (Embroidered) | Budapest 2025",
       "type": "Remarkable Sticker",
@@ -4737,9 +5022,7 @@
         "47972501971",
         "47972501968",
         "47972501949",
-        "47972501943",
         "47972501878",
-        "47972501874",
         "47972501873",
         "47972501871",
         "47972501861"
@@ -4793,14 +5076,14 @@
       ]
     },
     {
-      "assetid": "48000251395",
+      "assetid": "53969506635",
       "classid": "188530161",
-      "instanceid": "7806976247",
+      "instanceid": "9093893158",
       "amount": 1,
       "name": "Glock-18 | Dragon Tattoo",
       "market_hash_name": "Glock-18 | Dragon Tattoo (Factory New)",
       "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20071784EBA1EFB5061F0327372F0337033FC8D1ADD80447950365080F031783473AD7740E3A422FC316BA65020F0417D9426F5C770FA506110F0717223AE34EA947429037F7394A3AB12B47679F4A01DA193F",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4889,42 +5172,6 @@
       "market_hash_name": "AUG | Eye of Zapems (Factory New)",
       "type": "Restricted Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%205747EE8593A2E6564F5F77D1567F5367536F87DCE0BB5417523FC0562753F556415F5747726A7F8EE2E912745E6D681AEE5F9A17378912FB1FEF7F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "49924078965",
-      "classid": "7993036160",
-      "instanceid": "7756192477",
-      "amount": 1,
-      "name": "M4A1-S | Liquidation",
-      "market_hash_name": "M4A1-S | Liquidation (Factory New)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E0050A230D49F1E8CCD04CFAD8F4C0F4C8524B0B19F3B074F392FFF8F1E052B9CD0F47354DB54037F74D92E4F8F1E052B9DDF0F0C4B3CD706E364DB560BEF94D92FFF8F1E052B9CD80AC374DB52881D34D92E4F8F4E064DEEDF0F070CFCD9C4261CEB570357C4B92E4F8F0E064DEEDF0F070CFCD1FBB714EB5F0D64ACB9866F180F83289EF7A",
       "tags": [
         {
           "category": "Type",
@@ -5285,14 +5532,14 @@
       ]
     },
     {
-      "assetid": "49153037772",
+      "assetid": "53969512194",
       "classid": "7993044425",
-      "instanceid": "8818394261",
+      "instanceid": "9184163051",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Red Laminate",
       "market_hash_name": "StatTrak™ AK-47 | Red Laminate (Minimal Wear)",
       "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203121FD9ACEBC86302936113F1934013809B7AFD9DE3271A636793161A7BF30533E393021BA700C3156BD8A74B1608F0A533E393321BE710CD197580D7431A6EB0A533E393121B6710C3166F28A7411958D0D5334393221CE71533E393121B2710C40E0B38F7451425C0D596F41395B9C2881",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5355,7 +5602,7 @@
     {
       "assetid": "41234553105",
       "classid": "7993044445",
-      "instanceid": "8745219024",
+      "instanceid": "9125998120",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Guardian",
       "market_hash_name": "StatTrak™ M4A1-S | Guardian (Factory New)",
@@ -5401,14 +5648,14 @@
       ]
     },
     {
-      "assetid": "41068229463",
+      "assetid": "53969518352",
       "classid": "7993039145",
-      "instanceid": "8841351471",
+      "instanceid": "9155493983",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Desolate Space",
       "market_hash_name": "StatTrak™ M4A4 | Desolate Space (Field-Tested)",
       "type": "StatTrak™ Classified Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204E5E99A8A3B0D64F565E6E824A664B7E47769CB4D2BF4D0E934D064E1ED1532C41464A5ECA0E734E1584F40B6E0C94F226693E4A5DF5C82A",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5451,7 +5698,7 @@
     {
       "assetid": "41067818214",
       "classid": "7993041520",
-      "instanceid": "8827631097",
+      "instanceid": "9184163054",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Code Red",
       "market_hash_name": "StatTrak™ Desert Eagle | Code Red (Field-Tested)",
@@ -5497,14 +5744,14 @@
       ]
     },
     {
-      "assetid": "48000277525",
+      "assetid": "53969503287",
       "classid": "7993041773",
-      "instanceid": "8842123192",
+      "instanceid": "9184163053",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
       "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206171F4D9C989D360795C4199624967516859C1B09E906221A467296131A52A0364696071E5210364696371BF2409E6601169C36077696171445CD9B9052024939D595E2C2214172101F92CD40D8506",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -5551,7 +5798,7 @@
     {
       "assetid": "47758858994",
       "classid": "7993041046",
-      "instanceid": "8842123194",
+      "instanceid": "8965186849",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Factory New)",
@@ -5587,7 +5834,7 @@
     {
       "assetid": "47759482510",
       "classid": "7993043248",
-      "instanceid": "8827631094",
+      "instanceid": "9179510904",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",
@@ -5685,9 +5932,9 @@
       ]
     },
     {
-      "assetid": "47759166029",
+      "assetid": "53972248479",
       "classid": "5835568404",
-      "instanceid": "7757263615",
+      "instanceid": "9056359586",
       "amount": 1,
       "name": "C4 Explosive",
       "market_hash_name": "C4 Explosive",
@@ -5712,6 +5959,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
