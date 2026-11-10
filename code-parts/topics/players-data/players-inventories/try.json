@@ -7,14 +7,16 @@
   "name": "Santino Bruno",
   "nationality": "Argentina",
   "born": "23.09.2004",
+  "isContentCreator": false,
   "twitch": "TRYZSE",
   "faceit": "https://faceitdb.com/profile/faceit/1830d4f8-a243-47d8-b8b8-943f7170b163",
-  "isContentCreator": false,
-  "updatedAt": "2026-10-17T07:59:50.366Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-10T11:14:17.317Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
   "totalItemsRaw": 385,
   "totalItemsGrouped": 384,
   "items": [
@@ -93,14 +95,14 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "53814980723",
-      "classid": "7993044870",
+      "assetid": "54226814892",
+      "classid": "7993043455",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ M9 Bayonet | Gamma Doppler",
-      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A1B152415C1D69A0B95DA28119A589A791A29915425A43A2E118A5C925A3D1A93C5CBF7F",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C1D16D4E6F400BC0D93AC2E179C5E9C7F1C2F9587F6C29C28165C6A941C3B1C987B2975F",
       "tags": [
         {
           "category": "Type",
@@ -123,8 +125,8 @@
           "name": ""
         }
       ],
-      "float": 0.013607431203,
-      "seed": 569,
+      "float": 0.034026239067,
+      "seed": 932,
       "phase": "Emerald"
     },
     {
@@ -218,6 +220,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Marble Fade",
       "market_hash_name": "★ Specialist Gloves | Marble Fade (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54260325141",
+      "classid": "7993040299",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1979,9 +2009,9 @@
       ]
     },
     {
-      "assetid": "42933644443",
+      "assetid": "54325520494",
       "classid": "7993035975",
-      "instanceid": "302028390",
+      "instanceid": "8599237069",
       "amount": 1,
       "name": "Tec-9 | Blue Blast",
       "market_hash_name": "Tec-9 | Blue Blast (Field-Tested)",
@@ -2010,6 +2040,18 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -3047,12 +3089,12 @@
       ]
     },
     {
-      "assetid": "53929510269",
-      "classid": "7993041168",
-      "instanceid": "7755457538",
+      "assetid": "54074794621",
+      "classid": "8246931193",
+      "instanceid": "7722229363",
       "amount": 1,
-      "name": "AWP | Desert Hydra",
-      "market_hash_name": "AWP | Desert Hydra (Factory New)",
+      "name": "AWP | Queen's Gambit",
+      "market_hash_name": "AWP | Queen's Gambit (Factory New)",
       "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
@@ -3677,53 +3719,6 @@
       ]
     },
     {
-      "assetid": "53151719545",
-      "classid": "8492288796",
-      "instanceid": "143865972",
-      "amount": 1,
-      "name": "Sticker | n1ssim (Gold) | Cologne 2026",
-      "market_hash_name": "Sticker | n1ssim (Gold) | Cologne 2026",
-      "type": "Extraordinary Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200414041CBD0D24042C02340066010C0414AD506C047406E4EFBDD2",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "StickerCategory",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "StickerCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53151719545"
-      ]
-    },
-    {
       "assetid": "51894861909",
       "classid": "7545309816",
       "instanceid": "519977179",
@@ -4078,6 +4073,37 @@
       ],
       "assetids": [
         "47759940691"
+      ]
+    },
+    {
+      "assetid": "54074794622",
+      "classid": "6216348687",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sticker | Bolt Charge",
+      "market_hash_name": "Sticker | Bolt Charge",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206F7F6F77D6664F6F476C5F6B0D6A676F7FA452076F1F78476B2F31",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54074794622"
       ]
     },
     {
@@ -7327,7 +7353,7 @@
     {
       "assetid": "54064906287",
       "classid": "7993037671",
-      "instanceid": "9076753640",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "Sawed-Off | Spirit Board",
       "market_hash_name": "Sawed-Off | Spirit Board (Battle-Scarred)",
@@ -9316,41 +9342,6 @@
           "category": "Rarity",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "45252978620",
-      "classid": "2521819738",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Graffiti | Twin Koi",
-      "market_hash_name": "Graffiti | Twin Koi",
-      "type": "Remarkable Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B2A2B2AA77B892B29AB682B6D0B7BAB2A24CA0DAB2C2BA7468063C",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        },
-        {
-          "category": "SprayCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "45252978620"
       ]
     },
     {
@@ -13031,7 +13022,7 @@
     {
       "assetid": "41884482191",
       "classid": "7993042985",
-      "instanceid": "188532373",
+      "instanceid": "188592818",
       "amount": 1,
       "name": "StatTrak™ P250 | Muertos",
       "market_hash_name": "StatTrak™ P250 | Muertos (Field-Tested)",
@@ -13067,7 +13058,7 @@
     {
       "assetid": "46235807539",
       "classid": "7993040284",
-      "instanceid": "480091634",
+      "instanceid": "480109549",
       "amount": 1,
       "name": "StatTrak™ USP-S | Cortex",
       "market_hash_name": "StatTrak™ USP-S | Cortex (Minimal Wear)",
@@ -13139,7 +13130,7 @@
     {
       "assetid": "51414714962",
       "classid": "7993040297",
-      "instanceid": "9097213019",
+      "instanceid": "9179650639",
       "amount": 1,
       "name": "StatTrak™ AWP | Graphite",
       "market_hash_name": "StatTrak™ AWP | Graphite (Factory New)",
@@ -13195,7 +13186,7 @@
     {
       "assetid": "53867531560",
       "classid": "8247137616",
-      "instanceid": "7839330013",
+      "instanceid": "7829296486",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Fully Tuned",
       "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
@@ -13231,7 +13222,7 @@
     {
       "assetid": "49571276163",
       "classid": "7993041773",
-      "instanceid": "9108960657",
+      "instanceid": "9189444688",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -13267,7 +13258,7 @@
     {
       "assetid": "54055736954",
       "classid": "7993044513",
-      "instanceid": "9108960655",
+      "instanceid": "9189444687",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Field-Tested)",
@@ -13779,7 +13770,7 @@
     {
       "assetid": "43227581505",
       "classid": "7993036587",
-      "instanceid": "6995724358",
+      "instanceid": "7017884763",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Serpent Strike",
       "market_hash_name": "StatTrak™ Desert Eagle | Serpent Strike (Field-Tested)",
@@ -13935,7 +13926,7 @@
     {
       "assetid": "47912416861",
       "classid": "7993036423",
-      "instanceid": "188538586",
+      "instanceid": "188536533",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Night Terror",
       "market_hash_name": "StatTrak™ M4A1-S | Night Terror (Field-Tested)",
@@ -14007,7 +13998,7 @@
     {
       "assetid": "50557077319",
       "classid": "8247025056",
-      "instanceid": "188530144",
+      "instanceid": "188623083",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Well-Worn)",
@@ -14079,7 +14070,7 @@
     {
       "assetid": "33421738305",
       "classid": "7993041851",
-      "instanceid": "188531925",
+      "instanceid": "188604750",
       "amount": 1,
       "name": "StatTrak™ UMP-45 | Moonrise",
       "market_hash_name": "StatTrak™ UMP-45 | Moonrise (Factory New)",

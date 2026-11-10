@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-09T11:48:54.448Z",
+  "updatedAt": "2026-11-10T11:41:39.556Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 77,
-  "totalItemsGrouped": 76,
+  "totalItemsRaw": 78,
+  "totalItemsGrouped": 77,
   "items": [
     {
       "assetid": "51006192748",
@@ -480,14 +480,14 @@
       ]
     },
     {
-      "assetid": "49625802302",
+      "assetid": "54243377604",
       "classid": "6195246388",
       "instanceid": "302028390",
       "amount": 2,
       "name": "Charm Detachment Pack",
       "market_hash_name": "Charm Detachment Pack",
       "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E3F3E3FB35C5C3E3CBE2D3E78BE393FBB3523EFF",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
       "tags": [
         {
           "category": "Type",
@@ -503,8 +503,8 @@
         }
       ],
       "assetids": [
-        "49625802302",
-        "54243377604"
+        "54243377604",
+        "49625802302"
       ]
     },
     {
@@ -2271,7 +2271,7 @@
     {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "9185516064",
+      "instanceid": "9188975901",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -2323,7 +2323,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "9185450468",
+      "instanceid": "9188975900",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -2375,7 +2375,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "9185335716",
+      "instanceid": "9188975899",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",
@@ -2420,6 +2420,42 @@
         },
         {
           "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54379883220",
+      "classid": "7993039156",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Wildfire",
+      "market_hash_name": "StatTrak™ AWP | Wildfire (Factory New)",
+      "type": "StatTrak™ Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
