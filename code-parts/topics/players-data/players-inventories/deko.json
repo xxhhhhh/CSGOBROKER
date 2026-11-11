@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/f133beae-a158-4fd2-a991-76c1769c0ab5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-10T10:48:20.265Z",
+  "updatedAt": "2026-11-11T10:18:24.045Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 79,
-  "totalItemsGrouped": 79,
+  "totalItemsRaw": 86,
+  "totalItemsGrouped": 86,
   "items": [
     {
       "assetid": "53440362642",
@@ -27,38 +27,6 @@
       "amount": 1,
       "name": "★ Bayonet | Freehand",
       "market_hash_name": "★ Bayonet | Freehand (Field-Tested)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53763953417",
-      "classid": "7993045265",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Bayonet | Scorched",
-      "market_hash_name": "★ Bayonet | Scorched (Battle-Scarred)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -303,38 +271,6 @@
       ]
     },
     {
-      "assetid": "53455782707",
-      "classid": "7993044534",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Flip Knife | Stained",
-      "market_hash_name": "★ Flip Knife | Stained (Minimal Wear)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "49222714563",
       "classid": "7993042978",
       "instanceid": "188530139",
@@ -370,14 +306,14 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "53455781422",
-      "classid": "7993041784",
+      "assetid": "54388151236",
+      "classid": "7993045582",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Paracord Knife | Fade",
-      "market_hash_name": "★ Paracord Knife | Fade (Factory New)",
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203323F79496FDF9322BCF3013AC301B3503300BBAD7ACDF3073C3365B7C433BC929E3CE",
       "tags": [
         {
           "category": "Type",
@@ -385,10 +321,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -403,15 +335,18 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.066379614174,
+      "seed": 752,
+      "phase": "Ruby"
     },
     {
-      "assetid": "53504828575",
-      "classid": "7993046920",
+      "assetid": "53455781422",
+      "classid": "7993041784",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Ursus Knife | Crimson Web",
-      "market_hash_name": "★ Ursus Knife | Crimson Web (Field-Tested)",
+      "name": "★ Paracord Knife | Fade",
+      "market_hash_name": "★ Paracord Knife | Fade (Factory New)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -767,6 +702,192 @@
       ]
     },
     {
+      "assetid": "54389291879",
+      "classid": "1989295972",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Backstab (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Backstab (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7D6D75A9674D6D456C5D690F6A656D7DD9605D7F056D1D759D6E4575",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389291879"
+      ]
+    },
+    {
+      "assetid": "54389291878",
+      "classid": "1989321043",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eat It (Jungle Green)",
+      "market_hash_name": "Sealed Graffiti | Eat It (Jungle Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2020302038E42A0020082110244227282030E72D10284820503836DED35B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389291878"
+      ]
+    },
+    {
+      "assetid": "54389292433",
+      "classid": "1989297555",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | GGEZ (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | GGEZ (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B5A5B5AD71BF95B59DB485B1D7B2BDB5A505B885A7DDB5C5AD9229011C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389292433"
+      ]
+    },
+    {
+      "assetid": "54388672795",
+      "classid": "1989283490",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Karambit (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Karambit (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF62AE4CEEEC6EFDEEA8CE9E6EEFE53E3DEFF86EE9EF61D3CBEE5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54388672795"
+      ]
+    },
+    {
+      "assetid": "54389291881",
+      "classid": "1989279141",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | NaCl (Shark White)",
+      "market_hash_name": "Sealed Graffiti | NaCl (Shark White)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205A4A5A429E507A5A725B6A5E385D525A4A9F576A49325A2A42F4931806",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389291881"
+      ]
+    },
+    {
+      "assetid": "54389292432",
+      "classid": "1989284146",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Ninja (Cash Green)",
+      "market_hash_name": "Sealed Graffiti | Ninja (Cash Green)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206676667EA26C46664E67566204616E6676CA6B566C0E66167E45B0441F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389292432"
+      ]
+    },
+    {
       "assetid": "53261504192",
       "classid": "1989294797",
       "instanceid": "302028390",
@@ -795,6 +916,68 @@
       ],
       "assetids": [
         "53261504192"
+      ]
+    },
+    {
+      "assetid": "54389291880",
+      "classid": "1989331259",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Take Flight (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Take Flight (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200717071FC30D27072F06370365000F0717CF0A37156F07771F9AADA58F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389291880"
+      ]
+    },
+    {
+      "assetid": "54389292434",
+      "classid": "1989279388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Toasted (Bazooka Pink)",
+      "market_hash_name": "Sealed Graffiti | Toasted (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205545554D915F75557D54655137525D5545EA5865453D55254DB31BC236",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389292434"
       ]
     },
     {
@@ -2195,6 +2378,41 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54389291882",
+      "classid": "1999672999",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sealed Graffiti | Unicorn",
+      "market_hash_name": "Sealed Graffiti | Unicorn",
+      "type": "High Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200B1B0B13CF012B0B23083B0F690E030B1B8E06630B7B03ADA0B338",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        },
+        {
+          "category": "SprayCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54389291882"
       ]
     },
     {
