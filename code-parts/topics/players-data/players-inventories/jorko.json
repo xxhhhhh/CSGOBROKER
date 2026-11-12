@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/81c00116-0f95-4fb5-9e22-e1132f38ebab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-11T10:50:25.738Z",
+  "updatedAt": "2026-11-12T11:12:42.590Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 101,
-  "totalItemsGrouped": 100,
+  "totalItemsRaw": 103,
+  "totalItemsGrouped": 102,
   "items": [
     {
       "assetid": "54272720145",
@@ -244,6 +244,34 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Kimono",
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54400507760",
+      "classid": "8247668937",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Pillow Punchers",
+      "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -2924,6 +2952,58 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54394588718",
+      "classid": "7993041773",
+      "instanceid": "9196898113",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Kill Confirmed",
+      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

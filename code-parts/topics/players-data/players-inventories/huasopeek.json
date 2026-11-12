@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-09T11:10:41.009Z",
+  "updatedAt": "2026-11-12T10:55:36.427Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 127,
-  "totalItemsGrouped": 84,
+  "totalItemsRaw": 123,
+  "totalItemsGrouped": 80,
   "items": [
     {
       "assetid": "50721011954",
@@ -427,42 +427,6 @@
       ]
     },
     {
-      "assetid": "51894234436",
-      "classid": "7993036891",
-      "instanceid": "7583359597",
-      "amount": 1,
-      "name": "USP-S | Cortex",
-      "market_hash_name": "USP-S | Cortex (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52019818461",
       "classid": "7993038907",
       "instanceid": "188530139",
@@ -502,42 +466,6 @@
       "assetid": "51778456323",
       "classid": "7993038838",
       "instanceid": "188530139",
-      "amount": 1,
-      "name": "USP-S | Jawbreaker",
-      "market_hash_name": "USP-S | Jawbreaker (Well-Worn)",
-      "type": "Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "52019820324",
-      "classid": "7993038838",
-      "instanceid": "7583427538",
       "amount": 1,
       "name": "USP-S | Jawbreaker",
       "market_hash_name": "USP-S | Jawbreaker (Well-Worn)",
@@ -613,6 +541,42 @@
       "amount": 1,
       "name": "AK-47 | Ice Coaled",
       "market_hash_name": "AK-47 | Ice Coaled (Battle-Scarred)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "47767159253",
+      "classid": "7993035539",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "FAMAS | Rapid Eye Movement",
+      "market_hash_name": "FAMAS | Rapid Eye Movement (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -2424,6 +2388,42 @@
       ]
     },
     {
+      "assetid": "53328688908",
+      "classid": "7993036409",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "M4A1-S | Glitched Paint",
+      "market_hash_name": "M4A1-S | Glitched Paint (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53585728229",
       "classid": "7993036149",
       "instanceid": "480085569",
@@ -2597,7 +2597,7 @@
     {
       "assetid": "47765283381",
       "classid": "7993037966",
-      "instanceid": "9191710014",
+      "instanceid": "9195288448",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Redline",
       "market_hash_name": "StatTrak™ AK-47 | Redline (Field-Tested)",
@@ -2851,114 +2851,6 @@
       ]
     },
     {
-      "assetid": "51889121357",
-      "classid": "7993037945",
-      "instanceid": "902658099",
-      "amount": 1,
-      "name": "StatTrak™ M4A1-S | Emphorosaur-S",
-      "market_hash_name": "StatTrak™ M4A1-S | Emphorosaur-S (Field-Tested)",
-      "type": "StatTrak™ Restricted Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "45386962485",
-      "classid": "7993039491",
-      "instanceid": "188530306",
-      "amount": 1,
-      "name": "StatTrak™ Nova | Rising Sun",
-      "market_hash_name": "StatTrak™ Nova | Rising Sun (Battle-Scarred)",
-      "type": "StatTrak™ Restricted Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AEBE1B02362407AFB68D8E06A786AA9EA79666013C54ADEE28AFE6AEFEAEC632AFDEA68B5E2E3D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "46546182682",
-      "classid": "7993039028",
-      "instanceid": "188534907",
-      "amount": 1,
-      "name": "StatTrak™ XM1014 | Zombie Offensive",
-      "market_hash_name": "StatTrak™ XM1014 | Zombie Offensive (Field-Tested)",
-      "type": "StatTrak™ Restricted Shotgun",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F47E201D5649E5FCFDC40BECCCE0D4EDDC1B362C16E7A408E2ACE4B4E08CC494EC9DEA57A4",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45119594105",
       "classid": "7993038081",
       "instanceid": "188544294",
@@ -2995,78 +2887,6 @@
       ]
     },
     {
-      "assetid": "45386961110",
-      "classid": "7993040988",
-      "instanceid": "188530248",
-      "amount": 1,
-      "name": "StatTrak™ MP5-SD | Kitbash",
-      "market_hash_name": "StatTrak™ MP5-SD | Kitbash (Minimal Wear)",
-      "type": "StatTrak™ Restricted SMG",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C5D513645D4F6CC4DDD2E50BC2EDC1F5CCFD4A451428C6856AC68DC595C4AD5BC4B5CD7CFA5F42",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54070854695",
-      "classid": "7993038039",
-      "instanceid": "188530170",
-      "amount": 1,
-      "name": "StatTrak™ P90 | Neoqueen",
-      "market_hash_name": "StatTrak™ P90 | Neoqueen (Factory New)",
-      "type": "StatTrak™ Restricted SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "47639914665",
       "classid": "7993038534",
       "instanceid": "188530170",
@@ -3075,6 +2895,42 @@
       "market_hash_name": "StatTrak™ P90 | Neoqueen (Field-Tested)",
       "type": "StatTrak™ Restricted SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%200F1FA6DEB2B3BE0E171C2FDE06270B3F0637DAB890FB0C4FCA0C470F5F0F67DD0E7F07C7B9F0FF",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "50955644213",
+      "classid": "7993039343",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "StatTrak™ AWP | Worm God",
+      "market_hash_name": "StatTrak™ AWP | Worm God (Field-Tested)",
+      "type": "StatTrak™ Restricted Sniper Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
