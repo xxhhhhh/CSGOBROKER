@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/01f4b994-de2d-4edd-91d1-117cbc52785a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-10-29T10:20:37.731Z",
+  "updatedAt": "2026-11-13T11:32:36.271Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 153,
-  "totalItemsGrouped": 150,
+  "totalItemsRaw": 155,
+  "totalItemsGrouped": 152,
   "items": [
     {
       "assetid": "50460416592",
@@ -518,6 +518,34 @@
       "amount": 1,
       "name": "Revolution Case",
       "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54534320654",
+      "classid": "8246873714",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Dead Hand Terminal",
+      "market_hash_name": "Sealed Dead Hand Terminal",
       "type": "Base Grade Container",
       "inspectLink": "",
       "tags": [
@@ -1897,6 +1925,42 @@
       "name": "PP-Bizon | Bizoom",
       "market_hash_name": "PP-Bizon | Bizoom (Field-Tested)",
       "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54534320655",
+      "classid": "7993036629",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Grey Smoke",
+      "market_hash_name": "SSG 08 | Grey Smoke (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -4576,7 +4640,7 @@
     {
       "assetid": "23238617076",
       "classid": "7993046722",
-      "instanceid": "9192179510",
+      "instanceid": "9199622787",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Wasteland Rebel",
       "market_hash_name": "StatTrak™ AK-47 | Wasteland Rebel (Minimal Wear)",
@@ -4904,7 +4968,7 @@
     {
       "assetid": "44409734655",
       "classid": "7993043723",
-      "instanceid": "188538874",
+      "instanceid": "188532418",
       "amount": 1,
       "name": "StatTrak™ P250 | Verdigris",
       "market_hash_name": "StatTrak™ P250 | Verdigris (Factory New)",
@@ -5176,7 +5240,7 @@
     {
       "assetid": "19560356266",
       "classid": "7993037237",
-      "instanceid": "9192179511",
+      "instanceid": "9199622788",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Field-Tested)",

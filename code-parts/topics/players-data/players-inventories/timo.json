@@ -12,14 +12,42 @@
   "faceit": "https://faceitdb.com/profile/faceit/d0006176-6704-465e-8c7a-524e42c3a477",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-10T11:20:36.879Z",
+  "updatedAt": "2026-11-13T11:04:49.983Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 39,
-  "totalItemsGrouped": 39,
+  "totalItemsRaw": 41,
+  "totalItemsGrouped": 41,
   "items": [
+    {
+      "assetid": "54535195375",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "44694305553",
       "classid": "1989274744",
@@ -49,6 +77,33 @@
       ],
       "assetids": [
         "44694305553"
+      ]
+    },
+    {
+      "assetid": "54535195376",
+      "classid": "6195246388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Charm Detachment Pack",
+      "market_hash_name": "Charm Detachment Pack",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54535195376"
       ]
     },
     {

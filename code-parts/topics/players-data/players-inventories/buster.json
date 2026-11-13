@@ -12,12 +12,12 @@
   "faceit": "https://www.faceit.com/en/players/buster",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-01T10:59:45.044Z",
+  "updatedAt": "2026-11-13T11:28:21.918Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 96,
+  "totalItemsRaw": 95,
   "totalItemsGrouped": 61,
   "items": [
     {
@@ -345,21 +345,17 @@
       ]
     },
     {
-      "assetid": "54142497989",
-      "classid": "8246873714",
+      "assetid": "54525371122",
+      "classid": "1989273684",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "Sealed Dead Hand Terminal",
-      "market_hash_name": "Sealed Dead Hand Terminal",
-      "type": "Base Grade Container",
-      "inspectLink": "",
+      "name": "Graffiti | Cocky (Bazooka Pink)",
+      "market_hash_name": "Graffiti | Cocky (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CCDCCCD409C6ECCCE4CDFCC8AECBC4CCDC08C1FCDCA4CCBCD456491AB3",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -369,14 +365,21 @@
         {
           "category": "Rarity",
           "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
         }
+      ],
+      "assetids": [
+        "54525371122"
       ]
     },
     {
       "assetid": "51473598137",
       "classid": "1989288318",
       "instanceid": "302028390",
-      "amount": 18,
+      "amount": 17,
       "name": "Sealed Graffiti | Cocky (Bazooka Pink)",
       "market_hash_name": "Sealed Graffiti | Cocky (Bazooka Pink)",
       "type": "Base Grade Graffiti",
@@ -401,7 +404,6 @@
       ],
       "assetids": [
         "51473598137",
-        "51473598095",
         "51473598082",
         "51473598056",
         "51473598045",
@@ -1565,7 +1567,7 @@
     {
       "assetid": "39597581058",
       "classid": "7993047665",
-      "instanceid": "480087296",
+      "instanceid": "480088020",
       "amount": 1,
       "name": "StatTrak™ USP-S | Monster Mashup",
       "market_hash_name": "StatTrak™ USP-S | Monster Mashup (Factory New)",
@@ -1637,7 +1639,7 @@
     {
       "assetid": "39598116732",
       "classid": "7993041730",
-      "instanceid": "903284015",
+      "instanceid": "903229016",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Disco Tech",
       "market_hash_name": "StatTrak™ MAC-10 | Disco Tech (Factory New)",
@@ -1673,7 +1675,7 @@
     {
       "assetid": "42646683070",
       "classid": "7993043001",
-      "instanceid": "188579027",
+      "instanceid": "188537217",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Golden Koi",
       "market_hash_name": "StatTrak™ Desert Eagle | Golden Koi (Factory New)",
@@ -1709,7 +1711,7 @@
     {
       "assetid": "39950248078",
       "classid": "7993042913",
-      "instanceid": "188644946",
+      "instanceid": "188673547",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Gold Toof",
       "market_hash_name": "StatTrak™ Glock-18 | Gold Toof (Factory New)",
@@ -1897,7 +1899,7 @@
     {
       "assetid": "39584343842",
       "classid": "7993047996",
-      "instanceid": "480086970",
+      "instanceid": "480090222",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Chantico's Fire",
       "market_hash_name": "StatTrak™ M4A1-S | Chantico's Fire (Factory New)",
@@ -1933,7 +1935,7 @@
     {
       "assetid": "41221226342",
       "classid": "7993042493",
-      "instanceid": "7201714496",
+      "instanceid": "6641411036",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Temukau",
       "market_hash_name": "StatTrak™ M4A4 | Temukau (Factory New)",
@@ -1969,7 +1971,7 @@
     {
       "assetid": "48531465926",
       "classid": "7993044128",
-      "instanceid": "902979141",
+      "instanceid": "902772827",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Stone Cold",
       "market_hash_name": "StatTrak™ Galil AR | Stone Cold (Factory New)",

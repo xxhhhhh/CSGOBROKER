@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a55ef48c-ee6a-4801-a2b2-31dd1638123a",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-04T10:31:14.339Z",
+  "updatedAt": "2026-11-13T10:37:25.676Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 69,
-  "totalItemsGrouped": 69,
+  "totalItemsRaw": 71,
+  "totalItemsGrouped": 71,
   "items": [
     {
       "assetid": "52715660133",
@@ -56,6 +56,34 @@
       "phase": "Phase 2"
     },
     {
+      "assetid": "54532004144",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54181362951",
       "classid": "1989273683",
       "instanceid": "302028390",
@@ -84,6 +112,37 @@
       ],
       "assetids": [
         "54181362951"
+      ]
+    },
+    {
+      "assetid": "54532004145",
+      "classid": "1989292345",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Bling (Blood Red)",
+      "market_hash_name": "Sealed Graffiti | Bling (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2031213129F53B1131193001355336393121F13C0133593141292A263E52",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54532004145"
       ]
     },
     {
@@ -2170,7 +2229,7 @@
     {
       "assetid": "42414210687",
       "classid": "7993041854",
-      "instanceid": "9184467920",
+      "instanceid": "9198521681",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Tooth Fairy",
       "market_hash_name": "StatTrak™ M4A4 | Tooth Fairy (Minimal Wear)",
