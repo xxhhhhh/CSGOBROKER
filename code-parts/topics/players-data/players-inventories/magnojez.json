@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-13T10:54:17.147Z",
+  "updatedAt": "2026-11-14T10:12:12.288Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 102,
-  "totalItemsGrouped": 75,
+  "totalItemsRaw": 106,
+  "totalItemsGrouped": 79,
   "items": [
     {
       "assetid": "54241238324",
@@ -60,6 +60,45 @@
       "phase": "Phase 2"
     },
     {
+      "assetid": "54411096084",
+      "classid": "7993040524",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20ACBC384C317566ADB42FA88C47A884AA9CAF94782B6273AFEC49AFC4CBDCA462441BDB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.007431486621,
+      "seed": 485,
+      "phase": "Sapphire"
+    },
+    {
       "assetid": "54385310351",
       "classid": "7993042978",
       "instanceid": "188530139",
@@ -95,9 +134,44 @@
       "phase": "Ruby"
     },
     {
+      "assetid": "54412857432",
+      "classid": "7993045582",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838F088A1F2E22930D42B08B72B002E182B10FEB386C82B68D02B40405820A1017CC8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.008517703041,
+      "seed": 504,
+      "phase": "Ruby"
+    },
+    {
       "assetid": "54410888342",
       "classid": "7993041878",
-      "instanceid": "9164448009",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "★ Specialist Gloves | Crimson Kimono",
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
@@ -425,7 +499,7 @@
     {
       "assetid": "54411048880",
       "classid": "188530330",
-      "instanceid": "9164448009",
+      "instanceid": "480085569",
       "amount": 1,
       "name": "AK-47 | Case Hardened",
       "market_hash_name": "AK-47 | Case Hardened (Field-Tested)",
@@ -794,6 +868,50 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54417045857",
+      "classid": "7993051188",
+      "instanceid": "9079478725",
+      "amount": 1,
+      "name": "AK-47 | Wild Lotus",
+      "market_hash_name": "AK-47 | Wild Lotus (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -2006,6 +2124,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54417045856",
+      "classid": "188530425",
+      "instanceid": "6276644751",
+      "amount": 1,
+      "name": "Glock-18 | Fade",
+      "market_hash_name": "Glock-18 | Fade (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
