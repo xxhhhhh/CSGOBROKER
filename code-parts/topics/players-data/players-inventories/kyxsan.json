@@ -7,16 +7,18 @@
   "name": "Damjan Stoilkovski",
   "nationality": "North Macedonia",
   "born": "26.05.2000",
+  "isContentCreator": false,
   "twitch": "kyxsancs",
   "faceit": "https://faceitdb.com/profile/faceit/943d03c7-9278-4add-8675-145f90373e28",
-  "isContentCreator": false,
-  "updatedAt": "2026-06-11T07:35:27.173Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 62,
-  "totalItemsGrouped": 59,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-15T10:27:42.230Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 64,
+  "totalItemsGrouped": 60,
   "items": [
     {
       "assetid": "51741071475",
@@ -181,37 +183,6 @@
       ],
       "assetids": [
         "43023513924"
-      ]
-    },
-    {
-      "assetid": "41894264045",
-      "classid": "1989273675",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | Mr. Teeth (Tracer Yellow)",
-      "market_hash_name": "Graffiti | Mr. Teeth (Tracer Yellow)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205545554D905F75557D54655137525D5545FE5865533D55254D4C9A16C3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "41894264045"
       ]
     },
     {
@@ -591,6 +562,50 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53954536313",
+      "classid": "8711931853",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | Aurora (Holo, Ranked) | Cologne 2026",
+      "market_hash_name": "Sticker | Aurora (Holo, Ranked) | Cologne 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204454445CFD4D64446C41744026414C4454B7132C443446C030B324",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53954536313",
+        "53954536312"
       ]
     },
     {
@@ -1545,6 +1560,49 @@
       ]
     },
     {
+      "assetid": "53954548949",
+      "classid": "8490882397",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | Aurora (Foil) | Cologne 2026",
+      "market_hash_name": "Sticker | Aurora (Foil) | Cologne 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202636263E9F2F06260E22162244232E2636B0774E2656246F9EE3EC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53954548949"
+      ]
+    },
+    {
       "assetid": "52025942189",
       "classid": "7993040607",
       "instanceid": "480085569",
@@ -1763,7 +1821,7 @@
     {
       "assetid": "47311112971",
       "classid": "7993040848",
-      "instanceid": "903944558",
+      "instanceid": "904849020",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Field-Tested)",
@@ -1799,7 +1857,7 @@
     {
       "assetid": "49569369043",
       "classid": "7993040539",
-      "instanceid": "8601893406",
+      "instanceid": "9201102634",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Neo-Noir",
       "market_hash_name": "StatTrak™ Glock-18 | Neo-Noir (Field-Tested)",
@@ -1847,7 +1905,7 @@
     {
       "assetid": "48162901811",
       "classid": "7993036844",
-      "instanceid": "8610924399",
+      "instanceid": "9204693838",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",
@@ -1895,7 +1953,7 @@
     {
       "assetid": "51988345418",
       "classid": "7993044091",
-      "instanceid": "8601893405",
+      "instanceid": "9201102633",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Printstream",
       "market_hash_name": "StatTrak™ M4A1-S | Printstream (Field-Tested)",
@@ -1939,7 +1997,7 @@
     {
       "assetid": "36658397039",
       "classid": "7993041740",
-      "instanceid": "8607885365",
+      "instanceid": "9132638796",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Neo-Noir",
       "market_hash_name": "StatTrak™ M4A4 | Neo-Noir (Minimal Wear)",
@@ -1987,7 +2045,7 @@
     {
       "assetid": "41851900478",
       "classid": "7993038744",
-      "instanceid": "188532418",
+      "instanceid": "188578445",
       "amount": 1,
       "name": "StatTrak™ Negev | Drop Me",
       "market_hash_name": "StatTrak™ Negev | Drop Me (Field-Tested)",
@@ -2023,7 +2081,7 @@
     {
       "assetid": "46025757982",
       "classid": "7993036902",
-      "instanceid": "188531615",
+      "instanceid": "188530422",
       "amount": 1,
       "name": "StatTrak™ XM1014 | Mockingbird",
       "market_hash_name": "StatTrak™ XM1014 | Mockingbird (Minimal Wear)",
@@ -2059,7 +2117,7 @@
     {
       "assetid": "45275008332",
       "classid": "7993046641",
-      "instanceid": "8601984738",
+      "instanceid": "9201102636",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Copper Galaxy",
       "market_hash_name": "StatTrak™ Five-SeveN | Copper Galaxy (Field-Tested)",
@@ -2107,7 +2165,7 @@
     {
       "assetid": "41851915883",
       "classid": "7993040946",
-      "instanceid": "480087348",
+      "instanceid": "480091095",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Saibā Oni",
       "market_hash_name": "StatTrak™ MAC-10 | Saibā Oni (Field-Tested)",

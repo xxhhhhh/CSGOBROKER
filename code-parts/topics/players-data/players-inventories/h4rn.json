@@ -12,46 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/8f151c97-d096-40f1-b3ae-3afaaca644bb",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-13T11:36:47.601Z",
+  "updatedAt": "2026-11-15T11:29:42.090Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 191,
-  "totalItemsGrouped": 144,
+  "totalItemsRaw": 189,
+  "totalItemsGrouped": 142,
   "items": [
-    {
-      "assetid": "54407161606",
-      "classid": "7993044347",
-      "instanceid": "9162515786",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Slaughter",
-      "market_hash_name": "★ M9 Bayonet | Slaughter (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "54257793728",
       "classid": "7993038598",
@@ -59,34 +27,6 @@
       "amount": 1,
       "name": "★ Specialist Gloves | Fade",
       "market_hash_name": "★ Specialist Gloves | Fade (Battle-Scarred)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54358707675",
-      "classid": "7993039827",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Scarlet Shamagh",
-      "market_hash_name": "★ Sport Gloves | Scarlet Shamagh (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -880,6 +820,54 @@
       "float": 0.068883225322,
       "seed": 428,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "54430796241",
+      "classid": "7993037614",
+      "instanceid": "8776769794",
+      "amount": 1,
+      "name": "AWP | Asiimov",
+      "market_hash_name": "AWP | Asiimov (Battle-Scarred)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "52754428224",
@@ -4634,7 +4622,7 @@
     {
       "assetid": "53453056014",
       "classid": "7993037037",
-      "instanceid": "9115382351",
+      "instanceid": "9206263747",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Black Lotus",
       "market_hash_name": "StatTrak™ M4A1-S | Black Lotus (Field-Tested)",
@@ -4682,7 +4670,7 @@
     {
       "assetid": "54189713749",
       "classid": "7993044174",
-      "instanceid": "9197139596",
+      "instanceid": "9206263746",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Ocean Drive",
       "market_hash_name": "StatTrak™ Desert Eagle | Ocean Drive (Field-Tested)",
@@ -4731,50 +4719,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54223704156",
-      "classid": "7993039158",
-      "instanceid": "6492948325",
-      "amount": 1,
-      "name": "StatTrak™ M4A1-S | Cyrex",
-      "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Field-Tested)",
-      "type": "StatTrak™ Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -4878,7 +4822,7 @@
     {
       "assetid": "54408896683",
       "classid": "7993038338",
-      "instanceid": "9188536595",
+      "instanceid": "9206434563",
       "amount": 1,
       "name": "StatTrak™ USP-S | Stainless",
       "market_hash_name": "StatTrak™ USP-S | Stainless (Field-Tested)",
@@ -4926,7 +4870,7 @@
     {
       "assetid": "47814879233",
       "classid": "7993038080",
-      "instanceid": "188530394",
+      "instanceid": "188737231",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Crypsis",
       "market_hash_name": "StatTrak™ FAMAS | Crypsis (Field-Tested)",
@@ -4998,7 +4942,7 @@
     {
       "assetid": "52197129871",
       "classid": "7993039960",
-      "instanceid": "9193081378",
+      "instanceid": "9206263748",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Dezastre",
       "market_hash_name": "StatTrak™ SSG 08 | Dezastre (Factory New)",
@@ -5122,7 +5066,7 @@
     {
       "assetid": "54214082294",
       "classid": "7993042323",
-      "instanceid": "9190457049",
+      "instanceid": "9206263745",
       "amount": 1,
       "name": "StatTrak™ P250 | X-Ray",
       "market_hash_name": "StatTrak™ P250 | X-Ray (Minimal Wear)",
@@ -5218,7 +5162,7 @@
     {
       "assetid": "52048946311",
       "classid": "7993041474",
-      "instanceid": "9181269249",
+      "instanceid": "9206434564",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Signal",
       "market_hash_name": "StatTrak™ Galil AR | Signal (Factory New)",
@@ -5350,7 +5294,7 @@
     {
       "assetid": "50835878857",
       "classid": "8246991029",
-      "instanceid": "188531925",
+      "instanceid": "188534741",
       "amount": 1,
       "name": "StatTrak™ MP9 | Urban Sovereign",
       "market_hash_name": "StatTrak™ MP9 | Urban Sovereign (Field-Tested)",
