@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b68b677e-562e-456d-9c27-3ebf437e7bd5",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-12T10:55:36.427Z",
+  "updatedAt": "2026-11-16T10:54:46.894Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 123,
-  "totalItemsGrouped": 80,
+  "totalItemsRaw": 126,
+  "totalItemsGrouped": 83,
   "items": [
     {
       "assetid": "50721011954",
@@ -56,12 +56,76 @@
       "phase": "Phase 4"
     },
     {
+      "assetid": "54449522527",
+      "classid": "7993038396",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Nomad Knife | Marble Fade",
+      "market_hash_name": "★ Nomad Knife | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53776044828",
       "classid": "7993038184",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ Hand Wraps | Overprint",
       "market_hash_name": "★ Hand Wraps | Overprint (Battle-Scarred)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54449522528",
+      "classid": "7993043024",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Web",
+      "market_hash_name": "★ Specialist Gloves | Crimson Web (Battle-Scarred)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -123,6 +187,46 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54449522526",
+      "classid": "7993044030",
+      "instanceid": "188530170",
+      "amount": 1,
+      "name": "★ StatTrak™ Bayonet | Tiger Tooth",
+      "market_hash_name": "★ StatTrak™ Bayonet | Tiger Tooth (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
