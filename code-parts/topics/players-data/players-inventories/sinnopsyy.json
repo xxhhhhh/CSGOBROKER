@@ -7,16 +7,18 @@
   "name": "Dionis Budeci",
   "nationality": "Kosovo",
   "born": "24.07.1995",
+  "isContentCreator": false,
   "twitch": "sinnopsyy",
   "faceit": "https://faceitdb.com/profile/faceit/f8580374-5c09-43bc-bef2-463f1fde9aff",
-  "isContentCreator": false,
-  "updatedAt": "2026-11-07T10:40:27.779Z",
-  "fetchOk": false,
-  "fetchStatus": 403,
-  "fetchError": "Inventory is private or unavailable",
-  "inventoryVisible": false,
-  "totalItemsRaw": 200,
-  "totalItemsGrouped": 194,
+  "appid": 730,
+  "contextid": "2",
+  "updatedAt": "2026-11-17T12:33:34.122Z",
+  "inventoryVisible": true,
+  "fetchOk": true,
+  "fetchStatus": 200,
+  "fetchError": "",
+  "totalItemsRaw": 203,
+  "totalItemsGrouped": 195,
   "items": [
     {
       "assetid": "54393006520",
@@ -1591,6 +1593,39 @@
       ],
       "assetids": [
         "52826296379"
+      ]
+    },
+    {
+      "assetid": "54450193023",
+      "classid": "7104639651",
+      "instanceid": "9173753963",
+      "amount": 3,
+      "name": "Sticker | Raven Guard",
+      "market_hash_name": "Sticker | Raven Guard",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D6C6D6CE6FDFF6D6FED5E6D2B4D3DED6C6409FBED6A6DEC99A4B0B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54450193023",
+        "54450193018",
+        "54450193017"
       ]
     },
     {
