@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4f57a883-03fe-4747-bfdb-459aa007c4f3",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:27:47.047Z",
+  "updatedAt": "2026-11-25T12:02:13.242Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 66,
-  "totalItemsGrouped": 66,
+  "totalItemsRaw": 68,
+  "totalItemsGrouped": 68,
   "items": [
     {
       "assetid": "54237692968",
@@ -545,6 +545,42 @@
       "name": "AWP | Duality",
       "market_hash_name": "AWP | Duality (Field-Tested)",
       "type": "Classified Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54602655969",
+      "classid": "7993036408",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "CZ75-Auto | Pink Pearl",
+      "market_hash_name": "CZ75-Auto | Pink Pearl (Field-Tested)",
+      "type": "Consumer Grade Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -1385,6 +1421,34 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54602225948",
+      "classid": "9214794286",
+      "instanceid": "9214801687",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         }
       ]

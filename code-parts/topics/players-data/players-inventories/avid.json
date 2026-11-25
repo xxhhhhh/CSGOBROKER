@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/57bf2171-049e-46e6-8e16-131dcb92a415",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-13T10:54:19.204Z",
+  "updatedAt": "2026-11-25T12:30:41.866Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 71,
-  "totalItemsGrouped": 71,
+  "totalItemsRaw": 72,
+  "totalItemsGrouped": 72,
   "items": [
     {
       "assetid": "53964897779",
@@ -128,12 +128,79 @@
       "phase": "Phase 3"
     },
     {
+      "assetid": "54492278266",
+      "classid": "7993042573",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Talon Knife | Doppler",
+      "market_hash_name": "★ Talon Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209E8E64456661549F86159ABE019DB698AE9DA6613E2C769DDE579DF6B4EE96BCBEB006",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034317489713,
+      "seed": 457,
+      "phase": "Ruby"
+    },
+    {
       "assetid": "54404612508",
       "classid": "8247419295",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Driver Gloves | Garden",
       "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54494586338",
+      "classid": "7993044084",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Slingshot",
+      "market_hash_name": "★ Sport Gloves | Slingshot (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1705,50 +1772,6 @@
       ]
     },
     {
-      "assetid": "49720874519",
-      "classid": "188530424",
-      "instanceid": "6278265967",
-      "amount": 1,
-      "name": "Desert Eagle | Blaze",
-      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEE69521F6247FFE6FFDEDBD6FACEFAC604415A16FDBE26F99CFBF6FFEE16DA9662FF8EE90ABD262D",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "23961135613",
       "classid": "7993038380",
       "instanceid": "6281920398",
@@ -2111,7 +2134,7 @@
     {
       "assetid": "31885373113",
       "classid": "7993044642",
-      "instanceid": "988121956",
+      "instanceid": "938416024",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Factory New)",
@@ -2255,7 +2278,7 @@
     {
       "assetid": "33444044907",
       "classid": "7993038105",
-      "instanceid": "188539627",
+      "instanceid": "188534318",
       "amount": 1,
       "name": "StatTrak™ SG 553 | Ol' Rusty",
       "market_hash_name": "StatTrak™ SG 553 | Ol' Rusty (Factory New)",
@@ -2327,7 +2350,7 @@
     {
       "assetid": "24384730951",
       "classid": "7993042994",
-      "instanceid": "188531519",
+      "instanceid": "188531501",
       "amount": 1,
       "name": "StatTrak™ UMP-45 | Corporal",
       "market_hash_name": "StatTrak™ UMP-45 | Corporal (Field-Tested)",

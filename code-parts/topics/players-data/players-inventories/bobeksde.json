@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/4d6756dc-387a-499c-89ad-d7bc558c4c95",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T12:06:00.549Z",
+  "updatedAt": "2026-11-25T12:42:45.271Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 221,
-  "totalItemsGrouped": 143,
+  "totalItemsRaw": 219,
+  "totalItemsGrouped": 141,
   "items": [
     {
       "assetid": "54154889353",
@@ -92,21 +92,17 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "54143082348",
-      "classid": "7993037653",
+      "assetid": "52688920831",
+      "classid": "7993041878",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209D8D71232A44549C85619EBD399EB59BAD9EA540302A759EDD439CF5159CED9505634883",
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -121,18 +117,15 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.034628737718,
-      "seed": 222,
-      "phase": "Phase 3"
+      ]
     },
     {
-      "assetid": "52688920831",
-      "classid": "7993041878",
+      "assetid": "54548917659",
+      "classid": "7993037605",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Specialist Gloves | Crimson Kimono",
-      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -447,12 +440,12 @@
       ]
     },
     {
-      "assetid": "54194718837",
-      "classid": "7993035486",
-      "instanceid": "188530139",
+      "assetid": "54539519333",
+      "classid": "7993036534",
+      "instanceid": "6297264573",
       "amount": 1,
-      "name": "AK-47 | Nightwish",
-      "market_hash_name": "AK-47 | Nightwish (Field-Tested)",
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
@@ -478,6 +471,14 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -4980,74 +4981,6 @@
       ]
     },
     {
-      "assetid": "54010186446",
-      "classid": "7993041852",
-      "instanceid": "7450891030",
-      "amount": 1,
-      "name": "Souvenir AK-47 | Gold Arabesque",
-      "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Minimal Wear)",
-      "type": "Souvenir Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51487487940",
       "classid": "7993040318",
       "instanceid": "6423181220",
@@ -5098,7 +5031,7 @@
     {
       "assetid": "52833477051",
       "classid": "7993039256",
-      "instanceid": "6282822443",
+      "instanceid": "6277667791",
       "amount": 1,
       "name": "StatTrak™ USP-S | Jawbreaker",
       "market_hash_name": "StatTrak™ USP-S | Jawbreaker (Field-Tested)",
@@ -5134,7 +5067,7 @@
     {
       "assetid": "36509787671",
       "classid": "7993039918",
-      "instanceid": "9200242133",
+      "instanceid": "9235247827",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Disco Tech",
       "market_hash_name": "StatTrak™ MAC-10 | Disco Tech (Minimal Wear)",
@@ -5199,54 +5132,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53760192589",
-      "classid": "7993040004",
-      "instanceid": "9210029886",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Neo-Noir",
-      "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Factory New)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -5326,7 +5211,7 @@
     {
       "assetid": "27144773092",
       "classid": "7993039579",
-      "instanceid": "480094422",
+      "instanceid": "480094867",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Brother",
       "market_hash_name": "StatTrak™ Tec-9 | Brother (Field-Tested)",

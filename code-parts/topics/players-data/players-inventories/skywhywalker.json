@@ -12,13 +12,13 @@
   "faceit": "https://www.faceit.com/players/skywhywalker",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:32:13.603Z",
+  "updatedAt": "2026-11-25T12:06:35.563Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 539,
-  "totalItemsGrouped": 480,
+  "totalItemsRaw": 543,
+  "totalItemsGrouped": 484,
   "items": [
     {
       "assetid": "31828282508",
@@ -256,7 +256,7 @@
     },
     {
       "assetid": "53055585483",
-      "classid": "7993053580",
+      "classid": "9214803817",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Butterfly Knife | Crimson Web",
@@ -292,7 +292,7 @@
     },
     {
       "assetid": "54437760404",
-      "classid": "7993053580",
+      "classid": "9214803817",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ Butterfly Knife | Crimson Web",
@@ -328,7 +328,7 @@
     },
     {
       "assetid": "54438128125",
-      "classid": "7993053580",
+      "classid": "9214803817",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ Butterfly Knife | Crimson Web",
@@ -2540,7 +2540,7 @@
     },
     {
       "assetid": "38074685664",
-      "classid": "7993045028",
+      "classid": "9214788875",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Case Hardened",
@@ -2572,7 +2572,7 @@
     },
     {
       "assetid": "53370349264",
-      "classid": "7993049483",
+      "classid": "9214789817",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Karambit | Crimson Web",
@@ -3182,7 +3182,7 @@
     },
     {
       "assetid": "53288530201",
-      "classid": "7993043448",
+      "classid": "9214788818",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Blue Steel",
@@ -3214,7 +3214,7 @@
     },
     {
       "assetid": "54436679255",
-      "classid": "7993107642",
+      "classid": "9214795988",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Crimson Web",
@@ -3246,7 +3246,7 @@
     },
     {
       "assetid": "54438226914",
-      "classid": "7993107642",
+      "classid": "9214795988",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Crimson Web",
@@ -3278,7 +3278,7 @@
     },
     {
       "assetid": "53370346796",
-      "classid": "7993047581",
+      "classid": "9214793640",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ M9 Bayonet | Crimson Web",
@@ -3762,6 +3762,41 @@
       "float": 0.029541365802,
       "seed": 310,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "54519033705",
+      "classid": "7993040441",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206D7D84B3B4E1A66C75916E4DD769456B5D6E55E7C4DB856E2D4905C36C1D69B7387A98",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034565486014,
+      "seed": 36,
+      "phase": "Phase 2"
     },
     {
       "assetid": "38029781338",
@@ -5201,6 +5236,34 @@
       ]
     },
     {
+      "assetid": "54473132686",
+      "classid": "7993042207",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54426154727",
       "classid": "7993042301",
       "instanceid": "188530139",
@@ -5453,6 +5516,34 @@
       ]
     },
     {
+      "assetid": "54520746249",
+      "classid": "7993036899",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54261671894",
       "classid": "7993045165",
       "instanceid": "480085569",
@@ -5594,6 +5685,34 @@
     },
     {
       "assetid": "54453302904",
+      "classid": "7993045165",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Sport Gloves | Pandora's Box",
+      "market_hash_name": "★ Sport Gloves | Pandora's Box (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54491512633",
       "classid": "7993045165",
       "instanceid": "480085569",
       "amount": 1,

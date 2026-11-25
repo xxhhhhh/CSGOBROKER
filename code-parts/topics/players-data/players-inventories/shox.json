@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/ecd004fa-0215-4a42-965b-07ebefd69f0c",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-10T11:41:41.576Z",
+  "updatedAt": "2026-11-25T13:05:16.629Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -166,7 +166,7 @@
     },
     {
       "assetid": "4920007405",
-      "classid": "7993047581",
+      "classid": "9214793640",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ M9 Bayonet | Crimson Web",
@@ -230,45 +230,6 @@
       "float": 0.066752240062,
       "seed": 748,
       "phase": "Phase 2"
-    },
-    {
-      "assetid": "46197908841",
-      "classid": "7993041937",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Nomad Knife | Doppler",
-      "market_hash_name": "★ Nomad Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7A83A09AE6C66B72E36E4AC869426C5A6952ABBBCF82692AA46802A06B1A625FC7DD74",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.033547166735,
-      "seed": 334,
-      "phase": "Phase 1"
     },
     {
       "assetid": "24160504594",
@@ -335,34 +296,6 @@
       "market_hash_name": "★ Specialist Gloves | Pillow Punchers (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "35314412767",
-      "classid": "7993037104",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DFCF000643185CDEC779F8FF0391F7D9EFDCE757663F2ADC9F4FDCB75FDDAFD707D16B2F",
       "tags": [
         {
           "category": "Type",
@@ -3377,6 +3310,54 @@
       ]
     },
     {
+      "assetid": "54524124436",
+      "classid": "7993037709",
+      "instanceid": "8521102538",
+      "amount": 1,
+      "name": "USP-S | Kill Confirmed",
+      "market_hash_name": "USP-S | Kill Confirmed (Field-Tested)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "22067671911",
       "classid": "7993036593",
       "instanceid": "6281288718",
@@ -3817,14 +3798,14 @@
       ]
     },
     {
-      "assetid": "47403351353",
-      "classid": "7993036633",
-      "instanceid": "6276674920",
+      "assetid": "54537246574",
+      "classid": "7993036486",
+      "instanceid": "8512785420",
       "amount": 1,
-      "name": "AK-47 | The Empress",
-      "market_hash_name": "AK-47 | The Empress (Minimal Wear)",
+      "name": "AK-47 | Neon Rider",
+      "market_hash_name": "AK-47 | Neon Rider (Field-Tested)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC05466A770CBDA4BB9C1FB994BA8CB8846661674CBFFC2EBEDEB8B4BCAC94DEB8B4BEAC9ADEB8B4BFAC9BD490CCB8E88BF4D2",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3849,18 +3830,26 @@
         {
           "category": "Exterior",
           "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
         }
       ]
     },
     {
-      "assetid": "47400674593",
-      "classid": "7993036156",
-      "instanceid": "188530139",
+      "assetid": "47403351353",
+      "classid": "7993036633",
+      "instanceid": "6276674920",
       "amount": 1,
-      "name": "M4A1-S | Cyrex",
-      "market_hash_name": "M4A1-S | Cyrex (Factory New)",
+      "name": "AK-47 | The Empress",
+      "market_hash_name": "AK-47 | The Empress (Minimal Wear)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203D2D9CF78EF78D3C25011DD53F153B0D3905A1E8B9D13E7DD03955D93C4D353B835477",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BCAC05466A770CBDA4BB9C1FB994BA8CB8846661674CBFFC2EBEDEB8B4BCAC94DEB8B4BEAC9ADEB8B4BFAC9BD490CCB8E88BF4D2",
       "tags": [
         {
           "category": "Type",
@@ -5197,6 +5186,34 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54609086811",
+      "classid": "9214794286",
+      "instanceid": "9214794287",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         }
       ]
@@ -12755,7 +12772,7 @@
     {
       "assetid": "47131462906",
       "classid": "5721066224",
-      "instanceid": "188531444",
+      "instanceid": "188534666",
       "amount": 1,
       "name": "StatTrak™ Music Kit | TWERL and Ekko & Sidetrack, Under Bright Lights",
       "market_hash_name": "StatTrak™ Music Kit | TWERL and Ekko & Sidetrack, Under Bright Lights",

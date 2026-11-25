@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/657680fd-36af-4fa3-a506-8e1f6e64a1ff",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-16T10:54:47.992Z",
+  "updatedAt": "2026-11-25T12:22:57.203Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 115,
-  "totalItemsGrouped": 103,
+  "totalItemsRaw": 111,
+  "totalItemsGrouped": 104,
   "items": [
     {
       "assetid": "53439531487",
@@ -56,21 +56,21 @@
       "phase": "Phase 1"
     },
     {
-      "assetid": "54044784822",
-      "classid": "7993037653",
-      "instanceid": "188530139",
+      "assetid": "54601020688",
+      "classid": "5189384637",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201D0DABECDAB7D41C05E11E3DB91E351B2D1E25DAA99BF91E5D1E753F6D15B6522CE5",
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
           "name": ""
         },
         {
-          "category": "Weapon",
+          "category": "ItemSet",
           "name": ""
         },
         {
@@ -80,15 +80,8 @@
         {
           "category": "Rarity",
           "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
         }
-      ],
-      "float": 0.015820635483,
-      "seed": 3,
-      "phase": "Phase 3"
+      ]
     },
     {
       "assetid": "51930893209",
@@ -463,14 +456,14 @@
       ]
     },
     {
-      "assetid": "53937969548",
+      "assetid": "53937969547",
       "classid": "8712159050",
       "instanceid": "143865972",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | kensizor (Holo, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | kensizor (Holo, Ranked) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2010001008A9193010381520147215181000C24A78106012FFD97F23",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A0B0A0B819A980A088A590A4C2A5A8A0B072FAC8A0D0A23F78CCDF",
       "tags": [
         {
           "category": "Type",
@@ -506,7 +499,6 @@
         }
       ],
       "assetids": [
-        "53937969548",
         "53937969547"
       ]
     },
@@ -2330,6 +2322,42 @@
       ]
     },
     {
+      "assetid": "54601020689",
+      "classid": "7993036672",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "FAMAS | Yeti Camo",
+      "market_hash_name": "FAMAS | Yeti Camo (Minimal Wear)",
+      "type": "Mil-Spec Grade Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "46163708733",
       "classid": "7993035992",
       "instanceid": "188530139",
@@ -2620,14 +2648,14 @@
       ]
     },
     {
-      "assetid": "53937969546",
+      "assetid": "53937969542",
       "classid": "8711961757",
       "instanceid": "143865972",
-      "amount": 5,
+      "amount": 1,
       "name": "Sticker | kensizor (Foil, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | kensizor (Foil, Ranked) | Cologne 2026",
       "type": "Remarkable Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AABAAAB213A38AAA82AE9AAEC8AFA2AABA7BF0C2AADAA886CADCD0",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207666766ECF7F56765E72467214737E7666A72C1E760674993AD4CB",
       "tags": [
         {
           "category": "Type",
@@ -2663,10 +2691,6 @@
         }
       ],
       "assetids": [
-        "53937969546",
-        "53937969545",
-        "53937969544",
-        "53937969543",
         "53937969542"
       ]
     },
@@ -3278,73 +3302,9 @@
       ]
     },
     {
-      "assetid": "53805822252",
-      "classid": "7993042570",
-      "instanceid": "9212098274",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Kill Confirmed",
-      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Battle-Scarred)",
-      "type": "StatTrak™ Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51493260128",
       "classid": "7993043736",
-      "instanceid": "9212098275",
+      "instanceid": "9233943392",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",
@@ -3388,7 +3348,7 @@
     {
       "assetid": "51493260127",
       "classid": "7993043538",
-      "instanceid": "9210961098",
+      "instanceid": "9042803783",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Full Throttle",
       "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Factory New)",
@@ -3484,7 +3444,7 @@
     {
       "assetid": "46163711450",
       "classid": "7993038707",
-      "instanceid": "188533135",
+      "instanceid": "188530454",
       "amount": 1,
       "name": "StatTrak™ P250 | Re.built",
       "market_hash_name": "StatTrak™ P250 | Re.built (Field-Tested)",
@@ -3520,7 +3480,7 @@
     {
       "assetid": "46163657596",
       "classid": "7993042175",
-      "instanceid": "188536489",
+      "instanceid": "188557578",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Hybrid",
       "market_hash_name": "StatTrak™ Five-SeveN | Hybrid (Well-Worn)",
@@ -3593,6 +3553,50 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54662700307",
+      "classid": "5835570098",
+      "instanceid": "9232420912",
+      "amount": 1,
+      "name": "Desert Eagle",
+      "market_hash_name": "Desert Eagle",
+      "type": "Stock Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {

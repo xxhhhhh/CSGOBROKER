@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5782b2ef-ca50-413c-bcac-470bf2c27283",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-15T11:06:15.670Z",
+  "updatedAt": "2026-11-25T12:49:29.096Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 82,
-  "totalItemsGrouped": 81,
+  "totalItemsRaw": 81,
+  "totalItemsGrouped": 80,
   "items": [
     {
       "assetid": "54377685505",
@@ -80,6 +80,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54605170581",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -361,6 +389,37 @@
       ],
       "assetids": [
         "41443751024"
+      ]
+    },
+    {
+      "assetid": "54582236022",
+      "classid": "1989271141",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | King Me (Bazooka Pink)",
+      "market_hash_name": "Graffiti | King Me (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A4B4AC71BE94B49CB584B0D6B3BCB4A410B984A4DCB4C4AC502B9224",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54582236022"
       ]
     },
     {
@@ -861,37 +920,6 @@
       ]
     },
     {
-      "assetid": "53144368457",
-      "classid": "1989287930",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | King Me (Bazooka Pink)",
-      "market_hash_name": "Sealed Graffiti | King Me (Bazooka Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D5C5D5CD11DFF5D5FDD4E5D1B7D2DDD5C571D8E5C5BDD5A5CD5481BB08",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "53144368457"
-      ]
-    },
-    {
       "assetid": "49460367739",
       "classid": "1989368941",
       "instanceid": "302028390",
@@ -1136,90 +1164,6 @@
       ]
     },
     {
-      "assetid": "43579356955",
-      "classid": "7993037827",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Snack Attack",
-      "market_hash_name": "Glock-18 | Snack Attack (Field-Tested)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F8E8631658545AF9E0FCD834F0D0FDC8FCC03070180CFBB805FB90D688F0E0F0FFB8",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48344453488",
-      "classid": "7993038877",
-      "instanceid": "6276371198",
-      "amount": 1,
-      "name": "USP-S | Cortex",
-      "market_hash_name": "USP-S | Cortex (Well-Worn)",
-      "type": "Classified Pistol",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F2E20250457E46F3EACFD233F7DAF7C2F6CA340B2104F1B23CF690FDFAF1E26DC8CFD33F014CB7925AA74E9ADF82FA58DE3B3E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "45443508127",
       "classid": "7993036408",
       "instanceid": "302028390",
@@ -1372,6 +1316,42 @@
       "market_hash_name": "Five-SeveN | Coolant (Minimal Wear)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F7E74C5232574FF6EFF4D767F1DFF6C7F3CF29457107F4B778F29FB787EF9876691F",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54605170582",
+      "classid": "7993037331",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "P250 | Copper Oxide",
+      "market_hash_name": "P250 | Copper Oxide (Factory New)",
+      "type": "Consumer Grade Pistol",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1768,42 +1748,6 @@
       "market_hash_name": "SSG 08 | Blue Spruce (Field-Tested)",
       "type": "Consumer Grade Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FEEE5E7A750F62FFE6D6DE9ED6FFCEFAC63B0C270AFDBE27F996D88EE6DBD48D44",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54359610097",
-      "classid": "7993037299",
-      "instanceid": "6276362575",
-      "amount": 1,
-      "name": "AK-47 | Inheritance",
-      "market_hash_name": "AK-47 | Inheritance (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",

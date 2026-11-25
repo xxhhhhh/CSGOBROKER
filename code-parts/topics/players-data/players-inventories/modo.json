@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/dcc5bb48-c74c-413e-9773-20d3294dcbb0",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-09T11:19:09.671Z",
+  "updatedAt": "2026-11-25T12:33:32.710Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 81,
-  "totalItemsGrouped": 80,
+  "totalItemsRaw": 85,
+  "totalItemsGrouped": 84,
   "items": [
     {
       "assetid": "53776833884",
@@ -40,6 +40,69 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54489079186",
+      "classid": "7993040869",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202838BA939DD6E22930D32B088B2B002E182B10B7BF8CC82B68EE2E406458202986CBBE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.008364587091,
+      "seed": 838,
+      "phase": "Phase 2"
+    },
+    {
+      "assetid": "54489079188",
+      "classid": "8247419295",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Driver Gloves | Garden",
+      "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
           "name": ""
         },
         {
@@ -154,6 +217,49 @@
       "float": 0.011211834848,
       "seed": 797,
       "phase": "Phase 4"
+    },
+    {
+      "assetid": "54489079187",
+      "classid": "7993043090",
+      "instanceid": "188531151",
+      "amount": 1,
+      "name": "★ StatTrak™ M9 Bayonet | Gamma Doppler",
+      "market_hash_name": "★ StatTrak™ M9 Bayonet | Gamma Doppler (Factory New)",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207B6BE8C0CE85B17A6387785BC07F537D4B7843D0D0E89D783B937E337B2B6A13300B73BDF7F1C2",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.024027666077,
+      "seed": 744,
+      "phase": "Phase 3"
     },
     {
       "assetid": "54232285380",
@@ -1554,6 +1660,49 @@
       ]
     },
     {
+      "assetid": "54480953674",
+      "classid": "5327976194",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Sticker | ENCE | Paris 2023",
+      "market_hash_name": "Sticker | ENCE | Paris 2023",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A2B2A2BA1BAB82A28AA192A6C0A7AAA2B23A96CAA2D2AA3EC01348",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54480953674"
+      ]
+    },
+    {
       "assetid": "47850156476",
       "classid": "7993037657",
       "instanceid": "302028390",
@@ -2648,7 +2797,7 @@
     {
       "assetid": "22175001231",
       "classid": "7993045414",
-      "instanceid": "480088500",
+      "instanceid": "480098694",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Crypsis",
       "market_hash_name": "StatTrak™ FAMAS | Crypsis (Battle-Scarred)",
@@ -2828,7 +2977,7 @@
     {
       "assetid": "30311109001",
       "classid": "7993043179",
-      "instanceid": "480086442",
+      "instanceid": "480101257",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Buddy",
       "market_hash_name": "StatTrak™ Five-SeveN | Buddy (Field-Tested)",
@@ -2864,7 +3013,7 @@
     {
       "assetid": "51868124650",
       "classid": "7993037440",
-      "instanceid": "9213205186",
+      "instanceid": "9233960429",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Moonrise",
       "market_hash_name": "StatTrak™ Glock-18 | Moonrise (Minimal Wear)",

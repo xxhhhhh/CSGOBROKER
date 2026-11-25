@@ -12,89 +12,14 @@
   "faceit": "https://faceitdb.com/profile/faceit/e5e8e2a6-d716-4493-b949-e16965f41654",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-16T10:36:52.317Z",
+  "updatedAt": "2026-11-25T12:04:16.758Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 83,
-  "totalItemsGrouped": 83,
+  "totalItemsRaw": 78,
+  "totalItemsGrouped": 78,
   "items": [
-    {
-      "assetid": "53499722651",
-      "classid": "7993040883",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDF54381C6908CED74CCBEF50CCE7C9FFCCF766054C29CC8F06C9A78ABFCB0B9628BB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.023546772078,
-      "seed": 841,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "54200866364",
-      "classid": "7993042582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Fade",
-      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "53733431599",
       "classid": "7993040007",
@@ -202,41 +127,6 @@
       ],
       "float": 0.033019874245,
       "seed": 774,
-      "phase": "Ruby"
-    },
-    {
-      "assetid": "45587465948",
-      "classid": "7993045582",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Doppler",
-      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A66A3B505F1FB7AE4AB59629B59EB086B58E71771D6EB5F66CB2DEB4C6BE100D999E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.002119110664,
-      "seed": 602,
       "phase": "Ruby"
     },
     {
@@ -576,6 +466,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Ultra Violent",
       "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54540120398",
+      "classid": "7993039885",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1206,42 +1124,6 @@
       ]
     },
     {
-      "assetid": "53638653244",
-      "classid": "7993042471",
-      "instanceid": "6306113436",
-      "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "46915593508",
       "classid": "7993043394",
       "instanceid": "6280219852",
@@ -1330,42 +1212,6 @@
       "market_hash_name": "AWP | Dragon Lore (Factory New)",
       "type": "Covert Sniper Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%203F2FCE8BFBF1B43E27361FE73D17390F3B0790BF94DE3C7F85385D3B373C2F1A57154F3BFA093735",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53231614683",
-      "classid": "7993039273",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AWP | Gungnir",
-      "market_hash_name": "AWP | Gungnir (Factory New)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1898,6 +1744,34 @@
       ]
     },
     {
+      "assetid": "54646789888",
+      "classid": "9214794286",
+      "instanceid": "9214798624",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "41538275039",
       "classid": "6216349665",
       "instanceid": "519977179",
@@ -2391,113 +2265,9 @@
       ]
     },
     {
-      "assetid": "45622265284",
-      "classid": "7993046554",
-      "instanceid": "6478103416",
-      "amount": 1,
-      "name": "Souvenir AK-47 | Gold Arabesque",
-      "market_hash_name": "Souvenir AK-47 | Gold Arabesque (Field-Tested)",
-      "type": "Souvenir Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2049598DC2FBB3E048514E69D04E614F794571EDC486BC4A09BD482B4C414B5992772B4C414A59D3442B4C414959C6772B4C414859CE77212F3941A64BB951",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54207309111",
-      "classid": "7993043735",
-      "instanceid": "6560282799",
-      "amount": 1,
-      "name": "Souvenir M4A1-S | Welcome to the Jungle",
-      "market_hash_name": "Souvenir M4A1-S | Welcome to the Jungle (Minimal Wear)",
-      "type": "Souvenir Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53012889002",
       "classid": "7993043193",
-      "instanceid": "906330951",
+      "instanceid": "904289295",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Cobalt Disruption",
       "market_hash_name": "StatTrak™ Desert Eagle | Cobalt Disruption (Factory New)",
@@ -2909,7 +2679,7 @@
     {
       "assetid": "54404899739",
       "classid": "7993040767",
-      "instanceid": "188530248",
+      "instanceid": "188530333",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Neon Rider",
       "market_hash_name": "StatTrak™ MAC-10 | Neon Rider (Factory New)",

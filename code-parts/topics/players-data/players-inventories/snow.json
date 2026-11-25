@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/9f689672-0886-4d26-a9d7-416cb5ab6115",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:55:21.178Z",
+  "updatedAt": "2026-11-25T12:32:55.044Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 56,
-  "totalItemsGrouped": 56,
+  "totalItemsRaw": 58,
+  "totalItemsGrouped": 58,
   "items": [
     {
       "assetid": "54417188076",
@@ -104,6 +104,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54658824415",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -456,13 +484,13 @@
       ]
     },
     {
-      "assetid": "54415879375",
-      "classid": "7993037278",
-      "instanceid": "6276358265",
+      "assetid": "54658824416",
+      "classid": "7993063705",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "AK-47 | Vulcan",
-      "market_hash_name": "AK-47 | Vulcan (Field-Tested)",
-      "type": "Covert Rifle",
+      "name": "FAMAS | Byproduct",
+      "market_hash_name": "FAMAS | Byproduct (Minimal Wear)",
+      "type": "Consumer Grade Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -487,14 +515,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1355,6 +1375,37 @@
       ]
     },
     {
+      "assetid": "54491926515",
+      "classid": "6216353647",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Charm | Pocket AWP",
+      "market_hash_name": "Charm | Pocket AWP",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54491926515"
+      ]
+    },
+    {
       "assetid": "33543635142",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1620,7 +1671,7 @@
     {
       "assetid": "45384425106",
       "classid": "7993044086",
-      "instanceid": "903089441",
+      "instanceid": "903483778",
       "amount": 1,
       "name": "StatTrak™ P250 | Muertos",
       "market_hash_name": "StatTrak™ P250 | Muertos (Well-Worn)",
@@ -1708,7 +1759,7 @@
     {
       "assetid": "29749347337",
       "classid": "2076470848",
-      "instanceid": "480090885",
+      "instanceid": "480086114",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Twin Atlantic, GLA",
       "market_hash_name": "StatTrak™ Music Kit | Twin Atlantic, GLA",
@@ -1735,7 +1786,7 @@
     {
       "assetid": "54489377356",
       "classid": "7993042401",
-      "instanceid": "9211855370",
+      "instanceid": "9233938628",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Urban Hazard",
       "market_hash_name": "StatTrak™ Five-SeveN | Urban Hazard (Minimal Wear)",
@@ -1823,7 +1874,7 @@
     {
       "assetid": "33099867381",
       "classid": "7993041653",
-      "instanceid": "9211855371",
+      "instanceid": "9234263537",
       "amount": 1,
       "name": "StatTrak™ MP9 | Rose Iron",
       "market_hash_name": "StatTrak™ MP9 | Rose Iron (Minimal Wear)",

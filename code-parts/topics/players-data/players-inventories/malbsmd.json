@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/d5c0a65f-2e07-473f-96cb-7fd6304e329d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-12T10:57:56.400Z",
+  "updatedAt": "2026-11-25T12:25:40.220Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 582,
-  "totalItemsGrouped": 494,
+  "totalItemsRaw": 585,
+  "totalItemsGrouped": 497,
   "items": [
     {
       "assetid": "49356036755",
@@ -57,6 +57,76 @@
       ]
     },
     {
+      "assetid": "54523640938",
+      "classid": "7993042978",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B4A45E4C463A7FB5AC4FB7942BB79CB284B78C0C761252B7F466B5DC32B5C4BC27022008",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.024613007903,
+      "seed": 210,
+      "phase": "Ruby"
+    },
+    {
+      "assetid": "54523640939",
+      "classid": "7993043455",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Gamma Doppler",
+      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%200818E3F0FA86C30910F30B28B00C200E380B30AEE1A1ED0B48B30A608D097800F7BF7E16",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.020807575434,
+      "seed": 315,
+      "phase": "Emerald"
+    },
+    {
       "assetid": "52394139009",
       "classid": "7993041556",
       "instanceid": "188530139",
@@ -90,7 +160,7 @@
     },
     {
       "assetid": "47290274905",
-      "classid": "7993044738",
+      "classid": "9214789043",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ Paracord Knife | Stained",
@@ -377,6 +447,37 @@
       ],
       "assetids": [
         "8683007357"
+      ]
+    },
+    {
+      "assetid": "54662966669",
+      "classid": "1989274103",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Bling (War Pig Pink)",
+      "market_hash_name": "Graffiti | Bling (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CFDFCFD70AC5EFCFE7CEFFCBADC8C7CFDF0FC2FFDDA7CFBFD740F62C81",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54662966669"
       ]
     },
     {
@@ -1097,6 +1198,37 @@
       ]
     },
     {
+      "assetid": "54662962496",
+      "classid": "1989275375",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | QQ (Blood Red)",
+      "market_hash_name": "Graffiti | QQ (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20A4B4A4BC61AE84A48CA594A0C6A3ACA4B40EA994A6CCA4D4BCF195FA5A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54662962496"
+      ]
+    },
+    {
       "assetid": "35580224603",
       "classid": "1989275340",
       "instanceid": "302028390",
@@ -1566,37 +1698,6 @@
       ]
     },
     {
-      "assetid": "13644418141",
-      "classid": "1989278823",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | Bling (War Pig Pink)",
-      "market_hash_name": "Sealed Graffiti | Bling (War Pig Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205343534B975973537B52635731545B5343935E63413B53234B1D989F5A",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "13644418141"
-      ]
-    },
-    {
       "assetid": "28165289737",
       "classid": "1989296675",
       "instanceid": "302028390",
@@ -1935,37 +2036,6 @@
       ],
       "assetids": [
         "26720273655"
-      ]
-    },
-    {
-      "assetid": "52905018141",
-      "classid": "1989283736",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | QQ (Blood Red)",
-      "market_hash_name": "Sealed Graffiti | QQ (Blood Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207C6C7C64B8765C7C547D4C781E7B747C6CD6714C7E147C0C64AB470897",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "52905018141"
       ]
     },
     {
@@ -2765,6 +2835,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54523640937",
+      "classid": "7993042330",
+      "instanceid": "6316694713",
+      "amount": 1,
+      "name": "AK-47 | Hydroponic",
+      "market_hash_name": "AK-47 | Hydroponic (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -17440,7 +17554,7 @@
     {
       "assetid": "44254620320",
       "classid": "7993040377",
-      "instanceid": "9211115341",
+      "instanceid": "9234752773",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Conspiracy",
       "market_hash_name": "StatTrak™ Desert Eagle | Conspiracy (Minimal Wear)",
@@ -17684,7 +17798,7 @@
     {
       "assetid": "16534276924",
       "classid": "7993048205",
-      "instanceid": "9208139455",
+      "instanceid": "9232527627",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Bullet Rain",
       "market_hash_name": "StatTrak™ M4A4 | Bullet Rain (Minimal Wear)",
@@ -18052,7 +18166,7 @@
     {
       "assetid": "1133863238",
       "classid": "7993040028",
-      "instanceid": "480086947",
+      "instanceid": "480125012",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Sandstorm",
       "market_hash_name": "StatTrak™ Tec-9 | Sandstorm (Field-Tested)",
@@ -18772,7 +18886,7 @@
     {
       "assetid": "29620683617",
       "classid": "7993041172",
-      "instanceid": "903215756",
+      "instanceid": "905654474",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Flora Carnivora",
       "market_hash_name": "StatTrak™ Dual Berettas | Flora Carnivora (Factory New)",
@@ -18808,7 +18922,7 @@
     {
       "assetid": "44113880230",
       "classid": "7993043248",
-      "instanceid": "7975945171",
+      "instanceid": "7527398621",
       "amount": 1,
       "name": "StatTrak™ P250 | Splash",
       "market_hash_name": "StatTrak™ P250 | Splash (Minimal Wear)",
@@ -19016,7 +19130,7 @@
     {
       "assetid": "4624033117",
       "classid": "7993040934",
-      "instanceid": "7089462533",
+      "instanceid": "7090734750",
       "amount": 1,
       "name": "StatTrak™ MAC-10 | Malachite",
       "market_hash_name": "StatTrak™ MAC-10 | Malachite (Field-Tested)",
@@ -19060,7 +19174,7 @@
     {
       "assetid": "14045521674",
       "classid": "7993039449",
-      "instanceid": "480675496",
+      "instanceid": "481009315",
       "amount": 1,
       "name": "StatTrak™ MP9 | Goo",
       "market_hash_name": "StatTrak™ MP9 | Goo (Field-Tested)",

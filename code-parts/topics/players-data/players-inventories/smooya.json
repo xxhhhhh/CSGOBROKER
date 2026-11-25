@@ -12,89 +12,14 @@
   "faceit": "https://www.faceit.com/en/players/smooya",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T12:31:18.516Z",
+  "updatedAt": "2026-11-25T13:11:59.042Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 34,
-  "totalItemsGrouped": 34,
+  "totalItemsRaw": 33,
+  "totalItemsGrouped": 33,
   "items": [
-    {
-      "assetid": "52059347504",
-      "classid": "7993040630",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20908020247A675191881394B02A94B896A093A8245A687293D05094F882E098570C1A70",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.013558674604,
-      "seed": 576,
-      "phase": "Phase 2"
-    },
-    {
-      "assetid": "54446244200",
-      "classid": "7622314580",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Classic Knife",
-      "market_hash_name": "★ Classic Knife",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
     {
       "assetid": "51574459122",
       "classid": "7993037924",
@@ -129,38 +54,6 @@
       "float": 0.027246784419,
       "seed": 759,
       "phase": "Phase 2"
-    },
-    {
-      "assetid": "54398226777",
-      "classid": "7993048685",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Karambit | Lore",
-      "market_hash_name": "★ Karambit | Lore (Well-Worn)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
     },
     {
       "assetid": "54446247747",
@@ -249,6 +142,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "52760856227",
+      "classid": "7993039913",
+      "instanceid": "6285341133",
+      "amount": 1,
+      "name": "AWP | Fade",
+      "market_hash_name": "AWP | Fade (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -790,6 +731,34 @@
       ]
     },
     {
+      "assetid": "54658100390",
+      "classid": "9214794286",
+      "instanceid": "9214794287",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "23688145506",
       "classid": "6276303447",
       "instanceid": "6276343284",
@@ -895,7 +864,7 @@
     {
       "assetid": "39567838081",
       "classid": "7993044648",
-      "instanceid": "9212454283",
+      "instanceid": "9234328995",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Mecha Industries",
       "market_hash_name": "StatTrak™ M4A1-S | Mecha Industries (Factory New)",
@@ -943,7 +912,7 @@
     {
       "assetid": "30301143379",
       "classid": "7993044325",
-      "instanceid": "9212162043",
+      "instanceid": "9234417997",
       "amount": 1,
       "name": "StatTrak™ AWP | Containment Breach",
       "market_hash_name": "StatTrak™ AWP | Containment Breach (Field-Tested)",

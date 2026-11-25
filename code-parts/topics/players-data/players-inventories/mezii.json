@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/58f68286-29eb-4108-97e5-2d8d96c65e05",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-07T09:33:58.529Z",
+  "updatedAt": "2026-11-25T12:02:09.925Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -20,45 +20,6 @@
   "totalItemsRaw": 299,
   "totalItemsGrouped": 283,
   "items": [
-    {
-      "assetid": "48234567480",
-      "classid": "7993040524",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Doppler",
-      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209C8C243218442F9D841F98BC7798B49AAC9FA4390359749FDC93F4579DEC942E3037DF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.035476345569,
-      "seed": 15,
-      "phase": "Sapphire"
-    },
     {
       "assetid": "54298953185",
       "classid": "7993041586",
@@ -170,34 +131,6 @@
       "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20C8D824015B1879C9D062EFE87986E0CEF8CBF00C072027CB88D4A057C9B8C0D4CA472E",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "48111300313",
-      "classid": "7993037311",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Amphibious",
-      "market_hash_name": "★ Sport Gloves | Amphibious (Minimal Wear)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E9F9303449745AE8F14FCEC954A7C1EFD9EAD15A797019EAA9DF8124E899E12E670980",
       "tags": [
         {
           "category": "Type",
@@ -684,6 +617,37 @@
       ],
       "assetids": [
         "33519125482"
+      ]
+    },
+    {
+      "assetid": "54659262402",
+      "classid": "1989332996",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Jump Shot (Blood Red)",
+      "market_hash_name": "Sealed Graffiti | Jump Shot (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207F6F7F67BB755F7F577E4F7B1D78777F6FC3724F7D177F0F67DD8F9283",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54659262402"
       ]
     },
     {
@@ -3527,6 +3491,34 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54588472929",
+      "classid": "9214794286",
+      "instanceid": "9214799296",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         }
       ]

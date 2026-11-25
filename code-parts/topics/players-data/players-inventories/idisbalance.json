@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/3a6be5c7-4229-49b2-9e4f-7f6165f0b58e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T12:33:31.913Z",
+  "updatedAt": "2026-11-25T13:14:04.387Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 64,
-  "totalItemsGrouped": 61,
+  "totalItemsRaw": 66,
+  "totalItemsGrouped": 63,
   "items": [
     {
       "assetid": "54456593883",
@@ -58,6 +58,34 @@
       "float": 0.078359372914,
       "seed": 334,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "54600095398",
+      "classid": "4717330486",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Dreams & Nightmares Case",
+      "market_hash_name": "Dreams & Nightmares Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "52449107799",
@@ -179,6 +207,37 @@
           "category": "Rarity",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54600095399",
+      "classid": "1989298970",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eat It (Wire Blue)",
+      "market_hash_name": "Sealed Graffiti | Eat It (Wire Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206373637BA76943634B62536701646B6373A46E53680B63137B249A6D72",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54600095399"
       ]
     },
     {
@@ -1942,7 +2001,7 @@
     {
       "assetid": "21717631691",
       "classid": "7993044654",
-      "instanceid": "480091358",
+      "instanceid": "480094528",
       "amount": 1,
       "name": "StatTrak™ AUG | Syd Mead",
       "market_hash_name": "StatTrak™ AUG | Syd Mead (Minimal Wear)",

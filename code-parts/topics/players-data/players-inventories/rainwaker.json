@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/5157fde3-01e1-4eeb-886b-ae2185569711",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-14T10:05:40.389Z",
+  "updatedAt": "2026-11-25T12:22:58.921Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 757,
-  "totalItemsGrouped": 584,
+  "totalItemsRaw": 759,
+  "totalItemsGrouped": 586,
   "items": [
     {
       "assetid": "53398243073",
@@ -1960,34 +1960,6 @@
       ]
     },
     {
-      "assetid": "54272576580",
-      "classid": "5189384637",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "54492328845",
       "classid": "5189384637",
       "instanceid": "302028390",
@@ -2073,6 +2045,34 @@
     },
     {
       "assetid": "53435592234",
+      "classid": "7488632023",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Genesis Terminal",
+      "market_hash_name": "Sealed Genesis Terminal",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54657439797",
       "classid": "7488632023",
       "instanceid": "302028390",
       "amount": 1,
@@ -3256,6 +3256,37 @@
       ],
       "assetids": [
         "17734525937"
+      ]
+    },
+    {
+      "assetid": "54657439798",
+      "classid": "1989277413",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Tilt (War Pig Pink)",
+      "market_hash_name": "Sealed Graffiti | Tilt (War Pig Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CDDDCDD509C7EDCDE5CCFDC9AFCAC5CDDD65C0FDDFA5CDBDD56C463956",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54657439798"
       ]
     },
     {
@@ -7506,6 +7537,34 @@
       "amount": 1,
       "name": "Shanghai 2024 Gold Coin",
       "market_hash_name": "Shanghai 2024 Gold Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54653964792",
+      "classid": "9214794286",
+      "instanceid": "9214794287",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [

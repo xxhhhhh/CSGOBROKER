@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/23b6ffbb-86ec-47ab-acaa-9c76bed0af66",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-15T11:14:56.839Z",
+  "updatedAt": "2026-11-25T13:00:17.811Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 138,
-  "totalItemsGrouped": 135,
+  "totalItemsRaw": 144,
+  "totalItemsGrouped": 141,
   "items": [
     {
       "assetid": "47272389846",
@@ -55,45 +55,6 @@
           "name": ""
         }
       ]
-    },
-    {
-      "assetid": "54228836696",
-      "classid": "7993040007",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Butterfly Knife | Gamma Doppler",
-      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2053438B91FAD199524BD05773EB577B5563506BE3939EB55013A5513B352357E25F8654",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.025802701712,
-      "seed": 374,
-      "phase": "Emerald"
     },
     {
       "assetid": "54062013019",
@@ -235,7 +196,7 @@
     },
     {
       "assetid": "43725178405",
-      "classid": "7993042188",
+      "classid": "9214788993",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Kukri Knife | Blue Steel",
@@ -253,38 +214,6 @@
         },
         {
           "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51773666883",
-      "classid": "7993040008",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ M9 Bayonet | Fade",
-      "market_hash_name": "★ M9 Bayonet | Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -506,7 +435,7 @@
     },
     {
       "assetid": "49928952644",
-      "classid": "7993054871",
+      "classid": "9214789242",
       "instanceid": "188530170",
       "amount": 1,
       "name": "★ StatTrak™ Kukri Knife | Stained",
@@ -573,6 +502,37 @@
       ],
       "assetids": [
         "48012725531"
+      ]
+    },
+    {
+      "assetid": "54657517695",
+      "classid": "1989275905",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Double (Brick Red)",
+      "market_hash_name": "Graffiti | Double (Brick Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2019091901DC1339193118291D7B1E111909BF142918711969016953D3DB",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54657517695"
       ]
     },
     {
@@ -1067,6 +1027,42 @@
       ]
     },
     {
+      "assetid": "54657516758",
+      "classid": "7993037073",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Zeus x27 | Swamp DDPAT",
+      "market_hash_name": "Zeus x27 | Swamp DDPAT (Minimal Wear)",
+      "type": "Consumer Grade Equipment",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48012746949",
       "classid": "202170645",
       "instanceid": "7806743015",
@@ -1325,6 +1321,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54540192729",
+      "classid": "7993036089",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "USP-S | Printstream",
+      "market_hash_name": "USP-S | Printstream (Minimal Wear)",
+      "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -3085,6 +3117,78 @@
       ]
     },
     {
+      "assetid": "54540200853",
+      "classid": "8637410990",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Tec-9 | Sultan",
+      "market_hash_name": "Tec-9 | Sultan (Field-Tested)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54531800291",
+      "classid": "8637412690",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Tec-9 | Sultan",
+      "market_hash_name": "Tec-9 | Sultan (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54433264106",
       "classid": "8637412501",
       "instanceid": "519977179",
@@ -3196,6 +3300,114 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54490249528",
+      "classid": "8637412686",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Sawed-Off | Lunar Wyrm",
+      "market_hash_name": "Sawed-Off | Lunar Wyrm (Minimal Wear)",
+      "type": "Mil-Spec Grade Shotgun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54531807340",
+      "classid": "8637410988",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MAC-10 | Arabesque Mosaic",
+      "market_hash_name": "MAC-10 | Arabesque Mosaic (Field-Tested)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54531799457",
+      "classid": "8637412866",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "MAC-10 | Arabesque Mosaic",
+      "market_hash_name": "MAC-10 | Arabesque Mosaic (Well-Worn)",
+      "type": "Mil-Spec Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]
@@ -4219,7 +4431,7 @@
     {
       "assetid": "39932469240",
       "classid": "7993043744",
-      "instanceid": "9201261668",
+      "instanceid": "9223393916",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Fuel Injector",
       "market_hash_name": "StatTrak™ Tec-9 | Fuel Injector (Factory New)",
@@ -4267,7 +4479,7 @@
     {
       "assetid": "54290324102",
       "classid": "7993044207",
-      "instanceid": "6438356741",
+      "instanceid": "6975104194",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Minimal Wear)",
@@ -4311,7 +4523,7 @@
     {
       "assetid": "54211982850",
       "classid": "7993044642",
-      "instanceid": "9198405702",
+      "instanceid": "9214079505",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Factory New)",
@@ -4575,7 +4787,7 @@
     {
       "assetid": "54211982851",
       "classid": "7993043538",
-      "instanceid": "9201602553",
+      "instanceid": "9231000190",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Full Throttle",
       "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Factory New)",
@@ -4735,7 +4947,7 @@
     {
       "assetid": "54290324100",
       "classid": "7993037922",
-      "instanceid": "9211700288",
+      "instanceid": "9231356316",
       "amount": 1,
       "name": "StatTrak™ AWP | Containment Breach",
       "market_hash_name": "StatTrak™ AWP | Containment Breach (Minimal Wear)",
@@ -4823,7 +5035,7 @@
     {
       "assetid": "54212012019",
       "classid": "7993042145",
-      "instanceid": "9146025248",
+      "instanceid": "9223033846",
       "amount": 1,
       "name": "StatTrak™ XM1014 | Watchdog",
       "market_hash_name": "StatTrak™ XM1014 | Watchdog (Factory New)",
@@ -4903,7 +5115,7 @@
     {
       "assetid": "54212012018",
       "classid": "7993041089",
-      "instanceid": "9146025248",
+      "instanceid": "9225737041",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Royal Consorts",
       "market_hash_name": "StatTrak™ Dual Berettas | Royal Consorts (Factory New)",

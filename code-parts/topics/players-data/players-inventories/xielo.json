@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/d9ad02f9-e534-43f7-9208-32028036b7b2",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:36:37.497Z",
+  "updatedAt": "2026-11-25T12:11:27.068Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -60,12 +60,12 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "48734696175",
-      "classid": "7993042301",
-      "instanceid": "188530139",
+      "assetid": "50059431111",
+      "classid": "7993041878",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Well-Worn)",
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -116,6 +116,42 @@
       ]
     },
     {
+      "assetid": "50539803297",
+      "classid": "7993040792",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Glock-18 | Twilight Galaxy",
+      "market_hash_name": "Glock-18 | Twilight Galaxy (Minimal Wear)",
+      "type": "Classified Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "50627931740",
       "classid": "7993039561",
       "instanceid": "480085569",
@@ -160,42 +196,6 @@
       "market_hash_name": "MAC-10 | Disco Tech (Well-Worn)",
       "type": "Classified SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E1F12866272A5AE0F9F0C152E6C9E4D1E5D92A133517E2A117E389B791E95025F7F9",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53151128312",
-      "classid": "8637465451",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Glock-18 | Ghost Protocol",
-      "market_hash_name": "Glock-18 | Ghost Protocol (Factory New)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -348,42 +348,6 @@
       "market_hash_name": "M4A4 | Eye of Horus (Factory New)",
       "type": "Covert Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%209F8F37310524239E878FBF7896B799AF9BA77D2725739CDFA5F78EEF9BDC516EEF",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50356088970",
-      "classid": "7993038792",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "AWP | Chrome Cannon",
-      "market_hash_name": "AWP | Chrome Cannon (Well-Worn)",
-      "type": "Covert Sniper Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205040DAB1839BEB51485970C2597856605468B6ABC3A65310D452383D20549ED708A4",
       "tags": [
         {
           "category": "Type",
@@ -1022,9 +986,45 @@
       ]
     },
     {
+      "assetid": "54664050340",
+      "classid": "7993042962",
+      "instanceid": "9233294024",
+      "amount": 1,
+      "name": "StatTrak™ AK-47 | Bloodsport",
+      "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Minimal Wear)",
+      "type": "StatTrak™ Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54322139283",
       "classid": "7993042380",
-      "instanceid": "9211508041",
+      "instanceid": "9232434988",
       "amount": 1,
       "name": "StatTrak™ AWP | Asiimov",
       "market_hash_name": "StatTrak™ AWP | Asiimov (Battle-Scarred)",
@@ -1123,7 +1123,7 @@
     {
       "assetid": "36606653137",
       "classid": "7993035700",
-      "instanceid": "480175130",
+      "instanceid": "480091176",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Crimson Tsunami",
       "market_hash_name": "StatTrak™ Galil AR | Crimson Tsunami (Minimal Wear)",

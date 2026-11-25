@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/2aa89fae-a656-4663-a139-3d4665dee951",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T12:03:58.009Z",
+  "updatedAt": "2026-11-25T12:42:42.670Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 33,
-  "totalItemsGrouped": 33,
+  "totalItemsRaw": 38,
+  "totalItemsGrouped": 38,
   "items": [
     {
       "assetid": "54293699744",
@@ -55,6 +55,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "54546046197",
+      "classid": "7993037653",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20D4C4216D1E4D1FD5CC28D7F470D7FCD2E4D7EC7E373333D79413D6BCE4A4D0BE1659DC",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.030510742217,
+      "seed": 327,
+      "phase": "Phase 3"
     },
     {
       "assetid": "54183665934",
@@ -240,6 +275,42 @@
       ]
     },
     {
+      "assetid": "54652027435",
+      "classid": "7993036401",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "SSG 08 | Green Ceramic",
+      "market_hash_name": "SSG 08 | Green Ceramic (Field-Tested)",
+      "type": "Consumer Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51967867559",
       "classid": "202170645",
       "instanceid": "6532691516",
@@ -383,6 +454,74 @@
         },
         {
           "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54546030959",
+      "classid": "7993043394",
+      "instanceid": "7759862723",
+      "amount": 1,
+      "name": "AK-47 | X-Ray",
+      "market_hash_name": "AK-47 | X-Ray (Minimal Wear)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         },
         {
@@ -971,6 +1110,42 @@
       ]
     },
     {
+      "assetid": "54519361143",
+      "classid": "7993036990",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Dual Berettas | Flora Carnivora",
+      "market_hash_name": "Dual Berettas | Flora Carnivora (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53356990839",
       "classid": "7993038404",
       "instanceid": "188530139",
@@ -1002,6 +1177,70 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54519361144",
+      "classid": "7993041936",
+      "instanceid": "8304444266",
+      "amount": 1,
+      "name": "Souvenir Five-SeveN | Hot Shot",
+      "market_hash_name": "Souvenir Five-SeveN | Hot Shot (Minimal Wear)",
+      "type": "Souvenir Industrial Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

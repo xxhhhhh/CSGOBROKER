@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/0965c421-4957-4e48-86e2-2c3966abae3f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:55:23.541Z",
+  "updatedAt": "2026-11-25T12:33:06.857Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 59,
-  "totalItemsGrouped": 59,
+  "totalItemsRaw": 64,
+  "totalItemsGrouped": 64,
   "items": [
     {
       "assetid": "53687075970",
@@ -32,6 +32,50 @@
       "tags": [
         {
           "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54622563195",
+      "classid": "7622298514",
+      "instanceid": "188533911",
+      "amount": 1,
+      "name": "★ StatTrak™ Butterfly Knife",
+      "market_hash_name": "★ StatTrak™ Butterfly Knife",
+      "type": "★ StatTrak™ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
           "name": ""
         },
         {
@@ -161,6 +205,34 @@
       ]
     },
     {
+      "assetid": "54673695829",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "45765465446",
       "classid": "4418618853",
       "instanceid": "302028390",
@@ -217,6 +289,37 @@
       ],
       "assetids": [
         "54574753627"
+      ]
+    },
+    {
+      "assetid": "54673695830",
+      "classid": "1989343470",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Eco (SWAT Blue)",
+      "market_hash_name": "Sealed Graffiti | Eco (SWAT Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20899989914D83A989A188B98DEB8E8189992E84B984E189F99120186177",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54673695830"
       ]
     },
     {
@@ -585,6 +688,46 @@
       "float": 0.069471992552,
       "seed": 212,
       "phase": "Phase 1"
+    },
+    {
+      "assetid": "54499116641",
+      "classid": "7993037728",
+      "instanceid": "6276312074",
+      "amount": 1,
+      "name": "AK-47 | Aquamarine Revenge",
+      "market_hash_name": "AK-47 | Aquamarine Revenge (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "51899670642",
@@ -1350,6 +1493,54 @@
       ]
     },
     {
+      "assetid": "54494370141",
+      "classid": "188530424",
+      "instanceid": "9081279976",
+      "amount": 1,
+      "name": "Desert Eagle | Blaze",
+      "market_hash_name": "Desert Eagle | Blaze (Factory New)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53165737650",
       "classid": "8637414094",
       "instanceid": "480085569",
@@ -1943,7 +2134,7 @@
     {
       "assetid": "33005853188",
       "classid": "5001787061",
-      "instanceid": "1355436231",
+      "instanceid": "1371917810",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, 花脸 Hua Lian (Painted Face)",
@@ -1970,7 +2161,7 @@
     {
       "assetid": "47400629748",
       "classid": "7993043481",
-      "instanceid": "9211138130",
+      "instanceid": "9233263934",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Factory New)",
@@ -2018,7 +2209,7 @@
     {
       "assetid": "51069061199",
       "classid": "7993044533",
-      "instanceid": "9207328263",
+      "instanceid": "8444570085",
       "amount": 1,
       "name": "StatTrak™ FAMAS | ZX Spectron",
       "market_hash_name": "StatTrak™ FAMAS | ZX Spectron (Minimal Wear)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/a20678de-0c2d-4a9f-bf8e-3c856bceab45",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-14T09:52:50.156Z",
+  "updatedAt": "2026-11-25T12:09:11.565Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 167,
-  "totalItemsGrouped": 163,
+  "totalItemsRaw": 169,
+  "totalItemsGrouped": 165,
   "items": [
     {
       "assetid": "39467466041",
@@ -1463,42 +1463,6 @@
       ]
     },
     {
-      "assetid": "51666469037",
-      "classid": "8247101744",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Glock-18 | Fully Tuned",
-      "market_hash_name": "Glock-18 | Fully Tuned (Factory New)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "30671815991",
       "classid": "7993039096",
       "instanceid": "480085569",
@@ -1718,9 +1682,9 @@
       ]
     },
     {
-      "assetid": "53299632986",
+      "assetid": "54622121760",
       "classid": "7993037246",
-      "instanceid": "6278198696",
+      "instanceid": "6276511718",
       "amount": 1,
       "name": "AK-47 | Vulcan",
       "market_hash_name": "AK-47 | Vulcan (Factory New)",
@@ -1870,14 +1834,14 @@
       ]
     },
     {
-      "assetid": "49781214579",
-      "classid": "7993036985",
+      "assetid": "50819921037",
+      "classid": "7993035662",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "M4A4 | Eye of Horus",
-      "market_hash_name": "M4A4 | Eye of Horus (Minimal Wear)",
+      "name": "M4A4 | Full Throttle",
+      "market_hash_name": "M4A4 | Full Throttle (Minimal Wear)",
       "type": "Covert Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DBCB28411F6262DAC3CBFB3CD2F3DDEBDFE367580C37D89B7BDCB39AABD326E9D97B",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -1914,6 +1878,42 @@
       "market_hash_name": "Sawed-Off | The Kraken (Factory New)",
       "type": "Covert Shotgun",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434B5B6B4F783253C3904A4260C2214201CC6FDA8CD27645B4C635420EDC19867",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "48176509509",
+      "classid": "7993039330",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MP9 | Starlight Protector",
+      "market_hash_name": "MP9 | Starlight Protector (Field-Tested)",
+      "type": "Covert SMG",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -3164,6 +3164,34 @@
       ]
     },
     {
+      "assetid": "54589760592",
+      "classid": "9214794286",
+      "instanceid": "9214802466",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "23673114107",
       "classid": "6276300152",
       "instanceid": "6276299807",
@@ -3852,6 +3880,37 @@
           "category": "Exterior",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54622121761",
+      "classid": "6216347003",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Die-cast AK",
+      "market_hash_name": "Charm | Die-cast AK",
+      "type": "Remarkable Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54622121761"
       ]
     },
     {
@@ -5038,7 +5097,7 @@
     {
       "assetid": "29467889493",
       "classid": "7993043481",
-      "instanceid": "6279955423",
+      "instanceid": "6368455877",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Factory New)",
@@ -5110,7 +5169,7 @@
     {
       "assetid": "46209134633",
       "classid": "7993039465",
-      "instanceid": "906476669",
+      "instanceid": "914342568",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Boost Protocol",
       "market_hash_name": "StatTrak™ Five-SeveN | Boost Protocol (Factory New)",

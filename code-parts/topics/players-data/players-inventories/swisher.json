@@ -12,7 +12,7 @@
   "faceit": "https://faceitdb.com/profile/faceit/27d1a137-8bf2-4b21-844e-ff2b7131ae74",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-12T10:59:59.726Z",
+  "updatedAt": "2026-11-25T12:27:51.919Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
@@ -87,7 +87,7 @@
     {
       "assetid": "49737375108",
       "classid": "7993055801",
-      "instanceid": "188634083",
+      "instanceid": "188695593",
       "amount": 1,
       "name": "★ StatTrak™ M9 Bayonet | Doppler",
       "market_hash_name": "★ StatTrak™ M9 Bayonet | Doppler (Factory New)",
@@ -1445,54 +1445,6 @@
       ]
     },
     {
-      "assetid": "52347424723",
-      "classid": "201966840",
-      "instanceid": "8599284832",
-      "amount": 1,
-      "name": "AK-47 | Fire Serpent",
-      "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "51874957786",
       "classid": "7993036534",
       "instanceid": "8523801824",
@@ -1815,14 +1767,14 @@
       ]
     },
     {
-      "assetid": "53974916218",
+      "assetid": "53974916219",
       "classid": "8711929903",
       "instanceid": "143865972",
       "amount": 4,
       "name": "Sticker | IEM (Holo, Ranked) | Cologne 2026",
       "market_hash_name": "Sticker | IEM (Holo, Ranked) | Cologne 2026",
       "type": "Exotic Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207464746CCD7D54745C71447016717C7464B02C1C740476AED6EFE4",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FFEFFFE746F6DFFFD7FACFFB9DFAF7FFEF3BA797FF8FFDB329D246",
       "tags": [
         {
           "category": "Type",
@@ -1850,10 +1802,10 @@
         }
       ],
       "assetids": [
+        "53974916219",
         "53974916218",
         "53974916221",
-        "53974916220",
-        "53974916219"
+        "53974916220"
       ]
     },
     {
@@ -2764,6 +2716,34 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54588720191",
+      "classid": "9214794286",
+      "instanceid": "9214794287",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         }
       ]

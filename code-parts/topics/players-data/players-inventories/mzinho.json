@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/009623b1-dd6e-4551-959e-990a21657f93",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-13T10:39:31.323Z",
+  "updatedAt": "2026-11-25T12:13:38.778Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 115,
-  "totalItemsGrouped": 112,
+  "totalItemsRaw": 114,
+  "totalItemsGrouped": 111,
   "items": [
     {
       "assetid": "52771687343",
@@ -57,146 +57,12 @@
       ]
     },
     {
-      "assetid": "53845816077",
-      "classid": "7993040147",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Falchion Knife | Gamma Doppler",
-      "market_hash_name": "★ Falchion Knife | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B2A23F5465797AB3AA32B6920AB69AB482B18A24080B5BB1F244B3DAF1C2B67B432825",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.042569242418,
-      "seed": 246,
-      "phase": "Emerald"
-    },
-    {
-      "assetid": "53960342917",
-      "classid": "7993043455",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "★ Karambit | Gamma Doppler",
-      "market_hash_name": "★ Karambit | Gamma Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202A3AAFD18FA8E32B32D1290A922E022C1A29128383ECC1296AFF2F42305A2ECB22B6E0",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.058979663998,
-      "seed": 725,
-      "phase": "Emerald"
-    },
-    {
-      "assetid": "53577390570",
-      "classid": "7993037250",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Karambit | Marble Fade",
-      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53577242314",
       "classid": "8247419295",
       "instanceid": "188530139",
       "amount": 1,
       "name": "★ Driver Gloves | Garden",
       "market_hash_name": "★ Driver Gloves | Garden (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53960342916",
-      "classid": "7993040299",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Hedge Maze",
-      "market_hash_name": "★ Sport Gloves | Hedge Maze (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -1083,42 +949,6 @@
       ]
     },
     {
-      "assetid": "54310418642",
-      "classid": "7993038185",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A1-S | Blue Phosphor",
-      "market_hash_name": "M4A1-S | Blue Phosphor (Factory New)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "52727866790",
       "classid": "7993040074",
       "instanceid": "6276384721",
@@ -1150,6 +980,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54503521685",
+      "classid": "7993043562",
+      "instanceid": "6360351880",
+      "amount": 1,
+      "name": "M4A4 | Howl",
+      "market_hash_name": "M4A4 | Howl (Field-Tested)",
+      "type": "Contraband Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         },
         {
@@ -1199,6 +1077,54 @@
       ]
     },
     {
+      "assetid": "54513909228",
+      "classid": "7993041257",
+      "instanceid": "7446997633",
+      "amount": 1,
+      "name": "AK-47 | Gold Arabesque",
+      "market_hash_name": "AK-47 | Gold Arabesque (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51604819892",
       "classid": "7993036534",
       "instanceid": "519977179",
@@ -1230,6 +1156,66 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54507503972",
+      "classid": "7993044758",
+      "instanceid": "7321754580",
+      "amount": 1,
+      "name": "M4A1-S | Welcome to the Jungle",
+      "market_hash_name": "M4A1-S | Welcome to the Jungle (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2210,6 +2196,34 @@
       ]
     },
     {
+      "assetid": "54589444520",
+      "classid": "9214794286",
+      "instanceid": "9214805891",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "42057564898",
       "classid": "1989323271",
       "instanceid": "188530139",
@@ -2951,6 +2965,50 @@
       ]
     },
     {
+      "assetid": "54506469386",
+      "classid": "7993038580",
+      "instanceid": "6298016849",
+      "amount": 1,
+      "name": "USP-S | Stainless",
+      "market_hash_name": "USP-S | Stainless (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53454473564",
       "classid": "7993036079",
       "instanceid": "188530139",
@@ -3232,42 +3290,6 @@
       ]
     },
     {
-      "assetid": "51604815909",
-      "classid": "7993040404",
-      "instanceid": "480085569",
-      "amount": 1,
-      "name": "Desert Eagle | Sunset Storm 弐",
-      "market_hash_name": "Desert Eagle | Sunset Storm 弐 (Factory New)",
-      "type": "Restricted Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53398688663",
       "classid": "7993035746",
       "instanceid": "8571063494",
@@ -3470,7 +3492,7 @@
     {
       "assetid": "51487010820",
       "classid": "7993047873",
-      "instanceid": "188537217",
+      "instanceid": "188549348",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Eye of Athena",
       "market_hash_name": "StatTrak™ FAMAS | Eye of Athena (Minimal Wear)",
@@ -3614,7 +3636,7 @@
     {
       "assetid": "50315509894",
       "classid": "8247059305",
-      "instanceid": "188535173",
+      "instanceid": "188595249",
       "amount": 1,
       "name": "StatTrak™ MP7 | Amberline",
       "market_hash_name": "StatTrak™ MP7 | Amberline (Minimal Wear)",

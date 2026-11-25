@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/898780b2-bf70-4c28-8e0d-b9600be8397e",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:38:38.777Z",
+  "updatedAt": "2026-11-25T12:13:37.224Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 63,
-  "totalItemsGrouped": 63,
+  "totalItemsRaw": 73,
+  "totalItemsGrouped": 72,
   "items": [
     {
       "assetid": "53442292467",
@@ -55,6 +55,41 @@
           "name": ""
         }
       ]
+    },
+    {
+      "assetid": "54468792866",
+      "classid": "7993042912",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Doppler",
+      "market_hash_name": "★ Karambit | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6DDFD9A289B77C65867E5DDD7E557B4D7E45FFECC09B7E3D867C15510D7555500A30",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.025303129107,
+      "seed": 251,
+      "phase": "Sapphire"
     },
     {
       "assetid": "54437731076",
@@ -253,6 +288,34 @@
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54468826696",
+      "classid": "8246944780",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Ultra Violent",
+      "market_hash_name": "★ Sport Gloves | Ultra Violent (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -742,9 +805,9 @@
       ]
     },
     {
-      "assetid": "54451571128",
+      "assetid": "54663506235",
       "classid": "7993043111",
-      "instanceid": "480085569",
+      "instanceid": "9232693791",
       "amount": 1,
       "name": "Desert Eagle | Ocean Drive",
       "market_hash_name": "Desert Eagle | Ocean Drive (Factory New)",
@@ -774,113 +837,17 @@
         {
           "category": "Exterior",
           "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54440945167",
-      "classid": "7993036593",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "USP-S | Kill Confirmed",
-      "market_hash_name": "USP-S | Kill Confirmed (Minimal Wear)",
-      "type": "Covert Pistol",
-      "inspectLink": "",
-      "tags": [
+        },
         {
-          "category": "Type",
+          "category": "Tournament",
           "name": ""
         },
         {
-          "category": "Weapon",
+          "category": "TournamentTeam",
           "name": ""
         },
         {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53065257185",
-      "classid": "7993043505",
-      "instanceid": "8297369271",
-      "amount": 1,
-      "name": "AK-47 | Wild Lotus",
-      "market_hash_name": "AK-47 | Wild Lotus (Factory New)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54554864370",
-      "classid": "7993043227",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "M4A1-S | Welcome to the Jungle",
-      "market_hash_name": "M4A1-S | Welcome to the Jungle (Minimal Wear)",
-      "type": "Covert Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -941,42 +908,6 @@
       "name": "MAC-10 | Neon Rider",
       "market_hash_name": "MAC-10 | Neon Rider (Factory New)",
       "type": "Covert SMG",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54194770578",
-      "classid": "8637427134",
-      "instanceid": "519977179",
-      "amount": 1,
-      "name": "AWP | Sovereign Flame",
-      "market_hash_name": "AWP | Sovereign Flame (Minimal Wear)",
-      "type": "Covert Sniper Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -1574,6 +1505,34 @@
       ]
     },
     {
+      "assetid": "54583064526",
+      "classid": "9214794286",
+      "instanceid": "9214818236",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "23713528719",
       "classid": "6276300152",
       "instanceid": "6276299680",
@@ -1823,6 +1782,54 @@
       ]
     },
     {
+      "assetid": "47782874736",
+      "classid": "7729088483",
+      "instanceid": "188530139",
+      "amount": 2,
+      "name": "Sticker | donk (Embroidered) | Budapest 2025",
+      "market_hash_name": "Sticker | donk (Embroidered) | Budapest 2025",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E2F2E2FA5BEBC2E2CAE6D2E680E7EAE2F27DAE8AE292EAA4426E4A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "47782874736",
+        "47782295643"
+      ]
+    },
+    {
       "assetid": "53201810720",
       "classid": "188530424",
       "instanceid": "8765613061",
@@ -1915,12 +1922,156 @@
       ]
     },
     {
+      "assetid": "53515010267",
+      "classid": "7993036444",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "R8 Revolver | Crazy 8",
+      "market_hash_name": "R8 Revolver | Crazy 8 (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54108889543",
       "classid": "8637421655",
       "instanceid": "519977179",
       "amount": 1,
       "name": "AUG | Lapis Lazuli",
       "market_hash_name": "AUG | Lapis Lazuli (Factory New)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51055311497",
+      "classid": "259075402",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "FAMAS | Pulse",
+      "market_hash_name": "FAMAS | Pulse (Minimal Wear)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51831673268",
+      "classid": "7993035561",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Galil AR | Connexion",
+      "market_hash_name": "Galil AR | Connexion (Field-Tested)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51831693429",
+      "classid": "7993036293",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "Galil AR | Control",
+      "market_hash_name": "Galil AR | Control (Field-Tested)",
       "type": "Restricted Rifle",
       "inspectLink": "",
       "tags": [
@@ -1958,6 +2109,150 @@
       "name": "Galil AR | Phoenix Blacklight",
       "market_hash_name": "Galil AR | Phoenix Blacklight (Minimal Wear)",
       "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53514994918",
+      "classid": "7993041365",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "Galil AR | Signal",
+      "market_hash_name": "Galil AR | Signal (Battle-Scarred)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53515981626",
+      "classid": "7993038035",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Etch Lord",
+      "market_hash_name": "M4A4 | Etch Lord (Well-Worn)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "53514810405",
+      "classid": "7993036374",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "MAC-10 | Allure",
+      "market_hash_name": "MAC-10 | Allure (Battle-Scarred)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "51831684639",
+      "classid": "7993042833",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "MAC-10 | Case Hardened",
+      "market_hash_name": "MAC-10 | Case Hardened (Field-Tested)",
+      "type": "Restricted SMG",
       "inspectLink": "",
       "tags": [
         {
@@ -2124,6 +2419,53 @@
           "category": "TournamentTeam",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "53408819743",
+      "classid": "7862361938",
+      "instanceid": "236997301",
+      "amount": 1,
+      "name": "Souvenir Charm | Budapest 2025 Highlight | zweih flawless ace",
+      "market_hash_name": "Souvenir Charm | Budapest 2025 Highlight | zweih flawless ace",
+      "type": "Souvenir High Grade Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E0F0E0F82BEAC0E0C8E3D0EC88E090F542E1E7E8E0F0B3B814E4C04AECF8",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "53408819743"
       ]
     },
     {

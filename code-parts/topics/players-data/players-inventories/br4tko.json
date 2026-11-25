@@ -12,30 +12,26 @@
   "faceit": "",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T12:08:06.060Z",
+  "updatedAt": "2026-11-25T12:47:01.213Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 56,
-  "totalItemsGrouped": 56,
+  "totalItemsRaw": 61,
+  "totalItemsGrouped": 60,
   "items": [
     {
-      "assetid": "54172871164",
-      "classid": "7993040084",
+      "assetid": "54473446835",
+      "classid": "7993037605",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Karambit | Doppler",
-      "market_hash_name": "★ Karambit | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208595795654624C849D7E86A52186AD83B586BD79350E6986C54583ED88F58D15831C8C",
+      "name": "★ Sport Gloves | Amphibious",
+      "market_hash_name": "★ Sport Gloves | Amphibious (Field-Tested)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -50,10 +46,7 @@
           "category": "Exterior",
           "name": ""
         }
-      ],
-      "float": 0.063889473677,
-      "seed": 832,
-      "phase": "Phase 3"
+      ]
     },
     {
       "assetid": "53669506826",
@@ -292,6 +285,42 @@
       "market_hash_name": "Tec-9 | Groundwater (Field-Tested)",
       "type": "Consumer Grade Pistol",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%208595207C060013849D9BA587AD84B581BD2E325F7086C55D86EDA3F59DCEFD05C4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54473448090",
+      "classid": "7993041299",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A1-S | Golden Coil",
+      "market_hash_name": "M4A1-S | Golden Coil (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -688,6 +717,34 @@
       ]
     },
     {
+      "assetid": "54583027303",
+      "classid": "9214794286",
+      "instanceid": "9214801687",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33544615443",
       "classid": "5537026493",
       "instanceid": "0",
@@ -712,6 +769,38 @@
       ],
       "assetids": [
         "33544615443"
+      ]
+    },
+    {
+      "assetid": "54556579214",
+      "classid": "6216347035",
+      "instanceid": "519977179",
+      "amount": 2,
+      "name": "Sticker | Scorch Loop (Reverse)",
+      "market_hash_name": "Sticker | Scorch Loop (Reverse)",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20FDEDFDE544F4DDFDD5FECDF99FF8F5FDED32C095FD8DEA3F20666A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54556579214",
+        "54556541784"
       ]
     },
     {
@@ -951,6 +1040,42 @@
       ]
     },
     {
+      "assetid": "54556594372",
+      "classid": "7993036267",
+      "instanceid": "6300977368",
+      "amount": 1,
+      "name": "Desert Eagle | Mulberry",
+      "market_hash_name": "Desert Eagle | Mulberry (Field-Tested)",
+      "type": "Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48378388119",
       "classid": "7993037473",
       "instanceid": "188530139",
@@ -1061,7 +1186,7 @@
     {
       "assetid": "53756084650",
       "classid": "7993047787",
-      "instanceid": "9210947140",
+      "instanceid": "9234160415",
       "amount": 1,
       "name": "StatTrak™ USP-S | Orion",
       "market_hash_name": "StatTrak™ USP-S | Orion (Minimal Wear)",

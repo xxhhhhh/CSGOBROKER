@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/81c00116-0f95-4fb5-9e22-e1132f38ebab",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-15T10:57:53.583Z",
+  "updatedAt": "2026-11-25T12:42:33.178Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 107,
+  "totalItemsRaw": 106,
   "totalItemsGrouped": 106,
   "items": [
     {
@@ -96,14 +96,14 @@
       "phase": "Phase 2"
     },
     {
-      "assetid": "53953787100",
-      "classid": "7993038418",
+      "assetid": "54550945246",
+      "classid": "7993043148",
       "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Kukri Knife | Case Hardened",
-      "market_hash_name": "★ Kukri Knife | Case Hardened (Field-Tested)",
+      "name": "★ M9 Bayonet | Doppler",
+      "market_hash_name": "★ M9 Bayonet | Doppler (Factory New)",
       "type": "★ Covert Knife",
-      "inspectLink": "",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E0F03E5B157B2BE1F81CE3C040E3C8E6D0E3D8363E4A08E3A006E388BC90E8824AC5ED",
       "tags": [
         {
           "category": "Type",
@@ -111,10 +111,6 @@
         },
         {
           "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
           "name": ""
         },
         {
@@ -129,7 +125,10 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
+      ],
+      "float": 0.03385861963,
+      "seed": 486,
+      "phase": "Sapphire"
     },
     {
       "assetid": "53613288374",
@@ -171,47 +170,8 @@
       "phase": "Sapphire"
     },
     {
-      "assetid": "53953787101",
-      "classid": "7993044068",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Nomad Knife | Doppler",
-      "market_hash_name": "★ Nomad Knife | Doppler (Factory New)",
-      "type": "★ Covert Knife",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F0E02D19650F38F1E879F4D050F3D8F6C0F3C803386015F3B009F398C980F80C0CE3C5",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ],
-      "float": 0.020036911592,
-      "seed": 505,
-      "phase": "Sapphire"
-    },
-    {
       "assetid": "54369686808",
-      "classid": "7993045207",
+      "classid": "9214789177",
       "instanceid": "480085569",
       "amount": 1,
       "name": "★ Talon Knife | Case Hardened",
@@ -330,34 +290,6 @@
       ]
     },
     {
-      "assetid": "50103756084",
-      "classid": "7993037104",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Sport Gloves | Nocts",
-      "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
-      "type": "★ Extraordinary Gloves",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203F2F8BF595EC853E2799181FE37117390F3C07CBF8B7CE3C7F06576C4F37E209646F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "54440464553",
       "classid": "7993036899",
       "instanceid": "188530139",
@@ -383,33 +315,6 @@
           "category": "Exterior",
           "name": ""
         }
-      ]
-    },
-    {
-      "assetid": "54002324910",
-      "classid": "6195246388",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Charm Detachment Pack",
-      "market_hash_name": "Charm Detachment Pack",
-      "type": "Base Grade Tool",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20AFBFAFB779898FAF87AE9FABC7AFDFB790B8826F",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54002324910"
       ]
     },
     {
@@ -1253,6 +1158,50 @@
       ]
     },
     {
+      "assetid": "54480760359",
+      "classid": "7993039670",
+      "instanceid": "6338726187",
+      "amount": 1,
+      "name": "AWP | The Prince",
+      "market_hash_name": "AWP | The Prince (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53730810802",
       "classid": "7729166000",
       "instanceid": "0",
@@ -1920,6 +1869,34 @@
       ]
     },
     {
+      "assetid": "54597839232",
+      "classid": "9214794286",
+      "instanceid": "9214799868",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33555392877",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1994,14 +1971,14 @@
       ]
     },
     {
-      "assetid": "52911385914",
+      "assetid": "52911385913",
       "classid": "8490814247",
       "instanceid": "143865972",
-      "amount": 2,
+      "amount": 1,
       "name": "Sticker | Team Liquid | Cologne 2026",
       "market_hash_name": "Sticker | Team Liquid | Cologne 2026",
       "type": "High Grade Sticker",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B6A6B6AE0FBF96B69EB586B2D4B3BEB6A647E7DEB6C6B491EFFE86",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EDFDEDF554E4CDEDC5EEDDE98FE8E5EDFD1CBC85ED9DEF1859C0E0",
       "tags": [
         {
           "category": "Type",
@@ -2033,7 +2010,6 @@
         }
       ],
       "assetids": [
-        "52911385914",
         "52911385913"
       ]
     },
@@ -2504,6 +2480,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54550733094",
+      "classid": "7993037271",
+      "instanceid": "8445726571",
+      "amount": 1,
+      "name": "MAC-10 | Gold Brick",
+      "market_hash_name": "MAC-10 | Gold Brick (Factory New)",
+      "type": "Restricted SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -3021,12 +3045,12 @@
       ]
     },
     {
-      "assetid": "54394588718",
-      "classid": "7993041773",
-      "instanceid": "9212000711",
+      "assetid": "54478468888",
+      "classid": "8247137616",
+      "instanceid": "7980575190",
       "amount": 1,
-      "name": "StatTrak™ USP-S | Kill Confirmed",
-      "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
+      "name": "StatTrak™ Glock-18 | Fully Tuned",
+      "market_hash_name": "StatTrak™ Glock-18 | Fully Tuned (Field-Tested)",
       "type": "StatTrak™ Covert Pistol",
       "inspectLink": "",
       "tags": [
@@ -3047,27 +3071,11 @@
           "name": ""
         },
         {
-          "category": "Quality",
-          "name": ""
-        },
-        {
           "category": "Rarity",
           "name": ""
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -3251,7 +3259,7 @@
     {
       "assetid": "54105603025",
       "classid": "7993043621",
-      "instanceid": "9211472992",
+      "instanceid": "9234771472",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Dragonfire",
       "market_hash_name": "StatTrak™ SSG 08 | Dragonfire (Factory New)",

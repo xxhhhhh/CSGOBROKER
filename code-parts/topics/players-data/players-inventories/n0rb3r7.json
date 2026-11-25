@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/075ed300-7ed3-4377-88ba-9572f9ea8e3d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T11:59:38.151Z",
+  "updatedAt": "2026-11-25T12:37:46.010Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 47,
-  "totalItemsGrouped": 47,
+  "totalItemsRaw": 50,
+  "totalItemsGrouped": 50,
   "items": [
     {
       "assetid": "52826435948",
@@ -127,37 +127,6 @@
       "phase": "Phase 3"
     },
     {
-      "assetid": "54542218344",
-      "classid": "1989275444",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | Heart (Bazooka Pink)",
-      "market_hash_name": "Graffiti | Heart (Bazooka Pink)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECEDEC61BD4FEDEF6DFEEDABCD9D6DECE66D3EECEB6DEAEC619D7CCED",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54542218344"
-      ]
-    },
-    {
       "assetid": "54269157086",
       "classid": "7993046350",
       "instanceid": "9125393206",
@@ -255,6 +224,54 @@
       "float": 0.041148103774,
       "seed": 760,
       "phase": "Emerald"
+    },
+    {
+      "assetid": "54482832655",
+      "classid": "7993043011",
+      "instanceid": "7756094400",
+      "amount": 1,
+      "name": "AK-47 | Gold Arabesque",
+      "market_hash_name": "AK-47 | Gold Arabesque (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "50191939140",
@@ -1124,6 +1141,34 @@
       ]
     },
     {
+      "assetid": "54654366107",
+      "classid": "9214794286",
+      "instanceid": "9214799242",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "23672583150",
       "classid": "6276300152",
       "instanceid": "6276299807",
@@ -1149,6 +1194,37 @@
           "category": "Tournament",
           "name": ""
         }
+      ]
+    },
+    {
+      "assetid": "54580475494",
+      "classid": "6216350895",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Charm | Stitch-Loaded",
+      "market_hash_name": "Charm | Stitch-Loaded",
+      "type": "High Grade Charm",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54580475494"
       ]
     },
     {
@@ -1185,6 +1261,42 @@
       "amount": 1,
       "name": "Desert Eagle | Oxide Blaze",
       "market_hash_name": "Desert Eagle | Oxide Blaze (Factory New)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54499293476",
+      "classid": "7993036189",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "P250 | Re.built",
+      "market_hash_name": "P250 | Re.built (Field-Tested)",
       "type": "Mil-Spec Grade Pistol",
       "inspectLink": "",
       "tags": [
@@ -1379,45 +1491,9 @@
       ]
     },
     {
-      "assetid": "53950224879",
-      "classid": "7993044284",
-      "instanceid": "9211721403",
-      "amount": 1,
-      "name": "StatTrak™ USP-S | Cortex",
-      "market_hash_name": "StatTrak™ USP-S | Cortex (Factory New)",
-      "type": "StatTrak™ Classified Pistol",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "41167427980",
       "classid": "7993038824",
-      "instanceid": "9210866866",
+      "instanceid": "9235152891",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",
@@ -1454,6 +1530,42 @@
         },
         {
           "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54580472163",
+      "classid": "7993035534",
+      "instanceid": "1524534065",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | PC-GRN",
+      "market_hash_name": "StatTrak™ USP-S | PC-GRN (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
           "name": ""
         }
       ]

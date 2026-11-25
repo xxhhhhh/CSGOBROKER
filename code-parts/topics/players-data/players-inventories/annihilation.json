@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/44850e33-c35e-4cc0-a386-ef946502a3ae",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-02T11:40:24.577Z",
+  "updatedAt": "2026-11-25T13:18:20.344Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 95,
-  "totalItemsGrouped": 78,
+  "totalItemsRaw": 97,
+  "totalItemsGrouped": 80,
   "items": [
     {
       "assetid": "54279786115",
@@ -79,6 +79,34 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54610163826",
+      "classid": "5189384637",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Revolution Case",
+      "market_hash_name": "Revolution Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -350,13 +378,13 @@
       ]
     },
     {
-      "assetid": "54181806679",
-      "classid": "7993080680",
-      "instanceid": "8800449231",
+      "assetid": "52087150850",
+      "classid": "7993063705",
+      "instanceid": "302028390",
       "amount": 1,
-      "name": "M4A1-S | Party Animal",
-      "market_hash_name": "M4A1-S | Party Animal (Factory New)",
-      "type": "Classified Rifle",
+      "name": "FAMAS | Byproduct",
+      "market_hash_name": "FAMAS | Byproduct (Minimal Wear)",
+      "type": "Consumer Grade Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -382,36 +410,16 @@
         {
           "category": "Exterior",
           "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
         }
       ]
     },
     {
-      "assetid": "52087150850",
-      "classid": "7993063705",
+      "assetid": "54610163827",
+      "classid": "7993035986",
       "instanceid": "302028390",
       "amount": 1,
-      "name": "FAMAS | Byproduct",
-      "market_hash_name": "FAMAS | Byproduct (Minimal Wear)",
+      "name": "FAMAS | Palm",
+      "market_hash_name": "FAMAS | Palm (Minimal Wear)",
       "type": "Consumer Grade Rifle",
       "inspectLink": "",
       "tags": [
@@ -1401,6 +1409,34 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54643871813",
+      "classid": "9214794286",
+      "instanceid": "9214805891",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
           "name": ""
         }
       ]
@@ -2683,7 +2719,7 @@
     {
       "assetid": "25866681993",
       "classid": "7993036844",
-      "instanceid": "9076223208",
+      "instanceid": "9219016232",
       "amount": 1,
       "name": "StatTrak™ USP-S | Neo-Noir",
       "market_hash_name": "StatTrak™ USP-S | Neo-Noir (Minimal Wear)",
@@ -2731,7 +2767,7 @@
     {
       "assetid": "27242331446",
       "classid": "7993041410",
-      "instanceid": "1678026406",
+      "instanceid": "1439041729",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",

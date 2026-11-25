@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/6889e786-da29-4069-ba9d-f32d9e6821bd",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-07T10:02:35.878Z",
+  "updatedAt": "2026-11-25T12:32:56.736Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 136,
-  "totalItemsGrouped": 135,
+  "totalItemsRaw": 138,
+  "totalItemsGrouped": 136,
   "items": [
     {
       "assetid": "53979640089",
@@ -532,6 +532,37 @@
       ],
       "assetids": [
         "50951347405"
+      ]
+    },
+    {
+      "assetid": "54593277644",
+      "classid": "1989279388",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Toasted (Bazooka Pink)",
+      "market_hash_name": "Sealed Graffiti | Toasted (Bazooka Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203D2D3D25F9371D3D153C0D395F3A353D2D82300D2D553D4D2560AE319C",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54593277644"
       ]
     },
     {
@@ -1215,6 +1246,62 @@
       ]
     },
     {
+      "assetid": "54534927113",
+      "classid": "7993051280",
+      "instanceid": "7899241229",
+      "amount": 1,
+      "name": "AWP | Gungnir",
+      "market_hash_name": "AWP | Gungnir (Minimal Wear)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "47636367169",
       "classid": "226333081",
       "instanceid": "188530139",
@@ -1302,7 +1389,7 @@
       "assetid": "54058516135",
       "classid": "7729206886",
       "instanceid": "0",
-      "amount": 1,
+      "amount": 2,
       "name": "Sticker Slab | r1nkle (Gold) | Budapest 2025",
       "market_hash_name": "Sticker Slab | r1nkle (Gold) | Budapest 2025",
       "type": "Customized Extraordinary Charm",
@@ -1330,7 +1417,8 @@
         }
       ],
       "assetids": [
-        "54058516135"
+        "54058516135",
+        "54534927112"
       ]
     },
     {
@@ -4078,7 +4166,7 @@
     {
       "assetid": "52510626644",
       "classid": "7993044207",
-      "instanceid": "8844963986",
+      "instanceid": "8991532464",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Eco",
       "market_hash_name": "StatTrak™ Galil AR | Eco (Minimal Wear)",
@@ -4158,7 +4246,7 @@
     {
       "assetid": "54438231739",
       "classid": "7993041773",
-      "instanceid": "1215726049",
+      "instanceid": "1429334593",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -4194,7 +4282,7 @@
     {
       "assetid": "54463559587",
       "classid": "7993040029",
-      "instanceid": "9203607530",
+      "instanceid": "9233901330",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Field-Tested)",
@@ -4266,7 +4354,7 @@
     {
       "assetid": "52510626645",
       "classid": "7993041046",
-      "instanceid": "7076499758",
+      "instanceid": "6278161175",
       "amount": 1,
       "name": "StatTrak™ M4A1-S | Cyrex",
       "market_hash_name": "StatTrak™ M4A1-S | Cyrex (Factory New)",
@@ -4316,42 +4404,6 @@
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Field-Tested)",
       "type": "StatTrak™ Covert SMG",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%204B5BF0BF85A42253696BA543634D7B42739C9AE7BE480BDF4D034B1BB552235F3B43F52637EB",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54463556906",
-      "classid": "7993040263",
-      "instanceid": "9197075678",
-      "amount": 1,
-      "name": "StatTrak™ AWP | Asiimov",
-      "market_hash_name": "StatTrak™ AWP | Asiimov (Field-Tested)",
-      "type": "StatTrak™ Covert Sniper Rifle",
-      "inspectLink": "",
       "tags": [
         {
           "category": "Type",
@@ -4436,7 +4488,7 @@
     {
       "assetid": "49907995566",
       "classid": "6360304502",
-      "instanceid": "1316342435",
+      "instanceid": "1317235685",
       "amount": 1,
       "name": "StatTrak™ Music Kit | Perfect World, Ay Hey",
       "market_hash_name": "StatTrak™ Music Kit | Perfect World, Ay Hey",
@@ -4553,7 +4605,7 @@
     {
       "assetid": "52510626643",
       "classid": "7993041155",
-      "instanceid": "9203607531",
+      "instanceid": "9229957399",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Pulse",
       "market_hash_name": "StatTrak™ FAMAS | Pulse (Field-Tested)",

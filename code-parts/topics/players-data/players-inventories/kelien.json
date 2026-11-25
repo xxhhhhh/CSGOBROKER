@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/bee37ed7-b8ef-4364-a9d3-f2fbe42fb564",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-14T10:39:42.069Z",
+  "updatedAt": "2026-11-25T12:57:54.612Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 775,
-  "totalItemsGrouped": 315,
+  "totalItemsRaw": 778,
+  "totalItemsGrouped": 318,
   "items": [
     {
       "assetid": "53443821789",
@@ -129,12 +129,12 @@
       ]
     },
     {
-      "assetid": "53968538048",
-      "classid": "7993040322",
+      "assetid": "54539352967",
+      "classid": "7993043602",
       "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Butterfly Knife | Slaughter",
-      "market_hash_name": "★ Butterfly Knife | Slaughter (Factory New)",
+      "name": "★ Huntsman Knife | Ultraviolet",
+      "market_hash_name": "★ Huntsman Knife | Ultraviolet (Field-Tested)",
       "type": "★ Covert Knife",
       "inspectLink": "",
       "tags": [
@@ -165,21 +165,17 @@
       ]
     },
     {
-      "assetid": "54178594078",
-      "classid": "7993043388",
-      "instanceid": "480085569",
+      "assetid": "54081407651",
+      "classid": "8247781314",
+      "instanceid": "188530139",
       "amount": 1,
-      "name": "★ Karambit | Lore",
-      "market_hash_name": "★ Karambit | Lore (Field-Tested)",
-      "type": "★ Covert Knife",
+      "name": "★ Sport Gloves | Occult",
+      "market_hash_name": "★ Sport Gloves | Occult (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
         {
           "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
           "name": ""
         },
         {
@@ -197,12 +193,12 @@
       ]
     },
     {
-      "assetid": "54081407651",
-      "classid": "8247781314",
-      "instanceid": "188530139",
+      "assetid": "54543173337",
+      "classid": "7993038043",
+      "instanceid": "480085569",
       "amount": 1,
-      "name": "★ Sport Gloves | Occult",
-      "market_hash_name": "★ Sport Gloves | Occult (Well-Worn)",
+      "name": "★ Sport Gloves | Vice",
+      "market_hash_name": "★ Sport Gloves | Vice (Field-Tested)",
       "type": "★ Extraordinary Gloves",
       "inspectLink": "",
       "tags": [
@@ -811,6 +807,68 @@
       ],
       "assetids": [
         "48839259035"
+      ]
+    },
+    {
+      "assetid": "54543173336",
+      "classid": "1989300316",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Quickdraw (Wire Blue)",
+      "market_hash_name": "Sealed Graffiti | Quickdraw (Wire Blue)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2020302038E42A0020082110244227282030932D102B4820503843597EF1",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54543173336"
+      ]
+    },
+    {
+      "assetid": "54587194408",
+      "classid": "1989282282",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Sealed Graffiti | Still Happy (Princess Pink)",
+      "market_hash_name": "Sealed Graffiti | Still Happy (Princess Pink)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%209B8B9B835F91BB9BB39AAB9FF99C939B8B2096AB8AF39BEB83BA16CF91",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54587194408"
       ]
     },
     {
@@ -2472,6 +2530,34 @@
       "amount": 1,
       "name": "Shanghai 2024 Gold Coin",
       "market_hash_name": "Shanghai 2024 Gold Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54586439690",
+      "classid": "9214794286",
+      "instanceid": "9214798624",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -12421,7 +12507,7 @@
     {
       "assetid": "45133635606",
       "classid": "7993041343",
-      "instanceid": "188747082",
+      "instanceid": "188636683",
       "amount": 1,
       "name": "StatTrak™ Dual Berettas | Melondrama",
       "market_hash_name": "StatTrak™ Dual Berettas | Melondrama (Field-Tested)",
@@ -12457,7 +12543,7 @@
     {
       "assetid": "52201734702",
       "classid": "7993042313",
-      "instanceid": "6276527239",
+      "instanceid": "6284115418",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fairy Tale",
       "market_hash_name": "StatTrak™ Five-SeveN | Fairy Tale (Well-Worn)",
@@ -12529,7 +12615,7 @@
     {
       "assetid": "53348090906",
       "classid": "7993045902",
-      "instanceid": "188549160",
+      "instanceid": "188573232",
       "amount": 1,
       "name": "StatTrak™ MAG-7 | Justice",
       "market_hash_name": "StatTrak™ MAG-7 | Justice (Minimal Wear)",
@@ -12565,7 +12651,7 @@
     {
       "assetid": "53484581984",
       "classid": "7993041773",
-      "instanceid": "9212605512",
+      "instanceid": "9106885101",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -12829,7 +12915,7 @@
     {
       "assetid": "53375856014",
       "classid": "7993047257",
-      "instanceid": "902852643",
+      "instanceid": "902963899",
       "amount": 1,
       "name": "StatTrak™ FAMAS | Valence",
       "market_hash_name": "StatTrak™ FAMAS | Valence (Factory New)",
@@ -12865,7 +12951,7 @@
     {
       "assetid": "52201726955",
       "classid": "7993044759",
-      "instanceid": "480099337",
+      "instanceid": "188717347",
       "amount": 1,
       "name": "StatTrak™ MP9 | Mount Fuji",
       "market_hash_name": "StatTrak™ MP9 | Mount Fuji (Factory New)",

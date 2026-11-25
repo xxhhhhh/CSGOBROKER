@@ -12,14 +12,125 @@
   "faceit": "https://faceitdb.com/profile/faceit/7cfd2312-1ff0-434c-a4b1-be10b033636f",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-16T11:03:07.531Z",
+  "updatedAt": "2026-11-25T12:33:06.248Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 106,
-  "totalItemsGrouped": 98,
+  "totalItemsRaw": 112,
+  "totalItemsGrouped": 104,
   "items": [
+    {
+      "assetid": "54545407232",
+      "classid": "7993042033",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Bowie Knife | Tiger Tooth",
+      "market_hash_name": "★ Bowie Knife | Tiger Tooth (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54524371977",
+      "classid": "7993040007",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Gamma Doppler",
+      "market_hash_name": "★ Butterfly Knife | Gamma Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20B3A33A7B2C3C78B2AB30B7930BB79BB583B08B2B5C4458B0F36EB2DBD7C3B71875EA7A",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.062003701925,
+      "seed": 221,
+      "phase": "Emerald"
+    },
+    {
+      "assetid": "54544839926",
+      "classid": "7993038908",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "★ Falchion Knife | Fade",
+      "market_hash_name": "★ Falchion Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
     {
       "assetid": "53521660797",
       "classid": "7993043200",
@@ -96,42 +207,6 @@
       "phase": "Ruby"
     },
     {
-      "assetid": "54262416856",
-      "classid": "7622292638",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "★ Stiletto Knife",
-      "market_hash_name": "★ Stiletto Knife",
-      "type": "★ Covert Knife",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "54192092050",
       "classid": "7993042405",
       "instanceid": "480085569",
@@ -169,6 +244,34 @@
       "float": 0.031511474401,
       "seed": 304,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "54529523552",
+      "classid": "7993042301",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Sport Gloves | Hedge Maze",
+      "market_hash_name": "★ Sport Gloves | Hedge Maze (Well-Worn)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "49540334877",
@@ -829,37 +932,6 @@
       ],
       "assetids": [
         "50909044176"
-      ]
-    },
-    {
-      "assetid": "54487479652",
-      "classid": "1989283483",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Sealed Graffiti | GTG (Violent Violet)",
-      "market_hash_name": "Sealed Graffiti | GTG (Violent Violet)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207A6A7A62BE705A7A527B4A7E187D727A6AB3774A74127A0A622A4AFF86",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54487479652"
       ]
     },
     {
@@ -1617,6 +1689,42 @@
       ]
     },
     {
+      "assetid": "54544840580",
+      "classid": "7993038135",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "M4A4 | Full Throttle",
+      "market_hash_name": "M4A4 | Full Throttle (Field-Tested)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53509681968",
       "classid": "7993037825",
       "instanceid": "6294731695",
@@ -1648,6 +1756,54 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54545407233",
+      "classid": "7993038183",
+      "instanceid": "6413658019",
+      "amount": 1,
+      "name": "AWP | Oni Taiji",
+      "market_hash_name": "AWP | Oni Taiji (Factory New)",
+      "type": "Covert Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2361,6 +2517,34 @@
       ]
     },
     {
+      "assetid": "54621949665",
+      "classid": "9214794286",
+      "instanceid": "9214809652",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "33544902474",
       "classid": "5537026493",
       "instanceid": "0",
@@ -2468,6 +2652,78 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54509791559",
+      "classid": "7993038823",
+      "instanceid": "9226322059",
+      "amount": 1,
+      "name": "SSG 08 | Carbon Fiber",
+      "market_hash_name": "SSG 08 | Carbon Fiber (Factory New)",
+      "type": "Industrial Grade Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
           "name": ""
         }
       ]

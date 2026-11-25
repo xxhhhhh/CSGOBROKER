@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/e942341f-24df-45d9-ac6d-9817cfa6ad0b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-17T12:01:49.061Z",
+  "updatedAt": "2026-11-25T12:39:48.648Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 38,
-  "totalItemsGrouped": 36,
+  "totalItemsRaw": 39,
+  "totalItemsGrouped": 37,
   "items": [
     {
       "assetid": "53592990830",
@@ -205,12 +205,12 @@
       ]
     },
     {
-      "assetid": "53479267078",
-      "classid": "7993038198",
-      "instanceid": "188530139",
+      "assetid": "54506445691",
+      "classid": "7993036605",
+      "instanceid": "6288131344",
       "amount": 1,
-      "name": "M4A4 | Tooth Fairy",
-      "market_hash_name": "M4A4 | Tooth Fairy (Battle-Scarred)",
+      "name": "M4A4 | 龍王 (Dragon King)",
+      "market_hash_name": "M4A4 | 龍王 (Dragon King) (Field-Tested)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -236,6 +236,14 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -272,78 +280,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "53670787307",
-      "classid": "7993039953",
-      "instanceid": "8849660617",
-      "amount": 1,
-      "name": "AWP | Fever Dream",
-      "market_hash_name": "AWP | Fever Dream (Minimal Wear)",
-      "type": "Classified Sniper Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -789,6 +725,34 @@
       ]
     },
     {
+      "assetid": "54602634012",
+      "classid": "9214794286",
+      "instanceid": "9214804507",
+      "amount": 1,
+      "name": "Singapore 2026 Coin",
+      "market_hash_name": "Singapore 2026 Coin",
+      "type": "Extraordinary Collectible",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "35157498651",
       "classid": "5537026493",
       "instanceid": "0",
@@ -960,6 +924,42 @@
       ]
     },
     {
+      "assetid": "53743513957",
+      "classid": "7993038326",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "Desert Eagle | Sputnik",
+      "market_hash_name": "Desert Eagle | Sputnik (Minimal Wear)",
+      "type": "Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "48362614248",
       "classid": "7993036218",
       "instanceid": "188530139",
@@ -1076,42 +1076,6 @@
       ]
     },
     {
-      "assetid": "53880126697",
-      "classid": "7993036186",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "Sawed-Off | Analog Input",
-      "market_hash_name": "Sawed-Off | Analog Input (Minimal Wear)",
-      "type": "Restricted Shotgun",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "53479267081",
       "classid": "7993035918",
       "instanceid": "188530139",
@@ -1143,6 +1107,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54506445692",
+      "classid": "7993036367",
+      "instanceid": "7138830584",
+      "amount": 1,
+      "name": "AWP | Atheris",
+      "market_hash_name": "AWP | Atheris (Minimal Wear)",
+      "type": "Restricted Sniper Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
