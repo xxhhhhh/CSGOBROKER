@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/23b6ffbb-86ec-47ab-acaa-9c76bed0af66",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-26T12:43:38.294Z",
+  "updatedAt": "2026-11-28T12:12:01.523Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 147,
-  "totalItemsGrouped": 144,
+  "totalItemsRaw": 154,
+  "totalItemsGrouped": 151,
   "items": [
     {
       "assetid": "47272389846",
@@ -567,37 +567,6 @@
       ]
     },
     {
-      "assetid": "54683020108",
-      "classid": "1989273943",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Graffiti | Toasted (Brick Red)",
-      "market_hash_name": "Graffiti | Toasted (Brick Red)",
-      "type": "Base Grade Graffiti",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%205747574F925D77577F56675335505F5747E85A67563F57274FC03A87BD",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "SprayColorCategory",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54683020108"
-      ]
-    },
-    {
       "assetid": "52755312114",
       "classid": "6195246388",
       "instanceid": "302028390",
@@ -799,6 +768,50 @@
       "amount": 1,
       "name": "AUG | Momentum",
       "market_hash_name": "AUG | Momentum (Factory New)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54573032936",
+      "classid": "7993036791",
+      "instanceid": "7921226393",
+      "amount": 1,
+      "name": "FAMAS | Mecha Industries",
+      "market_hash_name": "FAMAS | Mecha Industries (Factory New)",
       "type": "Classified Rifle",
       "inspectLink": "",
       "tags": [
@@ -1040,6 +1053,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54573032938",
+      "classid": "7993038542",
+      "instanceid": "7921226393",
+      "amount": 1,
+      "name": "MAC-10 | Disco Tech",
+      "market_hash_name": "MAC-10 | Disco Tech (Factory New)",
+      "type": "Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -2086,6 +2143,100 @@
       ]
     },
     {
+      "assetid": "54583084547",
+      "classid": "9214797732",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | donk (Holo) | Singapore 2026",
+      "market_hash_name": "Sticker | donk (Holo) | Singapore 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20BEAEBEA607B79EBE96BB8EBADCBBB6BEAE23E0D6BECEBC077D442E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54583084547"
+      ]
+    },
+    {
+      "assetid": "54583031788",
+      "classid": "9214807375",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | jL (Holo) | Singapore 2026",
+      "market_hash_name": "Sticker | jL (Holo) | Singapore 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20E4F4E4FC5DEDC4E4CCE1D4E086E1ECE4F401B98CE494E67E26E571",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54583031788"
+      ]
+    },
+    {
       "assetid": "17697630581",
       "classid": "778383679",
       "instanceid": "0",
@@ -2798,6 +2949,53 @@
       ]
     },
     {
+      "assetid": "54583084546",
+      "classid": "9214797525",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | donk (Gold) | Singapore 2026",
+      "market_hash_name": "Sticker | donk (Gold) | Singapore 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203E2E3E2687371E3E16380E3A5C3B363E2EA060563E4E3C594B22B5",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54583084546"
+      ]
+    },
+    {
       "assetid": "43257248945",
       "classid": "3485689630",
       "instanceid": "188530139",
@@ -3198,6 +3396,50 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54573032937",
+      "classid": "188530864",
+      "instanceid": "8104554882",
+      "amount": 1,
+      "name": "Negev | Anodized Navy",
+      "market_hash_name": "Negev | Anodized Navy (Factory New)",
+      "type": "Mil-Spec Grade Machinegun",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -4471,6 +4713,66 @@
       ]
     },
     {
+      "assetid": "54573032935",
+      "classid": "7993058025",
+      "instanceid": "8779540973",
+      "amount": 1,
+      "name": "Souvenir USP-S | Road Rash",
+      "market_hash_name": "Souvenir USP-S | Road Rash (Factory New)",
+      "type": "Souvenir Restricted Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54212012021",
       "classid": "7993049503",
       "instanceid": "9092457061",
@@ -4609,10 +4911,54 @@
     {
       "assetid": "54211982850",
       "classid": "7993044642",
-      "instanceid": "9047523171",
+      "instanceid": "9238469695",
       "amount": 1,
       "name": "StatTrak™ MP9 | Hydra",
       "market_hash_name": "StatTrak™ MP9 | Hydra (Factory New)",
+      "type": "StatTrak™ Classified SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54573032939",
+      "classid": "7993044492",
+      "instanceid": "9178170801",
+      "amount": 1,
+      "name": "StatTrak™ UMP-45 | Primal Saber",
+      "market_hash_name": "StatTrak™ UMP-45 | Primal Saber (Factory New)",
       "type": "StatTrak™ Classified SMG",
       "inspectLink": "",
       "tags": [
@@ -4873,7 +5219,7 @@
     {
       "assetid": "54211982851",
       "classid": "7993043538",
-      "instanceid": "9231000190",
+      "instanceid": "9242177544",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Full Throttle",
       "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Factory New)",
@@ -5033,7 +5379,7 @@
     {
       "assetid": "54290324100",
       "classid": "7993037922",
-      "instanceid": "9236794619",
+      "instanceid": "9242177543",
       "amount": 1,
       "name": "StatTrak™ AWP | Containment Breach",
       "market_hash_name": "StatTrak™ AWP | Containment Breach (Minimal Wear)",

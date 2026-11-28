@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b0bf2cc2-198a-4a78-988d-2e7ff7ee6815",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-25T12:30:30.319Z",
+  "updatedAt": "2026-11-28T11:43:58.771Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 107,
-  "totalItemsGrouped": 80,
+  "totalItemsRaw": 110,
+  "totalItemsGrouped": 83,
   "items": [
     {
       "assetid": "54411096084",
@@ -58,6 +58,81 @@
       "float": 0.007431486621,
       "seed": 485,
       "phase": "Sapphire"
+    },
+    {
+      "assetid": "54576683619",
+      "classid": "7993040883",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Doppler",
+      "market_hash_name": "★ Butterfly Knife | Doppler (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303F0A78BBBD8120B9017338C103B1523102B93EAA5FB1053DD147B1D631B2527C2CE",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ],
+      "float": 0.034603595734,
+      "seed": 974,
+      "phase": "Ruby"
+    },
+    {
+      "assetid": "54580020568",
+      "classid": "7993042582",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Butterfly Knife | Fade",
+      "market_hash_name": "★ Butterfly Knife | Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "54385310351",
@@ -582,90 +657,6 @@
         },
         {
           "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "51849484826",
-      "classid": "7993037606",
-      "instanceid": "8524474170",
-      "amount": 1,
-      "name": "AK-47 | Redline",
-      "market_hash_name": "AK-47 | Redline (Minimal Wear)",
-      "type": "Classified Rifle",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         },
         {
@@ -1698,6 +1689,49 @@
       ]
     },
     {
+      "assetid": "54583325777",
+      "classid": "9214821103",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | BB Team | Singapore 2026",
+      "market_hash_name": "Sticker | BB Team | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%206A7A6A72D3634A6A42695A6E086F626A7AD036026A1A68D2C6D4D7",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54583325777"
+      ]
+    },
+    {
       "assetid": "52181155023",
       "classid": "6216348295",
       "instanceid": "519977179",
@@ -1726,6 +1760,53 @@
       ],
       "assetids": [
         "52181155023"
+      ]
+    },
+    {
+      "assetid": "54583325778",
+      "classid": "9214840637",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | Magnojez | Singapore 2026",
+      "market_hash_name": "Sticker | Magnojez | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%204555455DFC4C65456D46754127404D4555F21B2D4535479A3C87CA",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54583325778"
       ]
     },
     {
@@ -2537,7 +2618,7 @@
     {
       "assetid": "54321800450",
       "classid": "7993045027",
-      "instanceid": "903297280",
+      "instanceid": "904639376",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Factory New)",
@@ -2573,7 +2654,7 @@
     {
       "assetid": "47558203428",
       "classid": "7993046832",
-      "instanceid": "480086465",
+      "instanceid": "480088581",
       "amount": 1,
       "name": "StatTrak™ MP9 | Starlight Protector",
       "market_hash_name": "StatTrak™ MP9 | Starlight Protector (Factory New)",

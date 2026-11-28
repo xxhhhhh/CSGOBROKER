@@ -12,12 +12,12 @@
   "faceit": "https://faceitdb.com/profile/faceit/34f2fbd3-f206-46c5-bb93-30a865950d59",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-25T13:05:14.541Z",
+  "updatedAt": "2026-11-28T12:16:21.926Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 196,
+  "totalItemsRaw": 197,
   "totalItemsGrouped": 178,
   "items": [
     {
@@ -1338,34 +1338,6 @@
       ]
     },
     {
-      "assetid": "54520466298",
-      "classid": "4717330486",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Dreams & Nightmares Case",
-      "market_hash_name": "Dreams & Nightmares Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        }
-      ]
-    },
-    {
       "assetid": "15621435305",
       "classid": "3196435372",
       "instanceid": "7628425570",
@@ -1625,34 +1597,6 @@
         },
         {
           "category": "ProPlayer",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "54584696428",
-      "classid": "5189384637",
-      "instanceid": "302028390",
-      "amount": 1,
-      "name": "Revolution Case",
-      "market_hash_name": "Revolution Case",
-      "type": "Base Grade Container",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
           "name": ""
         }
       ]
@@ -2388,6 +2332,42 @@
       "name": "USP-S | Kill Confirmed",
       "market_hash_name": "USP-S | Kill Confirmed (Factory New)",
       "type": "Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54584737431",
+      "classid": "201966840",
+      "instanceid": "480085569",
+      "amount": 1,
+      "name": "AK-47 | Fire Serpent",
+      "market_hash_name": "AK-47 | Fire Serpent (Field-Tested)",
+      "type": "Covert Rifle",
       "inspectLink": "",
       "tags": [
         {
@@ -3890,6 +3870,54 @@
       ],
       "assetids": [
         "51829468704"
+      ]
+    },
+    {
+      "assetid": "54585480511",
+      "classid": "9214798983",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | FalleN (Gold) | Singapore 2026",
+      "market_hash_name": "Sticker | FalleN (Gold) | Singapore 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DCCCDCC465D5FCDCF4DAECD8BED9D4DCCC2A81B4DCACDECBCDE73D",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54585480511",
+        "54585480510"
       ]
     },
     {
@@ -6052,7 +6080,7 @@
     {
       "assetid": "33296447651",
       "classid": "7993044659",
-      "instanceid": "9237138411",
+      "instanceid": "9242521442",
       "amount": 1,
       "name": "StatTrak™ AWP | BOOM",
       "market_hash_name": "StatTrak™ AWP | BOOM (Factory New)",
@@ -6140,7 +6168,7 @@
     {
       "assetid": "33296477876",
       "classid": "7993042872",
-      "instanceid": "9237138410",
+      "instanceid": "9242521441",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Minimal Wear)",
@@ -6192,7 +6220,7 @@
     {
       "assetid": "49743474799",
       "classid": "7993043736",
-      "instanceid": "9237231862",
+      "instanceid": "9242521440",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Fire Serpent",
       "market_hash_name": "StatTrak™ AK-47 | Fire Serpent (Minimal Wear)",

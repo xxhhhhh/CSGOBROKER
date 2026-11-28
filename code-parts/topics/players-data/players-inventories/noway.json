@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/91396c85-8498-429e-bf1a-5f8da3c2336b",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-25T12:53:39.017Z",
+  "updatedAt": "2026-11-28T12:05:23.408Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 46,
-  "totalItemsGrouped": 42,
+  "totalItemsRaw": 48,
+  "totalItemsGrouped": 44,
   "items": [
     {
       "assetid": "54491520199",
@@ -220,6 +220,50 @@
         },
         {
           "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54588605320",
+      "classid": "188530251",
+      "instanceid": "6276498515",
+      "amount": 1,
+      "name": "AK-47 | Case Hardened",
+      "market_hash_name": "AK-47 | Case Hardened (Minimal Wear)",
+      "type": "Classified Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]
@@ -1090,9 +1134,45 @@
       ]
     },
     {
+      "assetid": "54663720762",
+      "classid": "7993035805",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "AK-47 | Slate",
+      "market_hash_name": "AK-47 | Slate (Minimal Wear)",
+      "type": "Restricted Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "51711048505",
       "classid": "7993042258",
-      "instanceid": "9237418724",
+      "instanceid": "9242998307",
       "amount": 1,
       "name": "StatTrak™ USP-S | Guardian",
       "market_hash_name": "StatTrak™ USP-S | Guardian (Factory New)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/b6daa950-11e5-4f51-b58e-b4e01e112500",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-25T12:47:18.175Z",
+  "updatedAt": "2026-11-28T11:59:01.899Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 61,
-  "totalItemsGrouped": 60,
+  "totalItemsRaw": 87,
+  "totalItemsGrouped": 71,
   "items": [
     {
       "assetid": "54237999983",
@@ -40,6 +40,38 @@
         },
         {
           "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54574612875",
+      "classid": "7993037250",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Karambit | Marble Fade",
+      "market_hash_name": "★ Karambit | Marble Fade (Factory New)",
+      "type": "★ Covert Knife",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
           "name": ""
         },
         {
@@ -567,6 +599,168 @@
       ]
     },
     {
+      "assetid": "54672287611",
+      "classid": "7993036534",
+      "instanceid": "519977179",
+      "amount": 1,
+      "name": "M4A1-S | Fade",
+      "market_hash_name": "M4A1-S | Fade (Factory New)",
+      "type": "Covert Rifle",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54672287612",
+      "classid": "9218092268",
+      "instanceid": "0",
+      "amount": 1,
+      "name": "Sticker Slab | sirah (Holo) | Singapore 2026",
+      "market_hash_name": "Sticker Slab | sirah (Holo) | Singapore 2026",
+      "type": "Customized Exotic Charm",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65B6775D7D55784D75157D0D7DDF7C7A757D6D581DE81C28DAFCFD",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "KeychainCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54672287612"
+      ]
+    },
+    {
+      "assetid": "54588649621",
+      "classid": "9214816978",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | 100 Thieves (Holo) | Singapore 2026",
+      "market_hash_name": "Sticker | 100 Thieves (Holo) | Singapore 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%201303130BAA1A33133B16231771161B1303934E7B13631165F6C187",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588649621"
+      ]
+    },
+    {
+      "assetid": "54588604126",
+      "classid": "9214833170",
+      "instanceid": "143865972",
+      "amount": 2,
+      "name": "Sticker | sirah (Holo) | Singapore 2026",
+      "market_hash_name": "Sticker | sirah (Holo) | Singapore 2026",
+      "type": "Exotic Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20DECEDEC667D7FEDEF6DBEEDABCDBD6DECE4BBFB6DEAEDC5475F910",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588604126",
+        "54588604125"
+      ]
+    },
+    {
       "assetid": "22792798702",
       "classid": "778383679",
       "instanceid": "0",
@@ -968,11 +1162,11 @@
     },
     {
       "assetid": "54588565921",
-      "classid": "9214794286",
+      "classid": "9241415173",
       "instanceid": "9214800293",
       "amount": 1,
-      "name": "Singapore 2026 Coin",
-      "market_hash_name": "Singapore 2026 Coin",
+      "name": "Singapore 2026 Silver Coin",
+      "market_hash_name": "Singapore 2026 Silver Coin",
       "type": "Extraordinary Collectible",
       "inspectLink": "",
       "tags": [
@@ -1136,6 +1330,53 @@
       ]
     },
     {
+      "assetid": "54588649625",
+      "classid": "9214814630",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | device | Singapore 2026",
+      "market_hash_name": "Sticker | device | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203A2A3A2283331A3A12390A3E583F323A2AB95B523A4A38525F6535",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588649625"
+      ]
+    },
+    {
       "assetid": "50484616045",
       "classid": "7545310445",
       "instanceid": "519977179",
@@ -1198,6 +1439,53 @@
       ]
     },
     {
+      "assetid": "54588649624",
+      "classid": "9214850004",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | Gizmy | Singapore 2026",
+      "market_hash_name": "Sticker | Gizmy | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%203424342C8D3D14341C37043056313C3424B3555C344436CAB6E075",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588649624"
+      ]
+    },
+    {
       "assetid": "54467484994",
       "classid": "8637414290",
       "instanceid": "519977179",
@@ -1226,6 +1514,100 @@
       ],
       "assetids": [
         "54467484994"
+      ]
+    },
+    {
+      "assetid": "54588649623",
+      "classid": "9214850005",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | poiii | Singapore 2026",
+      "market_hash_name": "Sticker | poiii | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%207D6D7D65C4745D7D557E4D791F78757D6DF61C157D0D7F9458663B",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588649623"
+      ]
+    },
+    {
+      "assetid": "54588649622",
+      "classid": "9214831479",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | rain | Singapore 2026",
+      "market_hash_name": "Sticker | rain | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2059495941E0507959715A695D3B5C515949D6383159295BB47E2AA4",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588649622"
       ]
     },
     {
@@ -1367,6 +1749,67 @@
       "assetids": [
         "54375822799",
         "53570078293"
+      ]
+    },
+    {
+      "assetid": "54588735546",
+      "classid": "9214850006",
+      "instanceid": "143865972",
+      "amount": 15,
+      "name": "Sticker | sirah | Singapore 2026",
+      "market_hash_name": "Sticker | sirah | Singapore 2026",
+      "type": "High Grade Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20F4E4F4EC4DFDD4F4DCF7C4F096F1FCF4E467959CF484F6ED14EE3E",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54588735546",
+        "54588735545",
+        "54588735544",
+        "54588735543",
+        "54588735542",
+        "54588735541",
+        "54588735540",
+        "54588735539",
+        "54588735538",
+        "54588735537",
+        "54588640276",
+        "54588640275",
+        "54588640274",
+        "54588640272",
+        "54588640269"
       ]
     },
     {
@@ -1870,7 +2313,7 @@
     {
       "assetid": "54004776268",
       "classid": "7993047151",
-      "instanceid": "9237910842",
+      "instanceid": "9242934275",
       "amount": 1,
       "name": "StatTrak™ Desert Eagle | Code Red",
       "market_hash_name": "StatTrak™ Desert Eagle | Code Red (Factory New)",
@@ -1912,9 +2355,57 @@
       ]
     },
     {
+      "assetid": "54590030082",
+      "classid": "7993039606",
+      "instanceid": "9243171877",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Printstream",
+      "market_hash_name": "StatTrak™ USP-S | Printstream (Battle-Scarred)",
+      "type": "StatTrak™ Covert Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "53488395897",
       "classid": "7993041410",
-      "instanceid": "480891597",
+      "instanceid": "481319282",
       "amount": 1,
       "name": "StatTrak™ AK-47 | Bloodsport",
       "market_hash_name": "StatTrak™ AK-47 | Bloodsport (Factory New)",

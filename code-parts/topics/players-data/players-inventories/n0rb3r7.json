@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/075ed300-7ed3-4377-88ba-9572f9ea8e3d",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-26T12:22:27.970Z",
+  "updatedAt": "2026-11-28T11:50:29.948Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 51,
-  "totalItemsGrouped": 51,
+  "totalItemsRaw": 53,
+  "totalItemsGrouped": 53,
   "items": [
     {
       "assetid": "52826435948",
@@ -129,7 +129,7 @@
     {
       "assetid": "54570453965",
       "classid": "7993037104",
-      "instanceid": "9210164538",
+      "instanceid": "188530139",
       "amount": 1,
       "name": "★ Sport Gloves | Nocts",
       "market_hash_name": "★ Sport Gloves | Nocts (Field-Tested)",
@@ -150,6 +150,61 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54697535532",
+      "classid": "1989271387",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Graffiti | Piggles (Blood Red)",
+      "market_hash_name": "Graffiti | Piggles (Blood Red)",
+      "type": "Base Grade Graffiti",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208B9B8B934E81AB8BA38ABB8FE98C838B9B4986BB89E38BFB934CA0C6A0",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "SprayColorCategory",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54697535532"
+      ]
+    },
+    {
+      "assetid": "54580462840",
+      "classid": "914869806",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "StatTrak™ Swap Tool",
+      "market_hash_name": "StatTrak™ Swap Tool",
+      "type": "Base Grade Tool",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%202434243C882E04240C2514204C2454267A85EC78",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
           "name": ""
         }
       ]
@@ -1225,37 +1280,6 @@
       ]
     },
     {
-      "assetid": "54580475494",
-      "classid": "6216350895",
-      "instanceid": "0",
-      "amount": 1,
-      "name": "Charm | Stitch-Loaded",
-      "market_hash_name": "Charm | Stitch-Loaded",
-      "type": "High Grade Charm",
-      "inspectLink": "",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "KeychainCapsule",
-          "name": ""
-        }
-      ],
-      "assetids": [
-        "54580475494"
-      ]
-    },
-    {
       "assetid": "33548060706",
       "classid": "5537026493",
       "instanceid": "0",
@@ -1521,7 +1545,7 @@
     {
       "assetid": "41167427980",
       "classid": "7993038824",
-      "instanceid": "9236052071",
+      "instanceid": "9241428476",
       "amount": 1,
       "name": "StatTrak™ Tec-9 | Isaac",
       "market_hash_name": "StatTrak™ Tec-9 | Isaac (Minimal Wear)",
@@ -1594,6 +1618,50 @@
         },
         {
           "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54707726332",
+      "classid": "7993037895",
+      "instanceid": "7146495457",
+      "amount": 1,
+      "name": "StatTrak™ USP-S | Stainless",
+      "market_hash_name": "StatTrak™ USP-S | Stainless (Minimal Wear)",
+      "type": "StatTrak™ Mil-Spec Grade Pistol",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
           "name": ""
         }
       ]

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/21ee0d80-64f6-4277-80b9-c734d92a2880",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-25T12:07:05.019Z",
+  "updatedAt": "2026-11-28T11:22:15.258Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 274,
-  "totalItemsGrouped": 247,
+  "totalItemsRaw": 277,
+  "totalItemsGrouped": 250,
   "items": [
     {
       "assetid": "54029908778",
@@ -528,6 +528,34 @@
     },
     {
       "assetid": "39796519948",
+      "classid": "5710094579",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "Kilowatt Case",
+      "market_hash_name": "Kilowatt Case",
+      "type": "Base Grade Container",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "assetid": "54704079116",
       "classid": "5710094579",
       "instanceid": "302028390",
       "amount": 1,
@@ -2630,6 +2658,42 @@
       ]
     },
     {
+      "assetid": "54704079117",
+      "classid": "7993036578",
+      "instanceid": "302028390",
+      "amount": 1,
+      "name": "MAC-10 | Bronzer",
+      "market_hash_name": "MAC-10 | Bronzer (Battle-Scarred)",
+      "type": "Consumer Grade SMG",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Weapon",
+          "name": ""
+        },
+        {
+          "category": "ItemSet",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
+    },
+    {
       "assetid": "54021504684",
       "classid": "7993059376",
       "instanceid": "302028390",
@@ -3916,6 +3980,53 @@
       ],
       "assetids": [
         "52706160795"
+      ]
+    },
+    {
+      "assetid": "54587323875",
+      "classid": "9214892861",
+      "instanceid": "143865972",
+      "amount": 1,
+      "name": "Sticker | torzsi (Gold) | Singapore 2026",
+      "market_hash_name": "Sticker | torzsi (Gold) | Singapore 2026",
+      "type": "Extraordinary Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%20EEFEEEF657E7CEEEC6E8DEEA8CEBE6EEFE38B386EE9EECF7E99176",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54587323875"
       ]
     },
     {
@@ -8500,7 +8611,7 @@
     {
       "assetid": "41324751510",
       "classid": "7993042812",
-      "instanceid": "480089224",
+      "instanceid": "480094177",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Fairy Tale",
       "market_hash_name": "StatTrak™ Five-SeveN | Fairy Tale (Field-Tested)",
@@ -8536,7 +8647,7 @@
     {
       "assetid": "23698299304",
       "classid": "7993040160",
-      "instanceid": "7788978377",
+      "instanceid": "9215855790",
       "amount": 1,
       "name": "StatTrak™ Glock-18 | Vogue",
       "market_hash_name": "StatTrak™ Glock-18 | Vogue (Factory New)",
@@ -8616,7 +8727,7 @@
     {
       "assetid": "54040452839",
       "classid": "7993041773",
-      "instanceid": "9233180307",
+      "instanceid": "9243250226",
       "amount": 1,
       "name": "StatTrak™ USP-S | Kill Confirmed",
       "market_hash_name": "StatTrak™ USP-S | Kill Confirmed (Field-Tested)",
@@ -8712,7 +8823,7 @@
     {
       "assetid": "52253295755",
       "classid": "7993047832",
-      "instanceid": "9237778878",
+      "instanceid": "9243250227",
       "amount": 1,
       "name": "StatTrak™ AK-47 | The Oligarch",
       "market_hash_name": "StatTrak™ AK-47 | The Oligarch (Field-Tested)",
@@ -8748,7 +8859,7 @@
     {
       "assetid": "46603399471",
       "classid": "7993043652",
-      "instanceid": "8645164578",
+      "instanceid": "7586022046",
       "amount": 1,
       "name": "StatTrak™ M4A4 | Full Throttle",
       "market_hash_name": "StatTrak™ M4A4 | Full Throttle (Minimal Wear)",
@@ -8864,7 +8975,7 @@
     {
       "assetid": "23692286183",
       "classid": "7993044598",
-      "instanceid": "9232524360",
+      "instanceid": "9240603245",
       "amount": 1,
       "name": "StatTrak™ SSG 08 | Dragonfire",
       "market_hash_name": "StatTrak™ SSG 08 | Dragonfire (Field-Tested)",

@@ -12,13 +12,13 @@
   "faceit": "https://faceitdb.com/profile/faceit/51f40bd6-d466-408e-8036-be7647e9c344",
   "appid": 730,
   "contextid": "2",
-  "updatedAt": "2026-11-25T12:28:04.450Z",
+  "updatedAt": "2026-11-28T11:41:48.301Z",
   "inventoryVisible": true,
   "fetchOk": true,
   "fetchStatus": 200,
   "fetchError": "",
-  "totalItemsRaw": 128,
-  "totalItemsGrouped": 124,
+  "totalItemsRaw": 133,
+  "totalItemsGrouped": 125,
   "items": [
     {
       "assetid": "54552006369",
@@ -58,6 +58,34 @@
       "float": 0.010954386555,
       "seed": 542,
       "phase": "Ruby"
+    },
+    {
+      "assetid": "54578872299",
+      "classid": "7993043849",
+      "instanceid": "188530139",
+      "amount": 1,
+      "name": "★ Specialist Gloves | Crimson Kimono",
+      "market_hash_name": "★ Specialist Gloves | Crimson Kimono (Minimal Wear)",
+      "type": "★ Extraordinary Gloves",
+      "inspectLink": "",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "Exterior",
+          "name": ""
+        }
+      ]
     },
     {
       "assetid": "54134027109",
@@ -1302,13 +1330,13 @@
       ]
     },
     {
-      "assetid": "51730719189",
-      "classid": "7993039825",
-      "instanceid": "7308333200",
+      "assetid": "54583192386",
+      "classid": "7993041451",
+      "instanceid": "9242483248",
       "amount": 1,
-      "name": "AK-47 | Vulcan",
-      "market_hash_name": "AK-47 | Vulcan (Minimal Wear)",
-      "type": "Covert Rifle",
+      "name": "USP-S | Kill Confirmed",
+      "market_hash_name": "USP-S | Kill Confirmed (Well-Worn)",
+      "type": "Covert Pistol",
       "inspectLink": "",
       "tags": [
         {
@@ -1333,26 +1361,6 @@
         },
         {
           "category": "Exterior",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "Tournament",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "TournamentTeam",
-          "name": ""
-        },
-        {
-          "category": "ProPlayer",
           "name": ""
         }
       ]
@@ -2476,6 +2484,57 @@
       ]
     },
     {
+      "assetid": "54583091196",
+      "classid": "9214828142",
+      "instanceid": "143865972",
+      "amount": 5,
+      "name": "Sticker | d1Ledez (Foil) | Singapore 2026",
+      "market_hash_name": "Sticker | d1Ledez (Foil) | Singapore 2026",
+      "type": "Remarkable Sticker",
+      "inspectLink": "steam://run/730//+csgo_econ_action_preview%2019091901A0103919311D291D7B1C111909AD477119691B44C02803",
+      "tags": [
+        {
+          "category": "Type",
+          "name": ""
+        },
+        {
+          "category": "Quality",
+          "name": ""
+        },
+        {
+          "category": "Rarity",
+          "name": ""
+        },
+        {
+          "category": "StickerCategory",
+          "name": ""
+        },
+        {
+          "category": "Tournament",
+          "name": ""
+        },
+        {
+          "category": "TournamentTeam",
+          "name": ""
+        },
+        {
+          "category": "ProPlayer",
+          "name": ""
+        },
+        {
+          "category": "StickerCapsule",
+          "name": ""
+        }
+      ],
+      "assetids": [
+        "54583091196",
+        "54583091195",
+        "54583091194",
+        "54583091193",
+        "54583091192"
+      ]
+    },
+    {
       "assetid": "52748204077",
       "classid": "8490816229",
       "instanceid": "143865972",
@@ -3125,42 +3184,6 @@
       "market_hash_name": "AK-47 | Slate (Battle-Scarred)",
       "type": "Restricted Rifle",
       "inspectLink": "steam://run/730//+csgo_econ_action_preview%20CCDC50393E42BDD4CBEC47C4E4C8FCC8F440781A35CF8C2CC9AEC9C4CCDC74E2AEC9C4CDDC74E2AEC9C4CEDC74E2AEC9C4CFDC74E2A491BCC4BFAFFAE3",
-      "tags": [
-        {
-          "category": "Type",
-          "name": ""
-        },
-        {
-          "category": "Weapon",
-          "name": ""
-        },
-        {
-          "category": "ItemSet",
-          "name": ""
-        },
-        {
-          "category": "Quality",
-          "name": ""
-        },
-        {
-          "category": "Rarity",
-          "name": ""
-        },
-        {
-          "category": "Exterior",
-          "name": ""
-        }
-      ]
-    },
-    {
-      "assetid": "50278626808",
-      "classid": "8246907253",
-      "instanceid": "188530139",
-      "amount": 1,
-      "name": "M4A1-S | Electrum",
-      "market_hash_name": "M4A1-S | Electrum (Minimal Wear)",
-      "type": "Restricted Rifle",
-      "inspectLink": "steam://run/730//+csgo_econ_action_preview%208E9E76655528358F96B2AE1785A68ABE8AB6797739638DCE0F8BE6AAFE8699DEEF5E",
       "tags": [
         {
           "category": "Type",
@@ -4025,7 +4048,7 @@
     {
       "assetid": "26544163857",
       "classid": "7993040252",
-      "instanceid": "480104392",
+      "instanceid": "480773841",
       "amount": 1,
       "name": "StatTrak™ Galil AR | Chromatic Aberration",
       "market_hash_name": "StatTrak™ Galil AR | Chromatic Aberration (Field-Tested)",
@@ -4169,7 +4192,7 @@
     {
       "assetid": "39487030798",
       "classid": "7993041501",
-      "instanceid": "6442272012",
+      "instanceid": "6290331721",
       "amount": 1,
       "name": "StatTrak™ Five-SeveN | Copper Galaxy",
       "market_hash_name": "StatTrak™ Five-SeveN | Copper Galaxy (Minimal Wear)",
